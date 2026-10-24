@@ -1,7 +1,7 @@
 {
   "name": "Kairos – dein persönliches Cockpit",
   "short_name": "Kairos",
-  "description": "Finanzen, Job, Business, Shopping und Lifestyle an einem Ort. Alle Daten bleiben lokal auf deinem Gerät.",
+  "description": "Digitale Akte mit OCR, tägliche Geld-Missionen, Finanzen, Job, Shopping und Lifestyle an einem Ort. Alle Daten bleiben lokal auf deinem Gerät.",
   "lang": "de",
   "start_url": "./",
   "scope": "./",
