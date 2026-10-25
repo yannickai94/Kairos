@@ -659,6 +659,66 @@ details.legal summary .faint{font-weight:500;font-size:12.5px}
   .idea{padding:15px}
 }
 
+/* ===== Gehirn ===== */
+.s12{grid-column:1/-1}
+.addrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.addrow.s12{grid-column:1/-1}
+.addtile{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:20px;border-radius:var(--r-lg);background:var(--glass);box-shadow:inset 0 0 0 1px var(--hair),var(--shadow-sm);text-align:left;transition:.25s var(--ease);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);color:var(--text)}
+.addtile:hover,.addtile:focus-visible{transform:translateY(-3px);background:var(--glass2);outline:none;box-shadow:inset 0 0 0 1px var(--hair2),var(--shadow)}
+.addtile .at{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;color:#fff;background:var(--grad);box-shadow:0 10px 24px -8px var(--brand2);margin-bottom:6px}
+.addtile .at .i{width:22px;height:22px}
+.addtile b{font-size:16px;letter-spacing:-.01em}
+.addtile small{font-size:13px;line-height:1.4;color:var(--text2)}
+/* Frage-Karte */
+.ask{padding:22px;display:flex;flex-direction:column;gap:12px}
+.ask .ah{display:flex;align-items:center;gap:10px}
+.ask .ah .eyebrow{margin:0;color:var(--accent)}
+.ask .ah .chip{height:28px;font-size:12px}
+.ask .ah .chip.on{background:color-mix(in srgb,var(--accent) 20%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 45%,transparent)}
+.askrow{display:flex;gap:10px}
+.askrow .inp{flex:1;min-width:0}
+.inp.lg{height:52px;font-size:16px;border-radius:18px;padding:0 18px}
+.btn.lg{height:52px;padding:0 22px;border-radius:18px}
+.thread{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.bub{max-width:100%;padding:12px 15px;border-radius:18px;font-size:14.5px;line-height:1.55}
+.bub.me{align-self:flex-end;background:var(--grad);color:#fff;border-bottom-right-radius:6px;max-width:85%;font-weight:550}
+.bub.ai{align-self:stretch;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);border-bottom-left-radius:6px}
+.bub .bt p{margin:0 0 8px}.bub .bt p:last-child{margin:0}
+.bub .bt ul{margin:4px 0 8px;padding-left:20px}
+.bub .bt strong{font-weight:700}
+.bub .list{margin-top:8px}
+.bub .li{padding:8px 6px}
+.srcs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-top:10px}
+.srcc{display:flex;flex-direction:column;gap:3px;padding:10px 12px;border-radius:14px;background:var(--field-f);text-align:left;font-size:12.5px;color:var(--text2);transition:.2s;box-shadow:inset 0 0 0 1px transparent}
+.srcc:hover{box-shadow:inset 0 0 0 1px var(--accent)}
+.srcc b{color:var(--text);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.srcc span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.4}
+.bact{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn.sm{height:32px;padding:0 12px;font-size:13px;border-radius:11px}
+.warnl{padding:8px 12px;border-radius:12px;margin-bottom:8px;font-size:13px;background:color-mix(in srgb,var(--warn) 12%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--warn) 32%,transparent);color:var(--text)}
+.hintl{margin-top:10px;font-size:12.5px;color:var(--text3)}
+.link{background:none;border:0;padding:0;color:var(--accent);font-size:13px;font-weight:600;cursor:pointer}
+.link:hover{text-decoration:underline}
+/* Aufbauen / Mini */
+.build h3{display:flex;align-items:center;gap:8px}
+.build h3 .i{width:20px;height:20px;color:var(--accent)}
+.mini{padding:16px 20px}
+.mini .mme{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;font-size:23px;background:var(--field-f);flex:none}
+.row-flex{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+/* Info-Ansicht */
+.itemb{white-space:pre-wrap;font-size:15px;line-height:1.65;padding:14px 16px;border-radius:18px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);max-height:50vh;overflow:auto}
+.card .toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+@media (max-width:900px){
+  .addrow{grid-template-columns:minmax(0,1fr);gap:10px}
+  .addtile{flex-direction:row;align-items:center;gap:14px;padding:14px 16px;flex-wrap:wrap}
+  .addtile .at{margin:0;width:42px;height:42px;flex:none}
+  .addtile b{flex:1;min-width:0}.addtile small{flex-basis:100%;padding-left:56px;margin-top:-10px}
+  .ask{padding:16px}
+  .askrow{flex-direction:column}.askrow .inp.lg{flex:none;width:100%;height:52px}.askrow .btn.lg{width:100%;flex:none}.askrow .hide-s{display:inline}
+  .bub.me{max-width:92%}
+  .srcs{grid-template-columns:minmax(0,1fr)}
+}
+
 /* ===== Dock (nur mobil) ===== */
 .dock{display:none}
 .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
@@ -732,8 +792,8 @@ details.legal summary .faint{font-weight:500;font-size:12.5px}
 
 <div class="app" id="app" hidden>
   <aside class="side glass" id="side" aria-label="Hauptnavigation">
-    <div class="brand"><span class="logo" id="brandLogo"></span><div><b>Kairos</b><small>Dein Cockpit</small></div></div>
-    <button class="cmdbtn" data-act="cmd.open" aria-label="Kairos öffnen"><span id="cmdIcon"></span><span>Frag Kairos oder erfasse …</span><kbd>⌘K</kbd></button>
+    <div class="brand"><span class="logo" id="brandLogo"></span><div><b>Kairos</b><small>Dein digitales Gehirn</small></div></div>
+    <button class="cmdbtn" data-act="cmd.open" aria-label="Kairos öffnen"><span id="cmdIcon"></span><span>Frag dein Gehirn …</span><kbd>⌘K</kbd></button>
     <nav id="nav"></nav>
     <div class="side-foot">
       <div class="sync" id="syncState"><i></i><span>Lokal gespeichert</span></div>
@@ -900,10 +960,10 @@ const download = (blob, name) => { const a = document.createElement('a'); a.href
    KAIROS · Konstanten, Standard-Daten, Speicher (IndexedDB) & Verschlüsselung
    ===================================================================== */
 const AREAS = {
-  heute:     { name: 'Heute',     ic: 'home',      c: 'var(--accent)' },
+  heute:     { name: 'Gehirn',    ic: 'brain',     c: 'var(--accent)' },
   finanzen:  { name: 'Finanzen',  ic: 'wallet',    c: 'var(--c-fin)' },
   job:       { name: 'Job',       ic: 'briefcase', c: 'var(--c-job)' },
-  business:  { name: 'Business',  ic: 'trend',     c: 'var(--c-biz)' },
+  business:  { name: 'Geld',      ic: 'trend',     c: 'var(--c-biz)' },
   shopping:  { name: 'Shopping',  ic: 'bag',       c: 'var(--c-shop)' },
   lifestyle: { name: 'Lifestyle', ic: 'sun',       c: 'var(--c-life)' },
   tresor:    { name: 'Akte',      ic: 'shield',    c: 'var(--c-vault)' },
@@ -954,8 +1014,8 @@ const defaultState = () => ({
   clients: [], invoices: [], deals: [], bizNo: 1,
   lists: [], wishes: [], bought: {},
   habits: [], checkins: {}, lifeGoals: [], journal: {},
-  docs: [], earn: null,
-  ui: { finTab: 'uebersicht', jobTab: 'aufgaben', bizTab: 'chancen', shopTab: 'listen', lifeTab: 'habits', taskFilter: 'offen', onboarded: false }
+  docs: [], earn: null, brain: null,
+  ui: { finTab: 'uebersicht', jobTab: 'aufgaben', bizTab: 'chancen', brainTab: 'ueberblick', more: false, shopTab: 'listen', lifeTab: 'habits', taskFilter: 'offen', onboarded: false }
 });
 
 /* =====================================================================
@@ -1025,7 +1085,9 @@ function migrate(st) {
   out.profile = Object.assign(d.profile, (st && st.profile) || {});
   out.ui = Object.assign(d.ui, (st && st.ui) || {});
   out.focus = Object.assign(d.focus, (st && st.focus) || {});
-  if (out.earn) { const ed = earnDefault(); out.earn = Object.assign(ed, out.earn); }
+  if (out.earn) { const ed = earnDefault(); out.earn = Object.assign(ed, out.earn); if (out.earn.profile) out.earn.profile.skills = (out.earn.profile.skills || []).filter(k => SKILLS[k]); }
+  /* Bestandsdaten mit Finanz-/Job-Inhalten: erweiterte Bereiche bleiben sichtbar */
+  if (st && st.ui && st.ui.more === undefined && ((st.tx && st.tx.length) || (st.tasks && st.tasks.length) || (st.lists && st.lists.length))) out.ui.more = true;
   out.v = 2;
   return out;
 }
@@ -1236,22 +1298,22 @@ function badgeCounts() {
   return {
     job: S.tasks.filter(x => !x.done && x.due && x.due < t).length,
     business: S.invoices.filter(i => invStatus(i) === 'ueberfaellig').length,
-    tresor: S.docs.filter(d => d.status === 'neu' || docDeadlines(d).some(x => diffDays(x.d, t) <= 14)).length,
+    heute: S.docs.filter(d => d.status === 'neu' || docDeadlines(d).some(x => diffDays(x.d, t) <= 14)).length,
     shopping: S.lists.reduce((a, l) => a + l.items.filter(i => !i.done).length, 0)
   };
 }
 function renderNav() {
   const bc = badgeCounts();
   const item = r => {
-    const a = AREAS[r], n = bc[r], alert = (r === 'job' || r === 'business' || r === 'tresor') && n;
+    const a = AREAS[r], n = bc[r], alert = (r === 'job' || r === 'business' || r === 'heute') && n;
     return `<button class="nv ${route === r ? 'on' : ''}" style="--c:${a.c}" data-go="${r}" ${route === r ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt ${alert ? 'alert' : ''}">${n}</span>` : ''}</button>`;
   };
-  $('#nav').innerHTML = ['heute', 'finanzen', 'job', 'business', 'shopping', 'lifestyle'].map(item).join('') + '<div class="nv-sep"></div>' + ['tresor', 'einstellungen'].map(item).join('');
-  const more = ['business', 'shopping', 'lifestyle', 'tresor', 'einstellungen'].includes(route);
+  const more = !!S.ui.more, extra = ['finanzen', 'job', 'shopping', 'lifestyle', 'tresor'];
+  $('#nav').innerHTML = ['heute', 'business'].map(item).join('') + '<div class="nv-sep"></div>' + (more ? extra.map(item).join('') + '<div class="nv-sep"></div>' : '') + item('einstellungen');
   const dk = (r, lab) => `<button class="dk ${route === r ? 'on' : ''}" style="--c:${AREAS[r].c}" data-go="${r}" aria-label="${lab}">${icon(AREAS[r].ic)}<span>${lab}</span></button>`;
-  $('#dock').innerHTML = dk('heute', 'Heute') + dk('finanzen', 'Finanzen') +
-    `<button class="dk orb" data-act="cmd.open" aria-label="Kairos öffnen"><span>${logoSvg('dock')}</span></button>` + dk('job', 'Job') +
-    `<button class="dk ${more ? 'on' : ''}" data-act="nav.more" aria-label="Mehr">${icon('grid')}<span>Mehr</span></button>`;
+  $('#dock').innerHTML = dk('heute', 'Gehirn') + dk('business', 'Geld') +
+    `<button class="dk orb" data-act="cmd.open" aria-label="Kairos öffnen"><span>${logoSvg('dock')}</span></button>` + dk('einstellungen', 'Einstellungen') +
+    (more ? `<button class="dk ${extra.includes(route) ? 'on' : ''}" data-act="nav.more" aria-label="Mehr">${icon('grid')}<span>Mehr</span></button>` : '');
 }
 function renderView(keepScroll) {
   const v = VIEWS[route] || VIEWS.heute;
@@ -1279,7 +1341,7 @@ document.addEventListener('click', e => {
   if (a && ACT[a.dataset.act]) { e.preventDefault(); ACT[a.dataset.act](a, e); }
 });
 ACT['nav.more'] = btn => {
-  const tiles = ['business', 'shopping', 'lifestyle', 'tresor', 'einstellungen'].map(r => `<button class="more-tile" style="--c:${AREAS[r].c}" data-go="${r}"><span class="ic">${icon(AREAS[r].ic)}</span>${AREAS[r].name}</button>`).join('');
+  const tiles = ['finanzen', 'job', 'shopping', 'lifestyle', 'tresor'].map(r => `<button class="more-tile" style="--c:${AREAS[r].c}" data-go="${r}"><span class="ic">${icon(AREAS[r].ic)}</span>${AREAS[r].name}</button>`).join('');
   openSheet(`<h2>Mehr</h2><div class="more-grid">${tiles}</div>`);
 };
 document.addEventListener('keydown', e => {
@@ -1658,26 +1720,25 @@ function answerQuestion(text, low) {
 const OPEN = {};   // Öffner je Datentyp: OPEN.tx(id) …
 const cmdState = { items: [], sel: 0, intent: null, q: '' };
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-const EXAMPLES = ['12,50 Rewe', 'Aufgabe Angebot senden morgen', 'kaufen Milch, Eier, Hafermilch', 'Rechnung 1200 Müller Webdesign', '+2400 Gehalt', 'Netflix 12,99 monatlich', 'wie viel für Essen ausgegeben?', 'Wunsch Kopfhörer 249'];
+const EXAMPLES = ['Wann kann ich kündigen?', 'Wie hoch war mein letztes Netto?', 'Welche Fristen kommen als Nächstes?', 'Mission des Tages', 'Geld-Ideen mit KI'];
 
 const COMMANDS = () => [
-  { ic: '💸', t: 'Ausgabe erfassen', k: 'ausgabe buchung neu', fn: 'fin.tx.add' },
-  { ic: '💶', t: 'Einnahme erfassen', k: 'einnahme gehalt neu', fn: 'fin.tx.addIn' },
-  { ic: '✅', t: 'Neue Aufgabe', k: 'aufgabe todo task neu', fn: 'job.task.add' },
-  { ic: '🛒', t: 'Zur Einkaufsliste hinzufügen', k: 'einkauf liste kaufen shopping', fn: 'shop.item.add' },
-  { ic: '🎯', t: 'Mission des Tages', k: 'mission heute geld verdienen idee chance business', fn: 'earn.go' },
-  { ic: '💡', t: 'Neue Geld-Ideen entdecken', k: 'idee ideen geld verdienen nebeneinkommen business lab', fn: 'earn.ideas' },
-  { ic: '🌱', t: 'Verdiente Einnahme erfassen', k: 'verdient einnahme nebenverdienst verkauf auftrag', fn: 'earn.inc.add' },
-  { ic: '🧾', t: 'Rechnung erstellen', k: 'rechnung invoice business', fn: 'biz.inv.add' },
-  { ic: '🌤️', t: 'Tages-Check-in', k: 'checkin stimmung energie schlaf', fn: 'life.checkin' },
-  { ic: '⏱️', t: 'Fokus-Timer starten', k: 'fokus timer pomodoro', fn: 'job.focus.go' },
-  { ic: '📄', t: 'Dokument in die Akte legen', k: 'dokument akte datei upload hochladen brief lohn abrechnung vertrag', fn: 'akte.pick' },
+  { ic: '🧠', t: 'Frag dein Gehirn', k: 'frage fragen gehirn suche wissen antwort', fn: 'brain.focus' },
+  { ic: '✍️', t: 'Etwas im Gehirn merken', k: 'merken info notiz fakt eintragen speichern wissen', fn: 'brain.add' },
+  { ic: '📄', t: 'Dokument hochladen', k: 'dokument akte datei upload hochladen brief lohn abrechnung vertrag', fn: 'akte.pick' },
   { ic: '📷', t: 'Brief oder Beleg fotografieren', k: 'foto scan scannen kamera brief beleg ocr', fn: 'akte.scan' },
-  { ic: '🎯', t: 'Sparziel anlegen', k: 'sparziel sparen', fn: 'fin.goal.add' },
+  { ic: '🎯', t: 'Mission des Tages', k: 'mission heute geld verdienen idee chance business', fn: 'earn.go' },
+  { ic: '💡', t: 'Neue Geld-Ideen mit KI entdecken', k: 'idee ideen geld verdienen nebeneinkommen ki lab', fn: 'earn.ideas' },
+  { ic: '🌱', t: 'Verdiente Einnahme erfassen', k: 'verdient einnahme nebenverdienst verkauf auftrag', fn: 'earn.inc.add' },
+  { ic: '💸', t: 'Ausgabe erfassen', k: 'ausgabe buchung neu', fn: 'fin.tx.add', more: 1 },
+  { ic: '💶', t: 'Einnahme buchen', k: 'einnahme gehalt neu', fn: 'fin.tx.addIn', more: 1 },
+  { ic: '✅', t: 'Neue Aufgabe', k: 'aufgabe todo task neu', fn: 'job.task.add', more: 1 },
+  { ic: '🛒', t: 'Zur Einkaufsliste hinzufügen', k: 'einkauf liste kaufen shopping', fn: 'shop.item.add', more: 1 },
+  { ic: '🧾', t: 'Rechnung erstellen', k: 'rechnung invoice business', fn: 'biz.inv.add', more: 1 },
   { ic: '🌓', t: 'Design wechseln (Hell / Dunkel)', k: 'theme design dunkel hell', fn: 'app.theme' },
   { ic: '💾', t: 'Backup erstellen', k: 'backup export sichern', fn: 'app.export' },
   { ic: '🔒', t: 'App jetzt sperren', k: 'sperren lock sicher', fn: 'app.lock' }
-];
+].filter(c => !c.more || S.ui.more);
 
 function searchAll(q) {
   const n = norm(q); if (n.length < 2) return [];
@@ -1692,9 +1753,11 @@ function searchAll(q) {
   S.wishes.filter(w => hit(w.name)).slice(0, 2).forEach(w => add('Wunschliste', '🎁', 'var(--c-shop)', w.name, w.price ? money(w.price) : '', () => { S.ui.shopTab = 'wuensche'; go('shopping'); }));
   S.lists.forEach(l => l.items.filter(i => hit(i.t)).slice(0, 2).forEach(i => add('Einkauf', '🛒', 'var(--c-shop)', i.t, l.name, () => { S.ui.shopTab = 'listen'; go('shopping'); })));
   S.habits.filter(h => hit(h.name)).slice(0, 2).forEach(h => add('Gewohnheiten', h.emoji || '✨', 'var(--c-life)', h.name, '', () => { S.ui.lifeTab = 'habits'; go('lifestyle'); }));
+  B().items.filter(i => hit(i.title + ' ' + i.body)).slice(0, 3).forEach(i => add('Gehirn', (BRAIN_CATS[i.cat] || BRAIN_CATS.sonst)[1], 'var(--accent)', i.title, itemSnippet(i, 70), () => itemView(i.id)));
   return out.slice(0, 9);
 }
 
+const visibleAreas = () => S.ui.more ? Object.keys(AREAS) : ['heute', 'business', 'einstellungen'];
 function renderCmd() {
   const q = cmdState.q.trim(), body = $('#cmdBody'); let html = '', items = [];
   const intent = q ? parseIntent(q) : null;
@@ -1708,8 +1771,9 @@ function renderCmd() {
   const n = norm(q);
   if (q && !(intent && intent.type === 'answer')) {
     const cmds = COMMANDS().filter(c => norm(c.t + ' ' + c.k).includes(n)).slice(0, 4);
-    const nav = Object.keys(AREAS).filter(r => norm(AREAS[r].name).includes(n)).map(r => ({ ic: '↗', t: AREAS[r].name + ' öffnen', fn: () => go(r) }));
+    const nav = visibleAreas().filter(r => norm(AREAS[r].name).includes(n)).map(r => ({ ic: '↗', t: AREAS[r].name + ' öffnen', fn: () => go(r) }));
     const res = searchAll(q);
+    if (!(intent && intent.type !== 'answer') && qTokens(q).length >= 1) cmds.unshift({ ic: '🧠', t: `Frag dein Gehirn: „${clip(q, 50)}“`, fn: () => { S.ui.brainTab = 'ueberblick'; go('heute'); setTimeout(() => askBrain(q), 90); } });
     const secs = [['Aktionen', [...cmds, ...nav]], ['Gefunden', res]];
     for (const [title, list] of secs) if (list.length) { html += `<div class="cmd-sec">${title}</div>`; list.forEach(it => { const idx = items.length; items.push(it); html += itemHtml(it, idx); }); }
     if (!items.length) html += `<div class="empty" style="padding:26px"><div class="em">🔍</div><b>Nichts gefunden</b><p>Versuch es mit einem Betrag („12,50 Rewe“), „Aufgabe …“ oder „kaufen …“.</p></div>`;
@@ -1718,7 +1782,7 @@ function renderCmd() {
     html += `<div class="cmd-sec">Aktionen</div>`;
     COMMANDS().forEach(c => { const idx = items.length; items.push(c); html += itemHtml(c, idx); });
     html += `<div class="cmd-sec">Springe zu</div>`;
-    Object.keys(AREAS).forEach(r => { const idx = items.length; const it = { ic: '↗', t: AREAS[r].name, fn: () => go(r) }; items.push(it); html += itemHtml(it, idx); });
+    visibleAreas().forEach(r => { const idx = items.length; const it = { ic: '↗', t: AREAS[r].name, fn: () => go(r) }; items.push(it); html += itemHtml(it, idx); });
   }
   cmdState.items = items; cmdState.sel = Math.min(cmdState.sel, Math.max(0, items.length - 1));
   body.innerHTML = html; markSel();
@@ -2613,12 +2677,12 @@ function bizPipeline() {
 
 VIEWS.business = {
   render() {
-    const tab = BIZ_TABS_ALL.some(t => t[0] === S.ui.bizTab) ? S.ui.bizTab : 'chancen', earn = EARN_TABS.includes(tab);
+    const tab = bizTabs().some(t => t[0] === S.ui.bizTab) ? S.ui.bizTab : 'chancen', earn = EARN_TABS.includes(tab);
     const body = { chancen: tabChancen, ideen: tabIdeen, experimente: tabExp, rechnungen: bizInvoices, kunden: bizClients, pipeline: bizPipeline }[tab]();
-    const sub = earn ? 'Jeden Tag eine konkrete Chance, Geld zu verdienen – mit Schritt-für-Schritt-Plan.' : 'Rechnungen, Kunden und Projekte – dein Geschäft im Griff.';
+    const sub = earn ? 'Digital Geld verdienen – mit KI als Hebel und jeden Tag einem konkreten nächsten Schritt.' : 'Rechnungen, Kunden und Projekte – dein Geschäft im Griff.';
     const btn = earn ? `<button class="btn primary" data-act="earn.inc.add">${icon('plus')}Einnahme</button>` : tab === 'kunden' ? `<button class="btn primary" data-act="biz.client.add">${icon('plus')}Kunde</button>` : tab === 'pipeline' ? `<button class="btn primary" data-act="biz.deal.add" data-stage="lead">${icon('plus')}Projekt</button>` : `<button class="btn primary" data-act="biz.inv.add">${icon('plus')}Rechnung</button>`;
-    return `<div class="page"><div class="ph"><div class="t"><h1>Business</h1><p>${sub}</p></div><div class="act">${btn}</div></div>
-      ${earn ? '' : bizKpis()}<div class="tabsbar"><div class="seg">${BIZ_TABS_ALL.map(([k, l]) => `<button class="${tab === k ? 'on' : ''}" data-act="biz.tab" data-t="${k}">${l}</button>`).join('')}</div></div>${body}</div>`;
+    return `<div class="page"><div class="ph"><div class="t"><h1>Geld</h1><p>${sub}</p></div><div class="act">${btn}</div></div>
+      ${earn ? '' : bizKpis()}<div class="tabsbar"><div class="seg">${bizTabs().map(([k, l]) => `<button class="${tab === k ? 'on' : ''}" data-act="biz.tab" data-t="${k}">${l}</button>`).join('')}</div></div>${body}</div>`;
   },
   mount(root) {
     const s = $('#invSearch', root); if (s) s.addEventListener('input', debounce(() => { bizUI.q = s.value; $('#invBox').innerHTML = invList(); }, 120));
@@ -3507,8 +3571,8 @@ const rerenderAkte = () => { if (route === 'tresor' && !$('#sheetWrap').classLis
 ['dragover', 'dragenter'].forEach(ev => window.addEventListener(ev, e => { if (route === 'tresor' && e.dataTransfer && [...(e.dataTransfer.types || [])].includes('Files')) { e.preventDefault(); const z = $('#akDz'); z && z.classList.add('over'); } }));
 ['dragleave', 'drop'].forEach(ev => window.addEventListener(ev, e => { const z = $('#akDz'); if (ev === 'drop' || !e.relatedTarget) z && z.classList.remove('over'); }));
 window.addEventListener('drop', e => { if (route === 'tresor' && e.dataTransfer && e.dataTransfer.files.length) { e.preventDefault(); importFiles(e.dataTransfer.files); } });
-ACT['akte.pick'] = () => { if (route !== 'tresor') { go('tresor'); } const i = $('#akIn'); i ? i.click() : setTimeout(() => { const j = $('#akIn'); j && j.click(); }, 50); };
-ACT['akte.scan'] = () => { if (route !== 'tresor') { go('tresor'); } const i = $('#akCam'); i ? i.click() : setTimeout(() => { const j = $('#akCam'); j && j.click(); }, 50); };
+ACT['akte.pick'] = () => { if (!$('#akIn')) { go('tresor'); } const i = $('#akIn'); i ? i.click() : setTimeout(() => { const j = $('#akIn'); j && j.click(); }, 50); };
+ACT['akte.scan'] = () => { if (!$('#akCam')) { go('tresor'); } const i = $('#akCam'); i ? i.click() : setTimeout(() => { const j = $('#akCam'); j && j.click(); }, 50); };
 ACT['vault.add'] = ACT['akte.pick'];
 
 /* ---------- Gehaltsverlauf ---------- */
@@ -3549,27 +3613,34 @@ function akteFristen() {
   all.sort((a, b) => a.x.d.localeCompare(b.x.d)); if (!all.length) return '';
   return `<section class="card glass"><h3>${icon('flag')} Fristen im Blick<span class="sp"></span><span class="badge ${all.some(a => a.n < 0 || a.n <= 7) ? 'neg' : 'warn'}">${all.length}</span></h3><div class="list">${all.slice(0, 5).map(({ d, x, n }) => `<button class="li" data-act="akte.view" data-id="${d.id}"><span class="lead sm">${kindInfo(d).e}</span><span class="mid"><span class="tt">${esc(clip(d.name, 44))}</span><span class="ss">${esc(x.l)}</span></span><span class="end" style="font-weight:650;font-size:13px"><span class="${dlClass(n)}">${n < 0 ? `seit ${-n} Tg.` : relDate(x.d)}</span></span></button>`).join('')}</div></section>`;
 }
-VIEWS.tresor = {
-  render() {
+const akteInputs = () => '<input type="file" id="akIn" multiple accept=".pdf,image/*,.txt,application/pdf" hidden><input type="file" id="akCam" accept="image/*" capture="environment" hidden>';
+function akteHeaderHTML() {
+  const size = sum(S.docs, d => d.fileSize), inbox = inboxDocs();
+  return `<div class="ph"><div class="t"><h1>Akte</h1><p>${plural(S.docs.length, 'Dokument', 'Dokumente')}${size ? ' · ' + fmtBytes(size) : ''}${inbox.length ? ` · <span class="info-t"><b>${inbox.length} zu prüfen</b></span>` : ''}</p></div><div class="act"><button class="btn" data-act="akte.scan">${icon('camera')}<span class="hide-s">Foto</span></button><button class="btn primary" data-act="akte.pick">${icon('upload')}Hochladen</button></div></div>`;
+}
+function akteBusyHTML() { const busy = S.docs.filter(d => d.status === 'lese'); return busy.length ? `<section class="card glass s12"><h3><i class="spin"></i> Wird gelesen<span class="sp"></span></h3><p class="muted" style="font-size:14px">${plural(busy.length, 'Dokument wird', 'Dokumente werden')} ausgelesen – das dauert bei Scans ein paar Sekunden pro Seite.</p></section>` : ''; }
+function akteInboxHTML() { const inbox = inboxDocs(); return inbox.length ? `<section class="card glass s12 inbox"><h3>${icon('sparkle')} Frisch ausgelesen – kurz prüfen<span class="sp"></span><span class="badge info">${inbox.length}</span></h3><div class="list">${inbox.slice(0, 6).map(d => { const k = kindInfo(d); return `<div class="li" data-act="akte.view" data-id="${d.id}"><span class="lead">${k.e}</span><span class="mid"><span class="tt">${esc(d.name)}</span><span class="ss">${esc(k.name)}${d.summary ? ' · ' + esc(clip(d.summary, 60)) : ''}${d.ocr && d.ocr.err ? ' · ⚠ Text nicht gelesen' : ''}</span></span><span class="end ibtn"><button class="btn sm" data-act="akte.view" data-id="${d.id}">Prüfen</button><button class="btn sm primary" data-act="akte.ok" data-id="${d.id}">${icon('check')}Passt</button></span></div>`; }).join('')}</div>${inbox.length > 6 ? `<button class="btn ghost sm" data-act="akte.okall" style="margin-top:8px">Alle ${inbox.length} bestätigen</button>` : inbox.length > 1 ? `<button class="btn ghost sm" data-act="akte.okall" style="margin-top:8px">Alle bestätigen</button>` : ''}</section>` : ''; }
+function akteBodyHTML() {
     const t = todayISO(), size = sum(S.docs, d => d.fileSize), inbox = inboxDocs(), busy = S.docs.filter(d => d.status === 'lese');
     const cnt = k => S.docs.filter(d => d.cat === k).length, empty = !S.docs.length;
     const dz = `<div class="akdz ${empty ? '' : 'compact'}" id="akDz" role="button" tabindex="0" data-act="akte.pick"><span class="dzi">${icon('upload')}</span><div><b>${empty ? 'Lege dein erstes Dokument ab' : 'Dokument ablegen'}</b><span class="muted">${empty ? 'Gehaltsabrechnung, Brief, Rechnung, Vertrag – als PDF oder Foto. Kairos liest Typ, Beträge und Fristen selbst aus.' : 'PDF oder Foto hierher ziehen oder tippen'}</span></div>${empty ? `<div class="dzs"><button class="btn primary" data-act="akte.pick">${icon('upload')}Datei wählen</button><button class="btn" data-act="akte.scan">${icon('camera')}Foto aufnehmen</button></div>` : ''}</div>`;
-    return `<div class="page"><div class="ph"><div class="t"><h1>Akte</h1><p>${plural(S.docs.length, 'Dokument', 'Dokumente')}${size ? ' · ' + fmtBytes(size) : ''}${inbox.length ? ` · <span class="info-t"><b>${inbox.length} zu prüfen</b></span>` : ''}</p></div><div class="act"><button class="btn" data-act="akte.scan">${icon('camera')}<span class="hide-s">Foto</span></button><button class="btn primary" data-act="akte.pick">${icon('upload')}Hochladen</button></div></div>
-      <input type="file" id="akIn" multiple accept=".pdf,image/*,.txt,application/pdf" hidden><input type="file" id="akCam" accept="image/*" capture="environment" hidden>
-      <div class="grid">${dz ? `<div class="s12">${dz}</div>` : ''}
-      ${busy.length ? `<section class="card glass s12"><h3><i class="spin"></i> Wird gelesen<span class="sp"></span></h3><p class="muted" style="font-size:14px">${plural(busy.length, 'Dokument wird', 'Dokumente werden')} ausgelesen – das dauert bei Scans ein paar Sekunden pro Seite.</p></section>` : ''}
-      ${inbox.length ? `<section class="card glass s12 inbox"><h3>${icon('sparkle')} Frisch ausgelesen – kurz prüfen<span class="sp"></span><span class="badge info">${inbox.length}</span></h3><div class="list">${inbox.slice(0, 6).map(d => { const k = kindInfo(d); return `<div class="li" data-act="akte.view" data-id="${d.id}"><span class="lead">${k.e}</span><span class="mid"><span class="tt">${esc(d.name)}</span><span class="ss">${esc(k.name)}${d.summary ? ' · ' + esc(clip(d.summary, 60)) : ''}${d.ocr && d.ocr.err ? ' · ⚠ Text nicht gelesen' : ''}</span></span><span class="end ibtn"><button class="btn sm" data-act="akte.view" data-id="${d.id}">Prüfen</button><button class="btn sm primary" data-act="akte.ok" data-id="${d.id}">${icon('check')}Passt</button></span></div>`; }).join('')}</div>${inbox.length > 6 ? `<button class="btn ghost sm" data-act="akte.okall" style="margin-top:8px">Alle ${inbox.length} bestätigen</button>` : inbox.length > 1 ? `<button class="btn ghost sm" data-act="akte.okall" style="margin-top:8px">Alle bestätigen</button>` : ''}</section>` : ''}
+    return `<div class="grid">${dz ? `<div class="s12">${dz}</div>` : ''}
+      ${akteBusyHTML()}
+      ${akteInboxHTML()}
       ${(() => { const f = akteFristen(); return f ? `<div class="s12">${f}</div>` : ''; })()}
       ${ak.cat === 'gehalt' || (!ak.cat && !ak.q) ? (() => { const c = salaryCard(); return c ? `<div class="s12">${c}</div>` : ''; })() : ''}
       <section class="card glass s12"><div class="toolbar"><div class="searchbox">${icon('search')}<input class="inp" id="akSearch" placeholder="Durchsuche alle Dokumente – auch den Inhalt …" value="${esc(ak.q)}" autocomplete="off"></div></div>
       <div class="chips" style="margin:2px 0 14px"><button class="chip ${!ak.cat ? 'on' : ''}" data-act="akte.cat" data-c="">Alle <span class="faint">${S.docs.length}</span></button>${Object.entries(DOC_CATS).map(([k, v]) => cnt(k) || ak.cat === k ? `<button class="chip ${ak.cat === k ? 'on' : ''}" data-act="akte.cat" data-c="${k}">${v[1]} ${v[0]} <span class="faint">${cnt(k)}</span></button>` : '').join('')}</div><div id="akBox">${akteList()}</div></section>
-      <section class="card glass s12 akinfo"><div class="row-flex" style="gap:14px;align-items:flex-start"><span class="lead">🔒</span><div style="flex:1;min-width:0"><b>Deine Dokumente bleiben auf deinem Gerät</b><p class="muted" style="font-size:13.5px;margin:3px 0 0">Das Auslesen läuft lokal im Browser. Für die Texterkennung lädt Kairos beim ersten Mal die Erkennungs-Software aus dem Netz nach (einmalig, ca. 15 MB) – dein Dokument wird nicht hochgeladen. Mit aktivierter App-Sperre sind Dateien zusätzlich verschlüsselt.</p></div><button class="btn sm" data-act="akte.ocrtest">${icon('sync')}Erkennung testen</button></div></section></div></div>`;
-  },
-  mount(root) {
+      <section class="card glass s12 akinfo"><div class="row-flex" style="gap:14px;align-items:flex-start"><span class="lead">🔒</span><div style="flex:1;min-width:0"><b>Deine Dokumente bleiben auf deinem Gerät</b><p class="muted" style="font-size:13.5px;margin:3px 0 0">Das Auslesen läuft lokal im Browser. Für die Texterkennung lädt Kairos beim ersten Mal die Erkennungs-Software aus dem Netz nach (einmalig, ca. 15 MB) – dein Dokument wird nicht hochgeladen. Mit aktivierter App-Sperre sind Dateien zusätzlich verschlüsselt.</p></div><button class="btn sm" data-act="akte.ocrtest">${icon('sync')}Erkennung testen</button></div></section></div>`;
+}
+function akteMount(root) {
     const s = $('#akSearch', root); if (s) s.addEventListener('input', debounce(() => { ak.q = s.value; const b = $('#akBox'); if (b) b.innerHTML = akteList(); }, 140));
     for (const id of ['akIn', 'akCam']) { const i = $('#' + id, root); if (i) i.addEventListener('change', () => { const fs = [...i.files]; i.value = ''; importFiles(fs); }); }
     const dz = $('#akDz', root); if (dz) dz.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ACT['akte.pick'](); } });
-  }
+}
+VIEWS.tresor = {
+  render() { return `<div class="page">${akteHeaderHTML()}${akteInputs()}${akteBodyHTML()}</div>`; },
+  mount: akteMount
 };
 ACT['akte.cat'] = el => { ak.cat = el.dataset.c; rerender(); };
 ACT['akte.ok'] = el => { const d = S.docs.find(x => x.id === el.dataset.id); if (d) { d.status = 'ok'; save(); rerender(); renderNav(); toast('Übernommen', 'good'); } };
@@ -3632,7 +3703,7 @@ async function docView(d) {
     ${d.note ? `<p style="white-space:pre-line;font-size:14.5px;margin:14px 0 0">📝 ${esc(d.note)}</p>` : ''}
     <div id="docPrev" class="docprev" hidden></div>
     ${d.text ? `<details class="fulltext"><summary>Erkannter Text <span class="faint">· ${d.text.length.toLocaleString('de-DE')} Zeichen${d.ocr && d.ocr.method !== 'text' && d.ocr.conf ? ' · OCR ' + Math.round(d.ocr.conf) + ' %' : ''}</span></summary><pre>${esc(d.text)}</pre><button class="btn sm" data-act="akte.copy" data-v="${esc(d.text.slice(0, 14000))}">${icon('copy')}Text kopieren</button></details>` : ''}
-    <div class="acts" style="justify-content:flex-start;flex-wrap:wrap">${d.fileName ? `<button class="btn" data-sh="prev">${icon('file')}Original</button><button class="btn" data-sh="dl">${icon('download')}Laden</button>` : ''}${d.fileName ? `<button class="btn ghost" data-sh="reread" title="Datei erneut auslesen">${icon('sync')}Neu lesen</button>` : ''}<span class="sp"></span><button class="btn" data-sh="edit">${icon('edit')}Bearbeiten</button></div>`, { wide: true });
+    <div class="acts" style="justify-content:flex-start;flex-wrap:wrap"><button class="btn" data-act="brain.doc.explain" data-id="${d.id}">${icon('sparkle')}Mit KI erklären</button>${d.fileName ? `<button class="btn" data-sh="prev">${icon('file')}Original</button><button class="btn" data-sh="dl">${icon('download')}Laden</button>` : ''}${d.fileName ? `<button class="btn ghost" data-sh="reread" title="Datei erneut auslesen">${icon('sync')}Neu lesen</button>` : ''}<span class="sp"></span><button class="btn" data-sh="edit">${icon('edit')}Bearbeiten</button></div>`, { wide: true });
   sh.addEventListener('click', async e => {
     const b = e.target.closest('[data-sh]'); if (!b) return; const a = b.dataset.sh;
     if (a === 'edit') docForm(d);
@@ -3702,202 +3773,124 @@ ACT['akte.ocrtest'] = async () => {
 };
 
 /* =====================================================================
-   KAIROS · Verdienen: Ideen-Bibliothek, Vorlagen, Money-Moves, Lab-Bausteine
-   Alle Zahlen sind grobe Richtwerte für den Start (ca. 5–8 Std./Woche), keine Zusagen.
+   KAIROS · Geld: KI-gestützte digitale Ideen, Vorlagen, Money-Moves, Lab-Bausteine
+   Alle Zahlen sind grobe Richtwerte für den Start (ca. 4–8 Std./Woche), keine Zusagen.
    ===================================================================== */
-const EARN_CATS = { sofort: ['Sofort-Cash', '⚡'], service: ['Services & Freelance', '🧰'], wissen: ['Wissen & Coaching', '🎓'], digital: ['Digitale Produkte', '📦'], content: ['Content & Reichweite', '📣'], lokal: ['Lokal & Hands-on', '🛠️'], fund: ['Geldfunde', '💎'] };
-const SKILLS = { schreiben: ['Schreiben & Texten', '✍️'], design: ['Design & Kreatives', '🎨'], foto: ['Foto & Video', '📸'], technik: ['Technik & IT', '💻'], finanzen: ['Finanzen & Zahlen', '📊'], verkauf: ['Verkauf & Beratung', '🤝'], fuehrung: ['Organisation & Führung', '🧭'], wissen: ['Wissen weitergeben', '🎓'], sprache: ['Sprachen', '🌍'], musik: ['Musik & Audio', '🎤'], handwerk: ['Handwerk & Technik vor Ort', '🔧'], kontakte: ['Netzwerk & Kontakte', '🔗'], kinder_tiere: ['Kinder & Tiere', '🐕'], kochen: ['Kochen & Backen', '🍰'] };
+const EARN_CATS = { sofort: ['Schnellstart', '⚡'], service: ['KI-Services', '🤖'], digital: ['Digitale Produkte', '📦'], content: ['Content & Reichweite', '📣'] };
+const SKILLS = { schreiben: ['Schreiben & Texten', '✍️'], design: ['Design & Präsentation', '🎨'], foto: ['Video & Foto', '🎬'], technik: ['Technik & Automatisierung', '⚙️'], finanzen: ['Finanzen & Zahlen', '📊'], verkauf: ['Verkauf & Beratung', '🤝'], wissen: ['Fachwissen weitergeben', '🎓'], sprache: ['Sprachen', '🌍'], musik: ['Musik & Audio', '🎤'] };
 
 const IDEAS = [
-  /* ---------- Sofort-Cash ---------- */
-  { id: 'ausmisten', e: '📦', t: 'Ausmisten-Sprint', c: 'sofort', tags: [], mode: 'beides', start: 0, ttf: 2, mo: [50, 400], once: true, h: 3, lvl: 1,
-    pitch: 'Verkaufe, was du nicht mehr brauchst – Elektronik, Marken-Kleidung, Möbel, Bücher. Der schnellste Weg zum ersten selbst verdienten Euro.', plat: ['Kleinanzeigen', 'Vinted', 'eBay', 'Momox'],
-    steps: [['Rundgang durch die Wohnung: 15 Dinge finden, die mehr als 10 € bringen', 20], ['Bei eBay/Kleinanzeigen prüfen, wofür gleiche Artikel wirklich verkauft wurden (Filter „verkauft“)', 20], ['5 Teile bei Tageslicht fotografieren – Vorderseite, Details, Makel', 25], ['Inserate einstellen: ehrlicher Titel, Zustand, Abholung/Versand', 30, 'inserat'], ['Anfragen innerhalb von 30 Minuten beantworten, 10 % Verhandlungsspielraum lassen', 15], ['Erlöse in Kairos als Einnahme erfassen', 3]],
-    note: 'Privater Verkauf gebrauchter Gegenstände des täglichen Gebrauchs ist normalerweise steuerfrei. Wer regelmäßig zum Weiterverkauf einkauft, handelt gewerblich. Plattformen melden ab 30 Verkäufen oder 2.000 € Erlös pro Jahr an das Finanzamt (DAC7).' },
-  { id: 'flip', e: '🔄', t: 'Flohmarkt-Flipping', c: 'sofort', tags: ['verkauf'], mode: 'beides', start: 50, ttf: 7, mo: [100, 800], h: 5, lvl: 2,
-    pitch: 'Unterbewertete Gebrauchtware günstig kaufen, aufbereiten und mit Marge weiterverkaufen.', plat: ['Kleinanzeigen', 'eBay', 'Vinted', 'Flohmärkte'],
-    steps: [['Nische wählen, die du kennst (Sneaker, Werkzeug, Retro-Technik, Kinderfahrräder …)', 20], ['Bei 10 Artikeln die tatsächlichen Verkaufspreise ermitteln (eBay „verkauft“)', 30], ['Budget 50–100 € festlegen und 3 Schnäppchen mit mindestens 40 % Marge kaufen', 60], ['Reinigen, testen, gut fotografieren', 45], ['Inserieren und Anfragen schnell beantworten', 30, 'inserat'], ['Gewinn pro Artikel in Kairos erfassen – nur die Gewinner-Kategorien behalten', 5]],
-    note: 'Regelmäßiger An- und Verkauf mit Gewinnabsicht ist ein Gewerbe: Gewerbeanmeldung und Einkommensteuer. Kleinunternehmerregelung prüfen.' },
-  { id: 'testportale', e: '🧪', t: 'Bezahlte Tests & Umfragen', c: 'sofort', tags: [], mode: 'online', start: 0, ttf: 7, mo: [30, 250], h: 3, lvl: 1,
-    pitch: 'Websites, Apps und Produkte testen oder an Studien teilnehmen – bezahlt pro Test. Wenig Gewinn pro Stunde, dafür sofort startklar.', plat: ['Testbirds', 'Userlytics', 'Prolific'],
-    steps: [['Auf 3 seriösen Plattformen anmelden (Testbirds, Userlytics, Prolific)', 20], ['Profil vollständig und ehrlich ausfüllen – davon hängt die Zahl der Tests ab', 15], ['Mikrofon, Bildschirmaufnahme und Internet testen', 10], ['Die ersten 3 passenden Tests annehmen und durchführen', 45], ['Auszahlung (PayPal/Überweisung) prüfen und in Kairos erfassen', 5], ['Stundenlohn ausrechnen – nur die lohnenden Plattformen behalten', 10]],
-    note: 'Seriöse Plattformen verlangen nie Geld vorab. Einnahmen sind steuerpflichtig (sonstige Einkünfte; unter 256 € pro Jahr gilt eine Freigrenze).' },
-  { id: 'praemien', e: '🎁', t: 'Empfehlungs- & Willkommensprämien', c: 'sofort', tags: ['kontakte'], mode: 'online', start: 0, ttf: 3, mo: [20, 200], h: 1, lvl: 1,
-    pitch: 'Seriöse „Freunde werben“-Prämien und Neukunden-Boni bei Diensten einsammeln, die du ohnehin nutzt oder brauchst.', plat: ['Banken & Broker', 'Mobilfunk', 'Streaming', 'Apps'],
-    steps: [['Liste der Dienste, bei denen es „Freunde werben“ gibt und die du wirklich nutzt', 15], ['Bedingungen prüfen (Mindestumsatz, Fristen, Kleingedrucktes)', 15], ['3 Menschen persönlich fragen, denen der Dienst wirklich nützt – kein Spam', 15, 'empfehl'], ['Link teilen, Prämie verfolgen', 10], ['Eingegangene Prämien in Kairos erfassen', 3]],
-    note: 'Nur empfehlen, was du selbst nutzt, und die Prämie offenlegen. Prämien sind meist steuerpflichtig; kleine Beträge bleiben oft unter der 256-€-Freigrenze für sonstige Einkünfte.' },
+  /* ---------- Schnellstart ---------- */
+  { id: 'bewerbung', e: '📄', t: 'Bewerbungs- & Lebenslauf-Service', c: 'sofort', tags: ['schreiben', 'wissen'], mode: 'online', start: 0, ttf: 5, mo: [200, 1500], h: 4, lvl: 1,
+    pitch: 'Lebensläufe, Anschreiben und LinkedIn-Profile überarbeiten – Express in 48 Stunden ab 49 €. Der schnellste Weg zum ersten Auftrag.',
+    ai: 'KI macht aus den Angaben des Kunden in Minuten einen ersten Entwurf; du sorgst für Tonalität, Fakten-Check und Feinschliff.', plat: ['LinkedIn', 'Facebook-Gruppen für Jobsuchende', 'Uni-Career-Services'],
+    steps: [['Ein anonymisiertes Vorher/Nachher-Beispiel mit KI bauen', 40], ['Pakete festlegen: CV-Check 49 €, Komplettpaket 149 €', 15, 'gig'], ['In 5 Gruppen und Netzwerken anbieten', 25, 'akquise'], ['Erstes 20-Minuten-Gespräch führen und Angaben sammeln', 20], ['Entwurf mit KI erstellen, prüfen, liefern', 45], ['Weiterempfehlung erfragen', 10, 'empfehl']],
+    note: 'Personenbezogene Unterlagen vertraulich behandeln, nur datensparsam in KI-Tools geben (Namen/Adressen vorher entfernen) und nach Abschluss löschen.' },
+  { id: 'lektorat', e: '🔤', t: 'KI-Korrektorat & Übersetzung', c: 'sofort', tags: ['sprache', 'schreiben'], mode: 'online', start: 0, ttf: 7, mo: [200, 1500], h: 5, lvl: 1,
+    pitch: 'Texte von Studierenden, Firmen und Autor:innen prüfen oder übersetzen – abgerechnet pro Normseite, geliefert in 48 Stunden.',
+    ai: 'KI übersetzt und korrigiert den Rohtext in Sekunden; dein Wert ist der Qualitäts-Check, Fachbegriffe und Stil.', plat: ['Fiverr', 'Malt', 'Uni-Gruppen', 'Autoren-Foren'],
+    steps: [['Probetext (500 Wörter) mit KI korrigieren und als Vorher/Nachher aufbereiten', 30], ['Angebot „Korrektorat 48 Std., Festpreis pro Normseite“ formulieren', 15, 'gig'], ['10 Anlaufstellen ansprechen (Hochschulgruppen, Autorengruppen, kleine Firmen)', 30, 'akquise'], ['Ersten Auftrag liefern, Express-Aufschlag von 20 % anbieten', 45], ['Bewertung und Folgeauftrag erfragen', 10, 'empfehl']],
+    note: 'Bei Abschlussarbeiten nur Rechtschreibung und Stil korrigieren – nicht inhaltlich mitschreiben (Prüfungsordnung). Kundentexte nicht ungeschützt in KI-Tools geben, wenn sie vertraulich sind.' },
+  { id: 'meeting', e: '📝', t: 'Meeting-Protokolle & Zusammenfassungen', c: 'sofort', tags: ['schreiben', 'technik'], mode: 'online', start: 0, ttf: 10, mo: [150, 1200], h: 3, lvl: 1,
+    pitch: 'Aufzeichnungen, Webinare und Telefonate in saubere Protokolle, Aufgabenlisten und Kurz-Zusammenfassungen verwandeln.',
+    ai: 'Transkription und Zusammenfassung übernimmt KI; du lieferst das fertige, geprüfte Protokoll zum Festpreis pro Termin.', plat: ['LinkedIn', 'Coaches & Berater', 'Vereine'],
+    steps: [['Ein Beispiel-Protokoll aus einem öffentlichen Webinar mit KI erstellen', 40], ['Paket „Protokoll pro Termin 39 €, 5er-Paket 150 €“ festlegen', 15, 'gig'], ['10 Coaches, Berater und Teams ansprechen', 30, 'akquise'], ['Probe-Protokoll liefern', 30], ['Monatspaket anbieten', 15, 'angebot']],
+    note: 'Aufzeichnungen von Gesprächen nur mit Einwilligung aller Beteiligten (DSGVO). Auftragsverarbeitungsvertrag anbieten.' },
 
-  /* ---------- Services & Freelance ---------- */
-  { id: 'texter', e: '✍️', t: 'Freelance-Texter', c: 'service', tags: ['schreiben'], mode: 'online', start: 0, ttf: 10, mo: [200, 1500], h: 6, lvl: 1,
-    pitch: 'Website-, Produkt- und Newslettertexte für kleine Firmen schreiben – Festpreis pro Seite oder Paket.', plat: ['Malt', 'Freelancermap', 'LinkedIn', 'Fiverr'],
-    steps: [['3 Textproben (je 150 Wörter) für eine Branche schreiben', 45], ['Profil auf LinkedIn/Malt mit einem Ein-Satz-Angebot anlegen', 20, 'gig'], ['10 Firmen mit schwacher Website anschreiben – mit konkretem Verbesserungsvorschlag', 25, 'akquise'], ['Festpreis-Paket definieren: „Startseite + 2 Unterseiten“', 15], ['Erstes Angebot senden', 15, 'angebot'], ['Auftrag abschließen, Rechnung stellen, Testimonial erfragen', 30, 'empfehl']],
-    note: 'Texten gilt meist als freiberufliche Tätigkeit: Fragebogen zur steuerlichen Erfassung beim Finanzamt (ELSTER).' },
-  { id: 'social', e: '📱', t: 'Social-Media-Betreuung für lokale Betriebe', c: 'service', tags: ['design', 'schreiben', 'foto'], mode: 'beides', start: 0, ttf: 14, mo: [300, 1800], h: 6, lvl: 2,
-    pitch: 'Instagram- und Google-Profile von Cafés, Studios und Handwerkern pflegen: 8 Beiträge pro Monat zum Festpreis.', plat: ['Instagram', 'Google Business', 'LinkedIn', 'Canva'],
-    steps: [['3 lokale Betriebe mit „schlafenden“ Profilen finden und notieren', 25], ['Für einen Betrieb 3 Beispiel-Beiträge in Canva bauen', 60], ['Kurz-Ansprache per DM/E-Mail inklusive Beispiel senden', 20, 'akquise'], ['Paket definieren: 8 Beiträge + 2 Stories pro Monat für 249 €', 15], ['Probe-Monat anbieten und Ergebnisse dokumentieren (Reichweite, Anfragen)', 30], ['Testimonial und Folgeauftrag erfragen', 15, 'empfehl']],
-    note: 'Bild- und Persönlichkeitsrechte sowie Datenschutz klären. Als Kleinunternehmer (§ 19 UStG) kannst du ohne Umsatzsteuer starten.' },
-  { id: 'va', e: '🗂️', t: 'Virtuelle Assistenz', c: 'service', tags: ['fuehrung', 'schreiben'], mode: 'online', start: 0, ttf: 10, mo: [300, 1500], h: 8, lvl: 1,
-    pitch: 'E-Mails, Termine, Recherche und Rechnungen für Selbstständige und kleine Teams übernehmen – als Stundenpaket.', plat: ['Malt', 'Freelancermap', 'LinkedIn'],
-    steps: [['5 Aufgaben notieren, die du sofort gut kannst (Postfach, Termine, Recherche, Rechnungen)', 15], ['Paket „5 Stunden pro Monat für 150 €“ definieren', 15], ['10 Solo-Selbstständige (Coaches, Berater, Handwerker) ansprechen', 30, 'akquise'], ['Kennenlern-Call (15 Min) anbieten', 20], ['Erste Probe-Aufgabe liefern und Feedback holen', 60], ['Monatliches Stundenpaket anbieten', 15, 'angebot']],
-    note: 'Datenschutz: Bei Zugriff auf Kundendaten einen Auftragsverarbeitungsvertrag (AVV) anbieten.' },
-  { id: 'excel', e: '📊', t: 'Excel- & Sheets-Lösungen für Kleinbetriebe', c: 'service', tags: ['technik', 'finanzen'], mode: 'online', start: 0, ttf: 14, mo: [300, 2000], h: 5, lvl: 2,
-    pitch: 'Angebots-, Stunden- und Auswertungstabellen bauen – als Auftragsarbeit oder später als fertige Vorlage.', plat: ['Malt', 'Fiverr', 'LinkedIn', 'Etsy'],
-    steps: [['3 typische Probleme sammeln (Angebote schreiben, Stunden erfassen, Kassenbuch)', 20], ['Eine Vorlage „Angebot + Rechnung“ bauen', 90], ['2-Minuten-Video/Screenshots erstellen', 20], ['In 5 Gruppen und Foren zeigen (Facebook, XING, Reddit)', 20, 'akquise'], ['Maßanfertigung ab 149 € anbieten', 15, 'gig'], ['Nach dem ersten Auftrag die Vorlage als Produkt verkaufen', 30]],
-    note: 'Bei Finanzthemen keine Steuer- oder Anlageberatung anbieten – nur Werkzeuge bauen.' },
-  { id: 'web', e: '🌐', t: 'One-Page-Websites für Selbstständige', c: 'service', tags: ['technik', 'design'], mode: 'beides', start: 20, ttf: 21, mo: [300, 2500], h: 6, lvl: 2,
-    pitch: 'Schlanke Website plus Google-Profil für Handwerker, Praxen und Coaches zum Festpreis – mit monatlichem Pflege-Abo.', plat: ['WordPress', 'Jimdo', 'Webflow', 'Malt'],
-    steps: [['Branche wählen und 5 veraltete Websites als Beispiele sammeln', 25], ['Eigene Musterseite in 3 Stunden aus einer Vorlage bauen', 120], ['Festpreis 490 € plus Pflege-Abo 15 € im Monat festlegen', 15], ['10 Betriebe mit konkretem Verbesserungsvorschlag anschreiben', 40, 'akquise'], ['Angebot senden', 20, 'angebot'], ['Auftrag annehmen, 30 % Anzahlung, Rechnung stellen', 30]],
-    note: 'Impressum, Datenschutzerklärung und Cookie-Hinweis sind Pflicht. Webdesign wird meist als Gewerbe eingestuft.' },
-  { id: 'lektorat', e: '🔤', t: 'Korrektorat & Übersetzung', c: 'service', tags: ['sprache', 'schreiben'], mode: 'online', start: 0, ttf: 10, mo: [200, 1500], h: 5, lvl: 1,
-    pitch: 'Texte von Studierenden, Firmen und Autor:innen prüfen oder übersetzen – abgerechnet pro Normseite.', plat: ['Fiverr', 'Malt', 'Uni-Gruppen', 'Autoren-Foren'],
-    steps: [['Einen Probetext (500 Wörter) korrigieren – als Vorher/Nachher aufbereiten', 40], ['Angebot „Korrektorat 48 Std., Festpreis pro Normseite“ formulieren', 15, 'gig'], ['10 Anlaufstellen ansprechen (Hochschulgruppen, Autorengruppen, kleine Firmen)', 30, 'akquise'], ['Ersten Auftrag liefern, Express-Aufschlag von 20 % anbieten', 60], ['Bewertung und Folgeauftrag erfragen', 10, 'empfehl']],
-    note: 'Bei Abschlussarbeiten nur Rechtschreibung und Stil korrigieren – nicht inhaltlich mitschreiben (Prüfungsordnung).' },
-  { id: 'foto', e: '📸', t: 'Business-Porträts & Produktfotos', c: 'service', tags: ['foto'], mode: 'beides', start: 0, ttf: 14, mo: [300, 2500], h: 6, lvl: 2,
-    pitch: 'Portraits für LinkedIn und Teamseiten sowie Produktfotos für kleine Shops – Pakete ab 99 €.', plat: ['Instagram', 'Google Business', 'Etsy-Shops', 'Kleinanzeigen'],
-    steps: [['Portfolio mit 12 Bildern aufbauen (Freunde als Modelle)', 120], ['Paket „Business-Portrait, 3 Bilder, 99 €“ definieren', 15], ['10 Teams, Praxen und Shops ansprechen', 30, 'akquise'], ['Mini-Aktion „5 Shootings zum Startpreis“ anbieten', 20], ['Shooting durchführen, Auswahlgalerie liefern', 90], ['Testimonial und Empfehlung erfragen', 10, 'empfehl']],
-    note: 'Einverständniserklärung (Model Release) einholen. Datenschutz bei Personenfotos beachten.' },
-  { id: 'video', e: '🎬', t: 'Videoschnitt für Creator & Firmen', c: 'service', tags: ['foto', 'design'], mode: 'online', start: 0, ttf: 14, mo: [300, 2500], h: 6, lvl: 2,
-    pitch: 'Shorts, Reels und Erklärvideos schneiden – als Monatspaket für Creator und kleine Firmen.', plat: ['Fiverr', 'Upwork', 'Malt', 'Instagram'],
-    steps: [['3 Beispiel-Schnitte (30–45 Sekunden) aus freiem Material erstellen', 120], ['Paket „8 Shorts pro Monat für 399 €“ definieren', 15], ['15 Creator mit 1.000–20.000 Followern mit konkretem Verbesserungsvorschlag ansprechen', 40, 'akquise'], ['Ein Gratis-Testvideo liefern', 40], ['Monatspaket anbieten', 15, 'angebot']],
+  /* ---------- KI-Services ---------- */
+  { id: 'texter', e: '✍️', t: 'KI-gestützter Texter-Service', c: 'service', tags: ['schreiben'], mode: 'online', start: 0, ttf: 10, mo: [300, 2500], h: 6, lvl: 1,
+    pitch: 'Website-, Newsletter- und Produkttexte für kleine Firmen – zum Festpreis pro Seite, in einem Bruchteil der früheren Zeit.',
+    ai: 'KI schreibt den ersten Entwurf aus einem strukturierten Briefing; du schärfst Tonalität, Nutzen und Fakten.', plat: ['Malt', 'Freelancermap', 'LinkedIn', 'Fiverr'],
+    steps: [['3 Textproben für eine Branche mit KI entwerfen und selbst veredeln', 45], ['Profil mit Ein-Satz-Angebot anlegen', 20, 'gig'], ['10 Firmen mit schwacher Website anschreiben – mit konkretem Verbesserungsvorschlag', 25, 'akquise'], ['Festpreis-Paket definieren: „Startseite + 2 Unterseiten“', 15], ['Erstes Angebot senden', 15, 'angebot'], ['Auftrag abschließen, Rechnung stellen, Testimonial erfragen', 30, 'empfehl']],
+    note: 'Texten gilt meist als freiberufliche Tätigkeit: Fragebogen zur steuerlichen Erfassung beim Finanzamt (ELSTER). KI-Nutzung ehrlich handhaben und Kundenwünsche zur Offenlegung beachten.' },
+  { id: 'shoptexte', e: '🛍️', t: 'Produktbeschreibungen im Paket', c: 'service', tags: ['schreiben'], mode: 'online', start: 0, ttf: 10, mo: [200, 2000], h: 5, lvl: 1,
+    pitch: '50 gute Produkttexte für kleine Online-Shops zum Paketpreis – wiederholbar, skalierbar, schnell lieferbar.',
+    ai: 'Mit einem guten Prompt-Template erzeugt KI aus einer Produktliste (CSV) in Minuten konsistente Texte; du prüfst und korrigierst.', plat: ['Shopify-Gruppen', 'Etsy-Shops', 'LinkedIn', 'Malt'],
+    steps: [['Prompt-Template für Produkttexte bauen und an 5 Produkten testen', 40], ['Paket „50 Beschreibungen für 249 €“ definieren', 15, 'gig'], ['20 kleine Shops mit dünnen Beschreibungen finden', 30], ['Mit Mini-Probe (3 Texte gratis) ansprechen', 25, 'akquise'], ['Angebot senden', 15, 'angebot'], ['Lieferung, Rechnung, Folgeauftrag', 30, 'empfehl']],
+    note: 'Keine unbelegten Produktversprechen (Wettbewerbsrecht), Gesundheits- und Heilaussagen vermeiden.' },
+  { id: 'social', e: '📱', t: 'Content-Paket: 30 Tage Social Media', c: 'service', tags: ['schreiben', 'design'], mode: 'online', start: 0, ttf: 14, mo: [300, 2000], h: 6, lvl: 2,
+    pitch: 'Beitragsideen, Texte und Bildvorlagen für ein ganzes Monatsprogramm – fertig zum Planen und Posten.',
+    ai: 'KI erstellt Themenplan, Texte und Skripte; Canva-Vorlagen machen daraus Beiträge. Du lieferst Struktur und Qualität.', plat: ['Instagram', 'LinkedIn', 'Canva'],
+    steps: [['Beispiel-Monatsplan (12 Beiträge) für eine Branche mit KI bauen', 60], ['Paket „30-Tage-Content, 12 Beiträge, 249 €“ festlegen', 15], ['10 Selbstständige und kleine Betriebe ansprechen', 30, 'akquise'], ['Probe-Woche anbieten', 30], ['Monatsabo anbieten', 15, 'angebot'], ['Testimonial erfragen', 10, 'empfehl']],
+    note: 'Bild- und Persönlichkeitsrechte beachten; Werbung kennzeichnen. Als Kleinunternehmer (§ 19 UStG) kannst du ohne Umsatzsteuer starten.' },
+  { id: 'linkedin', e: '💼', t: 'LinkedIn-Ghostwriting für Selbstständige', c: 'service', tags: ['schreiben', 'verkauf'], mode: 'online', start: 0, ttf: 14, mo: [300, 2500], h: 4, lvl: 2,
+    pitch: 'Wöchentliche Beiträge im Ton deiner Kunden: Experten, die keine Zeit zum Schreiben haben, zahlen dafür monatlich.',
+    ai: 'Aus einem 20-Minuten-Interview und Stilproben erzeugt KI Entwürfe im Ton des Kunden; du formst sie zu Beiträgen mit Haltung.', plat: ['LinkedIn', 'XING'],
+    steps: [['3 Beispiel-Beiträge für eine Zielgruppe mit KI entwerfen und verfeinern', 45], ['Angebot „4 Beiträge pro Monat für 249 €“ formulieren', 15, 'gig'], ['10 Berater, Coaches und Gründer persönlich ansprechen', 35, 'akquise'], ['Kennenlern-Interview (20 Min) führen', 20], ['Ersten Monat liefern', 60], ['Folgeauftrag und Empfehlung erfragen', 10, 'empfehl']],
+    note: 'Die Texte gehören im Namen des Kunden veröffentlicht – kläre Nutzungsrechte und Freigabeprozess im Angebot.' },
+  { id: 'shorts', e: '🎬', t: 'Kurzvideo-Skripte & Schnitt (Shorts/Reels)', c: 'service', tags: ['foto', 'schreiben'], mode: 'online', start: 0, ttf: 14, mo: [300, 2500], h: 6, lvl: 2,
+    pitch: 'Aus langen Videos und Podcasts schneidest du Kurzvideos mit Untertiteln und starken Hooks – Monatspaket für Creator und Firmen.',
+    ai: 'KI findet die besten Momente, erstellt Untertitel und Hook-Varianten; du entscheidest und schneidest.', plat: ['Instagram', 'TikTok', 'LinkedIn', 'Fiverr'],
+    steps: [['3 Beispiel-Shorts aus freiem Material mit KI-Tools erstellen', 90], ['Paket „8 Shorts pro Monat für 399 €“ festlegen', 15, 'gig'], ['15 Creator mit 1.000–20.000 Followern ansprechen', 40, 'akquise'], ['Ein Gratis-Testvideo liefern', 40], ['Monatspaket anbieten', 15, 'angebot']],
     note: 'Musik- und Bildrechte der Kunden klären; nur lizenzfreies Material einsetzen.' },
-  { id: 'design', e: '🎨', t: 'Logo & Branding-Mini-Pakete', c: 'service', tags: ['design'], mode: 'online', start: 0, ttf: 14, mo: [200, 1800], h: 5, lvl: 2,
-    pitch: 'Logo, Farben, Schriften und Social-Vorlagen für Gründer:innen im Festpreis-Paket.', plat: ['Fiverr', 'Malt', 'Instagram', 'Gründer-Gruppen'],
-    steps: [['3 Fantasie-Marken gestalten – das wird dein Portfolio', 120], ['Paket „Starter“ (Logo, Farben, Schriften) für 149 € festlegen', 15], ['10 Gründer:innen in Gründer-Gruppen ansprechen', 30, 'akquise'], ['Briefing-Fragebogen mit 10 Fragen erstellen', 25], ['Lieferung inklusive 2 Korrekturschleifen', 90], ['Bewertung erfragen', 10, 'empfehl']],
-    note: 'Nutzungsrechte im Angebot festhalten; keine geschützten Marken oder Schriften ohne Lizenz verwenden.' },
-  { id: 'ki', e: '🤖', t: 'KI-Setup für Kleinbetriebe', c: 'service', tags: ['technik', 'wissen'], mode: 'beides', start: 0, ttf: 14, mo: [300, 3000], h: 5, lvl: 2,
-    pitch: 'Angebote, E-Mails und Texte mit KI-Werkzeugen beschleunigen: Workshop und Einrichtung für Praxen, Handwerker und Händler.', plat: ['LinkedIn', 'IHK / HWK-Netzwerke', 'lokale Gruppen'],
-    steps: [['3 Alltags-Abläufe vorbereiten (Angebot schreiben, Bewertungen beantworten, Social-Posts)', 90], ['60-Minuten-Demo für einen befreundeten Betrieb halten', 30], ['10 Betriebe mit einem konkreten Beispiel ansprechen', 40, 'akquise'], ['Paket „Setup 299 € + Schulung 150 €“ anbieten', 15, 'angebot'], ['Datenschutz-Checkliste (DSGVO) beilegen', 40], ['Testimonial erfragen', 10, 'empfehl']],
-    note: 'Kein Versprechen auf feste Ergebnisse; DSGVO und Vertraulichkeit von Kundendaten ernst nehmen.' },
-  { id: 'lied', e: '🎤', t: 'Personalisierte Lieder & Reime', c: 'service', tags: ['musik', 'schreiben'], mode: 'online', start: 0, ttf: 14, mo: [150, 1500], h: 5, lvl: 2,
-    pitch: 'Maßgeschneiderte Songs, Reime und Reden für Hochzeiten, Jubiläen und Geschenke – als Fest-Paket.', plat: ['Instagram', 'Etsy', 'Hochzeitsplaner-Netzwerke', 'Kleinanzeigen'],
-    steps: [['2 Hörproben (je 1 Minute) zu typischen Anlässen erstellen', 120], ['Pakete festlegen: Reim-Text 49 €, Song-Demo 149 €, Vollversion ab 299 €', 20], ['Fragebogen für Auftraggeber bauen (Namen, Anekdoten, Stil)', 25], ['5 Hochzeitsplaner, DJs und Fotografen für Kooperationen anschreiben', 35, 'akquise'], ['Lieferzeit 7 Tage mit einer Korrektur zusagen', 20], ['Testimonial erfragen', 10, 'empfehl']],
-    note: 'Nur eigene Melodien und Texte vermarkten (keine Cover). Nutzungsrechte im Angebot festhalten; bei GEMA-Mitgliedschaft die Rechteeinräumung vorher klären.' },
-  { id: 'belege', e: '🧮', t: 'Beleg- & Rechnungsservice für Solo-Selbstständige', c: 'service', tags: ['finanzen', 'fuehrung'], mode: 'online', start: 0, ttf: 14, mo: [200, 1200], h: 4, lvl: 2,
-    pitch: 'Belege sortieren, Rechnungen schreiben und Zahlungen nachverfolgen – organisatorische Hilfe, keine Steuerberatung.', plat: ['LinkedIn', 'Gründer-Gruppen', 'Empfehlungen'],
-    steps: [['Leistungsumfang klar abgrenzen: Belegsortierung, Rechnungsstellung, Mahnwesen', 20], ['Monatspaket „bis 40 Belege“ für 99 € festlegen', 15], ['8 Handwerker, Coaches und Kreative ansprechen', 30, 'akquise'], ['Probemonat anbieten', 15], ['Ablauf dokumentieren (Checkliste)', 40], ['Testimonial erfragen', 10, 'empfehl']],
-    note: 'Steuerliche Beratung und Buchführung sind nach dem Steuerberatungsgesetz reguliert – biete nur Hilfstätigkeiten an und verweise für Steuerfragen an Steuerberater.' },
-  { id: 'leads', e: '📞', t: 'Terminvereinbarung & Lead-Recherche (B2B)', c: 'service', tags: ['verkauf', 'kontakte'], mode: 'online', start: 0, ttf: 14, mo: [200, 2500], h: 6, lvl: 2,
-    pitch: 'Qualifizierte Termine für kleine Firmen machen – erfolgsbasiert pro Termin (30–100 €).', plat: ['LinkedIn', 'XING', 'Empfehlungen'],
-    steps: [['Eine Branche und ein konkretes Angebot wählen, für das du Termine machst', 20], ['Liste mit 30 passenden Firmen aus öffentlichen Quellen anlegen', 45], ['Kurzes Skript und E-Mail-Vorlage schreiben', 30, 'akquise'], ['Mit einem befreundeten Unternehmen 10 Kontakte als Pilot testen', 60], ['Erfolgsprämie pro Termin vereinbaren', 15, 'angebot']],
-    note: 'Wettbewerbsrecht (UWG): Telefon- und E-Mail-Werbung gegenüber Unternehmen nur bei (mutmaßlicher) Einwilligung bzw. nach den gesetzlichen Vorgaben.' },
-  { id: 'prozess', e: '🔍', t: 'Prozess-Check für Filialen, Praxen & Läden', c: 'service', tags: ['fuehrung', 'verkauf'], mode: 'lokal', start: 0, ttf: 30, mo: [300, 2500], h: 4, lvl: 3,
-    pitch: 'Abläufe kleiner Betriebe analysieren (Kundenfluss, Wartezeiten, Beschwerden) und eine 2-Seiten-Maßnahmenliste liefern.', plat: ['Empfehlungen', 'IHK/HWK-Netzwerke', 'LinkedIn'],
-    steps: [['Eine Branche wählen und 10 typische Engpässe aufschreiben', 30], ['Checkliste (20 Fragen) für Vor-Ort-Analyse erstellen', 60], ['Einen befreundeten Betrieb kostenlos als Pilot analysieren', 120], ['Ergebnis als 2-Seiten-Bericht aufbereiten', 60], ['Festpreis 390 € für weitere Betriebe anbieten', 15, 'angebot'], ['Testimonial erfragen', 10, 'empfehl']],
-    note: 'Je nach Tätigkeit Freiberuf oder Gewerbe – der Fragebogen des Finanzamts klärt das. Bei Angestellten: Nebentätigkeit vorher klären.' },
-
-  /* ---------- Wissen & Coaching ---------- */
-  { id: 'nachhilfe', e: '🧑‍🏫', t: 'Nachhilfe & Prüfungscoaching', c: 'wissen', tags: ['wissen'], mode: 'beides', start: 0, ttf: 7, mo: [200, 1200], h: 4, lvl: 1,
-    pitch: 'Schüler:innen und Studierende in Mathe, BWL, Deutsch oder Englisch fit machen – typischerweise 20–40 € pro Stunde.', plat: ['Superprof', 'Kleinanzeigen', 'Schul- & Uni-Aushänge'],
-    steps: [['Fach und Zielgruppe wählen, 3 konkrete Probleme benennen, die du löst', 15], ['Profil/Inserat schreiben', 25, 'gig'], ['Auf Superprof, Kleinanzeigen und in 2 lokalen Gruppen veröffentlichen', 25], ['Kostenlose Probestunde (30 Minuten) anbieten', 10, 'akquise'], ['5er-Karte als Paket anbieten', 10, 'angebot'], ['Bewertung erfragen', 5, 'empfehl']],
-    note: 'Nachhilfe ist oft freiberufliche Lehrtätigkeit – Finanzamt-Fragebogen ausfüllen. Bei Minderjährigen Eltern einbinden.' },
-  { id: 'bewerbung', e: '📄', t: 'Bewerbungs- & Lebenslauf-Service', c: 'wissen', tags: ['schreiben', 'wissen'], mode: 'online', start: 0, ttf: 7, mo: [200, 1500], h: 4, lvl: 1,
-    pitch: 'Lebensläufe, Anschreiben und LinkedIn-Profile überarbeiten – Express in 48 Stunden ab 49 €.', plat: ['LinkedIn', 'Facebook-Gruppen für Jobsuchende', 'Uni-Career-Services'],
-    steps: [['Ein anonymisiertes Vorher/Nachher-Beispiel bauen', 60], ['Pakete festlegen: CV-Check 49 €, Komplettpaket 149 €', 15], ['In 5 Gruppen und Netzwerken anbieten', 25, 'akquise'], ['Erstes 20-Minuten-Feedbackgespräch führen', 20], ['Auftrag liefern', 60], ['Weiterempfehlung erfragen', 10, 'empfehl']],
-    note: 'Personenbezogene Unterlagen vertraulich behandeln und nach Abschluss löschen.' },
-  { id: 'finbildung', e: '💡', t: 'Finanz-Basics-Workshops (Bildung, keine Beratung)', c: 'wissen', tags: ['finanzen', 'wissen'], mode: 'beides', start: 0, ttf: 21, mo: [150, 2000], h: 5, lvl: 2,
-    pitch: 'Budget, Sparen und Absicherung als Grundlagen für Azubis, Studierende, Vereine und Betriebe vermitteln – als Workshop.', plat: ['VHS', 'Berufsschulen', 'Vereine', 'Betriebe (Azubi-Programme)'],
-    steps: [['Thema und Zielgruppe wählen, z. B. „Erstes Gehalt – Budget und Absicherung“', 20], ['90-Minuten-Workshop bauen (Folien, Übungen, Excel-Vorlage)', 150], ['5 Ansprechpartner kontaktieren (Berufsschulen, VHS, Ausbildungsleiter)', 30, 'akquise'], ['Pilot gratis oder zum Selbstkostenpreis halten, Feedback einholen', 90], ['Preis 250–600 € pro Workshop anbieten', 15, 'angebot'], ['Testimonial erfragen', 10, 'empfehl']],
-    note: 'Wichtig: Wissensvermittlung ist erlaubt – konkrete Anlage-, Versicherungs- oder Kreditempfehlungen und Vermittlung sind erlaubnispflichtig und tabu. Bei Beschäftigung in der Finanzbranche: Nebentätigkeit und Interessenkonflikte mit dem Arbeitgeber vorher klären.' },
-  { id: 'training', e: '🎯', t: 'Verkaufs- & Beratungstraining für Teams', c: 'wissen', tags: ['verkauf', 'fuehrung', 'wissen'], mode: 'beides', start: 0, ttf: 30, mo: [300, 3000], h: 4, lvl: 3,
-    pitch: 'Gesprächsführung, Kundenberatung und Feedback-Kultur an Teams kleiner Betriebe, Praxen und Filialen vermitteln.', plat: ['LinkedIn', 'IHK / HWK-Netzwerke', 'Empfehlungen'],
-    steps: [['Ein Thema und ein klares Ergebnisversprechen formulieren', 20], ['Konzept für einen 3-Stunden-Workshop schreiben', 150], ['5 Geschäftsführer persönlich ansprechen', 40, 'akquise'], ['Einen 60-Minuten-Probe-Workshop halten', 90], ['Halbtages-Angebot für 600–1.200 € senden', 20, 'angebot'], ['Referenz erfragen', 10, 'empfehl']],
-    note: 'Je nach Tätigkeit Freiberuf oder Gewerbe. Als Angestellter: Nebentätigkeit mit dem Arbeitgeber abstimmen, besonders bei Branchennähe.' },
-  { id: 'coaching', e: '🧭', t: 'Karriere- & Führungs-Coaching 1:1', c: 'wissen', tags: ['fuehrung', 'wissen', 'kontakte'], mode: 'online', start: 0, ttf: 21, mo: [200, 2400], h: 4, lvl: 2,
-    pitch: 'Neue Führungskräfte und Jobwechsler 1:1 begleiten – Sessions à 60–120 € oder als 3er-Programm.', plat: ['LinkedIn', 'XING', 'Meetups'],
-    steps: [['Zielgruppe festlegen, z. B. „Teamleiter in den ersten 100 Tagen“', 15], ['Mini-Programm mit 3 Sessions und klarem Ergebnis entwerfen', 40], ['10 Menschen ansprechen und ein kostenloses 20-Minuten-Erstgespräch anbieten', 40, 'akquise'], ['Erste zahlende Session durchführen', 60], ['Programm-Preis nennen', 15, 'angebot'], ['Feedback und Empfehlung erfragen', 10, 'empfehl']],
-    note: 'Die Bezeichnung „Coach“ ist nicht geschützt – aber keine therapeutischen oder rechtlichen Versprechen machen.' },
+  { id: 'podcast', e: '🎙️', t: 'Podcast-Repurposing & Shownotes', c: 'service', tags: ['schreiben', 'musik'], mode: 'online', start: 0, ttf: 14, mo: [200, 1800], h: 4, lvl: 1,
+    pitch: 'Aus jeder Folge werden Shownotes, Blogartikel, Newsletter und Social-Posts – ein Paket pro Folge.',
+    ai: 'KI transkribiert und zerlegt die Folge in alle Formate; du sicherst Qualität und Markenton.', plat: ['Podigee', 'LinkedIn', 'Podcast-Communities'],
+    steps: [['Eine öffentliche Folge in 5 Formate verwandeln – als Beispiel', 60], ['Paket „Folge → 5 Inhalte für 129 €“ festlegen', 15, 'gig'], ['15 Podcaster ansprechen', 30, 'akquise'], ['Gratis-Probe für eine Folge liefern', 40], ['Abo anbieten', 15, 'angebot']],
+    note: 'Rechte am Audiomaterial beim Auftraggeber lassen; Gast-Zitate nur mit Freigabe.' },
+  { id: 'chatbot', e: '💬', t: 'FAQ-Chatbot für kleine Firmen', c: 'service', tags: ['technik'], mode: 'online', start: 0, ttf: 21, mo: [300, 3000], h: 5, lvl: 2,
+    pitch: 'Ein Assistent auf der Website, der häufige Kundenfragen beantwortet – Setup einmalig, Betreuung monatlich.',
+    ai: 'No-Code-Chatbot-Tools plus KI-Wissensbasis aus den Unterlagen des Kunden; du richtest ein, testest und pflegst.', plat: ['LinkedIn', 'lokale Netzwerke', 'IHK/HWK'],
+    steps: [['Einen Demo-Bot für eine fiktive Praxis oder einen Laden bauen', 120], ['Paket „Setup 299 € + 49 € / Monat“ definieren', 15, 'gig'], ['10 Betriebe mit vielen Standardfragen ansprechen', 35, 'akquise'], ['Live-Demo (15 Min) durchführen', 30], ['Angebot senden', 20, 'angebot'], ['DSGVO-Checkliste und AV-Vertrag beilegen', 40]],
+    note: 'Datenschutz (DSGVO) und Transparenz: Nutzer müssen erkennen, dass sie mit einer KI sprechen. Keine verbindliche Rechts- oder Gesundheitsauskunft durch den Bot.' },
+  { id: 'automation', e: '⚙️', t: 'Automatisierungen mit Make/Zapier + KI', c: 'service', tags: ['technik'], mode: 'online', start: 0, ttf: 21, mo: [400, 4000], h: 6, lvl: 3,
+    pitch: 'Wiederkehrende Büroaufgaben automatisieren: Anfragen sortieren, Angebote vorbereiten, Rechnungen ablegen.',
+    ai: 'KI klassifiziert und formuliert; Make/Zapier verbindet E-Mail, Tabellen und Kalender. Du baust und dokumentierst.', plat: ['Make', 'Zapier', 'LinkedIn'],
+    steps: [['3 typische Abläufe wählen (Anfrage → Antwortentwurf, Beleg → Ablage, Termin → Erinnerung)', 30], ['Einen Ablauf als Demo bauen und aufzeichnen', 120], ['Paket „Automatisierung ab 349 €“ festlegen', 15, 'gig'], ['10 Solo-Selbstständige ansprechen', 35, 'akquise'], ['Angebot senden', 20, 'angebot']],
+    note: 'Zugriffsrechte und Datenschutz sauber klären; keine Zugangsdaten per E-Mail. AV-Vertrag anbieten.' },
+  { id: 'recherche', e: '🔎', t: 'Recherche- & Lead-Listen (B2B)', c: 'service', tags: ['verkauf', 'schreiben'], mode: 'online', start: 0, ttf: 14, mo: [200, 2500], h: 5, lvl: 2,
+    pitch: 'Gepflegte Listen mit passenden Firmen, Ansprechpartnern und Anknüpfungspunkten für Vertriebsteams und Agenturen.',
+    ai: 'KI strukturiert und bewertet öffentliche Informationen; du prüfst Stichproben und lieferst saubere Daten.', plat: ['LinkedIn', 'XING', 'Agenturen'],
+    steps: [['Eine Branche und ein Suchprofil wählen', 20], ['Beispielliste mit 25 Firmen aus öffentlichen Quellen erstellen', 60], ['Paket „100 geprüfte Kontakte für 249 €“ festlegen', 15, 'gig'], ['10 Vertriebsleiter und Agenturen ansprechen', 30, 'akquise'], ['Gratis-Probe liefern', 30]],
+    note: 'Nur öffentlich zugängliche Geschäftsdaten nutzen und DSGVO sowie UWG beachten (Werbung nur mit Einwilligung bzw. nach den gesetzlichen Vorgaben).' },
+  { id: 'praesi', e: '📊', t: 'Präsentationen & Pitch-Decks im Auftrag', c: 'service', tags: ['design', 'schreiben'], mode: 'online', start: 0, ttf: 14, mo: [300, 3000], h: 5, lvl: 2,
+    pitch: 'Aus Stichpunkten werden überzeugende Folien: Gründer, Berater und Vereine zahlen pro Deck.',
+    ai: 'KI strukturiert die Story und schreibt Folientexte; du gestaltest sauber und sorgst für Klarheit.', plat: ['LinkedIn', 'Gründer-Gruppen', 'Fiverr'],
+    steps: [['Ein Beispiel-Deck (10 Folien) mit KI-Textentwurf bauen', 90], ['Paket „Pitch-Deck 10 Folien, 349 €“ festlegen', 15, 'gig'], ['10 Gründer und Berater ansprechen', 30, 'akquise'], ['Briefing-Fragebogen (10 Fragen) erstellen', 25], ['Erstes Deck liefern', 90], ['Testimonial erfragen', 10, 'empfehl']],
+    note: 'Bildrechte und Schriftlizenzen beachten; keine geschützten Logos fremder Firmen ohne Erlaubnis.' },
 
   /* ---------- Digitale Produkte ---------- */
-  { id: 'vorlagen', e: '🧩', t: 'Notion- & Excel-Vorlagen verkaufen', c: 'digital', tags: ['technik', 'fuehrung'], mode: 'online', start: 0, ttf: 21, mo: [20, 800], h: 4, lvl: 2,
-    pitch: 'Fertige Vorlagen (Haushaltsbuch, Bewerbungs-Tracker, Content-Kalender) einmal bauen und mehrfach verkaufen.', plat: ['Etsy', 'Gumroad', 'Payhip', 'Digistore24'],
-    steps: [['10 Ideen sammeln und per Etsy-Suche/Google-Vorschlägen auf Nachfrage prüfen', 30], ['Eine Vorlage in 3 Stunden bauen, dazu eine PDF-Anleitung', 180], ['Vorschaubilder (Canva) und Beschreibung erstellen', 60], ['Auf Etsy oder Gumroad veröffentlichen', 30], ['5 Personen in Communities Feedback und einen Rabattcode geben', 25, 'akquise'], ['Verbessern und das zweite Produkt planen', 60]],
-    note: 'Marktplätze regeln viel bei der Umsatzsteuer, Kleinunternehmer-Status trotzdem prüfen. Einnahmen sind steuerpflichtig.' },
-  { id: 'canva', e: '🖼️', t: 'Canva-Vorlagen & Social-Packs', c: 'digital', tags: ['design'], mode: 'online', start: 0, ttf: 21, mo: [20, 700], h: 4, lvl: 1,
-    pitch: 'Vorlagen-Sets für Nischen wie Makler, Coaches und Cafés – einmal gestalten, immer wieder verkaufen.', plat: ['Etsy', 'Creative Fabrica', 'Gumroad'],
-    steps: [['Nische wählen (Makler, Coaches, Cafés, Fitnessstudios)', 20], ['Set mit 20 Vorlagen gestalten', 180], ['Vorschau-Mockups erstellen', 45], ['Listing mit Keywords veröffentlichen', 30], ['Pinterest/Instagram-Promotion aufsetzen', 30], ['Erste Käufer um Bewertung bitten', 15, 'empfehl']],
-    note: 'Lizenzbedingungen von Canva und der verwendeten Elemente prüfen – Pro-Inhalte dürfen nicht in Verkaufsvorlagen stecken.' },
-  { id: 'kdp', e: '📘', t: 'Notizbücher & Planer (Amazon KDP)', c: 'digital', tags: ['design', 'schreiben'], mode: 'online', start: 0, ttf: 30, mo: [10, 600], h: 5, lvl: 2,
-    pitch: 'Planer, Rätselhefte und Journals als Taschenbuch ohne Lagerbestand – Amazon druckt auf Bestellung.', plat: ['Amazon KDP', 'Canva', 'Pinterest'],
-    steps: [['Nische und Keywords über Amazon-Suchvorschläge ermitteln', 40], ['Innenseiten-Layout erstellen', 120], ['Cover gestalten', 45], ['Titel, Beschreibung und 7 Schlüsselwörter schreiben', 30], ['Veröffentlichen und den Steuer-Fragebogen (W-8BEN) ausfüllen', 40], ['Mit Pinterest/Instagram bewerben', 30]],
-    note: 'Steuerangaben im KDP-Konto korrekt ausfüllen; Einnahmen in Deutschland versteuern. Keine fremden Marken oder Inhalte verwenden.' },
-  { id: 'kurs', e: '🎓', t: 'Online-Kurs oder E-Book zu deinem Fachwissen', c: 'digital', tags: ['wissen', 'schreiben'], mode: 'online', start: 0, ttf: 45, mo: [30, 1500], h: 5, lvl: 3,
-    pitch: 'Dein Know-how in 6 Lektionen verpacken – Kurs oder E-Book mit Checklisten.', plat: ['Udemy', 'Digistore24', 'Gumroad', 'eigene Seite'],
-    steps: [['Thema mit 10 echten Fragen aus Foren und Gruppen validieren', 45], ['Gliederung in 6 Lektionen schreiben', 45], ['Erste Lektion als Video oder PDF produzieren', 120], ['Beta-Käufer: 5 Personen zum Mini-Preis gewinnen', 30, 'akquise'], ['Verkaufsseite und Preis festlegen', 60, 'angebot'], ['Überarbeiten und veröffentlichen', 120]],
-    note: 'Bei Finanz-, Gesundheits- oder Rechtsthemen keine individuellen Empfehlungen geben.' },
-  { id: 'stock', e: '📷', t: 'Stock-Fotos & -Videos', c: 'digital', tags: ['foto'], mode: 'online', start: 0, ttf: 30, mo: [5, 400], h: 4, lvl: 2,
-    pitch: 'Alltagsmotive in Deutschland (Handwerk, Büro, Familie) auf Stock-Plattformen lizenzieren.', plat: ['Adobe Stock', 'Shutterstock', 'Pond5'],
-    steps: [['Nach Lücken suchen: welche Motive fehlen auf den Plattformen?', 30], ['30 Bilder aufnehmen (Model Releases beachten)', 180], ['Retusche und Schlagwörter', 90], ['Hochladen und Freigabe abwarten', 40], ['Nach 30 Tagen auswerten und Erfolgsmotive wiederholen', 10]],
-    note: 'Personen und Marken nur mit Freigabe; Einnahmen sind steuerpflichtig.' },
-  { id: 'stockmusik', e: '🎼', t: 'Musik-Lizenzierung (Stock Music, Jingles)', c: 'digital', tags: ['musik'], mode: 'online', start: 0, ttf: 30, mo: [20, 600], h: 5, lvl: 3,
-    pitch: 'Eigene Instrumentals und Jingles für Videos und Podcasts über Marktplätze lizenzieren.', plat: ['AudioJungle', 'Pond5', 'Soundstripe'],
-    steps: [['5 loopbare Instrumentals (60–90 Sekunden) fertigstellen', 240], ['Metadaten und Tags (Stimmung, Genre, Tempo) ergänzen', 30], ['Bei 1–2 Marktplätzen einreichen', 30], ['Lokale Jingle-Anfragen bei Podcasts und YouTubern stellen', 25, 'akquise'], ['Ergebnisse nach 30 Tagen auswerten', 10]],
-    note: 'Bei GEMA-Mitgliedschaft vorher klären, ob die Lizenzierung über Marktplätze zulässig ist.' },
+  { id: 'vorlagen', e: '🧩', t: 'Notion-, Excel- & Canva-Vorlagen verkaufen', c: 'digital', tags: ['technik', 'design'], mode: 'online', start: 0, ttf: 21, mo: [20, 900], h: 4, lvl: 2,
+    pitch: 'Fertige Vorlagen (Haushaltsbuch, Bewerbungs-Tracker, Content-Kalender) einmal bauen und immer wieder verkaufen.',
+    ai: 'KI liefert Struktur, Beispieldaten und Anleitungstexte; du testest und gestaltest.', plat: ['Etsy', 'Gumroad', 'Payhip'],
+    steps: [['10 Ideen sammeln und per Etsy-Suche auf Nachfrage prüfen', 30], ['Eine Vorlage in 3 Stunden bauen, dazu eine PDF-Anleitung (KI-Entwurf)', 150], ['Vorschaubilder (Canva) und Beschreibung erstellen', 60], ['Auf Etsy oder Gumroad veröffentlichen', 30], ['5 Personen in Communities Feedback und einen Rabattcode geben', 25, 'akquise'], ['Verbessern und das zweite Produkt planen', 60]],
+    note: 'Marktplätze regeln viel bei der Umsatzsteuer, Kleinunternehmer-Status trotzdem prüfen. Einnahmen sind steuerpflichtig. Lizenzbedingungen von Canva beachten (keine Pro-Inhalte in Verkaufsvorlagen).' },
+  { id: 'prompts', e: '🧠', t: 'Prompt-Pakete für Berufsgruppen', c: 'digital', tags: ['schreiben', 'technik', 'wissen'], mode: 'online', start: 0, ttf: 21, mo: [20, 700], h: 4, lvl: 2,
+    pitch: 'Kuratierte, getestete Prompts für eine Berufsgruppe (Makler, Coaches, Steuerkanzleien, Shops) als PDF/Notion-Paket.',
+    ai: 'Du testest Prompts mit KI an echten Aufgaben, optimierst sie und verkaufst die erprobte Sammlung mit Anleitung.', plat: ['Gumroad', 'Etsy', 'LinkedIn'],
+    steps: [['Eine Berufsgruppe wählen und 20 typische Aufgaben sammeln', 30], ['25 Prompts schreiben und mit KI testen', 120], ['Als PDF oder Notion-Seite aufbereiten, mit Beispielen', 60], ['Landingpage und Preis festlegen (z. B. 19 €)', 30, 'angebot'], ['In Gruppen und auf LinkedIn teilen', 30, 'akquise']],
+    note: 'Keine Erfolgsgarantien versprechen. Bei Finanz-, Gesundheits- und Rechtsthemen auf Informationscharakter hinweisen.' },
+  { id: 'ebook', e: '📘', t: 'E-Book & Checklisten aus deinem Fachwissen', c: 'digital', tags: ['wissen', 'schreiben'], mode: 'online', start: 0, ttf: 30, mo: [30, 1500], h: 5, lvl: 2,
+    pitch: 'Dein Berufswissen in ein kompaktes Praxis-Handbuch oder Checklisten-Paket verpacken.',
+    ai: 'KI hilft bei Gliederung, Entwurf und Lektorat; deine Erfahrung liefert die Substanz, die kein Tool hat.', plat: ['Gumroad', 'Digistore24', 'eigene Seite', 'LinkedIn'],
+    steps: [['Thema mit 10 echten Fragen aus Foren und Gruppen validieren', 45], ['Gliederung in 6 Kapitel mit KI entwerfen', 30], ['Erstes Kapitel schreiben und veredeln', 90], ['Beta-Käufer: 5 Personen zum Mini-Preis gewinnen', 30, 'akquise'], ['Verkaufsseite und Preis festlegen', 60, 'angebot'], ['Überarbeiten und veröffentlichen', 120]],
+    note: 'Bei Finanz-, Gesundheits- oder Rechtsthemen keine individuellen Empfehlungen; erlaubnispflichtige Beratung/Vermittlung ist tabu. Bei Tätigkeit in einer regulierten Branche: Nebentätigkeit und Interessenkonflikte vorher mit dem Arbeitgeber klären.' },
+  { id: 'kdp', e: '📗', t: 'Planer & Rätselhefte (Amazon KDP)', c: 'digital', tags: ['design', 'schreiben'], mode: 'online', start: 0, ttf: 30, mo: [10, 600], h: 5, lvl: 2,
+    pitch: 'Planer, Rätselhefte und Journals als Taschenbuch ohne Lagerbestand – Amazon druckt auf Bestellung.',
+    ai: 'KI erzeugt Inhalte, Rätsel und Beschreibungen; du gestaltest Layout und Cover.', plat: ['Amazon KDP', 'Canva', 'Pinterest'],
+    steps: [['Nische und Keywords über Amazon-Suchvorschläge ermitteln', 40], ['Innenseiten-Layout erstellen', 120], ['Cover gestalten', 45], ['Titel, Beschreibung und 7 Schlüsselwörter schreiben', 30], ['Veröffentlichen und Steuerangaben im KDP-Konto ausfüllen', 40], ['Mit Pinterest/Instagram bewerben', 30]],
+    note: 'Steuerangaben im KDP-Konto korrekt ausfüllen; Einnahmen in Deutschland versteuern. Keine fremden Marken oder geschützten Inhalte verwenden; KI-Nutzung bei KDP offenlegen, wo verlangt.' },
 
   /* ---------- Content & Reichweite ---------- */
-  { id: 'newsletter', e: '📬', t: 'Fach-Newsletter', c: 'content', tags: ['schreiben', 'wissen'], mode: 'online', start: 0, ttf: 90, mo: [0, 800], h: 4, lvl: 2,
-    pitch: 'Jede Woche ein Thema, das Leser Zeit oder Geld spart – Einnahmen über Sponsoring und Premium-Abo.', plat: ['Substack', 'Steady', 'Beehiiv', 'LinkedIn'],
+  { id: 'newsletter', e: '📬', t: 'Fach-Newsletter in einer Nische', c: 'content', tags: ['schreiben', 'wissen'], mode: 'online', start: 0, ttf: 90, mo: [0, 800], h: 4, lvl: 2,
+    pitch: 'Jede Woche ein Thema, das Leser Zeit oder Geld spart – Einnahmen über Sponsoring und Premium-Abo.',
+    ai: 'KI hilft bei Recherche-Zusammenfassungen und Entwürfen; Haltung und Auswahl bleiben deine.', plat: ['Substack', 'Steady', 'Beehiiv', 'LinkedIn'],
     steps: [['Nische und Versprechen in einem Satz formulieren', 25], ['Landingpage und 3 Probeausgaben schreiben', 120], ['Die ersten 50 Abonnenten aus dem eigenen Netzwerk gewinnen', 60, 'akquise'], ['4 Wochen lang wöchentlich veröffentlichen', 60], ['Erstes Sponsoring oder Premium-Abo anbieten', 30, 'angebot']],
     note: 'Impressum und Datenschutz nicht vergessen; Werbung kennzeichnen. Das braucht Geduld – erste Einnahmen oft erst nach Monaten.' },
-  { id: 'youtube', e: '▶️', t: 'YouTube- oder Shorts-Kanal in einer Nische', c: 'content', tags: ['foto', 'schreiben', 'wissen'], mode: 'online', start: 0, ttf: 120, mo: [0, 1200], h: 8, lvl: 3,
-    pitch: 'Ein Kanal zu einem Thema, das du liebst – Einnahmen über Werbung, Affiliate und Aufträge.', plat: ['YouTube', 'Instagram', 'TikTok'],
+  { id: 'nischenseite', e: '🔗', t: 'Nischen-Website mit Affiliate-Links', c: 'content', tags: ['schreiben', 'technik'], mode: 'online', start: 60, ttf: 120, mo: [0, 1200], h: 6, lvl: 3,
+    pitch: 'Ratgeberseite zu einem eng gefassten Thema, die über Empfehlungslinks Provision verdient.',
+    ai: 'KI liefert Recherche und Artikelentwürfe; du fügst echte Erfahrung, Tests und Quellen hinzu – das ist, was Google und Leser belohnen.', plat: ['WordPress', 'Partnerprogramme (z. B. Awin)'],
+    steps: [['Nische mit Kaufabsicht wählen und 20 Suchanfragen sammeln', 40], ['Domain und Hosting einrichten', 60], ['5 starke Artikel schreiben (KI-Entwurf + eigene Erfahrung)', 300], ['Partnerprogramme beantragen und Links einbauen', 40], ['Auf Pinterest und in Gruppen verbreiten', 40, 'akquise']],
+    note: 'Affiliate-Links als Werbung kennzeichnen; Impressum und Datenschutz Pflicht. Reine KI-Massenware wird abgestraft – echte Erfahrung zählt. Das braucht Geduld.' },
+  { id: 'kanal', e: '▶️', t: 'Faceless Shorts-/YouTube-Kanal', c: 'content', tags: ['foto', 'schreiben'], mode: 'online', start: 0, ttf: 120, mo: [0, 1200], h: 8, lvl: 3,
+    pitch: 'Ein Kanal zu einem Thema, das dich interessiert – ohne selbst vor der Kamera zu stehen. Einnahmen über Affiliate, Aufträge und später Werbung.',
+    ai: 'KI schreibt Skripte, erzeugt Sprecher-Stimmen und findet Material; du kuratierst Thema, Qualität und Serie.', plat: ['YouTube', 'Instagram', 'TikTok'],
     steps: [['Nische wählen und 10 Videoideen sammeln', 40], ['Erstes Video produzieren und veröffentlichen', 180], ['Serie von 8 Videos planen und konsequent veröffentlichen', 120], ['Affiliate- oder Auftrags-Angebote prüfen', 30], ['Nach 60 Tagen Kennzahlen auswerten', 20]],
-    note: 'Werbeeinnahmen setzen eine Mindestgröße voraus (u. a. 1.000 Abonnenten und 4.000 Wiedergabestunden); schneller geht es über Affiliate und direkte Aufträge. Werbung kennzeichnen.' },
-  { id: 'ugc', e: '🤳', t: 'UGC-Creator für Marken', c: 'content', tags: ['foto', 'schreiben', 'verkauf'], mode: 'online', start: 0, ttf: 21, mo: [100, 1500], h: 5, lvl: 2,
-    pitch: 'Authentische Produktvideos für Marken drehen – ohne eigene Follower, bezahlt pro Video.', plat: ['Collabstr', 'Billo', 'direkte Ansprache'],
-    steps: [['3 Beispielvideos (je 20–30 Sekunden) mit Alltagsprodukten drehen', 120], ['Portfolio-Link anlegen (Notion oder Linktree)', 20], ['20 kleine Marken mit konkretem Videovorschlag ansprechen', 45, 'akquise'], ['Preis pro Video nennen', 10, 'angebot'], ['Ersten Auftrag liefern', 60], ['Testimonial erfragen', 10, 'empfehl']],
-    note: 'Werbekennzeichnung beachten; Nutzungsrechte und Laufzeit im Angebot festlegen.' },
-  { id: 'affiliate', e: '🔗', t: 'Nischen-Blog mit Affiliate-Links', c: 'content', tags: ['schreiben', 'technik'], mode: 'online', start: 60, ttf: 120, mo: [0, 1200], h: 6, lvl: 3,
-    pitch: 'Ratgeberseite zu einem eng gefassten Thema, die über Empfehlungslinks Provision verdient.', plat: ['WordPress', 'Partnerprogramme (z. B. Awin)'],
-    steps: [['Nische mit Kaufabsicht wählen und 20 Suchanfragen sammeln', 40], ['Domain und Hosting einrichten', 60], ['5 starke Artikel schreiben', 300], ['Partnerprogramme beantragen und Links einbauen', 40], ['Auf Pinterest und in Gruppen verbreiten', 40, 'akquise']],
-    note: 'Affiliate-Links als Werbung kennzeichnen; Impressum und Datenschutz Pflicht. Das braucht Geduld.' },
-
-  /* ---------- Lokal & Hands-on ---------- */
-  { id: 'aufbau', e: '🔧', t: 'Aufbau- & Montageservice', c: 'lokal', tags: ['handwerk'], mode: 'lokal', start: 30, ttf: 5, mo: [200, 1800], h: 6, lvl: 1,
-    pitch: 'Möbel aufbauen, Lampen montieren, Fahrräder warten – oft 25–40 € pro Stunde.', plat: ['Kleinanzeigen', 'nebenan.de', 'lokale Facebook-Gruppen', 'Aushänge'],
-    steps: [['Werkzeug-Check und fehlende Basics besorgen', 20], ['Angebot formulieren: „Möbelaufbau ab 35 € pro Stunde, mindestens 1 Stunde“', 15], ['In 3 lokalen Gruppen und Portalen inserieren', 25, 'inserat'], ['Erste Anfrage innerhalb von 30 Minuten beantworten', 10], ['Vorher/Nachher-Fotos machen und um Bewertung bitten', 10, 'empfehl'], ['Stammkunden-Angebot (Rabatt ab 3 Einsätzen) anbieten', 15]],
-    note: 'Haftpflicht prüfen. Einfache Montagearbeiten sind meist erlaubnisfrei; Elektro-, Gas- und Sanitärinstallation sind es nicht.' },
-  { id: 'garten', e: '🌿', t: 'Garten- & Hofpflege', c: 'lokal', tags: ['handwerk'], mode: 'lokal', start: 100, ttf: 5, mo: [200, 1500], h: 6, lvl: 1,
-    pitch: 'Rasen, Hecken, Laub und Kleinreparaturen für Nachbarn, Senioren und Vermieter übernehmen.', plat: ['nebenan.de', 'Kleinanzeigen', 'Aushänge'],
-    steps: [['Ausrüstung prüfen (leihen statt kaufen, wenn möglich)', 20], ['Stunden- oder Pauschalpreis festlegen', 15], ['3 Nachbarschaftsgruppen und Aushänge nutzen', 25, 'inserat'], ['Ersten Einsatz mit Foto dokumentieren', 60], ['Saison-Abo (z. B. 14-tägig) anbieten', 15, 'angebot']],
-    note: 'Haftpflichtversicherung prüfen; bei dauerhafter Tätigkeit Gewerbeanmeldung.' },
-  { id: 'tiere', e: '🐕', t: 'Hunde- & Tiersitting', c: 'lokal', tags: ['kinder_tiere'], mode: 'lokal', start: 0, ttf: 7, mo: [100, 900], h: 4, lvl: 1,
-    pitch: 'Gassi-Runden, Urlaubsbetreuung und Katzenbesuche für Nachbarn.', plat: ['Betreut.de', 'Pawshake', 'nebenan.de'],
-    steps: [['Profil mit Foto, Erfahrung und Verfügbarkeit anlegen', 25], ['Preise festlegen (Gassi-Runde, Urlaubsbetreuung pro Tag)', 10], ['In 3 Nachbarschaftsgruppen vorstellen', 20, 'inserat'], ['Kennenlerntermin mit Tier und Halter', 30], ['Bewertung erfragen', 5, 'empfehl']],
-    note: 'Haftpflicht klären. Bei regelmäßiger, gewerbsmäßiger Betreuung von Hunden kann eine Erlaubnis nach dem Tierschutzgesetz nötig sein – beim Veterinäramt nachfragen.' },
-  { id: 'kinder', e: '🧸', t: 'Babysitting & Familienhilfe', c: 'lokal', tags: ['kinder_tiere'], mode: 'lokal', start: 0, ttf: 3, mo: [100, 700], h: 4, lvl: 1,
-    pitch: 'Abende, Wochenenden und Ferien – bewährte Betreuung ist in vielen Familien gesucht.', plat: ['Betreut.de', 'Kita-Elterngruppen', 'Nachbarschaft'],
-    steps: [['Erste-Hilfe-Kurs-Nachweis und Führungszeugnis bereitlegen', 25], ['Profil/Inserat schreiben', 25, 'inserat'], ['In 3 Elterngruppen posten', 20], ['Kennenlerntermin vereinbaren', 30], ['Stammfamilien-Plan anbieten', 15, 'angebot']],
-    note: 'Bei regelmäßiger Betreuung Steuer- und Sozialversicherungsfragen klären (Minijob/Selbstständigkeit).' },
-  { id: 'backen', e: '🍰', t: 'Meal-Prep & Backen auf Bestellung', c: 'lokal', tags: ['kochen'], mode: 'lokal', start: 50, ttf: 10, mo: [100, 1200], h: 6, lvl: 2,
-    pitch: 'Torten, Brunch-Boxen oder wöchentliche Meal-Prep-Pakete für Berufstätige und Feiern.', plat: ['Instagram', 'WhatsApp-Status', 'lokale Gruppen'],
-    steps: [['3 Signature-Produkte festlegen und kalkulieren (Zutaten + Zeit + Marge)', 40], ['Probe an 5 Menschen verschenken und Fotos machen', 90], ['Bestellfenster (z. B. bis Mittwoch für Wochenende) festlegen', 15], ['Auf Instagram und in lokalen Gruppen anbieten', 25, 'inserat'], ['Erste Bestellungen ausliefern und Feedback erfragen', 60, 'empfehl']],
-    note: 'Lebensmittel gewerblich anzubieten setzt Registrierung beim Lebensmittelaufsichtsamt, eine Hygiene-Belehrung (§ 43 IfSG) und meist eine Gewerbeanmeldung voraus.' },
-  { id: 'vermieten', e: '🔑', t: 'Dinge vermieten (Equipment, Stellplatz)', c: 'lokal', tags: [], mode: 'lokal', start: 0, ttf: 14, mo: [30, 500], h: 2, lvl: 1,
-    pitch: 'Kamera, Beamer, Werkzeug, Anhänger oder Garage an Nachbarn vermieten.', plat: ['Kleinanzeigen', 'nebenan.de'],
-    steps: [['5 Dinge auflisten, die du seit über 30 Tagen nicht genutzt hast', 10], ['Marktpreise für Tag und Wochenende prüfen', 15], ['Kaution und einfache Mietvereinbarung festlegen', 25], ['Inserat mit guten Fotos einstellen', 30, 'inserat'], ['Übergabe per Protokoll mit Fotos dokumentieren', 10], ['Versicherungsschutz (Haftpflicht/Hausrat) klären', 15]],
-    note: 'Einnahmen aus Vermietung beweglicher Gegenstände sind sonstige Einkünfte (Freigrenze 256 € pro Jahr). Versicherungsschutz vorher klären.' },
-
-  /* ---------- Geldfunde ---------- */
-  { id: 'steuer', e: '🧾', t: 'Steuererklärung nachholen (Arbeitnehmer)', c: 'fund', tags: [], mode: 'online', start: 0, ttf: 45, mo: [200, 1500], once: true, h: 3, lvl: 1,
-    pitchFn: () => { const y = new Date().getFullYear() - 4, left = diffDays(`${new Date().getFullYear()}-12-31`, todayISO()); return `Eine freiwillige Steuererklärung kannst du bis zu vier Jahre rückwirkend abgeben – für ${y} noch ${left} Tage (Frist: 31.12.). Viele Arbeitnehmer bekommen etwas zurück.`; }, pitch: 'Eine freiwillige Steuererklärung kannst du bis zu vier Jahre rückwirkend abgeben. Viele Arbeitnehmer bekommen etwas zurück.', plat: ['ELSTER', 'Steuer-Software', 'Lohnsteuerhilfeverein'],
-    steps: [['Prüfen: Für welche Jahre hast du noch keine Erklärung abgegeben? (Frist: 31.12. des vierten Folgejahres)', 10], ['Unterlagen sammeln – Lohnsteuerbescheinigung, Spenden, Fahrtkosten, Arbeitsmittel, Homeoffice (Kairos-Akte nutzen)', 60], ['Konto bei ELSTER anlegen oder Steuer-Software wählen', 30], ['Werbungskosten, Sonderausgaben und außergewöhnliche Belastungen erfassen', 90], ['Abgeben und den Bescheid später in die Kairos-Akte legen', 15], ['Erstattung in Kairos als Einnahme erfassen', 3]],
-    note: 'Eine Erstattung ist nicht garantiert. Keine Steuerberatung – bei Unsicherheit Lohnsteuerhilfeverein oder Steuerberater fragen.' },
-  { id: 'fixkosten', e: '💡', t: 'Fixkosten-Check', c: 'fund', tags: [], mode: 'online', start: 0, ttf: 7, mo: [20, 200], h: 2, lvl: 1,
-    pitch: 'Jeder Euro, den du bei Strom, Internet, Handy und Versicherungen sparst, ist verdient – und steuerfrei.', plat: ['Vergleichsportale', 'Anbieter-Hotlines'],
-    steps: [['In Kairos Finanzen → Fixkosten ansehen und Abos prüfen', 10], ['Die 3 größten Posten markieren', 5], ['Tarife vergleichen und Kündigungstermine aus der Akte beachten', 40], ['Beim Anbieter neu verhandeln oder wechseln', 20, 'verhandeln'], ['Neue Konditionen in Kairos eintragen', 5]],
-    note: 'Auf Kündigungsfristen und Mindestlaufzeiten achten – Kairos zeigt sie dir, sobald der Vertrag in der Akte liegt.' },
-  { id: 'zins', e: '🏦', t: 'Zins-Check für Tagesgeld & Festgeld', c: 'fund', tags: ['finanzen'], mode: 'online', start: 0, ttf: 14, mo: [5, 100], h: 1, lvl: 1,
-    pitch: 'Wer 10.000 € um einen Prozentpunkt besser anlegt, verdient 100 € pro Jahr mehr – ohne Risiko-Aufschlag, nur mit Vergleich.', plat: ['Vergleichsportale'],
-    steps: [['Alle Konten und Guthaben auflisten', 10], ['Aktuelle Zinssätze prüfen', 20], ['Angebote im Vergleichsportal ansehen (Einlagensicherung beachten)', 20], ['Wechsel durchführen', 30], ['Freistellungsauftrag prüfen', 10]],
-    note: 'Zinsen sind steuerpflichtig (Sparer-Pauschbetrag 1.000 € bzw. 2.000 € bei Zusammenveranlagung – Freistellungsauftrag nutzen). Keine Anlageberatung.' },
-  { id: 'nebenkosten', e: '🏠', t: 'Nebenkostenabrechnung prüfen', c: 'fund', tags: [], mode: 'online', start: 0, ttf: 14, mo: [50, 400], once: true, h: 2, lvl: 1,
-    pitch: 'Fehler in Betriebskostenabrechnungen sind häufig. Als Mieter hast du nach Zugang in der Regel 12 Monate Zeit für Einwendungen.', plat: ['Mieterverein'],
-    steps: [['Abrechnung in die Kairos-Akte legen und Zugangsdatum notieren', 5], ['Fristen prüfen (Abrechnung muss innerhalb von 12 Monaten nach Ende des Zeitraums kommen)', 10], ['Belegeinsicht anfordern', 15, 'beleg'], ['Umlageschlüssel und nicht umlagefähige Posten prüfen', 60], ['Bei Fehlern schriftlich widersprechen', 25]],
-    note: 'Bei Streit lohnt sich die Beratung durch einen Mieterverein. Keine Rechtsberatung.' }
+    note: 'Werbeeinnahmen setzen eine Mindestgröße voraus (u. a. 1.000 Abonnenten und 4.000 Wiedergabestunden); schneller geht es über Affiliate und Aufträge. KI-Inhalte nach Plattformregeln kennzeichnen; Urheberrechte beachten.' }
 ];
 IDEAS.forEach(i => { i.cat = EARN_CATS[i.c]; });
 const ideaById = id => IDEAS.find(i => i.id === id);
-const ideaPitch = i => i.pitchFn ? i.pitchFn() : i.pitch;
+const ideaPitch = i => i.pitch;
 
 /* ---------- Vorlagen ---------- */
 const TPL = {
@@ -3917,67 +3910,51 @@ const fillTpl = (key, ctx = {}) => (TPL[key] ? TPL[key].body : '').replace(/\{id
 /* ---------- Money-Moves: kleine tägliche Handlungen ---------- */
 const MOVES = [
   { id: 'm-net3', e: '💬', t: 'Schreibe 3 Menschen, die dein Angebot gebrauchen könnten', min: 10, why: 'Die meisten ersten Kunden kommen aus dem eigenen Umfeld – aber nur, wenn du fragst.', tpl: 'akquise' },
-  { id: 'm-sell1', e: '🏷️', t: 'Verkaufe heute einen Gegenstand, den du nicht mehr brauchst', min: 15, why: 'Selbst 20 € zählen als erster verdienter Euro – und senken die Hemmschwelle.', tpl: 'inserat' },
   { id: 'm-ref', e: '🤝', t: 'Bitte einen zufriedenen Kunden oder Kollegen um eine Empfehlung', min: 5, why: 'Empfehlungen sind der günstigste Kanal – und kosten nur eine Nachricht.', tpl: 'empfehl' },
-  { id: 'm-sub', e: '✂️', t: 'Prüfe ein Abo oder einen Vertrag: kündigen oder runterhandeln', min: 10, why: 'Gesparte Euro sind verdiente Euro – und steuerfrei.', tpl: 'verhandeln' },
-  { id: 'm-post', e: '📣', t: 'Veröffentliche einen Beitrag, der zeigt, was du anbietest', min: 15, why: 'Sichtbarkeit zahlt auf jeden Kanal ein. Ein Beitrag pro Woche reicht für den Anfang.' },
+  { id: 'm-post', e: '📣', t: 'Lass die KI 3 Beitragsentwürfe zu deinem Angebot schreiben und poste den besten', min: 15, why: 'Sichtbarkeit zahlt auf jeden Kanal ein. Ein Beitrag pro Woche reicht für den Anfang.', ai: 'Schreibe 3 kurze LinkedIn-Beiträge (max. 900 Zeichen), die zeigen, wie ich {Angebot} für {Zielgruppe} löse. Jeder mit starkem Einstieg und konkretem Nutzen, ohne Floskeln.' },
+  { id: 'm-ai1', e: '🎯', t: 'Lass die KI 10 Varianten deines Ein-Satz-Angebots schreiben und wähle die klarste', min: 10, why: 'Ein Satz, der sitzt, macht jede spätere Ansprache leichter.', ai: 'Ich biete {Angebot} für {Zielgruppe} an. Formuliere 10 Varianten eines Ein-Satz-Angebots nach dem Muster „Ich helfe X, Y zu erreichen – ohne Z“. Sortiere nach Klarheit.' },
+  { id: 'm-ai2', e: '🛡️', t: 'Lass die KI die 5 häufigsten Einwände deiner Zielgruppe sammeln – samt guter Antworten', min: 15, why: 'Wer Einwände vorbereitet hat, gewinnt Gespräche, bevor sie beginnen.', ai: 'Meine Zielgruppe: {Zielgruppe}. Mein Angebot: {Angebot}. Nenne die 5 häufigsten Einwände gegen einen Kauf und formuliere zu jedem eine ehrliche, kurze Antwort.' },
+  { id: 'm-ai3', e: '🧪', t: 'Erstelle mit KI 3 Beispiel-Ergebnisse für dein Portfolio', min: 25, why: 'Ein konkretes Beispiel überzeugt mehr als jede Selbstbeschreibung.', ai: 'Erstelle 3 kurze Beispiel-Ergebnisse, die zeigen, was ich als {Angebot} liefere – fiktive Kunden, realistisch, mit Vorher/Nachher.' },
+  { id: 'm-ai4', e: '🪪', t: 'Lass die KI dein Profil (LinkedIn, Malt, Instagram) auf ein Angebot schärfen', min: 15, why: 'Wer in 5 Sekunden erkennt, was du anbietest, fragt eher an.', ai: 'Hier ist mein Hintergrund: {Hintergrund}. Schreibe eine Profil-Überschrift (max. 120 Zeichen) und einen Info-Text (max. 600 Zeichen), die ein klares Angebot für {Zielgruppe} formulieren.', tpl: 'gig' },
+  { id: 'm-ai5', e: '🔁', t: 'Baue einen wiederverwendbaren Prompt, der deine Leistung in 10 Minuten liefert', min: 25, why: 'Wiederholbarkeit ist der Hebel: Je schneller du lieferst, desto höher dein Stundenlohn.', ai: 'Hilf mir, einen Prompt zu entwickeln, der aus einem kurzen Briefing meines Kunden das Ergebnis für {Angebot} erzeugt. Stelle zuerst 5 Rückfragen, dann liefere den fertigen Prompt.' },
   { id: 'm-price', e: '🔎', t: 'Recherchiere 5 Anbieter, die dein Angebot verkaufen – und notiere ihre Preise', min: 15, why: 'Du musst wissen, was der Markt zahlt, bevor du einen Preis nennst.' },
   { id: 'm-raise', e: '📈', t: 'Erhöhe bei der nächsten Anfrage deinen Preis um 10 %', min: 5, why: 'Zu niedrige Preise sind der häufigste Anfängerfehler.', tpl: 'preis' },
   { id: 'm-apply', e: '📨', t: 'Bewirb dich auf 2 passende Freelance-Aufträge', min: 20, why: 'Auch Absagen bringen dir Marktgefühl – und der erste Zuschlag kommt schneller als gedacht.', tpl: 'akquise' },
-  { id: 'm-group', e: '🏘️', t: 'Frage in einer Nachbarschafts- oder Fach-Gruppe, wer Hilfe braucht', min: 10, why: 'Offene Fragen bringen mehr Reaktionen als Werbung.', tpl: 'inserat' },
-  { id: 'm-case', e: '📝', t: 'Schreibe einen Mini-Fall: Problem → Lösung → Ergebnis', min: 20, why: 'Ein konkreter Fall überzeugt mehr als jede Selbstbeschreibung.' },
   { id: 'm-testi', e: '⭐', t: 'Hole ein Testimonial von jemandem, dem du geholfen hast', min: 10, why: 'Ein Satz von einem echten Menschen ersetzt viele Eigenschaften.', tpl: 'empfehl' },
   { id: 'm-block', e: '🗓️', t: 'Blocke dir 2 Stunden „Geld-Zeit“ für diese Woche im Kalender', min: 3, why: 'Wer keinen Termin hat, schiebt es. Zwei Stunden pro Woche schlagen gute Vorsätze.' },
-  { id: 'm-fix', e: '🔌', t: 'Vergleiche heute einen Tarif (Strom, Internet oder Handy)', min: 20, why: 'Ein Wechsel spart oft zweistellig im Monat – dauerhaft.', tpl: 'verhandeln' },
-  { id: 'm-lead', e: '🧲', t: 'Verpacke dein Wissen in eine Checkliste und teile sie kostenlos', min: 30, why: 'Ein nützliches Gratis-Dokument bringt dir Kontakte, die später zahlen.' },
+  { id: 'm-lead', e: '🧲', t: 'Verpacke dein Wissen in eine Checkliste und teile sie kostenlos', min: 30, why: 'Ein nützliches Gratis-Dokument bringt dir Kontakte, die später zahlen.', ai: 'Erstelle eine einseitige Checkliste mit 10 Punkten zu {Angebot} für {Zielgruppe}. Praktisch, konkret, ohne Fachchinesisch.' },
   { id: 'm-old', e: '📞', t: 'Melde dich bei einem früheren Kunden oder Kontakt: „Wie läuft es bei dir?“', min: 5, why: 'Bestandskontakte kaufen am wahrscheinlichsten wieder.', tpl: 'followup' },
   { id: 'm-pilot', e: '🎁', t: 'Biete einer Person einen kostenlosen Pilot an – gegen ein Testimonial', min: 15, why: 'Der erste Fall ist Gold wert, auch wenn er nichts kostet.', tpl: 'akquise' },
-  { id: 'm-learn', e: '🧠', t: 'Lerne 15 Minuten Verkauf: Wie baue ich ein Angebot auf?', min: 15, why: 'Ein klar strukturiertes Angebot erhöht die Abschlussquote spürbar.', tpl: 'angebot' },
-  { id: 'm-sprint', e: '🧹', t: 'Ausmist-Sprint: 5 Teile fotografieren, 2 davon inserieren', min: 20, why: 'Platz schaffen und Geld verdienen in einem Schritt.', tpl: 'inserat' },
-  { id: 'm-profile', e: '🪪', t: 'Schärfe dein Profil (LinkedIn, Malt oder Instagram) auf ein Angebot', min: 15, why: 'Wer in 5 Sekunden erkennt, was du anbietest, fragt eher an.', tpl: 'gig' },
-  { id: 'm-onesent', e: '🎯', t: 'Formuliere dein Ein-Satz-Angebot: „Ich helfe X, Y zu erreichen – ohne Z“', min: 10, why: 'Ein Satz, der sitzt, macht jede spätere Ansprache leichter.' },
-  { id: 'm-problem', e: '🕵️', t: 'Finde ein Problem, das in Foren oder Gruppen oft gefragt wird', min: 15, why: 'Wiederkehrende Fragen sind verkappte Produktideen.' },
   { id: 'm-call', e: '☎️', t: 'Sprich 10 Minuten mit jemandem aus deiner Zielgruppe – frag nach dessen größtem Problem', min: 10, why: 'Kein Marktforschungsbericht ist so gut wie ein ehrliches Gespräch.' },
   { id: 'm-test5', e: '🗳️', t: 'Frag 5 Leute, ob sie dein Angebot für einen genannten Preis kaufen würden', min: 15, why: 'Ein klares Nein heute spart dir Wochen Arbeit.', tpl: 'akquise' },
-  { id: 'm-legal', e: '⚖️', t: 'Kläre Rahmen: Nebentätigkeit, Anmeldung, Kleinunternehmer-Grenzen', min: 20, why: 'Wer die Regeln kennt, startet entspannt – ohne spätere Überraschung.' },
+  { id: 'm-legal', e: '⚖️', t: 'Kläre den Rahmen: Nebentätigkeit, Anmeldung, Kleinunternehmer-Grenzen', min: 20, why: 'Wer die Regeln kennt, startet entspannt – ohne spätere Überraschung.' },
   { id: 'm-invtpl', e: '🧾', t: 'Lege eine Rechnung als Entwurf an, damit du für den ersten Auftrag bereit bist', min: 10, why: 'Wenn der erste Kunde Ja sagt, soll die Rechnung in 2 Minuten draußen sein.', act: 'biz.inv.add' },
   { id: 'm-upsell', e: '➕', t: 'Frag einen Kunden: „Brauchst du noch X?“', min: 10, why: 'Ein Zusatzverkauf an einen zufriedenen Kunden ist leichter als ein neuer Kunde.', tpl: 'followup' },
-  { id: 'm-gig', e: '🧪', t: 'Melde dich bei einer Test-Plattform an und mache einen ersten Test', min: 20, why: 'Kleine Beträge, aber sofort ausgezahlt – das motiviert.' },
-  { id: 'm-tax', e: '🧮', t: 'Prüfe, für welche Jahre du noch keine Steuererklärung abgegeben hast', min: 10, why: 'Eine freiwillige Erklärung geht bis zu vier Jahre rückwirkend – oft gibt es Geld zurück.', idea: 'steuer' },
-  { id: 'm-bonus', e: '🎁', t: 'Sichere dir eine seriöse Empfehlungsprämie bei einem Dienst, den du schon nutzt', min: 10, why: 'Kleiner Aufwand, schneller Euro.', idea: 'praemien' },
   { id: 'm-bundle', e: '📦', t: 'Schnüre aus deinem Angebot ein Paket mit Festpreis', min: 20, why: 'Festpreise sind leichter zu verkaufen als „nach Aufwand“.', tpl: 'angebot' }
 ];
 
 /* ---------- Lab-Bausteine ---------- */
 const LAB_FORMATS = {
-  vorlage: { n: 'Vorlagenpaket', p: [19, 49], where: 'Etsy oder Gumroad', t: '7 Tagen', first: 'Baue in 2 Stunden eine erste Vorlage und zeige sie 3 Menschen aus der Zielgruppe.' },
-  workshop: { n: 'Mini-Workshop (90 Min)', p: [79, 249], where: 'VHS, Vereine, Betriebe oder online', t: '90 Minuten', first: 'Skizziere den Ablauf auf einer Seite und biete ihn einer Person als kostenlosen Pilot an.' },
-  dfy: { n: 'Done-for-you-Service', p: [149, 590], where: 'LinkedIn, Malt oder lokale Gruppen', t: '7 Tagen', first: 'Liefere für eine Person aus der Zielgruppe ein kleines Probe-Ergebnis – kostenlos, gegen Testimonial.' },
+  vorlage: { n: 'Vorlagenpaket', p: [19, 49], where: 'Etsy oder Gumroad', t: '7 Tagen', first: 'Baue in 2 Stunden mit KI-Hilfe eine erste Vorlage und zeige sie 3 Menschen aus der Zielgruppe.' },
+  workshop: { n: 'Mini-Workshop (90 Min, online)', p: [79, 249], where: 'LinkedIn, Vereine, Betriebe', t: '90 Minuten', first: 'Lass die KI einen Ablauf auf einer Seite skizzieren und biete ihn einer Person als kostenlosen Pilot an.' },
+  dfy: { n: 'Done-for-you-Service', p: [149, 590], where: 'LinkedIn, Malt oder Gründer-Gruppen', t: '7 Tagen', first: 'Liefere für eine Person aus der Zielgruppe ein kleines Probe-Ergebnis (KI-Entwurf + dein Feinschliff) – kostenlos, gegen Testimonial.' },
   check: { n: 'Express-Check (30 Min)', p: [29, 79], where: 'LinkedIn, Instagram oder per DM', t: '48 Stunden', first: 'Biete 3 Menschen einen kostenlosen Mini-Check an und notiere, was sie am meisten überrascht.' },
   retainer: { n: 'Monatspaket', p: [99, 490], where: 'Direktansprache, Empfehlungen', t: '30 Tagen', per: true, first: 'Beschreibe dein Monatspaket in 5 Zeilen und frage einen Kunden, ob es das wäre, was er braucht.' },
-  coach: { n: '1:1-Session (60 Min)', p: [49, 120], where: 'LinkedIn, XING, Meetups', t: '60 Minuten', first: 'Biete 2 Menschen aus deinem Netzwerk ein kostenloses 20-Minuten-Gespräch an.' },
-  ebook: { n: 'Checkliste / E-Book', p: [9, 29], where: 'Gumroad, Digistore24 oder eigene Seite', t: '5 Tagen', first: 'Schreibe die 10 wichtigsten Punkte als Checkliste und verschicke sie an 5 Menschen.' },
-  kurs: { n: 'Mini-Kurs', p: [49, 199], where: 'Udemy, Digistore24 oder eigene Seite', t: '14 Tagen', first: 'Sammle 10 echte Fragen aus der Zielgruppe – daraus entsteht die Gliederung.' },
-  pauschal: { n: 'Pauschalangebot', p: [40, 250], where: 'nebenan.de, Kleinanzeigen, Aushang', t: '1 Woche', first: 'Formuliere ein Pauschalangebot („… für 49 €“) und poste es in einer Nachbarschaftsgruppe.' },
-  abo: { n: 'Regelmäßiger Service', p: [60, 300], where: 'Nachbarschaft, Empfehlungen', t: '4 Wochen', per: true, first: 'Biete zwei Nachbarn einen Probemonat zum halben Preis an.' }
+  ebook: { n: 'Checkliste / E-Book', p: [9, 29], where: 'Gumroad, Digistore24 oder eigene Seite', t: '5 Tagen', first: 'Lass dir von der KI eine Gliederung mit 10 Punkten entwerfen, ergänze sie mit deiner Erfahrung und verschicke sie an 5 Menschen.' },
+  prompts: { n: 'Prompt-Paket', p: [12, 39], where: 'Gumroad, Etsy', t: '5 Tagen', first: 'Teste 10 Prompts an echten Aufgaben und zeige die Ergebnisse als Vorher/Nachher.' }
 };
 const LAB = {
-  schreiben: { topics: ['Website-Texte', 'Produktbeschreibungen', 'Newsletter', 'LinkedIn-Profile', 'Pressetexte', 'Bewerbungsunterlagen', 'Reden & Reime für Feiern'], aud: ['Selbstständige', 'Cafés & Restaurants', 'kleine Online-Shops', 'Berufseinsteiger', 'Coaches & Berater', 'Praxen & Kanzleien'], formats: ['vorlage', 'dfy', 'check', 'retainer', 'ebook'] },
-  design: { topics: ['Logos & Branding', 'Social-Media-Vorlagen', 'Präsentationen', 'Flyer & Speisekarten', 'Etiketten & Verpackungen'], aud: ['Gründer:innen', 'Cafés & Restaurants', 'Fitnessstudios & Trainer', 'Vereine', 'kleine Online-Shops'], formats: ['vorlage', 'dfy', 'check', 'retainer'] },
-  foto: { topics: ['Businessporträts', 'Produktfotos', 'Reels & Shorts', 'Immobilienfotos', 'Event-Videos'], aud: ['Selbstständige', 'kleine Online-Shops', 'Immobilienmakler', 'Vereine', 'Start-ups'], formats: ['dfy', 'check', 'retainer', 'workshop'] },
-  technik: { topics: ['Excel-Automatisierung', 'One-Page-Websites', 'Workflows mit Make/Zapier', 'KI-Setups', 'Google-Business-Profile'], aud: ['Handwerksbetriebe', 'Praxen & Kanzleien', 'kleine Online-Shops', 'Selbstständige', 'Vereine'], formats: ['vorlage', 'dfy', 'check', 'workshop', 'retainer'] },
-  finanzen: { topics: ['Haushaltsbuch-Vorlagen', 'Budget-Workshops', 'Preiskalkulation', 'Belegordnung', 'Finanz-Basics fürs erste Gehalt'], aud: ['Berufseinsteiger', 'Studierende', 'Selbstständige', 'Vereine', 'Eltern'], formats: ['vorlage', 'workshop', 'ebook', 'check', 'kurs'] },
-  verkauf: { topics: ['Verkaufsgespräche', 'Preisverhandlung', 'Kundenservice-Skripte', 'Termin-Akquise', 'Angebotsschreibung'], aud: ['Handwerksbetriebe', 'Coaches & Berater', 'Start-ups', 'Praxen & Kanzleien', 'Immobilienmakler'], formats: ['workshop', 'check', 'coach', 'dfy', 'ebook'] },
-  fuehrung: { topics: ['Teamführung für Neu-Führungskräfte', 'Meeting-Strukturen', 'Onboarding-Prozesse', 'Feedbackgespräche', 'Zeitmanagement'], aud: ['neue Teamleiter', 'Start-ups', 'Praxen & Kanzleien', 'Vereine', 'Handwerksbetriebe'], formats: ['workshop', 'coach', 'check', 'vorlage', 'kurs'] },
-  wissen: { topics: ['Prüfungsvorbereitung', 'Lernstrategien', 'Fachwissen-Crashkurs', 'Studienorganisation'], aud: ['Studierende', 'Schüler:innen', 'Berufseinsteiger', 'Azubis'], formats: ['workshop', 'coach', 'ebook', 'kurs', 'check'] },
+  schreiben: { topics: ['Website-Texte', 'Produktbeschreibungen', 'Newsletter', 'LinkedIn-Beiträge', 'Pressetexte', 'Bewerbungsunterlagen'], aud: ['Selbstständige', 'Cafés & Restaurants', 'kleine Online-Shops', 'Berufseinsteiger', 'Coaches & Berater', 'Praxen & Kanzleien'], formats: ['vorlage', 'dfy', 'check', 'retainer', 'prompts'] },
+  design: { topics: ['Social-Media-Vorlagen', 'Präsentationen', 'Pitch-Decks', 'Flyer & Speisekarten'], aud: ['Gründer:innen', 'Cafés & Restaurants', 'Fitnessstudios & Trainer', 'Vereine', 'kleine Online-Shops'], formats: ['vorlage', 'dfy', 'check', 'retainer'] },
+  foto: { topics: ['Kurzvideos aus Langformaten', 'Untertitel & Hooks', 'Reels-Skripte', 'Erklärvideos'], aud: ['Selbstständige', 'Podcaster & YouTuber', 'kleine Online-Shops', 'Start-ups'], formats: ['dfy', 'check', 'retainer', 'workshop'] },
+  technik: { topics: ['Excel-Automatisierung', 'Workflows mit Make/Zapier', 'KI-Setups & Chatbots', 'Google-Business-Profile'], aud: ['Handwerksbetriebe', 'Praxen & Kanzleien', 'kleine Online-Shops', 'Selbstständige'], formats: ['vorlage', 'dfy', 'check', 'workshop', 'retainer'] },
+  finanzen: { topics: ['Haushaltsbuch-Vorlagen', 'Budget-Workshops', 'Preiskalkulation', 'Belegordnung'], aud: ['Berufseinsteiger', 'Studierende', 'Selbstständige', 'Vereine', 'Eltern'], formats: ['vorlage', 'workshop', 'ebook', 'check'] },
+  verkauf: { topics: ['Verkaufsgespräche', 'Preisverhandlung', 'Termin-Akquise', 'Angebotsschreibung'], aud: ['Coaches & Berater', 'Start-ups', 'Praxen & Kanzleien', 'Immobilienmakler'], formats: ['workshop', 'check', 'dfy', 'ebook', 'prompts'] },
+  wissen: { topics: ['Prüfungsvorbereitung', 'Lernstrategien', 'Fachwissen-Crashkurs', 'Praxis-Checklisten aus dem Berufsalltag'], aud: ['Studierende', 'Berufseinsteiger', 'Azubis', 'Quereinsteiger'], formats: ['workshop', 'ebook', 'check', 'prompts'] },
   sprache: { topics: ['Business-Englisch', 'Übersetzungen', 'Korrekturlesen', 'Texte für den Export'], aud: ['Selbstständige', 'kleine Online-Shops', 'Studierende', 'Start-ups'], formats: ['dfy', 'check', 'workshop', 'ebook'] },
-  musik: { topics: ['Personalisierte Lieder', 'Jingles & Podcast-Intros', 'Hochzeitsmusik', 'Songwriting-Coaching'], aud: ['Hochzeitspaare', 'Podcaster & YouTuber', 'Vereine', 'Firmen mit Jubiläum', 'Familien'], formats: ['dfy', 'check', 'coach', 'workshop'] },
-  handwerk: { topics: ['Möbelaufbau', 'Kleinreparaturen', 'Fahrradwartung', 'Gartenpflege'], aud: ['Senioren', 'Berufstätige', 'Vermieter', 'Familien'], formats: ['pauschal', 'abo'] },
-  kontakte: { topics: ['Empfehlungsmarketing', 'Netzwerk-Treffen', 'Business-Intros'], aud: ['Selbstständige', 'Start-ups', 'Handwerksbetriebe'], formats: ['check', 'workshop', 'dfy', 'retainer'] },
-  kinder_tiere: { topics: ['Babysitting', 'Hundebetreuung', 'Tiersitting', 'Ferienbetreuung'], aud: ['Berufstätige Eltern', 'Senioren mit Haustier', 'Urlauber'], formats: ['pauschal', 'abo'] },
-  kochen: { topics: ['Meal-Prep', 'Backen auf Bestellung', 'Brunch-Boxen', 'Mini-Catering'], aud: ['Berufstätige', 'Vereine', 'Büros', 'Familien'], formats: ['pauschal', 'abo', 'workshop'] }
+  musik: { topics: ['Podcast-Intros & Jingles', 'Audio-Aufbereitung', 'Songtexte & Reime'], aud: ['Podcaster & YouTuber', 'Hochzeitspaare', 'Vereine', 'Firmen mit Jubiläum'], formats: ['dfy', 'check', 'retainer'] }
 };
-const LAB_BENEFIT = { schreiben: 'mehr Kunden zu gewinnen', design: 'professionell aufzutreten', foto: 'besser sichtbar zu werden', technik: 'Zeit zu sparen', finanzen: 'ihr Geld im Griff zu haben', verkauf: 'mehr Abschlüsse zu erzielen', fuehrung: 'Abläufe zu vereinfachen', wissen: 'schneller zu lernen', sprache: 'sicher zu kommunizieren', musik: 'unvergessliche Momente zu schaffen', handwerk: 'Aufgaben abzugeben', kontakte: 'die richtigen Leute zu treffen', kinder_tiere: 'entspannt unterwegs zu sein', kochen: 'Zeit zu sparen' };
+const LAB_BENEFIT = { schreiben: 'mehr Kunden zu gewinnen', design: 'professionell aufzutreten', foto: 'sichtbarer zu werden', technik: 'Zeit zu sparen', finanzen: 'ihr Geld im Griff zu haben', verkauf: 'mehr Abschlüsse zu erzielen', wissen: 'schneller zu lernen', sprache: 'sicher zu kommunizieren', musik: 'hörbar aufzufallen' };
 const SEVEN_DAY_STEPS = [['Ein-Satz-Angebot formulieren: „Ich helfe X, Y zu erreichen – ohne Z“', 10], ['5 Menschen aus der Zielgruppe ansprechen und nach ihrem größten Problem fragen', 25, 'akquise'], ['Deinen Preis nennen und beobachten, wie sie reagieren', 10, 'angebot'], ['Einen Mini-Pilot anbieten – kostenlos oder zum Startpreis', 15], ['Den ersten zahlenden Kunden gewinnen', 30, 'followup'], ['Ergebnis dokumentieren und ein Testimonial erfragen', 10, 'empfehl']];
 const MILESTONES = [[1, 'Erster Euro', '🌱'], [10000, '100 € verdient', '🚀'], [50000, '500 € verdient', '🔥'], [100000, '1.000 € verdient', '🏆'], [500000, '5.000 € verdient', '👑']];
 
@@ -4141,20 +4118,6 @@ function afterMission() {
   rerender();
 }
 
-/* ---------- Geldfunde (kontextbezogen) ---------- */
-function geldfunde() {
-  const out = [], y = new Date().getFullYear(), left = diffDays(`${y}-12-31`, todayISO());
-  const taxDocs = S.docs.filter(d => d.kind === 'steuer' || d.cat === 'steuer');
-  out.push({ id: 'steuer', e: '🧾', t: `Steuerjahr ${y - 4} nachholen`, s: `Letzte Chance bis 31.12. (noch ${left} Tage) – Arbeitnehmer bekommen oft Geld zurück.`, pot: 'Ø oft mehrere hundert €' });
-  const fix = sum(S.recurring.filter(r => r.amt < 0 && r.interval === 'monthly'), r => -r.amt);
-  if (fix > 0) out.push({ id: 'fixkosten', e: '💡', t: 'Fixkosten prüfen', s: `Du zahlst ${eur(fix)} im Monat an Fixkosten. 10 % weniger wären ${eur(Math.round(fix * 1.2))} im Jahr.`, pot: `bis ca. ${eur(Math.round(fix * 1.2))} / Jahr` });
-  const spar = sum(S.accounts.filter(a => a.type === 'spar'), a => accBalance(a));
-  if (spar > 100000) out.push({ id: 'zins', e: '🏦', t: 'Zinsen auf dein Erspartes', s: `Auf ${eur(spar)} bringt jeder zusätzliche Prozentpunkt ${eur(Math.round(spar / 100))} im Jahr.`, pot: `ca. ${eur(Math.round(spar / 100))} / Jahr je 1 %` });
-  const akteVertrag = S.docs.filter(d => d.cancelBy && diffDays(d.cancelBy, todayISO()) >= 0 && diffDays(d.cancelBy, todayISO()) <= 60);
-  if (akteVertrag.length) out.push({ id: 'fixkosten', e: '📝', t: 'Kündigungsfenster offen', s: `${akteVertrag[0].name}: Kündigung möglich bis ${fmtDate(akteVertrag[0].cancelBy, true)} – vorher Konditionen vergleichen.`, pot: 'Ersparnis bei Wechsel' });
-  return out.slice(0, 3);
-}
-
 /* ---------- Ideen-Lab ---------- */
 function labRoll(n = 3) {
   const p = E().profile, sk = p && p.skills.length ? p.skills : Object.keys(LAB), out = [], seed = E().labSeed++;
@@ -4181,7 +4144,7 @@ function copyText(txt) {
    KAIROS · Verdienen: Oberfläche (Mission, Chancen, Ideen, Experimente, Einnahmen)
    ===================================================================== */
 const earnUI = { cat: 'passend', q: '', lab: null };
-const BIZ_TABS_ALL = [['chancen', 'Chancen'], ['ideen', 'Ideen'], ['experimente', 'Experimente'], ['rechnungen', 'Rechnungen'], ['kunden', 'Kunden'], ['pipeline', 'Pipeline']];
+const bizTabs = () => [['chancen', 'Chancen'], ['ideen', 'Ideen'], ['experimente', 'Experimente'], ...((S.ui.more || S.invoices.length || S.clients.length) ? [['rechnungen', 'Rechnungen'], ['kunden', 'Kunden'], ['pipeline', 'Pipeline']] : [])];
 const EARN_TABS = ['chancen', 'ideen', 'experimente'];
 const monthKeyNow = () => todayISO().slice(0, 7);
 const goalOf = () => (E().profile && E().profile.goal) || 50000;
@@ -4197,8 +4160,8 @@ function missionCard(cls = 's12') {
   else if (p.kind === 'profile') acts = `<button class="btn primary" data-act="earn.profile">${icon('rocket')}Profil ausfüllen</button><button class="btn ghost" data-act="earn.m.skip">Später</button>`;
   else if (p.kind === 'idea') acts = `<button class="btn primary" data-act="earn.m.start">${icon('rocket')}Als Experiment starten</button><button class="btn" data-act="earn.idea" data-id="${p.idea}">Details</button><button class="btn ghost" data-act="earn.m.skip">Andere Idee</button>`;
   else if (p.kind === 'plan') acts = `<button class="btn primary" data-act="earn.m.start">${icon('rocket')}Experiment starten</button><button class="btn ghost" data-act="earn.m.skip">Andere</button>`;
-  else acts = `<button class="btn primary" data-act="earn.m.done">${icon('check')}Erledigt</button>${tplButton(p.tpl, 'Vorlage')}${p.exp ? `<button class="btn" data-act="earn.exp" data-id="${p.exp}">Experiment</button>` : ''}<button class="btn ghost" data-act="earn.m.skip">Andere</button>`;
-  const bonus = b ? `<div class="mbonus ${m.bDone ? 'done' : ''}"><span class="be">${b.e}</span><div class="bm"><b>Money-Move${b.min ? ' · ' + b.min + ' Min' : ''}</b><span>${esc(b.t)}</span></div>${m.bDone ? `<span class="okmsg">${icon('check')}</span>` : `${b.tpl ? `<button class="btn sm" data-act="earn.b.tpl">${icon('edit')}Vorlage</button>` : ''}${b.open || b.idea || b.act ? `<button class="btn sm" data-act="earn.b.open">Öffnen</button>` : ''}<button class="btn sm primary" data-act="earn.b.done" aria-label="Money-Move erledigt">${icon('check')}</button>`}</div>` : '';
+  else acts = `<button class="btn primary" data-act="earn.m.done">${icon('check')}Erledigt</button>${p.kind === 'step' ? `<button class="btn" data-act="earn.ai.step" data-id="${p.exp}" data-i="${p.step}">🤖 Mit KI erledigen</button>` : p.ai ? `<button class="btn" data-act="earn.ai.move" data-w="p">🤖 Mit KI erledigen</button>` : ''}${tplButton(p.tpl, 'Vorlage')}${p.exp ? `<button class="btn" data-act="earn.exp" data-id="${p.exp}">Experiment</button>` : ''}<button class="btn ghost" data-act="earn.m.skip">Andere</button>`;
+  const bonus = b ? `<div class="mbonus ${m.bDone ? 'done' : ''}"><span class="be">${b.e}</span><div class="bm"><b>Money-Move${b.min ? ' · ' + b.min + ' Min' : ''}</b><span>${esc(b.t)}</span></div>${m.bDone ? `<span class="okmsg">${icon('check')}</span>` : `${b.ai ? `<button class="btn sm" data-act="earn.ai.move" data-w="b">🤖 KI</button>` : ''}${b.tpl ? `<button class="btn sm" data-act="earn.b.tpl">${icon('edit')}Vorlage</button>` : ''}${b.open || b.idea || b.act ? `<button class="btn sm" data-act="earn.b.open">Öffnen</button>` : ''}<button class="btn sm primary" data-act="earn.b.done" aria-label="Money-Move erledigt">${icon('check')}</button>`}</div>` : '';
   return `<section class="card glass ${cls} mission ${done ? 'done' : ''}">
     <div class="mtop"><span class="eyebrow">Mission des Tages</span><span class="sp"></span>${p.min ? `<span class="chip">⏱ ca. ${p.min} Min</span>` : ''}${streak ? `<span class="chip hot" title="Tage in Folge mit erledigter Mission">🔥 ${streak}</span>` : ''}</div>
     <div class="mmain"><div class="me">${p.e}</div><div class="mt"><h2>${esc(p.title)}</h2><p>${esc(p.why || '')}</p>${extra}</div></div>${prog}
@@ -4244,6 +4207,7 @@ function ideaSheet(id) {
   openSheet(`<div class="row-flex" style="gap:14px;align-items:flex-start"><span class="bigE">${i.e}</span><div style="flex:1;min-width:0"><div class="faint" style="font-size:12.5px;font-weight:650">${i.cat[1]} ${i.cat[0]}</div><h2 style="margin:2px 0 6px">${esc(i.t)}</h2><p class="muted" style="font-size:14.5px;line-height:1.5">${esc(ideaPitch(i))}</p></div>${prof ? `<span class="badge ${m.score >= 75 ? 'pos' : 'info'}" title="Passung zu deinem Profil">🎯 ${m.score} %</span>` : ''}</div>
     ${prof && m.reasons.length ? `<ul class="rs" style="margin-top:12px">${m.reasons.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}
     <div class="facts"><div class="fact"><small>Potenzial</small><b>${potentialTxt(i)}</b></div><div class="fact"><small>Erster Euro</small><b>${ttfTxt(i.ttf)}</b></div><div class="fact"><small>Aufwand</small><b>ca. ${i.h} Std. / Woche</b></div><div class="fact"><small>Startkosten</small><b>${i.start ? 'ab ca. ' + i.start + ' €' : 'keine'}</b></div><div class="fact"><small>Einstieg</small><b>${['', 'leicht', 'mittel', 'anspruchsvoll'][i.lvl]}</b></div><div class="fact"><small>Wo</small><b>${i.mode === 'online' ? 'Online' : i.mode === 'lokal' ? 'Vor Ort' : 'Online &amp; vor Ort'}</b></div></div>
+    ${i.ai ? `<div class="aibox"><b>🤖 So hilft dir KI dabei</b><p>${esc(i.ai)}</p></div>` : ''}
     <div class="group-h"><span>So startest du – ${i.steps.length} Schritte</span><span>≈ ${Math.round(sum(i.steps, s => s[1]) / 60 * 10) / 10} Std.</span></div>
     <ol class="steps2">${i.steps.map(s => `<li><span>${esc(s[0])}</span><small>${s[1]} Min${s[2] ? ' · Vorlage' : ''}</small></li>`).join('')}</ol>
     ${i.plat && i.plat.length ? `<div class="group-h"><span>Wo du startest</span></div><div class="chips">${i.plat.map(p => `<span class="chip">${esc(p)}</span>`).join('')}</div>` : ''}
@@ -4275,7 +4239,7 @@ function expSheet(id) {
     <div class="bar" style="margin:14px 0 4px"><i style="width:${expProgress(e)}%"></i></div>
     <div class="trio"><div><small>Fortschritt</small><b>${expProgress(e)} %</b></div><div><small>Verdient</small><b class="money">${eur(inc)}</b></div><div><small>Erster Euro</small><b>${e.firstEuro ? fmtDate(e.firstEuro) : '–'}</b></div></div>
     <div class="group-h"><span>Schritte</span><span>${e.steps.filter(s => s.done).length}/${e.steps.length}</span></div>
-    <ol class="steps3">${e.steps.map((s, k) => `<li class="${s.done ? 'done' : k === n ? 'now' : ''}"><button class="ck" data-act="earn.step" data-id="${e.id}" data-i="${k}" aria-label="${s.done ? 'Als offen markieren' : 'Als erledigt markieren'}">${s.done ? icon('check') : ''}</button><div class="tx"><span>${esc(s.t)}</span><small>${s.min} Min${s.done && s.doneAt ? ' · erledigt ' + relDate(s.doneAt) : ''}</small></div>${s.tpl && TPL[s.tpl] ? `<button class="chip" data-act="earn.tpl" data-k="${s.tpl}" data-exp="${e.id}">Vorlage</button>` : ''}</li>`).join('')}</ol>
+    <ol class="steps3">${e.steps.map((s, k) => `<li class="${s.done ? 'done' : k === n ? 'now' : ''}"><button class="ck" data-act="earn.step" data-id="${e.id}" data-i="${k}" aria-label="${s.done ? 'Als offen markieren' : 'Als erledigt markieren'}">${s.done ? icon('check') : ''}</button><div class="tx"><span>${esc(s.t)}</span><small>${s.min} Min${s.done && s.doneAt ? ' · erledigt ' + relDate(s.doneAt) : ''}</small></div>${s.done ? '' : `<button class="chip" data-act="earn.ai.step" data-id="${e.id}" data-i="${k}">🤖 KI</button>`}${s.tpl && TPL[s.tpl] ? `<button class="chip" data-act="earn.tpl" data-k="${s.tpl}" data-exp="${e.id}">Vorlage</button>` : ''}</li>`).join('')}</ol>
     <div class="acts" style="justify-content:flex-start"><button class="btn" data-act="earn.inc.add" data-exp="${e.id}">${icon('plus')}Einnahme</button>${e.status === 'aktiv' ? `<button class="btn" data-act="earn.exp.pause" data-id="${e.id}">Pausieren</button>` : ['pausiert', 'geplant'].includes(e.status) ? `<button class="btn" data-act="earn.exp.resume" data-id="${e.id}">${e.status === 'geplant' ? 'Starten' : 'Fortsetzen'}</button>` : ''}<span class="sp"></span><button class="btn ghost" data-act="earn.exp.drop" data-id="${e.id}">Verwerfen</button>${e.status !== 'fertig' ? `<button class="btn primary" data-act="earn.exp.wrap" data-id="${e.id}">Bilanz</button>` : ''}</div>`, { wide: true });
 }
 function expWrap(e) {
@@ -4306,16 +4270,12 @@ function incomeList() {
 
 /* ---------- Profil ---------- */
 function profileSheet(after) {
-  const p = Object.assign({ skills: [], hours: 5, capital: 0, goal: 50000, mode: 'beides', pace: 'quick', status: 'angestellt' }, E().profile || {});
+  const p = Object.assign({ skills: [], hours: 5, goal: 50000 }, E().profile || {});
   const pk = (k, opts, v) => `<div class="pick" data-pf="${k}">${opts.map(([val, l]) => `<button type="button" data-v="${val}" class="${String(val) === String(v) ? 'on' : ''}">${l}</button>`).join('')}</div>`;
-  openSheet(`<h2>Dein Verdien-Profil</h2><p class="muted" style="font-size:14px;margin:4px 0 14px">Damit Kairos dir Ideen vorschlägt, die zu dir passen. Alles bleibt auf deinem Gerät und lässt sich jederzeit ändern.</p>
+  openSheet(`<h2>Dein Verdien-Profil</h2><p class="muted" style="font-size:14px;margin:4px 0 14px">Damit Kairos dir digitale Ideen vorschlägt, die zu dir passen. Alles bleibt auf deinem Gerät – und je mehr du im Gehirn über dich festhältst, desto persönlicher wird es.</p>
     <div class="group-h"><span>Was kannst du? (mehrere möglich)</span></div><div class="chips" id="pfSkills">${Object.entries(SKILLS).map(([k, [l, e]]) => `<button type="button" class="chip lg ${p.skills.includes(k) ? 'on' : ''}" data-sk="${k}">${e} ${l}</button>`).join('')}</div>
     <div class="group-h"><span>Wie viel Zeit pro Woche?</span></div>${pk('hours', [[2, '≈ 2 Std.'], [5, '≈ 5 Std.'], [10, '≈ 10 Std.'], [20, '20+ Std.']], p.hours)}
-    <div class="group-h"><span>Startkapital für den Anfang?</span></div>${pk('capital', [[0, 'Keins'], [5000, 'bis 50 €'], [20000, 'bis 200 €'], [100000, 'bis 1.000 €']], p.capital)}
     <div class="group-h"><span>Monatsziel (zusätzlich verdienen)</span></div>${pk('goal', [[10000, '100 €'], [25000, '250 €'], [50000, '500 €'], [100000, '1.000 €'], [200000, '2.000 €']], p.goal)}
-    <div class="group-h"><span>Wo möchtest du arbeiten?</span></div>${pk('mode', [['online', '💻 Online'], ['lokal', '📍 Vor Ort'], ['beides', '🔀 Beides']], p.mode)}
-    <div class="group-h"><span>Was zählt mehr?</span></div>${pk('pace', [['quick', '⚡ Schnell erstes Geld'], ['build', '🏗️ Langfristig aufbauen']], p.pace)}
-    <div class="group-h"><span>Deine Situation</span></div>${pk('status', [['angestellt', 'Angestellt'], ['selbst', 'Selbstständig'], ['student', 'Studium / Ausbildung'], ['sonst', 'Sonstiges']], p.status)}
     <div class="acts"><button class="btn" data-sh="no">Abbrechen</button><span class="sp"></span><button class="btn primary" data-sh="save">Speichern</button></div>`,
   { wide: true, onMount: sh => {
     sh.addEventListener('click', e => {
@@ -4324,7 +4284,7 @@ function profileSheet(after) {
       const b = e.target.closest('[data-sh]'); if (!b) return;
       if (b.dataset.sh === 'no') return closeSheet();
       const get = k => { const on = sh.querySelector(`[data-pf="${k}"] .on`); return on ? on.dataset.v : null; };
-      E().profile = { skills: [...sh.querySelectorAll('[data-sk].on')].map(x => x.dataset.sk), hours: +get('hours'), capital: +get('capital'), goal: +get('goal'), mode: get('mode'), pace: get('pace'), status: get('status') };
+      E().profile = { skills: [...sh.querySelectorAll('[data-sk].on')].map(x => x.dataset.sk), hours: +get('hours'), capital: 0, goal: +get('goal'), mode: 'online', pace: 'quick', status: 'angestellt' };
       E().missions[todayISO()] && (E().missions[todayISO()].skips = 0);
       save(); closeSheet(); rerender(); toast('Profil gespeichert – Ideen sind neu sortiert', 'good'); if (after) after();
     });
@@ -4341,12 +4301,11 @@ function earnKpis() {
     <div class="card glass s3 kpi" style="--c:var(--c-life)"><span class="lab"><i class="d"></i>Gemerkt</span><span class="val num">${E().saved.length}</span><span class="sub">Ideen auf deiner Liste</span></div></div>`;
 }
 function tabChancen() {
-  const rk = rankedIdeas(), top = rk.filter(r => r.i.c !== 'fund' && !E().exps.some(e => e.idea === r.i.id && ['aktiv', 'geplant'].includes(e.status))).slice(0, 3), fn = geldfunde();
+  const rk = rankedIdeas().filter(r => !E().exps.some(e => e.idea === r.i.id && ['aktiv', 'geplant'].includes(e.status))).slice(0, 4);
   return `${earnKpis()}<div class="grid">${missionCard('s8')}${goalCard('s4')}
-    <section class="card glass s6"><h3>💎 Geldfunde<span class="sp"></span><span class="faint" style="font-size:12.5px">Geld, das schon dir gehört</span></h3><div class="list">${fn.map(f => `<button class="li" data-act="earn.idea" data-id="${f.id}"><span class="lead sm" style="background:color-mix(in srgb,var(--c-biz) 18%,transparent)">${f.e}</span><span class="mid"><span class="tt">${esc(f.t)}</span><span class="ss" style="white-space:normal">${esc(f.s)}</span></span><span class="end" style="font-size:12px;color:var(--pos);font-weight:650;white-space:normal;text-align:right;max-width:110px">${esc(f.pot)}</span></button>`).join('')}</div></section>
-    <section class="card glass s6"><h3>🎯 ${E().profile ? 'Passt am besten zu dir' : 'Beliebte Einstiege'}<span class="sp"></span><button class="link" data-act="earn.tab" data-t="ideen">Alle Ideen</button></h3>
-      ${E().profile ? '' : `<div class="banner" style="margin-top:0"><span>Mit deinem Profil werden die Vorschläge persönlich.</span><span class="sp"></span><button class="btn sm primary" data-act="earn.profile">Profil</button></div>`}
-      <div class="list">${top.map(({ i, m }) => `<button class="li" data-act="earn.idea" data-id="${i.id}"><span class="lead sm" style="background:var(--field-f)">${i.e}</span><span class="mid"><span class="tt">${esc(i.t)}</span><span class="ss">${potentialTxt(i)} · ${ttfTxt(i.ttf)}</span></span>${E().profile ? `<span class="end"><span class="badge ${m.score >= 75 ? 'pos' : 'info'}">${m.score} %</span></span>` : ''}</button>`).join('')}</div></section>
+    <section class="card glass s12"><h3>🎯 ${E().profile ? 'Passt am besten zu dir' : 'Beliebte Einstiege mit KI'}<span class="sp"></span><button class="link" data-act="earn.tab" data-t="ideen">Alle Ideen</button></h3>
+      ${E().profile ? '' : `<div class="banner" style="margin-top:0"><span>Sag Kairos kurz, was du kannst – dann werden die Vorschläge persönlich.</span><span class="sp"></span><button class="btn sm primary" data-act="earn.profile">Profil</button></div>`}
+      <div class="list">${rk.map(({ i, m }) => `<button class="li" data-act="earn.idea" data-id="${i.id}"><span class="lead sm" style="background:var(--field-f)">${i.e}</span><span class="mid"><span class="tt">${esc(i.t)}</span><span class="ss" style="white-space:normal">🤖 ${esc(i.ai)}</span></span><span class="end" style="text-align:right;white-space:normal;max-width:130px"><span style="font-size:12px;color:var(--pos);font-weight:650">${potentialTxt(i)}</span>${E().profile ? `<br><span class="badge ${m.score >= 75 ? 'pos' : 'info'}">${m.score} %</span>` : ''}</span></button>`).join('')}</div></section>
     ${legalCard('s12')}</div>`;
 }
 function labCards() {
@@ -4363,7 +4322,7 @@ function tabIdeen() {
   const saved = E().saved, cat = earnUI.cat;
   const cats = [['passend', 'Für mich'], ['alle', 'Alle'], ...Object.entries(EARN_CATS).map(([k, v]) => [k, v[1] + ' ' + v[0]]), ['gemerkt', '♥ Gemerkt']];
   return `${E().profile ? '' : `<div class="banner" style="margin:0 0 14px"><span>🧭 Sag Kairos, was du kannst – dann steht oben, was wirklich zu dir passt.</span><span class="sp"></span><button class="btn sm primary" data-act="earn.profile">Profil ausfüllen</button></div>`}
-  <section class="card glass lab"><h3>✨ Ideen-Lab<span class="sp"></span><button class="btn sm" data-act="earn.lab.roll">${icon('sparkle')}Neu würfeln</button></h3><p class="muted" style="font-size:14px;margin:-4px 0 12px">Eigene Angebote aus deinen Stärken – mit Preis-Anker und erstem Schritt. Teste sie in 7 Tagen, bevor du Zeit investierst.</p><div class="labg" id="labBox">${labCards()}</div></section>
+  <section class="card glass lab"><h3>✨ Ideen-Lab<span class="sp"></span><button class="btn sm" data-act="earn.lab.roll">${icon('sparkle')}Neu würfeln</button></h3><p class="muted" style="font-size:14px;margin:-4px 0 12px">Eigene KI-gestützte Angebote aus deinen Stärken – mit Preis-Anker und erstem Schritt. Teste sie in 7 Tagen, bevor du Zeit investierst.</p><button class="btn" style="margin-bottom:12px" data-act="earn.ai.lab">🤖 5 Ideen aus meinem Gehirn entwickeln</button><div class="labg" id="labBox">${labCards()}</div></section>
   <div class="toolbar" style="margin-top:18px"><div class="chips" style="flex:1">${cats.map(([k, l]) => `<button class="chip ${cat === k ? 'on' : ''}" data-act="earn.cat" data-c="${k}">${l}${k === 'gemerkt' && saved.length ? ' ' + saved.length : ''}</button>`).join('')}</div><div class="searchbox" style="max-width:220px">${icon('search')}<input class="inp" id="ideaSearch" placeholder="Idee suchen …" value="${esc(earnUI.q)}"></div></div>
   <div id="ideaGrid">${tabIdeaList()}</div>`;
 }
@@ -4426,6 +4385,350 @@ ACT['earn.inc.edit'] = el => incForm(E().inc.find(x => x.id === el.dataset.id));
 document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.idea[data-act]')) { e.preventDefault(); ACT[e.target.dataset.act](e.target, e); } });
 ACT['earn.ideas'] = () => { S.ui.bizTab = 'ideen'; save(); go('business'); };
 
+const offerNow = () => { const e = activeExps()[0]; if (e) return e.title; const sv = E().saved.map(ideaById).filter(Boolean)[0]; return sv ? sv.t : ''; };
+ACT['earn.ai.step'] = el => { const e = expById(el.dataset.id), k = +el.dataset.i; if (!e || !e.steps[k]) return; aiRunSheet({ title: 'KI-Entwurf: ' + clip(e.steps[k].t, 56), prompt: aiStepPrompt(e, k), saveCat: 'ideen' }); };
+ACT['earn.ai.move'] = el => { const m = missionToday(), mv = el.dataset.w === 'b' ? m.b : describeP(m.p); if (!mv || !mv.ai) return; aiRunSheet({ title: 'KI-Entwurf: ' + clip(mv.t || mv.title, 56), prompt: fillAi(mv.ai, { offer: offerNow() }) + '\n\nLiefere ein direkt nutzbares Ergebnis auf Deutsch.', saveCat: 'ideen' }); };
+ACT['earn.ai.lab'] = () => aiRunSheet({ title: '5 Angebote aus deinem Gehirn', saveCat: 'ideen', prompt: `Entwickle 5 konkrete Angebote für ein digitales Nebeneinkommen, das ich mit KI-Unterstützung in 4–6 Stunden pro Woche aufbauen kann.\n\nMein Hintergrund:\n${brainHint() || 'noch nicht angegeben – wähle breit einsetzbare Angebote'}\n\nGib pro Angebot an: Titel, Zielgruppe, was genau geliefert wird, Preisvorschlag (Festpreis), wie KI die Arbeit beschleunigt und den ersten Schritt, den ich in 30 Minuten tun kann. Sei realistisch und konkret; vermeide Gesundheits-, Rechts- und Anlageberatung.` });
+
+/* =====================================================================
+   KAIROS · Gehirn: Wissen speichern, durchsuchen, befragen (lokal + optional KI)
+   ===================================================================== */
+const BRAIN_CATS = { ich: ['Über mich', '🧑'], familie: ['Menschen', '👪'], job: ['Job & Karriere', '💼'], finanzen: ['Geld & Verträge', '💶'], gesundheit: ['Gesundheit', '🩺'], ziele: ['Ziele & Pläne', '🎯'], ideen: ['Ideen', '💡'], wissen: ['Wissen & Notizen', '📚'], sonst: ['Sonstiges', '🗂️'] };
+const BRAIN_AUTO = [
+  ['familie', /\b(frau|mann|partner|partnerin|tochter|sohn|kind|kinder|eltern|mutter|vater|oma|opa|bruder|schwester|freund|freundin|familie|geburtstag von)\b/],
+  ['gesundheit', /\b(arzt|aerztin|krankenkasse|diagnose|medikament|allergie|zahnarzt|therapie|krankheit|impf)/],
+  ['finanzen', /\b(miete|vertrag|versicherung|kredit|konto|iban|gehalt|netto|brutto|steuer|rente|sparen|depot|kuendig|tarif|strom|handy)/],
+  ['job', /\b(job|arbeit|chef|kollege|team|beruf|firma|arbeitgeber|karriere|bewerbung|projekt|kunde|filiale)/],
+  ['ziele', /\b(ziel|plan|vorhaben|will ich|moechte ich|bis ende|dieses jahr|naechstes jahr|traum)/],
+  ['ideen', /\b(idee|konzept|vielleicht koennte|was waere wenn|app idee|geschaeftsidee)/],
+  ['ich', /\b(ich bin|mein name|ich wohne|geboren|adresse|ich mag|ich liebe|meine vorlieben|ueber mich)\b/]
+];
+const BRAIN_Q = [
+  { id: 'wer', cat: 'ich', t: 'Wer bist du in drei Sätzen?', ph: 'Name, Alter, wo du lebst, was dich ausmacht …' },
+  { id: 'job', cat: 'job', t: 'Was machst du beruflich – und was kannst du besonders gut?', ph: 'Position, Arbeitgeber, Stärken, Erfahrungen …' },
+  { id: 'ziele', cat: 'ziele', t: 'Was willst du in den nächsten 12 Monaten erreichen?', ph: 'Beruflich, finanziell, privat …' },
+  { id: 'menschen', cat: 'familie', t: 'Wer gehört zu deinem Leben?', ph: 'Partner, Kinder, Eltern, wichtige Freunde – mit Geburtstagen, wenn du magst' },
+  { id: 'wohnen', cat: 'finanzen', t: 'Wie wohnst du?', ph: 'Miete oder Eigentum, Vermieter, Kosten, Kündigungsfristen …' },
+  { id: 'vertraege', cat: 'finanzen', t: 'Welche Versicherungen und Verträge hast du?', ph: 'Anbieter, Beitrag, Laufzeit, Kündigungsfrist …' },
+  { id: 'geld', cat: 'finanzen', t: 'Wie sieht deine Geldsituation grob aus?', ph: 'Einkommen, feste Kosten, Sparziele – nur was du festhalten möchtest' },
+  { id: 'alltag', cat: 'ich', t: 'Was soll Kairos über deinen Alltag wissen?', ph: 'Routinen, Vorlieben, Dinge, die dir wichtig sind …' }
+];
+
+function B() {
+  if (!S.brain) S.brain = { items: [], answered: {} };
+  if (!S.brain.items) S.brain.items = []; if (!S.brain.answered) S.brain.answered = {};
+  return S.brain;
+}
+const itemById = id => B().items.find(i => i.id === id);
+function autoCat(text) { const n = norm(text); for (const [c, re] of BRAIN_AUTO) if (re.test(n)) return c; return 'wissen'; }
+function addItem({ title, body, cat, q, src }) {
+  const t = (title || '').trim(), b = (body || '').trim();
+  const it = { id: uid(), title: t || clip(b.split('\n')[0] || 'Notiz', 60), body: b, cat: cat && cat !== 'auto' ? cat : autoCat(t + ' ' + b), created: Date.now(), updated: Date.now(), src: src || 'manuell' };
+  if (q) { it.q = q; B().answered[q] = it.id; }
+  B().items.unshift(it); save(); return it;
+}
+const itemSnippet = (i, n = 160) => clip(String(i.body || '').replace(/\s+/g, ' '), n);
+
+/* ---------- Suche (lokal, über Infos + Dokumente inkl. Volltext) ---------- */
+const STOP = new Set(('der die das den dem des ein eine einen einem einer und oder aber ist sind war waren wie was wer wo wann wieviel wieviele viel viele ich mein meine meinen meiner meinem mir mich du dir dein deine hat habe haben hatte wird werden kann kannst muss auf in im an am zu zum zur von vom mit fuer bei nach aus um ueber als auch noch nicht nur es sich so da wenn dass gibt welche welcher welches mal bitte alle alles').split(' '));
+const qTokens = q => norm(q).split(/[^a-z0-9]+/).filter(t => t.length > 2 && !STOP.has(t));
+const stemOf = t => t.length > 6 ? t.slice(0, t.length - 2) : t.length > 4 ? t.slice(0, t.length - 1) : t;
+let _corp = null, _corpKey = '';
+function brainCorpus() {
+  const key = B().items.length + '|' + B().items.reduce((a, i) => a + (i.updated || 0), 0) + '|' + S.docs.length + '|' + S.docs.reduce((a, d) => a + (d.text ? d.text.length : 0) + (d.fields ? d.fields.length : 0) + (d.name || '').length, 0);
+  if (_corp && key === _corpKey) return _corp;
+  const out = [];
+  B().items.forEach(i => out.push({ type: 'item', id: i.id, title: i.title, text: i.body, cat: i.cat }));
+  S.docs.forEach(d => {
+    const meta = [d.sender, d.summary, (d.fields || []).map(f => f.l + ': ' + fieldDisplay(f)).join('; '), d.note, docDeadlines(d).map(x => x.l + ' ' + fmtDate(x.d, true)).join('; ')].filter(Boolean).join('. ');
+    out.push({ type: 'doc', id: d.id, title: d.name, text: meta });
+    const tx = d.text || ''; for (let p = 0; p < tx.length; p += 420) out.push({ type: 'doc', id: d.id, title: d.name, text: tx.slice(p, p + 520), deep: 1 });
+  });
+  out.forEach(c => { c.nt = norm(c.text); c.nti = norm(c.title); c.words = c.nt.split(/[^a-z0-9]+/).filter(Boolean); });
+  _corp = out; _corpKey = key; return out;
+}
+function brainSearch(q, k = 6) {
+  const toks = qTokens(q); if (!toks.length) return [];
+  const C = brainCorpus(), N = C.length || 1, st = toks.map(stemOf);
+  const df = st.map(s => C.reduce((a, c) => a + (c.words.some(w => w.startsWith(s)) || c.nti.includes(s) ? 1 : 0), 0));
+  const scored = [];
+  for (const c of C) {
+    let sc = 0, hit = 0;
+    st.forEach((s, i) => { const tf = c.words.reduce((a, w) => a + (w.startsWith(s) ? 1 : 0), 0), inT = c.nti.includes(s); if (!tf && !inT) return; hit++; sc += ((tf ? 1 + Math.log(tf) : 0) + (inT ? 2.5 : 0)) * Math.log(1 + N / (1 + df[i])); });
+    if (!hit) continue; if (hit === st.length) sc *= 1.5; if (c.type === 'item') sc *= 1.15;
+    scored.push({ c, sc });
+  }
+  scored.sort((a, b) => b.sc - a.sc);
+  const perDoc = {}, out = [];
+  for (const { c, sc } of scored) { const key = c.type + c.id; perDoc[key] = (perDoc[key] || 0) + 1; if (perDoc[key] > 2) continue; out.push({ type: c.type, id: c.id, title: c.title, snippet: bestSnippet(c.text, toks), score: sc, cat: c.cat, deep: c.deep }); if (out.length >= k) break; }
+  return out;
+}
+function bestSnippet(text, toks) {
+  const parts = String(text || '').split(/(?<=[.!?])\s+|\s\|\s|\n+/).filter(Boolean); if (!parts.length) return '';
+  const st = toks.map(stemOf); let best = 0, bi = 0;
+  parts.forEach((p, i) => { const n = norm(p); const sc = st.reduce((a, s) => a + (n.includes(s) ? 1 : 0), 0); if (sc > best) { best = sc; bi = i; } });
+  return clip((parts[bi] + (parts[bi + 1] ? ' ' + parts[bi + 1] : '')).trim(), 240);
+}
+const hitOpen = h => { if (h.type === 'doc') { OPEN.doc ? OPEN.doc(h.id) : docView(S.docs.find(d => d.id === h.id)); } else itemView(h.id); };
+
+/* ---------- Lokale Antwort (ohne KI) ---------- */
+function localAnswer(q) {
+  const n = norm(q), t = todayISO(), hits = brainSearch(q), lines = []; let lead = '';
+  if (/(kuendig|frist|ablauf|laeuft ab|faellig|termin|wann muss|deadline)/.test(n)) {
+    const dl = []; S.docs.forEach(d => docDeadlines(d).forEach(x => dl.push({ d, x }))); dl.sort((a, b) => a.x.d.localeCompare(b.x.d));
+    const up = dl.filter(o => o.x.d >= t).slice(0, 5);
+    if (up.length) { lead = 'Das sind deine nächsten Fristen aus den Dokumenten:'; up.forEach(o => lines.push({ e: kindInfo(o.d).e, t: `${o.d.name} · ${o.x.l}`, s: `${fmtDate(o.x.d, true)} · ${relDate(o.x.d)}`, h: { type: 'doc', id: o.d.id } })); }
+  }
+  if (!lead && /(netto|brutto|gehalt|lohn|verdien|auszahlung|einkommen)/.test(n)) {
+    const ls = S.docs.filter(d => d.kind === 'lohn').sort((a, b) => (b.docDate || '').localeCompare(a.docDate || '')).slice(0, 4);
+    if (ls.length) { lead = 'Aus deinen Lohnabrechnungen:'; ls.forEach(d => { const f = l => (d.fields || []).find(x => new RegExp(l, 'i').test(x.l)); const ne = f('netto'), br = f('brutto'), au = f('auszahl'); lines.push({ e: '💶', t: `${d.name}`, s: [br && 'Brutto ' + money(br.v), ne && 'Netto ' + money(ne.v), au && 'Auszahlung ' + money(au.v)].filter(Boolean).join(' · ') || (d.amount ? money(d.amount) : ''), h: { type: 'doc', id: d.id } }); }); }
+  }
+  if (!lead && hits.length) lead = 'Dazu habe ich in deinem Gehirn Folgendes gefunden:';
+  return { lead, lines, hits, mode: 'lokal' };
+}
+
+/* ---------- KI-Anbindung (optional, eigener API-Schlüssel) ---------- */
+const AI = { key: '', model: 'claude-sonnet-5-5' };
+const AI_MODELS = [['claude-sonnet-5-5', 'Sonnet 5.5 – ausgewogen (empfohlen)'], ['claude-haiku-5-5', 'Haiku 5.5 – schnell & günstig'], ['claude-opus-5-5', 'Opus 5.5 – am gründlichsten']];
+const aiOn = () => !!AI.key;
+async function aiLoad() {
+  try { const r = await kvGet('ai'); if (!r) return;
+    if (r.enc) { if (!cryptoKey) return; const buf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: r.iv }, cryptoKey, r.ct); Object.assign(AI, JSON.parse(dec.decode(buf))); }
+    else if (r.plain) Object.assign(AI, r.plain);
+  } catch (e) { console.warn('KI-Einstellungen nicht lesbar', e); }
+}
+async function aiSave() {
+  if (cryptoKey) { const e = await encBytes(enc.encode(JSON.stringify({ key: AI.key, model: AI.model }))); await kvSet('ai', { enc: 1, iv: e.iv, ct: e.ct }); }
+  else await kvSet('ai', { plain: { key: AI.key, model: AI.model } });
+}
+async function aiChat({ system, messages, max = 1400 }) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'content-type': 'application/json', 'x-api-key': AI.key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' }, body: JSON.stringify({ model: AI.model, max_tokens: max, system, messages }) });
+  if (!res.ok) { let m = ''; try { const j = await res.json(); m = (j.error && j.error.message) || ''; } catch (e) { /* ignorieren */ } const er = new Error(m || 'HTTP ' + res.status); er.status = res.status; throw er; }
+  const j = await res.json(); return (j.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n').trim();
+}
+const aiErr = e => e.status === 401 ? 'Der API-Schlüssel wurde abgelehnt – bitte in den Einstellungen prüfen.' : e.status === 429 ? 'Limit erreicht oder zu viele Anfragen – kurz warten und erneut versuchen.' : e.status === 404 ? 'Das gewählte Modell ist nicht verfügbar – wähle in den Einstellungen ein anderes.' : e.name === 'TypeError' ? 'Keine Verbindung zur KI – bitte Internet prüfen.' : 'KI-Fehler: ' + (e.message || 'unbekannt');
+async function aiConsent() {
+  if (lsGet('kairos-ai-ok')) return true;
+  const ok = await confirmSheet('KI-Funktion nutzen?', 'Für die Antwort sendet Kairos deine Frage und die passenden Auszüge aus deinen Infos und Dokumenten direkt von deinem Gerät an die Anthropic-API (mit deinem eigenen Schlüssel). Es gibt keinen Kairos-Server dazwischen. Nutze das nur für Inhalte, die du dort verarbeiten lassen möchtest.', 'Verstanden', false);
+  if (ok) lsSet('kairos-ai-ok', '1'); return ok;
+}
+function brainFacts(max = 1800) {
+  const keep = B().items.filter(i => ['ich', 'job', 'ziele'].includes(i.cat)).sort((a, b) => (b.updated || 0) - (a.updated || 0));
+  let s = ''; for (const i of keep) { const l = `- ${i.title}: ${String(i.body).replace(/\s+/g, ' ')}\n`; if ((s + l).length > max) break; s += l; } return s.trim();
+}
+function brainHint() {
+  const f = brainFacts(900); if (f) return f;
+  const p = E().profile; return p && p.skills.length ? 'Stärken: ' + p.skills.map(k => SKILLS[k][0]).join(', ') : '';
+}
+const aiSystem = () => `Du bist Kairos, das digitale Gehirn von ${S.profile.name || 'dem Nutzer'}. Heute ist ${fmtDate(todayISO(), true)}. Antworte auf Deutsch, kurz, konkret und direkt nutzbar. Stütze dich bei Fragen zu Person, Dokumenten und Verträgen ausschließlich auf die mitgeschickten Auszüge und nenne die Quelle als [1], [2]. Fehlt die Information, sage das offen und rate nicht. Gib keine verbindliche Rechts- oder Steuerberatung; weise bei Bedarf kurz darauf hin.`;
+function brainPrompt(q, hits) {
+  const facts = brainFacts(1400), src = hits.map((h, i) => `[${i + 1}] (${h.type === 'doc' ? 'Dokument' : 'Info'}: ${h.title}) ${clip(h.snippet || '', 600)}`).join('\n');
+  return `${facts ? 'Grundwissen über mich:\n' + facts + '\n\n' : ''}${src ? 'Auszüge aus meinem Gehirn:\n' + src + '\n\n' : 'Es wurden keine passenden Auszüge gefunden.\n\n'}Frage: ${q}`;
+}
+async function askBrainAI(q, hits, history) {
+  const msgs = history.slice(-6).map(m => ({ role: m.role === 'user' ? 'user' : 'assistant', content: m.text }));
+  msgs.push({ role: 'user', content: brainPrompt(q, hits) });
+  return aiChat({ system: aiSystem(), messages: msgs });
+}
+/* Freie KI-Aufgabe (Geld-Bereich, Zusammenfassungen …) */
+async function aiTask(prompt, max = 1600) {
+  const bg = brainHint();
+  return aiChat({ system: `Du bist Kairos, mein Assistent. Antworte auf Deutsch. Liefere direkt ein nutzbares Ergebnis ohne Einleitung oder Nachwort. Wo Angaben fehlen, setze [eckige Platzhalter].${bg ? '\nMein Hintergrund:\n' + bg : ''}`, messages: [{ role: 'user', content: prompt }], max });
+}
+function fillAi(str, ctx = {}) {
+  const p = E().profile, skills = p && p.skills.length ? p.skills.map(k => SKILLS[k][0]).join(', ') : '';
+  return String(str).replace(/\{Angebot\}/g, ctx.offer || 'mein digitales Angebot').replace(/\{Zielgruppe\}/g, ctx.aud || 'kleine Firmen und Selbstständige').replace(/\{Hintergrund\}/g, brainHint() || skills || 'siehe oben');
+}
+function aiStepPrompt(e, idx) {
+  const s = e.steps[idx], idea = e.idea && ideaById(e.idea);
+  return `Ich baue mir ein digitales Nebeneinkommen auf: „${e.title}“.${idea ? ' ' + idea.pitch : ''}${idea && idea.ai ? '\nSo soll KI dabei helfen: ' + idea.ai : ''}\n\nMein Hintergrund:\n${brainHint() || 'noch nicht angegeben'}\n\nAktueller Schritt: ${s.t}\n\nLiefere dafür ein direkt nutzbares, konkretes Ergebnis auf Deutsch (z. B. fertigen Text, Liste oder Plan) – ohne Einleitung. Wo Angaben fehlen, setze [eckige Platzhalter].`;
+}
+
+/* ---------- Kennzahlen & Vorschläge ---------- */
+const brainStats = () => ({ docs: S.docs.length, items: B().items.length, answered: Object.keys(B().answered).filter(k => itemById(B().answered[k])).length });
+function suggestQuestions() {
+  const out = [], docs = S.docs;
+  if (docs.some(d => d.kind === 'lohn')) out.push('Wie hoch war mein letztes Netto?');
+  if (docs.some(d => d.cancelBy || (d.fristen || []).length || d.expires)) out.push('Welche Fristen kommen als Nächstes?');
+  if (docs.some(d => d.kind === 'versicherung')) out.push('Welche Versicherungen habe ich?');
+  if (docs.some(d => d.kind === 'rechnung')) out.push('Welche Rechnungen sind offen?');
+  if (B().items.length) out.push('Was habe ich mir zuletzt gemerkt?');
+  if (!out.length) out.push('Was kann Kairos für mich tun?');
+  return out.slice(0, 4);
+}
+
+/* =====================================================================
+   KAIROS · Gehirn: Oberfläche (Überblick, Fragen, Infos, Dokumente) + KI-Helfer
+   ===================================================================== */
+Object.assign(IC, { brain: 'M12 4.5a3.5 3.5 0 0 0-6.4 2A3.6 3.6 0 0 0 4 10.4a3.6 3.6 0 0 0 1.2 2.7A3.8 3.8 0 0 0 8 19.2a3.4 3.4 0 0 0 4 1.3m0-16a3.5 3.5 0 0 1 6.4 2A3.6 3.6 0 0 1 20 10.4a3.6 3.6 0 0 1-1.2 2.7A3.8 3.8 0 0 1 16 19.2a3.4 3.4 0 0 1-4 1.3M12 4.5v16M8.5 9.5H12M12 13.5h3.5' });
+const brainUI = { cat: '', q: '', chat: [], busy: false };
+const brainTab = () => ['ueberblick', 'dokumente', 'infos'].includes(S.ui.brainTab) ? S.ui.brainTab : 'ueberblick';
+
+/* ---------- Hilfsfunktionen ---------- */
+const mdLite = t => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/^\s*[-•]\s+/gm, '• ').replace(/\n/g, '<br>');
+const catOfItem = i => BRAIN_CATS[i.cat] || BRAIN_CATS.sonst;
+function itemRow(i) { const c = catOfItem(i); return `<button class="li" data-act="brain.item" data-id="${i.id}"><span class="lead sm" style="background:var(--field-f)">${c[1]}</span><span class="mid"><span class="tt">${esc(i.title)}</span><span class="ss">${esc(itemSnippet(i, 90)) || c[0]}</span></span><span class="end"><span class="badge">${c[0]}</span></span></button>`; }
+
+/* ---------- Frage-Karte ---------- */
+function threadHTML() {
+  if (!brainUI.chat.length && !brainUI.busy) return '';
+  const msgs = brainUI.chat.map((m, i) => {
+    if (m.role === 'user') return `<div class="bub me">${esc(m.text)}</div>`;
+    const src = (m.hits || []).map((h, k) => `<button class="srcc" data-act="brain.hit" data-type="${h.type}" data-id="${h.id}"><b>${m.mode === 'ki' ? '[' + (k + 1) + '] ' : ''}${h.type === 'doc' ? '📄' : '🧠'} ${esc(clip(h.title, 44))}</b><span>${esc(clip(h.snippet || '', 130))}</span></button>`).join('');
+    if (m.mode === 'ki') return `<div class="bub ai"><div class="bt">${mdLite(m.text)}</div>${src ? `<div class="srcs">${src}</div>` : ''}<div class="bact"><button class="btn sm" data-act="brain.keep" data-i="${i}">${icon('plus')}Im Gehirn merken</button><button class="btn sm" data-act="brain.copyans" data-i="${i}">Kopieren</button></div></div>`;
+    const lines = (m.lines || []).map(l => `<button class="li" data-act="brain.hit" data-type="${l.h.type}" data-id="${l.h.id}"><span class="lead sm" style="background:var(--field-f)">${l.e}</span><span class="mid"><span class="tt">${esc(l.t)}</span><span class="ss">${esc(l.s)}</span></span></button>`).join('');
+    const none = !m.lead && !(m.hits || []).length;
+    return `<div class="bub ai">${m.err ? `<div class="warnl">${esc(m.err)} Lokale Suche:</div>` : ''}${none ? `<div class="bt">Dazu steht noch nichts in deinem Gehirn.</div><div class="bact"><button class="btn sm primary" data-act="brain.add" data-body="">${icon('plus')}Jetzt etwas dazu merken</button></div>` : `<div class="bt">${esc(m.lead)}</div>${lines ? `<div class="list" style="margin-top:8px">${lines}</div>` : ''}${src && !lines ? `<div class="srcs">${src}</div>` : ''}`}${!aiOn() && !none ? `<div class="hintl">Mit einem KI-Schlüssel (Einstellungen) formuliert Kairos daraus eine echte Antwort.</div>` : ''}</div>`;
+  }).join('');
+  return `<div class="thread">${msgs}${brainUI.busy ? '<div class="bub ai"><i class="spin"></i> Kairos denkt nach …</div>' : ''}</div>${brainUI.chat.length ? `<div style="text-align:right;margin-top:8px"><button class="link" data-act="brain.clear">Verlauf leeren</button></div>` : ''}`;
+}
+function renderThread() { const el = $('#askThread'); if (el) { el.innerHTML = threadHTML(); const th = $('.thread', el); if (th && th.lastElementChild) th.lastElementChild.scrollIntoView({ block: 'nearest' }); } }
+async function askBrain(q) {
+  q = (q || '').trim(); if (!q || brainUI.busy) return;
+  const hist = brainUI.chat.filter(m => m.role === 'user' || m.mode === 'ki').map(m => ({ role: m.role === 'user' ? 'user' : 'assistant', content: m.text }));
+  brainUI.chat.push({ role: 'user', text: q }); brainUI.busy = true; renderThread();
+  const loc = localAnswer(q);
+  if (aiOn() && await aiConsent()) {
+    try {
+      const hits = brainSearch(q, 6), msgs = []; for (const m of hist.slice(-6)) { if (msgs.length && msgs[msgs.length - 1].role === m.role) msgs[msgs.length - 1] = m; else msgs.push(m); }
+      while (msgs.length && msgs[0].role !== 'user') msgs.shift(); if (msgs.length && msgs[msgs.length - 1].role === 'user') msgs.pop();
+      msgs.push({ role: 'user', content: brainPrompt(q, hits) });
+      const text = await aiChat({ system: aiSystem(), messages: msgs });
+      brainUI.chat.push({ role: 'ai', mode: 'ki', text, hits });
+    } catch (e) { console.warn(e); brainUI.chat.push({ role: 'ai', ...loc, err: aiErr(e) }); }
+  } else brainUI.chat.push({ role: 'ai', ...loc });
+  brainUI.busy = false; renderThread();
+}
+function askCard() {
+  return `<section class="card glass s12 ask"><div class="ah"><span class="eyebrow">Frag dein Gehirn</span><span class="sp"></span><button class="chip ${aiOn() ? 'on' : ''}" data-act="brain.ai.info">${aiOn() ? '✨ KI an' : 'KI aus · lokale Suche'}</button></div>
+    <form id="askForm" class="askrow"><input class="inp lg" id="askIn" placeholder="Frag etwas – z. B. „Wann kann ich kündigen?“ oder „Wie hoch war mein Netto?“" autocomplete="off" aria-label="Frage an dein Gehirn"><button class="btn primary lg" type="submit">${icon('sparkle')}<span class="hide-s">Fragen</span></button></form>
+    <div class="chips" style="margin-top:12px">${suggestQuestions().map(s => `<button class="chip" data-ask="${esc(s)}">${esc(s)}</button>`).join('')}</div><div id="askThread">${threadHTML()}</div></section>`;
+}
+
+/* ---------- Hinzufügen & Aufbauen ---------- */
+function addTiles(cls = 's12') {
+  return `<div class="${cls} addrow"><button class="addtile" data-act="akte.pick"><span class="at">${icon('upload')}</span><b>Dokument hochladen</b><small>Lohnabrechnung, Brief, Vertrag … als PDF oder Foto</small></button><button class="addtile" data-act="akte.scan"><span class="at">${icon('camera')}</span><b>Brief fotografieren</b><small>Kairos liest den Text aus dem Foto</small></button><button class="addtile" data-act="brain.add" data-body=""><span class="at">${icon('edit')}</span><b>Etwas merken</b><small>Infos, Fakten, Ideen einfach eintippen</small></button></div>`;
+}
+function buildCard() {
+  const ans = B().answered, done = BRAIN_Q.filter(q => ans[q.id]).length, todo = BRAIN_Q.filter(q => !ans[q.id]);
+  if (!todo.length) return '';
+  return `<section class="card glass s12 build"><h3>${icon('rocket')} Gehirn aufbauen<span class="sp"></span><span class="faint" style="font-size:13px">${done} von ${BRAIN_Q.length}</span></h3><div class="bar thin" style="margin:-4px 0 12px"><i style="width:${done / BRAIN_Q.length * 100}%"></i></div>
+    <p class="muted" style="font-size:14px;margin:0 0 8px">Beantworte ein paar Fragen – je mehr Kairos über dich weiß, desto besser kann er dir helfen. Alles bleibt auf deinem Gerät.</p>
+    <div class="list">${todo.slice(0, 3).map(q => `<button class="li" data-act="brain.q" data-id="${q.id}"><span class="lead sm" style="background:var(--field-f)">${BRAIN_CATS[q.cat][1]}</span><span class="mid"><span class="tt">${esc(q.t)}</span><span class="ss">${esc(clip(q.ph, 80))}</span></span><span class="end"><span class="chip">Antworten</span></span></button>`).join('')}</div></section>`;
+}
+function itemForm(it, preset = {}) {
+  formSheet({ title: it ? 'Info bearbeiten' : preset.title ? preset.title : 'Etwas merken', sub: it ? '' : preset.sub || 'Schreib einfach los – Kairos ordnet es ein und findet es später wieder.', wide: true, fields: [
+    { k: 'body', label: preset.label || 'Was möchtest du festhalten?', type: 'textarea', rows: 7, val: it ? it.body : preset.body || '', ph: preset.ph || 'z. B. Meine Steuerklasse ist 3, Miete 980 € warm, Vermieter Herr Meier, Kündigungsfrist 3 Monate.', req: 1, full: 1 },
+    { k: 'title', label: 'Titel (optional)', type: 'text', val: it ? it.title : '', full: 1, ph: 'Kairos wählt sonst selbst einen' },
+    { k: 'cat', label: 'Ordner', type: 'select', val: it ? it.cat : 'auto', opts: [['auto', 'Automatisch zuordnen'], ...Object.entries(BRAIN_CATS).map(([k, v]) => [k, v[1] + ' ' + v[0]])] }],
+  submit: it ? 'Sichern' : 'Im Gehirn speichern',
+  onDelete: it ? () => removeWithUndo(B().items, it.id, 'Info', rerender) : null,
+  onSubmit: v => {
+    if (it) { Object.assign(it, { body: v.body, title: v.title || it.title, cat: v.cat === 'auto' ? autoCat(v.title + ' ' + v.body) : v.cat, updated: Date.now() }); save(); rerender(); toast('Gespeichert', 'good'); return; }
+    const x = addItem({ title: v.title, body: v.body, cat: v.cat, q: preset.q, src: preset.src }); rerender(); toast(`Im Gehirn gespeichert · ${BRAIN_CATS[x.cat][0]} 🧠`, 'good');
+  } });
+}
+function itemView(id) {
+  const i = itemById(id); if (!i) return; const c = catOfItem(i);
+  openSheet(`<div class="faint" style="font-size:12.5px;font-weight:650">${c[1]} ${c[0]} · ${fmtDate(iso(new Date(i.updated || i.created)), true)}</div><h2 style="margin:4px 0 12px">${esc(i.title)}</h2><div class="itemb">${esc(i.body)}</div>
+    <div class="acts"><button class="btn" data-act="brain.item.ask" data-id="${i.id}">${icon('sparkle')}Dazu fragen</button><span class="sp"></span><button class="btn" data-act="brain.item.edit" data-id="${i.id}">${icon('edit')}Bearbeiten</button></div>`, { wide: true });
+}
+
+/* ---------- Tabs ---------- */
+function moneyMini() {
+  const { m, p } = missionView(), streak = missionStreak();
+  return `<section class="card glass s12 mini"><div class="row-flex" style="gap:14px"><span class="mme">${p.e}</span><div style="flex:1;min-width:0"><div class="faint" style="font-size:12px;font-weight:650;letter-spacing:.04em">GELD-MISSION HEUTE${streak ? ' · 🔥 ' + streak : ''}</div><b style="font-size:15px;display:block;margin-top:2px">${esc(clip(p.title, 90))}</b></div>${m.pDone ? '<span class="okmsg">' + icon('check') + 'Erledigt</span>' : `<button class="btn" data-act="earn.go">Zur Mission</button>`}</div></section>`;
+}
+function recentList() {
+  const rows = [...B().items.map(i => ({ t: i.updated || i.created, h: itemRow(i) })), ...S.docs.map(d => ({ t: d.created || 0, h: (() => { const k = kindInfo(d); return `<button class="li" data-act="akte.view" data-id="${d.id}"><span class="lead sm" style="background:var(--field-f)">${k.e}</span><span class="mid"><span class="tt">${esc(d.name)}</span><span class="ss">${esc(k.name)}${d.summary ? ' · ' + esc(clip(d.summary, 70)) : ''}</span></span><span class="end"><span class="badge">Dokument</span></span></button>`; })() }))].sort((a, b) => b.t - a.t).slice(0, 6);
+  return rows.length ? `<section class="card glass s12"><h3>Zuletzt hinzugefügt<span class="sp"></span><button class="link" data-act="brain.tab" data-t="infos">Alle Infos</button></h3><div class="list">${rows.map(r => r.h).join('')}</div></section>` : '';
+}
+function tabUeberblick() {
+  const empty = !S.docs.length && !B().items.length, fr = akteFristen();
+  return `<div class="grid">${empty ? addTiles() + buildCard() + askCard() : askCard() + addTiles() + akteBusyHTML() + akteInboxHTML() + (fr ? `<div class="s12">${fr}</div>` : '') + buildCard() + recentList()}${moneyMini()}</div>`;
+}
+function tabInfos() {
+  const q = norm(brainUI.q), cat = brainUI.cat, all = B().items;
+  const list = all.filter(i => (!cat || i.cat === cat) && (!q || norm(i.title + ' ' + i.body).includes(q))).sort((a, b) => (b.updated || b.created) - (a.updated || a.created));
+  const cnt = k => all.filter(i => i.cat === k).length;
+  return `<section class="card glass"><div class="toolbar"><div class="searchbox">${icon('search')}<input class="inp" id="infoSearch" placeholder="Infos durchsuchen …" value="${esc(brainUI.q)}" autocomplete="off"></div><span class="sp"></span><button class="btn primary" data-act="brain.add" data-body="">${icon('plus')}Info</button></div>
+    <div class="chips" style="margin:2px 0 14px"><button class="chip ${!cat ? 'on' : ''}" data-act="brain.cat" data-c="">Alle <span class="faint">${all.length}</span></button>${Object.entries(BRAIN_CATS).map(([k, v]) => cnt(k) || cat === k ? `<button class="chip ${cat === k ? 'on' : ''}" data-act="brain.cat" data-c="${k}">${v[1]} ${v[0]} <span class="faint">${cnt(k)}</span></button>` : '').join('')}</div>
+    <div id="infoBox">${infoList(list)}</div></section>`;
+}
+function infoList(list) {
+  if (!list.length) return `<div class="empty"><div class="em">🧠</div><b>${B().items.length ? 'Keine Treffer' : 'Noch nichts gemerkt'}</b><p>${B().items.length ? 'Passe Suche oder Ordner an.' : 'Halte Fakten über dich fest: Job, Familie, Verträge, Ziele, Ideen. Kairos ordnet sie ein und findet sie wieder.'}</p>${B().items.length ? '' : `<button class="btn primary" data-act="brain.add" data-body="">${icon('plus')}Erste Info merken</button>`}</div>`;
+  return `<div class="list">${list.map(itemRow).join('')}</div>`;
+}
+
+VIEWS.heute = {
+  render() {
+    const t = todayISO(), st = brainStats(), name = S.profile.name ? `, ${esc(S.profile.name)}` : '', tab = brainTab();
+    const nIn = inboxDocs().length;
+    const sub = st.docs || st.items ? `${plural(st.docs, 'Dokument', 'Dokumente')} · ${plural(st.items, 'Info', 'Infos')}${nIn ? ` · <span class="info-t"><b>${nIn} zu prüfen</b></span>` : ''}` : 'Dein digitales Gehirn – leg einfach los.';
+    const body = tab === 'dokumente' ? akteBodyHTML() : tab === 'infos' ? tabInfos() : tabUeberblick();
+    return `<div class="page"><div class="ph"><div class="t"><p class="eyebrow">${fmtDate(t, true).replace(',', '')}</p><h1>${greetingWord()}${name}</h1><p>${sub}</p></div><div class="act"><button class="btn" data-act="brain.add" data-body="">${icon('edit')}<span class="hide-s">Merken</span></button><button class="btn primary" data-act="akte.pick">${icon('upload')}<span class="hide-s">Hochladen</span></button></div></div>
+      ${akteInputs()}<div class="tabsbar"><div class="seg">${[['ueberblick', 'Überblick'], ['dokumente', `Dokumente${st.docs ? ' ' + st.docs : ''}`], ['infos', `Infos${st.items ? ' ' + st.items : ''}`]].map(([k, l]) => `<button class="${tab === k ? 'on' : ''}" data-act="brain.tab" data-t="${k}">${l}</button>`).join('')}</div></div>${body}</div>`;
+  },
+  mount(root) {
+    akteMount(root);
+    const f = $('#askForm', root); if (f) f.addEventListener('submit', e => { e.preventDefault(); const i = $('#askIn'), q = i.value; i.value = ''; askBrain(q); });
+    const is = $('#infoSearch', root); if (is) is.addEventListener('input', debounce(() => { brainUI.q = is.value; const q = norm(brainUI.q); $('#infoBox').innerHTML = infoList(B().items.filter(i => (!brainUI.cat || i.cat === brainUI.cat) && (!q || norm(i.title + ' ' + i.body).includes(q))).sort((a, b) => (b.updated || b.created) - (a.updated || a.created))); }, 120));
+    if (brainUI.chat.length) renderThread();
+  }
+};
+document.addEventListener('click', e => { const b = e.target.closest('[data-ask]'); if (b) { const i = $('#askIn'); if (i) i.value = ''; askBrain(b.dataset.ask); } });
+
+/* ---------- Aktionen ---------- */
+ACT['brain.tab'] = el => { S.ui.brainTab = el.dataset.t; save(); if (route !== 'heute') go('heute'); else renderView(false); };
+ACT['brain.add'] = el => { closeSheet(); setTimeout(() => itemForm(null, { body: el && el.dataset ? el.dataset.body || '' : '' }), 40); };
+ACT['brain.focus'] = () => { S.ui.brainTab = 'ueberblick'; go('heute'); setTimeout(() => { const i = $('#askIn'); i && i.focus(); }, 80); };
+ACT['brain.q'] = el => { const q = BRAIN_Q.find(x => x.id === el.dataset.id); if (!q) return; closeSheet();
+  openSheet(`<div class="faint" style="font-size:12.5px;font-weight:650">${BRAIN_CATS[q.cat][1]} ${BRAIN_CATS[q.cat][0]}</div><h2 style="margin:4px 0 12px">${esc(q.t)}</h2><textarea class="txt" id="qIn" rows="7" placeholder="${esc(q.ph)}"></textarea>
+    <div class="acts"><button class="btn ghost" data-act="brain.q.skip" data-id="${q.id}">Überspringen</button><span class="sp"></span><button class="btn primary" data-act="brain.q.save" data-id="${q.id}">Speichern</button></div>`, { wide: true, onMount: () => setTimeout(() => { const i = $('#qIn'); i && i.focus(); }, 80) }); };
+ACT['brain.q.save'] = el => { const q = BRAIN_Q.find(x => x.id === el.dataset.id), v = ($('#qIn') || {}).value || ''; if (!v.trim()) return toast('Schreib kurz etwas auf – oder überspringe die Frage.'); addItem({ title: q.t.replace(/\?$/, ''), body: v, cat: q.cat, q: q.id, src: 'frage' }); closeSheet(); rerender(); toast('Gemerkt 🧠', 'good'); };
+ACT['brain.q.skip'] = el => { B().answered[el.dataset.id] = 'skip'; save(); closeSheet(); rerender(); };
+ACT['brain.item'] = el => itemView(el.dataset.id);
+OPEN.brainItem = id => itemView(id);
+ACT['brain.item.edit'] = el => { closeSheet(); setTimeout(() => itemForm(itemById(el.dataset.id)), 40); };
+ACT['brain.item.ask'] = el => { const i = itemById(el.dataset.id); closeSheet(); S.ui.brainTab = 'ueberblick'; go('heute'); setTimeout(() => { const f = $('#askIn'); if (f) { f.value = `${i.title}: `; f.focus(); } }, 80); };
+ACT['brain.cat'] = el => { brainUI.cat = el.dataset.c; renderView(true); };
+ACT['brain.hit'] = el => { closeSheet(); hitOpen({ type: el.dataset.type, id: el.dataset.id }); };
+ACT['brain.clear'] = () => { brainUI.chat = []; renderThread(); };
+ACT['brain.keep'] = el => { const m = brainUI.chat[+el.dataset.i], q = brainUI.chat[+el.dataset.i - 1]; if (!m) return; addItem({ title: q ? clip(q.text, 60) : 'Antwort', body: m.text, cat: 'wissen', src: 'ki' }); toast('Im Gehirn gemerkt 🧠', 'good'); };
+ACT['brain.copyans'] = el => { const m = brainUI.chat[+el.dataset.i]; if (m) copyText(m.text); };
+ACT['brain.ai.info'] = () => {
+  openSheet(`<h2>${aiOn() ? '✨ KI ist aktiv' : 'KI-Antworten einschalten'}</h2><p class="lead-p" style="margin-top:6px">${aiOn() ? `Kairos formuliert Antworten mit ${esc(AI.model)}. Deine Frage und passende Auszüge gehen dafür direkt von deinem Gerät an die Anthropic-API.` : 'Ohne KI durchsucht Kairos dein Gehirn lokal und zeigt dir die passenden Stellen. Mit einem eigenen API-Schlüssel formuliert Kairos daraus echte Antworten, fasst Dokumente zusammen und erledigt im Geld-Bereich den ersten Entwurf für dich.'}</p><div class="acts"><button class="btn" data-act="earn.sheet.close">Schließen</button><span class="sp"></span><button class="btn primary" data-go="einstellungen">${aiOn() ? 'KI-Einstellungen' : 'Schlüssel eintragen'}</button></div>`);
+};
+
+/* ---------- KI-Aufgaben (Geld-Bereich, Dokumente) ---------- */
+const aiRun = { title: '', prompt: '', out: '', saveCat: 'ideen' };
+function aiRunSheet({ title, prompt, saveCat = 'ideen' }) {
+  Object.assign(aiRun, { title, prompt, out: '', saveCat });
+  if (!aiOn()) {
+    openSheet(`<h2>${esc(title)}</h2><p class="muted" style="font-size:14px;margin:4px 0 12px">Kopiere diesen fertigen Prompt in Claude (oder ein anderes KI-Tool). Mit eigenem API-Schlüssel in den Einstellungen erledigt Kairos das direkt hier.</p><textarea class="txt" id="aiOut" rows="12" style="font-size:13.5px;line-height:1.5">${esc(prompt)}</textarea>
+      <div class="acts"><button class="btn" data-go="einstellungen">KI einschalten</button><span class="sp"></span><a class="btn" href="https://claude.ai/new" target="_blank" rel="noopener">Claude öffnen ↗</a><button class="btn primary" data-act="ai.copy">${icon('edit')}Prompt kopieren</button></div>`, { wide: true });
+    return;
+  }
+  openSheet(`<h2>${esc(title)}</h2><div id="aiBox"><div class="empty" style="padding:30px"><i class="spin"></i><p>Kairos erstellt den Entwurf …</p></div></div>`, { wide: true });
+  aiRunGo();
+}
+async function aiRunGo() {
+  if (!await aiConsent()) return closeSheet();
+  const box = () => $('#aiBox'); if (box()) box().innerHTML = '<div class="empty" style="padding:30px"><i class="spin"></i><p>Kairos erstellt den Entwurf …</p></div>';
+  try { aiRun.out = await aiTask(aiRun.prompt); if (!box()) return;
+    box().innerHTML = `<textarea class="txt" id="aiOut" rows="14" style="font-size:14px;line-height:1.55">${esc(aiRun.out)}</textarea><p class="muted" style="font-size:12.5px;margin:8px 0 0">Das ist ein Entwurf: Fakten prüfen, anpassen und mit deiner Stimme veredeln.</p>
+      <div class="acts"><button class="btn" data-act="ai.again">Neu erstellen</button><button class="btn" data-act="ai.save">${icon('plus')}Im Gehirn merken</button><span class="sp"></span><button class="btn primary" data-act="ai.copy">${icon('edit')}Kopieren</button></div>`;
+  } catch (e) { console.warn(e); if (box()) box().innerHTML = `<div class="warnl">${esc(aiErr(e))}</div><textarea class="txt" id="aiOut" rows="9" style="font-size:13.5px">${esc(aiRun.prompt)}</textarea><div class="acts"><button class="btn" data-act="ai.again">Nochmal versuchen</button><span class="sp"></span><button class="btn primary" data-act="ai.copy">Prompt kopieren</button></div>`; }
+}
+ACT['ai.copy'] = () => { const t = $('#aiOut'); if (t) copyText(t.value); };
+ACT['ai.again'] = () => aiRunGo();
+ACT['ai.save'] = () => { const t = $('#aiOut'); if (!t || !t.value.trim()) return; addItem({ title: aiRun.title, body: t.value, cat: aiRun.saveCat, src: 'ki' }); toast('Im Gehirn gemerkt 🧠', 'good'); };
+
+/* ---------- Dokument-KI ---------- */
+ACT['brain.doc.explain'] = el => { const d = S.docs.find(x => x.id === el.dataset.id); if (!d) return;
+  const body = `${d.name}${d.sender ? ' · ' + d.sender : ''}\n${(d.fields || []).map(f => f.l + ': ' + fieldDisplay(f)).join('\n')}\n\n${clip(d.text || d.summary || '', 6000)}`;
+  aiRunSheet({ title: `„${clip(d.name, 40)}“ erklärt`, saveCat: 'wissen', prompt: `Erkläre mir dieses Dokument in einfachem Deutsch: Worum geht es, was muss ich tun, bis wann, und worauf sollte ich achten? Fasse in höchstens 8 Stichpunkten zusammen und nenne Fristen und Beträge. Keine Rechtsberatung.\n\n${body}` }); };
+
 /* =====================================================================
    KAIROS · Einstellungen, Backup, Sperre, Demo-Daten
    ===================================================================== */
@@ -4464,7 +4767,7 @@ function armIdle() {
 ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(ev => document.addEventListener(ev, () => { if (cryptoKey) armIdle(); }, { passive: true }));
 async function lockNow() {
   if (!cryptoKey) return;
-  await saveNow(); cryptoKey = null; S = defaultState(); clearTimeout(idleTimer);
+  await saveNow(); cryptoKey = null; AI.key = ''; S = defaultState(); clearTimeout(idleTimer);
   closeSheet(); closeCmd(); closeMenu(); $('#app').hidden = true; $('#dock').hidden = true;
   await showLock(); afterUnlock();
 }
@@ -4506,17 +4809,27 @@ async function settingsHTML() {
     <section class="card glass s6"><h3>${icon('shield')} Sicherheit</h3><div class="stack" style="gap:14px">
       ${row('App-Sperre', lock ? 'Daten sind verschlüsselt (AES-256)' : 'Passwort-Schutz &amp; Verschlüsselung', lock ? `<div class="row-flex"><button class="btn sm" data-act="set.pw.change">Ändern</button><button class="btn sm danger" data-act="set.pw.off">Aus</button></div>` : `<button class="btn sm primary" data-act="set.pw.on">${icon('lock')}Aktivieren</button>`)}
       ${lock ? row('Automatisch sperren', 'nach Inaktivität', `<select class="sel" id="sAuto" style="width:auto;height:38px">${[[5, '5 Min'], [10, '10 Min'], [30, '30 Min'], [0, 'Nie']].map(([v, l]) => `<option value="${v}" ${autolockMin() === v ? 'selected' : ''}>${l}</option>`).join('')}</select>`) : `<p class="muted" style="font-size:13px">Ohne App-Sperre liegen deine Daten unverschlüsselt im Browser dieses Geräts. Aktiviere die Sperre, wenn andere Zugriff auf dein Gerät haben könnten.</p>`}</div></section>
+    <section class="card glass s6"><h3>${icon('sparkle')} KI-Funktionen</h3><div class="stack" style="gap:14px">
+      <p class="muted" style="font-size:13.5px;margin:0">Mit deinem eigenen Anthropic-API-Schlüssel beantwortet Kairos Fragen zu deinem Gehirn und erledigt im Geld-Bereich den ersten Entwurf für dich. Der Schlüssel bleibt auf diesem Gerät (bei aktiver App-Sperre verschlüsselt) und ist nicht im Backup enthalten. Abgerechnet wird direkt bei Anthropic nach Verbrauch.</p>
+      <div class="field"><label>API-Schlüssel</label><input class="inp" id="aiKey" type="password" autocomplete="off" placeholder="${AI.key ? '••••••••••••••••  (gespeichert)' : 'sk-ant-…'}"></div>
+      <div class="field"><label>Modell</label><select class="sel" id="aiModel">${AI_MODELS.map(([v, l]) => `<option value="${v}" ${AI.model === v ? 'selected' : ''}>${l}</option>`).join('')}</select></div>
+      <div class="row-flex" style="gap:10px;flex-wrap:wrap"><button class="btn primary sm" data-act="set.ai.save">Speichern &amp; testen</button>${AI.key ? '<button class="btn sm danger" data-act="set.ai.off">Schlüssel entfernen</button>' : ''}<a class="link" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">Schlüssel erstellen ↗</a></div>
+      <div class="faint" style="font-size:12px" id="aiState">${AI.key ? '✨ KI ist aktiv' : 'KI ist aus – Kairos arbeitet rein lokal.'}</div></div></section>
+    <section class="card glass s6"><h3>${icon('grid')} Bereiche</h3><div class="stack" style="gap:14px">
+      ${row('Weitere Bereiche einblenden', 'Finanzen, Job, Shopping, Lifestyle, Rechnungen – bewusst ausgeblendet für mehr Fokus', `<input type="checkbox" class="tg" id="sMore" ${S.ui.more ? 'checked' : ''}>`)}
+      <p class="muted" style="font-size:13px">Kairos konzentriert sich auf dein <b style="color:var(--text)">Gehirn</b> (Infos &amp; Dokumente) und <b style="color:var(--text)">Geld</b> (digital verdienen mit KI). Der Rest ist ein Klick entfernt, wenn du ihn brauchst.</p></div></section>
     <section class="card glass s6"><h3>${icon('download')} Daten &amp; Backup</h3><div class="stack" style="gap:14px">
       ${row('Backup erstellen', last ? 'Zuletzt: ' + relDate(last) : 'Noch nie gesichert', `<button class="btn sm primary" data-act="app.export">${icon('download')}Exportieren</button>`)}
       ${row('Backup einspielen', 'ersetzt alle aktuellen Daten', `<button class="btn sm" data-act="set.import">${icon('upload')}Importieren</button>`)}
       ${row('Speicher', usage ? 'Belegt in diesem Browser: ' + usage : '', '')}
       <p class="muted" style="font-size:13px">Alle Daten liegen nur lokal (IndexedDB). Es gibt keinen Server und keine Cloud. Löschst du die Website-Daten deines Browsers, sind die Inhalte weg – deshalb regelmäßig ein Backup erstellen.</p></div></section>
-    <section class="card glass s6"><h3>${icon('briefcase')} Geschäftsdaten (für Rechnungen)</h3><div class="stack" style="gap:12px">
+    ${S.ui.more || S.invoices.length ? `    <section class="card glass s6"><h3>${icon('briefcase')} Geschäftsdaten (für Rechnungen)</h3><div class="stack" style="gap:12px">
       <div class="field"><label>Name / Firma</label><input class="inp" data-biz="name" value="${esc(biz.name || '')}"></div><div class="field"><label>Adresse</label><textarea class="txt" data-biz="address" rows="2">${esc(biz.address || '')}</textarea></div>
       <div class="fields" style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div class="field"><label>IBAN</label><input class="inp" data-biz="iban" value="${esc(biz.iban || '')}"></div><div class="field"><label>Steuernr. / USt-ID</label><input class="inp" data-biz="taxId" value="${esc(biz.taxId || '')}"></div></div>
       <div class="field"><label>E-Mail</label><input class="inp" data-biz="email" value="${esc(biz.email || '')}"></div>
       ${row('Kleinunternehmer (§ 19 UStG)', 'Standard: 0 % USt bei neuen Rechnungen', `<input type="checkbox" class="tg" id="sTax" ${S.profile.taxMode === 'klein' ? 'checked' : ''}>`)}
       <p class="muted" style="font-size:12.5px">Die Rechnungsvorlage ist ein Komfort – kein Ersatz für Buchhaltungssoftware oder Steuerberatung.</p></div></section>
+` : ''}
     <section class="card glass s6"><h3>${icon('sparkle')} Kairos</h3><div class="stack" style="gap:14px">
       ${S.demo ? row('Beispieldaten', 'Du erkundest gerade Demo-Inhalte', `<button class="btn sm" data-act="set.demo.off">Entfernen</button>`) : row('Beispieldaten laden', 'zum Ausprobieren – ersetzt alles', `<button class="btn sm" data-act="set.demo.on">Laden</button>`)}
       ${row('Einführung', 'Willkommensbildschirm ansehen', `<button class="btn sm" data-act="set.intro">Ansehen</button>`)}
@@ -4536,6 +4849,7 @@ function bindSettings(root) {
   const nm = $('#sName', root); nm.addEventListener('change', () => { S.profile.name = nm.value.trim().slice(0, 30); save(); toast('Gespeichert', 'good'); });
   $$('[data-biz]', root).forEach(el => el.addEventListener('change', () => { S.profile.biz = S.profile.biz || {}; S.profile.biz[el.dataset.biz] = el.value.trim(); save(); }));
   const tx = $('#sTax', root); tx.addEventListener('change', () => { S.profile.taxMode = tx.checked ? 'klein' : 'regel'; save(); });
+  const mo = $('#sMore', root); if (mo) mo.addEventListener('change', () => { S.ui.more = mo.checked; save(); renderNav(); toast(mo.checked ? 'Weitere Bereiche eingeblendet' : 'Weitere Bereiche ausgeblendet', 'good'); renderView(true); });
   const au = $('#sAuto', root); if (au) au.addEventListener('change', () => { lsSet('kairos-autolock', au.value); armIdle(); toast('Gespeichert', 'good'); });
 }
 ACT['set.theme'] = el => { setTheme(el.dataset.t); rerender(); };
@@ -4610,12 +4924,31 @@ function loadDemo() {
   ed.profile = { skills: ['design', 'technik', 'schreiben'], hours: 5, capital: 5000, goal: 50000, mode: 'beides', pace: 'quick', status: 'angestellt' };
   hist(1, true); hist(2, true); hist(3, true);
   const sp = (id, n) => { const e = { id: uid(), idea: id, title: ideaById(id).t, e: ideaById(id).e, status: 'aktiv', steps: mkSteps(ideaById(id).steps), created: Date.now() - 864e5 * 6, startDate: addDays(t, -6), firstEuro: null, note: '' }; e.steps.slice(0, n).forEach((x, k) => { x.done = true; x.doneAt = addDays(t, -6 + k); }); return e; };
-  const exA = sp('vorlagen', 3), exB = sp('social', 1), exC = sp('ausmisten', 6); exC.status = 'fertig'; exC.firstEuro = addDays(t, -12);
-  ed.exps = [exA, exB, exC]; ed.saved = ['excel', 'steuer'];
-  ed.inc = [{ id: uid(), date: addDays(t, -12), amt: 6000, src: 'Kleinanzeigen: Monitor', exp: exC.id, note: '' }, { id: uid(), date: addDays(t, -9), amt: 2500, src: 'Vinted: Jacke', exp: exC.id, note: '' }, { id: uid(), date: addDays(t, -4), amt: 5000, src: 'Empfehlungsprämie Bank', exp: null, note: '' }];
+  const exA = sp('vorlagen', 3), exB = sp('social', 1), exC = sp('bewerbung', 6); exC.status = 'fertig'; exC.firstEuro = addDays(t, -12);
+  ed.exps = [exA, exB, exC]; ed.saved = ['texter', 'prompts'];
+  ed.inc = [{ id: uid(), date: addDays(t, -12), amt: 6000, src: 'Lebenslauf-Check Kunde A', exp: exC.id, note: '' }, { id: uid(), date: addDays(t, -9), amt: 2500, src: 'Komplettpaket Bewerbung Kunde B', exp: exC.id, note: '' }, { id: uid(), date: addDays(t, -4), amt: 5000, src: 'Probe-Auftrag Social-Media-Paket', exp: null, note: '' }];
   st.earn = ed;
+  const bi = (title, body, cat, daysAgo) => ({ id: uid(), title, body, cat, created: Date.now() - 864e5 * daysAgo, updated: Date.now() - 864e5 * daysAgo, src: 'manuell' });
+  st.brain = { answered: {}, items: [
+    bi('Wer ich bin', 'Ich bin Yannick, wohne in Lünen und arbeite im Bankwesen mit Kundenberatung und Teamführung. Nebenbei möchte ich digital etwas aufbauen.', 'ich', 12),
+    bi('Beruf & Stärken', 'Stärken: Beratung, Teamführung, Finanzwissen, klare Kommunikation. Interesse an KI, Texten und Automatisierung.', 'job', 12),
+    bi('Ziele 2027', 'Ein Nebeneinkommen von 500 € im Monat aufbauen, Notgroschen auf 10.000 € bringen, Halbmarathon laufen.', 'ziele', 9),
+    bi('Wohnung', 'Miete 980 € warm, Vermieterin Frau Weber, Kündigungsfrist 3 Monate zum Monatsende. Kaution 2.400 € hinterlegt.', 'finanzen', 7),
+    bi('Tochter Luise', 'Luise: Geburtstag im Mai. Idee: eine kleine App für ihre digitale Identität bauen.', 'familie', 5),
+    bi('Idee: Newsletter', 'Wöchentlicher Newsletter mit Finanz-Basics für Berufseinsteiger – reine Bildung, keine Beratung.', 'ideen', 3)] };
+  st.brain.answered = { wer: st.brain.items[0].id, job: st.brain.items[1].id, ziele: st.brain.items[2].id, wohnen: st.brain.items[3].id };
   S = st; fin.month = null; save(); saveNow();
 }
+
+ACT['set.ai.save'] = async () => {
+  const prev = AI.key, k = ($('#aiKey') || {}).value.trim(), m = ($('#aiModel') || {}).value || AI.model, st = $('#aiState');
+  if (k) AI.key = k; AI.model = m; if (!AI.key) return toast('Bitte einen API-Schlüssel eintragen.');
+  if (!await aiConsent()) return;
+  if (st) st.textContent = 'Teste Verbindung …';
+  try { await aiChat({ system: 'Antworte mit genau einem Wort.', messages: [{ role: 'user', content: 'Sag „bereit“.' }], max: 20 }); await aiSave(); lsSet('kairos-ai-ok', '1'); toast('KI verbunden ✨', 'good'); renderView(true); }
+  catch (e) { AI.key = prev; if (st) st.textContent = aiErr(e); toast(aiErr(e), 'bad'); }
+};
+ACT['set.ai.off'] = async () => { AI.key = ''; await aiSave(); toast('Schlüssel entfernt'); renderView(true); };
 
 /* =====================================================================
    KAIROS · Start: Splash, Onboarding, Boot
@@ -4623,8 +4956,8 @@ function loadDemo() {
 function showOnboarding(replay) {
   return new Promise(res => {
     const el = $('#lock'); el.hidden = false;
-    el.innerHTML = `<div class="onb"><div class="onb-card glass"><div class="logo-lg anim">${logoSvg('onb')}</div><h1>Willkommen bei <span class="gradtxt">Kairos</span></h1><p class="onb-sub">Dein persönliches Cockpit für Finanzen, Job, Business, Shopping und Lifestyle – damit du im richtigen Moment das Richtige tust.</p>
-      <div class="onb-feats"><div><span>📄</span><b>Digitale Akte mit OCR</b><small>Lohnabrechnung oder Brief hochladen – Kairos liest Beträge und Fristen aus.</small></div><div><span>🎯</span><b>Tägliche Geld-Mission</b><small>Jeden Tag eine konkrete Chance, Geld zu verdienen – mit Schritt-für-Schritt-Plan.</small></div><div><span>🔒</span><b>Deine Daten bleiben bei dir</b><small>Alles lokal auf deinem Gerät, optional verschlüsselt.</small></div></div>
+    el.innerHTML = `<div class="onb"><div class="onb-card glass"><div class="logo-lg anim">${logoSvg('onb')}</div><h1>Willkommen bei <span class="gradtxt">Kairos</span></h1><p class="onb-sub">Dein digitales Gehirn: alles, was du über dich weißt und besitzt, an einem Ort – zum Fragen und Arbeiten. Dazu ein Geld-Bereich, der dir täglich zeigt, wie du digital mit KI verdienst.</p>
+      <div class="onb-feats"><div><span>🧠</span><b>Dein digitales Gehirn</b><small>Infos eintippen, Briefe und Lohnabrechnungen hochladen – Kairos liest sie aus, du fragst einfach.</small></div><div><span>🎯</span><b>Geld verdienen mit KI</b><small>Jeden Tag ein konkreter Schritt zu einem digitalen Nebeneinkommen.</small></div><div><span>🔒</span><b>Deine Daten bleiben bei dir</b><small>Alles lokal auf deinem Gerät, optional verschlüsselt.</small></div></div>
       ${replay ? '' : `<form id="onbForm"><div class="field"><label for="onbName">Wie soll ich dich nennen?</label><input class="inp" id="onbName" placeholder="Dein Name" value="${esc(S.profile.name || '')}" autocomplete="given-name"></div>
       <div class="onb-acts"><button class="btn primary lg" type="submit" data-m="demo">Mit Beispieldaten erkunden</button><button class="btn lg" type="submit" data-m="blank">Leer starten</button></div></form><small class="faint">Beispieldaten kannst du jederzeit in den Einstellungen entfernen.</small>`}
       ${replay ? '<div class="onb-acts"><button class="btn primary lg" id="onbClose">Schließen</button></div>' : ''}</div></div>`;
@@ -4644,6 +4977,7 @@ function afterUnlock() {
   cleanOrphans(); runRecurring(); save();
   $('#app').hidden = false; $('#dock').hidden = false;
   const r = (location.hash.replace('#/', '') || 'heute'); route = VIEWS[r] ? r : 'heute';
+  aiLoad().then(() => { if (AI.key && (route === 'heute' || route === 'einstellungen')) rerender(); });
   renderView(false); updateLockBtn(); armIdle();
   document.title = route === 'heute' ? 'Kairos' : AREAS[route].name + ' · Kairos';
 }
@@ -4665,7 +4999,7 @@ async function boot() {
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => { /* optional */ });
   window.addEventListener('keydown', e => { if (e.key === '/' && !/input|textarea|select/i.test(e.target.tagName) && !$('#sheetWrap').classList.contains('open')) { e.preventDefault(); ACT['cmd.open'](); } });
   setInterval(() => { if (!$('#app').hidden && document.visibilityState === 'visible') { const n = runRecurring(); if (n) rerender(); renderNav(); } }, 60000);
-  window.__K = { parseIntent, extractDate, extractAmount, guessCat, get S() { return S; }, computeInsights, areaScores, boostScore, monthStats, loadDemo, go, parseCSV, csvPrepare, csvDate, csvAmount, parseMoney, detectRecurring, forecastExpenses, analyzeDocText, classifyDoc };
+  window.__K = { parseIntent, extractDate, extractAmount, guessCat, get S() { return S; }, computeInsights, areaScores, boostScore, monthStats, loadDemo, go, parseCSV, csvPrepare, csvDate, csvAmount, parseMoney, detectRecurring, forecastExpenses, analyzeDocText, classifyDoc, brainSearch, localAnswer, addItem, askBrain, AI };
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<pre style="position:fixed;inset:20px;z-index:999;background:#300;color:#fff;padding:20px;overflow:auto">Kairos konnte nicht starten:\n${esc(e && e.stack || e)}</pre>`); });
 
