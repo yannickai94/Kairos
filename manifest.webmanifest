@@ -1,7 +1,7 @@
 {
-  "name": "Kairos – dein persönliches Cockpit",
+  "name": "Kairos – deine digitale Kopie",
   "short_name": "Kairos",
-  "description": "Digitale Akte mit OCR, tägliche Geld-Missionen, Finanzen, Job, Shopping und Lifestyle an einem Ort. Alle Daten bleiben lokal auf deinem Gerät.",
+  "description": "Baue aus deinen Dokumenten Schritt für Schritt deine digitale Identität auf. Texterkennung und KI laufen lokal, alle Daten bleiben auf deinem Gerät.",
   "lang": "de",
   "start_url": "./",
   "scope": "./",
@@ -10,8 +10,23 @@
   "background_color": "#060919",
   "theme_color": "#060919",
   "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
