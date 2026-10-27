@@ -877,6 +877,144 @@ button.lf:hover{background:var(--field)}
 .li-m{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}.li-m b{font-size:15px;font-weight:620;overflow-wrap:anywhere}.li-m small{font-size:12.5px;color:var(--text2);line-height:1.35}
 .li>svg{flex:none;width:18px;height:18px;color:var(--text3)}
 
+/* Katalog & Vertragseditor */
+.fhead{margin:10px 0 -2px;padding-top:6px;border-top:1px solid var(--hair)}
+.fhead:first-child{border-top:0;margin-top:0;padding-top:0}
+.fhead h3{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;letter-spacing:-.01em;margin:0}
+.fhead h3 span{font-size:17px}
+.fhead small{display:block;color:var(--text3);font-size:12.5px;margin-top:2px}
+.fhtml{margin-top:-4px}
+.pvchips{display:flex;flex-wrap:wrap;gap:7px}
+.pvchips.fold{max-height:118px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+.pv{height:36px;padding:0 13px;border-radius:12px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);font-size:14px;font-weight:560;display:inline-flex;align-items:center;gap:6px;transition:.18s;color:var(--text)}
+.pv.sm{height:30px;padding:0 11px;font-size:13px;border-radius:10px}
+.pv.ghost{background:transparent;color:var(--text2);box-shadow:inset 0 0 0 1px var(--hair)}
+.pv.on{box-shadow:inset 0 0 0 2px var(--accent);background:var(--field-f)}
+.pv:active{transform:scale(.97)}
+.pv-more{margin-top:8px}
+.sugr{margin-top:-2px}
+.trfbox{margin-top:12px}
+.trf-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.trf-h b{font-size:14px}
+.trf-l{display:inline-flex;align-items:center;gap:5px;color:var(--accent);font-size:13px;font-weight:600;text-decoration:none}
+.trf-l svg{width:14px;height:14px}
+.trf-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.trf{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:10px 12px;border-radius:14px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);transition:.18s;min-height:62px}
+.trf b{font-size:13.5px;font-weight:650;line-height:1.25}
+.trf span{font-size:14px;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+.trf small{font-size:11.5px;color:var(--text3);line-height:1.3}
+.trf.on{box-shadow:inset 0 0 0 2px var(--accent);background:var(--field-f)}
+.trf-n{font-size:12px;color:var(--text3);line-height:1.45;margin:8px 0 0}
+.pvgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:9px;margin-top:6px}
+.pvcard{display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 8px;border-radius:16px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);text-align:center;transition:.18s;min-height:92px;justify-content:center}
+.pvcard i{font-style:normal;font-size:24px;line-height:1}
+.pvcard b{font-size:13px;font-weight:650;line-height:1.2}
+.pvcard small{font-size:11.5px;color:var(--text3)}
+.pvcard:active{transform:scale(.97)}
+@media (max-width:520px){.trf-g{grid-template-columns:1fr 1fr}.pvgrid{grid-template-columns:repeat(3,1fr)}}
+/* Kontoauszug-Import */
+.stc{display:flex;align-items:center;gap:14px;padding:16px;margin-bottom:12px;border-radius:var(--r-lg)}
+.stc-i{font-size:30px;flex:none}
+.stc-m{flex:1;min-width:0}
+.stc-m b{display:block;font-size:15px}
+.stc-m p{margin:3px 0 0;font-size:13px;color:var(--t2,var(--text2));line-height:1.4}
+.stc.compact{padding:12px 14px}.stc.compact .stc-i{font-size:24px}
+@media (max-width:520px){.stc{flex-wrap:wrap}.stc .btn{width:100%}}
+.stp{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:4px 0 14px}
+.stp-b{display:flex;flex-direction:column;align-items:center;gap:4px;padding:16px 8px;border-radius:18px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);text-align:center;transition:.18s}
+.stp-b i{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--glass2);color:var(--accent)}
+.stp-b i svg{width:20px;height:20px}
+.stp-b b{font-size:14px}.stp-b small{font-size:12px;color:var(--text3)}
+.stp-b:active{transform:scale(.97)}
+.stprog{margin:6px 0 12px}.stprog b{font-size:13px;display:block;margin-bottom:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.stprog small{color:var(--text3);font-size:12px}
+.stt{margin:12px 0;font-size:13.5px;color:var(--text2)}.stt summary{cursor:pointer;font-weight:600;color:var(--text)}.stt ul{margin:8px 0 0 18px;padding:0;display:grid;gap:6px}
+.stl{display:grid;gap:8px;margin-bottom:6px}
+.strow{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border-radius:16px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);transition:.2s}
+.strow.off{opacity:.5}
+.stck{padding-top:6px}
+.stm{flex:1;min-width:0;display:grid;gap:6px}
+.st1{display:flex;align-items:center;gap:8px}
+.ste{font-size:20px;flex:none}
+.stn{flex:1;min-width:0;height:36px;padding:0 10px;font-size:15px;font-weight:600}
+.sta{flex:none;font-variant-numeric:tabular-nums;font-size:15px}
+.st2{display:grid;gap:4px}
+.st2 small{font-size:12px;color:var(--text3);line-height:1.35}
+.stsel{height:36px;font-size:14px;padding:0 10px}
+.stl2{display:grid;gap:6px;margin-top:8px}.stl2>div{display:flex;justify-content:space-between;gap:10px;font-size:13.5px}.stl2 em{font-style:normal;color:var(--text3)}
+.vsec-h small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vsec-h .btn.sm{flex:none}
+.stc-i{align-self:flex-start;line-height:1.1}
+.vstat b.sm{font-size:14px;line-height:1.25}
+
+/* Fähigkeitenbaum */
+.tree{padding-bottom:16px}
+.tree-hint{margin:0 0 10px}
+.tree-body{position:relative;display:grid;gap:18px;margin-top:6px}
+.tree-lines{position:absolute;left:0;top:0;pointer-events:none;overflow:visible;z-index:0}
+.tier{position:relative;z-index:1}
+.tier-h{display:flex;align-items:baseline;gap:8px;margin:0 2px 8px;flex-wrap:wrap}
+.tier-h b{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--text2)}
+.tier-h small{font-size:11.5px;color:var(--text3)}
+.tier-r{display:grid;gap:8px;grid-template-columns:repeat(3,1fr)}
+.tier-r.n1{grid-template-columns:minmax(0,150px);justify-content:center}
+.tier-r.n2{grid-template-columns:repeat(2,minmax(0,150px));justify-content:center}
+.tier-r.n4{grid-template-columns:repeat(4,1fr)}
+.tn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 2px 8px;border-radius:16px;text-align:center;transition:transform .18s,opacity .2s;min-width:0}
+.tn:active{transform:scale(.96)}
+.tn-ring{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:conic-gradient(var(--c) var(--p),var(--hair) 0);position:relative}
+.tn-ring i{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--bg2);font-style:normal;font-size:22px;line-height:1;color:var(--text)}
+:root[data-theme="light"] .tn-ring i{background:#fff}
+.tn-ring i svg{width:22px;height:22px}
+.tn b{font-size:12.5px;font-weight:650;line-height:1.2;max-width:100%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.tn small{font-size:11px;color:var(--text3);line-height:1.2;max-width:100%}
+.tn.avail .tn-ring{box-shadow:0 0 0 2px var(--c),0 0 22px -4px var(--c);background:var(--c)}
+.tn.part .tn-ring{box-shadow:0 8px 18px -10px var(--c)}
+.tn.done .tn-ring{background:var(--pos);box-shadow:0 8px 20px -8px var(--pos)}
+.tn.done .tn-ring i{background:var(--pos);color:#fff}
+.tn.na{opacity:.55}.tn.na .tn-ring{background:var(--hair)}
+.tn.locked{opacity:.62}.tn.locked .tn-ring{background:var(--hair);box-shadow:none}.tn.locked .tn-ring i{font-size:19px;filter:grayscale(.6)}
+.tn.locked b{color:var(--text2)}
+@media (min-width:900px){.tier-r{gap:14px}.tn-ring{width:64px;height:64px}.tn-ring i{width:54px;height:54px}}
+.sat.lock .sat-in{opacity:.5;filter:grayscale(.6)}
+.nv.lkd,.dk.lkd{opacity:.65}
+.nv.lkd::after{content:"🔒";margin-left:auto;font-size:12px}
+.more-i.lkd{opacity:.6}
+.tl-list{display:grid;gap:8px}
+.tl-r{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:16px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);text-align:left;width:100%}
+.tl-e{font-size:22px}.tl-m{flex:1;min-width:0}.tl-m b{display:block;font-size:14.5px}.tl-m small{color:var(--text3);font-size:12.5px}
+.tfx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:120}
+.tfx i{position:absolute;top:-14px;left:var(--x);width:8px;height:14px;border-radius:2px;background:var(--c);animation:tfall 1.9s var(--d) cubic-bezier(.2,.7,.4,1) both}
+@keyframes tfall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(105vh) rotate(540deg);opacity:.9}}
+/* Start-Assistent */
+.onb-skip{display:block;margin:12px auto 0;color:var(--text2);font-size:14px;font-weight:600}
+.wz-card{width:min(520px,100%);max-width:520px;align-items:stretch;max-height:calc(var(--vvh,100dvh) - 32px);overflow-y:auto;text-align:left}
+.wz{display:flex;flex-direction:column;gap:14px;min-height:0;width:100%;min-width:0;box-sizing:border-box}
+.wz-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.wz-top .link{font-size:13.5px;color:var(--text2);font-weight:600}
+.wz-dots{display:flex;gap:6px;flex:1;max-width:220px}
+.wz-dots i{height:5px;flex:1;border-radius:3px;background:var(--hair2);transition:.3s}
+.wz-dots i.done{background:var(--accent)}.wz-dots i.cur{background:var(--grad)}
+.wz-body h2{font-size:24px;letter-spacing:-.025em;margin:2px 0 4px}
+.wz-body .lead-p{color:var(--text2);font-size:14.5px;margin-bottom:16px}
+.wzq{margin-bottom:16px}.wzq>label{display:block;font-size:13px;font-weight:650;color:var(--text2);margin-bottom:8px}
+.wzp.bad,.inp.bad{box-shadow:0 0 0 1.5px var(--neg);border-radius:14px}
+.wzp button span{font-size:16px}
+.wzs{display:grid;gap:10px}
+.wzc{display:flex;align-items:center;gap:14px;padding:14px;border-radius:18px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);text-align:left;transition:.18s;width:100%}
+.wzc i{font-style:normal;font-size:26px;width:44px;height:44px;display:grid;place-items:center;border-radius:14px;background:var(--glass2);flex:none}
+.wzc span{display:block;min-width:0}.wzc b{display:block;font-size:15px}.wzc small{display:block;color:var(--text3);font-size:12.5px;margin-top:2px;line-height:1.35}
+.wzc.on{box-shadow:inset 0 0 0 2px var(--accent);background:var(--field-f)}
+.wz-acts{display:flex;align-items:center;gap:10px;position:sticky;bottom:0;padding:10px 0 2px}
+.wz-acts .sp{flex:1}
+.wz-card .wz-acts{background:linear-gradient(180deg,transparent,var(--bg2) 40%)}
+.wz-acts{gap:6px;min-width:0}
+.wz-acts .btn{padding-left:14px;padding-right:14px;white-space:nowrap;flex:0 0 auto}
+.wz-acts .btn.primary{padding-left:22px;padding-right:22px}
+.wz-acts .sp{min-width:0}
+.wz-body .field label{margin-top:2px}
+.wz-body .fields{gap:12px}
+.wz-acts .btn.ghost{padding-left:8px;padding-right:8px}
+
 /* ===== Dock (nur mobil) ===== */
 .dock{display:none}
 .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
@@ -950,6 +1088,7 @@ button.lf:hover{background:var(--field)}
    - Hintergrund ohne große Blur-Filter
    ===================================================================== */
 html{background:var(--bg);height:100%;overscroll-behavior:none}
+:root[data-theme="dark"]{background-image:linear-gradient(180deg,#0a0f2c 0%,#070a1c 100%)}
 body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden}
 .app{position:fixed;inset:0;height:auto;width:100%;grid-template-rows:minmax(0,1fr)}
 .main,.sheet,.cmd-body,#nav{-webkit-overflow-scrolling:touch}
@@ -968,8 +1107,8 @@ body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden}
 
 /* Sheet-Ebene: Overlay ohne eigenen Blur, nur das Sheet bekommt Glas */
 .overlay{-webkit-backdrop-filter:none;backdrop-filter:none}
-:root[data-theme="dark"] .sheet{background:rgba(22,28,60,.94)}
-:root[data-theme="light"] .sheet{background:rgba(255,255,255,.96)}
+:root[data-theme="dark"] .sheet{background:rgb(20,26,58)}
+:root[data-theme="light"] .sheet{background:rgb(250,251,255)}
 .sheet.glass{-webkit-backdrop-filter:blur(24px) saturate(1.5);backdrop-filter:blur(24px) saturate(1.5)}
 
 /* Mobil: Karten ohne Blur, dafür etwas deckender */
@@ -979,13 +1118,13 @@ body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden}
   .glass{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--glass-m)}
   .glass::before{display:none}
   .sheet.glass,.dock.glass,.cmd.glass,.toast{-webkit-backdrop-filter:blur(24px) saturate(1.5);backdrop-filter:blur(24px) saturate(1.5)}
-  .sheet.glass{background:rgba(22,28,60,.94)}
-  :root[data-theme="light"] .sheet.glass{background:rgba(255,255,255,.96)}
+  .sheet.glass{background:rgb(20,26,58)}
+  :root[data-theme="light"] .sheet.glass{background:rgb(250,251,255)}
   .dock.glass{background:color-mix(in srgb,var(--bg2) 80%,transparent)}
   /* Overlay folgt dem sichtbaren Bereich (Tastatur!) */
   .overlay{top:var(--vvt,0px);bottom:auto;height:var(--vvh,100%);background:rgba(2,4,14,.58)}
   :root[data-theme="light"] .overlay{background:rgba(30,40,90,.32)}
-  .sheet{max-height:calc(var(--vvh,100dvh) - 16px);padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+  .sheet{max-height:calc(var(--vvh,100dvh) - env(safe-area-inset-top,0px) - 12px);padding-bottom:calc(20px + env(safe-area-inset-bottom))}
   .cmd-body{max-height:calc(var(--vvh,100dvh) - 150px)}
   body.kb .dock{transform:translateY(160%);opacity:0;pointer-events:none}
   body.kb #toasts{bottom:calc(var(--kb,0px) + 16px)}
@@ -995,8 +1134,8 @@ body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden}
   /* Eingaben mindestens 16px, sonst zoomt iOS beim Fokus */
   .inp,.sel,.txt,input,select,textarea{font-size:16px}
   /* Sticky Aktionsleiste im Sheet */
-  .sheet .acts{position:sticky;bottom:calc(-20px - env(safe-area-inset-bottom));margin:18px -18px calc(-20px - env(safe-area-inset-bottom));padding:12px 18px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(180deg,transparent 0,rgba(22,28,60,.98) 14px);z-index:2}
-  :root[data-theme="light"] .sheet .acts{background:linear-gradient(180deg,transparent 0,rgba(255,255,255,.98) 14px)}
+  .sheet .acts{position:sticky;bottom:calc(-20px - env(safe-area-inset-bottom));margin:18px -18px calc(-20px - env(safe-area-inset-bottom));padding:12px 18px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(180deg,transparent 0,rgb(20,26,58) 14px);z-index:2}
+  :root[data-theme="light"] .sheet .acts{background:linear-gradient(180deg,transparent 0,rgb(250,251,255) 14px)}
   .sheet .acts .dl{display:none}
   .sheet .acts .btn.danger{padding:0 14px}
 }
@@ -1194,7 +1333,7 @@ const AREAS = {
 const DOC_CATS = { gehalt: ['Gehalt & Lohn', '💶'], rechnung: ['Rechnungen', '🧾'], vertrag: ['Verträge', '📝'], versicherung: ['Versicherung', '🛡️'], steuer: ['Steuer', '🏛️'], post: ['Post & Behörden', '✉️'], bank: ['Bank', '🏦'], ident: ['Identität', '🪪'], gesundheit: ['Gesundheit', '🩺'], job: ['Job & Zeugnisse', '💼'], garantie: ['Belege & Garantie', '📦'], wohnen: ['Wohnen', '🏠'], familie: ['Familie', '👨‍👩‍👧'], mobil: ['Mobilität', '🚗'], sonst: ['Sonstiges', '📄'] };
 
 const defaultState = () => ({
-  v: 6,
+  v: 7,
   profile: { name: '', avatar: null, created: Date.now() },
   photos: [],                     // Fotos: { id, name, created, w, h, thumb, size, tag }
   prof: {},                       // Profilfelder: key → { v, src, conf, ok, at }
@@ -1203,6 +1342,8 @@ const defaultState = () => ({
   people: [],                     // Menschen: { id, rel, name, geb, … }
   events: [],                     // Lebensereignisse: { id, t, date, status, done:{} }
   cv: { head: '', sum: '', st: [], sk: [], la: [], ce: [], at: 0 }, // Lebenslauf: Stationen, Kenntnisse, Sprachen, Zertifikate
+  stmt: null,                     // Letzter Kontoauszug (nur Übersicht, keine Buchungen)
+  tree: { seen: {} },             // Fähigkeiten-Baum: bereits gefeierte Freischaltungen
   int: {},                        // Verbindungen (Telegram …)
   brain: null,                    // freie Notizen
   journey: { na: {}, celebrated: {} },
@@ -1255,7 +1396,7 @@ const decBytes = (iv, ct) => crypto.subtle.decrypt({ name: 'AES-GCM', iv }, cryp
 /* ---------- Zustand laden / speichern ---------- */
 let saveTimer = null, dirty = false;
 function setSyncLabel(t, bad) { const e = $('#syncState'); if (!e) return; e.querySelector('span').textContent = t; e.querySelector('i').style.background = bad ? 'var(--warn)' : ''; e.querySelector('i').style.boxShadow = bad ? '0 0 10px var(--warn)' : ''; }
-function save() { dirty = true; clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 220); }
+function save() { dirty = true; clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 220); if (typeof treeSoon === 'function') treeSoon(); }
 async function saveNow() {
   clearTimeout(saveTimer);
   if (!dirty) return;
@@ -1273,7 +1414,7 @@ async function saveNow() {
 function migrate(st) {
   const d = defaultState(); st = st || {};
   const out = Object.assign(d, { profile: Object.assign(d.profile, st.profile || {}), prof: st.prof || {}, docs: st.docs || [], photos: st.photos || [], vertr: st.vertr || {}, people: st.people || [], events: st.events || [], int: st.int || {}, brain: st.brain || null, journey: Object.assign(d.journey, st.journey || {}), ui: Object.assign(d.ui, st.ui || {}) });
-  out.cv = Object.assign(defaultState().cv, st.cv || {}); out.v = 6;
+  out.cv = Object.assign(defaultState().cv, st.cv || {}); out.v = 7; out.stmt = st.stmt || null; out.tree = Object.assign({ seen: {} }, st.tree || {});
   if (st.demo) { out.prof = {}; out.docs = []; out.photos = []; out.journey = defaultState().journey; out.ui.notice = 'Die Beispieldaten wurden entfernt.'; }   // frühere Demo-Daten sind nicht mehr Teil der App
   return out;
 }
@@ -1404,6 +1545,8 @@ function confirmSheet(title, text, label = 'Löschen', danger = true) {
    types: text|money|date|select|textarea|pick|toggle|url|email|number|password */
 function formSheet({ title, sub, fields, onSubmit, onDelete, submit = 'Sichern', wide, extra }) {
   const f = (x) => {
+    if (x.type === 'head') return `<div class="field full fhead"><h3>${x.e ? `<span>${x.e}</span>` : ''}${esc(x.label)}</h3>${x.sub ? `<small>${esc(x.sub)}</small>` : ''}</div>`;
+    if (x.type === 'html') return `<div class="field full fhtml" id="fh_${x.k}">${x.html}</div>`;
     const id = 'f_' + x.k, v = x.val == null ? '' : x.val, cls = x.full ? 'field full' : 'field';
     const hint = x.hint ? `<span class="hint">${esc(x.hint)}</span>` : '';
     let inner;
@@ -1414,7 +1557,7 @@ function formSheet({ title, sub, fields, onSubmit, onDelete, submit = 'Sichern',
       case 'pick': inner = `<div class="pick" id="${id}" data-v="${esc(v)}">${x.opts.map(o => `<button type="button" data-pv="${esc(o[0])}" class="${String(o[0]) === String(v) ? 'on' : ''}" ${o[3] ? `aria-label="${esc(o[1])}"` : ''}>${o[3] ? `<span class="sw" style="background:${o[3]};width:20px;height:20px;border-radius:50%;display:block"></span>` : (o[2] ? `<span>${o[2]}</span>` : '')}${o[3] ? '' : esc(o[1])}</button>`).join('')}</div>`; break;
       case 'multipick': { const sel = String(v).split(/[\s,;/]+/).filter(Boolean); inner = `<div class="pick multi" id="${id}" data-multi="1" data-v="${esc(sel.join(', '))}">${x.opts.map(o => `<button type="button" data-pv="${esc(o[0])}" class="${sel.includes(o[0]) ? 'on' : ''}">${esc(o[1])}</button>`).join('')}</div>`; break; }
       case 'toggle': return `<label class="${cls}" style="flex-direction:row;align-items:center;justify-content:space-between;gap:12px"><span>${esc(x.label)}${hint ? '<br>' + hint : ''}</span><input type="checkbox" class="tg" id="${id}" ${x.val ? 'checked' : ''}></label>`;
-      default: inner = `<input class="inp" id="${id}" type="${x.type || 'text'}" value="${esc(v)}" placeholder="${esc(x.ph || '')}" ${x.min != null ? `min="${x.min}"` : ''} ${x.max != null ? `max="${x.max}"` : ''} ${x.step ? `step="${x.step}"` : ''} autocomplete="off">`;
+      default: inner = `<input class="inp" id="${id}" type="${x.type || 'text'}" ${x.im ? `inputmode="${x.im}"` : ''} value="${esc(v)}" placeholder="${esc(x.ph || '')}" ${x.min != null ? `min="${x.min}"` : ''} ${x.max != null ? `max="${x.max}"` : ''} ${x.step ? `step="${x.step}"` : ''} autocomplete="off">`;
     }
     return `<div class="${cls}"><label for="${id}">${esc(x.label)}${x.req ? ' *' : ''}</label>${inner}${hint}</div>`;
   };
@@ -1435,6 +1578,7 @@ function formSheet({ title, sub, fields, onSubmit, onDelete, submit = 'Sichern',
         e.preventDefault();
         const vals = {}; let bad = false;
         for (const x of fields) {
+          if (x.type === 'head' || x.type === 'html') continue;
           const el = $('#f_' + x.k, sh); let v;
           if (x.type === 'toggle') v = el.checked;
           else if (x.type === 'pick' || x.type === 'multipick') v = el.dataset.v;
@@ -1499,7 +1643,7 @@ function avatarHTML(cls = '') {
 }
 function renderNav() {
   const bc = badgeCounts();
-  const item = r => { const a = AREAS[r], n = bc[r]; return `<button class="nv ${route === r ? 'on' : ''}" style="--c:${a.c}" data-go="${r}" ${route === r ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt alert">${n}</span>` : ''}</button>`; };
+  const item = r => { const a = AREAS[r], n = bc[r]; return `<button class="nv ${route === r ? 'on' : ''}${typeof treeGate === 'function' && treeGate(r) ? ' lkd' : ''}" style="--c:${a.c}" data-go="${r}" ${route === r ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt alert">${n}</span>` : ''}</button>`; };
   $('#nav').innerHTML = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
   const dk = (r, lab) => `<button class="dk ${route === r ? 'on' : ''}" style="--c:${AREAS[r].c}" data-go="${r}" aria-label="${lab}"><span class="dki">${icon(AREAS[r].ic)}</span><span class="dkl">${lab}</span>${bc[r] ? '<i class="dot"></i>' : ''}</button>`;
   $('#dock').innerHTML = dk('reise', 'Reise') + dk('steckbrief', 'Steckbrief') +
@@ -1520,6 +1664,7 @@ function renderView(keepScroll) {
 const rerender = () => renderView(true);
 function go(r, opts = {}) {
   if (!VIEWS[r]) r = 'reise';
+  if (typeof treeGate === 'function') { const g = treeGate(r); if (g) { treeLockSheet(g); return; } }
   if (location.hash !== '#/' + r) { history.pushState(null, '', '#/' + r); }
   route = r; closeSheet(); renderView(false);
   document.title = (r === 'reise' ? 'Kairos' : AREAS[r].name + ' · Kairos');
@@ -1528,7 +1673,7 @@ window.addEventListener('popstate', () => { const r = (location.hash.replace('#/
 
 ACT['more.open'] = () => {
   const bc = badgeCounts();
-  openSheet(`<h2>Mehr</h2><div class="more-g">${MORE_ROUTES.map(r => { const a = AREAS[r]; return `<button class="more-i ${route === r ? 'on' : ''}" data-go="${r}"><span class="ic">${icon(a.ic)}</span><b>${a.name}</b>${bc[r] ? `<span class="cnt alert">${bc[r]}</span>` : ''}</button>`; }).join('')}</div>`);
+  openSheet(`<h2>Mehr</h2><div class="more-g">${MORE_ROUTES.map(r => { const a = AREAS[r]; return `<button class="more-i ${route === r ? 'on' : ''}${typeof treeGate === 'function' && treeGate(r) ? ' lkd' : ''}" data-go="${r}"><span class="ic">${icon(a.ic)}</span><b>${a.name}</b>${bc[r] ? `<span class="cnt alert">${bc[r]}</span>` : ''}</button>`; }).join('')}</div>`);
 };
 
 /* ---------- Globale Aktionen ---------- */
@@ -1552,14 +1697,45 @@ function setTheme(t) {
 }
 matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => { if (lsGet('kairos-theme') === 'auto') setTheme('auto'); });
 
-/* iOS: sichtbaren Bereich (Tastatur, Adressleiste) als CSS-Variablen – Sheets bleiben dadurch immer komplett sichtbar */
+/* iOS: sichtbarer Bereich als CSS-Variablen (Tastatur, Adressleiste) – und Heilung des bekannten Fehlers in installierten
+   Web-Apps: Nach dem ersten Öffnen der Tastatur bleibt der Viewport um ~60 px zu klein (schwarzer Balken unten,
+   Dock und Sheets zu hoch). WebKit misst erst neu, wenn ein vollhohes Element kurz aus- und eingeblendet wird. */
+const standaloneApp = () => navigator.standalone === true || (window.matchMedia && matchMedia('(display-mode: standalone)').matches);
+function viewDiag() {
+  const vv = window.visualViewport, probe = document.createElement('div'); probe.style.cssText = 'position:fixed;left:0;top:0;width:0;height:0;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);visibility:hidden'; document.body.appendChild(probe);
+  const cs = getComputedStyle(probe), top = parseInt(cs.paddingTop) || 0, bot = parseInt(cs.paddingBottom) || 0; probe.remove();
+  const port = innerHeight >= innerWidth, scr = port ? Math.max(screen.width, screen.height) : Math.min(screen.width, screen.height);
+  return { inner: Math.round(innerHeight), vv: vv ? Math.round(vv.height) : null, screen: scr, safeTop: top, safeBottom: bot, standalone: standaloneApp(), gap: Math.max(0, scr - Math.round(innerHeight)) };
+}
+let viewPeak = innerHeight, viewTries = 0;
+function viewHeal(force) {
+  const a = document.activeElement, typing = !!a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) && !/checkbox|radio|file|button/.test(a.type || '');
+  if (typing && !force) return false; if (!standaloneApp() && !force) return false;
+  const d = viewDiag(); viewPeak = Math.max(viewPeak, d.inner);
+  const shrunk = viewPeak - d.inner > 8 || d.gap > 24; if (!shrunk && !force) { viewTries = 0; return false; }
+  if (viewTries >= 3 && !force) return false; viewTries++;
+  const app = $('#app'), main = $('#main'), st = main ? main.scrollTop : 0;
+  if (app) { app.style.display = 'none'; void app.offsetHeight; app.style.display = ''; } if (main) main.scrollTop = st;
+  window.scrollTo(0, 0); setTimeout(() => { viewPeak = Math.max(viewPeak, innerHeight); applyView(); }, 60); return true;
+}
+function applyView() {
+  const vv = window.visualViewport, R = document.documentElement.style, h = vv ? vv.height : innerHeight, off = vv ? vv.offsetTop : 0;
+  const kb = Math.max(0, Math.round(innerHeight - h - off)), open = kb > 120;
+  R.setProperty('--vvh', open ? Math.round(h) + 'px' : Math.round(innerHeight) + 'px'); R.setProperty('--vvt', open ? Math.round(off) + 'px' : '0px'); R.setProperty('--kb', kb + 'px');
+  document.body.classList.toggle('kb', open);
+}
 (function () {
-  const vv = window.visualViewport, R = document.documentElement.style; if (!vv) return;
-  const set = () => { const kb = Math.max(0, Math.round(innerHeight - vv.height - vv.offsetTop)); R.setProperty('--vvh', Math.round(vv.height) + 'px'); R.setProperty('--vvt', Math.round(vv.offsetTop) + 'px'); R.setProperty('--kb', kb + 'px'); document.body.classList.toggle('kb', kb > 120); };
-  vv.addEventListener('resize', set); vv.addEventListener('scroll', set); addEventListener('orientationchange', () => setTimeout(set, 250)); set();
+  const vv = window.visualViewport; let t = 0;
+  const later = (ms) => { clearTimeout(t); t = setTimeout(() => { applyView(); viewHeal(); }, ms); };
+  if (vv) { vv.addEventListener('resize', () => { applyView(); later(320); }); vv.addEventListener('scroll', applyView); }
+  addEventListener('resize', () => later(320)); addEventListener('pageshow', () => later(120));
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) later(150); });
+  addEventListener('orientationchange', () => { viewPeak = 0; viewTries = 0; setTimeout(() => { viewPeak = innerHeight; applyView(); }, 300); });
   document.addEventListener('focusin', e => { if (e.target.matches('input,textarea,select') && e.target.closest('.sheet,.cmd')) setTimeout(() => { try { e.target.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (er) { /* ignorieren */ } }, 320); });
-  document.addEventListener('focusout', () => setTimeout(() => { const a = document.activeElement; if (!a || !/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) { window.scrollTo(0, 0); set(); } }, 120));
+  document.addEventListener('focusout', () => { setTimeout(() => { const a = document.activeElement; if (!a || !/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) { window.scrollTo(0, 0); applyView(); } }, 120); later(420); setTimeout(() => viewHeal(), 1100); });
+  applyView(); setTimeout(() => viewHeal(), 900);
 })();
+ACT['view.heal'] = () => { const ok = viewHeal(true); const d = viewDiag(); toast(ok ? `Anzeige neu berechnet (${d.inner} von ${d.screen} px)` : 'Nichts zu tun', ok ? 'good' : ''); rerender(); };
 
 /* App-Gefühl: kein Pinch-Zoom, kein Doppeltipp-Zoom, kein Kontextmenü auf Bedienelementen */
 ['gesturestart', 'gesturechange', 'gestureend'].forEach(ev => document.addEventListener(ev, e => e.preventDefault()));
@@ -1604,6 +1780,8 @@ function cmdItems(q) {
     if (nx) add('Weiter', nx.ch.e, `Nächster Schritt: ${nx.ch.n}`, nx.ch.ask, () => { go('reise'); setTimeout(() => ACT['ch.open']({ dataset: { ch: nx.ch.id } }), 80); });
     add('Aktionen', '📤', 'Dokument hochladen', 'PDF, Foto oder Scan', () => ACT['cap.pick']({ dataset: {} }));
     add('Aktionen', '📷', 'Foto aufnehmen', 'Kamera öffnen', () => ACT['cap.cam']({ dataset: {} }));
+    add('Aktionen', '🧭', 'Start-Assistent', 'Basisdaten und Lebenssituation', () => ACT['wiz.open']());
+    add('Aktionen', '🧾', 'Kontoauszug einlesen', 'Verträge automatisch finden', () => ACT['st.import']());
     add('Aktionen', '📝', 'Verträge: Schnell-Check', 'Strom, Haftpflicht, Kfz … Ja / Nein', () => ACT['vt.quick']());
     add('Aktionen', '🧭', 'Lebensereignis hinzufügen', 'Heirat, Kind, Umzug, Job …', () => ACT['ev.new']());
     add('Aktionen', '📋', 'Text einfügen', 'Nachricht oder Mail lesen lassen', () => ACT['cn.text']());
@@ -2924,6 +3102,7 @@ function overall() {
   return { pct, level: lvl, chapters: cs, fields: Object.keys(S.prof).filter(phas).length, verified: Object.values(S.prof).filter(p => p.ok).length };
 }
 function nextStep() {
+  if (typeof treeNext === 'function') { const t = treeNext(); if (t) return t; }
   const o = overall(); for (const c of o.chapters) { if (!c.done) return { ch: CH[c.id], st: c, o }; }
   /* Kerndaten komplett: noch offene optionale Felder? */
   for (const c of o.chapters) if (!c.na && c.missing.length) return { ch: CH[c.id], st: c, o, optional: true };
@@ -3161,8 +3340,8 @@ function orbitHTML(o, nx) {
   const pc = o.pct, rr = 74, circ = 2 * Math.PI * rr;
   const lines = edges.map((e, i) => `<line class="oe" style="--d:${(i % 7) * .4}s" x1="${e[0][0].toFixed(1)}" y1="${e[0][1].toFixed(1)}" x2="${e[1][0].toFixed(1)}" y2="${e[1][1].toFixed(1)}" stroke="${e[2]}"/>`).join('');
   const spokes = CHAPTERS.map(c => { const st = o.chapters.find(x => x.id === c.id); return st.have ? `<line class="os" x1="${C}" y1="${C}" x2="${cpos[c.id][0].toFixed(1)}" y2="${cpos[c.id][1].toFixed(1)}" stroke="${c.c}" opacity="${(.12 + st.pct * .35).toFixed(2)}"/>` : ''; }).join('');
-  const sat = CHAPTERS.map((c, i) => { const st = o.chapters.find(x => x.id === c.id), state = st.na ? 'na' : st.done ? 'done' : nx && nx.ch.id === c.id ? 'cur' : st.have ? 'part' : 'open'; const [x, y] = cpos[c.id];
-    return `<button class="sat ${state}" style="left:${(x / SZ * 100).toFixed(2)}%;top:${(y / SZ * 100).toFixed(2)}%;--c:${c.c};--i:${i}" data-act="ch.open" data-ch="${c.id}" aria-label="${esc(c.n)}"><span class="sat-in">${state === 'done' ? icon('check') : c.e}<em>${esc(c.n.split(' ')[0])}</em></span></button>`; }).join('');
+  const sat = CHAPTERS.map((c, i) => { const st = o.chapters.find(x => x.id === c.id), state = tnLocked(c.id) ? 'lock' : st.na ? 'na' : st.done ? 'done' : nx && nx.ch.id === c.id ? 'cur' : st.have ? 'part' : 'open'; const [x, y] = cpos[c.id];
+    return `<button class="sat ${state}" style="left:${(x / SZ * 100).toFixed(2)}%;top:${(y / SZ * 100).toFixed(2)}%;--c:${c.c};--i:${i}" data-act="ch.open" data-ch="${c.id}" aria-label="${esc(c.n)}"><span class="sat-in">${state === 'done' ? icon('check') : state === 'lock' ? '🔒' : c.e}<em>${esc(c.n.split(' ')[0])}</em></span></button>`; }).join('');
   const dsat = docs.map((d, i) => { const [x, y] = dpos[d.id]; return `<button class="dsat" style="left:${(x / SZ * 100).toFixed(2)}%;top:${(y / SZ * 100).toFixed(2)}%;--i:${i}" data-act="doc.open" data-id="${d.id}" aria-label="${esc(d.name)}"><span class="sat-in">${d.thumb ? `<img alt="" src="${d.thumb}">` : kindInfo(d).e}</span></button>`; }).join('');
   const spk = Array.from({ length: 9 }, (_, i) => `<i class="spk" style="--x:${(i * 37 + 11) % 96}%;--y:${(i * 53 + 7) % 92}%;--d:${(i % 5) * .9}s;--s:${3 + (i % 3)}px"></i>`).join('');
   return `<div class="orb" role="group" aria-label="Deine Kapitel und Dokumente">${spk}
@@ -3178,7 +3357,7 @@ function reiseHero(o, nx, start) {
   const cta = !nx ? `<div class="hero-next done"><span class="hn-e">🎉</span><div><small>Geschafft</small><b>Deine digitale Kopie ist vollständig</b><span>Halte sie aktuell – oder frag Kairos, was sich daraus ergibt.</span></div></div><div class="nxt-acts"><button class="btn primary lg" data-go="einblicke">${icon('bulb')}Einblicke ansehen</button><button class="btn lg" data-go="kairos">${icon('sparkle')}Kairos fragen</button></div>`
     : `<div class="hero-next" style="--c:${nx.ch.c}"><span class="hn-e">${nx.ch.e}</span><div><small>${start ? 'Dein erster Schritt' : nx.optional ? 'Zum Abrunden' : 'Nächster Schritt'}</small><b>${nx.ch.id === 'ausweis' && start ? 'Starte mit deinem Ausweis' : esc(nx.ch.n) + ': ' + esc(nx.ch.title)}</b><span>${esc(nx.ch.ask)}</span></div></div>
       <div class="chips nxt-reads"><span class="chip">${icon('scan')}Kairos liest:</span>${nx.ch.reads.split(', ').map(r => `<span class="chip">${esc(r)}</span>`).join('')}</div>
-      <div class="nxt-acts">${nx.ch.view ? `<button class="btn primary lg" data-act="${nx.ch.quick || (nx.ch.id === 'vertraege' ? 'vt.quick' : 'ev.quick')}">${icon(nx.ch.id === 'beruf' ? 'briefcase' : 'sparkle')}${nx.ch.id === 'beruf' ? 'Arbeitsplatz eintragen' : 'Schnell-Check starten'}</button><button class="btn lg" data-go="${nx.ch.view}">Bereich öffnen</button>` : nx.ch.manual ? `<button class="btn primary lg" data-act="ich.start">${icon('edit')}Fragen beantworten</button>` : `<button class="btn primary lg" data-act="cap.pick" data-ch="${nx.ch.id}">${icon('upload')}Dokument wählen</button><button class="btn lg cam-only" data-act="cap.cam" data-ch="${nx.ch.id}">${icon('camera')}Foto aufnehmen</button><button class="btn ghost" data-act="fill.ch" data-ch="${nx.ch.id}">Selbst eintragen</button>`}</div>`;
+      <div class="nxt-acts">${nx.ch.view ? `<button class="btn primary lg" data-act="${nx.ch.quick || (nx.ch.id === 'vertraege' ? 'vt.quick' : 'ev.quick')}">${icon(nx.ch.id === 'beruf' ? 'briefcase' : 'sparkle')}${nx.ch.id === 'beruf' ? 'Arbeitsplatz eintragen' : 'Schnell-Check starten'}</button><button class="btn lg" data-go="${nx.ch.view}">Bereich öffnen</button>` : nx.ch.manual ? `<button class="btn primary lg" data-act="ich.start">${icon('edit')}Fragen beantworten</button>` : `<button class="btn primary lg" data-act="cap.pick" data-ch="${nx.ch.id}">${icon('upload')}Dokument wählen</button><button class="btn lg cam-only" data-act="cap.cam" data-ch="${nx.ch.id}">${icon('camera')}Foto aufnehmen</button><button class="btn ghost" data-act="fill.ch" data-ch="${nx.ch.id}">Selbst eintragen</button>${['bank', 'job', 'wohnen'].includes(nx.ch.id) ? `<button class="btn ghost" data-act="st.import">${icon('receipt')}Kontoauszug einlesen</button>` : ''}`}</div>`;
   return `<section class="hero2 card glass"><div class="hero2-l">${orbitHTML(o, nx)}</div>
     <div class="hero2-r"><div class="eyebrow">${esc(greetingWord())}${fn ? ', ' + esc(fn) : ''}</div><h1 class="h-title">${start ? 'Baue deine digitale <span class="gradtxt">Kopie</span>' : `Stufe <span class="gradtxt">${esc(o.level)}</span>`}</h1>
       <p class="h-sub">${start ? 'Dokument für Dokument – Kairos liest, verknüpft und zeigt dir, was daraus entsteht.' : `${o.fields} Angaben aus ${plural(ok, 'Dokument', 'Dokumenten')} sind verknüpft. ${nx ? 'Weiter geht es hier:' : ''}`}</p>
@@ -3191,10 +3370,11 @@ VIEWS.reise = {
     return `<div class="page reise stag">${reiseHero(o, nx, start)}
       <div class="rz2"><div class="rz2-l">${pend.length ? `<button class="notice" data-act="rev.pending">${icon('scan')}<span><b>${plural(pend.length, 'Dokument wartet', 'Dokumente warten')} auf dich</b><small>Prüfe, was Kairos gelesen hat, und übernimm es.</small></span>${icon('chevR')}</button>` : ''}${expiryHints()}
         ${ins.length ? `<div class="card glass"><div class="card-h">${icon('bulb')} Das hat Kairos verknüpft<span class="sp"></span><button class="link" data-go="einblicke">Alle</button></div><div class="ins-list compact">${ins.map((x, i) => insightCard(x, i, true)).join('')}</div></div>` : ''}
-        ${!S.profile.avatar && !start ? `<button class="notice soft" data-act="avatar.menu">${icon('camera')}<span><b>Füge ein Profilfoto hinzu</b><small>Dein Gesicht macht die digitale Kopie komplett.</small></span>${icon('chevR')}</button>` : ''}</div>
-      <div class="rz2-r"><div class="card glass pathc"><div class="card-h">Dein Weg</div><div class="path">${CHAPTERS.map(c => pathItem(c, o.chapters.find(x => x.id === c.id), nx && nx.ch.id === c.id)).join('')}</div></div></div></div></div>`;
+        ${!S.ui.wizardDone ? `<button class="notice" data-act="wiz.open">${icon('sparkle')}<span><b>Start-Assistent</b><small>Zwei Minuten für einen guten Start: Basisdaten, Lebenssituation, erster Upload.</small></span>${icon('chevR')}</button>` : ''}${!S.profile.avatar && !start ? `<button class="notice soft" data-act="avatar.menu">${icon('camera')}<span><b>Füge ein Profilfoto hinzu</b><small>Dein Gesicht macht die digitale Kopie komplett.</small></span>${icon('chevR')}</button>` : ''}</div>
+      <div class="rz2-r">${treeHTML()}</div></div></div>`;
   },
   mount(root) {
+    treeDraw(root);
     $$('[data-count]', root).forEach(el => countUp(el, +el.dataset.count, c => String(c)));
     const pc = $('.rgp', root); if (pc && !reduceMotion()) { const to = pc.getAttribute('stroke-dashoffset'), c = pc.getAttribute('stroke-dasharray'); pc.style.transition = 'none'; pc.setAttribute('stroke-dashoffset', c); requestAnimationFrame(() => requestAnimationFrame(() => { pc.style.transition = 'stroke-dashoffset 1.4s var(--ease)'; pc.setAttribute('stroke-dashoffset', to); })); }
   }
@@ -3391,7 +3571,7 @@ ACT['doc.open'] = async el => {
     ${applied.length ? `<div class="group-h"><span>Ins Profil übernommen</span></div><div class="chips">${applied.map(k => `<span class="chip">${esc(PF[k] ? PF[k].l : k)}</span>`).join('')}</div>` : ''}
     ${d.fristen && d.fristen.length ? `<div class="group-h"><span>Fristen</span></div>${d.fristen.map(f => `<div class="ckl warn">${icon('calendar')}<span>${esc(f.label || f.t || '')} ${f.date ? '· ' + fmtDate(f.date, true) : ''}</span></div>`).join('')}` : ''}
     ${d.text ? `<details class="dd-txt"><summary>Erkannter Text</summary><pre>${esc(d.text.slice(0, 6000))}${d.text.length > 6000 ? '\n…' : ''}</pre></details>` : ''}
-    <div class="acts"><button class="btn danger ghost" data-sh="del">${icon('trash')}Löschen</button><span class="sp"></span><button class="btn" data-sh="dl">${icon('download')}Datei</button><button class="btn" data-sh="reread">${icon('sync')}Neu lesen</button>${d.status !== 'ok' ? `<button class="btn primary" data-sh="rev">Prüfen</button>` : `<button class="btn" data-sh="rev">Daten ansehen</button>`}</div></div>`,
+    <div class="acts"><button class="btn danger ghost" data-sh="del">${icon('trash')}Löschen</button><span class="sp"></span><button class="btn" data-sh="dl">${icon('download')}Datei</button>${d.kind === 'bank' && d.text ? `<button class="btn" data-sh="stmt">${icon('receipt')}Als Auszug auswerten</button>` : ''}<button class="btn" data-sh="reread">${icon('sync')}Neu lesen</button>${d.status !== 'ok' ? `<button class="btn primary" data-sh="rev">Prüfen</button>` : `<button class="btn" data-sh="rev">Daten ansehen</button>`}</div></div>`,
   { wide: true, onMount: async sh => {
     getFileBlob(d.id).then(b => { const p = $('#ddPrev', sh); if (p && b) { const u = URL.createObjectURL(b); p.innerHTML = `<img alt="Vorschau" src="${u}">`; } else if (p) p.remove(); }).catch(() => { const p = $('#ddPrev', sh); p && p.remove(); });
     sh.addEventListener('click', async e => {
@@ -3399,6 +3579,7 @@ ACT['doc.open'] = async el => {
       if (a === 'rev') { closeSheet(); capReview([d.id], {}); }
       if (a === 'dl') { const bl = await getFileBlob(d.id); if (bl) download(bl, d.fileName || d.name); else toast('Datei nicht gefunden', 'bad'); }
       if (a === 'reread') { closeSheet(); rereadDoc(d.id); }
+      if (a === 'stmt') { closeSheet(); setTimeout(() => stRun([{ name: d.name || d.fileName, text: d.text }]), 260); }
       if (a === 'del') { const keep = Object.keys(S.prof).filter(k => S.prof[k].src === 'doc:' + d.id).length; if (await confirmSheet('Dokument löschen?', keep ? `Die ${keep} übernommenen Profilwerte bleiben erhalten.` : 'Das Dokument wird von diesem Gerät entfernt.', 'Löschen')) { removeWithUndo(S.docs, d.id, 'Dokument', () => { renderNav(); rerender(); }); } }
     });
   } });
@@ -3713,7 +3894,7 @@ function buildInsights() {
   }
   if (phas('krankenkasse') && !phas('haftpflicht') && pst('haftpflicht') !== 'none' && !vst('haftpflicht')) add({ id: 'haftpflicht', kind: 'todo', pri: 52, e: '🛡️', title: 'Privathaftpflicht: hast du eine?', text: 'Sie gehört zu den wichtigsten Versicherungen: Sie schützt vor hohen Schadenersatzforderungen, wenn du aus Versehen etwas beschädigst. Sag Kairos, ob du eine hast – oder markiere „Habe ich nicht“.', src: chipsFor(['krankenkasse']), act: { l: 'Schnell-Check starten', a: 'vt.quick' } });
   /* Verträge, Familie & Lebensereignisse */
-  contractInsights(add); lifeInsights(add); careerInsights(add); depthInsights(add);
+  contractInsights(add); katalogInsights(add); lifeInsights(add); careerInsights(add); depthInsights(add);
   if (phas('svnr')) add({ id: 'rente', kind: 'info', pri: 25, e: '👴', title: 'Rente im Blick behalten', text: 'Mit deiner Sozialversicherungsnummer kannst du bei der Deutschen Rentenversicherung dein Konto klären lassen. Die digitale Rentenübersicht zeigt gesetzliche, betriebliche und private Ansprüche an einem Ort.', src: chipsFor(['svnr']) });
   if (phas('iban') && phas('bank')) add({ id: 'sparer', kind: 'chance', pri: 28, e: '🏦', title: 'Sparerpauschbetrag nutzen', text: `${eur(RULES.spb)} Kapitalerträge pro Jahr sind steuerfrei (${eur(RULES.spb * 2)} bei Ehepaaren). Prüfe, ob dein Freistellungsauftrag bei ${pget('bank')} zu deinen Zinsen und Dividenden passt.`, src: chipsFor(['iban', 'bank']) });
   /* Arbeit */
@@ -4616,7 +4797,7 @@ const VC = [
   V('bav', 'geld', 'Betriebliche Altersvorsorge', '🏢', 'Vorsorge über den Arbeitgeber (Entgeltumwandlung) – mit Zuschuss vom Arbeitgeber.', { kw: ['betriebliche altersversorgung', 'direktversicherung', 'entgeltumwandlung', 'pensionskasse'], x: [['x_az', 'Zuschuss Arbeitgeber / Monat', 'money'], ['x_wert', 'Aktueller Wert', 'money']], when: () => pget('beschaeftigung') !== 'Selbstständig / Freiberuflich' }),
   V('vwl', 'geld', 'Vermögenswirksame Leistungen', '🎁', 'Zuschuss vom Arbeitgeber, wenn du sparst (z. B. Bausparen oder Fonds).', { x: [['x_az', 'Arbeitgeber zahlt / Monat', 'money']], when: () => pget('beschaeftigung') !== 'Selbstständig / Freiberuflich' }),
   V('kredit', 'geld', 'Kredite / Baufinanzierung', '💸', 'Ratenkredit, Dispo oder Immobiliendarlehen – die Rate trägst du als Kosten ein.', { kw: ['darlehen', 'kreditvertrag', 'baufinanzierung', 'ratenkredit'], x: [['x_rest', 'Restschuld', 'money'], ['x_zins', 'Sollzins (%)', 'number'], ['x_fest', 'Zinsbindung bis', 'date']] }),
-  V('streaming', 'abo', 'Streaming & Musik', '🎬', 'Netflix, Spotify, Disney+ & Co. – trag die Summe aller Dienste ein.', { kuend: 'monat', kw: ['netflix', 'spotify', 'disney', 'prime video', 'dazn', 'streaming'], x: [['x_dienste', 'Welche Dienste', 'text']] }),
+  V('streaming', 'abo', 'Streaming & Musik', '🎬', 'Netflix, Spotify, Disney+ & Co. – lege pro Dienst einen eigenen Eintrag an.', { kuend: 'monat', kw: ['netflix', 'spotify', 'disney', 'prime video', 'dazn', 'streaming'], x: [['x_dienste', 'Welche Dienste', 'text']] }),
   V('software', 'abo', 'Cloud & Software', '☁️', 'iCloud, Google One, Microsoft 365, Apps mit Abo.', { kuend: 'monat', kw: ['icloud', 'microsoft 365', 'google one', 'abonnement'], x: [['x_dienste', 'Welche Dienste', 'text']] }),
   V('zeitung', 'abo', 'Zeitung & Magazine', '📰', 'Digital- oder Print-Abos.', { kw: ['zeitung', 'magazin'], x: [['x_dienste', 'Welche', 'text']] }),
   V('fitness', 'abo', 'Fitnessstudio / Sport', '🏋️', 'Studio, Verein oder Kurs mit festem Beitrag.', { kw: ['fitness', 'mitgliedschaft', 'studio'], x: [['x_ort', 'Wo', 'text']] }),
@@ -4910,6 +5091,7 @@ VIEWS.vertraege = {
         ${hidden || exp ? `<button class="vexp" data-act="vt.exp" data-cat="${c[0]}">${exp ? 'Weniger anzeigen' : `${hidden} weitere ansehen${open ? ' · ' + open + ' offen' : ''}`}${icon(exp ? 'chevU' : 'chevD')}</button>` : ''}</section>`; }).join('');
     return `<div class="page vtp"><header class="ph"><div class="t"><div class="eyebrow">Alles, was läuft</div><h1>Verträge</h1><p>Versicherungen, Energie, Handy, Abos – mit Kosten und Fristen. Was du nicht hast, markierst du einfach mit „Nein“.</p></div>
       <div class="act"><button class="btn" data-act="vt.new">${icon('plus')}Eigener Vertrag</button>${unanswered ? `<button class="btn primary" data-act="vt.quick">${icon('sparkle')}Schnell-Check</button>` : ''}</div></header>
+      ${stCard()}
       <div class="kpis"><div class="kpi2"><b class="num" data-count="${act.length}">${act.length}</b><span>Aktive Verträge</span></div><div class="kpi2"><b class="num" data-money="${fc.total}">${eur0(fc.total)}</b><span>Feste Kosten / Monat</span></div><div class="kpi2"><b>${netto && fc.total ? Math.round(fc.total / netto * 100) + ' %' : '–'}</b><span>vom Netto</span></div><div class="kpi2"><b>${nx ? dlLabel(nx.date).replace('in ', '') : '–'}</b><span>${nx ? esc(nx.vt && VCX(nx.vt) ? VCX(nx.vt).n : nx.title.replace(/^Kündigen bis: /, '')) : 'Nächste Frist'}</span></div></div>
       ${hh.inn && fc.total ? `<div class="card glass hhc"><div class="card-h">${icon('coins')} Haushaltsrechnung<span class="sp"></span><b class="${hh.rest < 0 ? 'neg' : 'pos'}">${hh.rest < 0 ? '−' : '+'}${eur0(Math.abs(hh.rest))}</b></div>
         <div class="hh-rows"><div><span>Einnahmen</span><b>${eur0(hh.inn)}</b></div>${hh.extra ? `<div class="sub"><span>davon weitere Einnahmen</span><b>${eur0(hh.extra)}</b></div>` : ''}<div><span>Feste Kosten</span><b>− ${eur0(hh.out)}</b></div><div class="tot"><span>Bleibt im Monat</span><b>${eur0(hh.rest)}</b></div></div>
@@ -4931,7 +5113,7 @@ function vDetailRows(e) {
   const m = vMonthly(e.id); if (o.kosten) add(isInc(e) ? 'Eingang' : e.kl || 'Beitrag', `${money(o.kosten)} ${(ZAHL.find(z => z[0] === (o.zahl || 'm')) || ZAHL[0])[1]}${(o.zahl || 'm') !== 'm' ? ' (' + money(m) + ' / Monat)' : ''}`);
   add('Beginn', o.beginn && fmtDate(o.beginn, true)); add('Vertragsende', o.unbef ? 'läuft unbefristet' : o.ende && fmtDate(o.ende, true));
   add('Kündigung', (KUEND.find(k => k[0] === (o.kuend || e.kuend || '')) || [])[1] && (o.kuend || e.kuend) ? (KUEND.find(k => k[0] === (o.kuend || e.kuend))[1]) : '');
-  for (const [k, l, t] of e.x) { let v = o[k] != null && o[k] !== '' ? o[k] : (k === 'x_kennz' && !e.of && (e.id === 'kfz') ? pget('kennzeichen') : null); if (v == null || v === '') continue; add(l, t === 'money' ? money(v) : t === 'date' ? fmtDate(v, true) : String(v)); }
+  for (const [k, l, t] of xSpecs(e)) { let v = o[k] != null && o[k] !== '' ? o[k] : (k === 'x_kennz' && !e.of && (e.id === 'kfz') ? pget('kennzeichen') : null); if (v == null || v === '') continue; add(l, t === 'money' ? money(v) : t === 'date' ? fmtDate(v, true) : t === 'toggle' ? 'Ja' : String(v)); }
   add('Notiz', o.notiz); return r;
 }
 ACT['vt.open'] = el => {
@@ -4947,7 +5129,6 @@ ACT['vt.open'] = el => {
     <div class="acts"><button class="btn danger ghost" data-sh="del">${icon('trash')}</button><span class="sp"></span><button class="btn" data-act="vt.kuend" data-id="${e.id}">✂️ Kündigen</button><button class="btn" data-act="vt.search" data-id="${e.id}">${icon('search')}Alternativen</button><button class="btn primary" data-act="vt.edit" data-id="${e.id}">${icon('edit')}Bearbeiten</button></div>`,
   { wide: true, onMount: sh => sh.addEventListener('click', async ev => { const b = ev.target.closest('[data-sh=del]'); if (!b) return; if (await confirmSheet('Vertrag entfernen?', 'Die Angaben zu diesem Vertrag werden gelöscht.', 'Entfernen')) { const old = JSON.parse(JSON.stringify(S.vertr[e.id] || {})); if (e.custom || e.of) delete S.vertr[e.id]; else { delete S.vertr[e.id]; if (e.pf && pst(e.pf)) pset(e.pf, null); } save(); closeSheet(); renderNav(); rerender(); toast('Entfernt', '', { label: 'Rückgängig', fn: () => { S.vertr[e.id] = old; if (e.pf && old.anbieter) pset(e.pf, old.anbieter); save(); renderNav(); rerender(); } }); } }) });
 };
-ACT['vt.search'] = el => { const e = VCX(el.dataset.id); if (!e) return; const q = encodeURIComponent(`${e.n} Vergleich`); window.open('https://www.google.com/search?q=' + q, '_blank', 'noopener'); };
 ACT['vt.linkdoc'] = el => {
   const e = VCX(el.dataset.id), docs = S.docs.filter(d => d.status === 'ok');
   if (!docs.length) return toast('Lade zuerst ein Dokument hoch.');
@@ -4960,43 +5141,7 @@ ACT['vt.fromdoc'] = el => {
   if (d.expires && !o.ende) o.ende = d.expires; save(); renderNav(); rerender(); ACT['vt.edit']({ dataset: { id: e.id } });
 };
 
-/* ---------- Bearbeiten ---------- */
-ACT['vt.edit'] = el => {
-  const e = VCX(el.dataset.id); if (!e) return; const o = vOf(e.id), docs = S.docs.filter(d => d.status === 'ok');
-  const fields = [
-    { k: 'label', label: 'Eigene Bezeichnung (optional)', type: 'text', val: o.label, full: true, ph: e.of || instIds(e.id).length ? 'z. B. Zweitwagen, Handy Partnerin' : 'z. B. Zweitwagen – nur nötig bei mehreren' },
-    { k: 'anbieter', label: 'Anbieter / Gesellschaft', type: 'text', val: vprov(e.id), full: true, ph: 'z. B. HUK-Coburg, Vattenfall, Telekom' },
-    { k: 'tarif', label: 'Tarif / Produkt', type: 'text', val: o.tarif }, { k: 'nr', label: 'Vertrags- / Policen-Nr.', type: 'text', val: o.nr },
-    { k: 'kosten', label: isInc(e) ? e.kl || 'Betrag (Eingang)' : e.kl || 'Beitrag / Rate', type: 'money', val: o.kosten }, { k: 'zahl', label: 'Zahlweise', type: 'select', opts: ZAHL.map(z => [z[0], z[1]]), val: o.zahl || 'm' },
-    { k: 'beginn', label: 'Vertragsbeginn', type: 'date', val: o.beginn }, { k: 'ende', label: 'Vertragsende / Ablauf', type: 'date', val: o.ende },
-    { k: 'unbef', type: 'toggle', label: 'Läuft ohne festes Ende (unbefristet)', val: !!o.unbef, full: true },
-    { k: 'gek', type: 'toggle', label: 'Bereits gekündigt (läuft aus)', val: !!o.gek, full: true },
-    { k: 'kuend', label: 'Kündigungsfrist', type: 'select', opts: KUEND, val: o.kuend || e.kuend || '', full: true }
-  ];
-  for (const [k, l, t, opts] of e.x) fields.push(t === 'select' ? { k, label: l, type: 'select', opts: [['', '– bitte wählen –']].concat(opts.map(x => [x, x])), val: o[k] != null ? o[k] : '' } : t === 'money' ? { k, label: l, type: 'money', val: o[k] } : t === 'date' ? { k, label: l, type: 'date', val: o[k] } : t === 'number' ? { k, label: l, type: 'text', val: o[k] != null ? o[k] : '', ph: '' } : { k, label: l, type: 'text', val: o[k] != null ? o[k] : (k === 'x_kennz' && e.id === 'kfz' ? pget('kennzeichen') || '' : '') });
-  if (docs.length) fields.push({ k: 'doc', label: 'Verknüpftes Dokument', type: 'select', opts: [['', '– keines –']].concat(docs.map(d => [d.id, d.name])), val: o.doc || '', full: true });
-  fields.push({ k: 'notiz', label: 'Notiz', type: 'textarea', val: o.notiz, full: true, rows: 2 });
-  formSheet({ title: `${e.e} ${e.n}`, sub: e.d, fields, wide: true, submit: 'Speichern',
-    onSubmit: v => {
-      const t = S.vertr[e.id] || (S.vertr[e.id] = {});
-      t.st = 'ja'; if (v.gek) t.gek = 1; else delete t.gek;
-      for (const k of ['anbieter', 'tarif', 'nr', 'beginn', 'ende', 'zahl', 'kuend', 'notiz', 'doc', 'label']) { if (v[k] === '' || v[k] == null) delete t[k]; else t[k] = v[k]; }
-      if (v.kosten == null) delete t.kosten; else t.kosten = v.kosten; if (v.unbef) t.unbef = 1; else delete t.unbef;
-      for (const [k, , ty] of e.x) { let x = v[k]; if (ty === 'number') x = x === '' || x == null ? null : parseFloat(String(x).replace(',', '.')); if (x === '' || x == null || (typeof x === 'number' && !isFinite(x))) delete t[k]; else t[k] = x; }
-      if (e.pf && !e.of && t.anbieter) pset(e.pf, t.anbieter, { src: 'manuell', conf: 1, docT: Date.now() });
-      if (e.id === 'kfz' && t.x_kennz && !phas('kennzeichen')) pset('kennzeichen', t.x_kennz, { src: 'manuell', conf: 1, docT: Date.now() });
-      if (!t.anbieter && e.pf && phas(e.pf)) { /* Anbieter aus dem Steckbrief bleibt */ }
-      save(); renderNav(); rerender(); toast('Gespeichert', 'good');
-    } });
-};
-ACT['vt.dup'] = el => { const b = el.dataset.id; if (vst(b) !== 'ja') { setVst(b, 'ja'); renderNav(); rerender(); return ACT['vt.edit']({ dataset: { id: b } }); } closeSheet(); const id = newInst(b); renderNav(); rerender(); setTimeout(() => ACT['vt.edit']({ dataset: { id } }), 260); };
-ACT['vt.add'] = el => {
-  const cat = el.dataset.cat, c = catOf(cat), list = vAll().filter(e => e.c === cat && !e.of);
-  openSheet(`<div class="chh" style="--c:var(--c-life)"><span class="chh-e">${c[2]}</span><div><small>Hinzufügen</small><h2>${esc(c[1])}</h2></div></div>
-    <p class="lead-p">Wähle, was du hast. Hast du es schon, legst du einen weiteren Eintrag an – etwa ein zweites Auto oder einen zweiten Handyvertrag.</p>
-    <div class="list">${list.map(e => { const st = vst(e.id), n = instIds(e.id).length + (st === 'ja' ? 1 : 0); return `<button class="li" data-sh="${e.id}"><span class="li-e">${e.e}</span><span class="li-m"><b>${esc(e.n)}</b><small>${st === 'ja' ? (n > 1 ? n + ' Einträge – noch einen hinzufügen' : 'Hast du – noch einen hinzufügen') : st === 'nein' ? 'Bisher „Habe ich nicht“' : esc(e.d)}</small></span>${icon('plus')}</button>`; }).join('')}<button class="li" data-sh="__own"><span class="li-e">📄</span><span class="li-m"><b>Etwas anderes</b><small>Eigener Eintrag in diesem Bereich</small></span>${icon('plus')}</button></div>`,
-  { onMount: sh => sh.addEventListener('click', ev => { const b = ev.target.closest('[data-sh]'); if (!b) return; const id = b.dataset.sh; closeSheet(); setTimeout(() => { if (id === '__own') ACT['vt.new']({ dataset: { cat } }); else if (vst(id) === 'ja') ACT['vt.dup']({ dataset: { id } }); else { setVst(id, 'ja'); renderNav(); rerender(); ACT['vt.edit']({ dataset: { id } }); } }, 260); }) });
-};
+/* ---------- Bearbeiten: siehe 79-w-katalog.js ---------- */
 ACT['vt.new'] = el => {
   const cats = VCATS.map(c => [c[0], c[1]]), pre = el && el.dataset && el.dataset.cat;
   formSheet({ title: 'Eigener Vertrag', sub: 'Für alles, was nicht im Katalog steht – z. B. Wartungsvertrag, Tierarzt-Abo, Parkplatz.', fields: [{ k: 'n', label: 'Name', type: 'text', req: true, full: true, ph: 'z. B. Parkplatz Tiefgarage' }, { k: 'c', label: 'Bereich', type: 'select', opts: cats, val: pre || 'abo', full: true }, { k: 'e', label: 'Symbol', type: 'text', val: '📄', ph: '📄' }], submit: 'Weiter',
@@ -5011,10 +5156,10 @@ ACT['vt.quick'] = el => {
   const sh = openSheet('<div id="qcBody"></div>', {
     wide: true, onMount: s => {
       const draw = () => {
-        if (i) { renderNav(); rerender(); } const b = $('#qcBody', s); if (i >= queue.length) { b.innerHTML = `<div class="empty" style="padding:8px 0 4px"><div class="em">🎉</div><b>Geschafft</b><p>${yes} ${yes === 1 ? 'Vertrag' : 'Verträge'} eingetragen, ${no}× „Habe ich nicht“. Ergänze bei den aktiven Verträgen jetzt Kosten und Laufzeit – dann erkennt Kairos Sparpotenzial und Fristen. Weitere Bereiche (Familie, Abos, Einnahmen …) gehst du mit „Check“ im jeweiligen Bereich durch.</p></div><div class="acts"><span class="sp"></span><button class="btn primary" data-q="done">Fertig</button></div>`; return; }
+        delete s.dataset.qtarif; if (i) { renderNav(); rerender(); } const b = $('#qcBody', s); if (i >= queue.length) { b.innerHTML = `<div class="empty" style="padding:8px 0 4px"><div class="em">🎉</div><b>Geschafft</b><p>${yes} ${yes === 1 ? 'Vertrag' : 'Verträge'} eingetragen, ${no}× „Habe ich nicht“. Ergänze bei den aktiven Verträgen jetzt Kosten und Laufzeit – dann erkennt Kairos Sparpotenzial und Fristen. Weitere Bereiche (Familie, Abos, Einnahmen …) gehst du mit „Check“ im jeweiligen Bereich durch.</p></div><div class="acts"><span class="sp"></span><button class="btn primary" data-q="done">Fertig</button></div>`; return; }
         const e = queue[i], c = catOf(e.c);
         if (mode === 'detail') { b.innerHTML = `<div class="qc-h"><small>${i + 1} von ${queue.length} · ${esc(c[1])}</small><div class="bar thin"><i style="width:${i / queue.length * 100}%"></i></div></div><div class="qc-card"><div class="qc-e">${e.e}</div><h2>${esc(e.n)}</h2><p class="lead-p">Gut. Magst du kurz Anbieter und Beitrag eintragen? Du kannst das auch später.</p></div>
-          <div class="fields"><div class="field full"><label for="qcA">Anbieter</label><input class="inp" id="qcA" value="${esc(vprov(e.id))}" placeholder="z. B. Allianz, Vattenfall, Telekom" autocomplete="off"></div><div class="field"><label for="qcK">Beitrag</label><input class="inp" id="qcK" inputmode="decimal" placeholder="0,00" autocomplete="off"></div><div class="field"><label for="qcZ">Zahlweise</label><select class="sel" id="qcZ">${ZAHL.map(z => `<option value="${z[0]}">${z[1]}</option>`).join('')}</select></div></div>
+          <div class="fields"><div class="field full"><label for="qcA">Anbieter</label><input class="inp" id="qcA" value="${esc(vprov(e.id))}" placeholder="z. B. Allianz, Vattenfall, Telekom" autocomplete="off"></div>${provQuickHtml(e)}<div class="field"><label for="qcK">Beitrag</label><input class="inp" id="qcK" inputmode="decimal" placeholder="0,00" autocomplete="off"></div><div class="field"><label for="qcZ">Zahlweise</label><select class="sel" id="qcZ">${ZAHL.map(z => `<option value="${z[0]}">${z[1]}</option>`).join('')}</select></div></div>
           <div class="acts"><button class="btn" data-q="later">Später</button><span class="sp"></span><button class="btn primary" data-q="save">Speichern & weiter</button></div>`; return; }
         b.innerHTML = `<div class="qc-h"><small>${i + 1} von ${queue.length} · ${esc(c[1])}</small><div class="bar thin"><i style="width:${i / queue.length * 100}%"></i></div></div>
           <div class="qc-card"><div class="qc-e">${e.e}</div><h2>${esc(e.n)}</h2><p class="lead-p">${esc(e.d)}</p>${e.core ? '<span class="badge info">Wichtig für die meisten</span>' : ''}</div>
@@ -5023,7 +5168,7 @@ ACT['vt.quick'] = el => {
       };
       draw();
       s.addEventListener('click', ev => {
-        const bt = ev.target.closest('[data-q]'); if (!bt) return; const a = bt.dataset.q, e = queue[i]; buzz(8);
+        if (provQuickClick(ev, s, queue[i])) { buzz(6); return; } const bt = ev.target.closest('[data-q]'); if (!bt) return; const a = bt.dataset.q, e = queue[i]; buzz(8);
         if (a === 'done') { closeSheet(); renderNav(); rerender(); return; }
         if (a === 'ja') { setVst(e.id, 'ja'); yes++; mode = 'detail'; draw(); setTimeout(() => $('#qcA', s) && $('#qcA', s).focus(), 80); return; }
         if (a === 'nein') { setVst(e.id, 'nein'); no++; i++; mode = 'ask'; draw(); return; }
@@ -5032,13 +5177,643 @@ ACT['vt.quick'] = el => {
         if (a === 'later') { i++; mode = 'ask'; draw(); return; }
         if (a === 'save') {
           const anb = $('#qcA', s).value.trim(), k = parseMoney($('#qcK', s).value), z = $('#qcZ', s).value, t = S.vertr[e.id] || (S.vertr[e.id] = {}); t.st = 'ja';
-          if (anb) { t.anbieter = anb; if (e.pf) pset(e.pf, anb, { src: 'manuell', conf: 1, docT: Date.now() }); } if (k) { t.kosten = k; t.zahl = z; } save(); i++; mode = 'ask'; draw();
+          if (anb) { t.anbieter = anb; if (e.pf) pset(e.pf, anb, { src: 'manuell', conf: 1, docT: Date.now() }); } if (k) { t.kosten = k; t.zahl = z; } if (s.dataset.qtarif) t.tarif = s.dataset.qtarif; save(); i++; mode = 'ask'; draw();
         }
       });
     }
   });
   return sh;
 };
+
+/* =====================================================================
+   KAIROS · Anbieter- & Tarifkatalog und kategorie-spezifischer Vertragseditor
+   - Pro Vertragsart: passende Anbieter als Chips, bei Abos mit echten Tarifen (Preis, Stand)
+   - Pro Vertragsart: eigene Felder mit Auswahl-Chips statt Freitext
+   - Ehrlich: Der Browser kann Anbieter-Seiten nicht live abfragen (CORS). Preise sind ein
+     redaktioneller Stand (KSTAND) und werden als Richtwert gezeigt; Link zum Anbieter führt zur Prüfung.
+   ===================================================================== */
+const KSTAND = '10/2026';
+const KT = (n, c, z, note) => ({ n, c: c == null ? null : c, z: z || 'm', note: note || '' });
+const KP = (n, url, t, o) => Object.assign({ n, url: url || '', t: t || [] }, o || {});
+
+/* ---------- Anbieterlisten ---------- */
+const INS_SACH = ['Allianz', 'HUK-Coburg', 'HUK24', 'DEVK', 'Generali', 'AXA', 'R+V', 'ERGO', 'Zurich', 'LVM', 'VGH', 'Gothaer', 'CosmosDirekt', 'Barmenia', 'Signal Iduna', 'Provinzial', 'Concordia', 'WGV', 'VHV', 'Württembergische', 'Sparkassen-Versicherung', 'Debeka', 'Interrisk', 'Haftpflichtkasse'];
+const INS_KFZ = ['HUK-Coburg', 'HUK24', 'DEVK', 'Allianz', 'CosmosDirekt', 'VHV', 'Verti', 'WGV', 'AXA', 'Generali', 'R+V', 'ERGO', 'LVM', 'VGH', 'Provinzial', 'Sparkassen-Versicherung', 'Gothaer', 'Debeka', 'ADAC Autoversicherung'];
+const INS_LEBEN = ['Allianz', 'Alte Leipziger', 'Zurich', 'Nürnberger', 'Canada Life', 'Swiss Life', 'Hannoversche', 'Condor', 'Debeka', 'DEVK', 'Continentale', 'LVM', 'HDI', 'Volkswohl Bund', 'Bayerische', 'Signal Iduna', 'Generali', 'AXA', 'R+V', 'ERGO', 'Barmenia', 'Gothaer', 'Cosmos Direkt', 'Ideal', 'Stuttgarter'];
+const INS_PKV = ['Debeka', 'DKV', 'Signal Iduna', 'Allianz Private Krankenversicherung', 'Barmenia', 'Continentale', 'HanseMerkur', 'AXA', 'Hallesche', 'Central', 'Concordia', 'Inter', 'Universa', 'Gothaer', 'LKH', 'Süddeutsche', 'Württembergische', 'Provinzial', 'R+V', 'Bayerische Beamtenkrankenkasse'];
+const BANKEN = ['Sparkasse', 'Volksbank / Raiffeisenbank', 'Commerzbank', 'Deutsche Bank', 'TARGOBANK', 'ING', 'DKB', 'comdirect', 'Consorsbank', 'Postbank', 'HypoVereinsbank', 'Santander', 'N26', 'Revolut', 'C24', 'Trade Republic', 'Scalable Capital', 'Barclays', 'Hanseatic Bank', 'Wüstenrot Bank', 'Renault Bank direkt', 'Bunq'];
+const BROKER = ['Trade Republic', 'Scalable Capital', 'ING', 'comdirect', 'Consorsbank', 'DKB', 'flatex', 'Smartbroker+', 'Interactive Brokers', 'Sparkasse', 'Volksbank / Raiffeisenbank', 'TARGOBANK', 'Commerzbank', 'Deutsche Bank', 'Revolut'];
+const ENERGIE = ['Grundversorger (Stadtwerke)', 'E.ON', 'Vattenfall', 'EnBW', 'RWE', 'Octopus Energy', 'Tibber', 'LichtBlick', 'NaturEnergie', 'Naturstrom', 'Yello', 'Eprimo', 'Vattenfall Easy', 'ENTEGA', 'EWE', 'Mainova', 'Rhenag', '1Komma5°', 'Rabot Energy', 'Eon Grundversorgung', 'Stadtwerke (regional)'];
+const MOBIL_PROV = [KP('Telekom', 'https://www.telekom.de/mobilfunk', [], { netz: 'Telekom' }), KP('Vodafone', 'https://www.vodafone.de/privat/handys-tablets-tarife/', [], { netz: 'Vodafone' }), KP('O2', 'https://www.o2online.de/tarife/', [], { netz: 'O2' }), KP('1&1', 'https://www.1und1.de/mobilfunk-tarife', [], { netz: 'Vodafone' }), KP('congstar', 'https://www.congstar.de/', [], { netz: 'Telekom' }), KP('Aldi Talk', 'https://www.alditalk.de/', [], { netz: 'O2' }), KP('Lidl Connect', 'https://www.lidl-connect.de/', [], { netz: 'Vodafone' }), KP('Fraenk', 'https://www.fraenk.de/', [], { netz: 'Telekom' }), KP('Klarmobil', 'https://www.klarmobil.de/', [], { netz: 'Vodafone' }), KP('Mobilcom-debitel', 'https://www.mobilcom-debitel.de/', [], {}), KP('WinSIM', 'https://www.winsim.de/', [], { netz: 'O2' }), KP('Netzclub', 'https://www.netzclub.net/', [], { netz: 'O2' }), KP('freenet', 'https://www.freenet.de/mobilfunk/', [], {}), KP('Vodafone GigaKombi', '', [], { netz: 'Vodafone' }), KP('Otelo', 'https://www.otelo.de/', [], { netz: 'Vodafone' }), KP('Simyo', 'https://www.simyo.de/', [], { netz: 'O2' }), KP('Sparhandy', 'https://www.sparhandy.de/', [], {})];
+
+const PROV = {
+  /* --- Streaming --- */
+  streaming: [
+    KP('Netflix', 'https://www.netflix.com/', [KT('Standard mit Werbung', 699), KT('Standard', 1599), KT('Premium', 2199), KT('Zusatzmitglied (mit Werbung)', 499, 'm', 'nur zu Standard/Premium'), KT('Zusatzmitglied (werbefrei)', 599, 'm', 'nur zu Standard/Premium')], { e: '🎬', info: 'Preiserhöhung um 2 € am 3.9.2026' }),
+    KP('Disney+', 'https://www.disneyplus.com/de-de', [KT('Standard mit Werbung', 699), KT('Standard', 1099), KT('Standard (Jahresabo)', 10990, 'j'), KT('Premium', 1599), KT('Premium (Jahresabo)', 15990, 'j')], { e: '🏰' }),
+    KP('Amazon Prime Video', 'https://www.amazon.de/prime', [KT('Prime Video (mit Werbung)', 899, 'm', 'ohne Prime-Versand'), KT('Werbefrei-Zusatz', 299, 'm', 'zusätzlich')], { e: '📦' }),
+    KP('WOW', 'https://www.wowtv.de/', [KT('Filme & Serien', 998), KT('Filme & Serien (Jahresabo)', 7176, 'j'), KT('Live-Sport', 4499), KT('Live-Sport (Jahresabo)', 2999 * 12, 'j')], { e: '🎞️' }),
+    KP('RTL+', 'https://plus.rtl.de/', [KT('Basic (mit Werbung)', 599), KT('Premium', 999), KT('Premium werbefrei', 1299)], { e: '📺' }),
+    KP('Paramount+', 'https://www.paramountplus.com/de/', [KT('Basis', 599), KT('Standard', 999), KT('Premium', 1299)], { e: '⛰️' }),
+    KP('Apple TV', 'https://tv.apple.com/de', [KT('Apple TV', 999)], { e: '🍎' }),
+    KP('HBO Max', 'https://www.hbomax.com/de/de', [KT('Basis', 599), KT('Standard', 1199), KT('Premium', 1699)], { e: '🟣' }),
+    KP('Joyn', 'https://www.joyn.de/', [KT('Joyn PLUS+', 899)], { e: '📡' }),
+    KP('DAZN', 'https://www.dazn.com/de-DE/home', [KT('Super Sports', 2499), KT('Super Sports (Jahresabo, mtl.)', 1499), KT('Unlimited', 4499), KT('Unlimited (Jahresabo, mtl.)', 2499)], { e: '🥊' }),
+    KP('Sky', 'https://www.sky.de/', [KT('Stream', 1000), KT('Entertainment Plus', 1500), KT('Entertainment Plus + Cinema', 2500), KT('Sport', 2500), KT('Bundesliga', 3499), KT('Komplett', 5000)], { e: '🛰️' }),
+    KP('Spotify', 'https://www.spotify.com/de/premium/', [KT('Premium Individual', 1299), KT('Premium Duo', 1799), KT('Premium Family', 2199), KT('Premium Student', 699)], { e: '🎧' }),
+    KP('YouTube Premium', 'https://www.youtube.com/premium', [KT('Individual', 1499), KT('Premium Lite', 899), KT('Student', 799), KT('Family', 2799)], { e: '▶️' }),
+    KP('Apple Music', 'https://music.apple.com/de/', [], { e: '🎵' }), KP('Amazon Music', 'https://music.amazon.de/', [], { e: '🎶' }), KP('Deezer', 'https://www.deezer.com/de/offers', [], { e: '🎼' }), KP('Tidal', 'https://tidal.com/', [], { e: '🌊' }), KP('Crunchyroll', 'https://www.crunchyroll.com/de', [], { e: '🍥' }), KP('ARD / ZDF Mediathek (kostenlos)', '', [], {})
+  ],
+  software: [
+    KP('iCloud+', 'https://www.apple.com/de/icloud/', [KT('50 GB', 99), KT('200 GB', 299), KT('2 TB', 999)], { e: '☁️' }),
+    KP('Google One', 'https://one.google.com/about/plans', [KT('2 TB', 999)], { e: '🔵' }),
+    KP('Microsoft 365', 'https://www.microsoft.com/de-de/microsoft-365/buy/compare-all-microsoft-365-products', [], { e: '🟦' }), KP('Dropbox', 'https://www.dropbox.com/plans', [], { e: '📦' }), KP('Adobe Creative Cloud', 'https://www.adobe.com/de/creativecloud/plans.html', [], { e: '🅰️' }), KP('ChatGPT', 'https://chatgpt.com/', [], { e: '🤖' }), KP('Claude', 'https://claude.ai/', [], { e: '✨' }), KP('Notion', 'https://www.notion.so/pricing', [], { e: '📝' }), KP('Canva', 'https://www.canva.com/pricing/', [], { e: '🎨' }), KP('GitHub', 'https://github.com/pricing', [], { e: '🐙' }), KP('Apple One', 'https://www.apple.com/de/apple-one/', [], { e: '🍏' }), KP('Evernote', '', [], {}), KP('Zoom', '', [], {})
+  ],
+  gaming: [KP('PlayStation Plus', 'https://www.playstation.com/de-de/ps-plus/', [], { e: '🎮' }), KP('Xbox Game Pass', 'https://www.xbox.com/de-DE/xbox-game-pass', [], { e: '🟩' }), KP('Nintendo Switch Online', 'https://www.nintendo.com/de-de/Nintendo-Switch-Online/', [], { e: '🔴' }), KP('EA Play', '', [], {}), KP('Ubisoft+', '', [], {}), KP('Steam (Käufe)', '', [], {}), KP('Apple Arcade', '', [], {}), KP('GeForce NOW', '', [], {})],
+  shopping: [KP('Amazon Prime', 'https://www.amazon.de/prime', [KT('Prime monatlich', 899), KT('Prime jährlich', 8990, 'j'), KT('Prime Young (18–24)', 4490, 'j')], { e: '📦' }), KP('Lieferando', '', [], {}), KP('HelloFresh', 'https://www.hellofresh.de/', [], { e: '🥕' }), KP('Picnic', '', [], {}), KP('Rewe Lieferservice', '', [], {}), KP('Flink', '', [], {}), KP('Zalando Plus', '', [], {}), KP('Otto UP', '', [], {}), KP('Wolt+', '', [], {}), KP('Uber One', '', [], {}), KP('Marley Spoon', '', [], {}), KP('Rasierer-/Pflege-Abo', '', [], {})],
+  buecher: [KP('Audible', 'https://www.audible.de/', [], { e: '🎧' }), KP('Kindle Unlimited', 'https://www.amazon.de/kindle-dbs/hz/subscribe/ku', [], { e: '📚' }), KP('Skoobe', 'https://www.skoobe.de/', [], {}), KP('Storytel', 'https://www.storytel.com/de', [], {}), KP('BookBeat', '', [], {}), KP('Legimi', '', [], {}), KP('Spotify (Hörbuch-Anteil)', '', [], {})],
+  lernen: [KP('Duolingo', 'https://www.duolingo.com/', [], { e: '🦉' }), KP('Babbel', 'https://www.babbel.com/de', [], {}), KP('Udemy', 'https://www.udemy.com/', [], {}), KP('Coursera', 'https://www.coursera.org/', [], {}), KP('LinkedIn Learning', '', [], {}), KP('MasterClass', '', [], {}), KP('Skillshare', '', [], {}), KP('Blinkist', '', [], {}), KP('Brilliant', '', [], {}), KP('Fernschule / Fernstudium', '', [], {})],
+  zeitung: [KP('Spiegel+', 'https://www.spiegel.de/', [], {}), KP('FAZ', '', [], {}), KP('ZEIT', 'https://www.zeit.de/', [], {}), KP('Süddeutsche Zeitung', '', [], {}), KP('Handelsblatt', '', [], {}), KP('WELT+', '', [], {}), KP('Bild+', '', [], {}), KP('Apple News+', '', [], {}), KP('Funke (WAZ / Lokal)', '', [], {}), KP('Capital / Brand eins', '', [], {}), KP('Wirtschaftswoche', '', [], {}), KP('Lokalzeitung', '', [], {}), KP('Fachmagazin', '', [], {})],
+  sicherheit: [KP('1Password', 'https://1password.com/de/', [], {}), KP('Bitwarden', '', [], {}), KP('NordVPN', 'https://nordvpn.com/de/', [], {}), KP('ProtonVPN / Proton', 'https://proton.me/de', [], {}), KP('Surfshark', '', [], {}), KP('Norton', '', [], {}), KP('Bitdefender', '', [], {}), KP('Kaspersky', '', [], {}), KP('McAfee', '', [], {}), KP('Dashlane', '', [], {}), KP('Telekom Magenta Schutz', '', [], {})],
+  fitness: [KP('McFit', 'https://www.mcfit.com/', [], { e: '🏋️' }), KP('FitX', 'https://www.fitx.de/', [], {}), KP('Clever fit', 'https://www.clever-fit.com/', [], {}), KP('EasyFitness', 'https://www.easyfitness.club/', [], {}), KP('Fitness First', 'https://www.fitnessfirst.de/', [], {}), KP('John Reed', 'https://www.johnreed.fitness/', [], {}), KP('Rockstar Gym', '', [], {}), KP('Urban Sports Club', 'https://urbansportsclub.com/de', [], {}), KP('Wellpass', 'https://wellpass.com/de', [], {}), KP('EGYM / Hansefit', '', [], {}), KP('Anytime Fitness', '', [], {}), KP('Basic-Fit', '', [], {}), KP('Verein', '', [], {}), KP('Yoga / Pilates / Kurs', '', [], {}), KP('Kletterhalle', '', [], {}), KP('Schwimmbad', '', [], {}), KP('Peloton / Home-Fitness-App', '', [], {})],
+  verein: [KP('ADAC', 'https://www.adac.de/', [], {}), KP('Gewerkschaft (ver.di)', '', [], {}), KP('Gewerkschaft (IG Metall)', '', [], {}), KP('Fußballverein', '', [], {}), KP('Schützenverein', '', [], {}), KP('Mieterverein', '', [], {}), KP('Lohnsteuerhilfeverein', '', [], {}), KP('Verband / Kammer', '', [], {}), KP('Fördermitgliedschaft', '', [], {})],
+  /* --- Wohnen & Energie --- */
+  strom: ENERGIE.map(n => KP(n)),
+  gas: ENERGIE.filter(n => !/Tibber|Octopus|Yello|NaturEnergie|Naturstrom|1Komma5|Rabot/.test(n)).map(n => KP(n)).concat([KP('Fernwärme-Versorger')]),
+  rundfunk: [KP('ARD ZDF Deutschlandradio Beitragsservice', 'https://www.rundfunkbeitrag.de/', [KT('Voller Beitrag (pro Wohnung)', 1836), KT('Ermäßigt (Merkzeichen RF)', 612)], { e: '📺', kuend: '' })],
+  wasser: [KP('Stadtwerke (regional)'), KP('Wasserverband'), KP('Gemeindewerke')],
+  /* --- Kommunikation --- */
+  internet: [KP('Telekom', 'https://www.telekom.de/festnetz', [], {}), KP('Vodafone', 'https://www.vodafone.de/privat/dsl-kabel-internet.html', [], {}), KP('1&1', 'https://www.1und1.de/dsl-internet', [], {}), KP('O2 / Telefónica', 'https://www.o2online.de/', [], {}), KP('Deutsche Glasfaser', 'https://www.deutsche-glasfaser.de/', [], {}), KP('Pÿur', 'https://www.pyur.com/', [], {}), KP('EWE', '', [], {}), KP('M-net', '', [], {}), KP('Telekom MagentaZuhause', '', [], {}), KP('Stadtwerke (Glasfaser)', '', [], {}), KP('Unitymedia / Vodafone Kabel', '', [], {}), KP('NetCologne', '', [], {}), KP('Congstar', '', [], {}), KP('Starlink', 'https://www.starlink.com/de', [], {}), KP('Anschluss über Vermieter', '', [], {})],
+  mobilfunk: MOBIL_PROV,
+  tvpaket: [KP('Magenta TV', '', [], {}), KP('Sky', 'https://www.sky.de/', [], {}), KP('waipu.tv', 'https://www.waipu.tv/', [], {}), KP('Vodafone GigaTV', '', [], {}), KP('Zattoo', '', [], {}), KP('Kabelanschluss über Vermieter', '', [], {}), KP('Satellit / Antenne (kostenfrei)', '', [], {})],
+  domain: [KP('IONOS', 'https://www.ionos.de/', [], {}), KP('Strato', '', [], {}), KP('Hetzner', 'https://www.hetzner.com/de', [], {}), KP('All-Inkl', '', [], {}), KP('Cloudflare', '', [], {}), KP('GoDaddy', '', [], {}), KP('Namecheap', '', [], {}), KP('Google Workspace', '', [], {}), KP('Netlify / Vercel', '', [], {}), KP('Squarespace / Wix', '', [], {})],
+  /* --- Mobilität --- */
+  kfz: INS_KFZ.map(n => KP(n)),
+  kfz_fin: ['Autobank der Marke', 'VW Financial Services', 'Mercedes-Benz Bank', 'BMW Bank', 'Santander Consumer Bank', 'TARGOBANK', 'Sparkasse', 'ING', 'Leasingfirma / Anbieter', 'Arval', 'Sixt Neuwagen', 'Ayvens'].map(n => KP(n)),
+  pannen: [KP('ADAC', 'https://www.adac.de/mitgliedschaft/', [], { e: '🟡' }), KP('ACE', 'https://www.ace.de/', [], {}), KP('AvD', '', [], {}), KP('ARCD', '', [], {}), KP('Über Kfz-Versicherung (Schutzbrief)', '', [], {}), KP('Über Kreditkarte', '', [], {}), KP('Hersteller-Mobilitätsgarantie', '', [], {})],
+  dticket: [KP('Deutschlandticket (Abo)', 'https://www.deutschlandticket.de/', [KT('Deutschlandticket', 6300, 'm', 'ab 1.1.2027 voraussichtlich ca. 67 €'), KT('Deutschlandticket JobTicket', null, 'm', 'Preis = Arbeitgeber-Rabatt ab 25 %'), KT('Deutschlandticket Semester / Studierende', null)], { e: '🚆' }), KP('DB Vertrieb', 'https://www.bahn.de/angebot/regio/deutschland-ticket', [], {}), KP('VRR (Rhein-Ruhr)', 'https://www.vrr.de/', [], {}), KP('BVG', '', [], {}), KP('HVV', '', [], {}), KP('MVV', '', [], {}), KP('RMV', '', [], {}), KP('VVS', '', [], {}), KP('VBB', '', [], {}), KP('Anderer Verkehrsverbund', '', [], {})],
+  carsharing: [KP('Miles', 'https://miles-mobility.com/', [], {}), KP('ShareNow', '', [], {}), KP('Flinkster (DB)', 'https://www.flinkster.de/', [], {}), KP('Cambio', 'https://www.cambio-carsharing.de/', [], {}), KP('Getaround', '', [], {}), KP('Sixt Share', '', [], {}), KP('Auto-Abo (Finn, Cluno …)', '', [], {}), KP('Tier / Lime (Roller)', '', [], {}), KP('Bolt / Uber', '', [], {})],
+  bahncard: [KP('Deutsche Bahn', 'https://www.bahn.de/angebot/bahncard', [KT('BahnCard 25 (2. Klasse)', 6290, 'j'), KT('BahnCard 50 (2. Klasse)', 24400, 'j'), KT('BahnCard 25 (1. Klasse)', null, 'j'), KT('BahnCard 50 (1. Klasse)', null, 'j'), KT('BahnCard 100', null, 'j')], { e: '🚉' })],
+  /* --- Versicherungen --- */
+  haftpflicht: INS_SACH.map(n => KP(n)), hausrat: INS_SACH.map(n => KP(n)), wohngebaeude: INS_SACH.map(n => KP(n)), rechtsschutz: ['ARAG', 'Allianz', 'HUK-Coburg', 'DEVK', 'Roland', 'ADAC Rechtsschutz', 'Advocard', 'Auxilia', 'Concordia', 'Generali', 'R+V', 'ERGO', 'Jurpartner', 'LVM', 'CosmosDirekt', 'Gothaer', 'WGV', 'VGH'].map(n => KP(n)),
+  bu: INS_LEBEN.map(n => KP(n)), unfall: INS_SACH.map(n => KP(n)), leben: INS_LEBEN.map(n => KP(n)), kvzusatz: INS_PKV.map(n => KP(n)), ktg: INS_PKV.map(n => KP(n)), pflege: INS_PKV.map(n => KP(n)), sterbegeld: ['Monuta', 'Ideal', 'Allianz', 'Nürnberger', 'Debeka', 'Signal Iduna', 'Bayerische', 'Bestattungsvorsorge-Treuhand', 'Dela', 'LVM'].map(n => KP(n)),
+  tierhalter: ['Uelzener', 'Agila', 'Barmenia', 'Helvetia', 'Allianz', 'HUK-Coburg', 'Haftpflichtkasse', 'Petplan', 'DEVK', 'Generali'].map(n => KP(n)),
+  reise: ['ADAC', 'HanseMerkur', 'ERV', 'Allianz Travel', 'Barmenia', 'Würzburger', 'Dr. Walter', 'Über Kreditkarte', 'Über Kfz-Schutzbrief'].map(n => KP(n)),
+  fahrradvers: ['Allianz', 'HUK-Coburg', 'Hausrat-Zusatz', 'Lieferant (Wertgarantie)', 'Bikeleasing', 'JobRad / Dienstrad', 'ERGO', 'Barmenia', 'ADAC'].map(n => KP(n)),
+  elektronik: ['AppleCare+', 'Wertgarantie', 'Asurion', 'Telekom Geräteschutz', 'Vodafone Geräteschutz', 'O2 Geräteschutz', 'Über Hausrat', 'Händler-Garantie', 'Samsung Care+'].map(n => KP(n)),
+  cyber: ['Allianz', 'ERGO', 'HanseMerkur', 'Barmenia', 'Telekom', 'Norton', 'Bitdefender', 'Über Hausrat', 'Rechtsschutz-Baustein'].map(n => KP(n)),
+  /* --- Geld --- */
+  kreditkarte: ['DKB', 'ING', 'Barclays', 'American Express', 'TARGOBANK', 'comdirect', 'Sparkasse', 'Volksbank / Raiffeisenbank', 'Commerzbank', 'Deutsche Bank', 'Hanseatic Bank', 'Consorsbank', 'Revolut', 'N26', 'Trade Republic', 'PayPal', 'Wise', 'Santander', 'Postbank', 'Miles & More', 'ADAC'].map(n => KP(n)),
+  sparen: BANKEN.map(n => KP(n)), depot: BROKER.map(n => KP(n)), kredit: BANKEN.map(n => KP(n)),
+  bauspar: ['LBS', 'Schwäbisch Hall', 'Wüstenrot', 'BHW', 'Debeka', 'Badenia', 'Alte Leipziger Bauspar', 'Bausparkasse Mainz', 'Deutsche Bausparkasse Badenia'].map(n => KP(n)),
+  altersvorsorge: INS_LEBEN.concat(['Deutsche Rentenversicherung', 'ETF-Sparplan (Broker)']).map(n => KP(n)), bav: INS_LEBEN.concat(['Pensionskasse des Arbeitgebers', 'Versorgungswerk']).map(n => KP(n)), vwl: ['Bausparkasse', 'Fondssparplan', 'Bank', 'Arbeitgeber-Modell'].map(n => KP(n)),
+  steuerberater: [KP('Steuerberater'), KP('Lohnsteuerhilfeverein'), KP('Vereinigte Lohnsteuerhilfe'), KP('Steuerbot'), KP('Taxfix'), KP('WISO Steuer'), KP('Smartsteuer'), KP('Elster (selbst)')],
+  ratenkauf: ['Klarna', 'PayPal Ratenzahlung', 'Ratepay', 'Santander', 'Händlerfinanzierung', 'Apple / Telekom Gerätekauf', 'Otto Zahlungsziel', 'Amazon Ratenzahlung', 'easyCredit-Ratenkauf', 'Check24 Kredit', 'Zalando Zahlungsziel'].map(n => KP(n))
+};
+const AGG = new Set(['streaming', 'software', 'gaming', 'shopping', 'buecher', 'lernen', 'zeitung', 'sicherheit', 'fitness', 'verein', 'pannen', 'carsharing', 'tvpaket']);
+const provList = base => (PROV[base] || []).map(p => typeof p === 'string' ? KP(p) : p);
+const provByName = (base, name) => { const n = String(name || '').trim().toLowerCase(); return n ? provList(base).find(p => p.n.toLowerCase() === n) || null : null; };
+const KBASE = e => (e && (e.of || e.id)) || '';
+const hasCat = base => (PROV[base] || []).length > 0;
+const minTarif = p => { const c = p.t.filter(t => t.c != null && t.z === 'm').map(t => t.c); return c.length ? Math.min(...c) : 0; };
+
+/* ---------- Kategorie-spezifische Felder ---------- */
+const pairs = a => (a || []).map(x => Array.isArray(x) ? x : [x, x]);
+const JNW = ['Ja', 'Nein', 'Weiß ich nicht'];
+const SB = ['Keine', '150 €', '300 €', '500 €'];
+const VF = {
+  haftpflicht: [['x_fam', 'Wer ist versichert?', 'pick', ['Nur ich', 'Ich und Partner/in', 'Familie mit Kindern']], ['x_summe', 'Deckungssumme', 'sug', ['5 Mio. €', '10 Mio. €', '20 Mio. €', '50 Mio. €']], ['x_sb', 'Selbstbeteiligung', 'pick', SB], ['x_bau', 'Mit eingeschlossen', 'multi', [['Forderungsausfall', 'Forderungsausfall'], ['Schluessel', 'Schlüsselverlust'], ['Mietsach', 'Mietsachschäden'], ['Deliktunfaehig', 'Deliktunfähige Kinder'], ['Ehrenamt', 'Ehrenamt']]]],
+  hausrat: [['x_summe', 'Versicherungssumme', 'money'], ['x_flaeche', 'Wohnfläche (m²)', 'sug', [['40', '40'], ['60', '60'], ['80', '80'], ['100', '100'], ['120', '120']], 'number'], ['x_elem', 'Elementarschäden eingeschlossen', 'pick', JNW], ['x_extra', 'Mit eingeschlossen', 'multi', [['Fahrrad', 'Fahrrad-Diebstahl'], ['Ueberspannung', 'Überspannung'], ['Glasbruch', 'Glasbruch'], ['Unterversicherungsverzicht', 'Ohne Unterversicherung']]], ['x_sb', 'Selbstbeteiligung', 'pick', SB]],
+  wohngebaeude: [['x_elem', 'Elementarschäden eingeschlossen', 'pick', JNW], ['x_extra', 'Mit eingeschlossen', 'multi', [['Feuer', 'Feuer'], ['Sturm_Hagel', 'Sturm / Hagel'], ['Leitungswasser', 'Leitungswasser'], ['Ueberspannung', 'Überspannung'], ['Solaranlage', 'Solaranlage']]], ['x_sb', 'Selbstbeteiligung', 'pick', SB]],
+  rechtsschutz: [['x_bausteine', 'Bausteine', 'multi', [['Privat', 'Privat'], ['Beruf', 'Beruf'], ['Verkehr', 'Verkehr'], ['Wohnen', 'Wohnen / Miete'], ['Steuer', 'Steuer']]], ['x_sb', 'Selbstbeteiligung', 'pick', ['0 €', '150 €', '250 €', '500 €']]],
+  bu: [['x_rente', 'Versicherte Monatsrente', 'money'], ['x_bis', 'Versichert bis Alter', 'sug', [['62', '62'], ['65', '65'], ['67', '67']], 'number'], ['x_dyn', 'Dynamik', 'pick', ['Mit Dynamik', 'Ohne Dynamik', 'Weiß ich nicht']]],
+  unfall: [['x_summe', 'Invaliditätssumme', 'money'], ['x_progr', 'Progression', 'pick', ['225 %', '350 %', '500 %', 'Ohne']], ['x_wer', 'Wer ist versichert?', 'pick', ['Nur ich', 'Partner/in', 'Familie']]],
+  leben: [['x_summe', 'Todesfallsumme', 'money'], ['x_zweck', 'Wofür?', 'pick', ['Familie absichern', 'Kredit / Immobilie', 'Beides']], ['x_bez', 'Bezugsberechtigte/r', 'text']],
+  strom: [['x_tarif', 'Tarifart', 'pick', ['Grundversorgung', 'Sondertarif / Neukunde', 'Ökostrom', 'Weiß ich nicht']], ['x_hh', 'Haushaltsgröße', 'pick', ['1 Person', '2 Personen', '3 Personen', '4+ Personen']], ['x_verbrauch', 'Jahresverbrauch (kWh)', 'sug', [['1500', '1.500'], ['2500', '2.500'], ['3500', '3.500'], ['4500', '4.500']], 'number'], ['x_preis', 'Arbeitspreis (ct/kWh)', 'text', null, 'number'], ['x_gp', 'Grundpreis pro Monat', 'money'], ['x_pg', 'Preisgarantie bis', 'date'], ['x_bonus', 'Neukundenbonus enthalten (Preis steigt später)', 'toggle']],
+  gas: [['x_tarif', 'Tarifart', 'pick', ['Grundversorgung', 'Sondertarif / Neukunde', 'Fernwärme', 'Weiß ich nicht']], ['x_verbrauch', 'Jahresverbrauch (kWh)', 'sug', [['5000', '5.000'], ['10000', '10.000'], ['15000', '15.000'], ['20000', '20.000']], 'number'], ['x_preis', 'Arbeitspreis (ct/kWh)', 'text', null, 'number'], ['x_gp', 'Grundpreis pro Monat', 'money'], ['x_pg', 'Preisgarantie bis', 'date'], ['x_bonus', 'Neukundenbonus enthalten', 'toggle']],
+  rundfunk: [['x_bef', 'Befreit / ermäßigt', 'pick', ['Nein', 'Ermäßigt', 'Befreit']]],
+  internet: [['x_art', 'Anschluss', 'pick', ['DSL', 'Kabel', 'Glasfaser', 'LTE / 5G-Router']], ['x_speed', 'Geschwindigkeit (Mbit/s)', 'sug', [['16', '16'], ['50', '50'], ['100', '100'], ['250', '250'], ['500', '500'], ['1000', '1.000']], 'number'], ['x_router', 'Router', 'pick', ['Eigener Router', 'Miet-Router', 'Router im Preis']], ['x_tel', 'Festnetz-Telefonie', 'pick', ['Ja', 'Nein']]],
+  mobilfunk: [['x_netz', 'Netz', 'pick', ['Telekom', 'Vodafone', 'O2', 'Weiß ich nicht']], ['x_art', 'Vertragsart', 'pick', ['Laufzeitvertrag', 'Monatlich kündbar', 'Prepaid', 'Zusatzkarte / Familie']], ['x_vol', 'Datenvolumen', 'sug', ['5 GB', '10 GB', '20 GB', '30 GB', '50 GB', 'Unlimited']], ['x_5g', '5G enthalten', 'pick', ['Ja', 'Nein']], ['x_nr', 'Rufnummer', 'text']],
+  kfz: [['x_fz', 'Fahrzeug (Marke / Modell)', 'text'], ['x_kennz', 'Kennzeichen', 'text'], ['x_art', 'Umfang', 'pick', ['Nur Haftpflicht', 'Teilkasko', 'Vollkasko']], ['x_sb', 'Selbstbeteiligung (Voll-/Teilkasko)', 'pick', ['Keine', '150 €', '300 €', '500 €', '1.000 €']], ['x_sf', 'SF-Klasse', 'sug', ['SF 0', 'SF ½', 'SF 5', 'SF 10', 'SF 15', 'SF 25', 'SF 35']], ['x_km', 'Jahresfahrleistung (km)', 'sug', [['6000', '6.000'], ['10000', '10.000'], ['15000', '15.000'], ['20000', '20.000']], 'number'], ['x_werk', 'Werkstatt', 'pick', ['Freie Wahl', 'Werkstattbindung']], ['x_fahrer', 'Fahrerkreis', 'pick', ['Alle Fahrer', 'Ich & Partner/in', 'Nur ich']], ['x_schutz', 'Schutzbrief enthalten', 'pick', ['Ja', 'Nein']]],
+  kfz_fin: [['x_art', 'Art', 'pick', ['Finanzierung', 'Leasing']], ['x_rest', 'Restschuld / Restwert', 'money'], ['x_laufleistung', 'Erlaubte km pro Jahr (Leasing)', 'sug', [['10000', '10.000'], ['15000', '15.000'], ['20000', '20.000']], 'number']],
+  dticket: [['x_art', 'Variante', 'pick', ['Normal (Abo)', 'JobTicket', 'Studierende / Azubi', 'Sozialticket']]],
+  bahncard: [['x_art', 'Karte', 'pick', ['BahnCard 25', 'BahnCard 50', 'BahnCard 100', 'Business']], ['x_klasse', 'Klasse', 'pick', ['2. Klasse', '1. Klasse']]],
+  kreditkarte: [['x_art', 'Kartenart', 'pick', ['Kreditkarte', 'Debitkarte', 'Prepaid']], ['x_netzw', 'Netzwerk', 'pick', ['Visa', 'Mastercard', 'American Express']], ['x_zahlart', 'Abrechnung', 'pick', ['Monatlich komplett', 'Teilzahlung', 'Sofort (Debit)']], ['x_limit', 'Kreditrahmen', 'money'], ['x_extras', 'Extras', 'multi', [['Reiseversicherung', 'Reiseversicherung'], ['Mietwagen', 'Mietwagen-Schutz'], ['Bonus', 'Bonuspunkte'], ['Cashback', 'Cashback'], ['Lounge', 'Lounge-Zugang']]]],
+  sparen: [['x_art', 'Art', 'pick', ['Tagesgeld', 'Festgeld', 'Sparbuch', 'Mehrere']], ['x_wert', 'Guthaben', 'money'], ['x_zins', 'Zins p. a. (%)', 'text', null, 'number']],
+  depot: [['x_inhalt', 'Was liegt drin?', 'multi', [['ETFs', 'ETFs'], ['Aktien', 'Einzelaktien'], ['Fonds', 'Fonds'], ['Krypto', 'Krypto'], ['Anleihen', 'Anleihen']]], ['x_wert', 'Depotwert', 'money'], ['x_sparplan', 'Sparplan pro Monat', 'money']],
+  altersvorsorge: [['x_art', 'Art', 'pick', ['Riester', 'Rürup / Basisrente', 'Private Rentenversicherung', 'ETF-Sparplan', 'Sonstiges']], ['x_wert', 'Aktueller Wert', 'money']],
+  kredit: [['x_art', 'Art', 'pick', ['Ratenkredit', 'Baufinanzierung', 'Dispo', 'Autokredit']], ['x_rest', 'Restschuld', 'money'], ['x_zins', 'Sollzins (%)', 'text', null, 'number'], ['x_fest', 'Zinsbindung bis', 'date']],
+  streaming: [['x_teil', 'Wer nutzt mit?', 'pick', ['Nur ich', 'Mit Partner/in', 'Familie', 'Geteilt (Duo/Family)']], ['x_werb', 'Mit Werbung', 'pick', ['Ja', 'Nein']]],
+  fitness: [['x_art', 'Art', 'pick', ['Studio', 'Verein', 'Kurs / Wellness', 'Flat (Urban Sports / Wellpass)']], ['x_ort', 'Standort / Studio', 'text'], ['x_tage', 'Besuche pro Woche', 'pick', ['1×', '2×', '3×', '4×+']]],
+  software: [['x_teil', 'Wer nutzt mit?', 'pick', ['Nur ich', 'Familie']], ['x_gb', 'Speicher / Umfang', 'text']],
+  tier: [['x_tier', 'Tier', 'sug', ['Hund', 'Katze', 'Pferd', 'Kleintier']], ['x_art', 'Wofür?', 'pick', ['Tierarzt', 'Futter', 'Versicherung', 'Pension / Betreuung']]],
+  kita: [['x_kind', 'Für welches Kind', 'text'], ['x_zeit', 'Betreuungsumfang', 'pick', ['25 Std.', '35 Std.', '45 Std.', 'Tagesmutter']]]
+};
+/* Für jeden Eintrag die effektiven Feldspezifikationen: [k, label, typ, opts, 'number'?] */
+function xSpecs(e) {
+  const base = KBASE(e), o = vOf(e.id);
+  let L = VF[base] || (e.x || []).map(([k, l, t, opts]) => t === 'select' ? [k, l, opts.length <= 5 ? 'pick' : 'select', opts] : t === 'number' ? [k, l, 'text', null, 'number'] : [k, l, t, opts]);
+  if (AGG.has(base) && o.x_dienste) L = L.concat([['x_dienste', 'Weitere Dienste (Notiz)', 'text']]);
+  return L;
+}
+const parseNum = s => { s = String(s == null ? '' : s).trim(); if (!s) return null; s = s.replace(/\.(?=\d{3}(\D|$))/g, '').replace(',', '.'); const n = parseFloat(s); return isFinite(n) ? n : null; };
+
+/* ---------- HTML-Bausteine ---------- */
+const chipsHtml = (attr, items, cur) => items.map(([v, l]) => `<button type="button" class="pv${String(cur) === String(v) ? ' on' : ''}" ${attr}="${esc(v)}">${esc(l)}</button>`).join('');
+function tarifBoxHtml(p, e, curTarif) {
+  if (!p) return '';
+  const link = p.url || 'https://www.google.com/search?q=' + encodeURIComponent(`${p.n} ${e.n} Tarife`);
+  const t = p.t || [];
+  const cards = t.map((x, i) => `<button type="button" class="trf${curTarif && curTarif === x.n ? ' on' : ''}" data-tar="${i}"><b>${esc(x.n)}</b><span>${x.c != null ? esc(money(x.c)) + (x.z === 'j' ? ' / Jahr' : x.z === 'q' ? ' / Quartal' : ' / Monat') : 'Preis individuell'}</span>${x.note ? `<small>${esc(x.note)}</small>` : ''}</button>`).join('');
+  return `<div class="trf-h"><b>${t.length ? 'Tarif wählen' : esc(p.n)}</b><a class="trf-l" href="${esc(link)}" target="_blank" rel="noopener">${p.url ? 'Tarife beim Anbieter ansehen' : 'Tarife suchen'} ${icon('link')}</a></div>
+    ${t.length ? `<div class="trf-g">${cards}</div><p class="trf-n">Preise: Stand ${KSTAND}, Richtwert aus öffentlichen Preislisten – kein Live-Abruf. ${p.info ? esc(p.info) + '. ' : ''}Prüf den aktuellen Preis über den Link, bevor du dich darauf verlässt.</p>` : `<p class="trf-n">${p.url ? 'Hier kenne ich keine festen Tarife – der Preis hängt von Tarif und Standort ab.' : 'Für diesen Anbieter sind keine Tarife hinterlegt.'} Trag den Beitrag unten ein; über den Link findest du die aktuellen Angebote.</p>`}`;
+}
+function provBlockHtml(e, o, opts) {
+  opts = opts || {}; const base = KBASE(e), L = provList(base); if (!L.length) return '';
+  const cur = vprov(e.id), curP = provByName(base, cur), long = L.length > 12;
+  const q = opts.quick;
+  return `<div class="pvbox" data-base="${esc(base)}"><div class="pvchips${long ? ' fold' : ''}" id="pvChips">${L.map(p => `<button type="button" class="pv${curP && curP.n === p.n ? ' on' : ''}" data-prov="${esc(p.n)}">${p.e ? `<span>${p.e}</span>` : ''}${esc(p.n)}</button>`).join('')}<button type="button" class="pv ghost" data-prov="__other">Anderer …</button></div>${long ? `<button type="button" class="btn sm ghost pv-more" data-more="1">Alle ${L.length} Anbieter zeigen</button>` : ''}<div class="trfbox" id="trfBox">${curP ? tarifBoxHtml(curP, e, o && o.tarif) : ''}</div></div>`;
+}
+const sugHtml = (k, items) => `<div class="pvchips sugr" data-for="${esc(k)}">${pairs(items).map(([v, l]) => `<button type="button" class="pv sm" data-sug="${esc(v)}">${esc(l)}</button>`).join('')}</div>`;
+
+/* ---------- Editor ---------- */
+ACT['vt.edit'] = el => {
+  const e = VCX(el.dataset.id); if (!e) return; const o = vOf(e.id), docs = S.docs.filter(d => d.status === 'ok'), base = KBASE(e), specs = xSpecs(e), hasP = hasCat(base), agg = AGG.has(base);
+  const bc = VC.find(x => x.id === base) || e, inc = isInc(e);
+  const F = [];
+  if (hasP) F.push({ type: 'head', label: 'Anbieter & Tarif', e: '🏷️', sub: agg ? 'Tippe den Dienst an – dann siehst du die Tarife.' : 'Wähle deinen Anbieter – oder trag ihn unten selbst ein.' }, { type: 'html', k: 'prov', html: provBlockHtml(e, o) });
+  else F.push({ type: 'head', label: 'Anbieter & Tarif', e: '🏷️' });
+  F.push({ k: 'anbieter', label: 'Anbieter / Gesellschaft', type: 'text', val: vprov(e.id), full: true, ph: 'z. B. HUK-Coburg, Vattenfall, Telekom' }, { k: 'tarif', label: 'Tarif / Produkt', type: 'text', val: o.tarif }, { k: 'nr', label: 'Vertrags- / Policen-Nr.', type: 'text', val: o.nr });
+  F.push({ k: 'label', label: 'Eigene Bezeichnung (optional)', type: 'text', val: o.label, full: true, ph: e.of || instIds(e.id).length ? 'z. B. Zweitwagen, Handy Partnerin' : agg ? 'z. B. Spotify Duo' : 'nur nötig bei mehreren gleichen Verträgen' });
+  F.push({ type: 'head', label: inc ? 'Betrag' : 'Kosten', e: '💶' });
+  F.push({ k: 'kosten', label: inc ? e.kl || 'Betrag (Eingang)' : e.kl || 'Beitrag / Rate', type: 'money', val: o.kosten });
+  F.push({ k: 'zahl', label: 'Zahlweise', type: 'pick', opts: ZAHL.map(z => [z[0], z[1]]), val: o.zahl || 'm', full: true });
+  if (specs.length) F.push({ type: 'head', label: `Details zu ${bc.n}`, e: bc.e });
+  for (const [k, l, ty, op, nm] of specs) {
+    const val = o[k];
+    if (ty === 'pick') F.push({ k, label: l, type: 'pick', opts: pairs(op), val: val != null ? val : '', full: true, opt: 1 });
+    else if (ty === 'multi') F.push({ k, label: l, type: 'multipick', opts: pairs(op), val: val != null ? val : '', full: true });
+    else if (ty === 'select') F.push({ k, label: l, type: 'select', opts: [['', '– bitte wählen –']].concat(pairs(op)), val: val != null ? val : '', full: true });
+    else if (ty === 'toggle') F.push({ k, label: l, type: 'toggle', val: !!val, full: true });
+    else if (ty === 'money') F.push({ k, label: l, type: 'money', val });
+    else if (ty === 'date') F.push({ k, label: l, type: 'date', val });
+    else { F.push({ k, label: l, type: 'text', im: nm ? 'decimal' : '', val: val != null ? val : (k === 'x_kennz' && e.id === 'kfz' ? pget('kennzeichen') || '' : ''), full: ty === 'sug' }); if (ty === 'sug') F.push({ type: 'html', k: 'sg_' + k, html: sugHtml(k, op) }); }
+  }
+  F.push({ type: 'head', label: 'Laufzeit & Kündigung', e: '📅' });
+  F.push({ k: 'beginn', label: 'Vertragsbeginn', type: 'date', val: o.beginn }, { k: 'ende', label: 'Vertragsende / Ablauf', type: 'date', val: o.ende });
+  F.push({ type: 'html', k: 'lz', html: `<div class="pvchips sugr"><button type="button" class="pv sm" data-ende="12">12 Monate ab Beginn</button><button type="button" class="pv sm" data-ende="24">24 Monate ab Beginn</button><button type="button" class="pv sm" data-ende="monat">Monatlich kündbar</button></div>` });
+  F.push({ k: 'unbef', type: 'toggle', label: 'Läuft ohne festes Ende (unbefristet)', val: !!o.unbef, full: true }, { k: 'gek', type: 'toggle', label: 'Bereits gekündigt (läuft aus)', val: !!o.gek, full: true });
+  F.push({ k: 'kuend', label: 'Kündigungsfrist', type: 'select', opts: KUEND, val: o.kuend || e.kuend || '', full: true });
+  F.push({ type: 'head', label: 'Dokument & Notiz', e: '📎' });
+  if (docs.length) F.push({ k: 'doc', label: 'Verknüpftes Dokument', type: 'select', opts: [['', '– keines –']].concat(docs.map(d => [d.id, d.name])), val: o.doc || '', full: true });
+  F.push({ k: 'notiz', label: 'Notiz', type: 'textarea', val: o.notiz, full: true, rows: 2 });
+  const sh = formSheet({ title: `${e.e} ${e.n}`, sub: e.d, fields: F, wide: true, submit: 'Speichern',
+    onSubmit: v => {
+      const t = S.vertr[e.id] || (S.vertr[e.id] = {});
+      t.st = 'ja'; if (v.gek) t.gek = 1; else delete t.gek;
+      for (const k of ['anbieter', 'tarif', 'nr', 'beginn', 'ende', 'zahl', 'kuend', 'notiz', 'doc', 'label']) { if (v[k] === '' || v[k] == null) delete t[k]; else t[k] = v[k]; }
+      if (v.kosten == null) delete t.kosten; else t.kosten = v.kosten; if (v.unbef) t.unbef = 1; else delete t.unbef;
+      for (const [k, , ty, , nm] of specs) {
+        let x = v[k];
+        if (ty === 'toggle') { if (x) t[k] = 1; else delete t[k]; continue; }
+        if (nm) x = parseNum(x);
+        if (x === '' || x == null || (typeof x === 'number' && !isFinite(x))) delete t[k]; else t[k] = x;
+      }
+      if (e.pf && !e.of && t.anbieter) pset(e.pf, t.anbieter, { src: 'manuell', conf: 1, docT: Date.now() });
+      if (e.id === 'kfz' && t.x_kennz && !phas('kennzeichen')) pset('kennzeichen', t.x_kennz, { src: 'manuell', conf: 1, docT: Date.now() });
+      save(); renderNav(); rerender(); toast('Gespeichert', 'good');
+    } });
+  wireEditor(sh, e, base, agg);
+  return sh;
+};
+
+function wireEditor(sh, e, base, agg) {
+  const $f = k => $('#f_' + k, sh);
+  const setPick = (k, v) => { const box = $f(k); if (!box) return; box.dataset.v = v; $$('button', box).forEach(b => b.classList.toggle('on', b.dataset.pv === String(v))); };
+  let curProv = provByName(base, vprov(e.id)), autoLbl = !($f('label') && $f('label').value);
+  /* Auswahl-Chips lassen sich wieder abwählen (außer Zahlweise) */
+  sh.addEventListener('click', ev => {
+    const pv = ev.target.closest('.pick[data-opt] [data-pv]'); if (!pv) return;
+    const box = pv.parentElement; if (box.id === 'f_zahl' || !pv.classList.contains('on')) return;
+    ev.stopPropagation(); pv.classList.remove('on'); box.dataset.v = '';
+  }, true);
+  sh.querySelectorAll('.pick').forEach(b => { if (b.id !== 'f_zahl' && !b.dataset.multi) b.dataset.opt = '1'; });
+  sh.addEventListener('click', ev => {
+    const more = ev.target.closest('[data-more]'); if (more) { const c = $('#pvChips', sh); c.classList.toggle('fold'); more.textContent = c.classList.contains('fold') ? 'Alle Anbieter zeigen' : 'Weniger zeigen'; return; }
+    const pr = ev.target.closest('[data-prov]');
+    if (pr) {
+      const n = pr.dataset.prov; $$('#pvChips .pv', sh).forEach(b => b.classList.toggle('on', b === pr));
+      if (n === '__other') { curProv = null; $('#trfBox', sh).innerHTML = ''; const a = $f('anbieter'); a.value = ''; a.focus(); return; }
+      curProv = provByName(base, n); const a = $f('anbieter'); a.value = n;
+      if (agg && $f('label') && (autoLbl || !$f('label').value)) { $f('label').value = n; autoLbl = true; }
+      $('#trfBox', sh).innerHTML = tarifBoxHtml(curProv, e, ''); buzz(6);
+      if (curProv && curProv.netz && $('#f_x_netz')) setPick('x_netz', curProv.netz);
+      return;
+    }
+    const tr = ev.target.closest('[data-tar]');
+    if (tr && curProv) {
+      const t = curProv.t[+tr.dataset.tar]; if (!t) return; $$('#trfBox .trf', sh).forEach(b => b.classList.toggle('on', b === tr));
+      $f('tarif').value = t.n; if (t.c != null) { $f('kosten').value = moneyInput(t.c); setPick('zahl', t.z); }
+      if (agg && $f('label') && autoLbl) $f('label').value = curProv.n + (curProv.t.length > 1 ? ' ' + t.n.replace(/\s*\(.*\)$/, '') : '');
+      if (!$f('kuend').value && (e.kuend || '')) $f('kuend').value = e.kuend; buzz(8); return;
+    }
+    const sg = ev.target.closest('[data-sug]'); if (sg) { const box = sg.parentElement, inp = $f(box.dataset.for); if (inp) { inp.value = inp.value === sg.dataset.sug ? '' : sg.dataset.sug; $$('.pv', box).forEach(b => b.classList.toggle('on', b.dataset.sug === inp.value)); } return; }
+    const en = ev.target.closest('[data-ende]');
+    if (en) {
+      const v = en.dataset.ende;
+      if (v === 'monat') { $f('kuend').value = 'monat'; $f('unbef').checked = true; $f('ende').value = ''; return; }
+      const b0 = $f('beginn').value || todayISO(); if (!$f('beginn').value) $f('beginn').value = b0; $f('ende').value = addMonths(b0, +v); $f('unbef').checked = false; return;
+    }
+  });
+  const syncSug = () => $$('.sugr[data-for]', sh).forEach(box => { const inp = $f(box.dataset.for); if (inp) $$('.pv', box).forEach(b => b.classList.toggle('on', b.dataset.sug === inp.value)); });
+  sh.addEventListener('input', ev => { if (ev.target.id && ev.target.id.startsWith('f_')) syncSug(); }); syncSug();
+}
+
+/* ---------- Dienste-Auswahl (Abos: erst der Dienst, dann der Tarif) ---------- */
+ACT['vt.prov'] = el => {
+  const base = el.dataset.id, e0 = VCX(base); if (!e0) return;
+  const L = provList(base);
+  openSheet(`<div class="chh" style="--c:var(--c-shop)"><span class="chh-e">${e0.e}</span><div><small>Welchen Dienst hast du?</small><h2>${esc(VC.find(x => x.id === base).n)}</h2></div></div>
+    <p class="lead-p">Tippe einen Dienst an – Tarife und Preise (Stand ${KSTAND}) schlägst du im nächsten Schritt nach. Mehrere Dienste sind kein Problem.</p>
+    <div class="pvgrid">${L.map(p => { const m = minTarif(p); return `<button class="pvcard" data-pick="${esc(p.n)}"><i>${p.e || e0.e}</i><b>${esc(p.n)}</b><small>${m ? 'ab ' + money(m) : p.t.length ? 'Tarife' : ''}</small></button>`; }).join('')}<button class="pvcard" data-pick="__own"><i>＋</i><b>Anderer Dienst</b><small>selbst eintragen</small></button></div>`,
+  { wide: true, onMount: sh => sh.addEventListener('click', ev => { const b = ev.target.closest('[data-pick]'); if (!b) return; const n = b.dataset.pick; closeSheet(); setTimeout(() => {
+    let id = base; if (vst(base) === 'ja') id = newInst(base); else setVst(base, 'ja');
+    const t = S.vertr[id] || (S.vertr[id] = {}); if (n !== '__own') { t.anbieter = n; t.label = n; } save(); renderNav(); rerender(); ACT['vt.edit']({ dataset: { id } });
+  }, 260); }) });
+};
+ACT['vt.add'] = el => {
+  const cat = el.dataset.cat, c = catOf(cat), list = vAll().filter(e => e.c === cat && !e.of);
+  openSheet(`<div class="chh" style="--c:var(--c-life)"><span class="chh-e">${c[2]}</span><div><small>Hinzufügen</small><h2>${esc(c[1])}</h2></div></div>
+    <p class="lead-p">Wähle, was du hast. Hast du es schon, legst du einen weiteren Eintrag an – etwa ein zweites Auto, einen zweiten Handyvertrag oder einen weiteren Streaming-Dienst.</p>
+    <div class="list">${list.map(e => { const st = vst(e.id), n = instIds(e.id).length + (st === 'ja' ? 1 : 0), pl = provList(e.id), hint = AGG.has(e.id) && pl.length ? pl.slice(0, 4).map(p => p.n).join(', ') + ' …' : e.d;
+      return `<button class="li" data-sh="${e.id}"><span class="li-e">${e.e}</span><span class="li-m"><b>${esc(e.n)}</b><small>${st === 'ja' ? (n > 1 ? n + ' Einträge – noch einen hinzufügen' : 'Hast du – noch einen hinzufügen') : st === 'nein' ? 'Bisher „Habe ich nicht“' : esc(hint)}</small></span>${icon('plus')}</button>`; }).join('')}<button class="li" data-sh="__own"><span class="li-e">📄</span><span class="li-m"><b>Etwas anderes</b><small>Eigener Eintrag in diesem Bereich</small></span>${icon('plus')}</button></div>`,
+  { onMount: sh => sh.addEventListener('click', ev => { const b = ev.target.closest('[data-sh]'); if (!b) return; const id = b.dataset.sh; closeSheet(); setTimeout(() => {
+    if (id === '__own') ACT['vt.new']({ dataset: { cat } });
+    else if (AGG.has(id) && hasCat(id)) ACT['vt.prov']({ dataset: { id } });
+    else if (vst(id) === 'ja') ACT['vt.dup']({ dataset: { id } });
+    else { setVst(id, 'ja'); renderNav(); rerender(); ACT['vt.edit']({ dataset: { id } }); } }, 260); }) });
+};
+ACT['vt.dup'] = el => { const b = el.dataset.id; if (AGG.has(b) && hasCat(b)) { closeSheet(); return setTimeout(() => ACT['vt.prov']({ dataset: { id: b } }), 260); } if (vst(b) !== 'ja') { setVst(b, 'ja'); renderNav(); rerender(); return ACT['vt.edit']({ dataset: { id: b } }); } closeSheet(); const id = newInst(b); renderNav(); rerender(); setTimeout(() => ACT['vt.edit']({ dataset: { id } }), 260); };
+
+/* Alternativen: erst zum Anbieter, sonst Vergleich */
+ACT['vt.search'] = el => {
+  const e = VCX(el.dataset.id); if (!e) return; const p = provByName(KBASE(e), vprov(e.id));
+  const url = p && p.url ? p.url : 'https://www.google.com/search?q=' + encodeURIComponent(`${e.n} Vergleich`);
+  window.open(url, '_blank', 'noopener');
+};
+
+/* ---------- Schnell-Check: Anbieter-Chips im Detailschritt ---------- */
+function provQuickHtml(e) {
+  const base = KBASE(e), L = provList(base).slice(0, 14); if (!L.length) return '';
+  return `<div class="field full"><label>Beliebte Anbieter</label><div class="pvchips" id="qcP">${L.map(p => `<button type="button" class="pv sm" data-qp="${esc(p.n)}">${esc(p.n)}</button>`).join('')}</div><div id="qcT"></div></div>`;
+}
+function provQuickClick(ev, s, e) {
+  const base = KBASE(e), qp = ev.target.closest('[data-qp]'), qt = ev.target.closest('[data-qt]');
+  if (qp) {
+    const p = provByName(base, qp.dataset.qp); $$('#qcP .pv', s).forEach(b => b.classList.toggle('on', b === qp)); $('#qcA', s).value = p.n;
+    $('#qcT', s).innerHTML = p.t.length ? `<div class="trf-g" style="margin-top:8px">${p.t.map((t, i) => `<button type="button" class="trf" data-qt="${i}" data-qpn="${esc(p.n)}"><b>${esc(t.n)}</b><span>${t.c != null ? esc(money(t.c)) + (t.z === 'j' ? ' / Jahr' : ' / Monat') : 'Preis individuell'}</span></button>`).join('')}</div><p class="trf-n">Stand ${KSTAND}, Richtwert.</p>` : ''; return true;
+  }
+  if (qt) { const p = provByName(base, qt.dataset.qpn), t = p && p.t[+qt.dataset.qt]; if (t) { $$('#qcT .trf', s).forEach(b => b.classList.toggle('on', b === qt)); if (t.c != null) { $('#qcK', s).value = moneyInput(t.c); $('#qcZ', s).value = t.z; } s.dataset.qtarif = t.n; } return true; }
+  return false;
+}
+
+/* ---------- Preis-Check gegen den Katalog ---------- */
+function katalogInsights(add) {
+  for (const e of vAll()) {
+    if (vst(e.id) !== 'ja' || isInc(e)) continue; const o = vOf(e.id), p = provByName(KBASE(e), vprov(e.id)); if (!p || !o.tarif || !o.kosten) continue;
+    const t = p.t.find(x => x.n === o.tarif && x.c != null); if (!t) continue; const z = o.zahl || 'm'; if (z !== t.z) continue;
+    const diff = o.kosten - t.c; if (Math.abs(diff) < 20) continue;
+    add({ id: 'kt_' + e.id, kind: 'info', pri: 33, e: diff < 0 ? '📈' : '🏷️', title: `${p.n}: Listenpreis weicht von deinem Betrag ab`, text: diff < 0 ? `Du trägst ${money(o.kosten)} ein, der Tarif „${t.n}“ kostet laut Preisliste (Stand ${KSTAND}) ${money(t.c)}. Das kann eine Preiserhöhung sein – prüf den Betrag in deiner Abrechnung. Bei Preiserhöhungen kann ein Sonderkündigungsrecht bestehen.` : `Du trägst ${money(o.kosten)} ein, laut Preisliste (Stand ${KSTAND}) kostet „${t.n}“ ${money(t.c)}. Vielleicht hast du einen Rabatt oder Altvertrag – oder der Betrag ist veraltet.`, src: [{ l: e.n, vt: e.id }], act: { l: 'Vertrag öffnen', go: 'vertraege' } });
+  }
+}
+
+/* =====================================================================
+   KAIROS · Kontoauszug / Kreditkartenabrechnung einlesen
+   CSV (Online-Banking-Export), PDF oder Foto → Buchungen → wiederkehrende Zahlungen →
+   Verträge anlegen oder aktualisieren. Alles lokal im Browser, es wird nichts hochgeladen.
+   Die Buchungen selbst werden NICHT gespeichert – nur das Ergebnis (Verträge) und eine kleine Übersicht.
+   ===================================================================== */
+const stNorm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
+
+/* Betrag → Cent (mit Vorzeichen) oder null */
+function stNum(raw) {
+  let s = String(raw == null ? '' : raw).trim(); if (!s) return null;
+  let neg = false;
+  if (/^\(.*\)$/.test(s)) { neg = true; s = s.slice(1, -1); }
+  if (/[-−–]\s*$/.test(s) || /\s[SD]$/i.test(s)) neg = true;
+  if (/^[-−–]/.test(s)) neg = true;
+  s = s.replace(/[€$£]|EUR|eur|\s[SHsh]$|\s+/g, '').replace(/[−–]/g, '-').replace(/^[+-]/, '').replace(/[+-]$/, '');
+  if (!/\d/.test(s)) return null;
+  const lc = s.lastIndexOf(','), ld = s.lastIndexOf('.');
+  if (lc >= 0 && ld >= 0) { if (lc > ld) s = s.replace(/\./g, '').replace(',', '.'); else s = s.replace(/,/g, ''); }
+  else if (lc >= 0) { s = /^\d{1,3}(,\d{3})+$/.test(s) ? s.replace(/,/g, '') : s.replace(',', '.'); }
+  else if (ld >= 0) { if (/^\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, ''); }
+  const n = parseFloat(s); if (!isFinite(n)) return null;
+  const c = Math.round(n * 100); return neg ? -c : c;
+}
+function stDate(raw, yr) {
+  const s = String(raw || '').trim(); let m;
+  if ((m = s.match(/(\d{4})-(\d{2})-(\d{2})/))) return `${m[1]}-${m[2]}-${m[3]}`;
+  if ((m = s.match(/(\d{1,2})\.\s?(\d{1,2})\.\s?(\d{4}|\d{2})?/))) { let y = m[3] ? (m[3].length === 2 ? 2000 + +m[3] : +m[3]) : (yr || new Date().getFullYear()); const mo = +m[2], d = +m[1]; if (mo < 1 || mo > 12 || d < 1 || d > 31) return ''; return `${y}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}`; }
+  if ((m = s.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/))) return `${m[3]}-${String(m[1]).padStart(2, '0')}-${String(m[2]).padStart(2, '0')}`;
+  return '';
+}
+
+/* ---------- CSV ---------- */
+function stCsvRows(text) {
+  const t = text.replace(/^﻿/, '').replace(/\r\n?/g, '\n'), lines = t.split('\n');
+  const cand = lines.slice(0, 60).filter(l => l.trim().length > 8);
+  const cnt = ch => cand.reduce((a, l) => a + (l.split(ch).length - 1), 0);
+  const delim = [[';', cnt(';')], ['\t', cnt('\t')], [',', cnt(',')]].sort((a, b) => b[1] - a[1])[0][0];
+  const rows = []; let row = [], cur = '', q = false;
+  for (let i = 0; i < t.length; i++) {
+    const c = t[i];
+    if (q) { if (c === '"') { if (t[i + 1] === '"') { cur += '"'; i++; } else q = false; } else cur += c; }
+    else if (c === '"') q = true; else if (c === delim) { row.push(cur); cur = ''; } else if (c === '\n') { row.push(cur); if (row.some(x => x.trim())) rows.push(row); row = []; cur = ''; } else cur += c;
+  }
+  row.push(cur); if (row.some(x => x.trim())) rows.push(row);
+  return rows;
+}
+const H_DATE = ['buchungstag', 'buchungsdatum', 'buchung', 'datum', 'date', 'transaktionsdatum', 'belegdatum', 'bookingdate', 'booking date'], H_DATE2 = ['valuta', 'wertstellung', 'valutadatum', 'wertstellung valuta'];
+const H_AMT = ['betrag eur', 'betrag', 'umsatz in eur', 'umsatz', 'amount eur', 'amount', 'betrag in eur', 'buchungsbetrag', 'umsatzbetrag'];
+const H_PURP = ['verwendungszweck', 'buchungstext', 'payment reference', 'beschreibung', 'zahlungsreferenz', 'vorgang', 'text', 'details', 'transaktionsbeschreibung', 'umsatztext'];
+function stParseCsv(text) {
+  const rows = stCsvRows(text); if (rows.length < 2) return null;
+  let hi = -1, cols = null;
+  for (let i = 0; i < Math.min(rows.length, 40); i++) {
+    const h = rows[i].map(stNorm); const hasD = h.some(x => H_DATE.concat(H_DATE2).some(k => x === k || x.startsWith(k))), hasA = h.some(x => H_AMT.some(k => x === k || x.startsWith(k)) || x === 'soll' || x === 'haben');
+    if (hasD && hasA && h.filter(Boolean).length >= 3) { hi = i; cols = h; break; }
+  }
+  if (hi < 0) return null;
+  const idx = (names, ex) => { for (const n of names) { const i = cols.findIndex((x, j) => (x === n || x.startsWith(n + ' ')) && !(ex || []).includes(j)); if (i >= 0) return i; } return -1; };
+  const iD = idx(H_DATE), iD2 = idx(H_DATE2), iA = idx(H_AMT), iSoll = cols.indexOf('soll'), iHaben = cols.indexOf('haben');
+  const iPurp = idx(H_PURP), iTyp = idx(['umsatztyp', 'buchungstext', 'buchungsart', 'transaction type', 'art'], [iPurp]);
+  const payCols = cols.map((x, j) => /(beguenstigter|auftraggeber|empfaenger|zahlungsempfaenger|zahlungspflichtige|payee|^name|gegenkonto inhaber|partnername)/.test(x) && !/iban|bic|konto/.test(x) ? j : -1).filter(j => j >= 0);
+  const iCur = cols.findIndex(x => x === 'waehrung' || x === 'currency' || x === 'whrg');
+  const tx = [];
+  for (const r of rows.slice(hi + 1)) {
+    if (r.length < 3) continue;
+    const d = stDate(r[iD >= 0 ? iD : iD2]) || stDate(r[iD2]); if (!d) continue;
+    let a = iA >= 0 ? stNum(r[iA]) : null; if (a == null && (iSoll >= 0 || iHaben >= 0)) { const s = iSoll >= 0 ? stNum(r[iSoll]) : null, h = iHaben >= 0 ? stNum(r[iHaben]) : null; a = h ? Math.abs(h) : s ? -Math.abs(s) : null; }
+    if (a == null) continue; if (iCur >= 0 && r[iCur] && !/^eur$/i.test(r[iCur].trim()) && r[iCur].trim()) continue;
+    let who = ''; if (payCols.length > 1) { const pick = payCols.find(j => /empfaenger/.test(cols[j])) , pay = payCols.find(j => /pflichtige|auftraggeber/.test(cols[j])); who = (a < 0 ? r[pick] || r[pay] : r[pay] || r[pick]) || ''; if (!who.trim()) who = r[payCols[0]] || ''; } else if (payCols.length) who = r[payCols[0]] || '';
+    if (!(who || '').trim()) who = stWho(((iPurp >= 0 ? r[iPurp] : '') || '')).who;
+    tx.push({ d, a, who: (who || '').trim(), txt: ((iPurp >= 0 ? r[iPurp] : '') || '').replace(/\s+/g, ' ').trim(), ty: iTyp >= 0 ? (r[iTyp] || '').trim() : '' });
+  }
+  return tx.length ? { tx, via: 'csv' } : null;
+}
+
+/* ---------- Text (PDF / Foto / eingefügt) ---------- */
+const AMT_END = /(-?\s?\d{1,3}(?:\.\d{3})*,\d{2}|-?\d+,\d{2})\s*([+\-HS])?\s*(?:EUR|€)?\s*$/;
+const NOISE = /(kontostand|saldo|übertrag|uebertrag|seite \d|summe|summen|bic|iban:|freistellungs|rechnungsabschluss|zinssatz|dispositionskredit|guthabenzins|abschluss|bankleitzahl|blz|umsatzsteuer-id|haben soll|soll haben)/i;
+function stPeriodYear(text) {
+  let m = text.match(/(\d{2})\.(\d{2})\.(\d{4})\s*(?:-|–|bis)\s*(\d{2})\.(\d{2})\.(\d{4})/); if (m) return { y: +m[6], from: `${m[3]}-${m[2]}-${m[1]}`, to: `${m[6]}-${m[5]}-${m[4]}`, m: +m[5] };
+  m = text.match(/(?:auszug|abrechnung|kontoauszug|statement)[^\n]{0,40}?(\d{1,2})\/(\d{4})/i); if (m) return { y: +m[2], m: +m[1] };
+  m = text.match(/\b(\d{2})\.(\d{2})\.(20\d{2})\b/); if (m) return { y: +m[3], m: +m[2] };
+  return { y: new Date().getFullYear(), m: new Date().getMonth() + 1 };
+}
+function stParseText(text, forceCard) {
+  const per = stPeriodYear(text), lines = text.replace(/\r/g, '').split('\n').map(l => l.replace(/\t/g, '   ').trim()).filter(Boolean);
+  const card = forceCard || /kreditkarte|visa|mastercard|kartenabrechnung|kartenumsatz/i.test(text.slice(0, 1500));
+  const tx = []; let cur = null;
+  const fixYear = ds => { if (!ds) return ds; const y = +ds.slice(0, 4), m = +ds.slice(5, 7); if (per.m && m > per.m + 6 && !/\d{2}\.\d{2}\.\d{4}/.test(ds)) return `${y - 1}${ds.slice(4)}`; return ds; };
+  for (const line of lines) {
+    const m = line.match(/^(\d{2}\.\d{2}\.(?:\d{4}|\d{2})?)\s+(?:(\d{2}\.\d{2}\.(?:\d{4}|\d{2})?)\s+)?(.+)$/);
+    if (m && !NOISE.test(line.slice(0, 30))) {
+      flush2(); let rest = m[3], a = null, mk = '';
+      const am = rest.match(AMT_END); if (am) { a = stNum(am[1] + (am[2] || '')); mk = am[2] || ''; rest = rest.slice(0, am.index).trim(); }
+      const raw = m[1]; const hasYear = /\d{4}$|\.\d{2}$/.test(raw) && raw.length > 6; const d = stDate(raw, per.y); cur = { d: hasYear ? d : fixYear(d), a, mk, who: '', txt: rest, ty: '' };
+      if (a != null) { flush2(); }
+      continue;
+    }
+    if (cur) {
+      if (NOISE.test(line) && /^(neuer|alter|kontostand|summe)/i.test(line)) { flush2(); continue; }
+      const am = line.match(AMT_END);
+      if (cur.a == null && am && stNum(am[1] + (am[2] || '')) != null && line.length < 40) { cur.a = stNum(am[1] + (am[2] || '')); cur.mk = am[2] || ''; flush2(); continue; }
+      if (cur.txt.length < 260 && !/^(seite|kontoauszug|iban|bic|blz)\b/i.test(line)) cur.txt += ' ' + line;
+    }
+  }
+  function flush2() { if (!cur) return; const c = cur; if (c.a != null) { /* Vorzeichen */ if (c.mk === 'H' || c.mk === '+') c.a = Math.abs(c.a); else if (c.mk === 'S' || c.mk === '-') c.a = -Math.abs(c.a); else if (c.a > 0) { const pos = /gehalt|lohn|bezug|bezüge|rente|gutschrift|kindergeld|erstattung|zahlung erhalten|einzahlung|zinsen|eingang|rückzahlung|ruckzahlung|dividende/i.test(c.txt); c.a = pos || (!card && /^(überweisung von|ueberweisung von)/i.test(c.txt)) ? c.a : -c.a; } tx.push(c); } cur = null; }
+  flush2();
+  tx.forEach(t => { t.txt = t.txt.replace(/\s+/g, ' ').trim(); const w = stWho(t.txt); t.who = w.who; t.ty = w.ty; });
+  return tx.length ? { tx, via: 'text', card, per } : null;
+}
+function stWho(txt) {
+  const types = /^(basislastschrift|folgelastschrift|firmenlastschrift|lastschrift|sepa[- ]?(?:lastschrift|überweisung|ueberweisung)?|überweisung|ueberweisung|dauerauftrag|kartenzahlung|girocard|debitkarte|kreditkarte|visa|mastercard|gutschrift|gehalt\/rente|gehalt|lohn|entgelt|zahlung|dauerüberweisung|dauerueberweisung|online[- ]?überweisung|echtzeitüberweisung|umbuchung|abbuchung|einzahlung|auszahlung|retoure)\b[:\s\-]*/i;
+  let t = txt, ty = ''; for (let i = 0; i < 3; i++) { const m = t.match(types); if (!m) break; ty = ty || m[1]; t = t.slice(m[0].length); }
+  t = t.replace(/\b[A-Z]{2}\d{2}[A-Z0-9]{11,30}\b/g, ' ').replace(/\bDE\d{2}[ \d]{15,}\b/g, ' ').replace(/\b(?:mandat|mref|kdnr|kundennr|rechnung|rg|re)[\s.:-]*[\w-]{4,}/ig, ' ').replace(/\s+/g, ' ').trim();
+  return { who: t.split(/\s{2,}|\bsepa\b|\bmandatsref/i)[0].slice(0, 60), ty };
+}
+
+function parseStatement(text, o) {
+  o = o || {}; const t = String(text || '');
+  let r = null; if (!o.noCsv && /[;,\t]/.test(t.slice(0, 3000)) && t.split('\n').length >= 2) { try { r = stParseCsv(t); } catch (e) { r = null; } }
+  if (!r) r = stParseText(t, o.card);
+  if (!r) return null;
+  const seen = new Set(); r.tx = r.tx.filter(x => { const k = x.d + '|' + x.a + '|' + stNorm(x.who + x.txt).slice(0, 50); if (seen.has(k)) return false; seen.add(k); return true; }).sort((a, b) => a.d < b.d ? -1 : 1);
+  r.card = r.card != null ? r.card : /kreditkarte|visa|mastercard/i.test(t.slice(0, 1500));
+  return r;
+}
+
+/* ---------- Händler-Wörterbuch: Muster → Vertragsart ---------- */
+const ST_RULES = [
+  [/spotify/i, 'streaming', 'Spotify'], [/netflix/i, 'streaming', 'Netflix'], [/disney\s*(plus|\+)?|disneyplus/i, 'streaming', 'Disney+'], [/amazon\s*prime|prime\s*video|amzn.*prime|prime\*/i, 'shopping', 'Amazon Prime'], [/\bdazn\b/i, 'streaming', 'DAZN'], [/\bwow\b|sky\s*deutschland|\bsky\b/i, 'streaming', null], [/rtl\s*\+|rtl\s*plus|\bjoyn\b|paramount|hbo\s*max|apple\s*tv|youtube\s*(premium|music)|google\s*\*?\s*youtube|apple\s*music|deezer|tidal|crunchyroll/i, 'streaming', null],
+  [/icloud|apple\.com\/bill|apple\s*services|google\s*(one|storage)|microsoft\s*365|office\s*365|dropbox|adobe|openai|chatgpt|anthropic|claude\.ai|notion|github|canva|evernote|zoom\.us/i, 'software', null],
+  [/playstation|sony\s*interactive|xbox|nintendo|steam(?!\s*pow)|ea\s*play|ubisoft/i, 'gaming', null], [/audible|kindle\s*unlimited|skoobe|storytel|bookbeat/i, 'buecher', null], [/duolingo|babbel|udemy|coursera|masterclass|skillshare|linkedin\s*learning/i, 'lernen', null], [/1password|bitwarden|nordvpn|proton|surfshark|norton|bitdefender|kaspersky|mcafee|dashlane/i, 'sicherheit', null],
+  [/spiegel|f\.?a\.?z\b|frankfurter allgemeine|zeit\s*online|die zeit|sueddeutsche|süddeutsche|handelsblatt|welt\.de|bild\s*plus|\bwaz\b|funke|wirtschaftswoche|apple\s*news/i, 'zeitung', null],
+  [/mcfit|fitx|clever\s*fit|easy\s*fitness|fitness\s*first|john\s*reed|rockstar\s*gym|urban\s*sports|wellpass|egym|hansefit|basic[- ]fit|fitnessstudio|anytime\s*fitness|fitness/i, 'fitness', null],
+  [/deutschlandticket|d-?ticket|deutschland-?ticket|jobticket|\bvrr\b|\bhvv\b|\bbvg\b|\bmvv\b|\brmv\b|\bvvs\b|\bvbb\b|db\s*vertrieb/i, 'dticket', 'Deutschlandticket (Abo)'], [/bahncard/i, 'bahncard', 'Deutsche Bahn'], [/miles\s*mobility|share\s*now|flinkster|cambio|getaround|auto-?abo|\bfinn\b/i, 'carsharing', null], [/adac(?!\s*autoversicherung)/i, 'pannen', 'ADAC'],
+  [/beitragsservice|rundfunkbeitrag|ard\s*zdf/i, 'rundfunk', 'ARD ZDF Deutschlandradio Beitragsservice'],
+  [/telekom|t-mobile|vodafone|o2\b|telefonica|1\s*&\s*1|1und1|congstar|aldi\s*talk|lidl\s*connect|fraenk|klarmobil|mobilcom|winsim|netzclub|freenet|simyo|otelo|pyur|pÿur|deutsche\s*glasfaser|m-net|netcologne|ewe\s*tel|unitymedia/i, '__tel', null],
+  [/eon|e\.on|vattenfall|enbw|rwe\b|octopus|tibber|lichtblick|yello|eprimo|naturstrom|entega|mainova|rabot|stadtwerke|stadtwerk|energie|strom/i, '__energie', null],
+  [/wasser|abwasser|wasserwerk/i, 'wasser', null], [/abfall|müllgeb|muellgeb|entsorgung|awb\b|abfallwirtschaft/i, 'muell', null], [/hausgeld|weg[- ]?verwaltung|eigentümergemeinschaft/i, 'hausgeld', null], [/grundsteuer|grundbesitzabgaben/i, 'grundsteuer', null], [/garage|stellplatz|tiefgarage|parkhaus.*miete/i, 'stellplatz', null],
+  [/haftpflicht/i, 'haftpflicht', null], [/hausrat/i, 'hausrat', null], [/wohngeb[aä]ude/i, 'wohngebaeude', null], [/rechtsschutz|arag|advocard|auxilia|roland\s*rechtsschutz/i, 'rechtsschutz', null], [/berufsunf[aä]hig|\bbu\b/i, 'bu', null], [/unfallversicherung|unfall[- ]?vers/i, 'unfall', null], [/risikoleben|risiko-?lebens|lebensversicherung/i, 'leben', null], [/kfz|kasko|fahrzeugversicherung|autoversicherung|evb/i, 'kfz', null], [/krankentagegeld/i, 'ktg', null], [/zahnzusatz|krankenzusatz|zusatzversicherung/i, 'kvzusatz', null], [/pflegezusatz|pflegetagegeld/i, 'pflege', null], [/sterbegeld/i, 'sterbegeld', null], [/riester|rürup|ruerup|basisrente|rentenversicherung|altersvorsorge/i, 'altersvorsorge', null], [/direktversicherung|betriebliche\s*alters|pensionskasse|entgeltumwandlung/i, 'bav', null], [/bausparkasse|bausparvertrag|lbs\b|schwäbisch hall|schwaebisch hall|wüstenrot|wuestenrot|bhw\b/i, 'bauspar', null], [/reiseversicherung|auslandskranken|reiser[uü]cktritt/i, 'reise', null], [/tierhalter|hundehaftpflicht|tierkranken|op[- ]?versicherung/i, 'tierhalter', null],
+  [/huk|allianz|devk|axa\b|generali|r\+v|ergo\b|zurich|lvm\b|vgh\b|gothaer|cosmosdirekt|cosmos direkt|barmenia|signal\s*iduna|provinzial|concordia|wgv|vhv|württembergische|wuerttembergische|debeka|verti\b|nürnberger|nuernberger|alte leipziger|hannoversche|continentale|volkswohl|bayerische|hdi\b|interrisk|haftpflichtkasse|versicherung|assekuranz/i, '__vers', null],
+  [/kfz[- ]?steuer|hauptzollamt|zoll.*kraftfahrzeug/i, 'kfzsteuer', null], [/leasing|autokredit|fahrzeugfinanzierung|vw\s*financial|mercedes-?benz bank|bmw bank|santander consumer|arval|ayvens/i, 'kfz_fin', null],
+  [/kita|kindergarten|tagesmutter|kinderhort|\bhort\b/i, 'kita', null], [/ogs\b|schulgeld|essensgeld|mittagessen.*schule|klassenkasse/i, 'schule', null], [/musikschule|schwimmkurs|kinder.*verein|ballett|turnverein/i, 'kinderhobby', null], [/juniordepot|kinderkonto|sparplan kind/i, 'kindersparen', null], [/unterhalt/i, 'unterhalt', null],
+  [/klarna|ratepay|ratenzahlung|ratenkauf|paypal.*rate/i, 'ratenkauf', null], [/darlehen|kreditrate|tilgung|annuität|annuitaet|ratenkredit|baufinanzierung|kreditvertrag/i, 'kredit', null],
+  [/trade\s*republic|scalable|sparplan|etf\b|depot|flatex|smartbroker|comdirect.*wertpapier|consorsbank.*wertpapier/i, 'depot', null],
+  [/steuerberater|lohnsteuerhilfe|\bvlh\b|lohi|wiso|taxfix/i, 'steuerberater', null], [/spende|patenschaft|unicef|ärzte ohne grenzen|aerzte ohne grenzen|greenpeace|wwf|aktion mensch|malteser|caritas|diakonie|brot für die welt|plan international/i, 'spenden', null], [/mitgliedsbeitrag|vereinsbeitrag|ver\.di|verdi\b|ig\s*metall|gewerkschaft|mieterverein|schützenverein|sportverein|\be\.?\s?v\.?\b.*beitrag/i, 'verein', null],
+  [/tierarzt|tierklinik|futter\s*abo|zooplus|fressnapf/i, 'tier', null], [/jobrad|bikeleasing|dienstrad/i, 'jobrad', null],
+  [/ionos|strato|hetzner|all-?inkl|namecheap|godaddy|squarespace|wix\.com|cloudflare|domain/i, 'domain', null], [/waipu|magenta\s*tv|zattoo|kabel\s*deutschland|vodafone.*tv/i, 'tvpaket', null],
+  [/kindergeld|familienkasse/i, 'kindergeld', null, 'inc'], [/elterngeld|elterngeldstelle/i, 'elterngeld', null, 'inc'], [/deutsche\s*rentenversicherung|rentenservice|rentenzahlung|ruhegeld|pensionszahlung|versorgungsbez[uü]ge/i, 'rente_ein', null, 'inc'], [/einspeisevergütung|einspeiseverguetung|netzbetreiber.*einspeis|photovoltaik/i, 'solar', null, 'inc'], [/mieteinnahme|mietzahlung von|miete\s*(von|eingang)/i, 'mieteinnahmen', null, 'inc'], [/dividende|ertragsabrechnung|zinsgutschrift|zinsen\s*haben/i, 'kapital', null, 'inc'],
+  [/gehalt|lohn\b|bezüge|bezuege|besoldung|entgelt\s*gehalt|löhne|loehne|vergütung|verguetung|arbeitgeber/i, '__gehalt', null, 'inc'],
+  [/miete|kaltmiete|warmmiete|nutzungsentgelt|wohnungsbau|hausverwaltung|vermieter|wohnungsgesellschaft/i, '__miete', null]
+];
+const ST_NAMES = { streaming: 'Streaming', software: 'Software', gaming: 'Gaming', shopping: 'Prime/Shop', buecher: 'Bücher', lernen: 'Lernen', sicherheit: 'Sicherheit', zeitung: 'Zeitung' };
+function stRule(t) { const s = (t.who + ' ' + t.txt + ' ' + t.ty); for (const r of ST_RULES) if (r[0].test(s)) return r; return null; }
+
+function stBaseFor(rule, t) {
+  let base = rule[1], inc = rule[3] === 'inc';
+  const s = stNorm(t.who + ' ' + t.txt);
+  if (base === '__tel') base = /(dsl|festnetz|glasfaser|kabel|internet|magentazuhause|zuhause|router|anschluss|pyur|deutsche glasfaser|unitymedia|netcologne|m net)/.test(s) ? 'internet' : /(mobilfunk|rufnummer|handy|sim|prepaid|mobil|congstar|aldi talk|lidl connect|fraenk|klarmobil|winsim|netzclub|simyo|otelo)/.test(s) ? 'mobilfunk' : (t.a != null && Math.abs(t.a) >= 3000 ? 'internet' : 'mobilfunk');
+  else if (base === '__energie') base = /\bgas\b|erdgas|fernw[aä]rme|heizung/.test(s) && !/strom/.test(s) ? 'gas' : 'strom';
+  else if (base === '__vers') base = /haftpflicht/.test(s) ? 'haftpflicht' : /hausrat/.test(s) ? 'hausrat' : /rechtsschutz/.test(s) ? 'rechtsschutz' : /(kfz|kasko|auto|fahrzeug|evb)/.test(s) ? 'kfz' : /(berufsunf|\bbu\b)/.test(s) ? 'bu' : /(leben|risiko)/.test(s) ? 'leben' : /(unfall)/.test(s) ? 'unfall' : /(kranken|pkv|zusatz|zahn)/.test(s) ? 'kvzusatz' : /(rente|riester|ruerup|rurup)/.test(s) ? 'altersvorsorge' : '';
+  return { base, inc };
+}
+
+/* ---------- Auswertung ---------- */
+function stMedian(a) { const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : Math.round((s[m - 1] + s[m]) / 2); }
+function stFreq(dates) {
+  const ds = [...new Set(dates)].sort(); if (ds.length < 2) return null; const gaps = []; for (let i = 1; i < ds.length; i++) gaps.push(diffDays(ds[i], ds[i - 1])); const g = stMedian(gaps);
+  if (g >= 24 && g <= 38) return 'm'; if (g >= 75 && g <= 105) return 'q'; if (g >= 160 && g <= 200) return 'h'; if (g >= 340 && g <= 395) return 'j'; return null;
+}
+function stKey(t, rule) {
+  if (rule && rule[2]) return 'p:' + rule[2]; const w = stNorm(t.who) || stNorm(t.txt);
+  const words = w.split(' ').filter(x => x.length > 1 && !/^(gmbh|ag|se|kg|sepa|eur|ref|nr|von|und|the|co|de)$/.test(x) && !/\d{4,}/.test(x)).slice(0, 3); return 'w:' + (words.join(' ') || w.slice(0, 20));
+}
+function stAnalyze(res, flip) {
+  const tx = res.tx.map(t => Object.assign({}, t, { a: flip ? -t.a : t.a })), card = !!res.card;
+  const groups = new Map();
+  for (const t of tx) {
+    const rule = stRule(t); const key = stKey(t, rule) + (rule ? '|' + rule[1] + (rule[3] || '') : '') + (t.a > 0 ? '|+' : '|-');
+    if (!groups.has(key)) groups.set(key, { key, rule: t.a > 0 && rule && rule[3] !== 'inc' ? null : rule, items: [], inc: t.a > 0 }); groups.get(key).items.push(t);
+  }
+  const from = tx.length ? tx[0].d : '', to = tx.length ? tx[tx.length - 1].d : '';
+  const spanDays = from && to ? Math.max(1, diffDays(to, from)) : 0;
+  const rows = []; let n = 0;
+  for (const g of groups.values()) {
+    const amts = g.items.map(x => Math.abs(x.a)), med = stMedian(amts), last = g.items[g.items.length - 1], dates = g.items.map(x => x.d);
+    const f = stFreq(dates), sameAmt = amts.filter(a => Math.abs(a - med) <= Math.max(50, med * .18)).length >= Math.max(2, Math.ceil(amts.length * .6));
+    const isInc = g.inc; let base = '', prov = '', cat = '', known = !!g.rule, prof = '';
+    if (g.rule) { const b = stBaseFor(g.rule, last); base = b.base; if (b.inc) { if (!isInc) continue; } if (base === '__gehalt') { if (!isInc) continue; prof = 'netto'; base = ''; } else if (base === '__miete') { if (isInc) base = 'mieteinnahmen'; else { prof = 'miete'; base = ''; } } prov = g.rule[2] || ''; }
+    const gprov = prov;
+    const recurring = !!f && sameAmt; let z = f || 'm', assumed = false;
+    if (!f) { if (g.items.length >= 2 && sameAmt && !known) { /* zwei Zahlungen im Abstand unklar */ z = 'm'; } assumed = true; }
+    if (!known && !recurring) continue;                                   // Unbekanntes nur, wenn wiederkehrend
+    if (known && !recurring && g.items.length === 1 && med < 100) continue; // Kleinstbeträge ignorieren
+    if (known && !recurring && !['streaming', 'software', 'gaming', 'buecher', 'lernen', 'sicherheit', 'zeitung', 'fitness', 'dticket', 'bahncard', 'rundfunk', 'strom', 'gas', 'internet', 'mobilfunk', 'haftpflicht', 'hausrat', 'rechtsschutz', 'bu', 'unfall', 'leben', 'kfz', 'ktg', 'kvzusatz', 'pflege', 'altersvorsorge', 'bav', 'bauspar', 'kita', 'schule', 'unterhalt', 'kredit', 'kfz_fin', 'depot', 'verein', 'steuerberater', 'kfzsteuer', 'kindergeld', 'elterngeld', 'rente_ein', 'solar', 'mieteinnahmen', 'tvpaket', 'domain', 'hausgeld', 'muell', 'wasser', 'stellplatz', 'tierhalter', 'tier', 'jobrad', 'carsharing', 'pannen', 'kinderhobby', 'kindersparen', 'sterbegeld', 'shopping'].includes(base) && !prof) continue;
+    if (card && !isInc && !known) continue;                              // Karte: nur Bekanntes + Wiederkehrendes (oben geprüft)
+    const who = (last.who || last.txt || '').slice(0, 44) || (prov || 'Unbekannt');
+    rows.push({ k: 'r' + (n++), gk: g.key, on: true, base, prof, inc: isInc, prov: gprov || stTidy(who), amt: prof === 'netto' ? med : Math.abs(last.a), z, cnt: g.items.length, assumed, last: last.d, known, sum: amts.reduce((a, b) => a + b, 0) });
+  }
+  rows.forEach(r => { if (r.base) { const bc = VC.find(x => x.id === r.base); if (bc && bc.inc) r.inc = true; } });
+  const sum = (arr, f) => arr.reduce((a, x) => a + f(x), 0), inn = sum(tx.filter(t => t.a > 0), t => t.a), out = sum(tx.filter(t => t.a < 0), t => -t.a);
+  /* größte Ausgaben, die keine Verträge sind */
+  const used = new Set(rows.map(r => r.gk)), top = [...groups.values()].filter(g => !g.inc && !used.has(g.key)).map(g => ({ n: stTidy((g.items[g.items.length - 1].who || g.items[g.items.length - 1].txt || '?').slice(0, 40)), s: sum(g.items, x => -x.a), c: g.items.length })).sort((a, b) => b.s - a.s).slice(0, 6);
+  return { rows: rows.sort((a, b) => (b.inc ? 0 : 1) - (a.inc ? 0 : 1) || b.amt - a.amt), tx, from, to, inn, out, n: tx.length, spanDays, top, card };
+}
+const stShort = d => d ? `${d.slice(8, 10)}.${d.slice(5, 7)}.${d.slice(2, 4)}` : '';
+function stTidy(s) { s = String(s || '').replace(/\s+/g, ' ').trim(); s = s.replace(/\b(gmbh|ag|se|kg|e\.?\s?k\.?|ohg|mbh|co\.?)\b\.?/ig, '').replace(/[*#]+/g, ' ').replace(/\s+\d{5,}.*$/, '').replace(/\s+/g, ' ').trim(); return s.length > 2 ? s.replace(/^[a-zäöü]/, c => c.toUpperCase()).slice(0, 38) : s; }
+/* zu welchem bestehenden Vertrag passt eine Zeile? */
+function stMatch(r) {
+  if (!r.base) return null; const prov = stNorm(r.prov);
+  const list = vAll().filter(e => (e.of || e.id) === r.base && vst(e.id) === 'ja');
+  const byProv = prov && list.find(e => { const p = stNorm(vprov(e.id)); return p && (p === prov || p.includes(prov) || prov.includes(p)); });
+  if (byProv) return byProv.id; const empty = list.find(e => !vprov(e.id)); return empty ? empty.id : null;
+}
+
+/* ---------- Anwenden ---------- */
+function stApply(rows) {
+  let nNew = 0, nUpd = 0; const ids = [];
+  for (const r of rows) {
+    if (r.prof === 'netto') { if (r.amt) { pset('netto', r.amt, { src: 'auszug', conf: .8, docT: Date.now() }); nUpd++; } continue; }
+    if (r.prof === 'miete') { if (r.amt) { pset('miete', r.amt, { src: 'auszug', conf: .8, docT: Date.now() }); if (r.prov && !phas('vermieter')) pset('vermieter', r.prov, { src: 'auszug', conf: .6, docT: Date.now() }); nUpd++; } continue; }
+    let base = r.base; if (!base) { base = 'c'; }
+    let id = r.exist; const bc = VC.find(x => x.id === base);
+    if (!id) {
+      if (base === 'c') { id = 'c_' + uid(); S.vertr[id] = { custom: 1, n: r.prov || 'Wiederkehrende Zahlung', c: r.inc ? 'einnahmen' : 'abo', e: r.inc ? '💰' : '🔁', st: 'ja', inc: r.inc ? 1 : 0 }; nNew++; }
+      else if (vst(base) !== 'ja') { id = base; setVst(base, 'ja'); nNew++; }
+      else { id = newInst(base); nNew++; }
+    } else nUpd++;
+    const t = S.vertr[id] || (S.vertr[id] = {}); t.st = 'ja';
+    if (r.prov && (!t.anbieter || !r.exist)) { t.anbieter = r.prov; if (bc && bc.pf && base !== 'c' && id === base) pset(bc.pf, r.prov, { src: 'auszug', conf: .8, docT: Date.now() }); }
+    t.kosten = r.amt; t.zahl = r.z || 'm';
+    if (bc && AGG.has(base) && !t.label && r.prov) t.label = r.prov;
+    const p = provByName(base, r.prov); if (p) { const tf = p.t.find(x => x.c === r.amt && x.z === (r.z || 'm')); if (tf && !t.tarif) t.tarif = tf.n; }
+    ids.push(id);
+  }
+  save(); return { nNew, nUpd, ids };
+}
+
+/* ---------- UI ---------- */
+const ST = { res: null, flip: false, name: '' };
+function stCard() {
+  const s = S.stmt;
+  if (!s) return `<div class="card glass stc"><div class="stc-i">🧾</div><div class="stc-m"><b>Kontoauszug einlesen</b><p>Lade einen Kontoauszug oder deine Kreditkartenabrechnung hoch – Kairos findet Strom, Abos, Versicherungen und Miete selbst und legt sie an.</p></div><button class="btn primary" data-act="st.import">${icon('upload')}Auszug laden</button></div>`;
+  return `<div class="card glass stc compact"><div class="stc-i">🧾</div><div class="stc-m"><b>Letzter Auszug: ${esc(s.from ? fmtDate(s.from, true) : '')}${s.to && s.to !== s.from ? ' – ' + esc(fmtDate(s.to, true)) : ''}</b><p>${plural(s.n, 'Buchung', 'Buchungen')} ausgewertet · ${plural(s.found, 'Vertrag', 'Verträge')} erkannt. Mehrere Monate geben die sicherste Erkennung.</p></div><button class="btn" data-act="st.import">${icon('upload')}Weiterer Auszug</button></div>`;
+}
+function stPicker(title) {
+  return openSheet(`<div class="chh" style="--c:var(--c-fin)"><span class="chh-e">🧾</span><div><small>Verträge automatisch finden</small><h2>${esc(title || 'Kontoauszug einlesen')}</h2></div></div>
+    <p class="lead-p">Lade einen Kontoauszug oder eine Kreditkartenabrechnung hoch. Kairos liest die Buchungen <b>nur auf deinem Gerät</b>, erkennt wiederkehrende Zahlungen (Strom, Streaming, Versicherungen, Miete, Gehalt …) und schlägt daraus Verträge vor. Du bestätigst jeden Vorschlag.</p>
+    <div class="stp"><button class="stp-b" data-st="file"><i>${icon('upload')}</i><b>Datei wählen</b><small>CSV, PDF oder Foto</small></button><button class="stp-b cam-only" data-st="cam"><i>${icon('camera')}</i><b>Foto aufnehmen</b><small>Papier-Auszug</small></button><button class="stp-b" data-st="paste"><i>${icon('edit')}</i><b>Text einfügen</b><small>aus dem Online-Banking</small></button></div>
+    <div id="stProg"></div>
+    <details class="stt"><summary>Tipps für die beste Erkennung</summary><ul><li><b>CSV-Export</b> aus dem Online-Banking (Umsätze → Exportieren) liefert die genauesten Ergebnisse.</li><li><b>Mehrere Monate</b> auf einmal erkennen wiederkehrende Zahlungen zuverlässiger; bei einem Monat rät Kairos bei bekannten Anbietern.</li><li><b>Kreditkarte:</b> Abrechnung als PDF oder CSV genügt – dort tauchen Abos wie Spotify oder Netflix auf.</li><li>Es wird nichts hochgeladen. Die einzelnen Buchungen werden nicht gespeichert – nur die Verträge, die du übernimmst.</li></ul></details>
+    <input type="file" id="stIn" accept=".csv,.txt,.pdf,.tsv,image/*" multiple hidden><input type="file" id="stCam" accept="image/*" capture="environment" hidden>
+    <div class="acts"><span class="sp"></span><button class="btn" data-sh="no">Schließen</button></div>`,
+  { wide: true, onMount: sh => {
+    sh.addEventListener('click', ev => {
+      const b = ev.target.closest('[data-st]'); if (b) { const a = b.dataset.st; if (a === 'file') $('#stIn', sh).click(); else if (a === 'cam') $('#stCam', sh).click(); else if (a === 'paste') stPasteSheet(); return; }
+      if (ev.target.closest('[data-sh=no]')) closeSheet();
+    });
+    const go = ev => { const fs = [...ev.target.files]; if (fs.length) stLoadFiles(fs, sh); };
+    $('#stIn', sh).addEventListener('change', go); $('#stCam', sh).addEventListener('change', go);
+  } });
+}
+ACT['st.import'] = () => stPicker();
+function stPasteSheet() {
+  openSheet(`<div class="chh" style="--c:var(--c-fin)"><span class="chh-e">📋</span><div><small>Kontoauszug einlesen</small><h2>Text einfügen</h2></div></div><p class="lead-p">Kopiere die Umsatzliste aus dem Online-Banking (oder eine CSV) und füge sie hier ein.</p><div class="field full"><textarea class="txt" id="stTxt" rows="9" placeholder="01.10.2026  Lastschrift  Spotify AB  -12,99&#10;03.10.2026  Gehalt  Beispiel GmbH  +3.800,00"></textarea></div><div class="acts"><span class="sp"></span><button class="btn" data-sh="no">Abbrechen</button><button class="btn primary" data-sh="go">Auswerten</button></div>`,
+  { wide: true, onMount: sh => sh.addEventListener('click', ev => { const b = ev.target.closest('[data-sh]'); if (!b) return; if (b.dataset.sh === 'no') return closeSheet(); const t = $('#stTxt', sh).value; if (t.trim().length < 20) return toast('Bitte füge mehr Text ein.', 'bad'); closeSheet(); setTimeout(() => stRun([{ name: 'Eingefügter Text', text: t }]), 260); }) });
+}
+async function stLoadFiles(files, sh) {
+  const box = $('#stProg', sh); const out = [];
+  for (let i = 0; i < files.length; i++) {
+    const f = files[i]; box.innerHTML = `<div class="stprog"><b>${esc(f.name)}</b><div class="bar thin"><i id="stBar" style="width:6%"></i></div><small id="stLbl">Lese Datei …</small></div>`;
+    try { const r = await readDocument(f, (st, fr, l) => { const b = $('#stBar', sh), s = $('#stLbl', sh); if (b) b.style.width = Math.round((i + (fr || 0)) / files.length * 100) + '%'; if (s) s.textContent = (l || 'Lese …'); }, {}); out.push({ name: f.name, text: r.text || '', method: r.method, conf: r.conf }); } catch (e) { out.push({ name: f.name, text: '', err: 1 }); }
+  }
+  closeSheet(); setTimeout(() => stRun(out), 260);
+}
+function stRun(srcs) {
+  let tx = [], card = false, via = '', per = null;
+  for (const s of srcs) { const r = parseStatement(s.text || '', { card: /kredit|visa|master|karte/i.test(s.name || '') ? true : undefined }); if (r) { tx = tx.concat(r.tx); card = card || r.card; via = via || r.via; per = per || r.per; } }
+  if (!tx.length) { const bad = srcs.some(s => !s.text || s.text.length < 30); openSheet(`<div class="empty" style="padding:8px 0"><div class="em">🤔</div><b>Keine Buchungen erkannt</b><p>${bad ? 'Aus der Datei konnte kein Text gelesen werden. Versuche ein schärferes Foto oder den CSV-Export aus dem Online-Banking.' : 'Das Format kenne ich noch nicht. Am besten klappt der CSV-Export aus dem Online-Banking oder ein PDF mit Umsatzliste (Datum, Text, Betrag).'}</p></div><div class="acts"><button class="btn" data-act="st.paste">Text einfügen</button><span class="sp"></span><button class="btn primary" data-act="st.import">Andere Datei</button></div>`, { onMount: sh => sh.addEventListener('click', ev => { if (ev.target.closest('[data-act]')) closeSheet(); }) }); return; }
+  const seen = new Set(); tx = tx.filter(x => { const k = x.d + '|' + x.a + '|' + stNorm(x.who + x.txt).slice(0, 50); if (seen.has(k)) return false; seen.add(k); return true; }).sort((a, b) => a.d < b.d ? -1 : 1);
+  ST.res = { tx, card, via, per }; ST.flip = false; stReview();
+}
+ACT['st.paste'] = () => stPasteSheet();
+function stSuspectFlip(res) { const neg = res.tx.filter(t => t.a < 0).length, pos = res.tx.filter(t => t.a > 0).length; return res.card && pos > neg * 3 && pos > 3; }
+function stRowHtml(r) {
+  const bc = VC.find(x => x.id === r.base) || null, st = r.exist ? VCX(r.exist) : null;
+  const opts = VCATS.map(c => `<optgroup label="${esc(c[1])}">${VC.filter(x => x.c === c[0]).map(x => `<option value="${x.id}" ${x.id === r.base ? 'selected' : ''}>${esc(x.n)}</option>`).join('')}</optgroup>`).join('');
+  const sel = r.prof ? `<span class="badge info">${r.prof === 'netto' ? 'Netto im Steckbrief' : 'Miete im Steckbrief'}</span>` : `<select class="sel stsel" data-f="base"><option value="" ${!r.base ? 'selected' : ''}>Eigener Eintrag</option>${opts}</select>`;
+  const per = { m: 'monatlich', q: 'vierteljährlich', h: 'halbjährlich', j: 'jährlich' }[r.z] || 'monatlich';
+  const stat = r.prof ? 'Wird im Steckbrief eingetragen' : r.exist ? `Aktualisiert „${esc(st ? st.n : '')}“` : 'Neuer Eintrag';
+  const upd = r.exist && vOf(r.exist).kosten && vOf(r.exist).kosten !== r.amt ? ` · bisher ${money(vOf(r.exist).kosten)}` : '';
+  return `<div class="strow ${r.on ? '' : 'off'}" data-k="${r.k}"><label class="stck"><input type="checkbox" class="tg" data-f="on" ${r.on ? 'checked' : ''}></label><div class="stm"><div class="st1"><span class="ste">${r.prof ? (r.prof === 'netto' ? '💼' : '🏠') : bc ? bc.e : r.inc ? '💰' : '🔁'}</span><input class="inp stn" data-f="prov" value="${esc(r.prov)}" aria-label="Anbieter"><b class="sta ${r.inc ? 'pos' : ''}">${r.inc ? '+' : ''}${money(r.amt)}</b></div><div class="st2">${sel}<small>${per}${r.cnt > 1 ? ' · ' + r.cnt + '× gesehen' : r.assumed && !r.prof ? ' · Rhythmus angenommen' : ''} · ${stat}${upd}</small></div></div></div>`;
+}
+function stReview() {
+  const res = ST.res; if (!res) return; const A = stAnalyze(res, ST.flip);
+  A.rows.forEach(r => { r.exist = stMatch(r); }); ST.A = A; const flipSug = stSuspectFlip(res);
+  const exp = A.rows.filter(r => !r.inc), inc = A.rows.filter(r => r.inc);
+  const days = A.spanDays, months = Math.max(1, Math.round(days / 30.4));
+  openSheet(`<div class="chh" style="--c:var(--c-fin)"><span class="chh-e">🧾</span><div><small>Auszug ausgewertet</small><h2>${plural(A.n, 'Buchung', 'Buchungen')}</h2></div></div>
+    <div class="vstat"><div><b class="sm">${A.from ? stShort(A.from) + ' – ' + stShort(A.to) : '–'}</b><span>Zeitraum${months > 1 ? ' (' + months + ' Monate)' : ''}</span></div><div><b class="pos">${eur0(A.inn)}</b><span>Eingänge</span></div><div><b>${eur0(A.out)}</b><span>Ausgaben</span></div></div>
+    ${flipSug && !ST.flip ? `<div class="ckl warn"><span>Die meisten Beträge sind positiv – bei Kreditkarten sind das oft Ausgaben.</span><button class="btn sm" data-st="flip">Beträge umkehren</button></div>` : ST.flip ? `<div class="ckl ok"><span>Beträge sind umgekehrt (positive Zahlen = Ausgaben).</span><button class="btn sm ghost" data-st="flip">Zurücksetzen</button></div>` : ''}
+    ${A.rows.length ? `<p class="lead-p" style="margin-top:12px">Kairos hat <b>${plural(A.rows.length, 'wiederkehrende Zahlung', 'wiederkehrende Zahlungen')}</b> gefunden. Prüfe die Vorschläge – Anbieter und Art kannst du anpassen.${months < 2 ? ' Bei nur einem Monat sind Rhythmus und Betrag eine Annahme.' : ''}</p>
+    ${exp.length ? `<div class="group-h"><span>Ausgaben &amp; Verträge</span></div><div class="stl">${exp.map(stRowHtml).join('')}</div>` : ''}
+    ${inc.length ? `<div class="group-h"><span>Einnahmen</span></div><div class="stl">${inc.map(stRowHtml).join('')}</div>` : ''}` : `<div class="empty" style="padding:14px 0"><div class="em">🔍</div><b>Keine wiederkehrenden Zahlungen erkannt</b><p>Lade mehrere Monate hoch oder lege Verträge von Hand an.</p></div>`}
+    ${A.top.length ? `<details class="stt"><summary>Größte übrige Ausgaben</summary><div class="stl2">${A.top.map(t => `<div><span>${esc(t.n)}${t.c > 1 ? ' <em>' + t.c + '×</em>' : ''}</span><b>${eur0(t.s)}</b></div>`).join('')}</div></details>` : ''}
+    <div class="acts"><button class="btn" data-sh="no">Abbrechen</button><span class="sp"></span><button class="btn primary" id="stApply" data-sh="apply">Übernehmen</button></div>`,
+  { wide: true, onMount: sh => {
+    const count = () => { const n = ST.A.rows.filter(r => r.on).length, b = $('#stApply', sh); if (b) { b.textContent = n ? `${n} übernehmen` : 'Nichts ausgewählt'; b.disabled = !n; } };
+    count();
+    sh.addEventListener('change', ev => { const row = ev.target.closest('.strow'); if (!row) return; const r = ST.A.rows.find(x => x.k === row.dataset.k); if (!r) return; const f = ev.target.dataset.f;
+      if (f === 'on') { r.on = ev.target.checked; row.classList.toggle('off', !r.on); count(); }
+      if (f === 'prov') { r.prov = ev.target.value.trim(); r.exist = stMatch(r); row.querySelector('.st2 small').textContent = row.querySelector('.st2 small').textContent; }
+      if (f === 'base') { r.base = ev.target.value; r.prof = ''; r.exist = stMatch(r); row.outerHTML = stRowHtml(r); }
+    });
+    sh.addEventListener('click', ev => {
+      const fl = ev.target.closest('[data-st=flip]'); if (fl) { ST.flip = !ST.flip; closeSheet(); setTimeout(stReview, 240); return; }
+      const b = ev.target.closest('[data-sh]'); if (!b) return; if (b.dataset.sh === 'no') return closeSheet();
+      if (b.dataset.sh === 'apply') {
+        const rows = ST.A.rows.filter(r => r.on); const r = stApply(rows);
+        S.stmt = { ts: Date.now(), from: ST.A.from, to: ST.A.to, n: ST.A.n, found: rows.length, inn: ST.A.inn, out: ST.A.out }; save(); closeSheet();
+        renderNav(); rerender(); toast(`${plural(r.nNew, 'neuer Eintrag', 'neue Einträge')}${r.nUpd ? ', ' + r.nUpd + ' aktualisiert' : ''}`, 'good'); buzz(14);
+        if (route !== 'vertraege') go('vertraege');
+      }
+    });
+  } });
+}
 
 /* =====================================================================
    KAIROS · Einstellungen, Backup, Sperre
@@ -5139,6 +5914,12 @@ async function settingsHTML() {
     <section class="card glass s6"><h3>${icon('sparkle')} Kairos</h3><div class="stack" style="gap:14px">
       ${row('Einführung', 'Willkommensbildschirm ansehen', `<button class="btn sm" data-act="set.intro">Ansehen</button>`)}
       <p class="muted" style="font-size:13px"><b style="color:var(--text)">Tipp:</b> Auf dem iPhone über Teilen → „Zum Home-Bildschirm“ installieren – dann läuft Kairos wie eine App, auch offline.</p></div></section>
+    <section class="card glass s6"><h3>${icon('sparkle')} Fähigkeitenbaum &amp; Start</h3><div class="stack" style="gap:14px">
+      ${row('Alle Bereiche freischalten', 'Hebt alle Sperren im Fähigkeitenbaum auf – du kannst überall sofort loslegen.', `<input type="checkbox" class="tg" data-act="tree.open" aria-label="Alle Bereiche freischalten" ${S.ui.treeOpen ? 'checked' : ''}>`)}
+      ${row('Start-Assistent', 'Basisdaten, Lebenssituation und ersten Upload noch einmal durchgehen.', `<button class="btn sm" data-act="wiz.open">Öffnen</button>`)}</div></section>
+    <section class="card glass s6"><h3>${icon('scan')} Anzeige</h3><div class="stack" style="gap:14px">
+      ${(d => row('Bildschirm', `${d.standalone ? 'Als App installiert' : 'Im Browser'} · sichtbar ${d.inner} von ${d.screen} px · Sicherheitsrand oben ${d.safeTop}, unten ${d.safeBottom} px`, `<button class="btn sm" data-act="view.heal">Neu berechnen</button>`))(viewDiag())}
+      <p class="muted" style="font-size:13px">Falls unten ein dunkler Balken steht oder Fenster zu hoch sitzen: „Neu berechnen“ tippen. Hilft das nicht, schließe die App einmal vollständig (nach oben wischen) und öffne sie neu.</p></div></section>
     <section class="card glass s6"><h3 class="neg">${icon('alert')} Gefahrenzone</h3><div class="stack" style="gap:14px">${row('Alles löschen', 'Entfernt sämtliche Daten dieses Geräts', `<button class="btn sm danger" data-act="set.wipe">Löschen</button>`)}</div></section>
   </div></div>`;
 }
@@ -5159,6 +5940,7 @@ function bindSettings(root) {
     if (ll.checked) { st.textContent = 'Status: Lädt …'; const ok = await llmEnable(p => { const e = $('#llmState'); if (e) e.textContent = 'Status: ' + (p.text || 'Lädt …').slice(0, 80); }); const e = $('#llmState'); if (e) e.textContent = 'Status: ' + (ok ? 'Aktiv ✓' : 'Fehler: ' + LLM.err); if (!ok) { S.ui.llm = false; save(); const t = $('#sLlm'); if (t) t.checked = false; } }
   });
 }
+ACT['tree.open'] = el => { S.ui.treeOpen = !!el.checked; save(); rerender(); toast(S.ui.treeOpen ? 'Alle Bereiche sind frei' : 'Sperren wieder aktiv'); };
 ACT['set.theme'] = el => { setTheme(el.dataset.t); rerender(); };
 ACT['set.import'] = () => { const i = $('#importIn'); i.value = ''; i.onchange = () => i.files[0] && importBackup(i.files[0]); i.click(); };
 ACT['set.pw.on'] = () => pwForm(false); ACT['set.pw.change'] = () => pwForm(true);
@@ -5385,6 +6167,233 @@ ACT['cn.wa'] = el => { const p = S.people.find(x => x.id === el.dataset.id); if 
 ACT['tg.auto'] = () => { TG().auto = !TG().auto; save(); rerender(); toast(TG().auto ? 'Automatisches Abholen an' : 'Automatisches Abholen aus'); };
 
 /* =====================================================================
+   KAIROS · Fähigkeitenbaum
+   Kapitel und Funktionen schaltest du frei, indem du die Voraussetzungen (fast) vollständig machst.
+   „Trifft nicht zu“ zählt als erledigt. Jede Sperre lässt sich bewusst überspringen – es gibt keine Sackgasse.
+   ===================================================================== */
+const TREE_TH = 0.75;   // ab hier gilt ein Kapitel als „fast vollständig“ und schaltet weiter frei
+const TIERS = [['Fundament', 'Wer du bist'], ['Alltag', 'Wo du wohnst, was du verdienst, wo dein Geld liegt'], ['Absicherung', 'Steuern, Versicherungen, Verträge'], ['Leben & Karriere', 'Familie, Beruf, deine Geschichte'], ['Fähigkeiten', 'Was Kairos mit deinen Daten kann'], ['Meisterschaft', 'Deine digitale Kopie']];
+const TREE = [
+  { id: 'ausweis', t: 0, req: [] }, { id: 'ich', t: 0, req: [] },
+  { id: 'wohnen', t: 1, req: ['ausweis'] }, { id: 'job', t: 1, req: ['ausweis'] }, { id: 'bank', t: 1, req: ['ausweis'] },
+  { id: 'steuer', t: 2, req: ['job'] }, { id: 'versicherung', t: 2, req: ['job'] }, { id: 'vertraege', t: 2, req: ['wohnen', 'job'] }, { id: 'mobil', t: 2, req: ['wohnen'] },
+  { id: 'familie', t: 3, req: ['wohnen'] }, { id: 'beruf', t: 3, req: ['job'] }, { id: 'leben', t: 3, req: ['familie'] },
+  { id: 'f_einblicke', t: 4, feat: 1, n: 'Einblicke', e: '💡', c: '#ffd166', view: 'einblicke', req: ['job', 'vertraege'], d: 'Kairos verknüpft Einkommen, Verträge und Fristen und zeigt dir Sparpotenziale und Chancen.' },
+  { id: 'f_verbinden', t: 4, feat: 1, n: 'Verbindungen', e: '🔗', c: '#6bd1ff', view: 'verbinden', req: ['ausweis', 'vertraege'], d: 'Telegram, WhatsApp und Kalender: Fristen und Zusammenfassungen kommen zu dir.' },
+  { id: 'f_kopie', t: 5, feat: 1, n: 'Digitale Kopie', e: '👑', c: '#c58cff', req: ['ausweis', 'ich', 'wohnen', 'job', 'bank', 'steuer', 'versicherung', 'vertraege', 'mobil', 'familie', 'beruf', 'leben'], d: 'Alles Wichtige ist erfasst – deine digitale Kopie ist komplett.' }
+];
+const TN = Object.fromEntries(TREE.map(n => [n.id, n]));
+const GATE = { vertraege: 'vertraege', beruf: 'beruf', leben: 'leben', einblicke: 'f_einblicke', verbinden: 'f_verbinden' };
+const nodeName = id => TN[id].feat ? TN[id].n : CH[id].n;
+const nodeEmoji = id => TN[id].feat ? TN[id].e : CH[id].e;
+const nodeColor = id => TN[id].feat ? TN[id].c : CH[id].c;
+const treeOpen = () => !!(S.ui && S.ui.treeOpen);
+const treeForced = id => !!(S.tree && S.tree.force && S.tree.force[id]);
+
+/** Ist die Voraussetzung erfüllt? (Kapitel: „trifft nicht zu“, vollständig oder ≥ 75 %) */
+function tnSatisfied(id) {
+  const n = TN[id]; if (!n) return true;
+  if (n.feat) return !tnLocked(id);
+  const st = chStats(id); return !!(st.na || st.done || st.pct >= TREE_TH);
+}
+function tnLocked(id) {
+  const n = TN[id]; if (!n || treeOpen() || treeForced(id)) return false;
+  return n.req.some(r => !tnSatisfied(r));
+}
+function tnState(id) {
+  const n = TN[id], locked = tnLocked(id), missing = n.req.filter(r => !tnSatisfied(r));
+  if (n.feat) {
+    if (id === 'f_kopie') { const done = !locked && overall().pct >= 0.97; return { id, n, locked, missing, state: locked ? 'locked' : done ? 'done' : 'avail', pct: overall().pct }; }
+    return { id, n, locked, missing, state: locked ? 'locked' : 'done', pct: locked ? 0 : 1 };
+  }
+  const st = chStats(id), state = locked ? 'locked' : st.na ? 'na' : st.done && !st.missing.length ? 'done' : st.done ? 'done' : st.have ? 'part' : 'avail';
+  return { id, n, locked, missing, state, pct: st.pct, st };
+}
+function treeGate(route) { const id = GATE[route]; return id && tnLocked(id) ? id : null; }
+const treeScore = () => TREE.filter(n => { const s = tnState(n.id); return s.state === 'done' || s.state === 'na'; }).length;
+
+/** Nächster Schritt folgt dem Baum: erstes freigeschaltetes, noch nicht erledigtes Kapitel */
+function treeNext() {
+  for (const n of TREE) {
+    if (n.feat || n.id === 'ich') continue;
+    const s = tnState(n.id); if (s.locked || s.state === 'na' || (s.st && s.st.done)) continue;
+    return { ch: CH[n.id], st: s.st, o: overall() };
+  }
+  return null;
+}
+
+/* ---------- Darstellung ---------- */
+function tnHTML(id) {
+  const s = tnState(id), n = TN[id], c = nodeColor(id), pc = Math.round(s.pct * 100);
+  const sub = s.locked ? 'braucht ' + nodeName(s.missing[0]) : n.feat ? (s.state === 'done' ? 'freigeschaltet' : 'offen') : s.state === 'na' ? 'trifft nicht zu' : s.state === 'done' ? 'vollständig' : s.st && s.st.have ? `${s.st.have} von ${s.st.total}` : 'bereit';
+  return `<button class="tn ${s.state}" data-act="tn.open" data-id="${id}" data-req="${n.req.join(' ')}" style="--c:${c};--p:${pc}%" aria-label="${esc(nodeName(id))}: ${esc(sub)}"><span class="tn-ring"><i>${s.locked ? '🔒' : s.state === 'done' ? icon('check') : nodeEmoji(id)}</i></span><b>${esc(nodeName(id))}</b><small>${esc(sub)}</small></button>`;
+}
+function treeHTML() {
+  const score = treeScore(), total = TREE.length, rows = TIERS.map((t, i) => { const ns = TREE.filter(n => n.t === i); return ns.length ? `<div class="tier" data-t="${i}"><div class="tier-h"><b>${esc(t[0])}</b><small>${esc(t[1])}</small></div><div class="tier-r n${ns.length}">${ns.map(n => tnHTML(n.id)).join('')}</div></div>` : ''; }).join('');
+  return `<div class="card glass tree" id="skillTree"><div class="card-h">🌳 Dein Fähigkeitenbaum<span class="sp"></span><span class="badge info">${score} von ${total}</span></div>
+    <div class="bar thin" style="margin:2px 0 8px"><i style="width:${Math.round(score / total * 100)}%"></i></div>
+    <p class="muted fine tree-hint">Mach ein Kapitel (fast) vollständig – dann schaltest du die nächsten frei. Passt etwas nicht zu dir, markiere es als „trifft nicht zu“.</p>
+    <div class="tree-body"><svg class="tree-lines" aria-hidden="true"></svg>${rows}</div>
+    ${treeOpen() ? `<p class="muted fine">Alle Sperren sind in den Einstellungen aufgehoben.</p>` : ''}</div>`;
+}
+function treeDraw(root) {
+  const body = $('.tree-body', root), svg = body && $('.tree-lines', body); if (!body || !svg) return;
+  const draw = () => {
+    const br = body.getBoundingClientRect(); if (!br.width) return; svg.setAttribute('viewBox', `0 0 ${br.width} ${br.height}`); svg.setAttribute('width', br.width); svg.setAttribute('height', br.height);
+    const ring = el => { const r = $('.tn-ring', el).getBoundingClientRect(); return { x: r.left + r.width / 2 - br.left, t: r.top - br.top, b: r.bottom - br.top }; };
+    let d = '';
+    $$('.tn', body).forEach(el => {
+      const reqs = (el.dataset.req || '').split(' ').filter(Boolean); if (!reqs.length || reqs.length > 4) return;
+      const to = ring(el), s = tnState(el.dataset.id);
+      reqs.forEach(r => { const pe = $(`.tn[data-id="${r}"]`, body); if (!pe) return; const fr = ring(pe), my = (fr.b + to.t) / 2, on = tnSatisfied(r) && !s.locked, col = on ? nodeColor(r) : 'var(--hair2)';
+        d += `<path d="M${fr.x.toFixed(1)} ${fr.b.toFixed(1)} C${fr.x.toFixed(1)} ${my.toFixed(1)},${to.x.toFixed(1)} ${my.toFixed(1)},${to.x.toFixed(1)} ${to.t.toFixed(1)}" fill="none" stroke="${col}" stroke-width="${on ? 2.2 : 1.4}" ${on ? '' : 'stroke-dasharray="3 5"'} stroke-linecap="round" opacity="${on ? .75 : .55}"/>`; });
+    });
+    svg.innerHTML = d;
+  };
+  draw(); requestAnimationFrame(draw); setTimeout(draw, 350);
+  if (!body._ro && window.ResizeObserver) { body._ro = new ResizeObserver(() => draw()); body._ro.observe(body); }
+}
+
+/* ---------- Interaktion ---------- */
+ACT['tn.open'] = el => {
+  const id = el.dataset.id, n = TN[id]; if (!n) return; const s = tnState(id);
+  if (s.locked) return treeLockSheet(id);
+  if (n.feat) { if (id === 'f_kopie') return treeFeatSheet(id); return go(n.view); }
+  return ACT['ch.open']({ dataset: { ch: id } });
+};
+const _chOpen = ACT['ch.open'];
+ACT['ch.open'] = el => { const id = el.dataset.ch; if (TN[id] && tnLocked(id)) return treeLockSheet(id); return _chOpen(el); };
+
+function treeFeatSheet(id) {
+  const n = TN[id], o = overall(), left = o.chapters.filter(c => !c.na && !c.done).map(c => CH[c.id].n);
+  openSheet(`<div class="chh" style="--c:${n.c}"><span class="chh-e">${n.e}</span><div><small>Meisterschaft</small><h2>${esc(n.n)}</h2></div></div><p class="lead-p">${esc(n.d)}</p><div class="bar" style="margin-bottom:12px"><i style="width:${Math.round(o.pct * 100)}%"></i></div>${left.length ? `<div class="docs-hint"><b>Noch offen:</b> ${left.map(esc).join(' · ')}</div>` : '<div class="ckl ok">' + icon('check') + '<span>Alles erledigt – stark!</span></div>'}<div class="acts"><span class="sp"></span><button class="btn primary" data-sh="no">Weiter</button></div>`, { onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); }) });
+}
+function treeLockSheet(id) {
+  const n = TN[id], miss = tnState(id).missing, c = nodeColor(id);
+  const chip = r => { const s = chStats(TN[r].feat ? 'ausweis' : r), pc = TN[r].feat ? 0 : Math.round(s.pct * 100); return `<button class="tl-r" data-r="${r}"><span class="tl-e">${nodeEmoji(r)}</span><span class="tl-m"><b>${esc(nodeName(r))}</b><small>${TN[r].feat ? 'zuerst freischalten' : `${pc} % · ab ${Math.round(TREE_TH * 100)} % geht es weiter`}</small></span>${icon('chevR')}</button>`; };
+  openSheet(`<div class="chh" style="--c:${c}"><span class="chh-e">🔒</span><div><small>Noch gesperrt</small><h2>${nodeEmoji(id)} ${esc(nodeName(id))}</h2></div></div>
+    <p class="lead-p">${n.feat ? esc(n.d) : esc(CH[id].title + ' – ' + CH[id].ask)}</p>
+    <div class="group-h"><span>So schaltest du es frei</span></div><div class="tl-list">${miss.map(chip).join('')}</div>
+    <p class="muted fine" style="margin:10px 0 0">Passt ein Kapitel nicht zu dir (z. B. kein Job), markiere es als „trifft nicht zu“ – dann zählt es als erledigt.</p>
+    <div class="acts"><button class="btn ghost" data-sh="force">Trotzdem freischalten</button><span class="sp"></span><button class="btn primary" data-sh="first">${esc(nodeName(miss[0] || id))} öffnen</button></div>`,
+  { onMount: sh => sh.addEventListener('click', e => {
+    const r = e.target.closest('[data-r]'), b = e.target.closest('[data-sh]');
+    if (r) { closeSheet(); setTimeout(() => ACT['tn.open']({ dataset: { id: r.dataset.r } }), 260); return; }
+    if (!b) return;
+    if (b.dataset.sh === 'first') { closeSheet(); setTimeout(() => ACT['tn.open']({ dataset: { id: miss[0] } }), 260); }
+    if (b.dataset.sh === 'force') { S.tree = S.tree || { seen: {} }; S.tree.force = S.tree.force || {}; S.tree.force[id] = 1; save(); closeSheet(); rerender(); setTimeout(() => ACT['tn.open']({ dataset: { id } }), 260); }
+  }) });
+}
+
+/* ---------- Freischalten feiern ---------- */
+function treeFx() {
+  if (reduceMotion()) return; const d = document.createElement('div'); d.className = 'tfx'; d.setAttribute('aria-hidden', 'true');
+  d.innerHTML = Array.from({ length: 34 }, (_, i) => `<i style="--x:${(i * 31 + 7) % 100}%;--d:${(i % 10) * .07}s;--c:${['#5e8fff', '#2fe6c6', '#ffb544', '#ff72ac', '#a98cff'][i % 5]}"></i>`).join('');
+  document.body.appendChild(d); setTimeout(() => d.remove(), 2400);
+}
+function treeCheck() {
+  if (!S || !S.tree) return; const t = S.tree; t.seen = t.seen || {}; const fresh = [];
+  for (const n of TREE) { if (!tnLocked(n.id) && !t.seen[n.id]) { t.seen[n.id] = 1; fresh.push(n.id); } }
+  if (!fresh.length) return;
+  const silent = !t.init; t.init = 1; save();
+  if (silent || treeOpen() || !S.ui.onboarded) return;
+  const names = fresh.map(nodeName); buzz(18); treeFx();
+  toast(`🔓 Freigeschaltet: ${names.slice(0, 3).join(', ')}${names.length > 3 ? ' …' : ''}`, 'good', { label: route === 'reise' ? 'Super' : 'Ansehen', fn: () => { if (route !== 'reise') go('reise'); } });
+  if (route === 'reise') rerender();
+}
+let treeTimer = 0;
+function treeSoon() { clearTimeout(treeTimer); treeTimer = setTimeout(() => { try { treeCheck(); } catch (e) { /* ignorieren */ } }, 500); }
+
+/* =====================================================================
+   KAIROS · Start-Assistent
+   Fordert beim Einstieg die Dinge ein, mit denen Kairos sofort gut arbeiten kann:
+   wer du bist, deine Lebenssituation (damit Unpassendes ausgeblendet wird), Einkommen/Miete – und den ersten Upload.
+   Alles ist später im Steckbrief änderbar. Läuft im Willkommensbildschirm und jederzeit als Sheet.
+   ===================================================================== */
+const WZ_BESCH = [['Angestellt', 'Angestellt', '💼'], ['Beamtin / Beamter', 'Beamtin / Beamter', '🏛️'], ['Selbstständig / Freiberuflich', 'Selbstständig', '🚀'], ['Student/in / Azubi', 'Student/in / Azubi', '🎓'], ['Rentner/in', 'Rentner/in', '🌴'], ['Arbeitsuchend', 'Arbeitsuchend', '🔎']];
+const WZ_WOHN = [['Miete', 'Zur Miete', '🔑'], ['Eigentum', 'Eigentum', '🏡'], ['Bei Familie', 'Bei Familie', '👪']];
+const WZ_FAM = ['Ledig', 'Verheiratet', 'Eingetragene Lebenspartnerschaft', 'Geschieden', 'Verwitwet', 'Getrennt'].map(x => [x, x, '']);
+const WZ_KV = [['Gesetzlich versichert (GKV)', 'Gesetzlich', ''], ['Privat versichert (PKV)', 'Privat', ''], ['Freiwillig gesetzlich versichert', 'Freiwillig gesetzlich', ''], ['Familienversichert', 'Familienversichert', ''], ['Heilfürsorge / Beihilfe', 'Heilfürsorge / Beihilfe', '']];
+const WZ_STEPS = ['du', 'alltag', 'unterwegs', 'geld', 'start'];
+const wzPick = (key, items, cur) => `<div class="pick wzp" data-w="${key}">${items.map(([v, l, e]) => `<button type="button" data-v="${esc(v)}" class="${cur === v ? 'on' : ''}">${e ? `<span>${e}</span>` : ''}${esc(l)}</button>`).join('')}</div>`;
+
+function wzInit() {
+  const g = k => pget(k);
+  return { step: 0, d: { vorname: g('vorname') || (S.profile.name || '').split(/\s+/)[0] || '', nachname: g('nachname') || '', geburtsdatum: g('geburtsdatum') || '', besch: g('beschaeftigung') || '', wohnart: g('wohnart') || '', famst: g('familienstand') || '', kv: g('kv_art') || '', kinder: pst('kinder') === 'none' ? 'nein' : '', auto: pst('kennzeichen') === 'none' ? 'nein' : phas('kennzeichen') ? 'ja' : '', fs: pst('fuehrerschein') === 'none' ? 'nein' : pst('fs_bis') === 'open' ? 'unbef' : phas('fuehrerschein') ? 'ja' : '', netto: pget('netto') || null, miete: pget('miete') || null, start: '' } };
+}
+function wzBody(W) {
+  const d = W.d, id = WZ_STEPS[W.step];
+  if (id === 'du') return `<h2>Wer bist du?</h2><p class="lead-p">Damit fängt deine digitale Kopie an. Ein Foto vom Ausweis füllt das später ohnehin von selbst – hier genügen die Basics.</p>
+    <div class="fields"><div class="field"><label for="wzV">Vorname</label><input class="inp" id="wzV" data-w="vorname" value="${esc(d.vorname)}" autocomplete="given-name" placeholder="Vorname(n)"></div><div class="field"><label for="wzN">Nachname</label><input class="inp" id="wzN" data-w="nachname" value="${esc(d.nachname)}" autocomplete="family-name" placeholder="Nachname"></div><div class="field full"><label for="wzG">Geburtsdatum</label><input class="inp" id="wzG" type="date" data-w="geburtsdatum" value="${esc(d.geburtsdatum)}" max="${todayISO()}"></div></div>`;
+  if (id === 'alltag') return `<h2>Dein Alltag</h2><p class="lead-p">Daran erkennt Kairos, was zu dir passt – und blendet Unpassendes aus. Alles lässt sich später ändern.</p>
+    <div class="wzq"><label>Wie arbeitest du?</label>${wzPick('besch', WZ_BESCH, d.besch)}</div>
+    <div class="wzq"><label>Wie wohnst du?</label>${wzPick('wohnart', WZ_WOHN, d.wohnart)}</div>
+    <div class="wzq"><label>Familienstand</label>${wzPick('famst', WZ_FAM, d.famst)}</div>
+    <div class="wzq"><label>Kinder?</label>${wzPick('kinder', [['nein', 'Keine Kinder', ''], ['ja', 'Ja, Kinder', '']], d.kinder)}</div>
+    <div class="wzq"><label>Krankenversicherung</label>${wzPick('kv', WZ_KV, d.kv)}</div>`;
+  if (id === 'unterwegs') return `<h2>Unterwegs</h2><p class="lead-p">Nur, was du wirklich hast, taucht später auf. Ein unbefristeter Führerschein läuft nie ab – das berücksichtigt Kairos bei den Fristen.</p>
+    <div class="wzq"><label>Hast du ein Auto?</label>${wzPick('auto', [['ja', 'Ja', '🚗'], ['nein', 'Nein', '']], d.auto)}</div>
+    <div class="wzq"><label>Führerschein</label>${wzPick('fs', [['unbef', 'Ja, unbefristet gültig', ''], ['ja', 'Ja, mit Ablaufdatum', ''], ['nein', 'Habe keinen', '']], d.fs)}</div>`;
+  if (id === 'geld') return `<h2>Einkommen &amp; Wohnen</h2><p class="lead-p">Damit rechnet Kairos dir aus, was jeden Monat übrig bleibt. Auch das findet ein Kontoauszug später selbst heraus – du kannst es hier überspringen.</p>
+    <div class="fields"><div class="field full"><label for="wzNe">Netto pro Monat</label><input class="inp" id="wzNe" data-w="netto" inputmode="decimal" placeholder="0,00" value="${d.netto ? esc(moneyInput(d.netto)) : ''}" autocomplete="off"></div>${d.wohnart === 'Miete' ? `<div class="field full"><label for="wzMi">Warmmiete pro Monat</label><input class="inp" id="wzMi" data-w="miete" inputmode="decimal" placeholder="0,00" value="${d.miete ? esc(moneyInput(d.miete)) : ''}" autocomplete="off"></div>` : ''}</div>`;
+  return `<h2>Womit startest du?</h2><p class="lead-p">Alles Weitere füllt Kairos aus Dokumenten. Wähle den schnellsten Einstieg – du kannst jederzeit mehr hinzufügen.</p>
+    <div class="wzs">${[['ausweis', '🪪', 'Ausweis fotografieren', 'Name, Geburtsdatum, Anschrift füllen sich selbst'], ['auszug', '🧾', 'Kontoauszug laden', 'Findet Gehalt, Miete, Strom, Abos und Versicherungen'], ['lohn', '💶', 'Lohnabrechnung hochladen', 'Arbeitgeber, Netto, Steuerklasse, Krankenkasse'], ['spaeter', '⏭️', 'Erst mal umsehen', 'Du gehst später Schritt für Schritt vor']].map(([v, e, t, s]) => `<button type="button" class="wzc ${d.start === v ? 'on' : ''}" data-w="start" data-v="${v}"><i>${e}</i><span><b>${t}</b><small>${s}</small></span></button>`).join('')}</div>`;
+}
+function wzRender(host, W, o) {
+  const n = WZ_STEPS.length, last = W.step === n - 1;
+  host.innerHTML = `<div class="wz"><div class="wz-top"><div class="wz-dots" role="progressbar" aria-valuemin="1" aria-valuemax="${n}" aria-valuenow="${W.step + 1}">${WZ_STEPS.map((s, i) => `<i class="${i < W.step ? 'done' : i === W.step ? 'cur' : ''}"></i>`).join('')}</div><button type="button" class="link" data-wz="skip">${o.first ? 'Später einrichten' : 'Schließen'}</button></div>
+    <div class="wz-body">${wzBody(W)}</div>
+    <div class="wz-acts">${W.step ? '<button type="button" class="btn ghost" data-wz="back">Zurück</button>' : ''}<span class="sp"></span>${['unterwegs', 'geld'].includes(WZ_STEPS[W.step]) ? '<button type="button" class="btn ghost" data-wz="next" data-skip="1">Überspringen</button>' : ''}<button type="button" class="btn primary lg" data-wz="next">${last ? 'Los geht’s' : 'Weiter'}</button></div></div>`;
+}
+function wzValid(W) {
+  const d = W.d, id = WZ_STEPS[W.step], miss = [];
+  if (id === 'du') { if (!d.vorname.trim()) miss.push('vorname'); if (!d.nachname.trim()) miss.push('nachname'); if (!d.geburtsdatum || d.geburtsdatum > todayISO() || d.geburtsdatum < '1900-01-01') miss.push('geburtsdatum'); }
+  if (id === 'alltag') for (const k of ['besch', 'wohnart', 'famst', 'kv']) if (!d[k]) miss.push(k);
+  return miss;
+}
+function wzSave(W) {
+  const d = W.d, v = {}, keys = [], put = (k, val) => { if (val != null && val !== '') { v[k] = val; keys.push(k); } }, none = k => { v[k + '__none'] = true; keys.push(k); }, open = k => { v[k + '__open'] = true; keys.push(k); };
+  put('vorname', d.vorname.trim()); put('nachname', d.nachname.trim()); put('geburtsdatum', d.geburtsdatum);
+  put('beschaeftigung', d.besch); put('wohnart', d.wohnart); put('familienstand', d.famst); put('kv_art', d.kv);
+  if (d.kinder === 'nein') none('kinder');
+  if (d.auto === 'nein') none('kennzeichen');
+  if (d.fs === 'unbef') open('fs_bis'); else if (d.fs === 'nein') none('fuehrerschein');
+  if (['Rentner/in', 'Arbeitsuchend', 'Selbstständig / Freiberuflich'].includes(d.besch)) none('arbeitgeber');
+  if (d.netto) put('netto', d.netto);
+  if (d.wohnart === 'Miete') { if (d.miete) put('miete', d.miete); } else if (d.wohnart) none('miete');
+  if (d.besch === 'Rentner/in' || d.besch === 'Arbeitsuchend') S.journey.na.beruf = 1;
+  saveFields([...new Set(keys)].filter(k => PF[k]), v);
+  if (d.vorname.trim()) S.profile.name = d.vorname.trim().split(/\s+/)[0].slice(0, 30);
+  S.ui.wizardDone = true; S.ui.onboarded = true; save();
+}
+/** Läuft in `host`; gibt die gewählte Start-Aktion zurück (oder null) */
+function runWizard(host, o = {}) {
+  return new Promise(res => {
+    const W = wzInit(); const draw = () => { wzRender(host, W, o); const f = host.querySelector('input'); if (f && !matchMedia('(pointer:coarse)').matches) setTimeout(() => f.focus(), 60); };
+    const finish = act => res(act || null);
+    const startAct = () => ({ ausweis: () => ACT['cap.pick']({ dataset: { ch: 'ausweis' } }), lohn: () => ACT['cap.pick']({ dataset: { ch: 'job' } }), auszug: () => ACT['st.import']() }[W.d.start] || null);
+    host.addEventListener('input', e => { const k = e.target.dataset && e.target.dataset.w; if (!k) return; if (k === 'netto' || k === 'miete') { const raw = e.target.value.trim(); W.d[k] = raw ? parseMoney(raw) : null; } else W.d[k] = e.target.value; });
+    host.addEventListener('click', e => {
+      const p = e.target.closest('.wzp button, .wzc'); if (p) { const k = p.dataset.w || p.parentElement.dataset.w, v = p.dataset.v; W.d[k] = W.d[k] === v && k !== 'start' ? '' : v; buzz(6); const keep = host.querySelector('.wz-body').scrollTop; draw(); if (k === 'start') { /* Auswahl bestätigt */ } host.querySelector('.wz-body').scrollTop = keep; return; }
+      const b = e.target.closest('[data-wz]'); if (!b) return; const a = b.dataset.wz;
+      if (a === 'back') { W.step = Math.max(0, W.step - 1); draw(); return; }
+      if (a === 'skip') { if (o.first) { S.ui.onboarded = true; save(); } finish(null); return; }
+      if (a === 'next') {
+        if (!b.dataset.skip) { const miss = wzValid(W); if (miss.length) { const sel = { vorname: '#wzV', nachname: '#wzN', geburtsdatum: '#wzG' }; miss.forEach(k => { const el = sel[k] ? host.querySelector(sel[k]) : host.querySelector(`.wzp[data-w="${k}"]`); if (el) el.classList.add('bad'); }); toast(WZ_STEPS[W.step] === 'du' ? 'Bitte Vor-, Nachname und Geburtsdatum eintragen.' : 'Bitte wähle bei jeder Frage eine Antwort.', 'bad'); return; } }
+        else if (WZ_STEPS[W.step] === 'geld') { W.d.netto = W.d.miete = null; }
+        if (W.step < WZ_STEPS.length - 1) { W.step++; draw(); host.querySelector('.wz-body').scrollTop = 0; return; }
+        wzSave(W); finish(startAct());
+      }
+    });
+    draw();
+  });
+}
+ACT['wiz.open'] = () => {
+  const sh = openSheet('<div id="wzHost"></div>', { wide: true });
+  runWizard($('#wzHost', sh), {}).then(act => { closeSheet(); renderNav(); rerender(); if (act) setTimeout(act, 320); else toast('Gespeichert', 'good'); });
+};
+
+/* =====================================================================
    KAIROS · Start: Splash, Onboarding, Boot
    ===================================================================== */
 function showOnboarding(replay) {
@@ -5393,14 +6402,16 @@ function showOnboarding(replay) {
     el.innerHTML = `<div class="onb"><div class="onb-card glass"><div class="logo-lg anim">${logoSvg('onb')}</div><h1>Deine digitale <span class="gradtxt">Kopie</span></h1><p class="onb-sub">Kairos baut aus deinen Dokumenten Schritt für Schritt ein vollständiges Abbild von dir – dein Ausweis, dein Job, deine Bank, deine Versicherungen. Alles an einem Ort, jederzeit abrufbar.</p>
       <div class="onb-feats"><div><span>🪪</span><b>1 · Ausweis</b><small>Foto vom Perso – Name, Geburtsdatum, Anschrift füllen sich von selbst.</small></div><div><span>💶</span><b>2 · Dokumente</b><small>Lohnabrechnung, Brief, Karte – Kairos liest und ordnet alles zu.</small></div><div><span>✅</span><b>3 · Vollständig</b><small>Bis deine Identität digital komplett ist – und du sie einfach abfragen kannst.</small></div></div>
       ${replay ? '<div class="onb-acts"><button class="btn primary lg" id="onbClose">Schließen</button></div>' : `<form id="onbForm"><div class="field"><label for="onbName">Wie soll ich dich nennen?</label><input class="inp" id="onbName" placeholder="Dein Vorname" value="${esc(S.profile.name || '')}" autocomplete="given-name"></div>
-      <div class="onb-acts"><button class="btn primary lg" type="submit">Reise starten</button></div></form>`}
+      <div class="onb-acts"><button class="btn primary lg" type="submit">Los geht’s</button></div><button type="button" class="link onb-skip" id="onbSkip">Später einrichten</button></form>`}
       <small class="faint onb-priv">${icon('lock')} Alles bleibt auf diesem Gerät. Keine Cloud, kein Konto, keine API.</small></div></div>`;
     if (replay) { $('#onbClose').onclick = () => { el.hidden = true; el.innerHTML = ''; res(); }; return; }
+    const fin = async act => { S.ui.onboarded = true; dirty = true; await saveNow(); el.hidden = true; el.innerHTML = ''; res(act || null); };
     $('#onbForm').addEventListener('submit', async e => {
-      e.preventDefault(); S.profile.name = $('#onbName').value.trim().slice(0, 30); S.ui.onboarded = true;
-      dirty = true; await saveNow();
-      el.hidden = true; el.innerHTML = ''; res();
+      e.preventDefault(); S.profile.name = $('#onbName').value.trim().slice(0, 30); dirty = true; await saveNow();
+      const card = $('.onb-card', el); card.classList.add('wz-card'); card.scrollTop = 0;
+      fin(await runWizard(card, { first: true }));
     });
+    $('#onbSkip').addEventListener('click', () => { S.profile.name = $('#onbName').value.trim().slice(0, 30); fin(null); });
     setTimeout(() => { const i = $('#onbName'); i && i.focus(); }, 400);
   });
 }
@@ -5426,13 +6437,13 @@ async function boot() {
   if (minSplash > 0) await sleep(minSplash);
   $('#splash').classList.add('out'); setTimeout(() => $('#splash').remove(), 700);
   if (st === 'locked') await showLock();
-  else if (st === 'empty') await showOnboarding();
-  afterUnlock();
+  let post = null; if (st === 'empty') post = await showOnboarding();
+  afterUnlock(); if (post) setTimeout(post, 800);
   setSyncLabel(memOnly ? 'Nur in dieser Sitzung (Speicher blockiert)' : 'Lokal gespeichert', memOnly);
   if (memOnly) toast('Dein Browser blockiert den lokalen Speicher – Daten gehen beim Schließen verloren. Bitte Backup erstellen.', 'bad');
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => { /* optional */ });
   window.addEventListener('keydown', e => { if (e.key === '/' && !/input|textarea|select/i.test(e.target.tagName) && !$('#sheetWrap').classList.contains('open')) { e.preventDefault(); ACT['cmd.open'](); } });
-  window.__K = { get S() { return S; }, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
+  window.__K = { get S() { return S; }, get route() { return route; }, tnState, tnLocked, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, provList, PROV, xSpecs, katalogInsights, parseStatement, stAnalyze, stApply, stMatch, stRun, stNum, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<pre style="position:fixed;inset:20px;z-index:999;background:#300;color:#fff;padding:20px;overflow:auto">Kairos konnte nicht starten:\n${esc(e && e.stack || e)}</pre>`); });
 
