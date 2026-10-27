@@ -830,6 +830,53 @@ button.lf:hover{background:var(--field)}
 .ins-h .ins-k{margin-right:auto}.ins-h .iconbtn{width:28px;height:28px;opacity:.5}.ins:hover .ins-h .iconbtn{opacity:1}
 @media (max-width:900px){.pgr{grid-template-columns:minmax(0,1fr)}}
 
+/* ---- Verträge: einklappbar, Haushaltsrechnung ---- */
+.vexp{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:6px;padding:11px 12px;border:0;border-radius:14px;background:rgba(255,255,255,.05);color:var(--txt2);font:inherit;font-size:13px;font-weight:600;cursor:pointer;min-height:44px}
+.vexp svg{width:15px;height:15px}
+:root[data-theme="light"] .vexp{background:rgba(20,30,70,.05)}
+.hhc .hh-rows{display:grid;gap:2px;margin-top:6px}
+.hhc .hh-rows>div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;font-size:14px;border-bottom:1px solid var(--hair)}
+.hhc .hh-rows .sub{padding-left:14px;font-size:12.5px;color:var(--txt2)}
+.hhc .hh-rows .tot{border-bottom:0;font-weight:700;font-size:15.5px}
+.hhc .hh-rows b{font-variant-numeric:tabular-nums}
+.hhc .hh-bar{margin:6px 0 8px}
+.hhc .neg{color:var(--neg,#ff6b7d)} .hhc .pos{color:var(--pos)}
+.vsec-h .btn.sm.ghost{padding:0 10px;min-width:40px}
+
+/* ---- Beruf & Karriere ---- */
+.brp>.card{margin-bottom:16px}
+.br-hero{padding:18px 18px 14px}
+.br-top{display:flex;align-items:center;gap:14px}
+.br-e{width:52px;height:52px;border-radius:18px;display:grid;place-items:center;font-size:26px;flex:none;background:color-mix(in srgb,var(--c-biz) 22%,var(--field-f))}
+.br-t{flex:1;min-width:0}.br-t small{display:block;color:var(--text2);font-size:12.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.br-t h2{font-size:22px;letter-spacing:-.025em;line-height:1.15;overflow-wrap:anywhere}
+.br-chips{margin-top:12px}.br-chips .chip i{font-style:normal}
+.br-k{margin:14px 0 0}.br-k .kpi2{padding:11px 12px;border-radius:16px}.br-k .kpi2 b{font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.br-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:16px;align-items:start}
+.br-cols>.card{margin:0}
+.cv-sec{margin-top:16px}.cv-sec:first-of-type{margin-top:12px}
+.cv-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.cv-h b{font-size:14px;letter-spacing:-.005em}
+.cv-p{font-size:14.5px;line-height:1.5;color:var(--text2);white-space:pre-line}.cv-p b{color:var(--text)}
+.cv-chk .chip{height:26px;font-size:12px;padding:0 10px}.cv-chk .chip.ok{color:var(--pos);background:color-mix(in srgb,var(--pos) 12%,transparent)}.cv-chk .chip svg{width:13px;height:13px}
+.tl{display:flex;flex-direction:column;position:relative}
+.tl-i{display:grid;grid-template-columns:18px minmax(0,1fr) 18px;align-items:start;gap:10px;text-align:left;width:100%;padding:8px 4px;border-radius:14px;position:relative;color:var(--text)}
+.tl-i:hover{background:var(--field)}
+.tl-i::before{content:"";position:absolute;left:12px;top:22px;bottom:-8px;width:2px;background:var(--hair);border-radius:2px}
+.tl-i:last-child::before{display:none}
+.tl-d{width:10px;height:10px;border-radius:50%;margin:6px 0 0 3px;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent);position:relative;z-index:1}
+.tl-b{display:flex;flex-direction:column;gap:1px;min-width:0}.tl-b b{font-size:14.5px;font-weight:650;overflow-wrap:anywhere}.tl-b small{font-size:13px;color:var(--text2);overflow-wrap:anywhere}.tl-b em{font-style:normal;font-size:12px;color:var(--text3);font-weight:600}
+.tl-ds{font-size:12.5px;color:var(--text2);margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tl-i>svg{width:16px;height:16px;margin-top:5px;color:var(--text3)}
+.btnchip{cursor:pointer;height:auto;min-height:32px;padding-top:4px;padding-bottom:4px}.btnchip em{font-style:normal;font-size:11.5px;opacity:.7}
+.lv{display:inline-flex;gap:2px;margin-left:2px}.lv b{width:5px;height:5px;border-radius:50%;background:var(--hair2)}.lv b.on{background:var(--accent)}
+.cv-prev{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.cv-pi{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:14px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair)}
+.cv-pi span{display:flex;flex-direction:column;min-width:0}.cv-pi small{font-size:12.5px;color:var(--text2)}
+@media (max-width:900px){.br-cols{grid-template-columns:minmax(0,1fr)}.br-k{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.li-e{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:19px;flex:none;background:var(--field-f)}
+.li-m{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}.li-m b{font-size:15px;font-weight:620;overflow-wrap:anywhere}.li-m small{font-size:12.5px;color:var(--text2);line-height:1.35}
+.li>svg{flex:none;width:18px;height:18px;color:var(--text3)}
+
 /* ===== Dock (nur mobil) ===== */
 .dock{display:none}
 .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
@@ -894,6 +941,66 @@ button.lf:hover{background:var(--field)}
 @media (hover:none){.btn:hover{background:var(--glass2)}.btn.primary:hover{filter:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 @media print{.side,.dock,.aurora{display:none}}
+
+/* =====================================================================
+   KAIROS · iOS/Safari-Härtung
+   - feste App-Hülle (keine Lücken/Balken unter Home-Indikator oder bei Tastatur)
+   - Unschärfe nur auf wenigen festen Flächen (Dock, Sheet, Toast), nicht auf jeder Karte:
+     Safari zeigt sonst beim Scrollen schwarze/fehlende Kacheln und schluckt Akku
+   - Hintergrund ohne große Blur-Filter
+   ===================================================================== */
+html{background:var(--bg);height:100%;overscroll-behavior:none}
+body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden}
+.app{position:fixed;inset:0;height:auto;width:100%;grid-template-rows:minmax(0,1fr)}
+.main,.sheet,.cmd-body,#nav{-webkit-overflow-scrolling:touch}
+.sheet,.cmd-body{overscroll-behavior:contain}
+
+/* Aurora ohne filter:blur – weiche Farbkugeln per Verlauf */
+.aurora i{filter:none;background:radial-gradient(closest-side,var(--o) 0%,transparent 100%)}
+.aurora i:nth-child(1){--o:var(--orb1);width:76vmax;height:76vmax;left:-24vmax;top:-26vmax}
+.aurora i:nth-child(2){--o:var(--orb3);width:64vmax;height:64vmax;right:-22vmax;top:12vh}
+.aurora i:nth-child(3){--o:var(--orb2);width:70vmax;height:70vmax;left:8vw;bottom:-34vmax}
+
+/* Kleine Elemente nie mit eigener Unschärfe (verschachtelt = Fehler in Safari) */
+.sat-in{-webkit-backdrop-filter:none;backdrop-filter:none;background:color-mix(in srgb,var(--glass3) 70%,var(--bg2))}
+.pbadge{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(10,14,36,.78)}
+:root[data-theme="light"] .sat-in{background:#fff}
+
+/* Sheet-Ebene: Overlay ohne eigenen Blur, nur das Sheet bekommt Glas */
+.overlay{-webkit-backdrop-filter:none;backdrop-filter:none}
+:root[data-theme="dark"] .sheet{background:rgba(22,28,60,.94)}
+:root[data-theme="light"] .sheet{background:rgba(255,255,255,.96)}
+.sheet.glass{-webkit-backdrop-filter:blur(24px) saturate(1.5);backdrop-filter:blur(24px) saturate(1.5)}
+
+/* Mobil: Karten ohne Blur, dafür etwas deckender */
+@media (max-width:900px){
+  :root{--glass-m:rgba(26,33,74,.62)}
+  :root[data-theme="light"]{--glass-m:rgba(255,255,255,.80)}
+  .glass{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--glass-m)}
+  .glass::before{display:none}
+  .sheet.glass,.dock.glass,.cmd.glass,.toast{-webkit-backdrop-filter:blur(24px) saturate(1.5);backdrop-filter:blur(24px) saturate(1.5)}
+  .sheet.glass{background:rgba(22,28,60,.94)}
+  :root[data-theme="light"] .sheet.glass{background:rgba(255,255,255,.96)}
+  .dock.glass{background:color-mix(in srgb,var(--bg2) 80%,transparent)}
+  /* Overlay folgt dem sichtbaren Bereich (Tastatur!) */
+  .overlay{top:var(--vvt,0px);bottom:auto;height:var(--vvh,100%);background:rgba(2,4,14,.58)}
+  :root[data-theme="light"] .overlay{background:rgba(30,40,90,.32)}
+  .sheet{max-height:calc(var(--vvh,100dvh) - 16px);padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+  .cmd-body{max-height:calc(var(--vvh,100dvh) - 150px)}
+  body.kb .dock{transform:translateY(160%);opacity:0;pointer-events:none}
+  body.kb #toasts{bottom:calc(var(--kb,0px) + 16px)}
+  /* Seitenränder in Querformat / Notch */
+  .page{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+  .dock{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right))}
+  /* Eingaben mindestens 16px, sonst zoomt iOS beim Fokus */
+  .inp,.sel,.txt,input,select,textarea{font-size:16px}
+  /* Sticky Aktionsleiste im Sheet */
+  .sheet .acts{position:sticky;bottom:calc(-20px - env(safe-area-inset-bottom));margin:18px -18px calc(-20px - env(safe-area-inset-bottom));padding:12px 18px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(180deg,transparent 0,rgba(22,28,60,.98) 14px);z-index:2}
+  :root[data-theme="light"] .sheet .acts{background:linear-gradient(180deg,transparent 0,rgba(255,255,255,.98) 14px)}
+  .sheet .acts .dl{display:none}
+  .sheet .acts .btn.danger{padding:0 14px}
+}
+@supports not (height:100dvh){.sheet{max-height:88vh}}
 
 </style>
 </head>
@@ -1076,6 +1183,7 @@ const AREAS = {
   reise:     { name: 'Reise',      ic: 'route',  c: 'var(--accent)' },
   steckbrief:{ name: 'Steckbrief', ic: 'id',     c: 'var(--c-fin)' },
   vertraege: { name: 'Verträge',   ic: 'receipt',c: 'var(--c-life)' },
+  beruf:     { name: 'Beruf',      ic: 'briefcase', c: 'var(--c-biz)' },
   leben:     { name: 'Lebensweg',  ic: 'flag',   c: 'var(--c-shop)' },
   einblicke: { name: 'Einblicke',  ic: 'bulb',   c: 'var(--c-biz)' },
   dokumente: { name: 'Dokumente',  ic: 'file',   c: 'var(--c-life)' },
@@ -1086,7 +1194,7 @@ const AREAS = {
 const DOC_CATS = { gehalt: ['Gehalt & Lohn', '💶'], rechnung: ['Rechnungen', '🧾'], vertrag: ['Verträge', '📝'], versicherung: ['Versicherung', '🛡️'], steuer: ['Steuer', '🏛️'], post: ['Post & Behörden', '✉️'], bank: ['Bank', '🏦'], ident: ['Identität', '🪪'], gesundheit: ['Gesundheit', '🩺'], job: ['Job & Zeugnisse', '💼'], garantie: ['Belege & Garantie', '📦'], wohnen: ['Wohnen', '🏠'], familie: ['Familie', '👨‍👩‍👧'], mobil: ['Mobilität', '🚗'], sonst: ['Sonstiges', '📄'] };
 
 const defaultState = () => ({
-  v: 5,
+  v: 6,
   profile: { name: '', avatar: null, created: Date.now() },
   photos: [],                     // Fotos: { id, name, created, w, h, thumb, size, tag }
   prof: {},                       // Profilfelder: key → { v, src, conf, ok, at }
@@ -1094,6 +1202,7 @@ const defaultState = () => ({
   vertr: {},                      // Verträge & Versicherungen: id → { st:'ja'|'nein', anbieter, kosten, … }
   people: [],                     // Menschen: { id, rel, name, geb, … }
   events: [],                     // Lebensereignisse: { id, t, date, status, done:{} }
+  cv: { head: '', sum: '', st: [], sk: [], la: [], ce: [], at: 0 }, // Lebenslauf: Stationen, Kenntnisse, Sprachen, Zertifikate
   int: {},                        // Verbindungen (Telegram …)
   brain: null,                    // freie Notizen
   journey: { na: {}, celebrated: {} },
@@ -1164,7 +1273,7 @@ async function saveNow() {
 function migrate(st) {
   const d = defaultState(); st = st || {};
   const out = Object.assign(d, { profile: Object.assign(d.profile, st.profile || {}), prof: st.prof || {}, docs: st.docs || [], photos: st.photos || [], vertr: st.vertr || {}, people: st.people || [], events: st.events || [], int: st.int || {}, brain: st.brain || null, journey: Object.assign(d.journey, st.journey || {}), ui: Object.assign(d.ui, st.ui || {}) });
-  out.v = 5;
+  out.cv = Object.assign(defaultState().cv, st.cv || {}); out.v = 6;
   if (st.demo) { out.prof = {}; out.docs = []; out.photos = []; out.journey = defaultState().journey; out.ui.notice = 'Die Beispieldaten wurden entfernt.'; }   // frühere Demo-Daten sind nicht mehr Teil der App
   return out;
 }
@@ -1311,7 +1420,7 @@ function formSheet({ title, sub, fields, onSubmit, onDelete, submit = 'Sichern',
   };
   const html = `<form id="fsForm" novalidate><h2>${esc(title)}</h2>${sub ? `<p class="lead-p">${esc(sub)}</p>` : '<div style="height:14px"></div>'}
     <div class="fields">${fields.map(f).join('')}</div>${extra || ''}
-    <div class="acts">${onDelete ? `<button type="button" class="btn danger ghost" data-sh="del">${icon('trash')}Löschen</button>` : ''}<span class="sp"></span><button type="button" class="btn" data-sh="no">Abbrechen</button><button type="submit" class="btn primary">${esc(submit)}</button></div></form>`;
+    <div class="acts">${onDelete ? `<button type="button" class="btn danger ghost" data-sh="del" aria-label="Löschen">${icon('trash')}<span class="dl">Löschen</span></button>` : ''}<span class="sp"></span><button type="button" class="btn" data-sh="no">Abbrechen</button><button type="submit" class="btn primary">${esc(submit)}</button></div></form>`;
   return openSheet(html, {
     wide,
     onMount: sh => {
@@ -1380,8 +1489,8 @@ function countUp(el, to, fmt = c => money(c)) {
 }
 
 /* ---------- Router & Navigation ---------- */
-const ROUTES = ['reise', 'steckbrief', 'vertraege', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden', 'einstellungen'];
-const MORE_ROUTES = ['dokumente', 'vertraege', 'leben', 'verbinden', 'einstellungen'];
+const ROUTES = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden', 'einstellungen'];
+const MORE_ROUTES = ['dokumente', 'beruf', 'vertraege', 'leben', 'verbinden', 'einstellungen'];
 let route = 'reise';
 function badgeCounts() { return { dokumente: S.docs.filter(d => d.status === 'neu').length, einblicke: typeof urgentCount === 'function' ? urgentCount() : 0 }; }
 function avatarHTML(cls = '') {
@@ -1391,7 +1500,7 @@ function avatarHTML(cls = '') {
 function renderNav() {
   const bc = badgeCounts();
   const item = r => { const a = AREAS[r], n = bc[r]; return `<button class="nv ${route === r ? 'on' : ''}" style="--c:${a.c}" data-go="${r}" ${route === r ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt alert">${n}</span>` : ''}</button>`; };
-  $('#nav').innerHTML = ['reise', 'steckbrief', 'vertraege', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
+  $('#nav').innerHTML = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
   const dk = (r, lab) => `<button class="dk ${route === r ? 'on' : ''}" style="--c:${AREAS[r].c}" data-go="${r}" aria-label="${lab}"><span class="dki">${icon(AREAS[r].ic)}</span><span class="dkl">${lab}</span>${bc[r] ? '<i class="dot"></i>' : ''}</button>`;
   $('#dock').innerHTML = dk('reise', 'Reise') + dk('steckbrief', 'Steckbrief') +
     `<button class="dk dko ${route === 'kairos' ? 'on' : ''}" data-go="kairos" aria-label="Kairos fragen"><span>${logoSvg('dock')}</span></button>` + dk('einblicke', 'Einblicke') +
@@ -1442,6 +1551,15 @@ function setTheme(t) {
   const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = eff === 'dark' ? '#070a1c' : '#e9eefb';
 }
 matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => { if (lsGet('kairos-theme') === 'auto') setTheme('auto'); });
+
+/* iOS: sichtbaren Bereich (Tastatur, Adressleiste) als CSS-Variablen – Sheets bleiben dadurch immer komplett sichtbar */
+(function () {
+  const vv = window.visualViewport, R = document.documentElement.style; if (!vv) return;
+  const set = () => { const kb = Math.max(0, Math.round(innerHeight - vv.height - vv.offsetTop)); R.setProperty('--vvh', Math.round(vv.height) + 'px'); R.setProperty('--vvt', Math.round(vv.offsetTop) + 'px'); R.setProperty('--kb', kb + 'px'); document.body.classList.toggle('kb', kb > 120); };
+  vv.addEventListener('resize', set); vv.addEventListener('scroll', set); addEventListener('orientationchange', () => setTimeout(set, 250)); set();
+  document.addEventListener('focusin', e => { if (e.target.matches('input,textarea,select') && e.target.closest('.sheet,.cmd')) setTimeout(() => { try { e.target.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (er) { /* ignorieren */ } }, 320); });
+  document.addEventListener('focusout', () => setTimeout(() => { const a = document.activeElement; if (!a || !/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) { window.scrollTo(0, 0); set(); } }, 120));
+})();
 
 /* App-Gefühl: kein Pinch-Zoom, kein Doppeltipp-Zoom, kein Kontextmenü auf Bedienelementen */
 ['gesturestart', 'gesturechange', 'gestureend'].forEach(ev => document.addEventListener(ev, e => e.preventDefault()));
@@ -2711,10 +2829,11 @@ async function ocrSelfTest(log) {
 const CHAPTERS = [
   { id: 'ausweis', n: 'Ausweis', e: '🪪', ic: 'id', title: 'Wer du bist', ask: 'Lade Vorder- und Rückseite deines Personalausweises hoch.', reads: 'Name, Geburtsdatum & -ort, Gültigkeit, Ausweisnummer, Anschrift', docs: ['Personalausweis (Vorder- & Rückseite)', 'Reisepass'], slots: ['Vorderseite', 'Rückseite'], c: '#5e8fff' },
   { id: 'wohnen', n: 'Wohnen', e: '🏠', ic: 'home', title: 'Wo du lebst', ask: 'Eine Meldebescheinigung oder dein Mietvertrag füllt dieses Kapitel.', reads: 'Anschrift, Einzugsdatum, Miete, Vermieter', docs: ['Meldebescheinigung', 'Mietvertrag'], c: '#2fe6c6' },
-  { id: 'job', n: 'Arbeit & Einkommen', e: '💼', ic: 'briefcase', title: 'Wovon du lebst', ask: 'Lade deine letzte Gehaltsabrechnung hoch.', reads: 'Arbeitgeber, Brutto & Netto, Steuerklasse, SV-Nummer, Steuer-ID, IBAN, Krankenkasse', docs: ['Gehaltsabrechnung', 'Arbeitsvertrag'], c: '#ffb544' },
+  { id: 'job', n: 'Einkommen', e: '💼', ic: 'briefcase', title: 'Wovon du lebst', ask: 'Lade deine letzte Gehaltsabrechnung hoch.', reads: 'Arbeitgeber, Brutto & Netto, Steuerklasse, SV-Nummer, Steuer-ID, IBAN, Krankenkasse', docs: ['Gehaltsabrechnung', 'Arbeitsvertrag'], c: '#ffb544' },
+  { id: 'beruf', n: 'Beruf & Karriere', e: '🧑‍💼', ic: 'briefcase', title: 'Was du beruflich machst und kannst', ask: 'Trag Arbeitsplatz, Dienstwagen & Benefits und deinen Lebenslauf ein.', reads: 'Standort, Führung, Vertrag, Benefits, Lebenslauf, Zertifikate', docs: ['Arbeitsvertrag', 'Zeugnisse', 'Lebenslauf'], c: '#f5a524', view: 'beruf', quick: 'br.start', stats: c => berufStats(c) },
   { id: 'bank', n: 'Bank', e: '🏦', ic: 'bank', title: 'Wo dein Geld liegt', ask: 'Ein Kontoauszug oder ein Foto deiner Bankkarte genügt.', reads: 'IBAN, BIC, Bank, Kontoinhaber', docs: ['Kontoauszug', 'Bankbrief'], c: '#35d399' },
   { id: 'steuer', n: 'Steuern', e: '🏛️', ic: 'shield', title: 'Was das Finanzamt weiß', ask: 'Steuerbescheid oder der Brief mit deiner Steuer-ID.', reads: 'Steuer-ID, Steuernummer, Finanzamt, letzter Bescheid', docs: ['Steuerbescheid', 'Brief zur Steuer-ID'], c: '#ff72ac' },
-  { id: 'versicherung', n: 'Versicherungen', e: '🛡️', ic: 'shieldcheck', title: 'Wie du abgesichert bist', ask: 'Gesundheitskarte, Mitgliedsbescheinigung oder Versicherungsschein.', reads: 'Krankenkasse, Versichertennummer, Haftpflicht, Hausrat', docs: ['Gesundheitskarte', 'Versicherungsschein'], c: '#a98cff' },
+  { id: 'versicherung', n: 'Gesundheit & Vorsorge', e: '🛡️', ic: 'shieldcheck', title: 'Wie du abgesichert bist', ask: 'Gesundheitskarte, Mitgliedsbescheinigung oder Versicherungsschein.', reads: 'Krankenkasse, Versichertennummer, Haftpflicht, Hausrat, Vorsorge', docs: ['Gesundheitskarte', 'Versicherungsschein'], c: '#a98cff' },
   { id: 'familie', n: 'Familie', e: '👨‍👩‍👧', ic: 'family', title: 'Menschen, die zählen', ask: 'Geburts- oder Heiratsurkunde – oder trag es direkt ein.', reads: 'Familienstand, Partner, Kinder', docs: ['Geburtsurkunde', 'Heiratsurkunde'], c: '#ff9a6b' },
   { id: 'mobil', n: 'Mobilität', e: '🚗', ic: 'car', title: 'Wie du unterwegs bist', ask: 'Führerschein und Fahrzeugschein.', reads: 'Führerschein-Nr., Klassen, Gültigkeit, Kennzeichen', docs: ['Führerschein', 'Fahrzeugschein'], c: '#6bd1ff', optional: true },
   { id: 'vertraege', n: 'Verträge', e: '📝', ic: 'receipt', title: 'Was du laufen hast – und was nicht', ask: 'Geh den Schnell-Check durch: Pro Vertrag „Ja“, „Habe ich nicht“ oder „Später“.', reads: 'Strom, Gas, Internet, Handy, Haftpflicht, Hausrat, Kfz, Vorsorge, Abos', docs: ['Versicherungsschein', 'Strom-/Gasabrechnung', 'Vertragsbestätigung'], c: '#4fc3f7', view: 'vertraege', stats: c => vertraegeStats(c) },
@@ -2728,15 +2847,21 @@ const PF_LIST = [
   ['vorname', 'Vorname(n)', 'ausweis', 'text', 1, 'vorname vornamen rufname'], ['nachname', 'Nachname', 'ausweis', 'text', 1, 'nachname familienname name'], ['geburtsname', 'Geburtsname', 'ausweis', 'text', .5, 'geburtsname'],
   ['geburtsdatum', 'Geburtsdatum', 'ausweis', 'date', 1, 'geburtsdatum geburtstag geboren alter'], ['geburtsort', 'Geburtsort', 'ausweis', 'text', 1, 'geburtsort geboren'], ['staat', 'Staatsangehörigkeit', 'ausweis', 'text', .5, 'staatsangehorigkeit nationalitat staatsburger'],
   ['geschlecht', 'Geschlecht', 'ausweis', 'select', .5, 'geschlecht', false, ['weiblich', 'männlich', 'divers']], ['groesse', 'Körpergröße', 'ausweis', 'text', .5, 'grosse korpergrosse gross groesse'], ['augen', 'Augenfarbe', 'ausweis', 'text', .5, 'augenfarbe augen'],
-  ['ausweis_art', 'Ausweisart', 'ausweis', 'select', .5, 'ausweisart', false, ['Personalausweis', 'Reisepass']], ['ausweisnr', 'Ausweisnummer', 'ausweis', 'text', 1, 'ausweisnummer personalausweisnummer ausweis nummer', true], ['ausweis_bis', 'Ausweis gültig bis', 'ausweis', 'date', 1, 'ausweis perso personalausweis gultig ablauf lauft ab reisepass'],
+  ['ausweis_art', 'Ausweisart', 'ausweis', 'select', .5, 'ausweisart', false, ['Personalausweis', 'Reisepass']], ['ausweisnr', 'Ausweisnummer', 'ausweis', 'text', 1, 'ausweisnummer personalausweisnummer ausweis nummer', true], ['ausweis_bis', 'Ausweis gültig bis', 'ausweis', 'date', 1, 'ausweis perso personalausweis gultig ablauf lauft ab reisepass'], ['pass_nr', 'Reisepassnummer', 'ausweis', 'text', .5, 'reisepassnummer reisepass passnummer', true], ['pass_bis', 'Reisepass gültig bis', 'ausweis', 'date', .5, 'reisepass gultig ablauf'],
   ['strasse', 'Straße & Hausnummer', 'wohnen', 'text', 1, 'strasse adresse anschrift wohne wohnort'], ['plz', 'Postleitzahl', 'wohnen', 'text', 1, 'plz postleitzahl'], ['ort', 'Wohnort', 'wohnen', 'text', 1, 'wohnort stadt ort wohne'],
-  ['seit', 'Wohnhaft seit', 'wohnen', 'date', .5, 'eingezogen wohnhaft seit einzug'], ['wohnart', 'Wohnform', 'wohnen', 'select', .5, 'wohnform miete eigentum', false, ['Miete', 'Eigentum', 'Bei Familie', 'Sonstiges']], ['miete', 'Warmmiete / Monat', 'wohnen', 'money', .5, 'miete warmmiete kaltmiete wohnkosten'], ['vermieter', 'Vermieter', 'wohnen', 'text', .5, 'vermieter hausverwaltung'],
+  ['seit', 'Wohnhaft seit', 'wohnen', 'date', .5, 'eingezogen wohnhaft seit einzug'], ['wohnart', 'Wohnform', 'wohnen', 'select', .5, 'wohnform miete eigentum', false, ['Miete', 'Eigentum', 'Bei Familie', 'Sonstiges']], ['miete', 'Warmmiete / Monat', 'wohnen', 'money', .5, 'miete warmmiete kaltmiete wohnkosten'], ['vermieter', 'Vermieter', 'wohnen', 'text', .5, 'vermieter hausverwaltung'], ['nebenkosten', 'Nebenkosten-Vorauszahlung / Monat', 'wohnen', 'money', .5, 'nebenkosten vorauszahlung betriebskosten'], ['kaution', 'Mietkaution', 'wohnen', 'money', .5, 'kaution mietkaution'], ['wohnflaeche', 'Wohnfläche (m²)', 'wohnen', 'text', .5, 'wohnflache quadratmeter qm'], ['heizung', 'Heizart', 'wohnen', 'select', .5, 'heizung heizart gas fernwarme', false, ['Gas', 'Fernwärme', 'Öl', 'Wärmepumpe', 'Strom / Nachtspeicher', 'Holz / Pellets', 'Weiß ich nicht']],
   ['beschaeftigung', 'Beschäftigung', 'job', 'select', .5, 'beschaftigung angestellt selbststandig beamter student rentner arbeitslos', false, ['Angestellt', 'Beamtin / Beamter', 'Selbstständig / Freiberuflich', 'Student/in / Azubi', 'Rentner/in', 'Arbeitsuchend', 'Sonstiges']], ['arbeitgeber', 'Arbeitgeber', 'job', 'text', 1, 'arbeitgeber firma arbeite arbeit chef'], ['beruf', 'Tätigkeit / Beruf', 'job', 'text', 1, 'beruf tatigkeit job position stelle'], ['eintritt', 'Beschäftigt seit', 'job', 'date', .5, 'eintritt beschaftigt seit'], ['brutto', 'Brutto / Monat', 'job', 'money', 1, 'brutto gehalt verdiene'], ['netto', 'Netto / Monat', 'job', 'money', 1, 'netto auszahlung gehalt verdiene lohn'], ['steuerklasse', 'Steuerklasse', 'job', 'select', 1, 'steuerklasse', false, ['1', '2', '3', '4', '5', '6']], ['svnr', 'Sozialversicherungsnr.', 'job', 'text', 1, 'sozialversicherungsnummer rentenversicherungsnummer sv svnr rentenversicherung', true], ['personalnr', 'Personalnummer', 'job', 'text', .5, 'personalnummer'],
-  ['iban', 'IBAN', 'bank', 'text', 1, 'iban konto kontonummer', true], ['bic', 'BIC', 'bank', 'text', .5, 'bic swift'], ['bank', 'Bank', 'bank', 'text', 1, 'bank kreditinstitut sparkasse'], ['kontoinhaber', 'Kontoinhaber', 'bank', 'text', .5, 'kontoinhaber inhaber'],
-  ['steuerid', 'Steuer-ID', 'steuer', 'text', 1, 'steuer-id steuerid identifikationsnummer steuernummer idnr', true], ['steuernr', 'Steuernummer', 'steuer', 'text', .5, 'steuernummer', true], ['finanzamt', 'Finanzamt', 'steuer', 'text', .5, 'finanzamt'], ['bescheid_jahr', 'Letzter Bescheid (Jahr)', 'steuer', 'text', .5, 'steuerbescheid veranlagung'], ['erstattung', 'Erstattung / Nachzahlung', 'steuer', 'money', .5, 'erstattung nachzahlung steuerruckerstattung'],
+  ['standort', 'Filiale / Standort', 'beruf', 'text', .5, 'filiale standort niederlassung arbeitsort einsatzort buro'], ['abteilung', 'Abteilung / Team', 'beruf', 'text', .5, 'abteilung team bereich'], ['fuehrung', 'Führungsverantwortung', 'beruf', 'select', .5, 'fuhrung leitung teamleiter filialleiter vorgesetzter', false, ['Keine', 'Fachliche Führung', 'Teamleitung', 'Bereichs- / Filialleitung', 'Geschäftsführung / Vorstand']], ['mitarbeiter', 'Mitarbeitende (Anzahl)', 'beruf', 'text', .5, 'mitarbeiter mitarbeitende team groesse'], ['vorgesetzter', 'Vorgesetzte/r', 'beruf', 'text', .5, 'vorgesetzter chef fuhrungskraft'],
+  ['vertragsart', 'Vertragsart', 'beruf', 'select', 1, 'arbeitsvertrag befristet unbefristet probezeit vertragsart', false, ['Unbefristet', 'Befristet', 'In der Probezeit', 'Ausbildung / Duales Studium', 'Werkstudent/in', 'Minijob / Teilzeit-Aushilfe', 'Sonstiges']], ['befristet_bis', 'Befristet bis', 'beruf', 'date', .5, 'befristet bis vertragsende'], ['probezeit_bis', 'Probezeit bis', 'beruf', 'date', .5, 'probezeit'], ['kuend_ag', 'Kündigungsfrist (Arbeitsvertrag)', 'beruf', 'select', .5, 'kundigungsfrist arbeitsvertrag', false, ['2 Wochen', '4 Wochen zum 15. oder Monatsende', '1 Monat zum Monatsende', '2 Monate zum Monatsende', '3 Monate zum Monatsende', '3 Monate zum Quartalsende', '6 Monate zum Quartalsende', 'Weiß ich nicht']],
+  ['arbeitszeit', 'Wochenstunden', 'beruf', 'text', .5, 'wochenstunden arbeitszeit teilzeit vollzeit stunden'], ['urlaub', 'Urlaubstage pro Jahr', 'beruf', 'text', .5, 'urlaub urlaubstage'], ['tarif', 'Tarifvertrag', 'beruf', 'select', .5, 'tarifvertrag tarif', false, ['Ja, Tarifvertrag', 'Nein, außertariflich', 'Weiß ich nicht']], ['weg_km', 'Arbeitsweg (einfach, km)', 'beruf', 'text', .5, 'arbeitsweg pendeln entfernung'],
+  ['abschluss', 'Höchster Abschluss', 'beruf', 'select', 1, 'abschluss ausbildung studium qualifikation', false, ['Hauptschule', 'Realschule / Mittlere Reife', 'Abitur / Fachabitur', 'Berufsausbildung', 'Meister / Fachwirt / Techniker', 'Bachelor', 'Master / Diplom', 'Promotion', 'Sonstiges']], ['profil_link', 'LinkedIn / Xing', 'beruf', 'text', .5, 'linkedin xing profil'],
+  ['iban', 'IBAN', 'bank', 'text', 1, 'iban konto kontonummer', true], ['bic', 'BIC', 'bank', 'text', .5, 'bic swift'], ['bank', 'Bank', 'bank', 'text', 1, 'bank kreditinstitut sparkasse'], ['kontoinhaber', 'Kontoinhaber', 'bank', 'text', .5, 'kontoinhaber inhaber'], ['bank2', 'Weiteres Konto / Tagesgeld bei', 'bank', 'text', .5, 'zweitkonto tagesgeld zweites konto'], ['schufa_datum', 'SCHUFA-Auskunft zuletzt', 'bank', 'date', .5, 'schufa auskunft bonitat'],
+  ['steuerid', 'Steuer-ID', 'steuer', 'text', 1, 'steuer-id steuerid identifikationsnummer steuernummer idnr', true], ['steuernr', 'Steuernummer', 'steuer', 'text', .5, 'steuernummer', true], ['finanzamt', 'Finanzamt', 'steuer', 'text', .5, 'finanzamt'], ['bescheid_jahr', 'Letzter Bescheid (Jahr)', 'steuer', 'text', .5, 'steuerbescheid veranlagung'], ['erstattung', 'Erstattung / Nachzahlung', 'steuer', 'money', .5, 'erstattung nachzahlung steuerruckerstattung'], ['steuer_abgabe', 'Steuererklärung', 'steuer', 'select', .5, 'steuererklarung abgabe elster', false, ['Ich gebe jedes Jahr ab', 'Ich gebe manchmal ab', 'Ich gebe nicht ab', 'Das macht ein Steuerberater / Lohnsteuerhilfeverein']], ['freibetrag', 'Freibetrag (Lohnsteuer)', 'steuer', 'money', .5, 'freibetrag elstam lohnsteuerermassigung'], ['kirchensteuer', 'Kirchensteuer', 'steuer', 'select', .5, 'kirchensteuer konfession', false, ['Ja', 'Nein']], ['steuerberater', 'Steuerberater / Lohnsteuerhilfe', 'steuer', 'text', .5, 'steuerberater lohnsteuerhilfeverein'],
   ['kv_art', 'Krankenversicherung', 'versicherung', 'select', 1, 'krankenversicherung privat gesetzlich pkv gkv privatversichert versicherungsart', false, ['Gesetzlich versichert (GKV)', 'Privat versichert (PKV)', 'Freiwillig gesetzlich versichert', 'Familienversichert', 'Heilfürsorge / Beihilfe', 'Sonstiges']], ['krankenkasse', 'Krankenkasse / Versicherer', 'versicherung', 'text', 1, 'krankenkasse krankenversicherung versichert'], ['kvnr', 'Versichertennummer', 'versicherung', 'text', 1, 'versichertennummer krankenversichertennummer', true], ['kv_beitrag', 'KV-Beitrag / Monat', 'versicherung', 'money', .5, 'krankenversicherung beitrag kosten krankenkassenbeitrag'], ['haftpflicht', 'Privathaftpflicht bei', 'versicherung', 'text', .5, 'haftpflicht'], ['hausrat', 'Hausrat bei', 'versicherung', 'text', .5, 'hausrat'], ['weitere', 'Weitere Versicherungen', 'versicherung', 'multi', .5, 'versicherung versicherungen'],
+  ['hausarzt', 'Hausarzt / Hausärztin', 'versicherung', 'text', .5, 'hausarzt arzt'], ['zahnarzt', 'Zahnarzt / Zahnärztin', 'versicherung', 'text', .5, 'zahnarzt'], ['blutgruppe', 'Blutgruppe', 'versicherung', 'select', .5, 'blutgruppe', true, ['A', 'B', 'AB', '0', 'Weiß ich nicht']], ['allergien', 'Allergien & Unverträglichkeiten', 'versicherung', 'multi', .5, 'allergie allergien unvertraglichkeit', true], ['medikamente', 'Dauermedikation', 'versicherung', 'multi', .5, 'medikament medikamente dauermedikation', true],
+  ['organspende', 'Organspende', 'versicherung', 'select', .5, 'organspende organspendeausweis', false, ['Ja, ich habe einen Ausweis', 'Nein, ich widerspreche', 'Noch nicht entschieden']], ['patverf', 'Patientenverfügung', 'versicherung', 'select', .5, 'patientenverfugung', false, ['Ja, habe ich', 'Nein, noch nicht', 'Ist geplant']], ['vorsorgevoll', 'Vorsorgevollmacht', 'versicherung', 'select', .5, 'vorsorgevollmacht', false, ['Ja, habe ich', 'Nein, noch nicht', 'Ist geplant']], ['testament', 'Testament', 'versicherung', 'select', .5, 'testament erbe letzter wille', false, ['Ja, habe ich', 'Nein, noch nicht', 'Ist geplant']],
   ['familienstand', 'Familienstand', 'familie', 'select', 1, 'familienstand verheiratet ledig', false, ['Ledig', 'Verheiratet', 'Eingetragene Lebenspartnerschaft', 'Geschieden', 'Verwitwet', 'Getrennt']], ['partner', 'Partner / Partnerin', 'familie', 'text', .5, 'partner partnerin frau mann ehepartner'], ['kinder', 'Kinder', 'familie', 'multi', .5, 'kinder kind tochter sohn'],
-  ['fuehrerschein', 'Führerschein-Nr.', 'mobil', 'text', 1, 'fuhrerschein fuhrerscheinnummer', true], ['fs_klassen', 'Klassen', 'mobil', 'multipick', .5, 'fuhrerscheinklasse klassen', false, ['AM', 'A1', 'A2', 'A', 'B', 'BE', 'B96', 'C1', 'C1E', 'C', 'CE', 'D1', 'D', 'DE', 'L', 'T']], ['fs_dok', 'Art des Dokuments', 'mobil', 'select', .5, 'fuhrerschein dokument papier karte umtausch', false, ['Karte seit 2013 (15 Jahre gültig)', 'Karte 1999–2013 (unbefristet, Umtausch-Pflicht)', 'Papier-Führerschein (bis 1998)']], ['fs_ausgestellt', 'Ausgestellt am', 'mobil', 'date', .5, 'fuhrerschein ausgestellt ausstellungsdatum'], ['fs_bis', 'Führerschein gültig bis', 'mobil', 'date', .5, 'fuhrerschein gultig unbefristet'], ['kennzeichen', 'Kennzeichen', 'mobil', 'text', .5, 'kennzeichen auto fahrzeug'], ['fahrzeug', 'Fahrzeug', 'mobil', 'text', .5, 'fahrzeug auto wagen'],
+  ['fuehrerschein', 'Führerschein-Nr.', 'mobil', 'text', 1, 'fuhrerschein fuhrerscheinnummer', true], ['fs_klassen', 'Klassen', 'mobil', 'multipick', .5, 'fuhrerscheinklasse klassen', false, ['AM', 'A1', 'A2', 'A', 'B', 'BE', 'B96', 'C1', 'C1E', 'C', 'CE', 'D1', 'D', 'DE', 'L', 'T']], ['fs_dok', 'Art des Dokuments', 'mobil', 'select', .5, 'fuhrerschein dokument papier karte umtausch', false, ['Karte seit 2013 (15 Jahre gültig)', 'Karte 1999–2013 (unbefristet, Umtausch-Pflicht)', 'Papier-Führerschein (bis 1998)']], ['fs_ausgestellt', 'Ausgestellt am', 'mobil', 'date', .5, 'fuhrerschein ausgestellt ausstellungsdatum'], ['fs_bis', 'Führerschein gültig bis', 'mobil', 'date', .5, 'fuhrerschein gultig unbefristet'], ['kennzeichen', 'Kennzeichen', 'mobil', 'text', .5, 'kennzeichen auto fahrzeug'], ['antrieb', 'Antrieb', 'mobil', 'select', .5, 'antrieb benzin diesel elektro hybrid', false, ['Benzin', 'Diesel', 'Hybrid', 'Elektro', 'Gas / Sonstiges']], ['hu_bis', 'Nächste HU („TÜV“)', 'mobil', 'date', .5, 'tuv hu hauptuntersuchung plakette'], ['fahrzeug', 'Fahrzeug', 'mobil', 'text', .5, 'fahrzeug auto wagen'],
   ['ueber', 'Wer ich bin', 'ich', 'multi', 1, 'uber mich wer bin ich'], ['staerken', 'Meine Stärken', 'ich', 'multi', 1, 'starken konnen fahigkeiten'], ['ziele', 'Meine Ziele', 'ich', 'multi', 1, 'ziele ziel traume plane'], ['interessen', 'Interessen & Hobbys', 'ich', 'multi', .5, 'interessen hobbys hobby freizeit'], ['werte', 'Was mir wichtig ist', 'ich', 'multi', .5, 'werte wichtig']
 ];
 const PF = {}; PF_LIST.forEach(([k, l, ch, t, w, syn, sens, opts]) => PF[k] = { k, l, ch, t, w, syn: syn.split(' '), sens: !!sens, opts: opts || null });
@@ -2751,10 +2876,16 @@ const PFX = {
   arbeitgeber: { none: 'Kein Arbeitgeber (z. B. selbstständig, Rente)', cascade: ['eintritt', 'personalnr'] }, eintritt: { none: 'Trifft nicht zu' }, personalnr: { none: 'Trifft nicht zu' }, steuerklasse: { none: 'Trifft nicht zu' },
   bescheid_jahr: { none: 'Noch nie eine Steuererklärung abgegeben' }, steuernr: { none: 'Habe ich nicht' },
   kv_beitrag: { none: 'Trifft nicht zu (z. B. familienversichert)' }, haftpflicht: { none: 'Habe ich nicht' }, hausrat: { none: 'Habe ich nicht' }, weitere: { none: 'Keine weiteren' },
+  standort: { none: 'Trifft nicht zu (z. B. Homeoffice, selbstständig)' }, abteilung: { none: 'Trifft nicht zu' }, mitarbeiter: { none: 'Keine Mitarbeitenden' }, vorgesetzter: { none: 'Keine/r' },
+  befristet_bis: { open: 'Unbefristet – kein Ende', none: 'Trifft nicht zu' }, probezeit_bis: { none: 'Keine Probezeit (mehr)' }, kuend_ag: { none: 'Weiß ich nicht' }, arbeitszeit: { none: 'Trifft nicht zu' }, urlaub: { none: 'Trifft nicht zu' }, weg_km: { none: 'Homeoffice / trifft nicht zu' }, profil_link: { none: 'Habe ich nicht' },
   partner: { none: 'Kein Partner / keine Partnerin' }, kinder: { none: 'Keine Kinder' },
   fuehrerschein: { none: 'Ich habe keinen Führerschein', cascade: ['fs_klassen', 'fs_dok', 'fs_ausgestellt', 'fs_bis'] },
   fs_klassen: { none: 'Trifft nicht zu' }, fs_dok: { none: 'Weiß ich nicht' }, fs_ausgestellt: { none: 'Weiß ich nicht' }, fs_bis: { open: 'Unbefristet gültig', none: 'Trifft nicht zu' },
-  kennzeichen: { none: 'Kein Fahrzeug', cascade: ['fahrzeug'] }, fahrzeug: { none: 'Kein Fahrzeug' }
+  kennzeichen: { none: 'Kein Fahrzeug', cascade: ['fahrzeug', 'antrieb', 'hu_bis'] }, fahrzeug: { none: 'Kein Fahrzeug' }, antrieb: { none: 'Trifft nicht zu' }, hu_bis: { none: 'Trifft nicht zu' },
+  nebenkosten: { none: 'In der Miete enthalten / trifft nicht zu' }, kaution: { none: 'Keine Kaution' }, wohnflaeche: { none: 'Weiß ich nicht' }, heizung: { none: 'Trifft nicht zu' },
+  pass_nr: { none: 'Habe keinen Reisepass', cascade: ['pass_bis'] }, pass_bis: { none: 'Habe keinen Reisepass' }, bank2: { none: 'Habe ich nicht' }, schufa_datum: { none: 'Noch nie angefordert' },
+  steuer_abgabe: { none: 'Weiß ich nicht' }, freibetrag: { none: 'Keinen eingetragen' }, kirchensteuer: { none: 'Weiß ich nicht' }, steuerberater: { none: 'Habe ich nicht' },
+  hausarzt: { none: 'Habe ich nicht' }, zahnarzt: { none: 'Habe ich nicht' }, blutgruppe: { none: 'Möchte ich nicht angeben' }, allergien: { none: 'Keine bekannt' }, medikamente: { none: 'Keine' }, organspende: { none: 'Möchte ich nicht angeben' }, patverf: { none: 'Weiß ich nicht' }, vorsorgevoll: { none: 'Weiß ich nicht' }, testament: { none: 'Weiß ich nicht' },
 };
 const pRaw = k => (S.prof[k] || {}).v;
 const pst = k => { const v = pRaw(k); return v === NONE ? 'none' : v === OPEN ? 'open' : (v != null && v !== '') ? 'val' : null; };
@@ -3047,7 +3178,7 @@ function reiseHero(o, nx, start) {
   const cta = !nx ? `<div class="hero-next done"><span class="hn-e">🎉</span><div><small>Geschafft</small><b>Deine digitale Kopie ist vollständig</b><span>Halte sie aktuell – oder frag Kairos, was sich daraus ergibt.</span></div></div><div class="nxt-acts"><button class="btn primary lg" data-go="einblicke">${icon('bulb')}Einblicke ansehen</button><button class="btn lg" data-go="kairos">${icon('sparkle')}Kairos fragen</button></div>`
     : `<div class="hero-next" style="--c:${nx.ch.c}"><span class="hn-e">${nx.ch.e}</span><div><small>${start ? 'Dein erster Schritt' : nx.optional ? 'Zum Abrunden' : 'Nächster Schritt'}</small><b>${nx.ch.id === 'ausweis' && start ? 'Starte mit deinem Ausweis' : esc(nx.ch.n) + ': ' + esc(nx.ch.title)}</b><span>${esc(nx.ch.ask)}</span></div></div>
       <div class="chips nxt-reads"><span class="chip">${icon('scan')}Kairos liest:</span>${nx.ch.reads.split(', ').map(r => `<span class="chip">${esc(r)}</span>`).join('')}</div>
-      <div class="nxt-acts">${nx.ch.view ? `<button class="btn primary lg" data-act="${nx.ch.id === 'vertraege' ? 'vt.quick' : 'ev.quick'}">${icon('sparkle')}Schnell-Check starten</button><button class="btn lg" data-go="${nx.ch.view}">Bereich öffnen</button>` : nx.ch.manual ? `<button class="btn primary lg" data-act="ich.start">${icon('edit')}Fragen beantworten</button>` : `<button class="btn primary lg" data-act="cap.pick" data-ch="${nx.ch.id}">${icon('upload')}Dokument wählen</button><button class="btn lg cam-only" data-act="cap.cam" data-ch="${nx.ch.id}">${icon('camera')}Foto aufnehmen</button><button class="btn ghost" data-act="fill.ch" data-ch="${nx.ch.id}">Selbst eintragen</button>`}</div>`;
+      <div class="nxt-acts">${nx.ch.view ? `<button class="btn primary lg" data-act="${nx.ch.quick || (nx.ch.id === 'vertraege' ? 'vt.quick' : 'ev.quick')}">${icon(nx.ch.id === 'beruf' ? 'briefcase' : 'sparkle')}${nx.ch.id === 'beruf' ? 'Arbeitsplatz eintragen' : 'Schnell-Check starten'}</button><button class="btn lg" data-go="${nx.ch.view}">Bereich öffnen</button>` : nx.ch.manual ? `<button class="btn primary lg" data-act="ich.start">${icon('edit')}Fragen beantworten</button>` : `<button class="btn primary lg" data-act="cap.pick" data-ch="${nx.ch.id}">${icon('upload')}Dokument wählen</button><button class="btn lg cam-only" data-act="cap.cam" data-ch="${nx.ch.id}">${icon('camera')}Foto aufnehmen</button><button class="btn ghost" data-act="fill.ch" data-ch="${nx.ch.id}">Selbst eintragen</button>`}</div>`;
   return `<section class="hero2 card glass"><div class="hero2-l">${orbitHTML(o, nx)}</div>
     <div class="hero2-r"><div class="eyebrow">${esc(greetingWord())}${fn ? ', ' + esc(fn) : ''}</div><h1 class="h-title">${start ? 'Baue deine digitale <span class="gradtxt">Kopie</span>' : `Stufe <span class="gradtxt">${esc(o.level)}</span>`}</h1>
       <p class="h-sub">${start ? 'Dokument für Dokument – Kairos liest, verknüpft und zeigt dir, was daraus entsteht.' : `${o.fields} Angaben aus ${plural(ok, 'Dokument', 'Dokumenten')} sind verknüpft. ${nx ? 'Weiter geht es hier:' : ''}`}</p>
@@ -3186,7 +3317,7 @@ function fieldRow(k) {
 }
 function chapterCard(c) {
   const st = chStats(c.id), keys = PF_LIST.filter(f => f[2] === c.id).map(f => f[0]);
-  if (c.view) return `<section class="card glass chc" style="--c:${c.c}"><div class="chc-h"><span class="chc-e">${c.e}</span><div class="chc-t"><b>${esc(c.n)}</b><small>${st.have} von ${st.total} geklärt</small></div><button class="btn sm" data-go="${c.view}">Öffnen</button></div><div class="bar thin" style="margin:2px 0 8px"><i style="width:${Math.round(st.pct * 100)}%"></i></div>${c.id === 'leben' ? peopleBlock(true) : '<p class="muted fine" style="margin:0">Alle Verträge, Kosten und Kündigungsfristen auf einen Blick.</p>'}</section>`;
+  if (c.view) return `<section class="card glass chc" style="--c:${c.c}"><div class="chc-h"><span class="chc-e">${c.e}</span><div class="chc-t"><b>${esc(c.n)}</b><small>${st.have} von ${st.total} geklärt</small></div><button class="btn sm" data-go="${c.view}">Öffnen</button></div><div class="bar thin" style="margin:2px 0 8px"><i style="width:${Math.round(st.pct * 100)}%"></i></div>${c.id === 'leben' ? peopleBlock(true) : c.id === 'beruf' ? '<p class="muted fine" style="margin:0">Arbeitsplatz, Dienstwagen & Benefits und dein Lebenslauf – alles an einem Ort.</p>' : '<p class="muted fine" style="margin:0">Alle Verträge, Kosten und Kündigungsfristen auf einen Blick.</p>'}</section>`;
   if (st.na) return `<section class="card glass chc na" style="--c:${c.c}"><div class="chc-h"><span class="chc-e">${c.e}</span><div class="chc-t"><b>${esc(c.n)}</b><small>Trifft nicht zu</small></div><button class="btn sm ghost" data-act="ch.open" data-ch="${c.id}">Ändern</button></div></section>`;
   return `<section class="card glass chc" style="--c:${c.c}"><div class="chc-h"><span class="chc-e">${c.e}</span><div class="chc-t"><b>${esc(c.n)}</b><small>${st.have} von ${st.total} Feldern</small></div>
     ${c.manual ? `<button class="btn sm" data-act="ich.start">${icon('edit')}Fragen</button>` : `<button class="btn sm" data-act="cap.pick" data-ch="${c.id}">${icon('upload')}Hochladen</button>`}</div>
@@ -3337,6 +3468,18 @@ function answerRules(q) {
     const up = buildDeadlines().filter(d => diffDays(d.date, todayISO()) >= 0).slice(0, 4);
     return up.length ? { blocks: [A_.text('Das steht als Nächstes an:'), A_.text(up.map(d => `• ${fmtDate(d.date, true)} – ${d.title} (${dlLabel(d.date)})`).join('\n')), A_.acts([{ l: 'Fristen ansehen', go: 'einblicke' }])], rule: 'deadlines' } : { blocks: [A_.text('Ich kenne noch keine anstehenden Fristen. Sobald Gültigkeiten oder Kündigungsfristen in deinen Dokumenten stehen, zeige ich sie dir.')], rule: 'deadlines' };
   }
+  /* Beruf, Dienstwagen, Lebenslauf */
+  if (has(/dienstwagen|firmenwagen|diensthandy|jobrad|dienstrad|lebenslauf|\bcv\b|filiale|standort|probezeit|befristet|arbeitsvertrag|urlaubstage|beruflich|karriere|arbeitsplatz/)) {
+    const L = [], dw = vst('dienstwagen'), c = CV(), cs = cvStats();
+    if (has(/dienstwagen|firmenwagen/)) { if (dw === 'ja') { const o = vOf('dienstwagen'); L.push(`Du hast einen Dienstwagen${o.x_nutz ? ' (' + o.x_nutz.toLowerCase() + ')' : ''}${o.ende ? ', Rückgabe/Ende am ' + fmtDate(o.ende, true) : ''}.`); } else if (dw === 'nein') L.push('Du hast angegeben, dass du keinen Dienstwagen hast.'); else L.push('Zum Dienstwagen habe ich noch keine Angabe. Sag mir „Ja“ oder „Nein“ – beides ist in Ordnung.'); }
+    else {
+      if (phas('arbeitgeber') || phas('beruf')) L.push(`Du arbeitest ${phas('beruf') ? 'als ' + pget('beruf') : ''}${phas('arbeitgeber') ? ' bei ' + pget('arbeitgeber') : ''}${phas('standort') ? ' (' + pget('standort') + ')' : ''}${phas('eintritt') ? ', seit ' + fmtDate(pget('eintritt'), true) + ' (' + tenure() + ')' : ''}.`);
+      if (has(/lebenslauf|\bcv\b/)) L.push(`Dein Lebenslauf ist zu ${Math.round(cs.pct * 100)} % ausgefüllt (${c.st.length} ${c.st.length === 1 ? 'Station' : 'Stationen'}, ${c.sk.length} Kenntnisse).`);
+      if (phas('probezeit_bis')) L.push(`Probezeit bis ${fmtDate(pget('probezeit_bis'), true)}.`); if (phas('befristet_bis')) L.push(`Vertrag befristet bis ${fmtDate(pget('befristet_bis'), true)}.`); if (phas('kuend_ag')) L.push(`Kündigungsfrist: ${pget('kuend_ag')}.`);
+      if (!L.length) L.push('Zu deinem Beruf habe ich noch nichts. Im Bereich „Beruf“ trägst du Arbeitsplatz, Dienstwagen & Benefits und deinen Lebenslauf ein.');
+    }
+    return { blocks: [A_.text(L.join(' ')), A_.acts([{ l: 'Beruf öffnen', go: 'beruf', primary: 1 }].concat(has(/lebenslauf|\bcv\b/) ? [{ l: 'Lebenslauf exportieren', act: 'cv.export' }] : []))], rule: 'beruf' };
+  }
   /* Verträge, Fixkosten, Kündigung */
   if (has(/vertrag|vertrage|versicherungen\b|\babos?\b|abonnement|fixkosten|feste kosten|monatliche kosten|kundigung|kundigen|kundigungsfrist|stromanbieter|\bstrom\b|\bgas\b|internet|handyvertrag|kfz|autoversicherung|haftpflicht|hausrat|rechtsschutz/) && !has(/krankenkasse|krankenversicherung|versichertennummer|iban|ausweis|dokument/)) {
     const act = vActive(), fc = fixCosts(), kd = vDeadlines().filter(d => d.kind === 'kuendigung' && diffDays(d.date, todayISO()) >= 0)[0], open = vAll().filter(e => e.core && !vst(e.id)).length;
@@ -3421,7 +3564,7 @@ const SUGGEST = () => {
   if (nx) s.push('Was fehlt noch?'); if (buildInsights().length) s.push('Welche Chancen habe ich?'); if (buildDeadlines().length) s.push('Welche Fristen stehen an?');
   if (phas('iban')) s.push('Was ist meine IBAN?'); if (phas('steuerid')) s.push('Wie lautet meine Steuer-ID?');
   if (phas('ausweis_bis')) s.push('Wann läuft mein Ausweis ab?'); if (phas('ort')) s.push('Wo wohne ich?'); if (phas('geburtsdatum')) s.push('Wie alt bin ich?');
-  if (phas('netto')) s.push('Was verdiene ich?'); if (vActive().length) s.push('Was kosten mich meine Verträge?'); else s.push('Welche Verträge habe ich?'); if (S.people.length) s.push('Wer gehört zu meiner Familie?'); if (S.events.length) s.push('Was steht bei meinen Lebensereignissen an?'); s.push('Wer bin ich?'); if (S.docs.length) s.push('Welche Dokumente habe ich?');
+  if (phas('netto')) s.push('Was verdiene ich?'); if (vActive().length) s.push('Was kosten mich meine Verträge?'); else s.push('Welche Verträge habe ich?'); if (S.people.length) s.push('Wer gehört zu meiner Familie?'); if (S.events.length) s.push('Was steht bei meinen Lebensereignissen an?'); if (phas('arbeitgeber')) s.push('Habe ich einen Dienstwagen?'); if (CV().st.length) s.push('Wie vollständig ist mein Lebenslauf?'); s.push('Wer bin ich?'); if (S.docs.length) s.push('Welche Dokumente habe ich?');
   return s.slice(0, 8);
 };
 
@@ -3570,7 +3713,7 @@ function buildInsights() {
   }
   if (phas('krankenkasse') && !phas('haftpflicht') && pst('haftpflicht') !== 'none' && !vst('haftpflicht')) add({ id: 'haftpflicht', kind: 'todo', pri: 52, e: '🛡️', title: 'Privathaftpflicht: hast du eine?', text: 'Sie gehört zu den wichtigsten Versicherungen: Sie schützt vor hohen Schadenersatzforderungen, wenn du aus Versehen etwas beschädigst. Sag Kairos, ob du eine hast – oder markiere „Habe ich nicht“.', src: chipsFor(['krankenkasse']), act: { l: 'Schnell-Check starten', a: 'vt.quick' } });
   /* Verträge, Familie & Lebensereignisse */
-  contractInsights(add); lifeInsights(add);
+  contractInsights(add); lifeInsights(add); careerInsights(add); depthInsights(add);
   if (phas('svnr')) add({ id: 'rente', kind: 'info', pri: 25, e: '👴', title: 'Rente im Blick behalten', text: 'Mit deiner Sozialversicherungsnummer kannst du bei der Deutschen Rentenversicherung dein Konto klären lassen. Die digitale Rentenübersicht zeigt gesetzliche, betriebliche und private Ansprüche an einem Ort.', src: chipsFor(['svnr']) });
   if (phas('iban') && phas('bank')) add({ id: 'sparer', kind: 'chance', pri: 28, e: '🏦', title: 'Sparerpauschbetrag nutzen', text: `${eur(RULES.spb)} Kapitalerträge pro Jahr sind steuerfrei (${eur(RULES.spb * 2)} bei Ehepaaren). Prüfe, ob dein Freistellungsauftrag bei ${pget('bank')} zu deinen Zinsen und Dividenden passt.`, src: chipsFor(['iban', 'bank']) });
   /* Arbeit */
@@ -3598,6 +3741,7 @@ function buildDeadlines() {
     (d.fristen || []).forEach((f, i) => { const dt = f.date || f.d; if (dt) add({ id: `fr_${d.id}_${i}`, date: dt, title: f.label || f.t || `Frist: ${nm}`, sub: nm, e: '📌', kind: 'frist', doc: d.id, alarm: 7 }); });
     if (d.kind === 'steuer' && d.docDate) { const end = addMonths(addDays(d.docDate, 3), 1); add({ id: 'ein_' + d.id, date: end, title: 'Einspruchsfrist Steuerbescheid', sub: nm, e: '⏳', kind: 'frist', doc: d.id, alarm: 7 }); }
   }
+  careerDeadlines(add); depthDeadlines(add);
   if (phas('arbeitgeber') || phas('netto')) {
     const { Y, last } = steuerYearInfo(), st = phas('eintritt') ? parseISO(pget('eintritt')).getFullYear() : null;
     if (!st || st <= Y) add({ id: 'st_rueck', date: last, title: `Steuererklärung ${Y} (letzte Chance)`, sub: 'Freiwillige Abgabe, 4 Jahre rückwirkend', e: '💸', kind: 'steuer', alarm: 60 });
@@ -3798,6 +3942,285 @@ async function avatarCrop(id) {
       S.profile.avatar = out.toDataURL('image/jpeg', 0.86); S.profile.avatarId = id; save(); closeSheet(); renderNav(); rerender(); buzz(14); toast('Profilbild gesetzt', 'good');
     });
   } });
+}
+
+/* =====================================================================
+   KAIROS · Tiefe: Wohnen, Gesundheit & Vorsorge, Steuer, Mobilität, Ausweis, Bank
+   Zusätzliche Erkenntnisse und Fristen aus den erweiterten Profilfeldern.
+   ===================================================================== */
+function depthInsights(add) {
+  const today = todayISO(), age = ageOf(pget('geburtsdatum')), kids = (typeof peopleOf === 'function' ? peopleOf('kind').length : 0) || (phas('kinder') ? 1 : 0), partner = phas('partner') || (typeof peopleOf === 'function' && peopleOf('partner').length > 0) || ['Verheiratet', 'Eingetragene Lebenspartnerschaft'].includes(pget('familienstand'));
+  /* HU / TÜV */
+  if (phas('hu_bis')) { const n = diffDays(pget('hu_bis'), today);
+    if (n < 0) add({ id: 'hu_abgelaufen', kind: 'warn', pri: 82, e: '🔧', title: 'HU („TÜV“) ist überfällig', text: `Die Plakette ist seit ${plural(-n, 'Tag', 'Tagen')} abgelaufen. Nach einer Überziehung droht ein Verwarnungsgeld, bei längerer Überziehung mehr. Termin bei TÜV, DEKRA oder einer Prüfstelle machen.`, src: chipsFor(['hu_bis', 'kennzeichen']) });
+    else if (n <= 75) add({ id: 'hu_bald', kind: n <= 30 ? 'warn' : 'todo', pri: n <= 30 ? 76 : 58, e: '🔧', title: `HU („TÜV“) in ${plural(n, 'Tag', 'Tagen')} fällig`, text: 'Mach rechtzeitig einen Termin – kleinere Mängel lassen sich vorher beheben, und die Nachprüfung ist dann meist kostenlos oder günstig.', src: chipsFor(['hu_bis', 'kennzeichen']) }); }
+  /* Reisepass */
+  if (phas('pass_bis')) { const n = diffDays(pget('pass_bis'), today);
+    if (n < 0) add({ id: 'pass_abgelaufen', kind: 'warn', pri: 66, e: '🛂', title: 'Reisepass ist abgelaufen', text: 'Für Reisen außerhalb der EU brauchst du einen gültigen Reisepass. Die Beantragung dauert oft mehrere Wochen.', src: chipsFor(['pass_bis']) });
+    else if (n <= 210) add({ id: 'pass_bald', kind: n <= 90 ? 'warn' : 'todo', pri: n <= 90 ? 72 : 50, e: '🛂', title: `Reisepass läuft in ${plural(n, 'Tag', 'Tagen')} ab`, text: 'Viele Länder verlangen, dass der Pass noch drei bis sechs Monate über die Rückreise hinaus gültig ist. Beantrage rechtzeitig einen neuen – in vielen Gemeinden brauchst du dafür einen Termin.', src: chipsFor(['pass_bis']) }); }
+  /* Vorsorge */
+  const offen = k => !['Ja, habe ich'].includes(pget(k)), fam = kids > 0 || partner || pget('wohnart') === 'Eigentum';
+  if ((phas('testament') ? offen('testament') : pst('testament') === 'none' || !pdone('testament')) && fam && (kids || age >= 30)) add({ id: 'vorsorge_testament', kind: pget('testament') === 'Ist geplant' ? 'info' : 'todo', pri: pdone('testament') ? 44 : 30, e: '📜', title: 'Testament und Erbfolge klären', text: `${kids ? 'Mit Kindern' : partner ? 'Mit Partner/in' : 'Mit Immobilie'} regelt die gesetzliche Erbfolge nicht unbedingt das, was du willst – bei nicht verheirateten Paaren erbt der Partner gar nicht. Ein handschriftliches Testament ist formlos gültig, für Immobilien und Patchwork lohnt sich eine Beratung.`, src: chipsFor(['testament']).concat(kids ? [{ l: 'Kinder', fam: 1 }] : []) });
+  if ((age >= 40 || kids) && (!phas('patverf') || offen('patverf')) && !(phas('vorsorgevoll') && !offen('vorsorgevoll') && phas('patverf') && !offen('patverf'))) add({ id: 'vorsorge_pv', kind: 'chance', pri: 34, e: '📋', title: 'Patientenverfügung und Vorsorgevollmacht', text: 'Ohne Vollmacht darf selbst dein Ehepartner dich im Ernstfall nur eingeschränkt vertreten – sonst bestellt das Gericht einen Betreuer. Vordrucke gibt es kostenlos (z. B. vom Bundesjustizministerium); die Originale solltest du an einem bekannten Ort aufbewahren.', src: chipsFor(['patverf', 'vorsorgevoll']) });
+  if (phas('organspende') && pget('organspende') === 'Noch nicht entschieden') add({ id: 'organspende_offen', kind: 'info', pri: 12, e: '🫀', title: 'Organspende: Entscheidung steht noch aus', text: 'Du kannst deine Entscheidung im Organspende-Register hinterlegen oder einen Ausweis ausfüllen – und jederzeit ändern. Wichtig ist, dass deine Angehörigen davon wissen.', src: chipsFor(['organspende']) });
+  /* Gesundheitsdaten für den Notfall */
+  if ((phas('blutgruppe') || phas('allergien') || phas('medikamente')) && age != null) add({ id: 'notfall_daten', kind: 'info', pri: 8, e: '🚑', title: 'Notfalldaten griffbereit', text: 'Blutgruppe, Allergien und Dauermedikation helfen Rettungskräften. Auf dem iPhone kannst du sie im Medizinischen Ausweis hinterlegen, damit sie auch bei gesperrtem Gerät sichtbar sind.', src: chipsFor(['blutgruppe', 'allergien', 'medikamente']) });
+  /* Wohnen */
+  if (pget('wohnart') === 'Miete' && phas('nebenkosten') && phas('miete')) { const q = pget('nebenkosten') / pget('miete'); if (q > 0.35) add({ id: 'nk_hoch', kind: 'chance', pri: 30, e: '💧', title: 'Nebenkosten machen einen großen Teil deiner Warmmiete aus', text: `Etwa ${Math.round(q * 100)} % deiner Warmmiete sind Vorauszahlungen für Nebenkosten. Prüfe die nächste Abrechnung auf Fehler (Verteilerschlüssel, Hausmeister, Leerstand) – du kannst sie meist zwölf Monate lang beanstanden und Belege einsehen.`, src: chipsFor(['miete', 'nebenkosten']) }); }
+  if (pget('wohnart') === 'Miete' && phas('vermieter') && vst('hausrat') !== 'ja') add({ id: 'miete_hausrat', kind: 'info', pri: 26, e: '🏠', title: 'Als Mieter an die Hausratversicherung denken', text: 'Die Gebäudeversicherung des Vermieters deckt deinen Hausrat nicht ab. Prüfe außerdem, ob in der Haftpflicht Mietsachschäden mitversichert sind.', src: chipsFor(['wohnart', 'vermieter']) });
+  /* Steuer */
+  if ((pget('beschaeftigung') === 'Angestellt' || pget('beschaeftigung') === 'Beamtin / Beamter') && pget('steuer_abgabe') === 'Ich gebe nicht ab') add({ id: 'steuer_nie', kind: 'chance', pri: 56, e: '💸', title: 'Steuererklärung kann sich lohnen – auch ohne Pflicht', text: 'Viele Arbeitnehmer bekommen mit einer freiwilligen Erklärung mehrere hundert Euro zurück (Pendeln, Arbeitsmittel, Homeoffice, Versicherungen, Kinderbetreuung). Rückwirkend geht das für vier Jahre – ein Lohnsteuerhilfeverein ist günstiger als ein Steuerberater.', src: chipsFor(['steuer_abgabe', 'netto']) });
+  /* SCHUFA */
+  const sd = phas('schufa_datum') ? diffDays(today, pget('schufa_datum')) : null;
+  if (phas('bank') && (sd == null || sd > 365) && pst('schufa_datum') !== 'none') add({ id: 'schufa_auskunft', kind: 'chance', pri: 22, e: '📊', title: 'Kostenlose SCHUFA-Datenkopie anfordern', text: 'Einmal im Jahr bekommst du die Datenkopie nach Art. 15 DSGVO kostenlos. Prüfe, ob alle Einträge stimmen – veraltete Konten oder falsche Daten können bei Mietvertrag oder Kredit teuer werden.', src: chipsFor(['bank']) });
+  /* Weiteres Konto ohne Rücklage */
+  if (phas('bank2') && vst('sparen') == null && num('netto')) add({ id: 'bank2_sparen', kind: 'info', pri: 18, e: '🏦', title: 'Zweitkonto vorhanden – dient es als Rücklage?', text: 'Wenn dein zweites Konto ein Tagesgeldkonto ist, trag es unter Verträge als „Tagesgeld / Festgeld“ ein. Kairos prüft dann, ob deine Rücklage für etwa drei Monate reicht.', src: chipsFor(['bank2']), act: { l: 'Eintragen', a: 'vt.open2', id: 'sparen' } });
+  /* Elektroauto / Antrieb */
+  if (phas('antrieb') && pget('antrieb') === 'Elektro' && vst('kfz') === 'ja') add({ id: 'e_auto_vers', kind: 'info', pri: 14, e: '🔌', title: 'Elektroauto: Tarif prüfen', text: 'Viele Kfz-Versicherer haben eigene Tarife für E-Autos (Akku, Wallbox, Ladekabel). Prüfe, ob diese Bausteine bei dir enthalten sind.', src: chipsFor(['antrieb']).concat([{ l: 'Kfz-Versicherung', vt: 'kfz' }]) });
+}
+function depthDeadlines(add) {
+  if (phas('hu_bis')) add({ id: 'hu_bis', date: pget('hu_bis'), title: 'HU („TÜV“) fällig', sub: pget('kennzeichen') || 'Hauptuntersuchung', e: '🔧', kind: 'frist', alarm: 30 });
+  if (phas('pass_bis')) add({ id: 'pass_bis', date: pget('pass_bis'), title: 'Reisepass läuft ab', sub: 'Rechtzeitig erneuern', e: '🛂', kind: 'frist', alarm: 90 });
+}
+
+/* =====================================================================
+   KAIROS · Beruf & Karriere
+   Arbeitsplatz (Standort, Führung, Vertrag), Benefits (Dienstwagen …) und Lebenslauf.
+   Alles lokal – der Lebenslauf lässt sich als Text, PDF (Drucken) oder zum Teilen exportieren.
+   ===================================================================== */
+const CVT = { job: ['Berufserfahrung', '💼'], edu: ['Ausbildung & Studium', '🎓'], praktikum: ['Praktika & Werkstudium', '🧪'], ehren: ['Ehrenamt & Engagement', '🤝'], sonst: ['Sonstiges', '📌'] };
+const CV_LVL = ['Grundkenntnisse', 'Gute Kenntnisse', 'Sehr gute Kenntnisse', 'Experte'];
+const CV_LANG = ['Muttersprache', 'C2 – annähernd muttersprachlich', 'C1 – fließend', 'B2 – gut', 'B1 – Grundlagen', 'A2 – Anfänger', 'A1 – Einsteiger'];
+const BR_KEYS = () => PF_LIST.filter(f => f[2] === 'beruf').map(f => f[0]);
+const CV = () => S.cv || (S.cv = { head: '', sum: '', st: [], sk: [], la: [], ce: [], at: 0 });
+const cvTouch = () => { CV().at = Date.now(); save(); };
+const fmtM = d => d ? d.slice(5, 7) + '/' + d.slice(0, 4) : '';
+function monthsBetween(a, b) { const x = parseISO(a), y = parseISO(b); return (y.getFullYear() - x.getFullYear()) * 12 + y.getMonth() - x.getMonth(); }
+function durText(from, to) {
+  if (!from) return ''; const m = Math.max(0, monthsBetween(from, to || todayISO())), y = Math.floor(m / 12), r = m % 12;
+  return [y ? y + (y === 1 ? ' Jahr' : ' Jahre') : '', r ? r + (r === 1 ? ' Monat' : ' Monate') : ''].filter(Boolean).join(' ') || 'unter 1 Monat';
+}
+const cvStations = type => CV().st.filter(s => !type || s.t === type).slice().sort((a, b) => (b.from || '') < (a.from || '') ? -1 : (b.from || '') > (a.from || '') ? 1 : 0);
+const tenure = () => phas('eintritt') ? durText(pget('eintritt')) : '';
+const tenureYears = () => phas('eintritt') ? monthsBetween(pget('eintritt'), todayISO()) / 12 : 0;
+
+/* ---------- Fortschritt ---------- */
+function cvStats() {
+  const c = CV(), parts = [
+    ['Profil', !!(c.head || c.sum), 1], ['Berufserfahrung', c.st.some(s => s.t === 'job'), 2], ['Ausbildung', c.st.some(s => s.t === 'edu') || phas('abschluss'), 1],
+    ['Kenntnisse', c.sk.length >= 3, 1], ['Sprachen', c.la.length > 0, .5]
+  ], tot = sum(parts, p => p[2]), got = sum(parts.filter(p => p[1]), p => p[2]);
+  return { parts, pct: tot ? got / tot : 0, ok: parts.filter(p => p[1]).length, n: parts.length };
+}
+function berufStats(c) {
+  const keys = BR_KEYS(), fs = PF_LIST.filter(f => f[2] === 'beruf'), have = keys.filter(pdone), cv = cvStats(), ben = vAll().filter(e => e.c === 'beruf'), ans = ben.filter(e => vst(e.id));
+  const fp = keys.length ? sum(fs.filter(f => pdone(f[0])), f => f[4]) / sum(fs, f => f[4]) : 0, bp = ben.length ? ans.length / ben.length : 1;
+  const pct = fp * .4 + cv.pct * .35 + bp * .25, core = fs.filter(f => f[4] >= 1);
+  return { id: 'beruf', fields: keys, have: have.length + cv.ok + ans.length, total: keys.length + cv.n + ben.length, pct, coreDone: core.every(f => pdone(f[0])), missing: keys.filter(k => !pdone(k)), coreMissing: core.filter(f => !pdone(f[0])).map(f => f[0]), na: !!S.journey.na.beruf, done: !!S.journey.na.beruf || pct >= .6 };
+}
+
+/* ---------- Arbeitsplatz bearbeiten ---------- */
+function arbeitsplatzSheet(keys, title, sub) {
+  const fields = []; keys.forEach(k => fieldSpecs(k).forEach(x => fields.push(Object.assign({}, x, { full: x.full || /standort|vorgesetzter|kuend_ag/.test(k) }))));
+  formSheet({ title, sub, fields, wide: true, submit: 'Speichern', onSubmit: v => { const r = saveFields(keys, v); renderNav(); rerender(); toast(r.n ? 'Gespeichert' : 'Nichts geändert', r.n ? 'good' : ''); } });
+}
+ACT['br.start'] = () => {
+  const need = ['standort', 'fuehrung', 'vertragsart', 'kuend_ag', 'urlaub', 'arbeitszeit'].filter(k => !pdone(k));
+  arbeitsplatzSheet(need.length ? need : ['standort', 'fuehrung', 'vertragsart'], 'Dein Arbeitsplatz', 'Wo und wie arbeitest du? Alles optional – „trifft nicht zu“ zählt auch als Antwort.');
+};
+ACT['br.edit'] = el => {
+  const g = el && el.dataset.g;
+  const groups = { ort: ['standort', 'abteilung', 'fuehrung', 'mitarbeiter', 'vorgesetzter'], vertrag: ['vertragsart', 'befristet_bis', 'probezeit_bis', 'kuend_ag', 'arbeitszeit', 'urlaub', 'tarif', 'weg_km'], quali: ['abschluss', 'profil_link'] };
+  const t = { ort: ['Arbeitsplatz', 'Filiale, Team und Führung.'], vertrag: ['Vertrag & Konditionen', 'Laufzeit, Fristen, Zeit und Urlaub.'], quali: ['Qualifikation', 'Abschluss und Profil-Links.'] }[g || 'ort'];
+  arbeitsplatzSheet(groups[g || 'ort'], t[0], t[1]);
+};
+
+/* ---------- Lebenslauf: Bearbeiten ---------- */
+ACT['cv.head'] = () => formSheet({ title: 'Kurzprofil', sub: 'Zwei, drei Sätze, die dich auf den Punkt bringen – sie stehen oben im Lebenslauf.', wide: true, fields: [
+  { k: 'head', label: 'Berufsbezeichnung / Überschrift', type: 'text', val: CV().head || pget('beruf') || '', full: true, ph: 'z. B. Filialleiter · Bankkaufmann' },
+  { k: 'sum', label: 'Kurzprofil', type: 'textarea', val: CV().sum || '', full: true, rows: 5, ph: 'Was kannst du, was treibt dich an, wofür stehst du?' }], submit: 'Speichern',
+  onSubmit: v => { CV().head = v.head; CV().sum = v.sum; cvTouch(); rerender(); toast('Gespeichert', 'good'); } });
+ACT['cv.st'] = el => {
+  const id = el && el.dataset.id, s = id ? CV().st.find(x => x.id === id) : null, pre = (el && el.dataset.t) || 'job', now = new Date().getFullYear();
+  const cur = !id && pre === 'job' && !cvStations('job').length && phas('arbeitgeber');
+  const d = s || (cur ? { t: 'job', title: pget('beruf') || '', org: pget('arbeitgeber') || '', loc: pget('standort') || '', from: pget('eintritt') || '', to: '' } : { t: pre, to: '' });
+  const lbl = { job: ['Position', 'Arbeitgeber'], edu: ['Abschluss / Ausbildung', 'Schule / Hochschule / Betrieb'], praktikum: ['Tätigkeit', 'Unternehmen'], ehren: ['Engagement', 'Organisation'], sonst: ['Titel', 'Wo'] };
+  formSheet({ title: s ? 'Station bearbeiten' : cur ? 'Aktuelle Stelle übernehmen' : 'Station hinzufügen', sub: cur ? 'Kairos hat Angaben aus deinem Steckbrief vorausgefüllt.' : 'Stationen sortiert Kairos automatisch nach Datum.', wide: true,
+    fields: [{ k: 't', label: 'Art', type: 'select', opts: Object.entries(CVT).map(([k, v]) => [k, v[0]]), val: d.t, full: true },
+      { k: 'title', label: 'Position / Abschluss', type: 'text', val: d.title, req: true, full: true, ph: 'z. B. Filialleiter, Bankkaufmann, Master Betriebswirtschaft' },
+      { k: 'org', label: 'Arbeitgeber / Schule / Organisation', type: 'text', val: d.org, full: true }, { k: 'loc', label: 'Ort / Filiale', type: 'text', val: d.loc, full: true },
+      { k: 'from', label: 'Von', type: 'date', val: d.from }, { k: 'to', label: 'Bis', type: 'date', val: d.to },
+      { k: 'now', label: 'Bis heute (läuft noch)', type: 'toggle', val: s ? !s.to : (cur || pre === 'job' && !cvStations('job').length), full: true },
+      { k: 'desc', label: 'Aufgaben & Erfolge (eine Zeile pro Punkt)', type: 'textarea', val: d.desc || '', full: true, rows: 5, ph: 'z. B. Verantwortung für 12 Mitarbeitende\nKundenzufriedenheit um 15 % gesteigert' }],
+    submit: 'Speichern', onDelete: s ? () => { const o = JSON.parse(JSON.stringify(s)); CV().st = CV().st.filter(x => x.id !== s.id); cvTouch(); rerender(); toast('Station gelöscht', '', { label: 'Rückgängig', fn: () => { CV().st.push(o); cvTouch(); rerender(); } }); } : null,
+    onSubmit: v => {
+      const to = v.now ? '' : v.to; if (v.from && to && to < v.from) { toast('Das Ende liegt vor dem Beginn.', 'bad'); return false; }
+      const rec = { id: s ? s.id : uid(), t: v.t, title: v.title, org: v.org, loc: v.loc, from: v.from, to, desc: v.desc };
+      if (s) Object.assign(s, rec); else CV().st.push(rec);
+      cvTouch(); renderNav(); rerender(); toast('Gespeichert', 'good');
+    } });
+};
+ACT['cv.sk'] = el => {
+  const id = el && el.dataset.id, s = id ? CV().sk.find(x => x.id === id) : null;
+  formSheet({ title: s ? 'Kenntnis bearbeiten' : 'Kenntnis hinzufügen', sub: 'Fachwissen, Software, Methoden oder Soft Skills.', fields: [
+    { k: 'n', label: 'Kenntnis', type: 'text', val: s ? s.n : '', req: true, full: true, ph: 'z. B. Kundenberatung, Excel, Teamführung' }, { k: 'l', label: 'Niveau', type: 'select', opts: CV_LVL.map((x, i) => [String(i), x]), val: String(s ? s.l : 1), full: true }], submit: 'Speichern',
+    onDelete: s ? () => { CV().sk = CV().sk.filter(x => x.id !== s.id); cvTouch(); rerender(); } : null,
+    onSubmit: v => { const names = String(v.n).split(/[,;\n]+/).map(x => x.trim()).filter(Boolean); if (s) { s.n = names[0] || s.n; s.l = +v.l; } else names.forEach(n => { if (!CV().sk.some(x => norm(x.n) === norm(n))) CV().sk.push({ id: uid(), n, l: +v.l }); }); cvTouch(); renderNav(); rerender(); } });
+};
+ACT['cv.la'] = el => {
+  const id = el && el.dataset.id, s = id ? CV().la.find(x => x.id === id) : null;
+  formSheet({ title: s ? 'Sprache bearbeiten' : 'Sprache hinzufügen', fields: [{ k: 'n', label: 'Sprache', type: 'text', val: s ? s.n : '', req: true, full: true, ph: 'z. B. Deutsch, Englisch' }, { k: 'l', label: 'Niveau', type: 'select', opts: CV_LANG.map(x => [x, x]), val: s ? s.l : 'B2 – gut', full: true }], submit: 'Speichern',
+    onDelete: s ? () => { CV().la = CV().la.filter(x => x.id !== s.id); cvTouch(); rerender(); } : null,
+    onSubmit: v => { if (s) { s.n = v.n; s.l = v.l; } else CV().la.push({ id: uid(), n: v.n, l: v.l }); cvTouch(); renderNav(); rerender(); } });
+};
+ACT['cv.ce'] = el => {
+  const id = el && el.dataset.id, s = id ? CV().ce.find(x => x.id === id) : null;
+  formSheet({ title: s ? 'Zertifikat bearbeiten' : 'Zertifikat hinzufügen', sub: 'Zulassungen, Prüfungen, Kurse – mit Ablaufdatum erinnert Kairos dich rechtzeitig.', wide: true, fields: [
+    { k: 'n', label: 'Bezeichnung', type: 'text', val: s ? s.n : '', req: true, full: true, ph: 'z. B. Erste-Hilfe-Schein, Anlageberater-Zulassung' }, { k: 'org', label: 'Aussteller', type: 'text', val: s ? s.org : '', full: true },
+    { k: 'date', label: 'Erworben am', type: 'date', val: s ? s.date : '' }, { k: 'until', label: 'Gültig bis (falls befristet)', type: 'date', val: s ? s.until : '' }], submit: 'Speichern',
+    onDelete: s ? () => { CV().ce = CV().ce.filter(x => x.id !== s.id); cvTouch(); rerender(); } : null,
+    onSubmit: v => { const r = { n: v.n, org: v.org, date: v.date, until: v.until }; if (s) Object.assign(s, r); else CV().ce.push(Object.assign({ id: uid() }, r)); cvTouch(); renderNav(); rerender(); toast('Gespeichert', 'good'); } });
+};
+
+/* ---------- Lebenslauf: Text einfügen ---------- */
+const CV_RANGE = /^(?:seit\s+)?(\d{1,2}[./]\d{4}|\d{4})\s*(?:(?:–|—|-|bis)\s*(\d{1,2}[./]\d{4}|\d{4}|heute|aktuell|jetzt|laufend|dato))?\s*[:|,;–—-]?\s*(.*)$/i;
+const cvDate = (s, end) => { if (!s) return ''; const m = String(s).match(/^(\d{1,2})[./](\d{4})$/); if (m) return `${m[2]}-${m[1].padStart(2, '0')}-01`; return /^\d{4}$/.test(s) ? `${s}-${end ? '12' : '01'}-01` : ''; };
+function parseCvText(text) {
+  const out = []; let cur = null;
+  for (const raw of String(text).split(/\r?\n/)) {
+    const l = raw.replace(/^[\s•·*▪●-]+/, '').trim(), bullet = /^\s*[•·*▪●-]/.test(raw);
+    if (!l) continue; const m = !bullet && l.match(CV_RANGE);
+    if (m && (m[2] || /^seit/i.test(l))) { cur = { from: cvDate(m[1]), to: /heute|aktuell|jetzt|laufend|dato/i.test(m[2] || 'heute') ? '' : cvDate(m[2], true), head: m[3].trim(), lines: [] }; out.push(cur); }
+    else if (cur) cur.lines.push(l);
+  }
+  return out.map(c => {
+    let head = c.head, rest = c.lines.slice(); if (!head && rest.length) head = rest.shift();
+    const parts = head.split(/\s*(?:,| bei | @ |\||–|—)\s+/).filter(Boolean), title = parts[0] || head, org = parts.slice(1).join(', ') || (rest.length && rest[0].length < 60 && !/[.;]$/.test(rest[0]) ? rest.shift() : '');
+    const all = norm(head + ' ' + org), t = /studium|bachelor|master|ausbildung|lehre|abitur|schule|gymnasium|universit|hochschule|fachwirt|meister|techniker/.test(all) ? 'edu' : /praktikum|werkstudent/.test(all) ? 'praktikum' : /ehrenamt|verein/.test(all) ? 'ehren' : 'job';
+    return { id: uid(), t, title, org, loc: '', from: c.from, to: c.to, desc: rest.join('\n') };
+  }).filter(r => r.title);
+}
+ACT['cv.import'] = () => {
+  openSheet(`<h2>Lebenslauf einfügen</h2><p class="lead-p">Kopiere die Stationen aus deinem alten Lebenslauf (Word, PDF, LinkedIn) hier hinein. Kairos erkennt Zeiträume wie „03/2018 – heute“ und legt Stationen an – du siehst vorher, was erkannt wurde.</p>
+    <textarea class="txt" id="cvPaste" rows="9" placeholder="03/2018 – heute  Filialleiter, Beispielbank\n   • Führung eines Teams\n09/2012 – 02/2018  Berater, Beispielbank"></textarea>
+    <div id="cvPrev" class="cv-prev"></div>
+    <div class="acts"><button class="btn" data-sh="x">Abbrechen</button><span class="sp"></span><button class="btn" data-sh="scan">Erkennen</button><button class="btn primary" data-sh="add" disabled>Übernehmen</button></div>`,
+  { wide: true, onMount: sh => {
+    let found = [];
+    const draw = () => { $('#cvPrev', sh).innerHTML = found.length ? found.map((r, i) => `<label class="cv-pi"><input type="checkbox" class="tg" data-i="${i}" checked><span><b>${esc(r.title)}</b><small>${esc([r.org, fmtM(r.from) + (r.from ? ' – ' + (r.to ? fmtM(r.to) : 'heute') : ''), CVT[r.t][0]].filter(Boolean).join(' · '))}</small></span></label>`).join('') : '<p class="muted fine">Noch nichts erkannt – füge Text ein und tippe auf „Erkennen“.</p>'; $('[data-sh=add]', sh).disabled = !found.length; };
+    draw();
+    sh.addEventListener('click', e => { const b = e.target.closest('[data-sh]'); if (!b) return; const a = b.dataset.sh;
+      if (a === 'x') closeSheet();
+      if (a === 'scan') { found = parseCvText($('#cvPaste', sh).value); draw(); if (!found.length) toast('Keine Zeiträume gefunden. Schreibe z. B. „03/2018 – heute“ vor jede Station.', 'bad'); }
+      if (a === 'add') { const on = $$('.cv-pi input:checked', sh).map(i => found[+i.dataset.i]); on.forEach(r => { if (!CV().st.some(x => x.title === r.title && x.from === r.from && x.org === r.org)) CV().st.push(r); }); cvTouch(); closeSheet(); renderNav(); rerender(); toast(`${plural(on.length, 'Station', 'Stationen')} übernommen`, 'good'); } });
+  } });
+};
+
+/* ---------- Lebenslauf: Export ---------- */
+function cvModel(opt = {}) {
+  const c = CV(), nm = profName() || 'Dein Name', adr = [pget('strasse'), [pget('plz'), pget('ort')].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+  return { nm, head: c.head || pget('beruf') || '', sum: c.sum || '', adr: opt.adr ? adr : '', geb: opt.geb && phas('geburtsdatum') ? fmtDate(pget('geburtsdatum'), true) + (phas('geburtsort') ? ' in ' + pget('geburtsort') : '') : '', link: phas('profil_link') ? pget('profil_link') : '',
+    sect: [['job', cvStations('job')], ['praktikum', cvStations('praktikum')], ['edu', cvStations('edu')], ['ehren', cvStations('ehren')], ['sonst', cvStations('sonst')]].filter(x => x[1].length), sk: c.sk, la: c.la, ce: c.ce.slice().sort((a, b) => (b.date || '') < (a.date || '') ? -1 : 1) };
+}
+const cvRange = s => s.from ? `${fmtM(s.from)} – ${s.to ? fmtM(s.to) : 'heute'}` : (s.to ? 'bis ' + fmtM(s.to) : '');
+function cvText(opt) {
+  const m = cvModel(opt), L = [m.nm.toUpperCase(), m.head, [m.adr, m.geb, m.link].filter(Boolean).join(' · ')].filter(Boolean);
+  if (m.sum) L.push('', 'PROFIL', m.sum);
+  for (const [t, list] of m.sect) { L.push('', CVT[t][0].toUpperCase()); list.forEach(s => { L.push(`${cvRange(s)}  ${s.title}${s.org ? ', ' + s.org : ''}${s.loc ? ' (' + s.loc + ')' : ''}`); String(s.desc || '').split('\n').filter(x => x.trim()).forEach(x => L.push('   • ' + x.trim())); }); }
+  if (m.sk.length) L.push('', 'KENNTNISSE', m.sk.map(s => `${s.n} (${CV_LVL[s.l] || ''})`).join('; '));
+  if (m.la.length) L.push('', 'SPRACHEN', m.la.map(s => `${s.n}: ${s.l}`).join('; '));
+  if (m.ce.length) L.push('', 'ZERTIFIKATE & WEITERBILDUNG', ...m.ce.map(s => `${s.date ? fmtM(s.date) + '  ' : ''}${s.n}${s.org ? ', ' + s.org : ''}${s.until ? ' (gültig bis ' + fmtM(s.until) + ')' : ''}`));
+  return L.join('\n');
+}
+function cvHtml(opt) {
+  const m = cvModel(opt), h = (t, body) => `<section><h2>${esc(t)}</h2>${body}</section>`;
+  const st = s => `<div class="r"><div class="d">${esc(cvRange(s))}</div><div><b>${esc(s.title)}</b>${s.org || s.loc ? `<div class="o">${esc([s.org, s.loc].filter(Boolean).join(' · '))}</div>` : ''}${s.desc ? `<ul>${String(s.desc).split('\n').filter(x => x.trim()).map(x => `<li>${esc(x.trim())}</li>`).join('')}</ul>` : ''}</div></div>`;
+  return `<!doctype html><html lang="de"><meta charset="utf-8"><title>Lebenslauf ${esc(m.nm)}</title><style>
+  @page{margin:18mm}body{font:12.5px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;color:#14181f;max-width:760px;margin:28px auto;padding:0 22px}
+  h1{font-size:28px;margin:0;letter-spacing:-.4px}.sub{color:#556;margin:2px 0 4px;font-size:15px}.meta{color:#667;font-size:12px}
+  h2{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#2457d6;border-bottom:1px solid #d9e0ee;padding-bottom:4px;margin:22px 0 10px}
+  .r{display:grid;grid-template-columns:118px 1fr;gap:12px;margin:0 0 11px;page-break-inside:avoid}.d{color:#667;font-size:12px;padding-top:1px}.o{color:#556}ul{margin:4px 0 0;padding-left:17px}li{margin:1px 0}
+  .tags span{display:inline-block;border:1px solid #d9e0ee;border-radius:99px;padding:2px 9px;margin:0 5px 5px 0;font-size:11.5px}</style><body>
+  <h1>${esc(m.nm)}</h1>${m.head ? `<div class="sub">${esc(m.head)}</div>` : ''}<div class="meta">${esc([m.adr, m.geb, m.link].filter(Boolean).join(' · '))}</div>
+  ${m.sum ? h('Profil', `<p>${esc(m.sum).replace(/\n/g, '<br>')}</p>`) : ''}${m.sect.map(([t, l]) => h(CVT[t][0], l.map(st).join(''))).join('')}
+  ${m.sk.length ? h('Kenntnisse', `<div class="tags">${m.sk.map(s => `<span>${esc(s.n)} · ${esc(CV_LVL[s.l] || '')}</span>`).join('')}</div>`) : ''}${m.la.length ? h('Sprachen', `<div class="tags">${m.la.map(s => `<span>${esc(s.n)} · ${esc(s.l)}</span>`).join('')}</div>`) : ''}
+  ${m.ce.length ? h('Zertifikate & Weiterbildung', m.ce.map(s => `<div class="r"><div class="d">${esc(fmtM(s.date))}</div><div><b>${esc(s.n)}</b>${s.org || s.until ? `<div class="o">${esc([s.org, s.until ? 'gültig bis ' + fmtM(s.until) : ''].filter(Boolean).join(' · '))}</div>` : ''}</div></div>`).join('')) : ''}</body></html>`;
+}
+ACT['cv.export'] = () => {
+  const c = CV(); if (!c.st.length && !c.sum && !c.sk.length) return toast('Trage zuerst etwas in deinen Lebenslauf ein.');
+  const opt = { adr: true, geb: false };
+  openSheet(`<div class="chh" style="--c:#f5a524"><span class="chh-e">📄</span><div><small>Lebenslauf</small><h2>Exportieren</h2></div></div>
+    <label class="field full" style="flex-direction:row;align-items:center;justify-content:space-between;gap:12px;margin-top:6px"><span>Anschrift aufnehmen</span><input type="checkbox" class="tg" id="cvAdr" checked></label>
+    <label class="field full" style="flex-direction:row;align-items:center;justify-content:space-between;gap:12px;margin-top:8px"><span>Geburtsdatum & -ort aufnehmen<br><span class="hint">Nicht mehr üblich – Bewerbungen kommen auch ohne aus.</span></span><input type="checkbox" class="tg" id="cvGeb"></label>
+    <textarea class="txt kt" id="cvTxt" rows="12" style="margin-top:12px" spellcheck="false"></textarea>
+    <p class="muted fine">Zum Speichern als PDF wähle beim Drucken „Als PDF sichern“. Der Text lässt sich vor dem Senden noch frei ändern.</p>
+    <div class="acts"><button class="btn" data-sh="x">Schließen</button><span class="sp"></span><button class="btn" data-sh="print">${icon('print')}PDF / Drucken</button><button class="btn" data-sh="txt">${icon('download')}.txt</button><button class="btn" data-sh="copy">${icon('copy')}Kopieren</button><button class="btn primary" data-sh="share">${icon('share')}Senden</button></div>`,
+  { wide: true, onMount: sh => {
+    const T = $('#cvTxt', sh), fill = () => { opt.adr = $('#cvAdr', sh).checked; opt.geb = $('#cvGeb', sh).checked; T.value = cvText(opt); }; fill();
+    $('#cvAdr', sh).addEventListener('change', fill); $('#cvGeb', sh).addEventListener('change', fill);
+    sh.addEventListener('click', async ev => { const b = ev.target.closest('[data-sh]'); if (!b) return; const a = b.dataset.sh, nm = 'Lebenslauf ' + (profName() || '');
+      if (a === 'x') closeSheet();
+      if (a === 'copy') { try { await navigator.clipboard.writeText(T.value); toast('Kopiert', 'good'); } catch (er) { toast('Kopieren nicht möglich', 'bad'); } }
+      if (a === 'txt') { download(new Blob([T.value], { type: 'text/plain' }), 'lebenslauf.txt'); }
+      if (a === 'share') shareSheet({ title: nm, text: T.value, mailSubject: nm });
+      if (a === 'print') { const w = window.open('', '_blank'); if (!w) { download(new Blob([cvHtml(opt)], { type: 'text/html' }), 'lebenslauf.html'); return toast('Pop-up blockiert – als Datei gespeichert. Öffne sie und drucke sie als PDF.'); } w.document.write(cvHtml(opt)); w.document.close(); w.focus(); setTimeout(() => { try { w.print(); } catch (er) { /* ignorieren */ } }, 350); }
+    });
+  } });
+};
+
+/* ---------- Ansicht ---------- */
+const lvlDots = n => `<i class="lv">${[0, 1, 2, 3].map(i => `<b class="${i <= n ? 'on' : ''}"></b>`).join('')}</i>`;
+function stRow(s) { return `<button class="tl-i" data-act="cv.st" data-id="${s.id}"><span class="tl-d"></span><span class="tl-b"><b>${esc(s.title)}</b><small>${esc([s.org, s.loc].filter(Boolean).join(' · '))}</small><em>${esc(cvRange(s))}${s.from ? ' · ' + esc(durText(s.from, s.to)) : ''}</em>${s.desc ? `<span class="tl-ds">${esc(String(s.desc).split('\n').filter(x => x.trim()).slice(0, 3).join(' · '))}</span>` : ''}</span>${icon('chevR')}</button>`; }
+VIEWS.beruf = {
+  render() {
+    const c = CV(), cs = cvStats(), ben = vAll().filter(e => e.c === 'beruf'), benAns = ben.filter(e => vst(e.id)).length, title = pget('beruf') || c.head || '', ag = pget('arbeitgeber') || '';
+    const chips = [phas('standort') ? ['📍', pget('standort')] : null, phas('fuehrung') && pget('fuehrung') !== 'Keine' ? ['👥', pget('fuehrung') + (phas('mitarbeiter') ? ' · ' + pget('mitarbeiter') + ' MA' : '')] : null, phas('abteilung') ? ['🗂️', pget('abteilung')] : null, phas('eintritt') ? ['📅', 'seit ' + fmtM(pget('eintritt'))] : null].filter(Boolean);
+    const kp = [[phas('eintritt') ? (m => m >= 12 ? String((m / 12).toFixed(1)).replace('.', ',').replace(',0', '') + ' Jahre' : m + ' Mon.')(monthsBetween(pget('eintritt'), todayISO())) : '–', 'Betriebszugehörigkeit'], [phas('urlaub') ? pget('urlaub') + ' Tage' : '–', 'Urlaub / Jahr'], [phas('arbeitszeit') ? pget('arbeitszeit') + ' Std.' : '–', 'pro Woche'], [phas('kuend_ag') ? pget('kuend_ag').replace(/ zum .*/, '') : '–', 'Kündigungsfrist']];
+    const ins = buildInsights().filter(x => /^(br_|dw_)/.test(x.id)).slice(0, 4);
+    const sec = (type, add) => { const l = cvStations(type); return `<div class="cv-sec"><div class="cv-h"><b>${CVT[type][1]} ${CVT[type][0]}</b><button class="btn sm ghost" data-act="cv.st" data-t="${type}" aria-label="${CVT[type][0]} hinzufügen">${icon('plus')}</button></div>${l.length ? `<div class="tl">${l.map(stRow).join('')}</div>` : `<p class="muted fine">${add}</p>`}</div>`; };
+    const showBen = ben.slice().sort((a, b) => ({ ja: 0, null: 1, nein: 2 }[vst(a.id) || 'null'] - { ja: 0, null: 1, nein: 2 }[vst(b.id) || 'null']));
+    return `<div class="page brp"><header class="ph"><div class="t"><div class="eyebrow">Dein Berufsleben</div><h1>Beruf & Karriere</h1><p>Arbeitsplatz, Dienstwagen & Benefits und dein Lebenslauf – alles verknüpft mit Gehalt, Verträgen und Fristen.</p></div>
+      <div class="act"><button class="btn" data-act="cv.import">${icon('upload')}Lebenslauf einfügen</button><button class="btn primary" data-act="cv.export">${icon('file')}Exportieren</button></div></header>
+      <section class="card glass br-hero"><div class="br-top"><span class="br-e">🧑‍💼</span><div class="br-t"><small>${ag ? esc(ag) : 'Aktuelle Stelle'}</small><h2>${title ? esc(title) : 'Position ergänzen'}</h2></div><button class="btn sm" data-act="br.edit" data-g="ort">${icon('edit')}Ändern</button></div>
+        ${chips.length ? `<div class="chips br-chips">${chips.map(x => `<span class="chip"><i>${x[0]}</i>${esc(x[1])}</span>`).join('')}</div>` : `<p class="muted fine" style="margin:8px 0 0">Wo arbeitest du, und mit wie viel Verantwortung? Das kannst du hier eintragen – Filiale, Team, Führung.</p><button class="btn primary" style="margin-top:12px" data-act="br.start">${icon('plus')}Arbeitsplatz eintragen</button>`}
+        <div class="kpis br-k">${kp.map(k => `<div class="kpi2"><b>${esc(k[0])}</b><span>${esc(k[1])}</span></div>`).join('')}</div></section>
+      ${ins.length ? `<div class="group-h"><span>Das fällt Kairos auf</span></div><div class="ins-list">${ins.map((x, i) => insightCard(x, i)).join('')}</div>` : ''}
+      <div class="br-cols"><section class="card glass"><div class="card-h">${icon('briefcase')} Vertrag & Konditionen<span class="sp"></span><button class="btn sm ghost" data-act="br.edit" data-g="vertrag">${icon('edit')}</button></div><div class="sfs">${['vertragsart', 'befristet_bis', 'probezeit_bis', 'kuend_ag', 'arbeitszeit', 'urlaub', 'tarif', 'weg_km'].map(fieldRow).join('')}</div></section>
+      <section class="card glass"><div class="card-h">${icon('user')} Arbeitsplatz & Qualifikation<span class="sp"></span><button class="btn sm ghost" data-act="br.edit" data-g="ort">${icon('edit')}</button></div><div class="sfs">${['standort', 'abteilung', 'fuehrung', 'mitarbeiter', 'vorgesetzter', 'abschluss', 'profil_link'].map(fieldRow).join('')}</div></section></div>
+      <section class="card glass"><div class="card-h">🚘 Dienstwagen & Benefits<span class="sp"></span>${ben.length - benAns ? `<button class="btn sm" data-act="vt.quick" data-cat="beruf">${icon('sparkle')}Check</button>` : ''}<button class="btn sm ghost" data-act="vt.add" data-cat="beruf" aria-label="Benefit hinzufügen">${icon('plus')}</button></div>
+        <p class="muted fine" style="margin:-4px 0 10px">Habe ich einen Dienstwagen? Ein Diensthandy? Ein Dienstrad? „Nein“ ist auch eine Antwort – Kairos rechnet dann nicht damit.</p><div class="vlist">${showBen.map(vRow).join('') || '<p class="muted fine">Für deine Beschäftigungsform gibt es hier nichts abzufragen.</p>'}</div></section>
+      <section class="card glass cv"><div class="card-h">📄 Lebenslauf<span class="sp"></span><span class="badge ${cs.pct >= .75 ? 'pos' : ''}">${Math.round(cs.pct * 100)} %</span></div>
+        <div class="bar thin" style="margin:0 0 10px"><i style="width:${Math.round(cs.pct * 100)}%"></i></div>
+        <div class="chips cv-chk">${cs.parts.map(p => `<span class="chip ${p[1] ? 'ok' : ''}">${p[1] ? icon('check') : ''}${esc(p[0])}</span>`).join('')}</div>
+        <div class="cv-sec"><div class="cv-h"><b>🧭 Kurzprofil</b><button class="btn sm ghost" data-act="cv.head" aria-label="Kurzprofil bearbeiten">${icon('edit')}</button></div>${c.head || c.sum ? `<p class="cv-p">${c.head ? `<b>${esc(c.head)}</b><br>` : ''}${esc(c.sum)}</p>` : `<p class="muted fine">Zwei, drei Sätze über dich. ${phas('ueber') ? 'Kairos kann deine „Über mich“-Antwort als Start nutzen.' : ''}</p>`}</div>
+        ${!cvStations('job').length && phas('arbeitgeber') ? `<button class="ckl" data-act="cv.st" data-t="job">${icon('briefcase')}<span>Aktuelle Stelle bei ${esc(pget('arbeitgeber'))} übernehmen</span>${icon('chevR')}</button>` : ''}
+        ${sec('job', 'Alle Arbeitgeber und Positionen, neueste zuerst. Tippe auf +, um eine Station anzulegen.')}${sec('edu', 'Ausbildung, Studium, Weiterqualifizierung.')}${sec('praktikum', 'Praktika, Werkstudium, Nebenjobs – optional.')}${sec('ehren', 'Ehrenamt, Vereine, Projekte – optional.')}
+        <div class="cv-sec"><div class="cv-h"><b>🛠️ Kenntnisse</b><button class="btn sm ghost" data-act="cv.sk" aria-label="Kenntnis hinzufügen">${icon('plus')}</button></div>${c.sk.length ? `<div class="chips">${c.sk.map(s => `<button class="chip btnchip" data-act="cv.sk" data-id="${s.id}">${esc(s.n)}${lvlDots(s.l)}</button>`).join('')}</div>` : '<p class="muted fine">Fachwissen, Software, Methoden, Soft Skills – am besten mindestens drei.</p>'}</div>
+        <div class="cv-sec"><div class="cv-h"><b>🌍 Sprachen</b><button class="btn sm ghost" data-act="cv.la" aria-label="Sprache hinzufügen">${icon('plus')}</button></div>${c.la.length ? `<div class="chips">${c.la.map(s => `<button class="chip btnchip" data-act="cv.la" data-id="${s.id}">${esc(s.n)}<em>${esc(s.l.split(' – ')[0])}</em></button>`).join('')}</div>` : '<p class="muted fine">Deutsch, Englisch …</p>'}</div>
+        <div class="cv-sec"><div class="cv-h"><b>🏅 Zertifikate & Weiterbildung</b><button class="btn sm ghost" data-act="cv.ce" aria-label="Zertifikat hinzufügen">${icon('plus')}</button></div>${c.ce.length ? `<div class="tl">${c.ce.slice().sort((a, b) => (b.date || '') < (a.date || '') ? -1 : 1).map(s => { const n = s.until ? diffDays(s.until, todayISO()) : null; return `<button class="tl-i" data-act="cv.ce" data-id="${s.id}"><span class="tl-d"></span><span class="tl-b"><b>${esc(s.n)}</b><small>${esc(s.org || '')}</small><em>${s.date ? 'seit ' + esc(fmtM(s.date)) : ''}${s.until ? (s.date ? ' · ' : '') + (n < 0 ? 'abgelaufen' : 'gültig bis ' + esc(fmtM(s.until))) : ''}</em></span>${icon('chevR')}</button>`; }).join('')}</div>` : '<p class="muted fine">Erste-Hilfe-Schein, Zulassungen, Kurse. Mit Ablaufdatum bekommst du eine Erinnerung.</p>'}</div>
+      </section>
+      <p class="disc">Der Lebenslauf bleibt auf diesem Gerät, bis du ihn selbst exportierst oder teilst.</p></div>`;
+  }
+};
+if (typeof VIEWS.beruf.mount !== 'function') VIEWS.beruf.mount = root => { $$('.cv-h', root); };
+
+/* ---------- Erkenntnisse & Fristen ---------- */
+function careerInsights(add) {
+  const today = todayISO(), c = CV(), ag = phas('arbeitgeber');
+  if (phas('probezeit_bis')) { const n = diffDays(pget('probezeit_bis'), today); if (n >= 0 && n <= 60) add({ id: 'br_probe', kind: 'todo', pri: 64, e: '⏱️', title: `Probezeit endet in ${plural(n, 'Tag', 'Tagen')}`, text: 'Danach gilt in der Regel die längere vertragliche Kündigungsfrist. Ein kurzes Feedbackgespräch vorher schafft Klarheit – und falls etwas offen ist, jetzt ansprechen.', src: chipsFor(['probezeit_bis', 'kuend_ag']) }); }
+  if (phas('befristet_bis')) { const n = diffDays(pget('befristet_bis'), today);
+    if (n >= 0 && n <= 240) add({ id: 'br_befr', kind: n <= 120 ? 'warn' : 'todo', pri: n <= 120 ? 84 : 66, e: '📅', title: `Befristeter Vertrag endet in ${plural(Math.round(n / 30.4) || 1, 'Monat', 'Monaten')}`, text: 'Sprich früh über Verlängerung oder Entfristung. Wird der Vertrag nicht verlängert, musst du dich spätestens drei Monate vor Ende bei der Agentur für Arbeit arbeitsuchend melden (kürzere Frist, wenn du später davon erfährst) – sonst droht eine Sperrzeit beim Arbeitslosengeld.', src: chipsFor(['befristet_bis']) }); }
+  if (ag && !c.st.some(s => s.t === 'job')) add({ id: 'br_cv_leer', kind: 'todo', pri: 32, e: '📄', title: 'Lebenslauf anlegen', text: 'Kairos kann deine aktuelle Stelle direkt aus dem Steckbrief übernehmen. Ein aktueller Lebenslauf liegt dann bereit, wenn sich eine Chance ergibt.', src: chipsFor(['arbeitgeber', 'beruf']), act: { l: 'Stelle übernehmen', a: 'cv.st' } });
+  else if (c.st.some(s => s.t === 'job') && c.at && diffDays(todayISO(), new Date(c.at).toISOString().slice(0, 10)) > 365) add({ id: 'br_cv_alt', kind: 'info', pri: 24, e: '📄', title: 'Dein Lebenslauf ist über ein Jahr alt', text: 'Neue Aufgaben, Projekte, Weiterbildungen? Halte die letzten Erfolge fest, solange sie frisch sind.', src: [], act: { l: 'Lebenslauf öffnen', go: 'beruf' } });
+  for (const s of c.ce) if (s.until) { const n = diffDays(s.until, today); if (n >= 0 && n <= 240) add({ id: 'br_ce_' + s.id, kind: n <= 60 ? 'warn' : 'todo', pri: n <= 60 ? 74 : 52, e: '🏅', title: `${s.n} läuft in ${plural(n, 'Tag', 'Tagen')} ab`, text: 'Prüfe, ob eine Auffrischung oder Folgeschulung nötig ist – und ob dein Arbeitgeber die Kosten übernimmt.', src: [] }); else if (n < 0 && n > -120) add({ id: 'br_ce_x_' + s.id, kind: 'warn', pri: 70, e: '🏅', title: `${s.n} ist abgelaufen`, text: 'Je nach Tätigkeit ist der Nachweis Voraussetzung. Kläre, ob du die Prüfung erneuern musst.', src: [] }); }
+  if (tenureYears() >= 3 && !S.docs.some(d => /zeugnis/i.test((d.name || '') + ' ' + (d.summary || '')))) add({ id: 'br_zeugnis', kind: 'chance', pri: 28, e: '🧾', title: 'Zwischenzeugnis anfordern', text: `Nach ${tenure()} im Betrieb lohnt sich ein Zwischenzeugnis – besonders bei neuem Vorgesetzten oder vor Veränderungen. Du kannst es mit berechtigtem Interesse verlangen und hast bei Wechsel dann etwas in der Hand.`, src: chipsFor(['eintritt']) });
+  if (phas('weg_km') && +String(pget('weg_km')).replace(',', '.') > 0 && vst('dienstwagen') !== 'ja') add({ id: 'br_pendler', kind: 'chance', pri: 36, e: '🚗', title: 'Entfernungspauschale nicht vergessen', text: `${pget('weg_km')} km zur Arbeit: In der Steuererklärung zählt die Entfernungspauschale als Werbungskosten – zusammen mit Arbeitsmitteln, Fortbildung und ggf. Homeoffice-Tagen kommt oft mehr zusammen als der Pauschbetrag.`, src: chipsFor(['weg_km']) });
+  if (phas('fuehrung') && /leitung|geschäftsführung/i.test(pget('fuehrung')) && !c.ce.length) add({ id: 'br_fuehrung', kind: 'info', pri: 20, e: '👥', title: 'Führungsrolle im Lebenslauf sichtbar machen', text: 'Team-Größe, Verantwortung und Ergebnisse zählen bei Bewerbungen für Leitungsrollen mehr als Titel. Trage sie bei der Station ein.', src: chipsFor(['fuehrung']) });
+}
+function careerDeadlines(add) {
+  if (phas('probezeit_bis')) add({ id: 'pz_end', date: pget('probezeit_bis'), title: 'Probezeit endet', sub: pget('arbeitgeber') || '', e: '⏱️', kind: 'frist', alarm: 14 });
+  if (phas('befristet_bis')) { add({ id: 'bf_end', date: pget('befristet_bis'), title: 'Arbeitsvertrag endet (befristet)', sub: pget('arbeitgeber') || '', e: '📅', kind: 'frist', alarm: 90 }); add({ id: 'bf_meld', date: addMonths(pget('befristet_bis'), -3), title: 'Arbeitsuchend melden (spätestens)', sub: 'Drei Monate vor Vertragsende', e: '📝', kind: 'frist', alarm: 21 }); }
+  for (const s of CV().ce) if (s.until) add({ id: 'ce_' + s.id, date: s.until, title: `Läuft ab: ${s.n}`, sub: s.org || 'Zertifikat', e: '🏅', kind: 'frist', alarm: 60 });
 }
 
 /* =====================================================================
@@ -4149,13 +4572,19 @@ function fsUmtausch() {
 const VCATS = [
   ['vers', 'Versicherungen', '🛡️', 'Was dich und dein Hab und Gut absichert'],
   ['wohnen', 'Wohnen & Energie', '🏠', 'Strom, Gas, Rundfunkbeitrag'],
-  ['komm', 'Internet & Mobilfunk', '📱', 'Anschluss und Handy'],
+  ['komm', 'Internet & Mobilfunk', '📱', 'Anschluss, Handy, Domain'],
   ['mobil', 'Mobilität', '🚗', 'Auto, Bahn, Pannenhilfe'],
+  ['beruf', 'Beruf & Benefits', '💼', 'Dienstwagen und Extras vom Arbeitgeber'],
+  ['fam', 'Familie & Kinder', '👨‍👩‍👧', 'Betreuung, Schule, Unterhalt'],
   ['geld', 'Konto, Vorsorge & Kredite', '💶', 'Wo dein Geld arbeitet – oder gebunden ist'],
-  ['abo', 'Abos & Mitgliedschaften', '🎬', 'Streaming, Fitness, Vereine']
+  ['abo', 'Abos & Mitgliedschaften', '🎬', 'Streaming, Fitness, Vereine'],
+  ['einnahmen', 'Weitere Einnahmen', '💰', 'Was zusätzlich zum Gehalt hereinkommt']
 ];
+const hasKids = () => peopleOf('kind').length > 0 || phas('kinder');
+const isSelf = () => ['Selbstständig / Freiberuflich'].includes(pget('beschaeftigung'));
+const isWorker = () => !['Rentner/in', 'Arbeitsuchend'].includes(pget('beschaeftigung'));
 const ZAHL = [['m', 'monatlich', 1], ['q', 'vierteljährlich', 1 / 3], ['h', 'halbjährlich', 1 / 6], ['j', 'jährlich', 1 / 12]];
-const KUEND = [['', 'Weiß ich nicht'], ['monat', 'Jederzeit (monatlich kündbar)'], ['1m', '1 Monat zum Laufzeitende'], ['3m', '3 Monate zum Laufzeitende'], ['6m', '6 Monate zum Laufzeitende'], ['nov', 'Jährlich zum 30. November (Kfz)']];
+const KUEND = [['', 'Weiß ich nicht'], ['monat', 'Jederzeit (monatlich kündbar)'], ['1m', '1 Monat zum Laufzeitende'], ['3m', '3 Monate zum Laufzeitende'], ['6m', '6 Monate zum Laufzeitende'], ['2w', '2 Wochen Frist'], ['12m', '12 Monate zum Laufzeitende'], ['nov', 'Jährlich zum 30. November (Kfz)']];
 const SEL = (k, l, opts) => [k, l, 'select', opts];
 const V = (id, c, n, e, d, o = {}) => Object.assign({ id, c, n, e, d, x: [], kw: [] }, o);
 const JN = ['Ja', 'Nein', 'Weiß ich nicht'];
@@ -4163,7 +4592,7 @@ const VC = [
   V('haftpflicht', 'vers', 'Privathaftpflicht', '🛡️', 'Zahlt, wenn du anderen versehentlich Schaden zufügst – für viele die wichtigste Versicherung.', { pf: 'haftpflicht', core: 1, kw: ['haftpflicht'], x: [SEL('x_fam', 'Wer ist versichert', ['Nur ich', 'Ich und Partner/in', 'Familie mit Kindern']), ['x_summe', 'Deckungssumme', 'text']] }),
   V('hausrat', 'vers', 'Hausratversicherung', '🏠', 'Ersetzt Möbel, Technik und Kleidung bei Einbruch, Feuer oder Leitungswasser.', { pf: 'hausrat', core: 1, kw: ['hausrat'], x: [['x_summe', 'Versicherungssumme', 'money'], ['x_flaeche', 'Wohnfläche (m²)', 'number'], SEL('x_elem', 'Elementarschäden eingeschlossen', JN)] }),
   V('wohngebaeude', 'vers', 'Wohngebäudeversicherung', '🏡', 'Für Eigentümer: Schäden am Haus durch Feuer, Sturm, Leitungswasser.', { kw: ['wohngebaeude'], x: [SEL('x_elem', 'Elementarschäden eingeschlossen', JN)], when: () => pget('wohnart') === 'Eigentum' }),
-  V('rechtsschutz', 'vers', 'Rechtsschutz', '⚖️', 'Übernimmt Anwalts- und Gerichtskosten, z. B. bei Streit mit Vermieter, Arbeitgeber oder im Verkehr.', { kw: ['rechtsschutz'], x: [['x_bausteine', 'Bausteine (Privat, Beruf, Verkehr, Miete)', 'text'], ['x_sb', 'Selbstbeteiligung', 'money']] }),
+  V('rechtsschutz', 'vers', 'Rechtsschutz', '⚖️', 'Übernimmt Anwalts- und Gerichtskosten, z. B. bei Streit mit Vermieter, Arbeitgeber oder im Verkehr.', { core: 1, kw: ['rechtsschutz'], x: [['x_bausteine', 'Bausteine (Privat, Beruf, Verkehr, Miete)', 'text'], ['x_sb', 'Selbstbeteiligung', 'money']] }),
   V('bu', 'vers', 'Berufsunfähigkeit', '🦺', 'Sichert dein Einkommen, wenn du aus gesundheitlichen Gründen nicht mehr arbeiten kannst.', { core: 1, kw: ['berufsunfahigkeit'], x: [['x_rente', 'Versicherte Monatsrente', 'money'], ['x_bis', 'Versichert bis Alter', 'number']], when: () => !['Rentner/in', 'Student/in / Azubi'].includes(pget('beschaeftigung')) }),
   V('unfall', 'vers', 'Unfallversicherung', '🩹', 'Zahlt bei dauerhaften Unfallfolgen – auch für Kinder oft sinnvoll.', { kw: ['unfallversicherung'], x: [['x_summe', 'Invaliditätssumme', 'money']] }),
   V('leben', 'vers', 'Risikolebensversicherung', '❤️', 'Sichert Partner und Kinder (oder einen Kredit) im Todesfall ab.', { kw: ['lebensversicherung', 'risikoleben'], x: [['x_summe', 'Todesfallsumme', 'money'], ['x_bez', 'Bezugsberechtigte/r', 'text']] }),
@@ -4180,7 +4609,7 @@ const VC = [
   V('pannen', 'mobil', 'Pannenhilfe / Schutzbrief', '🧰', 'Automobilclub oder Schutzbrief – oft auch Teil der Kfz-Versicherung oder Kreditkarte.', { kw: ['adac', 'pannenhilfe', 'schutzbrief'] }),
   V('dticket', 'mobil', 'Deutschlandticket / ÖPNV', '🚆', 'Monatsabo für Bus und Bahn.', { kuend: 'monat', kw: ['deutschlandticket', 'jobticket'] }),
   V('kreditkarte', 'geld', 'Kreditkarte', '💳', 'Kredit-, Debit- oder Prepaid-Karte – auch Gebühren und Versicherungen im Paket prüfen.', { kw: ['kreditkarte'], x: [SEL('x_art', 'Kartenart', ['Kreditkarte', 'Debitkarte', 'Prepaid'])] }),
-  V('sparen', 'geld', 'Tagesgeld / Festgeld', '🏦', 'Rücklagen – wichtig für Notfälle (ca. 3 Netto-Monatsgehälter sind eine übliche Faustregel).', { x: [['x_wert', 'Guthaben', 'money'], ['x_zins', 'Zins p. a. (%)', 'number']] }),
+  V('sparen', 'geld', 'Tagesgeld / Festgeld', '🏦', 'Rücklagen – wichtig für Notfälle (ca. 3 Netto-Monatsgehälter sind eine übliche Faustregel).', { core: 1, x: [['x_wert', 'Guthaben', 'money'], ['x_zins', 'Zins p. a. (%)', 'number']] }),
   V('depot', 'geld', 'Wertpapierdepot', '📈', 'Aktien, ETFs und Fonds.', { kw: ['depot', 'wertpapier'], x: [['x_wert', 'Depotwert', 'money'], ['x_sparplan', 'Sparplan monatlich', 'money']] }),
   V('bauspar', 'geld', 'Bausparvertrag', '🏗️', 'Bausparen für Kauf oder Modernisierung – inklusive Wohnungsbauprämie, falls berechtigt.', { kw: ['bausparvertrag', 'bausparkasse'], x: [['x_summe', 'Bausparsumme', 'money'], ['x_guth', 'Guthaben', 'money']] }),
   V('altersvorsorge', 'geld', 'Private Altersvorsorge', '👴', 'Riester, Rürup/Basisrente, private Rente oder ETF-Sparplan für das Alter.', { core: 1, kw: ['riester', 'ruerup', 'basisrente', 'rentenversicherung'], x: [SEL('x_art', 'Art', ['Riester', 'Rürup / Basisrente', 'Private Rentenversicherung', 'ETF-Sparplan', 'Sonstiges']), ['x_wert', 'Aktueller Wert', 'money']] }),
@@ -4191,15 +4620,85 @@ const VC = [
   V('software', 'abo', 'Cloud & Software', '☁️', 'iCloud, Google One, Microsoft 365, Apps mit Abo.', { kuend: 'monat', kw: ['icloud', 'microsoft 365', 'google one', 'abonnement'], x: [['x_dienste', 'Welche Dienste', 'text']] }),
   V('zeitung', 'abo', 'Zeitung & Magazine', '📰', 'Digital- oder Print-Abos.', { kw: ['zeitung', 'magazin'], x: [['x_dienste', 'Welche', 'text']] }),
   V('fitness', 'abo', 'Fitnessstudio / Sport', '🏋️', 'Studio, Verein oder Kurs mit festem Beitrag.', { kw: ['fitness', 'mitgliedschaft', 'studio'], x: [['x_ort', 'Wo', 'text']] }),
-  V('verein', 'abo', 'Vereine & Mitgliedschaften', '🤝', 'Vereinsbeiträge, Gewerkschaft, Verbände.', { kw: ['vereinsbeitrag', 'gewerkschaft'], x: [['x_ort', 'Welche', 'text']] })
+  V('verein', 'abo', 'Vereine & Mitgliedschaften', '🤝', 'Vereinsbeiträge, Gewerkschaft, Verbände.', { kw: ['vereinsbeitrag', 'gewerkschaft'], x: [['x_ort', 'Welche', 'text']] }),
+  V('pflege', 'vers', 'Pflegezusatz / Pflegetagegeld', '🧓', 'Die Pflegeversicherung zahlt nur einen Teil – eine Zusatzabsicherung füllt die Lücke.', { kw: ['pflegezusatz', 'pflegetagegeld', 'pflegerente'], x: [['x_tag', 'Tagegeld / Monatsleistung', 'money']] }),
+  V('ktg', 'vers', 'Krankentagegeld', '🤒', 'Ersetzt dein Einkommen bei langer Krankheit – für Privatversicherte und Selbstständige besonders wichtig.', { kw: ['krankentagegeld'], x: [['x_tag', 'Tagegeld', 'money'], ['x_ab', 'Zahlung ab Krankheitstag', 'number']], when: () => kvKind() === 'pkv' || isSelf() }),
+  V('sterbegeld', 'vers', 'Sterbegeldversicherung', '🕊️', 'Deckt Bestattungskosten ab, damit sie nicht an der Familie hängen bleiben.', { kw: ['sterbegeld', 'bestattungsvorsorge'], x: [['x_summe', 'Versicherungssumme', 'money']] }),
+  V('fahrradvers', 'vers', 'Fahrrad- / E-Bike-Versicherung', '🚲', 'Schützt vor Diebstahl und Schäden – eine Hausrat deckt Fahrräder oft nur eingeschränkt.', { kw: ['fahrradversicherung', 'e-bike versicherung'], x: [['x_wert', 'Wert des Rads', 'money']] }),
+  V('elektronik', 'vers', 'Handy- / Elektronikschutz', '📲', 'Bruch- und Diebstahlschutz für Smartphone, Laptop oder Kamera.', { kw: ['handyversicherung', 'elektronikversicherung', 'applecare'], x: [['x_geraet', 'Gerät', 'text']] }),
+  V('cyber', 'vers', 'Cyber- & Identitätsschutz', '🔐', 'Hilfe bei Datenklau, Online-Betrug und gehacktem Konto.', { kw: ['cyberversicherung', 'identitatsschutz'] }),
+  V('berufshaft', 'vers', 'Berufs- / Betriebshaftpflicht', '💼', 'Für Selbstständige: Schäden, die du bei deiner Arbeit anderen zufügst.', { kw: ['berufshaftpflicht', 'betriebshaftpflicht'], x: [['x_summe', 'Deckungssumme', 'money']], when: () => isSelf() }),
+  V('wasser', 'wohnen', 'Wasser & Abwasser', '🚰', 'Nur, wenn du direkt mit dem Versorger abrechnest – sonst steckt es in den Nebenkosten.', { kw: ['wasserversorgung', 'abwasser', 'stadtwerke wasser'] }),
+  V('muell', 'wohnen', 'Müll- & Abfallgebühren', '🗑️', 'Gebühr der Stadt oder des Entsorgers, falls nicht über den Vermieter.', { kw: ['abfallgebuhren', 'mullgebuhren', 'entsorgung'] }),
+  V('hausgeld', 'wohnen', 'Hausgeld / WEG', '🏢', 'Monatlicher Beitrag an die Eigentümergemeinschaft für Instandhaltung und Betrieb.', { kw: ['hausgeld', 'wohnungseigentumer', 'weg-verwaltung'], when: () => pget('wohnart') === 'Eigentum' }),
+  V('grundsteuer', 'wohnen', 'Grundsteuer', '🏛️', 'Jährliche Steuer für Grundbesitz, wird oft vierteljährlich gezahlt.', { kw: ['grundsteuer', 'grundbesitzabgaben'], when: () => pget('wohnart') === 'Eigentum' }),
+  V('stellplatz', 'wohnen', 'Stellplatz / Garage', '🅿️', 'Gemieteter Parkplatz, Tiefgarage oder Garage.', { kw: ['stellplatz', 'garage', 'tiefgarage'] }),
+  V('haushaltshilfe', 'wohnen', 'Reinigung & Haushaltshilfe', '🧹', 'Putzhilfe, Gärtner oder Hausmeisterdienst – Teile davon sind steuerlich absetzbar.', { kw: ['haushaltshilfe', 'reinigungskraft', 'gartenpflege'] }),
+  V('wartung', 'wohnen', 'Wartungsverträge', '🔧', 'Heizung, Rauchmelder, Aufzug, Hausnotruf.', { kw: ['wartungsvertrag', 'heizungswartung'], x: [['x_was', 'Wofür', 'text']] }),
+  V('solar', 'wohnen', 'Photovoltaik / Einspeisung', '☀️', 'Einnahmen aus der eigenen Solaranlage – das Finanzamt will sie in der Steuererklärung sehen.', { inc: 1, kw: ['einspeisevergutung', 'photovoltaik', 'solaranlage'], x: [['x_kwp', 'Anlagenleistung (kWp)', 'number']], kl: 'Einspeisevergütung', when: () => pget('wohnart') === 'Eigentum' }),
+  V('domain', 'komm', 'Domain & Hosting', '🧩', 'Eigene Website, Mail-Domain oder Server – oft jährlich abgerechnet.', { kw: ['domain', 'webhosting', 'hosting'], x: [['x_dom', 'Domain', 'text']] }),
+  V('tvpaket', 'komm', 'TV-Paket / Kabel-TV', '📡', 'Zusätzlich zum Internet gebuchtes Fernsehen, z. B. Magenta TV oder Sky.', { kuend: '3m', kw: ['magenta tv', 'sky', 'kabel tv', 'waipu'] }),
+  V('kfzsteuer', 'mobil', 'Kfz-Steuer', '🧾', 'Die Steuer für dein Fahrzeug wird jährlich per Lastschrift eingezogen.', { kw: ['kfz-steuer', 'kraftfahrzeugsteuer'], x: [['x_kennz', 'Kennzeichen', 'text']] }),
+  V('carsharing', 'mobil', 'Carsharing / Mobilitätsabo', '🚙', 'Share Now, Miles, Flinkster oder ein Auto-Abo.', { kuend: 'monat', kw: ['carsharing', 'flinkster', 'auto abo'] }),
+  V('bahncard', 'mobil', 'BahnCard', '🚉', 'Rabatt bei der Bahn – verlängert sich meist automatisch, wenn du nicht rechtzeitig kündigst.', { kuend: '3m', kw: ['bahncard'], x: [SEL('x_art', 'Karte', ['BahnCard 25', 'BahnCard 50', 'BahnCard 100', 'Business'])] }),
+  V('dienstwagen', 'beruf', 'Dienstwagen', '🚘', 'Firmenwagen vom Arbeitgeber – bei privater Nutzung ist ein geldwerter Vorteil zu versteuern.', { core: 1, kw: ['dienstwagen', 'firmenwagen', 'fahrzeugueberlassung', 'tankkarte', 'leasingrate'], kl: 'Dein Eigenanteil', x: [SEL('x_nutz', 'Nutzung', ['Auch privat nutzbar (1-%-Regel)', 'Auch privat nutzbar (Fahrtenbuch)', 'Nur dienstlich']), SEL('x_antrieb', 'Antrieb', ['Verbrenner', 'Hybrid', 'Elektro']), ['x_lp', 'Bruttolistenpreis', 'money'], ['x_kennz', 'Kennzeichen', 'text'], SEL('x_tank', 'Tanken / Laden', ['Tankkarte vom Arbeitgeber', 'Selbst bezahlt', 'Teils']), ['x_km', 'Entfernung Wohnung–Arbeit (km)', 'number']], when: () => isWorker() }),
+  V('diensthandy', 'beruf', 'Diensthandy / Dienstlaptop', '📞', 'Geräte vom Arbeitgeber – private Nutzung ist meist steuerfrei.', { kw: ['diensthandy', 'firmenhandy'], x: [['x_geraet', 'Gerät', 'text']], when: () => isWorker() }),
+  V('jobrad', 'beruf', 'Dienstrad / JobRad', '🚴', 'Leasing über den Arbeitgeber – oft günstiger als Selberkaufen.', { kw: ['jobrad', 'dienstrad', 'bikeleasing'], kl: 'Leasingrate (brutto)', x: [['x_wert', 'Wert des Rads', 'money']], when: () => isWorker() }),
+  V('essen', 'beruf', 'Essenszuschuss / Kantine', '🍽️', 'Zuschuss zum Mittagessen, Restaurantkarte oder Kantine.', { inc: 1, kw: ['essenszuschuss', 'kantine', 'restaurantkarte'], kl: 'Zuschuss', when: () => isWorker() }),
+  V('gesundheitsbudget', 'beruf', 'Firmenfitness / Gesundheitsbudget', '💪', 'Wellpass, Urban Sports Club oder Zuschuss für Sport und Prävention.', { inc: 1, kw: ['wellpass', 'urban sports', 'firmenfitness', 'gesundheitsbudget'], kl: 'Zuschuss', when: () => isWorker() }),
+  V('weiterbildung', 'beruf', 'Weiterbildungsbudget', '🎓', 'Budget oder Freistellung für Kurse, Zertifikate und Konferenzen.', { inc: 1, kw: ['weiterbildung', 'bildungsurlaub', 'seminar'], x: [['x_tage', 'Bildungstage pro Jahr', 'number']], kl: 'Budget', when: () => isWorker() }),
+  V('homeoffice', 'beruf', 'Homeoffice-Zuschuss', '🏡', 'Arbeitgeberzuschuss oder Pauschale fürs Arbeiten von zu Hause.', { inc: 1, kw: ['homeoffice'], x: [['x_tage', 'Homeoffice-Tage pro Woche', 'number']], kl: 'Zuschuss', when: () => isWorker() }),
+  V('bonus', 'beruf', 'Bonus / Urlaubs- & Weihnachtsgeld', '🎁', 'Sonderzahlungen zusätzlich zum Gehalt – trag den Jahresbetrag ein.', { inc: 1, kw: ['sonderzahlung', 'weihnachtsgeld', 'urlaubsgeld', 'bonus', 'tantieme'], kl: 'Betrag brutto', when: () => isWorker() }),
+  V('agvers', 'beruf', 'Versicherung über den Arbeitgeber', '🧰', 'Gruppenunfall, Dienstreise- oder Rechtsschutz über die Firma.', { kw: ['gruppenunfall', 'dienstreiseversicherung', 'gruppenversicherung'], when: () => isWorker() }),
+  V('kita', 'fam', 'Kita / Betreuung', '🧸', 'Kita, Tagesmutter, Hort oder Au-pair – Betreuungskosten sind anteilig absetzbar.', { kw: ['kita', 'kindergarten', 'tagesmutter', 'hort', 'betreuungsvertrag'], x: [['x_kind', 'Für welches Kind', 'text']], when: () => hasKids() }),
+  V('schule', 'fam', 'Schule, OGS & Mittagessen', '🎒', 'Schulgeld, Offene Ganztagsschule, Essensgeld, Klassenkasse.', { kw: ['ogs', 'schulgeld', 'mittagessen schule'], x: [['x_kind', 'Für welches Kind', 'text']], when: () => hasKids() }),
+  V('kinderhobby', 'fam', 'Musikschule, Verein & Kurse (Kinder)', '⚽', 'Regelmäßige Beiträge für Hobbys und Förderung der Kinder.', { kw: ['musikschule', 'schwimmkurs', 'vereinsbeitrag'], x: [['x_kind', 'Für welches Kind', 'text']], when: () => hasKids() }),
+  V('kindersparen', 'fam', 'Kinder-Sparplan / Junior-Depot', '🐷', 'Langfristig für Führerschein, Studium oder Start ins Erwachsenenleben sparen.', { kw: ['juniordepot', 'kinderkonto', 'sparplan kind'], x: [['x_wert', 'Aktueller Wert', 'money'], ['x_kind', 'Für welches Kind', 'text']], when: () => hasKids() }),
+  V('unterhalt', 'fam', 'Unterhalt zahlen', '🤲', 'Unterhalt für Kinder oder Ex-Partner/in, falls du welchen zahlst.', { x: [['x_an', 'An wen', 'text']] }),
+  V('steuerberater', 'geld', 'Steuerberater / Lohnsteuerhilfe', '🧮', 'Hilfe bei der Steuererklärung – die Kosten sind teils absetzbar.', { kw: ['steuerberater', 'lohnsteuerhilfeverein', 'steuererklarung'] }),
+  V('ratenkauf', 'geld', 'Ratenkauf / Zahlungsaufschub', '🛍️', 'Klarna, PayPal Ratenzahlung, Finanzierung beim Händler – leicht aus dem Blick geraten.', { kw: ['ratenkauf', 'klarna', 'ratenzahlung'], x: [['x_rest', 'Restschuld', 'money']] }),
+  V('spenden', 'geld', 'Spenden & Patenschaften', '❤️', 'Regelmäßige Spenden – Zuwendungen sind steuerlich absetzbar, Spendenquittung aufbewahren.', { kw: ['spende', 'patenschaft', 'spendenquittung'] }),
+  V('gaming', 'abo', 'Gaming & Konsole', '🎮', 'PlayStation Plus, Xbox Game Pass, Steam & Co.', { kuend: 'monat', kw: ['playstation plus', 'xbox', 'game pass', 'nintendo online'], x: [['x_dienste', 'Welche Dienste', 'text']] }),
+  V('shopping', 'abo', 'Prime & Shop-Abos', '📦', 'Amazon Prime, Lieferdienste, Kochboxen, Pflege-Abos.', { kuend: 'monat', kw: ['amazon prime', 'lieferando', 'hellofresh', 'abo'], x: [['x_dienste', 'Welche Dienste', 'text']] }),
+  V('sicherheit', 'abo', 'Passwortmanager, VPN & Sicherheit', '🔑', '1Password, VPN, Virenschutz.', { kuend: 'monat', kw: ['1password', 'vpn', 'antivirus'], x: [['x_dienste', 'Welche Dienste', 'text']] }),
+  V('lernen', 'abo', 'Lernen & Sprach-Apps', '📚', 'Duolingo, Online-Kurse, Plattformen.', { kuend: 'monat', kw: ['duolingo', 'udemy', 'coursera'], x: [['x_dienste', 'Welche Dienste', 'text']] }),
+  V('buecher', 'abo', 'Bücher & Hörbücher', '🎧', 'Audible, Kindle Unlimited, Skoobe.', { kuend: 'monat', kw: ['audible', 'kindle unlimited', 'skoobe'] }),
+  V('tier', 'abo', 'Haustier (Futter, Tierarzt, Pension)', '🐾', 'Laufende Kosten für dein Tier, z. B. Tierarzt-Abo oder Futter-Abo.', { kw: ['tierarzt', 'futter abo', 'tierkrankenversicherung'], x: [['x_tier', 'Tier', 'text']] }),
+  V('hobby', 'abo', 'Hobby & Kurse', '🎨', 'Musikunterricht, Tanzkurs, Fotografie, Clubs.', { kw: ['kurs', 'unterricht'], x: [['x_ort', 'Was', 'text']] }),
+  V('nebenjob', 'einnahmen', 'Nebenjob / Minijob', '🧑‍💻', 'Zusätzlicher Verdienst neben dem Hauptjob.', { inc: 1, kw: ['minijob', 'nebenjob', 'honorar'], kl: 'Betrag' }),
+  V('selbststaendig', 'einnahmen', 'Selbstständige Einnahmen', '🚀', 'Freelance, Gewerbe oder Nebengewerbe – Einnahmen und Steuern im Blick behalten.', { inc: 1, kw: ['freelance', 'gewerbe', 'honorarrechnung'], kl: 'Betrag' }),
+  V('mieteinnahmen', 'einnahmen', 'Mieteinnahmen', '🏘️', 'Einnahmen aus vermieteter Wohnung oder Garage – gehören in die Steuererklärung (Anlage V).', { inc: 1, kw: ['mieteinnahme', 'vermietung'], kl: 'Monatlicher Betrag' }),
+  V('kindergeld', 'einnahmen', 'Kindergeld', '👶', 'Monatlicher Betrag pro Kind von der Familienkasse; wird an einen Elternteil ausgezahlt.', { inc: 1, kw: ['kindergeld', 'familienkasse'], kl: 'Betrag pro Monat', when: () => hasKids() }),
+  V('elterngeld', 'einnahmen', 'Elterngeld', '🍼', 'Lohnersatz in der Elternzeit.', { inc: 1, kw: ['elterngeld', 'elterngeldstelle'], kl: 'Betrag pro Monat', when: () => hasKids() }),
+  V('rente_ein', 'einnahmen', 'Rente / Pension', '👵', 'Gesetzliche, private oder betriebliche Rente, die du bereits erhältst.', { inc: 1, kw: ['rentenbescheid', 'rente', 'pension'], kl: 'Betrag pro Monat' }),
+  V('kapital', 'einnahmen', 'Zinsen & Dividenden', '📈', 'Erträge aus Konto, Depot oder Beteiligungen.', { inc: 1, kw: ['dividende', 'zinsertrag', 'ertragsabrechnung'], kl: 'Betrag' }),
+  V('unterhalt_ein', 'einnahmen', 'Unterhalt erhalten', '🫶', 'Unterhaltszahlungen, die du bekommst.', { inc: 1, kl: 'Betrag pro Monat' }),
+  V('sonst_ein', 'einnahmen', 'Sonstige Einnahmen', '✨', 'Verkäufe, Cashback, Preise, Zuschüsse.', { inc: 1, kl: 'Betrag' })
 ];
-const VCX = id => VC.find(e => e.id === id) || ((S.vertr[id] && S.vertr[id].custom) ? { id, c: S.vertr[id].c || 'abo', n: S.vertr[id].n || 'Eigener Vertrag', e: S.vertr[id].e || '📄', d: 'Von dir hinzugefügt.', x: [], kw: [], custom: 1 } : null);
-const vAll = () => VC.filter(e => !e.when || e.when()).concat(Object.keys(S.vertr).filter(k => S.vertr[k].custom).map(VCX));
+const isInc = e => !!e && (e.c === 'einnahmen' || !!e.inc);
+function VCX(id) {
+  const o = S.vertr[id], base = VC.find(e => e.id === id);
+  if (base) return o && o.label ? Object.assign({}, base, { n: base.n + ' · ' + o.label }) : base;
+  if (!o) return null;
+  if (o.of) { const b = VC.find(e => e.id === o.of); if (!b) return null; return Object.assign({}, b, { id, of: b.id, pf: null, core: 0, when: null, n: b.n + ' · ' + (o.label || 'Nr. ' + (o.nr2 || 2)) }); }
+  return o.custom ? { id, c: o.c || 'abo', n: o.n || 'Eigener Vertrag', e: o.e || '📄', d: 'Von dir hinzugefügt.', x: [], kw: [], custom: 1, inc: o.inc ? 1 : 0 } : null;
+}
+const instIds = base => Object.keys(S.vertr).filter(k => S.vertr[k].of === base);
+function vAll() {
+  const out = [];
+  for (const b of VC) { if (b.when && !b.when()) continue; out.push(VCX(b.id)); instIds(b.id).forEach(k => out.push(VCX(k))); }
+  Object.keys(S.vertr).filter(k => S.vertr[k].custom).forEach(k => out.push(VCX(k)));
+  return out.filter(Boolean);
+}
+function newInst(baseId) {
+  const n = instIds(baseId).length + 2, id = baseId + '~' + uid().slice(-5);
+  S.vertr[id] = { of: baseId, st: 'ja', nr2: n }; save(); return id;
+}
 const vOf = id => S.vertr[id] || {};
 function vst(id) { const e = VCX(id); if (!e) return null; if (e.pf) { if (phas(e.pf)) return 'ja'; if (pst(e.pf) === 'none') return 'nein'; } return vOf(id).st || null; }
 const vprov = id => { const e = VCX(id), o = vOf(id); return o.anbieter || (e && e.pf && pget(e.pf)) || (id === 'kfz' && '') || ''; };
 const vMonthly = id => { const o = vOf(id); if (!o.kosten) return 0; const z = ZAHL.find(x => x[0] === (o.zahl || 'm')) || ZAHL[0]; return Math.round(o.kosten * z[2]); };
-function vclean(id) { const o = S.vertr[id]; if (o && !o.st && !o.custom && !Object.keys(o).some(k => k !== 'st' && o[k] != null && o[k] !== '')) delete S.vertr[id]; }
+function vclean(id) { const o = S.vertr[id]; if (o && !o.st && !o.custom && !o.of && !Object.keys(o).some(k => k !== 'st' && o[k] != null && o[k] !== '')) delete S.vertr[id]; }
 function setVst(id, st) {
   const e = VCX(id); if (!e) return; const o = S.vertr[id] || (S.vertr[id] = {});
   if (!st) { delete o.st; if (e.pf && pst(e.pf) === 'none') pset(e.pf, null); }
@@ -4214,14 +4713,20 @@ function vVirtual() {
   if (kvTxt || pst('kv_art')) rows.push({ id: 'kv', c: 'vers', n: 'Krankenversicherung', e: '🩺', sub: kvTxt || 'Im Steckbrief ergänzen', m: num('kv_beitrag') || 0, go: 'steckbrief', virt: 1, k: 'kv_art' });
   const miete = num('miete'); if (pget('wohnart') === 'Miete' || miete) rows.push({ id: 'miete', c: 'wohnen', n: pget('wohnart') === 'Eigentum' ? 'Wohnkosten' : 'Miete (warm)', e: '🏠', sub: pget('vermieter') ? 'Vermieter: ' + pget('vermieter') : 'Aus deinem Steckbrief', m: miete || 0, go: 'steckbrief', virt: 1, k: 'miete' });
   if (phas('bank') || phas('iban')) rows.push({ id: 'konto', c: 'geld', n: 'Girokonto', e: '🏦', sub: [pget('bank'), phas('iban') ? '•••• ' + String(pget('iban')).replace(/\s/g, '').slice(-4) : ''].filter(Boolean).join(' · '), m: 0, go: 'steckbrief', virt: 1, k: 'iban' });
+  if (num('netto')) rows.push({ id: 'gehalt', c: 'einnahmen', n: 'Gehalt (netto)', e: '💵', sub: pget('arbeitgeber') ? 'Von ' + pget('arbeitgeber') : 'Aus deinem Steckbrief', m: num('netto'), go: 'steckbrief', virt: 1, k: 'netto' });
   return rows;
 }
 function fixCosts() {
   const rows = [];
-  for (const e of vAll()) if (vst(e.id) === 'ja') { const m = vMonthly(e.id); if (m) rows.push({ id: e.id, n: e.n, e: e.e, c: e.c, m }); }
-  for (const r of vVirtual()) if (r.m) rows.push({ id: r.id, n: r.n, e: r.e, c: r.c, m: r.m, virt: 1 });
+  for (const e of vAll()) if (vst(e.id) === 'ja' && !isInc(e)) { const m = vMonthly(e.id); if (m) rows.push({ id: e.id, n: e.n, e: e.e, c: e.c, m }); }
+  for (const r of vVirtual()) if (r.m && r.c !== 'einnahmen') rows.push({ id: r.id, n: r.n, e: r.e, c: r.c, m: r.m, virt: 1 });
   const total = sum(rows, r => r.m), byCat = {}; rows.forEach(r => byCat[r.c] = (byCat[r.c] || 0) + r.m);
   return { rows: rows.sort((a, b) => b.m - a.m), total, byCat };
+}
+/** Haushaltsrechnung: Einnahmen (Netto + weitere) gegen feste Kosten */
+function haushalt() {
+  const netto = num('netto') || 0, extra = sum(vAll().filter(e => isInc(e) && vst(e.id) === 'ja'), e => vMonthly(e.id)), fc = fixCosts(), inn = netto + extra;
+  return { netto, extra, inn, out: fc.total, rest: inn - fc.total, quote: inn ? (inn - fc.total) / inn : null };
 }
 /** Alle aktiven Verträge (ja) */
 const vActive = () => vAll().filter(e => vst(e.id) === 'ja');
@@ -4230,17 +4735,19 @@ const vActive = () => vAll().filter(e => vst(e.id) === 'ja');
 const nextNov30 = () => { const t = todayISO(), y = +t.slice(0, 4); const d = `${y}-11-30`; return d >= t ? d : `${y + 1}-11-30`; };
 function kuendDate(id) {
   const o = vOf(id), k = o.kuend || (VCX(id) || {}).kuend || '';
+  if (o.gek) return null;
   if (k === 'nov') return nextNov30();
-  if (!o.ende || o.unbef) return null;
-  const m = { '1m': 1, '3m': 3, '6m': 6 }[k]; if (m) return addMonths(o.ende, -m);
+  if (!o.ende || o.unbef || o.gek) return null;
+  if (k === '2w') return addDays(o.ende, -14);
+  const m = { '1m': 1, '3m': 3, '6m': 6, '12m': 12 }[k]; if (m) return addMonths(o.ende, -m);
   return null;
 }
 function vDeadlines() {
   const L = [];
   for (const e of vActive()) {
     const o = vOf(e.id), kd = kuendDate(e.id);
-    if (kd) L.push({ id: 'vk_' + e.id, date: kd, title: e.id === 'kfz' ? 'Kfz-Versicherung: Kündigung muss bis hier beim Versicherer sein' : `Kündigen bis: ${e.n}${vprov(e.id) ? ' (' + vprov(e.id) + ')' : ''}`, sub: e.id === 'kfz' ? 'Stichtag 30. November – Wechsel zum Jahresende möglich' : 'Frist laut deinen Angaben', e: '✂️', kind: 'kuendigung', alarm: e.id === 'kfz' ? 30 : 14, vt: e.id });
-    if (o.ende && !o.unbef) L.push({ id: 'vend_' + e.id, date: o.ende, title: `Vertrag endet: ${e.n}`, sub: vprov(e.id), e: '⏳', kind: 'frist', alarm: 30, vt: e.id });
+    if (kd) L.push({ id: 'vk_' + e.id, date: kd, title: (e.of || e.id) === 'kfz' ? 'Kfz-Versicherung' + (e.of ? ' (' + e.n.split(' · ')[1] + ')' : '') + ': Kündigung muss bis hier beim Versicherer sein' : `Kündigen bis: ${e.n}${vprov(e.id) ? ' (' + vprov(e.id) + ')' : ''}`, sub: (e.of || e.id) === 'kfz' ? 'Stichtag 30. November – Wechsel zum Jahresende möglich' : 'Frist laut deinen Angaben', e: '✂️', kind: 'kuendigung', alarm: (e.of || e.id) === 'kfz' ? 30 : 14, vt: e.id });
+    if (o.ende && !o.unbef) L.push({ id: 'vend_' + e.id, date: o.ende, title: `${o.gek ? 'Läuft aus (gekündigt)' : 'Vertrag endet'}: ${e.n}`, sub: vprov(e.id), e: '⏳', kind: 'frist', alarm: 30, vt: e.id });
     if (o.x_pg) L.push({ id: 'vpg_' + e.id, date: o.x_pg, title: `Preisgarantie endet: ${e.n}`, sub: vprov(e.id) || 'Tarif danach prüfen', e: '💡', kind: 'frist', alarm: 30, vt: e.id });
     if (o.x_fest) L.push({ id: 'vfx_' + e.id, date: o.x_fest, title: `Zinsbindung endet: ${e.n}`, sub: 'Anschlussfinanzierung prüfen', e: '🏗️', kind: 'frist', alarm: 180, vt: e.id });
   }
@@ -4262,12 +4769,13 @@ const docSuggestions = () => S.docs.filter(d => d.status === 'ok').map(d => ({ d
 function contractInsights(add, X) {
   const today = todayISO(), kfzJa = vst('kfz') === 'ja';
   /* Kfz-Stichtag */
-  if (kfzJa) {
-    const d = nextNov30(), n = diffDays(d, today), o = vOf('kfz'), p = vprov('kfz');
-    if (n <= 75) add({ id: 'kfz_stichtag', kind: n <= 30 ? 'warn' : 'chance', pri: n <= 30 ? 88 : 64, e: '🚗', title: `Kfz-Versicherung wechseln: noch ${plural(n, 'Tag', 'Tage')} bis 30. November`, text: `Die meisten Kfz-Verträge laufen zum Jahresende – die Kündigung muss bis zum 30. November beim Versicherer eingegangen sein (Post braucht Zeit). Ein Vergleich lohnt sich oft, vor allem wenn du lange beim selben Anbieter bist${p ? ' (' + p + ')' : ''}.`, src: [{ l: 'Kfz-Versicherung', vt: 'kfz' }], act: { l: 'Kündigung vorbereiten', a: 'vt.kuend', id: 'kfz' } });
+  const kfzAll = vAll().filter(e => (e.of || e.id) === 'kfz' && vst(e.id) === 'ja' && !vOf(e.id).gek);
+  if (kfzAll.length) {
+    const kid = kfzAll[0].id, d = nextNov30(), n = diffDays(d, today), p = vprov(kid);
+    if (n <= 75) add({ id: 'kfz_stichtag', kind: n <= 30 ? 'warn' : 'chance', pri: n <= 30 ? 88 : 64, e: '🚗', title: `Kfz-Versicherung wechseln: noch ${plural(n, 'Tag', 'Tage')} bis 30. November`, text: `Die meisten Kfz-Verträge laufen zum Jahresende – die Kündigung muss bis zum 30. November beim Versicherer eingegangen sein (Post braucht Zeit). Ein Vergleich lohnt sich oft, vor allem wenn du lange beim selben Anbieter bist${p ? ' (' + p + ')' : ''}.`, src: kfzAll.slice(0, 2).map(e => ({ l: e.n, vt: e.id })), act: { l: 'Kündigung vorbereiten', a: 'vt.kuend', id: kid } });
   }
   /* Fahrzeug ohne Versicherung */
-  if (phas('kennzeichen') && vst('kfz') === 'nein') add({ id: 'kfz_fehlt', kind: 'warn', pri: 86, e: '🚨', title: 'Fahrzeug ohne Kfz-Versicherung?', text: `Du hast ein Kennzeichen (${pget('kennzeichen')}) eingetragen, aber keine Kfz-Versicherung. Die Haftpflicht ist für jedes zugelassene Fahrzeug Pflicht. Stimmt eins von beidem nicht?`, src: [{ l: 'Kennzeichen', k: 'kennzeichen' }, { l: 'Kfz-Versicherung', vt: 'kfz' }] });
+  if (phas('kennzeichen') && vst('kfz') === 'nein' && !(vst('dienstwagen') === 'ja' && String(vOf('dienstwagen').x_kennz || '').replace(/\s/g, '') === String(pget('kennzeichen')).replace(/\s/g, ''))) add({ id: 'kfz_fehlt', kind: 'warn', pri: 86, e: '🚨', title: 'Fahrzeug ohne Kfz-Versicherung?', text: `Du hast ein Kennzeichen (${pget('kennzeichen')}) eingetragen, aber keine Kfz-Versicherung. Die Haftpflicht ist für jedes zugelassene Fahrzeug Pflicht. Stimmt eins von beidem nicht?`, src: [{ l: 'Kennzeichen', k: 'kennzeichen' }, { l: 'Kfz-Versicherung', vt: 'kfz' }] });
   /* Energie */
   for (const id of ['strom', 'gas']) {
     if (vst(id) !== 'ja') continue; const o = vOf(id), e = VCX(id);
@@ -4290,8 +4798,34 @@ function contractInsights(add, X) {
   if (['Miete', 'Eigentum'].includes(pget('wohnart')) && vst('hausrat') === 'nein') add({ id: 'hausrat_nein', kind: 'info', pri: 30, e: '🏠', title: 'Keine Hausratversicherung', text: 'Rechne kurz durch, was dich ein Totalverlust (Einbruch, Brand, Wasserschaden) kosten würde – Möbel, Technik, Kleidung. Oft kostet der Schutz nur wenige Euro im Monat.', src: chipsFor(['wohnart']).concat([{ l: 'Hausrat', vt: 'hausrat' }]) });
   if (job === 'Angestellt' && vst('bav') !== 'ja' && phas('arbeitgeber')) add({ id: 'bav_chance', kind: 'chance', pri: 46, e: '🏢', title: 'Betriebliche Altersvorsorge prüfen', text: 'Bei Entgeltumwandlung muss dein Arbeitgeber in der Regel mindestens 15 % Zuschuss zahlen, wenn er dadurch Sozialabgaben spart. Du zahlst aus dem Brutto – das senkt Steuer und Sozialabgaben. Frag bei der Personalabteilung nach dem Angebot.', src: chipsFor(['arbeitgeber']).concat([{ l: 'Betriebliche Altersvorsorge', vt: 'bav' }]) });
   if (vst('altersvorsorge') === 'nein' && vst('bav') !== 'ja' && (phas('netto') || phas('arbeitgeber'))) add({ id: 'rente_luecke', kind: 'todo', pri: 44, e: '👴', title: 'Altersvorsorge: Lücke schätzen', text: 'Die gesetzliche Rente deckt meist nur einen Teil des letzten Nettos. Die Renteninformation der Deutschen Rentenversicherung nennt deinen Anspruch – daran siehst du, wie viel zusätzlich nötig ist.', src: chipsFor(['svnr']).concat([{ l: 'Altersvorsorge', vt: 'altersvorsorge' }]) });
+  const netto = num('netto');
+  /* Dienstwagen */
+  for (const e of vAll().filter(x => (x.of || x.id) === 'dienstwagen' && vst(x.id) === 'ja')) {
+    const o = vOf(e.id), priv = /privat/.test(o.x_nutz || ''), lp = o.x_lp, ant = o.x_antrieb;
+    if (priv && lp && /1-%/.test(o.x_nutz)) { const pct = ant === 'Elektro' ? 0.25 : ant === 'Hybrid' ? 0.5 : 1, gwv = Math.round(lp * pct / 100), arb = o.x_km ? Math.round(lp * 0.03 / 100 * o.x_km) : 0;
+      add({ id: 'dw_gwv_' + e.id, kind: 'info', pri: 44, e: '🚘', title: `Dienstwagen: etwa ${eur0(gwv)} geldwerter Vorteil im Monat`, text: `Bei privater Nutzung nach der 1-%-Regel versteuerst du ${String(pct).replace('.', ',')} % des Bruttolistenpreises monatlich als Einkommen${arb ? `, dazu ca. ${eur0(arb)} für den Arbeitsweg (0,03 % je Entfernungskilometer; Fahrtstrecke ${o.x_km} km)` : ''}. Das steht als „Sachbezug“ auf deiner Gehaltsabrechnung. Ob ein Fahrtenbuch günstiger ist, hängt von deiner Privatnutzung ab. Richtwert, kein Steuerrat.`, src: [{ l: e.n, vt: e.id }].concat(chipsFor(['netto'])) }); }
+    else if (priv && !lp) add({ id: 'dw_lp_' + e.id, kind: 'todo', pri: 30, e: '🚘', title: 'Dienstwagen: Listenpreis ergänzen', text: 'Mit dem Bruttolistenpreis rechnet Kairos dir den geldwerten Vorteil aus, den du versteuern musst.', src: [{ l: e.n, vt: e.id }], act: { l: 'Ergänzen', a: 'vt.edit', id: e.id } });
+    if (o.ende) { const n = diffDays(o.ende, today); if (n >= 0 && n <= 180) add({ id: 'dw_ende_' + e.id, kind: n <= 60 ? 'todo' : 'chance', pri: n <= 60 ? 60 : 42, e: '🔑', title: `Dienstwagen: Rückgabe in ${plural(n, 'Tag', 'Tagen')}`, text: 'Frag rechtzeitig nach Folgefahrzeug, Zustandsprüfung und Rückgabetermin. Kleinere Schäden vorher ansehen lassen – am Ende zählt das Übergabeprotokoll.', src: [{ l: e.n, vt: e.id }] }); }
+  }
+  if (vst('dienstwagen') === 'ja' && vst('kfz') === 'ja' && vOf('kfz').x_kennz && vOf('dienstwagen').x_kennz && vOf('kfz').x_kennz === vOf('dienstwagen').x_kennz) add({ id: 'dw_kfz_dup', kind: 'info', pri: 28, e: '🚗', title: 'Dienstwagen und private Kfz-Versicherung haben dasselbe Kennzeichen', text: 'Für ein Dienstfahrzeug schließt in der Regel der Arbeitgeber die Versicherung ab. Prüfe, ob dein privater Vertrag für ein anderes Auto gilt.', src: [{ l: 'Dienstwagen', vt: 'dienstwagen' }, { l: 'Kfz-Versicherung', vt: 'kfz' }] });
+  /* Haushaltsrechnung */
+  const hh = haushalt();
+  if (hh.inn > 0 && hh.out > 0) {
+    if (hh.rest < 0) add({ id: 'hh_minus', kind: 'warn', pri: 76, e: '⚠️', title: `Deine festen Kosten liegen ${eur0(-hh.rest)} über deinen Einnahmen`, text: `Eingetragen sind ${eur0(hh.inn)} Einnahmen und ${eur0(hh.out)} feste Kosten im Monat. Prüfe, ob Einnahmen fehlen – oder welche Verträge du zuerst anfasst (kurze Kündigungsfrist, hohe Rate).`, src: chipsFor(['netto']) });
+    else if (hh.quote < 0.1) add({ id: 'hh_eng', kind: 'chance', pri: 50, e: '📉', title: `Nach festen Kosten bleiben nur ${Math.round(hh.quote * 100)} % deiner Einnahmen`, text: `Das sind ${eur0(hh.rest)} im Monat. Faustregel: etwa 10–20 % solltest du für Rücklagen und Ziele übrig haben. Die größten Hebel findest du unter „Wohin dein Geld fließt“.`, src: chipsFor(['netto']) });
+    else add({ id: 'hh_ok', kind: 'info', pri: 22, e: '🧮', title: `Nach festen Kosten bleiben ${eur0(hh.rest)} im Monat`, text: `Das sind ${Math.round(hh.quote * 100)} % deiner eingetragenen Einnahmen (${eur0(hh.inn)}). Variable Ausgaben wie Essen, Freizeit oder Kleidung sind darin noch nicht enthalten.`, src: chipsFor(['netto']) });
+  }
+  /* Notgroschen */
+  if (netto && vst('sparen') === 'ja' && vOf('sparen').x_wert) { const mon = vOf('sparen').x_wert / netto; if (mon < 3) add({ id: 'notgroschen', kind: 'chance', pri: 48, e: '🛟', title: `Rücklage reicht für etwa ${String(mon.toFixed(1)).replace('.', ',')} Monate`, text: 'Üblich sind drei Netto-Monatsgehälter als Notgroschen auf einem Tagesgeldkonto – bei Selbstständigen oder Familien gern mehr.', src: [{ l: 'Tagesgeld / Festgeld', vt: 'sparen' }].concat(chipsFor(['netto'])) }); }
+  else if (netto && vst('sparen') === 'nein') add({ id: 'notgroschen', kind: 'todo', pri: 50, e: '🛟', title: 'Noch keine Rücklage?', text: 'Ein Notgroschen von etwa drei Netto-Monatsgehältern fängt Reparatur, Jobwechsel oder Krankheit ab. Ein Dauerauftrag am Gehaltseingang ist der einfachste Start.', src: chipsFor(['netto']).concat([{ l: 'Tagesgeld', vt: 'sparen' }]) });
+  /* Familie & Einnahmen */
+  if (hasKids() && !['ja'].includes(vst('kindergeld'))) add({ id: 'kindergeld', kind: vst('kindergeld') === 'nein' ? 'info' : 'todo', pri: 54, e: '👶', title: 'Kindergeld beantragt?', text: 'Kindergeld gibt es pro Kind von der Familienkasse, solange es Anspruch gibt – auch während der Ausbildung. Der Antrag wirkt höchstens sechs Monate rückwirkend, deshalb nicht zu lange warten.', src: [{ l: 'Kinder', fam: 1 }, { l: 'Kindergeld', vt: 'kindergeld' }] });
+  if (vst('kita') === 'ja') add({ id: 'kita_steuer', kind: 'chance', pri: 40, e: '🧸', title: 'Kita-Kosten steuerlich geltend machen', text: 'Betreuungskosten für Kinder kannst du anteilig als Sonderausgaben absetzen – Rechnungen und Überweisungsbelege aufbewahren, Barzahlung gilt nicht.', src: [{ l: 'Kita', vt: 'kita' }] });
+  if (vst('mieteinnahmen') === 'ja') add({ id: 'miete_ein', kind: 'todo', pri: 46, e: '🏘️', title: 'Mieteinnahmen gehören in die Steuererklärung', text: 'Einnahmen aus Vermietung trägst du in der Anlage V ein – zusammen mit Werbungskosten wie Zinsen, Instandhaltung und Abschreibung.', src: [{ l: 'Mieteinnahmen', vt: 'mieteinnahmen' }] });
+  if (['selbststaendig', 'nebenjob'].some(i => vst(i) === 'ja')) add({ id: 'nebenverdienst', kind: 'info', pri: 38, e: '🧑‍💻', title: 'Nebenverdienst: Steuer und Anmeldung im Blick', text: 'Einnahmen aus Nebentätigkeit musst du in der Steuererklärung angeben; bei selbstständiger Arbeit kommen Anmeldung beim Finanzamt, ggf. Gewerbeanmeldung und die Frage nach der Kleinunternehmerregelung dazu. Bei Angestellten gilt außerdem meist: Nebentätigkeit dem Arbeitgeber melden.', src: [{ l: 'Nebenverdienst', vt: vst('selbststaendig') === 'ja' ? 'selbststaendig' : 'nebenjob' }] });
+  if (vst('kreditkarte') === 'ja' && vst('ratenkauf') === 'ja') add({ id: 'raten_kk', kind: 'info', pri: 24, e: '🛍️', title: 'Ratenkäufe laufen neben der Kreditkarte', text: 'Mehrere Zahlungsaufschübe verlieren schnell den Überblick. Trag Restschuld und Rate ein, dann zählt Kairos sie bei deinen festen Kosten mit.', src: [{ l: 'Ratenkauf', vt: 'ratenkauf' }] });
   /* Fixkosten */
-  const fc = fixCosts(), netto = num('netto');
+  const fc = fixCosts();
   if (fc.rows.length >= 3 && fc.total > 0) {
     const top = fc.rows.slice(0, 3).map(r => `${r.n} (${eur0(r.m)})`);
     if (netto) { const q = fc.total / netto, p = Math.round(q * 100); add({ id: 'fixkosten', kind: q > 0.65 ? 'warn' : 'info', pri: q > 0.65 ? 62 : 32, e: '📊', title: `Feste Kosten: ${eur0(fc.total)} im Monat (${p} % vom Netto)`, text: `Am meisten kosten ${joinNice(top)}. ${q > 0.65 ? 'Das lässt wenig Spielraum – prüfe zuerst Verträge mit kurzer Kündigungsfrist.' : 'Bleibt genug Spielraum? Die größten Hebel sind meist Miete, Strom, Internet/Mobilfunk und Versicherungen.'}`, src: chipsFor(['netto']).concat(fc.rows.slice(0, 2).filter(r => !r.virt).map(r => ({ l: r.n, vt: r.id }))) }); }
@@ -4314,13 +4848,13 @@ function kuendText(id, grund) {
   const nr = o.nr ? `Vertrags-/Kundennummer: ${o.nr}` : 'Vertrags-/Kundennummer: [bitte ergänzen]';
   const wann = { ordentlich: kd ? `fristgerecht zum nächstmöglichen Zeitpunkt, hilfsweise zum ${fmtDate(kd, true)}` : 'fristgerecht zum nächstmöglichen Zeitpunkt', preis: 'außerordentlich (Sonderkündigungsrecht wegen der angekündigten Preiserhöhung) zum frühestmöglichen Zeitpunkt, hilfsweise ordentlich zum nächstmöglichen Termin', umzug: 'wegen meines Umzugs zum frühestmöglichen Zeitpunkt, hilfsweise ordentlich zum nächstmöglichen Termin', schaden: 'außerordentlich nach dem Schadensfall zum frühestmöglichen Zeitpunkt, hilfsweise ordentlich zum nächstmöglichen Termin', fahrzeug: 'zum Ende des Versicherungsverhältnisses wegen Fahrzeugwechsels bzw. Veräußerung des Fahrzeugs, hilfsweise ordentlich zum nächstmöglichen Termin' }[grund] || 'fristgerecht zum nächstmöglichen Zeitpunkt';
   const dt = fmtDate(todayISO(), true);
-  const body = `${nm}\n${adr.join('\n')}\n\n${anb}\n\n${dt}\n\nKündigung – ${e ? e.n : 'Vertrag'}\n${nr}${id === 'kfz' && kfzKennz() ? '\nAmtliches Kennzeichen: ' + kfzKennz() : ''}\n\nSehr geehrte Damen und Herren,\n\nhiermit kündige ich den oben genannten Vertrag ${wann}.\n\nBitte bestätigen Sie mir die Kündigung sowie das Vertragsende in Textform (Brief oder E-Mail) und nennen Sie mir das genaue Beendigungsdatum. Eine Einzugsermächtigung/ein SEPA-Mandat widerrufe ich hiermit mit Wirkung zum Vertragsende.\n\nMit freundlichen Grüßen\n\n${nm}`;
+  const body = `${nm}\n${adr.join('\n')}\n\n${anb}\n\n${dt}\n\nKündigung – ${e ? e.n : 'Vertrag'}\n${nr}${(e && (e.of || e.id) === 'kfz') && (o.x_kennz || (!e.of && kfzKennz())) ? '\nAmtliches Kennzeichen: ' + (o.x_kennz || kfzKennz()) : ''}\n\nSehr geehrte Damen und Herren,\n\nhiermit kündige ich den oben genannten Vertrag ${wann}.\n\nBitte bestätigen Sie mir die Kündigung sowie das Vertragsende in Textform (Brief oder E-Mail) und nennen Sie mir das genaue Beendigungsdatum. Eine Einzugsermächtigung/ein SEPA-Mandat widerrufe ich hiermit mit Wirkung zum Vertragsende.\n\nMit freundlichen Grüßen\n\n${nm}`;
   return { subject: `Kündigung ${e ? e.n : 'Vertrag'}${o.nr ? ' – ' + o.nr : ''}`, body };
 }
 ACT['vt.kuend'] = el => {
   const id = el.dataset.id, e = VCX(id); if (!e) return;
-  let grund = id === 'kfz' ? 'fahrzeug' : 'ordentlich'; const opts = KGR.filter(g => g[0] !== 'fahrzeug' || id === 'kfz').filter(g => g[0] !== 'schaden' || e.c === 'vers' || id === 'kfz');
-  const kd = kuendDate(id), info = id === 'kfz' ? 'Stichtag für die reguläre Kündigung: 30. November – das Schreiben muss bis dahin beim Versicherer sein.' : kd ? `Nach deinen Angaben musst du bis ${fmtDate(kd, true)} kündigen.` : vOf(id).kuend === 'monat' ? 'Du kannst jederzeit mit kurzer Frist kündigen.' : 'Trag Vertragsende und Kündigungsfrist ein, dann berechnet Kairos die Frist.';
+  const isK = (e.of || e.id) === 'kfz'; let grund = isK ? 'fahrzeug' : 'ordentlich'; const opts = KGR.filter(g => g[0] !== 'fahrzeug' || isK).filter(g => g[0] !== 'schaden' || e.c === 'vers' || isK);
+  const kd = kuendDate(id), info = isK ? 'Stichtag für die reguläre Kündigung: 30. November – das Schreiben muss bis dahin beim Versicherer sein.' : kd ? `Nach deinen Angaben musst du bis ${fmtDate(kd, true)} kündigen.` : vOf(id).kuend === 'monat' ? 'Du kannst jederzeit mit kurzer Frist kündigen.' : 'Trag Vertragsende und Kündigungsfrist ein, dann berechnet Kairos die Frist.';
   openSheet(`<div class="chh" style="--c:var(--c-life)"><span class="chh-e">✂️</span><div><small>Kündigung vorbereiten</small><h2>${esc(e.n)}</h2></div></div>
     <p class="lead-p">${esc(info)}</p>
     <div class="field"><label for="kgr">Grund</label><select class="sel" id="kgr">${opts.map(g => `<option value="${g[0]}" ${g[0] === grund ? 'selected' : ''}>${esc(g[1])}</option>`).join('')}</select></div>
@@ -4344,36 +4878,42 @@ function printText(title, text) {
 }
 
 /* ---------- Anzeige ---------- */
+const vtExp = new Set();
+ACT['vt.exp'] = el => { const c = el.dataset.cat; vtExp.has(c) ? vtExp.delete(c) : vtExp.add(c); rerender(); };
 const catOf = id => VCATS.find(c => c[0] === id) || VCATS[0];
 function vSub(e) {
   const o = vOf(e.id), st = vst(e.id), p = vprov(e.id), m = vMonthly(e.id), kd = kuendDate(e.id);
-  if (st === 'ja') { const bits = [p, m ? money(m) + ' / Monat' : '', kd ? 'kündbar bis ' + fmtDate(kd, true) : o.ende && !o.unbef ? 'bis ' + fmtDate(o.ende, true) : ''].filter(Boolean); return bits.length ? bits.join(' · ') : 'Details ergänzen'; }
+  if (st === 'ja') { const bits = [o.gek ? 'gekündigt' : '', p, m ? money(m) + (isInc(e) ? ' / Monat Eingang' : ' / Monat') : '', kd ? 'kündbar bis ' + fmtDate(kd, true) : o.ende && !o.unbef ? 'bis ' + fmtDate(o.ende, true) : ''].filter(Boolean); return bits.length ? bits.join(' · ') : 'Details ergänzen'; }
   if (st === 'nein') return 'Habe ich nicht';
   return e.d;
 }
 function vRow(e) {
-  const st = vst(e.id), c = catOf(e.c), miss = st === 'ja' && !vprov(e.id) && !vMonthly(e.id);
+  const st = vst(e.id), c = catOf(e.c), miss = st === 'ja' && !vprov(e.id) && !vMonthly(e.id) && !e.of;
   const right = st === 'ja' ? `<span class="badge pos">${icon('check')}Habe ich</span>` : st === 'nein' ? '<span class="badge">Nein</span>' : `<span class="vt-q"><button class="btn sm" data-act="vt.set" data-id="${e.id}" data-v="ja">Ja</button><button class="btn sm ghost" data-act="vt.set" data-id="${e.id}" data-v="nein">Nein</button></span>`;
-  return `<div class="vt ${st || 'open'}" ${st ? `data-act="vt.open" data-id="${e.id}"` : ''}><span class="vt-e">${e.e}</span><div class="vt-m"><b>${esc(e.n)}${e.core && !st ? ' <i class="rec">wichtig</i>' : ''}</b><small class="${miss ? 'warnt' : ''}">${esc(vSub(e))}</small></div>${right}</div>`;
+  return `<div class="vt ${st || 'open'}" ${st ? `data-act="vt.open" data-id="${e.id}"` : ''}><span class="vt-e">${e.e}</span><div class="vt-m"><b>${esc(e.n)}${e.of ? ' <i class="rec">weiterer</i>' : ''}${e.core && !st ? ' <i class="rec">wichtig</i>' : ''}</b><small class="${miss ? 'warnt' : ''}">${esc(vSub(e))}</small></div>${right}</div>`;
 }
 function vVirtRow(r) { return `<button class="vt ja virt" data-go="${r.go}"><span class="vt-e">${r.e}</span><div class="vt-m"><b>${esc(r.n)}</b><small>${esc(r.sub)}${r.m ? ' · ' + money(r.m) + ' / Monat' : ''}</small></div><span class="badge info">Steckbrief</span></button>`; }
 function costBar(fc) {
   if (!fc.total) return '';
-  const cols = { vers: 'var(--c-life)', wohnen: 'var(--accent)', komm: 'var(--c-fin)', mobil: 'var(--c-biz)', geld: 'var(--pos)', abo: 'var(--c-shop)' };
+  const cols = { vers: 'var(--c-life)', wohnen: 'var(--accent)', komm: 'var(--c-fin)', mobil: 'var(--c-biz)', geld: 'var(--pos)', abo: 'var(--c-shop)', beruf: '#ffb544', fam: '#ff9a6b', einnahmen: '#35d399' };
   const segs = VCATS.filter(c => fc.byCat[c[0]]).map(c => ({ c: c[0], n: c[1], v: fc.byCat[c[0]] }));
   return `<div class="cbar">${segs.map(s => `<i style="flex:${s.v};background:${cols[s.c]}" title="${esc(s.n)}"></i>`).join('')}</div><div class="cleg">${segs.map(s => `<span><b style="background:${cols[s.c]}"></b>${esc(s.n)} <em>${eur0(s.v)}</em></span>`).join('')}</div>`;
 }
 VIEWS.vertraege = {
   render() {
-    const fc = fixCosts(), act = vActive(), netto = num('netto'), dls = vDeadlines().filter(d => diffDays(d.date, todayISO()) >= 0).sort((a, b) => a.date < b.date ? -1 : 1), nx = dls[0];
+    const fc = fixCosts(), hh = haushalt(), act = vActive().filter(e => !isInc(e)), netto = num('netto'), dls = vDeadlines().filter(d => diffDays(d.date, todayISO()) >= 0).sort((a, b) => a.date < b.date ? -1 : 1), nx = dls[0];
     const unanswered = vAll().filter(e => !vst(e.id)).length, ds = docSuggestions();
     const secs = VCATS.map(c => { const list = vAll().filter(e => e.c === c[0]), virt = vVirtual().filter(r => r.c === c[0]); if (!list.length && !virt.length) return '';
-      const have = list.filter(e => vst(e.id) === 'ja').length, open = list.filter(e => !vst(e.id)).length;
-      return `<section class="card glass vsec"><div class="vsec-h"><span class="vsec-e">${c[2]}</span><div><b>${esc(c[1])}</b><small>${have ? plural(have, 'Vertrag', 'Verträge') + ' aktiv' : c[3]}${open ? ' · ' + open + ' offen' : ''}</small></div>${open ? `<button class="btn sm" data-act="vt.quick" data-cat="${c[0]}">${icon('sparkle')}Check</button>` : ''}</div>
-        <div class="vlist">${virt.map(vVirtRow).join('')}${list.sort((a, b) => ({ ja: 0, null: 1, nein: 2 }[vst(a.id) || 'null'] - { ja: 0, null: 1, nein: 2 }[vst(b.id) || 'null'])).map(vRow).join('')}</div></section>`; }).join('');
+      const have = list.filter(e => vst(e.id) === 'ja').length, open = list.filter(e => !vst(e.id)).length, exp = vtExp.has(c[0]), shown = exp ? list : list.filter(e => vst(e.id) === 'ja'), hidden = list.length - shown.length;
+      return `<section class="card glass vsec"><div class="vsec-h"><span class="vsec-e">${c[2]}</span><div><b>${esc(c[1])}</b><small>${have ? plural(have, 'Vertrag', 'Verträge') + ' aktiv' : c[3]}${open ? ' · ' + open + ' offen' : ''}</small></div>${open ? `<button class="btn sm" data-act="vt.quick" data-cat="${c[0]}">${icon('sparkle')}Check</button>` : ''}<button class="btn sm ghost" data-act="vt.add" data-cat="${c[0]}" aria-label="Zu ${esc(c[1])} hinzufügen">${icon('plus')}</button></div>
+        <div class="vlist">${virt.map(vVirtRow).join('')}${shown.sort((a, b) => ({ ja: 0, null: 1, nein: 2 }[vst(a.id) || 'null'] - { ja: 0, null: 1, nein: 2 }[vst(b.id) || 'null'])).map(vRow).join('')}</div>
+        ${hidden || exp ? `<button class="vexp" data-act="vt.exp" data-cat="${c[0]}">${exp ? 'Weniger anzeigen' : `${hidden} weitere ansehen${open ? ' · ' + open + ' offen' : ''}`}${icon(exp ? 'chevU' : 'chevD')}</button>` : ''}</section>`; }).join('');
     return `<div class="page vtp"><header class="ph"><div class="t"><div class="eyebrow">Alles, was läuft</div><h1>Verträge</h1><p>Versicherungen, Energie, Handy, Abos – mit Kosten und Fristen. Was du nicht hast, markierst du einfach mit „Nein“.</p></div>
       <div class="act"><button class="btn" data-act="vt.new">${icon('plus')}Eigener Vertrag</button>${unanswered ? `<button class="btn primary" data-act="vt.quick">${icon('sparkle')}Schnell-Check</button>` : ''}</div></header>
-      <div class="kpis"><div class="kpi2"><b class="num" data-count="${act.length}">${act.length}</b><span>Aktive Verträge</span></div><div class="kpi2"><b class="num" data-money="${fc.total}">${eur0(fc.total)}</b><span>Feste Kosten / Monat</span></div><div class="kpi2"><b>${netto && fc.total ? Math.round(fc.total / netto * 100) + ' %' : '–'}</b><span>vom Netto</span></div><div class="kpi2"><b>${nx ? dlLabel(nx.date).replace('in ', '') : '–'}</b><span>${nx ? 'bis ' + esc(nx.title.replace(/^Kündigen bis: /, '').slice(0, 34)) : 'Nächste Frist'}</span></div></div>
+      <div class="kpis"><div class="kpi2"><b class="num" data-count="${act.length}">${act.length}</b><span>Aktive Verträge</span></div><div class="kpi2"><b class="num" data-money="${fc.total}">${eur0(fc.total)}</b><span>Feste Kosten / Monat</span></div><div class="kpi2"><b>${netto && fc.total ? Math.round(fc.total / netto * 100) + ' %' : '–'}</b><span>vom Netto</span></div><div class="kpi2"><b>${nx ? dlLabel(nx.date).replace('in ', '') : '–'}</b><span>${nx ? esc(nx.vt && VCX(nx.vt) ? VCX(nx.vt).n : nx.title.replace(/^Kündigen bis: /, '')) : 'Nächste Frist'}</span></div></div>
+      ${hh.inn && fc.total ? `<div class="card glass hhc"><div class="card-h">${icon('coins')} Haushaltsrechnung<span class="sp"></span><b class="${hh.rest < 0 ? 'neg' : 'pos'}">${hh.rest < 0 ? '−' : '+'}${eur0(Math.abs(hh.rest))}</b></div>
+        <div class="hh-rows"><div><span>Einnahmen</span><b>${eur0(hh.inn)}</b></div>${hh.extra ? `<div class="sub"><span>davon weitere Einnahmen</span><b>${eur0(hh.extra)}</b></div>` : ''}<div><span>Feste Kosten</span><b>− ${eur0(hh.out)}</b></div><div class="tot"><span>Bleibt im Monat</span><b>${eur0(hh.rest)}</b></div></div>
+        <div class="bar thin hh-bar"><i style="width:${Math.min(100, Math.max(0, hh.out / hh.inn * 100))}%"></i></div><p class="muted fine">Ohne variable Ausgaben wie Essen, Freizeit oder Kleidung.${hh.netto ? '' : ' Trage dein Netto im Steckbrief ein, dann stimmt die Rechnung.'}</p></div>` : ''}
       ${fc.total ? `<div class="card glass costc"><div class="card-h">${icon('coins')} Wohin dein Geld jeden Monat fließt<span class="sp"></span><b class="costt">${eur0(fc.total)}</b></div>${costBar(fc)}<div class="ctop">${fc.rows.slice(0, 5).map(r => `<div><span>${r.e} ${esc(r.n)}</span><b>${eur0(r.m)}</b></div>`).join('')}</div></div>` : ''}
       ${ds.length ? `<div class="card glass"><div class="card-h">${icon('link')} Aus deinen Dokumenten</div>${ds.map(x => `<div class="vt open"><span class="vt-e">${x.e.e}</span><div class="vt-m"><b>${esc(x.d.name)}</b><small>Sieht nach „${esc(x.e.n)}“ aus</small></div><button class="btn sm primary" data-act="vt.fromdoc" data-doc="${x.d.id}" data-id="${x.e.id}">Anlegen</button></div>`).join('')}</div>` : ''}
       <div class="vgrid">${secs}</div>
@@ -4387,11 +4927,11 @@ ACT['vt.set'] = el => { setVst(el.dataset.id, el.dataset.v === 'ja' ? 'ja' : 'ne
 function vDetailRows(e) {
   const o = vOf(e.id), r = [];
   const add = (l, v) => { if (v != null && v !== '' && v !== false) r.push([l, v]); };
-  add('Anbieter', vprov(e.id)); add('Tarif / Produkt', o.tarif); add('Vertrags-Nr.', o.nr);
-  const m = vMonthly(e.id); if (o.kosten) add('Beitrag', `${money(o.kosten)} ${(ZAHL.find(z => z[0] === (o.zahl || 'm')) || ZAHL[0])[1]}${(o.zahl || 'm') !== 'm' ? ' (' + money(m) + ' / Monat)' : ''}`);
+  add('Bezeichnung', o.label); add('Anbieter', vprov(e.id)); add('Tarif / Produkt', o.tarif); add('Vertrags-Nr.', o.nr); if (o.gek) add('Status', 'Gekündigt – läuft aus');
+  const m = vMonthly(e.id); if (o.kosten) add(isInc(e) ? 'Eingang' : e.kl || 'Beitrag', `${money(o.kosten)} ${(ZAHL.find(z => z[0] === (o.zahl || 'm')) || ZAHL[0])[1]}${(o.zahl || 'm') !== 'm' ? ' (' + money(m) + ' / Monat)' : ''}`);
   add('Beginn', o.beginn && fmtDate(o.beginn, true)); add('Vertragsende', o.unbef ? 'läuft unbefristet' : o.ende && fmtDate(o.ende, true));
   add('Kündigung', (KUEND.find(k => k[0] === (o.kuend || e.kuend || '')) || [])[1] && (o.kuend || e.kuend) ? (KUEND.find(k => k[0] === (o.kuend || e.kuend))[1]) : '');
-  for (const [k, l, t] of e.x) { let v = o[k] != null && o[k] !== '' ? o[k] : (k === 'x_kennz' ? pget('kennzeichen') : null); if (v == null || v === '') continue; add(l, t === 'money' ? money(v) : t === 'date' ? fmtDate(v, true) : String(v)); }
+  for (const [k, l, t] of e.x) { let v = o[k] != null && o[k] !== '' ? o[k] : (k === 'x_kennz' && !e.of && (e.id === 'kfz') ? pget('kennzeichen') : null); if (v == null || v === '') continue; add(l, t === 'money' ? money(v) : t === 'date' ? fmtDate(v, true) : String(v)); }
   add('Notiz', o.notiz); return r;
 }
 ACT['vt.open'] = el => {
@@ -4403,8 +4943,9 @@ ACT['vt.open'] = el => {
     <div class="pk">${vDetailRows(e).map(r => `<div class="pk-r"><span>${esc(r[0])}</span><b>${esc(r[1])}</b></div>`).join('') || '<p class="muted">Noch keine Details – tippe auf „Bearbeiten“.</p>'}</div>
     ${doc ? `<button class="ckl ok" data-act="doc.open" data-id="${doc.id}">${icon('file')}<span>Dokument: ${esc(doc.name)}</span>${icon('chevR')}</button>` : `<button class="ckl" data-act="vt.linkdoc" data-id="${e.id}">${icon('link')}<span>Dokument verknüpfen</span>${icon('chevR')}</button>`}
     ${rel.length ? `<div class="group-h"><span>Das hängt damit zusammen</span></div><div class="ins-list compact">${rel.map((x, i) => insightCard(x, i, true)).join('')}</div>` : ''}
+    ${o.st === 'ja' && !isInc(e) || isInc(e) ? `<button class="ckl" data-act="vt.dup" data-id="${e.of || e.id}">${icon('plus')}<span>Noch einen weiteren Eintrag: ${esc((VC.find(x => x.id === (e.of || e.id)) || e).n)}</span>${icon('chevR')}</button>` : ''}
     <div class="acts"><button class="btn danger ghost" data-sh="del">${icon('trash')}</button><span class="sp"></span><button class="btn" data-act="vt.kuend" data-id="${e.id}">✂️ Kündigen</button><button class="btn" data-act="vt.search" data-id="${e.id}">${icon('search')}Alternativen</button><button class="btn primary" data-act="vt.edit" data-id="${e.id}">${icon('edit')}Bearbeiten</button></div>`,
-  { wide: true, onMount: sh => sh.addEventListener('click', async ev => { const b = ev.target.closest('[data-sh=del]'); if (!b) return; if (await confirmSheet('Vertrag entfernen?', 'Die Angaben zu diesem Vertrag werden gelöscht.', 'Entfernen')) { const old = JSON.parse(JSON.stringify(S.vertr[e.id] || {})); if (e.custom) delete S.vertr[e.id]; else { delete S.vertr[e.id]; if (e.pf && pst(e.pf)) pset(e.pf, null); } save(); closeSheet(); renderNav(); rerender(); toast('Entfernt', '', { label: 'Rückgängig', fn: () => { S.vertr[e.id] = old; if (e.pf && old.anbieter) pset(e.pf, old.anbieter); save(); renderNav(); rerender(); } }); } }) });
+  { wide: true, onMount: sh => sh.addEventListener('click', async ev => { const b = ev.target.closest('[data-sh=del]'); if (!b) return; if (await confirmSheet('Vertrag entfernen?', 'Die Angaben zu diesem Vertrag werden gelöscht.', 'Entfernen')) { const old = JSON.parse(JSON.stringify(S.vertr[e.id] || {})); if (e.custom || e.of) delete S.vertr[e.id]; else { delete S.vertr[e.id]; if (e.pf && pst(e.pf)) pset(e.pf, null); } save(); closeSheet(); renderNav(); rerender(); toast('Entfernt', '', { label: 'Rückgängig', fn: () => { S.vertr[e.id] = old; if (e.pf && old.anbieter) pset(e.pf, old.anbieter); save(); renderNav(); rerender(); } }); } }) });
 };
 ACT['vt.search'] = el => { const e = VCX(el.dataset.id); if (!e) return; const q = encodeURIComponent(`${e.n} Vergleich`); window.open('https://www.google.com/search?q=' + q, '_blank', 'noopener'); };
 ACT['vt.linkdoc'] = el => {
@@ -4423,43 +4964,54 @@ ACT['vt.fromdoc'] = el => {
 ACT['vt.edit'] = el => {
   const e = VCX(el.dataset.id); if (!e) return; const o = vOf(e.id), docs = S.docs.filter(d => d.status === 'ok');
   const fields = [
+    { k: 'label', label: 'Eigene Bezeichnung (optional)', type: 'text', val: o.label, full: true, ph: e.of || instIds(e.id).length ? 'z. B. Zweitwagen, Handy Partnerin' : 'z. B. Zweitwagen – nur nötig bei mehreren' },
     { k: 'anbieter', label: 'Anbieter / Gesellschaft', type: 'text', val: vprov(e.id), full: true, ph: 'z. B. HUK-Coburg, Vattenfall, Telekom' },
     { k: 'tarif', label: 'Tarif / Produkt', type: 'text', val: o.tarif }, { k: 'nr', label: 'Vertrags- / Policen-Nr.', type: 'text', val: o.nr },
-    { k: 'kosten', label: 'Beitrag / Rate', type: 'money', val: o.kosten }, { k: 'zahl', label: 'Zahlweise', type: 'select', opts: ZAHL.map(z => [z[0], z[1]]), val: o.zahl || 'm' },
+    { k: 'kosten', label: isInc(e) ? e.kl || 'Betrag (Eingang)' : e.kl || 'Beitrag / Rate', type: 'money', val: o.kosten }, { k: 'zahl', label: 'Zahlweise', type: 'select', opts: ZAHL.map(z => [z[0], z[1]]), val: o.zahl || 'm' },
     { k: 'beginn', label: 'Vertragsbeginn', type: 'date', val: o.beginn }, { k: 'ende', label: 'Vertragsende / Ablauf', type: 'date', val: o.ende },
     { k: 'unbef', type: 'toggle', label: 'Läuft ohne festes Ende (unbefristet)', val: !!o.unbef, full: true },
+    { k: 'gek', type: 'toggle', label: 'Bereits gekündigt (läuft aus)', val: !!o.gek, full: true },
     { k: 'kuend', label: 'Kündigungsfrist', type: 'select', opts: KUEND, val: o.kuend || e.kuend || '', full: true }
   ];
-  for (const [k, l, t, opts] of e.x) fields.push(t === 'select' ? { k, label: l, type: 'select', opts: [['', '– bitte wählen –']].concat(opts.map(x => [x, x])), val: o[k] != null ? o[k] : (k === 'x_kennz' ? pget('kennzeichen') : '') } : t === 'money' ? { k, label: l, type: 'money', val: o[k] } : t === 'date' ? { k, label: l, type: 'date', val: o[k] } : t === 'number' ? { k, label: l, type: 'text', val: o[k] != null ? o[k] : '', ph: '' } : { k, label: l, type: 'text', val: o[k] != null ? o[k] : (k === 'x_kennz' ? pget('kennzeichen') || '' : '') });
+  for (const [k, l, t, opts] of e.x) fields.push(t === 'select' ? { k, label: l, type: 'select', opts: [['', '– bitte wählen –']].concat(opts.map(x => [x, x])), val: o[k] != null ? o[k] : '' } : t === 'money' ? { k, label: l, type: 'money', val: o[k] } : t === 'date' ? { k, label: l, type: 'date', val: o[k] } : t === 'number' ? { k, label: l, type: 'text', val: o[k] != null ? o[k] : '', ph: '' } : { k, label: l, type: 'text', val: o[k] != null ? o[k] : (k === 'x_kennz' && e.id === 'kfz' ? pget('kennzeichen') || '' : '') });
   if (docs.length) fields.push({ k: 'doc', label: 'Verknüpftes Dokument', type: 'select', opts: [['', '– keines –']].concat(docs.map(d => [d.id, d.name])), val: o.doc || '', full: true });
   fields.push({ k: 'notiz', label: 'Notiz', type: 'textarea', val: o.notiz, full: true, rows: 2 });
   formSheet({ title: `${e.e} ${e.n}`, sub: e.d, fields, wide: true, submit: 'Speichern',
     onSubmit: v => {
       const t = S.vertr[e.id] || (S.vertr[e.id] = {});
-      t.st = 'ja'; for (const k of ['anbieter', 'tarif', 'nr', 'beginn', 'ende', 'zahl', 'kuend', 'notiz', 'doc']) { if (v[k] === '' || v[k] == null) delete t[k]; else t[k] = v[k]; }
+      t.st = 'ja'; if (v.gek) t.gek = 1; else delete t.gek;
+      for (const k of ['anbieter', 'tarif', 'nr', 'beginn', 'ende', 'zahl', 'kuend', 'notiz', 'doc', 'label']) { if (v[k] === '' || v[k] == null) delete t[k]; else t[k] = v[k]; }
       if (v.kosten == null) delete t.kosten; else t.kosten = v.kosten; if (v.unbef) t.unbef = 1; else delete t.unbef;
       for (const [k, , ty] of e.x) { let x = v[k]; if (ty === 'number') x = x === '' || x == null ? null : parseFloat(String(x).replace(',', '.')); if (x === '' || x == null || (typeof x === 'number' && !isFinite(x))) delete t[k]; else t[k] = x; }
-      if (e.pf && t.anbieter) pset(e.pf, t.anbieter, { src: 'manuell', conf: 1, docT: Date.now() });
+      if (e.pf && !e.of && t.anbieter) pset(e.pf, t.anbieter, { src: 'manuell', conf: 1, docT: Date.now() });
       if (e.id === 'kfz' && t.x_kennz && !phas('kennzeichen')) pset('kennzeichen', t.x_kennz, { src: 'manuell', conf: 1, docT: Date.now() });
       if (!t.anbieter && e.pf && phas(e.pf)) { /* Anbieter aus dem Steckbrief bleibt */ }
       save(); renderNav(); rerender(); toast('Gespeichert', 'good');
     } });
 };
-ACT['vt.new'] = () => {
-  const cats = VCATS.map(c => [c[0], c[1]]);
-  formSheet({ title: 'Eigener Vertrag', sub: 'Für alles, was nicht im Katalog steht – z. B. Wartungsvertrag, Tierarzt-Abo, Parkplatz.', fields: [{ k: 'n', label: 'Name', type: 'text', req: true, full: true, ph: 'z. B. Parkplatz Tiefgarage' }, { k: 'c', label: 'Bereich', type: 'select', opts: cats, val: 'abo', full: true }, { k: 'e', label: 'Symbol', type: 'text', val: '📄', ph: '📄' }], submit: 'Weiter',
+ACT['vt.dup'] = el => { const b = el.dataset.id; if (vst(b) !== 'ja') { setVst(b, 'ja'); renderNav(); rerender(); return ACT['vt.edit']({ dataset: { id: b } }); } closeSheet(); const id = newInst(b); renderNav(); rerender(); setTimeout(() => ACT['vt.edit']({ dataset: { id } }), 260); };
+ACT['vt.add'] = el => {
+  const cat = el.dataset.cat, c = catOf(cat), list = vAll().filter(e => e.c === cat && !e.of);
+  openSheet(`<div class="chh" style="--c:var(--c-life)"><span class="chh-e">${c[2]}</span><div><small>Hinzufügen</small><h2>${esc(c[1])}</h2></div></div>
+    <p class="lead-p">Wähle, was du hast. Hast du es schon, legst du einen weiteren Eintrag an – etwa ein zweites Auto oder einen zweiten Handyvertrag.</p>
+    <div class="list">${list.map(e => { const st = vst(e.id), n = instIds(e.id).length + (st === 'ja' ? 1 : 0); return `<button class="li" data-sh="${e.id}"><span class="li-e">${e.e}</span><span class="li-m"><b>${esc(e.n)}</b><small>${st === 'ja' ? (n > 1 ? n + ' Einträge – noch einen hinzufügen' : 'Hast du – noch einen hinzufügen') : st === 'nein' ? 'Bisher „Habe ich nicht“' : esc(e.d)}</small></span>${icon('plus')}</button>`; }).join('')}<button class="li" data-sh="__own"><span class="li-e">📄</span><span class="li-m"><b>Etwas anderes</b><small>Eigener Eintrag in diesem Bereich</small></span>${icon('plus')}</button></div>`,
+  { onMount: sh => sh.addEventListener('click', ev => { const b = ev.target.closest('[data-sh]'); if (!b) return; const id = b.dataset.sh; closeSheet(); setTimeout(() => { if (id === '__own') ACT['vt.new']({ dataset: { cat } }); else if (vst(id) === 'ja') ACT['vt.dup']({ dataset: { id } }); else { setVst(id, 'ja'); renderNav(); rerender(); ACT['vt.edit']({ dataset: { id } }); } }, 260); }) });
+};
+ACT['vt.new'] = el => {
+  const cats = VCATS.map(c => [c[0], c[1]]), pre = el && el.dataset && el.dataset.cat;
+  formSheet({ title: 'Eigener Vertrag', sub: 'Für alles, was nicht im Katalog steht – z. B. Wartungsvertrag, Tierarzt-Abo, Parkplatz.', fields: [{ k: 'n', label: 'Name', type: 'text', req: true, full: true, ph: 'z. B. Parkplatz Tiefgarage' }, { k: 'c', label: 'Bereich', type: 'select', opts: cats, val: pre || 'abo', full: true }, { k: 'e', label: 'Symbol', type: 'text', val: '📄', ph: '📄' }], submit: 'Weiter',
     onSubmit: v => { const id = 'c_' + uid(); S.vertr[id] = { custom: 1, n: v.n, c: v.c, e: (v.e || '📄').slice(0, 4), st: 'ja' }; save(); renderNav(); rerender(); setTimeout(() => ACT['vt.edit']({ dataset: { id } }), 250); } });
 };
 
 /* ---------- Schnell-Check ---------- */
 ACT['vt.quick'] = el => {
   const cat = el && el.dataset && el.dataset.cat;
-  const queue = vAll().filter(e => (!cat || e.c === cat) && !vst(e.id)); if (!queue.length) return toast('Alles beantwortet – stark!', 'good');
+  const queue = vAll().filter(e => (cat ? e.c === cat : e.core) && !vst(e.id) && !e.of); if (!queue.length) return toast('Alles beantwortet – stark!', 'good');
   let i = 0, mode = 'ask', yes = 0, no = 0;
   const sh = openSheet('<div id="qcBody"></div>', {
     wide: true, onMount: s => {
       const draw = () => {
-        if (i) { renderNav(); rerender(); } const b = $('#qcBody', s); if (i >= queue.length) { b.innerHTML = `<div class="empty" style="padding:8px 0 4px"><div class="em">🎉</div><b>Geschafft</b><p>${yes} ${yes === 1 ? 'Vertrag' : 'Verträge'} eingetragen, ${no}× „Habe ich nicht“. Ergänze bei den aktiven Verträgen jetzt Kosten und Laufzeit – dann erkennt Kairos Sparpotenzial und Fristen.</p></div><div class="acts"><span class="sp"></span><button class="btn primary" data-q="done">Fertig</button></div>`; return; }
+        if (i) { renderNav(); rerender(); } const b = $('#qcBody', s); if (i >= queue.length) { b.innerHTML = `<div class="empty" style="padding:8px 0 4px"><div class="em">🎉</div><b>Geschafft</b><p>${yes} ${yes === 1 ? 'Vertrag' : 'Verträge'} eingetragen, ${no}× „Habe ich nicht“. Ergänze bei den aktiven Verträgen jetzt Kosten und Laufzeit – dann erkennt Kairos Sparpotenzial und Fristen. Weitere Bereiche (Familie, Abos, Einnahmen …) gehst du mit „Check“ im jeweiligen Bereich durch.</p></div><div class="acts"><span class="sp"></span><button class="btn primary" data-q="done">Fertig</button></div>`; return; }
         const e = queue[i], c = catOf(e.c);
         if (mode === 'detail') { b.innerHTML = `<div class="qc-h"><small>${i + 1} von ${queue.length} · ${esc(c[1])}</small><div class="bar thin"><i style="width:${i / queue.length * 100}%"></i></div></div><div class="qc-card"><div class="qc-e">${e.e}</div><h2>${esc(e.n)}</h2><p class="lead-p">Gut. Magst du kurz Anbieter und Beitrag eintragen? Du kannst das auch später.</p></div>
           <div class="fields"><div class="field full"><label for="qcA">Anbieter</label><input class="inp" id="qcA" value="${esc(vprov(e.id))}" placeholder="z. B. Allianz, Vattenfall, Telekom" autocomplete="off"></div><div class="field"><label for="qcK">Beitrag</label><input class="inp" id="qcK" inputmode="decimal" placeholder="0,00" autocomplete="off"></div><div class="field"><label for="qcZ">Zahlweise</label><select class="sel" id="qcZ">${ZAHL.map(z => `<option value="${z[0]}">${z[1]}</option>`).join('')}</select></div></div>
@@ -4880,7 +5432,7 @@ async function boot() {
   if (memOnly) toast('Dein Browser blockiert den lokalen Speicher – Daten gehen beim Schließen verloren. Bitte Backup erstellen.', 'bad');
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => { /* optional */ });
   window.addEventListener('keydown', e => { if (e.key === '/' && !/input|textarea|select/i.test(e.target.tagName) && !$('#sheetWrap').classList.contains('open')) { e.preventDefault(); ACT['cmd.open'](); } });
-  window.__K = { get S() { return S; }, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
+  window.__K = { get S() { return S; }, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<pre style="position:fixed;inset:20px;z-index:999;background:#300;color:#fff;padding:20px;overflow:auto">Kairos konnte nicht starten:\n${esc(e && e.stack || e)}</pre>`); });
 
