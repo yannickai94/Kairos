@@ -2,7 +2,8 @@
 <html lang="de" data-theme="dark">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,interactive-widget=resizes-content">
+<meta name="format-detection" content="telephone=no,email=no,address=no">
 <title>Kairos – deine digitale Kopie</title>
 <meta name="description" content="Kairos baut aus deinen Dokumenten Schritt für Schritt deine digitale Identität auf. Texterkennung und KI laufen lokal, alle Daten bleiben auf deinem Gerät.">
 <meta name="theme-color" content="#070a1c">
@@ -74,14 +75,16 @@ try {
 
 /* ===== Reset & Grundlagen ===== */
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%}
-body{font-family:var(--font);font-size:15px;line-height:1.45;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow:hidden;overscroll-behavior:none;font-feature-settings:"tnum" 0,"ss01" 1}
+body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;font-family:var(--font);font-size:15px;line-height:1.45;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow:hidden;overscroll-behavior:none;font-feature-settings:"tnum" 0,"ss01" 1}
 button,input,select,textarea{font:inherit;color:inherit;margin:0}
 button{cursor:pointer;background:none;border:0;padding:0;-webkit-tap-highlight-color:transparent}
 a{color:var(--accent);text-decoration:none}
 h1,h2,h3,h4,p{margin:0}
 ::selection{background:var(--sel)}
+input,textarea,select,pre,.sf-v,.qf b,.bub,.cf-v,.dd-meta b,.sel-ok{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}
+img{-webkit-user-drag:none;user-drag:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
 .num,.money{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .muted{color:var(--text2)}.faint{color:var(--text3)}
@@ -136,7 +139,7 @@ svg.i.fill{fill:currentColor;stroke:none}
 /* ===== Formulare ===== */
 .field{display:flex;flex-direction:column;gap:7px;font-size:12.5px;font-weight:600;color:var(--text2);letter-spacing:.01em}
 .field>span.hint{font-weight:400;color:var(--text3);font-size:12px}
-.inp,.sel,.txt{width:100%;height:46px;padding:0 14px;border-radius:var(--r-sm);border:0;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);font-size:15.5px;font-weight:450;color:var(--text);transition:box-shadow .2s,background .2s;outline:0;appearance:none;-webkit-appearance:none}
+.inp,.sel,.txt{width:100%;height:46px;padding:0 14px;border-radius:var(--r-sm);border:0;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);font-size:16px;font-weight:450;color:var(--text);transition:box-shadow .2s,background .2s;outline:0;appearance:none;-webkit-appearance:none}
 .txt{height:auto;min-height:96px;padding:12px 14px;resize:vertical;line-height:1.5}
 .inp:focus,.sel:focus,.txt:focus{background:var(--field-f);box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 4px var(--sel)}
 .inp::placeholder,.txt::placeholder{color:var(--text3)}
@@ -331,7 +334,7 @@ button.kpi:hover{transform:translateY(-2px)}
 .shake{animation:shake .4s}
 @keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
 .link-btn{color:var(--text2);font-size:13px;text-decoration:underline}
-.onb{width:100%;display:grid;place-items:center;min-height:100%}
+.onb{width:100%;display:grid;place-items:center;min-height:100%;align-content:safe center}
 .onb-card{width:min(640px,100%);padding:36px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
 .onb-card h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.04em;line-height:1.1}
 .gradtxt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -474,7 +477,7 @@ body.dropping .main::after{content:"Datei hier ablegen";position:fixed;inset:12p
 .rv .check{margin-top:19px}
 .rvm{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
 .rvl{font-size:12px;font-weight:650;color:var(--text2)}
-.rvv{height:40px!important;font-size:15px!important}textarea.rvv{height:auto!important;min-height:64px}
+.rvv{height:42px!important;font-size:16px!important}textarea.rvv{height:auto!important;min-height:64px}
 .rvn{font-size:12px;color:var(--text3)}.rvn.ok{color:var(--pos)}
 .rv .badge{margin-top:21px;flex:none}
 .rv.diff .rvn:first-of-type{color:var(--warn)}
@@ -531,6 +534,183 @@ body.dropping .main::after{content:"Datei hier ablegen";position:fixed;inset:12p
 @media (max-width:900px){.chacts{display:grid!important;grid-template-columns:1fr 1fr;gap:10px}.chacts .sp{display:none}.chacts .btn.primary{grid-column:1/-1;order:-1}.chacts .btn.ghost{grid-column:1/-1}}
 @media (max-width:600px){.nxt-reads{display:none}.nxt-b p{font-size:14.5px}.idc-mid{margin:14px 0 10px}}
 
+/* =====================================================================
+   App-Update: Orbit-Startseite, ID-Karte 3D, Einblicke, Fotos, Navigation, Animationen
+   ===================================================================== */
+@keyframes orbSpin{to{transform:rotate(360deg)}}
+@keyframes wave{0%{opacity:.55;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(3.4)}}
+@keyframes floaty{0%,100%{transform:translateY(0);opacity:.35}50%{transform:translateY(-14px);opacity:.9}}
+@keyframes flow{to{stroke-dashoffset:-18}}
+@keyframes satPop{from{scale:.1;opacity:0}}
+@keyframes shimmer{to{background-position:-300% 0}}
+@keyframes pop2{from{opacity:0;transform:scale(.86)}}
+
+/* ----- Splash & Onboarding ----- */
+.splash::before,.splash::after{content:"";position:absolute;left:50%;top:calc(50% - 30px);width:150px;height:150px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--brand2) 70%,transparent);opacity:0;animation:wave 2.4s ease-out .5s infinite}
+.splash::after{animation-delay:1.3s;border-color:color-mix(in srgb,var(--brand1) 70%,transparent)}
+.splash-name{background:linear-gradient(90deg,var(--text) 35%,var(--brand1),var(--brand3),var(--text) 65%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fadeUp .8s .25s var(--ease) both,shimmer 2.6s linear .6s infinite}
+.splash-tag{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:650;color:var(--text3);animation:fadeUp .8s .55s var(--ease) both}
+.onb-feats>div{animation:rise .7s var(--ease) backwards}.onb-feats>div:nth-child(1){animation-delay:.25s}.onb-feats>div:nth-child(2){animation-delay:.4s}.onb-feats>div:nth-child(3){animation-delay:.55s}
+.onb-card h1,.onb-sub{animation:rise .7s var(--ease) .1s backwards}
+.onb-card{position:relative}
+
+/* ----- Stagger ----- */
+.stag>*{animation:rise .65s var(--ease) backwards}.stag>*:nth-child(2){animation-delay:.1s}.stag>*:nth-child(3){animation-delay:.2s}.stag>*:nth-child(4){animation-delay:.3s}
+.pth{animation:rise .5s var(--ease) backwards;animation-delay:calc(var(--k,0)*40ms + .25s)}
+
+/* ----- Avatar ----- */
+.av-i{width:40px;height:40px;border-radius:50%;overflow:hidden;display:grid;place-items:center;flex:none;background:var(--grad);color:#fff;font-weight:750;font-size:14px;box-shadow:0 6px 16px -6px rgba(79,134,255,.6),inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.av-i img{width:100%;height:100%;object-fit:cover;display:block}.av-i b{font-weight:750}
+.sideme{display:flex;align-items:center;gap:11px;padding:8px;border-radius:16px;text-align:left;width:100%;transition:background .2s}
+.sideme:hover{background:var(--field)}.me-t{min-width:0}.me-t b{display:block;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.me-t small{display:block;color:var(--text3);font-size:12px}
+.ph-av{display:none;flex:none;order:2;margin-left:auto;align-self:flex-start}
+.ph-av .av-i{width:42px;height:42px}
+.ph>.t{order:1}.ph>.act{order:3}
+
+/* ----- Orbit-Hero ----- */
+.hero2{display:grid;grid-template-columns:minmax(300px,430px) minmax(0,1fr);gap:30px;padding:30px;align-items:center;overflow:hidden;border-radius:36px;margin-bottom:0}
+.hero2::before{content:"";position:absolute;left:-20%;top:-60%;width:90%;height:220%;z-index:0;pointer-events:none;background:conic-gradient(from 0deg at 50% 50%,rgba(34,227,200,.2),rgba(79,134,255,.18),rgba(164,92,255,.22),rgba(34,227,200,.2));filter:blur(70px);opacity:.7;animation:orbSpin 50s linear infinite}
+.hero2>*{position:relative;z-index:1}
+.hero2-r .eyebrow{margin-bottom:8px!important}
+.h-title{font-size:clamp(30px,3.8vw,46px);letter-spacing:-.045em;line-height:1.04;font-weight:790;margin:0 0 10px}
+.h-sub{color:var(--text2);font-size:16px;max-width:540px}
+.hero-next{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:22px;margin:18px 0 12px;--c:var(--pos);background:color-mix(in srgb,var(--c) 13%,var(--field));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 34%,transparent)}
+.hn-e{width:52px;height:52px;border-radius:17px;display:grid;place-items:center;font-size:27px;flex:none;background:color-mix(in srgb,var(--c) 24%,var(--field-f));box-shadow:0 10px 24px -12px var(--c)}
+.hero-next small{display:block;font-size:11.5px;font-weight:750;letter-spacing:.09em;text-transform:uppercase;color:var(--c)}.hero-next b{display:block;font-size:18px;letter-spacing:-.02em;line-height:1.2;margin:1px 0 2px}.hero-next span:not(.hn-e){display:block;font-size:14px;color:var(--text2)}
+.rz2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:16px;align-items:start}
+.rz2-l,.rz2-r{display:flex;flex-direction:column;gap:12px;min-width:0}
+.notice.soft{background:var(--glass);box-shadow:inset 0 0 0 1px var(--hair);color:var(--text2)}.notice.soft b{color:var(--text)}
+
+.orb{position:relative;width:100%;max-width:430px;aspect-ratio:1;margin:0 auto;-webkit-tap-highlight-color:transparent}
+.orb-rings,.orb-lines,.orb-prog{position:absolute;inset:0;width:100%;height:100%}
+.orb-r1,.orb-r2{fill:none;stroke:var(--hair2);stroke-width:1.2;stroke-dasharray:2 8;stroke-linecap:round}.orb-r2{opacity:.6}
+.orb-rot{position:absolute;inset:0;animation:orbSpin 140s linear infinite}
+.oe{stroke-width:1.5;stroke-dasharray:4 6;opacity:.6;animation:flow 2.2s linear infinite;animation-delay:var(--d,0s)}
+.os{stroke-width:1.3}
+.sat,.dsat{position:absolute;transform:translate(-50%,-50%);width:12.6%;aspect-ratio:1;animation:satPop .7s var(--spring) backwards;animation-delay:calc(var(--i,0)*80ms + .35s)}
+.dsat{width:8.6%}
+.sat-in{position:absolute;inset:0;display:grid;place-items:center;border-radius:50%;font-size:clamp(16px,2.4vw,22px);animation:orbSpin 140s linear infinite reverse;background:var(--glass2);box-shadow:inset 0 0 0 1.5px var(--hair2),0 10px 22px -10px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:box-shadow .3s}
+:root[data-theme="light"] .sat-in{background:#fff}
+.sat-in em{position:absolute;top:calc(100% + 3px);left:50%;transform:translateX(-50%);font-style:normal;font-size:10.5px;font-weight:650;color:var(--text2);white-space:nowrap;pointer-events:none}
+.sat.part .sat-in{box-shadow:inset 0 0 0 2px var(--c),0 8px 18px -8px var(--c)}
+.sat.done .sat-in{background:var(--pos);color:#fff;box-shadow:0 8px 20px -6px var(--pos)}.sat.done .sat-in svg{font-size:20px}
+.sat.cur .sat-in{box-shadow:0 0 0 2px var(--c),0 0 26px -2px var(--c);background:color-mix(in srgb,var(--c) 22%,var(--glass2))}
+.sat.cur::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--c);opacity:.0;animation:ping 2.2s ease-out infinite}
+@keyframes ping{0%{opacity:.7;transform:scale(.9)}100%{opacity:0;transform:scale(1.7)}}
+.sat.na .sat-in{opacity:.4}.sat.open .sat-in{opacity:.85}
+.dsat .sat-in{font-size:13px;overflow:hidden;background:var(--field-f)}.dsat img{width:100%;height:100%;object-fit:cover}
+.sat:hover .sat-in,.dsat:hover .sat-in{box-shadow:0 0 0 2px var(--accent),0 10px 26px -8px var(--accent)}
+.orb:hover .orb-rot,.orb:hover .sat-in,.orb:active .orb-rot,.orb:active .sat-in{animation-play-state:paused}
+.orb-av{position:absolute;left:50%;top:50%;width:25.5%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;z-index:3;transition:transform .35s var(--spring)}
+.orb-av:hover{transform:translate(-50%,-50%) scale(1.06)}.orb-av:active{transform:translate(-50%,-50%) scale(.95)}
+.orb-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;box-shadow:0 14px 34px -10px rgba(79,134,255,.7),0 0 0 3px var(--bg2),0 0 0 4.5px rgba(255,255,255,.4)}
+.orb-logo{display:block;width:100%;height:100%;filter:drop-shadow(0 10px 22px rgba(79,134,255,.6))}.orb-logo svg{width:100%;height:100%}
+.orb-cam{position:absolute;right:-2%;bottom:-2%;width:30%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:12px;box-shadow:0 4px 10px rgba(0,0,0,.35),0 0 0 2px var(--bg2)}
+.orb-pct{position:absolute;left:50%;top:69.6%;transform:translate(-50%,-50%);display:flex;align-items:baseline;gap:1px;padding:4px 12px;border-radius:99px;z-index:4;background:var(--bg2);box-shadow:inset 0 0 0 1px var(--hair2),0 6px 18px -6px rgba(0,0,0,.5)}
+.orb-pct b{font-size:18px;font-weight:780;letter-spacing:-.03em}.orb-pct small{font-size:11px;font-weight:700;color:var(--text2)}
+.op-bg{fill:none;stroke:var(--field-f);stroke-width:7}.op-fg{fill:none;stroke:url(#opg);stroke-width:7;stroke-linecap:round;filter:drop-shadow(0 0 6px rgba(79,134,255,.6))}
+.orb-wave{position:absolute;left:50%;top:50%;width:24%;aspect-ratio:1;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--brand2) 65%,transparent);opacity:0;transform:translate(-50%,-50%);animation:wave 5s ease-out infinite;pointer-events:none}
+.orb-wave.w2{animation-delay:1.6s}.orb-wave.w3{animation-delay:3.2s}
+.spk{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%;background:var(--brand1);box-shadow:0 0 10px var(--brand1);opacity:.4;animation:floaty 5s ease-in-out infinite;animation-delay:var(--d);pointer-events:none}
+.spk:nth-child(3n){background:var(--brand3);box-shadow:0 0 10px var(--brand3)}.spk:nth-child(3n+1){background:var(--brand2);box-shadow:0 0 10px var(--brand2)}
+
+/* ----- ID-Karte 3D ----- */
+.idc{animation:idIn .9s var(--spring) backwards}
+.idc.tilt{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s var(--ease);will-change:transform;transform-style:preserve-3d}
+.idc-glow{position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(280px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.3),transparent 62%);opacity:0;transition:opacity .3s;mix-blend-mode:soft-light}.idc.hot .idc-glow{opacity:1}
+.idc-pctb{margin-left:auto;font-size:13px;font-weight:700;padding:4px 11px;border-radius:99px;background:rgba(255,255,255,.17);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}.idc-pctb b{font-size:15px}
+.idc-photo{width:94px;height:118px;border-radius:16px;overflow:hidden;flex:none;display:grid;place-items:center;background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4),0 12px 24px -10px rgba(0,0,0,.5);color:rgba(255,255,255,.85);transition:transform .3s var(--spring)}
+.idc-photo:hover{transform:scale(1.04)}.idc-photo img{width:100%;height:100%;object-fit:cover}.idc-photo span{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:22px}.idc-photo small{font-size:11px;font-weight:650}
+.idc-chip{margin-left:auto;width:34px;height:25px;border-radius:6px;background:linear-gradient(135deg,#f3d98a,#c99a3c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.2)}
+.idc-foot{align-items:center}
+.sb-top{display:grid;grid-template-columns:minmax(300px,410px) minmax(0,1fr);gap:16px;margin-bottom:16px;align-items:stretch}.sb-top .bin{margin:0}
+
+/* ----- Einblicke ----- */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.kpi2{padding:14px 16px;border-radius:22px;background:var(--glass);box-shadow:inset 0 0 0 1px var(--hair);display:flex;flex-direction:column;gap:1px;animation:rise .55s var(--ease) backwards}
+.kpi2:nth-child(2){animation-delay:.07s}.kpi2:nth-child(3){animation-delay:.14s}.kpi2:nth-child(4){animation-delay:.21s}
+.kpi2 b{font-size:32px;font-weight:790;letter-spacing:-.045em;line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.kpi2 span{font-size:12.5px;color:var(--text2);font-weight:550}
+.fseg{margin-bottom:14px}
+.ins-list{display:flex;flex-direction:column;gap:12px}.ins-list.compact{gap:8px}
+.ins{--c:var(--accent);display:flex;gap:14px;padding:16px 16px 16px 20px;border-radius:22px;background:var(--glass);box-shadow:inset 0 0 0 1px var(--hair),var(--shadow-sm);position:relative;overflow:hidden;animation:rise .55s var(--ease) backwards;animation-delay:calc(var(--i,0)*70ms)}
+.ins::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c);box-shadow:0 0 18px var(--c)}
+.ins-e{font-size:24px;width:46px;height:46px;border-radius:16px;display:grid;place-items:center;flex:none;background:color-mix(in srgb,var(--c) 17%,var(--field-f))}
+.ins-b{min-width:0;flex:1}.ins-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.ins-k{font-size:11px;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.ins-x{width:28px!important;height:28px!important;margin:-4px -6px -4px 0;opacity:.5}.ins:hover .ins-x{opacity:1}
+.ins h3{font-size:16.5px;letter-spacing:-.02em;line-height:1.25;margin-bottom:4px}.ins p{font-size:14px;color:var(--text2);line-height:1.5}
+.ins-f{display:flex;gap:10px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin-top:12px}.ins-src{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0}.ins-src small{font-size:11.5px;color:var(--text3);font-weight:600}
+.srcc{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 10px;border-radius:99px;font-size:12px;font-weight:600;background:var(--field-f);color:var(--text2);box-shadow:inset 0 0 0 1px var(--hair);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:.2s}.srcc:hover{color:var(--text);box-shadow:inset 0 0 0 1px var(--accent)}.srcc svg{font-size:12px;color:var(--accent)}
+.ins-list.compact .ins{padding:12px 14px 12px 18px}.ins-list.compact .ins-e{width:38px;height:38px;font-size:20px;border-radius:13px}.ins-list.compact h3{font-size:15px}.ins-list.compact p{font-size:13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.linkbtn{margin:12px auto 0;display:block;color:var(--accent);font-size:13px;font-weight:600}
+.sec{margin-top:28px;scroll-margin-top:12px}.sec-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.sec-h h2{font-size:20px;letter-spacing:-.025em;display:flex;align-items:center;gap:9px}.sec-p{font-size:14px;margin:-6px 0 12px}
+.tl{padding:8px 14px}.tl-i{display:flex;align-items:center;gap:14px;padding:10px 0;position:relative}.tl-i+.tl-i{border-top:1px solid var(--hair)}
+.tl-d{width:52px;flex:none;text-align:center;border-radius:14px;padding:6px 0;background:var(--field-f)}.tl-d b{display:block;font-size:20px;font-weight:780;letter-spacing:-.03em;line-height:1.1}.tl-d small{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text2)}
+.tl-i.soon .tl-d{background:color-mix(in srgb,var(--warn) 22%,transparent);color:var(--warn)}.tl-i.soon .tl-d small{color:var(--warn)}.tl-i.late .tl-d{background:color-mix(in srgb,var(--neg) 22%,transparent);color:var(--neg)}.tl-i.late .tl-d small{color:var(--neg)}
+.tl-m{flex:1;min-width:0}.tl-m b{display:block;font-size:15px}.tl-m small{color:var(--text2);font-size:12.5px}
+.pkgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pkg{text-align:left;padding:16px;border-radius:22px;background:var(--glass);box-shadow:inset 0 0 0 1px var(--hair);display:flex;flex-direction:column;gap:5px;transition:transform .35s var(--spring),box-shadow .25s;animation:rise .55s var(--ease) backwards;animation-delay:calc(var(--i,0)*60ms)}
+.pkg:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--accent),var(--shadow-sm)}.pkg:active{transform:scale(.97)}
+.pkg-e{font-size:26px}.pkg b{font-size:16px;letter-spacing:-.015em}.pkg small{color:var(--text2);font-size:12.5px}.pkg .bar{margin-top:6px}.pkg em{font-style:normal;font-size:12px;color:var(--text3);font-weight:600}
+.pk{display:flex;flex-direction:column}.pk-r{display:flex;align-items:center;gap:10px;padding:9px 2px;border-bottom:1px solid var(--hair);width:100%;text-align:left}.pk-r span{width:42%;flex:none;font-size:13px;color:var(--text2)}.pk-r b{flex:1;min-width:0;overflow-wrap:anywhere;font-size:15px;white-space:pre-line}.pk-r.miss b{color:var(--accent);font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;gap:5px}.pk-r.miss span{color:var(--text3)}
+.disc{margin:26px 4px 6px;font-size:12px;color:var(--text3);line-height:1.5}
+.qi{display:flex;flex-direction:column;gap:8px}.qi .ins{box-shadow:inset 0 0 0 1px var(--hair)}
+.bub p{white-space:pre-line}
+
+/* ----- Fotos ----- */
+.dseg{margin-bottom:14px}.cnt-s{font-size:11px;font-weight:700;min-width:18px;height:18px;padding:0 5px;border-radius:99px;display:inline-grid;place-items:center;background:var(--field-f);color:var(--text2)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}.pgrid.pick{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
+.ptile{aspect-ratio:1;border-radius:22px;overflow:hidden;position:relative;background:var(--field-f);box-shadow:inset 0 0 0 1px var(--hair);animation:pop2 .5s var(--spring) backwards;animation-delay:calc(var(--i,0)*45ms);transition:transform .3s var(--spring)}
+.ptile:hover{transform:scale(1.03)}.ptile:active{transform:scale(.96)}.ptile img{width:100%;height:100%;object-fit:cover;display:block}
+.ptile.padd{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1.5px dashed var(--hair2);box-shadow:none;background:transparent;color:var(--accent);font-weight:600;font-size:13px}.ptile.padd svg{font-size:26px}
+.pbadge{position:absolute;left:8px;bottom:8px;display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 9px;border-radius:99px;font-size:11px;font-weight:700;color:#fff;background:rgba(10,14,36,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pv-img{border-radius:20px;overflow:hidden;background:var(--field);display:grid;place-items:center;max-height:min(58dvh,520px)}.pv-img img{width:100%;max-height:min(58dvh,520px);object-fit:contain;display:block}.pv-t{filter:blur(6px);transform:scale(1.02)}
+.pv-m{margin:12px 2px 8px}.pv-m b{display:block;font-size:16px}.pv-m small{color:var(--text2)}.pv-tags{margin-top:6px}.pv-tags .chip{cursor:pointer}
+.avm{display:grid;grid-template-columns:1fr 1fr;gap:10px}.avm-b{padding:18px 10px;border-radius:22px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:14px;transition:transform .3s var(--spring)}.avm-b:active{transform:scale(.95)}.avm-b span{width:52px;height:52px;border-radius:18px;display:grid;place-items:center;font-size:24px;color:#fff;background:var(--grad);box-shadow:0 10px 24px -10px var(--brand2)}
+.crop{position:relative;width:min(320px,100%);aspect-ratio:1;margin:4px auto 16px;border-radius:24px;overflow:hidden;background:#05070f;box-shadow:inset 0 0 0 1px var(--hair2)}
+.crop canvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}.crop canvas:active{cursor:grabbing}
+.crop-m{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 50%,transparent 0 47%,rgba(5,7,15,.62) 47.6%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.crop-m::after{content:"";position:absolute;left:3%;top:3%;right:3%;bottom:3%;border-radius:50%;border:2px solid rgba(255,255,255,.75)}
+.rng{-webkit-appearance:none;appearance:none;width:100%;height:30px;background:transparent;margin:0}.rng::-webkit-slider-runnable-track{height:6px;border-radius:9px;background:var(--field-f)}.rng::-moz-range-track{height:6px;border-radius:9px;background:var(--field-f)}
+.rng::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;margin-top:-10px;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.4);border:0}.rng::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:0;box-shadow:0 3px 10px rgba(0,0,0,.4)}
+
+/* ----- Sheets & Navigation ----- */
+.grab{display:none}
+.dk{position:relative}
+.dk .dki{display:grid;place-items:center;transition:transform .35s var(--spring)}.dk .dkl{font-size:10.5px}
+.dk.on .dki{transform:translateY(-2px) scale(1.1)}
+.dk.on::after{content:"";position:absolute;bottom:4px;width:16px;height:3px;border-radius:3px;background:var(--c);box-shadow:0 0 10px var(--c)}
+.dk:active .dki{transform:scale(.88)}
+.dk .dot{position:absolute;top:9px;right:calc(50% - 20px);width:9px;height:9px;border-radius:50%;background:var(--neg);box-shadow:0 0 0 2px var(--bg2)}
+
+@media (max-width:1000px){
+  .hero2{grid-template-columns:minmax(0,1fr);padding:22px;gap:14px;border-radius:30px}
+  .orb{max-width:360px}
+  .rz2,.sb-top{grid-template-columns:minmax(0,1fr)}
+  .pkgs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .ph-av{display:block}
+  .ph>.act{order:3;width:100%}
+  .grab{display:block;width:42px;height:5px;border-radius:99px;background:var(--hair2);margin:-10px auto 14px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero2{margin-top:2px}
+  .h-title{font-size:30px}
+  .hero-next b{font-size:16.5px}
+  .tl{padding:4px 12px}
+  .ins{padding:14px 14px 14px 18px;gap:12px}
+}
+@media (max-width:520px){.pkgs{grid-template-columns:minmax(0,1fr)}.pgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.idc-photo{width:80px;height:100px}.nxt-reads{display:none}}
+@media (prefers-reduced-motion:reduce){.orb-rot,.sat-in,.hero2::before,.splash::before,.splash::after{animation:none!important}}
+.dk.dko::after{display:none}
+
+@media (max-width:520px){
+  .onb{place-items:start center}
+  .onb-card{padding:22px 16px;gap:12px}
+  .onb-feats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .onb-feats>div{padding:10px 9px}.onb-feats span{font-size:20px}.onb-feats b{font-size:12.5px}.onb-feats small{display:none}
+}
+
 /* ===== Dock (nur mobil) ===== */
 .dock{display:none}
 .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
@@ -561,10 +741,10 @@ body.dropping .main::after{content:"Datei hier ablegen";position:fixed;inset:12p
   .dk svg{font-size:23px}
   .dk.on{color:var(--c)}
   .dk.on svg{filter:drop-shadow(0 0 8px color-mix(in srgb,var(--c) 70%,transparent))}
-  .dk.orb{flex:none;width:62px;height:62px;margin-top:-26px;border-radius:50%;padding:0;background:transparent;box-shadow:none}
-  .dk.orb span{display:block;width:62px;height:62px;filter:drop-shadow(0 10px 20px rgba(79,134,255,.6));transition:transform .3s var(--spring)}
-  .dk.orb span svg{width:100%;height:100%;display:block}
-  .dk.orb:active span{transform:scale(.9)}
+  .dk.dko{flex:none;width:62px;height:62px;margin-top:-26px;border-radius:50%;padding:0;background:transparent;box-shadow:none}
+  .dk.dko span{display:block;width:62px;height:62px;filter:drop-shadow(0 10px 20px rgba(79,134,255,.6));transition:transform .3s var(--spring)}
+  .dk.dko span svg{width:100%;height:100%;display:block}
+  .dk.dko:active span{transform:scale(.9)}
   #toasts{bottom:calc(96px + env(safe-area-inset-bottom))}
   .overlay{padding:0;align-items:flex-end}
   .sheet{width:100%!important;max-height:92dvh;border-radius:28px 28px 0 0;padding:22px 18px calc(24px + env(safe-area-inset-bottom));animation:sheetUp .45s var(--ease) both}
@@ -580,7 +760,6 @@ body.dropping .main::after{content:"Datei hier ablegen";position:fixed;inset:12p
   .kanban{grid-template-columns:repeat(4,82vw)}
   .docs{grid-template-columns:repeat(2,minmax(0,1fr))}
   .notes{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .onb-feats{grid-template-columns:1fr}
   .onb-card{padding:28px 20px}
   .hide-s{display:none}
   .arow{grid-template-columns:auto 1fr 60px}.arow .bar{width:60px}
@@ -608,6 +787,7 @@ body.dropping .main::after{content:"Datei hier ablegen";position:fixed;inset:12p
     <button class="cmdbtn" data-act="cmd.open" aria-label="Kairos öffnen"><span id="cmdIcon"></span><span>Suchen, fragen …</span><kbd>⌘K</kbd></button>
     <nav id="nav"></nav>
     <div class="side-foot">
+      <button class="sideme" id="sideMe" data-go="einstellungen" aria-label="Profil und Einstellungen"></button>
       <div class="sync" id="syncState"><i></i><span>Lokal gespeichert</span></div>
     </div>
   </aside>
@@ -626,9 +806,11 @@ body.dropping .main::after{content:"Datei hier ablegen";position:fixed;inset:12p
 </div>
 <div id="toasts" aria-live="polite"></div>
 <div id="lock" class="lockscreen" hidden></div>
-<div id="splash" class="splash"><div class="splash-logo" id="splashLogo"></div><div class="splash-name">Kairos</div></div>
+<div id="splash" class="splash"><div class="splash-logo" id="splashLogo"></div><div class="splash-name">Kairos</div><div class="splash-tag">Deine digitale Kopie</div></div>
 <input type="file" id="capIn" accept="application/pdf,image/*,text/plain,.pdf,.txt,.heic,.heif" multiple hidden>
 <input type="file" id="capCam" accept="image/*" capture="environment" hidden>
+<input type="file" id="phIn" accept="image/*" multiple hidden>
+<input type="file" id="phCam" accept="image/*" capture="user" hidden>
 <input type="file" id="importIn" accept="application/json,.json" hidden>
 
 <script>
@@ -774,15 +956,17 @@ const download = (blob, name) => { const a = document.createElement('a'); a.href
 const AREAS = {
   reise:     { name: 'Reise',      ic: 'route',  c: 'var(--accent)' },
   steckbrief:{ name: 'Steckbrief', ic: 'id',     c: 'var(--c-fin)' },
+  einblicke: { name: 'Einblicke',  ic: 'bulb',   c: 'var(--c-biz)' },
   dokumente: { name: 'Dokumente',  ic: 'file',   c: 'var(--c-life)' },
-  kairos:    { name: 'Kairos',     ic: 'sparkle',c: 'var(--c-biz)' },
+  kairos:    { name: 'Kairos',     ic: 'sparkle',c: 'var(--c-shop)' },
   einstellungen: { name: 'Einstellungen', ic: 'sliders', c: 'var(--text2)' }
 };
 const DOC_CATS = { gehalt: ['Gehalt & Lohn', '💶'], rechnung: ['Rechnungen', '🧾'], vertrag: ['Verträge', '📝'], versicherung: ['Versicherung', '🛡️'], steuer: ['Steuer', '🏛️'], post: ['Post & Behörden', '✉️'], bank: ['Bank', '🏦'], ident: ['Identität', '🪪'], gesundheit: ['Gesundheit', '🩺'], job: ['Job & Zeugnisse', '💼'], garantie: ['Belege & Garantie', '📦'], wohnen: ['Wohnen', '🏠'], familie: ['Familie', '👨‍👩‍👧'], mobil: ['Mobilität', '🚗'], sonst: ['Sonstiges', '📄'] };
 
 const defaultState = () => ({
-  v: 3,
-  profile: { name: '', created: Date.now() },
+  v: 4,
+  profile: { name: '', avatar: null, created: Date.now() },
+  photos: [],                     // Fotos: { id, name, created, w, h, thumb, size, tag }
   prof: {},                       // Profilfelder: key → { v, src, conf, ok, at }
   docs: [],                       // Dokumente (digitale Akte)
   brain: null,                    // freie Notizen
@@ -853,8 +1037,9 @@ async function saveNow() {
 }
 function migrate(st) {
   const d = defaultState(); st = st || {};
-  const out = Object.assign(d, { profile: Object.assign(d.profile, st.profile || {}), prof: st.prof || {}, docs: st.docs || [], brain: st.brain || null, journey: Object.assign(d.journey, st.journey || {}), ui: Object.assign(d.ui, st.ui || {}) });
-  out.v = 3;
+  const out = Object.assign(d, { profile: Object.assign(d.profile, st.profile || {}), prof: st.prof || {}, docs: st.docs || [], photos: st.photos || [], brain: st.brain || null, journey: Object.assign(d.journey, st.journey || {}), ui: Object.assign(d.ui, st.ui || {}) });
+  out.v = 4;
+  if (st.demo) { out.prof = {}; out.docs = []; out.photos = []; out.journey = defaultState().journey; out.ui.notice = 'Die Beispieldaten wurden entfernt.'; }   // frühere Demo-Daten sind nicht mehr Teil der App
   return out;
 }
 async function dbInit() {
@@ -941,14 +1126,25 @@ function toast(msg, kind, action) {
 
 /* ---------- Sheet ---------- */
 let sheetResolve = null;
+const buzz = (ms = 8) => { try { navigator.vibrate && navigator.vibrate(ms); } catch (e) { /* ignorieren */ } };
 function openSheet(html, { wide = false, onMount } = {}) {
   const wrap = $('#sheetWrap'), old = $('#sheet');
   const sh = old.cloneNode(false);              // frischer Knoten: alte Listener fallen weg
-  sh.className = 'sheet glass' + (wide ? ' wide' : '');
+  sh.removeAttribute('style'); sh.className = 'sheet glass' + (wide ? ' wide' : '');
   old.replaceWith(sh);
-  sh.innerHTML = html;
+  sh.innerHTML = '<div class="grab" aria-hidden="true"></div>' + html;
   wrap.classList.add('open'); wrap.setAttribute('aria-hidden', 'false');
   sh.scrollTop = 0;
+  /* Mobil: nach unten wischen schließt das Sheet */
+  let y0 = null, dy = 0, drag = false;
+  sh.addEventListener('touchstart', e => { if (innerWidth > 900 || sh.scrollTop > 0) { y0 = null; return; } y0 = e.touches[0].clientY; dy = 0; drag = false; }, { passive: true });
+  sh.addEventListener('touchmove', e => {
+    if (y0 == null) return; dy = e.touches[0].clientY - y0;
+    if (dy > 10 && sh.scrollTop <= 0) { drag = true; sh.style.animation = 'none'; sh.style.transition = 'none'; sh.style.transform = `translateY(${dy}px)`; }
+    else if (!drag && dy < -4) y0 = null;
+  }, { passive: true });
+  const end = () => { if (!drag) { y0 = null; return; } sh.style.transition = 'transform .28s var(--ease)'; if (dy > 110) { sh.style.transform = 'translateY(105%)'; buzz(6); setTimeout(closeSheet, 200); } else sh.style.transform = ''; y0 = null; drag = false; };
+  sh.addEventListener('touchend', end); sh.addEventListener('touchcancel', end);
   if (onMount) onMount(sh);
   return sh;
 }
@@ -1057,21 +1253,27 @@ function countUp(el, to, fmt = c => money(c)) {
 }
 
 /* ---------- Router & Navigation ---------- */
-const ROUTES = ['reise', 'steckbrief', 'dokumente', 'kairos', 'einstellungen'];
+const ROUTES = ['reise', 'steckbrief', 'einblicke', 'dokumente', 'kairos', 'einstellungen'];
 let route = 'reise';
-function badgeCounts() { return { dokumente: S.docs.filter(d => d.status === 'neu').length }; }
+function badgeCounts() { return { dokumente: S.docs.filter(d => d.status === 'neu').length, einblicke: typeof urgentCount === 'function' ? urgentCount() : 0 }; }
+function avatarHTML(cls = '') {
+  const a = S.profile.avatar, nm = S.profile.name || (typeof pget === 'function' && pget('vorname')) || '';
+  return `<span class="av-i ${cls}">${a ? `<img alt="" src="${a}">` : nm ? `<b>${esc(initials(nm))}</b>` : icon('user')}</span>`;
+}
 function renderNav() {
   const bc = badgeCounts();
   const item = r => { const a = AREAS[r], n = bc[r]; return `<button class="nv ${route === r ? 'on' : ''}" style="--c:${a.c}" data-go="${r}" ${route === r ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt alert">${n}</span>` : ''}</button>`; };
-  $('#nav').innerHTML = ['reise', 'steckbrief', 'dokumente', 'kairos'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
-  const dk = (r, lab) => `<button class="dk ${route === r ? 'on' : ''}" style="--c:${AREAS[r].c}" data-go="${r}" aria-label="${lab}">${icon(AREAS[r].ic)}<span>${lab}</span>${bc[r] ? '<i class="dot"></i>' : ''}</button>`;
+  $('#nav').innerHTML = ['reise', 'steckbrief', 'einblicke', 'dokumente', 'kairos'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
+  const dk = (r, lab) => `<button class="dk ${route === r ? 'on' : ''}" style="--c:${AREAS[r].c}" data-go="${r}" aria-label="${lab}"><span class="dki">${icon(AREAS[r].ic)}</span><span class="dkl">${lab}</span>${bc[r] ? '<i class="dot"></i>' : ''}</button>`;
   $('#dock').innerHTML = dk('reise', 'Reise') + dk('steckbrief', 'Steckbrief') +
-    `<button class="dk orb ${route === 'kairos' ? 'on' : ''}" data-go="kairos" aria-label="Kairos fragen"><span>${logoSvg('dock')}</span></button>` + dk('dokumente', 'Dokumente') + dk('einstellungen', 'Mehr');
+    `<button class="dk dko ${route === 'kairos' ? 'on' : ''}" data-go="kairos" aria-label="Kairos fragen"><span>${logoSvg('dock')}</span></button>` + dk('einblicke', 'Einblicke') + dk('dokumente', 'Dokumente');
+  const me = $('#sideMe'); if (me) me.innerHTML = `${avatarHTML()}<span class="me-t"><b>${esc(S.profile.name || (typeof profName === 'function' && profName()) || 'Du')}</b><small>Einstellungen</small></span>`;
 }
 function renderView(keepScroll) {
   const v = VIEWS[route] || VIEWS.reise;
   const main = $('#main'), st = main.scrollTop;
   $('#view').innerHTML = v.render();
+  const ph = $('#view .ph'); if (ph && route !== 'einstellungen') { const b = document.createElement('button'); b.className = 'ph-av'; b.dataset.go = 'einstellungen'; b.setAttribute('aria-label', 'Einstellungen'); b.innerHTML = avatarHTML(); const act = $('.act', ph); act ? ph.insertBefore(b, act) : ph.appendChild(b); }
   if (v.mount) v.mount($('#view'));
   main.scrollTop = keepScroll ? st : 0;
   renderNav();
@@ -1088,7 +1290,7 @@ window.addEventListener('popstate', () => { const r = (location.hash.replace('#/
 /* ---------- Globale Aktionen ---------- */
 document.addEventListener('click', e => {
   const g = e.target.closest('[data-go]');
-  if (g) { go(g.dataset.go); return; }
+  if (g) { buzz(6); go(g.dataset.go); return; }
   const a = e.target.closest('[data-act]');
   if (a && ACT[a.dataset.act]) { e.preventDefault(); ACT[a.dataset.act](a, e); }
 });
@@ -1105,6 +1307,11 @@ function setTheme(t) {
   const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = eff === 'dark' ? '#070a1c' : '#e9eefb';
 }
 matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => { if (lsGet('kairos-theme') === 'auto') setTheme('auto'); });
+
+/* App-Gefühl: kein Pinch-Zoom, kein Doppeltipp-Zoom, kein Kontextmenü auf Bedienelementen */
+['gesturestart', 'gesturechange', 'gestureend'].forEach(ev => document.addEventListener(ev, e => e.preventDefault()));
+document.addEventListener('touchmove', e => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
+let lastTap = 0; document.addEventListener('touchend', e => { const t = Date.now(); if (t - lastTap < 320 && !e.target.closest('input,textarea,select')) e.preventDefault(); lastTap = t; }, { passive: false });
 
 /* Zusätzliche Icons (24er Raster, Linienstil) */
 Object.assign(IC, {
@@ -1124,6 +1331,12 @@ Object.assign(IC, {
   rocket: 'M5 15c-1.5 1-2 4-2 4s3-.5 4-2M14 4c3-1 6-1 6-1s0 3-1 6l-5 5-4-4ZM9 9H5l-2 3 4 1M15 15v4l-3 2-1-4M15 8.5h.01',
   shieldcheck: 'M12 3l7.5 3v5.5c0 4.4-3.1 7.9-7.5 9.5-4.4-1.6-7.5-5.1-7.5-9.5V6ZM8.8 12.3l2.2 2.2 4.2-4.4',
   wand: 'M5 19L16 8M14 6l2-2 4 4-2 2ZM6 5v3M4.5 6.5h3M18 15v3M16.5 16.5h3',
+  bulb: 'M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3Z',
+  image: 'M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1ZM8.5 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM3 17l5-5 4 4 3-3 6 6',
+  clock: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 7v5l3 2',
+  box: 'M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5ZM3.5 7.5 12 12l8.5-4.5M12 12v9',
+  share: 'M12 15V4M8 8l4-4 4 4M5 13v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6',
+  zoomin: 'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14ZM20 20l-4-4M11 8v6M8 11h6',
   lockkey: 'M6 11h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1ZM8 11V8a4 4 0 0 1 8 0v3M12 15v2'
 });
 
@@ -2431,7 +2644,8 @@ function nextStep() {
 const isoExpire = () => { const e = [['ausweis_bis', 'Personalausweis'], ['fs_bis', 'Führerschein']].map(([k, n]) => phas(k) ? { n, d: pget(k), days: diffDays(pget(k), todayISO()) } : null).filter(Boolean); return e; };
 
 /* ---------- Übernahme aus Dokumenten ---------- */
-const sameVal = (k, a, b) => { if (a == null || b == null) return false; const t = PF[k] && PF[k].t; if (t === 'money' || t === 'date') return a === b; return norm(String(a)).replace(/[^a-z0-9]/g, '') === norm(String(b)).replace(/[^a-z0-9]/g, ''); };
+const foldDe = s => norm(String(s)).replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u').replace(/[^a-z0-9]/g, '');
+const sameVal = (k, a, b) => { if (a == null || b == null) return false; const t = PF[k] && PF[k].t; if (t === 'money' || t === 'date') return a === b; return foldDe(a) === foldDe(b); };
 /** Review-Zeilen für ein extrahiertes Dokument aufbauen: neu / bestätigt / abweichend */
 function buildReview(ext) {
   const rows = [];
@@ -2472,7 +2686,7 @@ const cap = { ctx: {}, busy: false };
 const sha256 = async f => { const b = await crypto.subtle.digest('SHA-256', await f.arrayBuffer()); return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join(''); };
 const kindInfo = d => DOC_KINDS[d.kind] || DOC_KINDS.sonst;
 const docDateOf = d => d.docDate || iso(new Date(d.created || Date.now()));
-async function cleanOrphans() { try { const keys = await fileKeys(), used = new Set(S.docs.map(d => d.id)); for (const k of keys) if (!used.has(k)) await fileDel(k); } catch (e) { /* ignorieren */ } }
+async function cleanOrphans() { try { const keys = await fileKeys(), used = new Set(S.docs.map(d => d.id).concat((S.photos || []).map(x => x.id))); for (const k of keys) if (!used.has(k)) await fileDel(k); } catch (e) { /* ignorieren */ } }
 
 ACT['cap.pick'] = el => { cap.ctx = { ch: el && el.dataset.ch, slot: el && el.dataset.slot }; const i = $('#capIn'); i.value = ''; i.click(); };
 ACT['cap.cam'] = el => { cap.ctx = { ch: el && el.dataset.ch, slot: el && el.dataset.slot }; const i = $('#capCam'); i.value = ''; i.click(); };
@@ -2633,14 +2847,14 @@ const ring = (pct, size = 120, w = 9) => { const r = (size - w) / 2, c = 2 * Mat
 
 /* ---------- Reise ---------- */
 function idCardHTML(o) {
-  const nm = profName(), has = k => phas(k), v = (k, m) => has(k) ? esc(pFmt(k, pget(k), m && S.ui.mask && !revealed.has(k))) : '<i class="ph0">—</i>';
-  const pct = Math.round(o.pct * 100);
-  return `<div class="idc"><div class="idc-sheen" aria-hidden="true"></div>
-    <div class="idc-top"><div class="idc-logo">${logoSvg('idc')}</div><div class="idc-ti"><small>DIGITALE KOPIE</small><b>${esc(o.level)}</b></div><span class="idc-chip" aria-hidden="true"></span></div>
-    <div class="idc-mid"><div class="idc-ring">${ring(o.pct, 112, 8)}<div class="idc-pct"><b class="num" id="idPct">${pct}</b><small>%</small></div></div>
+  const nm = profName(), has = k => phas(k), v = k => has(k) ? esc(pFmt(k, pget(k))) : '<i class="ph0">—</i>';
+  const pct = Math.round(o.pct * 100), av = S.profile.avatar;
+  return `<div class="idc tilt"><div class="idc-sheen" aria-hidden="true"></div><div class="idc-glow" aria-hidden="true"></div>
+    <div class="idc-top"><div class="idc-logo">${logoSvg('idc')}</div><div class="idc-ti"><small>DIGITALE KOPIE</small><b>${esc(o.level)}</b></div><span class="idc-pctb"><b class="num">${pct}</b>%</span></div>
+    <div class="idc-mid"><button class="idc-photo" data-act="avatar.menu" aria-label="Profilbild ändern">${av ? `<img alt="" src="${av}">` : `<span>${icon('camera')}<small>Foto</small></span>`}</button>
       <div class="idc-data"><div class="idc-name">${nm ? esc(nm) : '<i class="ph0">Dein Name</i>'}</div>
         <dl><div><dt>Geboren</dt><dd>${v('geburtsdatum')}${has('geburtsort') ? ' · ' + esc(pget('geburtsort')) : ''}</dd></div><div><dt>Wohnort</dt><dd>${has('ort') ? esc([pget('plz'), pget('ort')].filter(Boolean).join(' ')) : '<i class="ph0">—</i>'}</dd></div><div><dt>Ausweis bis</dt><dd>${v('ausweis_bis')}</dd></div></dl></div></div>
-    <div class="idc-foot"><span><b>${o.fields}</b> Felder</span><span><b>${S.docs.filter(d => d.status === 'ok').length}</b> Dokumente</span><span><b>${o.verified}</b> geprüft</span></div></div>`;
+    <div class="idc-foot"><span><b>${o.fields}</b> Felder</span><span><b>${S.docs.filter(d => d.status === 'ok').length}</b> Dokumente</span><span><b>${o.verified}</b> geprüft</span><span class="idc-chip" aria-hidden="true"></span></div></div>`;
 }
 function pathItem(c, st, cur) {
   const state = st.na ? 'na' : st.done ? 'done' : cur ? 'cur' : st.have ? 'part' : 'open';
@@ -2650,21 +2864,62 @@ function pathItem(c, st, cur) {
 function expiryHints() {
   return isoExpire().filter(e => e.days <= 180).map(e => e.days < 0 ? `<div class="ckl warn">${icon('alert')}<span><b>${esc(e.n)}</b> ist seit ${-e.days} Tagen abgelaufen.</span></div>` : `<div class="ckl warn">${icon('alert')}<span><b>${esc(e.n)}</b> läuft in ${e.days} Tagen ab (${fmtDate(e.d, true)}).</span></div>`).join('');
 }
+/** Orbit: Avatar in der Mitte, Kapitel als Satelliten, Dokumente außen – Linien zeigen, welches Dokument welches Kapitel gefüttert hat */
+function orbitHTML(o, nx) {
+  const SZ = 380, C = SZ / 2, R1 = 118, R2 = 168, N = CHAPTERS.length, pt = (r, deg) => [C + r * Math.cos(deg * Math.PI / 180), C + r * Math.sin(deg * Math.PI / 180)];
+  const cpos = {}; CHAPTERS.forEach((c, i) => cpos[c.id] = pt(R1, -90 + i * 360 / N));
+  const docs = S.docs.filter(d => d.status === 'ok').slice(0, 11), dpos = {}; docs.forEach((d, i) => dpos[d.id] = pt(R2, -90 + 180 / N + i * 360 / Math.max(docs.length, 1)));
+  const edges = []; for (const d of docs) { const chs = new Set(Object.keys(S.prof).filter(k => S.prof[k].src === 'doc:' + d.id && PF[k]).map(k => PF[k].ch)); chs.forEach(ch => edges.push([dpos[d.id], cpos[ch], CH[ch].c])); }
+  const pc = o.pct, rr = 74, circ = 2 * Math.PI * rr;
+  const lines = edges.map((e, i) => `<line class="oe" style="--d:${(i % 7) * .4}s" x1="${e[0][0].toFixed(1)}" y1="${e[0][1].toFixed(1)}" x2="${e[1][0].toFixed(1)}" y2="${e[1][1].toFixed(1)}" stroke="${e[2]}"/>`).join('');
+  const spokes = CHAPTERS.map(c => { const st = o.chapters.find(x => x.id === c.id); return st.have ? `<line class="os" x1="${C}" y1="${C}" x2="${cpos[c.id][0].toFixed(1)}" y2="${cpos[c.id][1].toFixed(1)}" stroke="${c.c}" opacity="${(.12 + st.pct * .35).toFixed(2)}"/>` : ''; }).join('');
+  const sat = CHAPTERS.map((c, i) => { const st = o.chapters.find(x => x.id === c.id), state = st.na ? 'na' : st.done ? 'done' : nx && nx.ch.id === c.id ? 'cur' : st.have ? 'part' : 'open'; const [x, y] = cpos[c.id];
+    return `<button class="sat ${state}" style="left:${(x / SZ * 100).toFixed(2)}%;top:${(y / SZ * 100).toFixed(2)}%;--c:${c.c};--i:${i}" data-act="ch.open" data-ch="${c.id}" aria-label="${esc(c.n)}"><span class="sat-in">${state === 'done' ? icon('check') : c.e}<em>${esc(c.n.split(' ')[0])}</em></span></button>`; }).join('');
+  const dsat = docs.map((d, i) => { const [x, y] = dpos[d.id]; return `<button class="dsat" style="left:${(x / SZ * 100).toFixed(2)}%;top:${(y / SZ * 100).toFixed(2)}%;--i:${i}" data-act="doc.open" data-id="${d.id}" aria-label="${esc(d.name)}"><span class="sat-in">${d.thumb ? `<img alt="" src="${d.thumb}">` : kindInfo(d).e}</span></button>`; }).join('');
+  const spk = Array.from({ length: 9 }, (_, i) => `<i class="spk" style="--x:${(i * 37 + 11) % 96}%;--y:${(i * 53 + 7) % 92}%;--d:${(i % 5) * .9}s;--s:${3 + (i % 3)}px"></i>`).join('');
+  return `<div class="orb" role="group" aria-label="Deine Kapitel und Dokumente">${spk}
+    <div class="orb-wave"></div><div class="orb-wave w2"></div><div class="orb-wave w3"></div>
+    <svg class="orb-rings" viewBox="0 0 ${SZ} ${SZ}" aria-hidden="true"><circle cx="${C}" cy="${C}" r="${R1}" class="orb-r1"/><circle cx="${C}" cy="${C}" r="${R2}" class="orb-r2"/></svg>
+    <div class="orb-rot"><svg class="orb-lines" viewBox="0 0 ${SZ} ${SZ}" aria-hidden="true">${spokes}${lines}</svg>${sat}${dsat}</div>
+    <svg class="orb-prog" viewBox="0 0 ${SZ} ${SZ}" aria-hidden="true"><defs><linearGradient id="opg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--brand1)"/><stop offset=".55" stop-color="var(--brand2)"/><stop offset="1" stop-color="var(--brand3)"/></linearGradient></defs><circle cx="${C}" cy="${C}" r="${rr}" class="op-bg"/><circle cx="${C}" cy="${C}" r="${rr}" class="op-fg rgp" stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${(circ * (1 - clamp(pc, 0, 1))).toFixed(1)}" transform="rotate(-90 ${C} ${C})"/></svg>
+    <button class="orb-av" data-act="avatar.menu" aria-label="Profilbild ändern">${S.profile.avatar ? `<img alt="" src="${S.profile.avatar}">` : `<span class="orb-logo">${logoSvg('orb')}</span>`}<span class="orb-cam">${icon('camera')}</span></button>
+    <div class="orb-pct"><b class="num" data-count="${Math.round(pc * 100)}">${Math.round(pc * 100)}</b><small>%</small></div></div>`;
+}
+function reiseHero(o, nx, start) {
+  const fn = firstName(), pend = S.docs.filter(d => d.status === 'neu' || d.status === 'fehler').length, ok = S.docs.filter(d => d.status === 'ok').length;
+  const cta = !nx ? `<div class="hero-next done"><span class="hn-e">🎉</span><div><small>Geschafft</small><b>Deine digitale Kopie ist vollständig</b><span>Halte sie aktuell – oder frag Kairos, was sich daraus ergibt.</span></div></div><div class="nxt-acts"><button class="btn primary lg" data-go="einblicke">${icon('bulb')}Einblicke ansehen</button><button class="btn lg" data-go="kairos">${icon('sparkle')}Kairos fragen</button></div>`
+    : `<div class="hero-next" style="--c:${nx.ch.c}"><span class="hn-e">${nx.ch.e}</span><div><small>${start ? 'Dein erster Schritt' : nx.optional ? 'Zum Abrunden' : 'Nächster Schritt'}</small><b>${nx.ch.id === 'ausweis' && start ? 'Starte mit deinem Ausweis' : esc(nx.ch.n) + ': ' + esc(nx.ch.title)}</b><span>${esc(nx.ch.ask)}</span></div></div>
+      <div class="chips nxt-reads"><span class="chip">${icon('scan')}Kairos liest:</span>${nx.ch.reads.split(', ').map(r => `<span class="chip">${esc(r)}</span>`).join('')}</div>
+      <div class="nxt-acts">${nx.ch.manual ? `<button class="btn primary lg" data-act="ich.start">${icon('edit')}Fragen beantworten</button>` : `<button class="btn primary lg" data-act="cap.pick" data-ch="${nx.ch.id}">${icon('upload')}Dokument wählen</button><button class="btn lg cam-only" data-act="cap.cam" data-ch="${nx.ch.id}">${icon('camera')}Foto aufnehmen</button><button class="btn ghost" data-act="fill.ch" data-ch="${nx.ch.id}">Selbst eintragen</button>`}</div>`;
+  return `<section class="hero2 card glass"><div class="hero2-l">${orbitHTML(o, nx)}</div>
+    <div class="hero2-r"><div class="eyebrow">${esc(greetingWord())}${fn ? ', ' + esc(fn) : ''}</div><h1 class="h-title">${start ? 'Baue deine digitale <span class="gradtxt">Kopie</span>' : `Stufe <span class="gradtxt">${esc(o.level)}</span>`}</h1>
+      <p class="h-sub">${start ? 'Dokument für Dokument – Kairos liest, verknüpft und zeigt dir, was daraus entsteht.' : `${o.fields} Angaben aus ${plural(ok, 'Dokument', 'Dokumenten')} sind verknüpft. ${nx ? 'Weiter geht es hier:' : ''}`}</p>
+      ${cta}${start ? `<p class="nxt-priv">${icon('lock')}Alles bleibt auf diesem Gerät. Keine Cloud, kein Konto, keine API.</p>` : ''}</div></section>`;
+}
 VIEWS.reise = {
   render() {
-    const o = overall(), nx = nextStep(), fn = firstName(), pend = S.docs.filter(d => d.status === 'neu' || d.status === 'fehler');
-    const start = !o.fields && !S.docs.length;
-    const nxHTML = !nx ? `<div class="card glass nxt done"><div class="nxt-e">🎉</div><div class="nxt-b"><small>Geschafft</small><h2>Deine digitale Kopie ist vollständig</h2><p>Alle Kapitel sind ausgefüllt. Frag Kairos etwas über dich – oder halte Dokumente aktuell, wenn sich etwas ändert.</p><div class="nxt-acts"><button class="btn primary" data-go="kairos">${icon('sparkle')}Kairos fragen</button><button class="btn" data-go="steckbrief">Steckbrief ansehen</button></div></div></div>`
-      : `<div class="card glass nxt" style="--c:${nx.ch.c}"><div class="nxt-e">${nx.ch.e}</div><div class="nxt-b"><small>${start ? 'Dein erster Schritt' : nx.optional ? 'Zum Abrunden' : 'Nächster Schritt'}</small><h2>${nx.ch.id === 'ausweis' ? 'Starte mit deinem Ausweis' : esc(nx.ch.n) + ': ' + esc(nx.ch.title)}</h2><p>${esc(nx.ch.ask)}</p>
-        ${nx.ch.reads ? `<div class="chips nxt-reads"><span class="chip">${icon('scan')}Kairos liest:</span>${nx.ch.reads.split(', ').map(r => `<span class="chip">${esc(r)}</span>`).join('')}</div>` : ''}
-        <div class="nxt-acts">${nx.ch.manual ? `<button class="btn primary lg" data-act="ich.start">${icon('edit')}Fragen beantworten</button>` : `<button class="btn primary lg" data-act="cap.pick" data-ch="${nx.ch.id}">${icon('upload')}Dokument wählen</button><button class="btn lg cam-only" data-act="cap.cam" data-ch="${nx.ch.id}">${icon('camera')}Foto aufnehmen</button><button class="btn ghost" data-act="fill.ch" data-ch="${nx.ch.id}">Selbst eintragen</button>`}</div>
-        ${start ? `<p class="nxt-priv">${icon('lock')}Alles bleibt auf diesem Gerät. Nichts wird hochgeladen, keine Cloud, keine API.</p>` : ''}</div></div>`;
-    return `<div class="page reise"><header class="ph"><div class="t"><div class="eyebrow">${esc(greetingWord())}${fn ? ', ' + esc(fn) : ''}</div><h1>Deine Reise</h1><p>${start ? 'Baue Schritt für Schritt deine digitale Kopie auf – Dokument für Dokument.' : `Du bist zu <b>${Math.round(o.pct * 100)} %</b> fertig.`}</p></div></header>
-      <div class="rz-grid"><div class="rz-l">${idCardHTML(o)}${expiryHints()}${pend.length ? `<button class="notice" data-act="rev.pending">${icon('scan')}<span><b>${plural(pend.length, 'Dokument wartet', 'Dokumente warten')} auf dich</b><small>Prüfe, was Kairos gelesen hat, und übernimm es.</small></span>${icon('chevR')}</button>` : ''}</div>
-      <div class="rz-r">${nxHTML}<div class="card glass pathc"><div class="card-h">Dein Weg</div><div class="path">${CHAPTERS.map(c => pathItem(c, o.chapters.find(x => x.id === c.id), nx && nx.ch.id === c.id)).join('')}</div></div></div></div></div>`;
+    const o = overall(), nx = nextStep(), pend = S.docs.filter(d => d.status === 'neu' || d.status === 'fehler'), start = !o.fields && !S.docs.length;
+    const ins = start ? [] : topInsights(3);
+    return `<div class="page reise stag">${reiseHero(o, nx, start)}
+      <div class="rz2"><div class="rz2-l">${pend.length ? `<button class="notice" data-act="rev.pending">${icon('scan')}<span><b>${plural(pend.length, 'Dokument wartet', 'Dokumente warten')} auf dich</b><small>Prüfe, was Kairos gelesen hat, und übernimm es.</small></span>${icon('chevR')}</button>` : ''}${expiryHints()}
+        ${ins.length ? `<div class="card glass"><div class="card-h">${icon('bulb')} Das hat Kairos verknüpft<span class="sp"></span><button class="link" data-go="einblicke">Alle</button></div><div class="ins-list compact">${ins.map((x, i) => insightCard(x, i, true)).join('')}</div></div>` : ''}
+        ${!S.profile.avatar && !start ? `<button class="notice soft" data-act="avatar.menu">${icon('camera')}<span><b>Füge ein Profilfoto hinzu</b><small>Dein Gesicht macht die digitale Kopie komplett.</small></span>${icon('chevR')}</button>` : ''}</div>
+      <div class="rz2-r"><div class="card glass pathc"><div class="card-h">Dein Weg</div><div class="path">${CHAPTERS.map(c => pathItem(c, o.chapters.find(x => x.id === c.id), nx && nx.ch.id === c.id)).join('')}</div></div></div></div></div>`;
   },
-  mount() { const pc = $('.rgp'); if (pc && !reduceMotion()) { const to = pc.getAttribute('stroke-dashoffset'), c = pc.getAttribute('stroke-dasharray'); pc.style.transition = 'none'; pc.setAttribute('stroke-dashoffset', c); requestAnimationFrame(() => requestAnimationFrame(() => { pc.style.transition = 'stroke-dashoffset 1.1s var(--ease)'; pc.setAttribute('stroke-dashoffset', to); })); } }
+  mount(root) {
+    $$('[data-count]', root).forEach(el => countUp(el, +el.dataset.count, c => String(c)));
+    const pc = $('.rgp', root); if (pc && !reduceMotion()) { const to = pc.getAttribute('stroke-dashoffset'), c = pc.getAttribute('stroke-dasharray'); pc.style.transition = 'none'; pc.setAttribute('stroke-dashoffset', c); requestAnimationFrame(() => requestAnimationFrame(() => { pc.style.transition = 'stroke-dashoffset 1.4s var(--ease)'; pc.setAttribute('stroke-dashoffset', to); })); }
+  }
 };
+/** 3D-Neigung für Karten (Maus/Touch) */
+function tiltInit(root) {
+  $$('.tilt', root).forEach(el => {
+    if (reduceMotion()) return;
+    const mv = e => { const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height; el.style.setProperty('--rx', ((.5 - y) * 12).toFixed(2) + 'deg'); el.style.setProperty('--ry', ((x - .5) * 14).toFixed(2) + 'deg'); el.style.setProperty('--mx', (x * 100).toFixed(1) + '%'); el.style.setProperty('--my', (y * 100).toFixed(1) + '%'); el.classList.add('hot'); };
+    const lv = () => { el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); el.classList.remove('hot'); };
+    el.addEventListener('pointermove', mv); el.addEventListener('pointerleave', lv); el.addEventListener('pointerup', lv);
+  });
+}
 
 /* ---------- Kapitel-Sheet ---------- */
 ACT['ch.open'] = el => {
@@ -2777,10 +3032,11 @@ VIEWS.steckbrief = {
     const o = overall(), parts = dasBinIch();
     return `<div class="page"><header class="ph"><div class="t"><div class="eyebrow">Deine digitale Kopie</div><h1>Steckbrief</h1><p>Alles, was Kairos über dich weiß – mit Quelle. Tippe auf einen Wert zum Ändern.</p></div>
       <div class="act"><button class="btn" data-act="mask.toggle">${icon(S.ui.mask ? 'eyeoff' : 'eye')}${S.ui.mask ? 'Sensible Daten verborgen' : 'Alles sichtbar'}</button><button class="btn" data-act="sb.copy">${icon('copy')}Alles kopieren</button></div></header>
-      ${parts.length ? `<div class="card glass bin"><div class="card-h">${icon('user')}Das bin ich</div><p>${parts.map(esc).join(' ')}</p></div>` : ''}
+      <div class="sb-top">${idCardHTML(o)}${parts.length ? `<div class="card glass bin"><div class="card-h">${icon('user')}Das bin ich</div><p>${parts.map(esc).join(' ')}</p></div>` : ''}</div>
       ${!o.fields ? `<div class="card glass"><div class="empty"><div class="em">🪪</div><b>Noch leer</b><p>Lade deinen Ausweis hoch – der Steckbrief füllt sich von selbst.</p><button class="btn primary" data-act="cap.pick" data-ch="ausweis">${icon('upload')}Ausweis hochladen</button></div></div>` : ''}
       <div class="sb-grid">${CHAPTERS.map(chapterCard).join('')}</div></div>`;
-  }
+  },
+  mount(root) { tiltInit(root); }
 };
 ACT['sb.copy'] = async () => {
   const lines = []; for (const c of CHAPTERS) { const ks = PF_LIST.filter(f => f[2] === c.id && phas(f[0])).map(f => `${PF[f[0]].l}: ${pFmt(f[0], pget(f[0]))}`); if (ks.length) lines.push(`${c.n}\n${ks.join('\n')}`); }
@@ -2799,11 +3055,12 @@ function docRow(d) {
 }
 VIEWS.dokumente = {
   render() {
+    if (S.ui.dtab === 'fotos') return photosPage();
     const cats = {}; S.docs.forEach(d => cats[d.cat] = (cats[d.cat] || 0) + 1);
     const q = norm(docQuery).trim(), list = S.docs.filter(d => (docFilter === 'alle' || d.cat === docFilter) && (!q || norm([d.name, d.sender, d.summary, d.text, d.fileName].join(' ')).includes(q)));
     const pend = S.docs.filter(d => d.status === 'neu' || d.status === 'fehler').length;
     return `<div class="page"><header class="ph"><div class="t"><div class="eyebrow">Deine digitale Akte</div><h1>Dokumente</h1><p>${S.docs.length ? `${plural(S.docs.length, 'Dokument', 'Dokumente')} – lokal gespeichert, durchsuchbar.` : 'Alles, was du hochlädst, landet hier – lesbar und durchsuchbar.'}</p></div>
-      <div class="act"><button class="btn cam-only" data-act="cap.cam">${icon('camera')}Foto</button><button class="btn primary" data-act="cap.pick">${icon('upload')}Hochladen</button></div></header>
+      <div class="act"><button class="btn cam-only" data-act="cap.cam">${icon('camera')}Foto</button><button class="btn primary" data-act="cap.pick">${icon('upload')}Hochladen</button></div></header>${dtabSeg()}
       ${pend ? `<button class="notice" data-act="rev.pending">${icon('scan')}<span><b>${plural(pend, 'Dokument wartet', 'Dokumente warten')} auf dich</b><small>Gelesene Daten prüfen und ins Profil übernehmen.</small></span>${icon('chevR')}</button>` : ''}
       ${S.docs.length ? `<div class="toolbar"><div class="searchbox">${icon('search')}<input class="inp" id="docQ" placeholder="In allen Dokumenten suchen …" value="${esc(docQuery)}" autocomplete="off"></div></div>
       <div class="chips fchips"><button class="chip ${docFilter === 'alle' ? 'on' : ''}" data-act="doc.filter" data-f="alle">Alle ${S.docs.length}</button>${Object.keys(cats).map(c => `<button class="chip ${docFilter === c ? 'on' : ''}" data-act="doc.filter" data-f="${c}">${(DOC_CATS[c] || DOC_CATS.sonst)[1]} ${(DOC_CATS[c] || DOC_CATS.sonst)[0]} ${cats[c]}</button>`).join('')}</div>
@@ -2872,7 +3129,7 @@ function fieldScores(q) {
 const fv = k => ({ k, l: PF[k].l, v: pFmt(k, pget(k)), raw: pget(k) });
 const known = ks => ks.filter(phas).map(fv);
 const A_ = {                       // Antwortbausteine
-  text: t => ({ t: 'text', v: t }), fields: rows => ({ t: 'fields', rows }), docs: ids => ({ t: 'docs', ids }),
+  text: t => ({ t: 'text', v: t }), fields: rows => ({ t: 'fields', rows }), docs: ids => ({ t: 'docs', ids }), ins: items => ({ t: 'ins', items }),
   acts: a => ({ t: 'acts', a })
 };
 const missingAns = (what, ch) => [A_.text(`${what} habe ich noch nicht. ${ch ? CH[ch].ask : 'Trag es ein oder lade ein passendes Dokument hoch.'}`), A_.acts(ch ? [{ l: 'Dokument hochladen', act: 'cap.pick', ch, primary: 1 }, { l: 'Selbst eintragen', act: 'fill.ch', ch }] : [])];
@@ -2895,6 +3152,14 @@ function answerRules(q) {
     if (!nx) return { blocks: [A_.text(`Deine digitale Kopie ist zu ${Math.round(o.pct * 100)} % fertig – alle Kapitel sind ausgefüllt. Stark!`)], rule: 'progress' };
     const miss = nx.st.coreMissing.length ? nx.st.coreMissing : nx.st.missing;
     return { blocks: [A_.text(`Du bist bei ${Math.round(o.pct * 100)} % (Stufe „${o.level}“). Als Nächstes: ${nx.ch.e} ${nx.ch.n}. ${nx.ch.ask}${miss.length ? ' Es fehlen noch: ' + miss.slice(0, 5).map(k => PF[k].l).join(', ') + '.' : ''}`), A_.acts([nx.ch.manual ? { l: 'Fragen beantworten', act: 'ich.start', primary: 1 } : { l: 'Dokument hochladen', act: 'cap.pick', ch: nx.ch.id, primary: 1 }, { l: 'Zur Reise', go: 'reise' }])], rule: 'progress' };
+  }
+  if (has(/chance|tipp|vorteil|sparen|einblick|optimier|was kann ich (tun|verbessern)|lohnt sich|geld zuruck/)) {
+    const top = topInsights(3);
+    return top.length ? { blocks: [A_.text(`Aus deinen Daten und Dokumenten habe ich ${plural(buildInsights().length, 'Einblick', 'Einblicke')} gefunden. Die wichtigsten:`), A_.ins(top), A_.acts([{ l: 'Alle Einblicke', go: 'einblicke' }])], rule: 'insights' } : { blocks: [A_.text('Dafür kenne ich noch zu wenig. Je mehr Dokumente du hochlädst, desto mehr Zusammenhänge erkenne ich – z. B. Miete im Verhältnis zum Gehalt, Steuerklasse oder Fristen.'), A_.acts([{ l: 'Dokument hochladen', act: 'cap.pick', primary: 1 }])], rule: 'insights' };
+  }
+  if (has(/\bfrist|termin|wann muss ich|was steht an|anstehend|deadline/) && !has(/ausweis|perso|fuhrerschein/)) {
+    const up = buildDeadlines().filter(d => diffDays(d.date, todayISO()) >= 0).slice(0, 4);
+    return up.length ? { blocks: [A_.text('Das steht als Nächstes an:'), A_.text(up.map(d => `• ${fmtDate(d.date, true)} – ${d.title} (${dlLabel(d.date)})`).join('\n')), A_.acts([{ l: 'Fristen ansehen', go: 'einblicke' }])], rule: 'deadlines' } : { blocks: [A_.text('Ich kenne noch keine anstehenden Fristen. Sobald Gültigkeiten oder Kündigungsfristen in deinen Dokumenten stehen, zeige ich sie dir.')], rule: 'deadlines' };
   }
   if (has(/wer bin ich|fass.* zusammen|stell mich vor|das bin ich|erzahl.* (uber|von) mich|beschreib mich/)) {
     const parts = dasBinIch(); const ich = ['ueber', 'staerken', 'ziele'].filter(phas).map(k => `${PF[k].l}: ${pget(k)}`);
@@ -2950,11 +3215,11 @@ function answerRules(q) {
 }
 const SUGGEST = () => {
   const s = [], nx = nextStep();
-  if (nx) s.push('Was fehlt noch?');
+  if (nx) s.push('Was fehlt noch?'); if (buildInsights().length) s.push('Welche Chancen habe ich?'); if (buildDeadlines().length) s.push('Welche Fristen stehen an?');
   if (phas('iban')) s.push('Was ist meine IBAN?'); if (phas('steuerid')) s.push('Wie lautet meine Steuer-ID?');
   if (phas('ausweis_bis')) s.push('Wann läuft mein Ausweis ab?'); if (phas('ort')) s.push('Wo wohne ich?'); if (phas('geburtsdatum')) s.push('Wie alt bin ich?');
   if (phas('netto')) s.push('Was verdiene ich?'); s.push('Wer bin ich?'); if (S.docs.length) s.push('Welche Dokumente habe ich?');
-  return s.slice(0, 6);
+  return s.slice(0, 7);
 };
 
 /* ---------- Optional: lokales Sprachmodell (WebLLM, experimentell) ---------- */
@@ -2995,6 +3260,7 @@ function blockHTML(b) {
   if (b.t === 'text') return `<p>${esc(b.v)}</p>`;
   if (b.t === 'fields') return `<div class="qf">${b.rows.map(r => `<div class="qf-r"><span>${esc(r.l)}</span><b class="${PF[r.k].sens ? 'mono' : ''}">${esc(r.v)}</b><button class="iconbtn" data-act="pf.copy" data-k="${r.k}" aria-label="Kopieren">${icon('copy')}</button></div>`).join('')}</div>`;
   if (b.t === 'docs') return `<div class="qd">${b.ids.map(id => S.docs.find(d => d.id === id)).filter(Boolean).map(docRow).join('')}</div>`;
+  if (b.t === 'ins') return `<div class="qi">${b.items.map(x => insightCard(x, 0, true)).join('')}</div>`;
   if (b.t === 'acts') return `<div class="qa">${b.a.map(x => x.go ? `<button class="btn sm ${x.primary ? 'primary' : ''}" data-go="${x.go}">${esc(x.l)}</button>` : x.ask ? `<button class="btn sm" data-act="k.ask" data-q="${esc(x.ask)}">${esc(x.l)}</button>` : `<button class="btn sm ${x.primary ? 'primary' : ''}" data-act="${x.act}" ${x.ch ? `data-ch="${x.ch}"` : ''}>${esc(x.l)}</button>`).join('')}</div>`;
   return '';
 }
@@ -3018,7 +3284,304 @@ ACT['k.ask'] = el => { if (route !== 'kairos') go('kairos'); askKairos(el.datase
 ACT['k.clear'] = () => { QA.hist = []; rerender(); };
 
 /* =====================================================================
-   KAIROS · Einstellungen, Backup, Sperre, Demo-Daten
+   KAIROS · Einblicke: verknüpft Profil + Dokumente zu Chancen, To-dos, Fristen und Datenpaketen.
+   Alles regelbasiert und lokal. Richtwerte (Stand 2026) – keine Steuer- oder Rechtsberatung.
+   ===================================================================== */
+const RULES = { year: 2026, wkPausch: 123000, hoDay: 600, hoMax: 126000, pendler: 0.38, kindergeld: 25900, jaeg: 7740000, zusatz: 2.9, spb: 100000 };
+const num = k => { const v = pget(k); return typeof v === 'number' ? v : null; };
+const nowYear = () => new Date().getFullYear();
+const KIND_ST = { chance: ['Chance', 'var(--c-biz)', '✨'], warn: ['Wichtig', 'var(--neg)', '⚠️'], todo: ['Zu erledigen', 'var(--accent)', '✅'], info: ['Hinweis', 'var(--c-life)', 'ℹ️'], good: ['Gut so', 'var(--pos)', '👍'] };
+const docOf = k => { const p = S.prof[k]; if (!p || !p.src || !p.src.startsWith('doc:')) return null; return S.docs.find(d => d.id === p.src.slice(4)) || null; };
+const chipsFor = keys => keys.filter(phas).map(k => { const d = docOf(k); return { l: PF[k].l, doc: d ? d.id : null, k }; });
+const eur0 = c => money(c, { round: true });
+const joinNice = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' und ' + a[a.length - 1];
+
+function profileConflicts() {
+  const out = [], seen = new Set(), KEYS = ['strasse', 'plz', 'ort', 'nachname', 'vorname', 'iban', 'krankenkasse', 'geburtsdatum'];
+  for (const d of S.docs) for (const c of (d.cand || [])) {
+    if (!KEYS.includes(c.k) || !phas(c.k) || c.conf < 0.7 || c.mode === 'append') continue;
+    const cur = S.prof[c.k]; if (cur.src === 'doc:' + d.id || sameVal(c.k, cur.v, c.v)) continue;
+    const key = c.k + '|' + norm(String(c.v)); if (seen.has(key)) continue; seen.add(key);
+    out.push({ k: c.k, cur: cur.v, other: c.v, doc: d, curDoc: docOf(c.k) });
+  }
+  return out;
+}
+function steuerYearInfo() { const Y = nowYear() - 4; return { Y, last: `${nowYear()}-12-31` }; }
+
+function buildInsights() {
+  const L = [], today = todayISO(), add = o => L.push(Object.assign({ kind: 'info', pri: 10, src: [] }, o));
+  const hasJob = phas('arbeitgeber') || phas('netto') || phas('steuerklasse');
+  const netto = num('netto'), brutto = num('brutto'), miete = num('miete'), eur = eur0;
+  /* Fristen & Gültigkeit */
+  for (const [k, n, id] of [['ausweis_bis', 'Personalausweis', 'ausweis'], ['fs_bis', 'Führerschein', 'fs']]) {
+    if (!phas(k)) continue; const days = diffDays(pget(k), today);
+    if (days < 0) add({ id: id + '_exp', kind: 'warn', pri: 100, e: '🪪', title: `${n} ist abgelaufen`, text: `Gültig bis ${fmtDate(pget(k), true)} – seit ${days === -1 ? '1 Tag' : -days + ' Tagen'}. Ohne gültigen ${n === 'Führerschein' ? 'Führerschein darfst du nicht fahren' : 'Ausweis gibt es Ärger bei Behörden, Banken und Reisen'}.`, src: chipsFor([k]) });
+    else if (days <= 180) add({ id: id + '_soon', kind: days <= 60 ? 'warn' : 'todo', pri: days <= 60 ? 90 : 70, e: '🪪', title: `${n} läuft in ${days} Tagen ab`, text: `Gültig bis ${fmtDate(pget(k), true)}. Mach rechtzeitig einen Termin im Bürgeramt – ein neuer Ausweis braucht oft einige Wochen.`, src: chipsFor([k]) });
+  }
+  /* Wohnkosten × Einkommen */
+  if (miete && netto) {
+    const q = miete / netto, p = Math.round(q * 100), src = chipsFor(['miete', 'netto']);
+    if (q > 0.4) add({ id: 'mietquote', kind: 'warn', pri: 60, e: '🏠', title: `Wohnkosten: ${p} % deines Nettos`, text: `${eur(miete)} Warmmiete bei ${eur(netto)} Netto. Als Faustregel gelten bis ca. 30–35 % als komfortabel. Prüfe Nebenkostenabrechnung, Mietspiegel und ob dir Wohngeld zusteht.`, src, act: { l: 'Kairos fragen', ask: 'Was verdiene ich?' } });
+    else if (q > 0.3) add({ id: 'mietquote', kind: 'info', pri: 24, e: '🏠', title: `Wohnkosten: ${p} % deines Nettos`, text: `${eur(miete)} Warmmiete bei ${eur(netto)} Netto – im oberen Normalbereich (Faustregel: ca. 30 %). Es bleiben ${eur(netto - miete)} im Monat.`, src });
+    else add({ id: 'mietquote', kind: 'good', pri: 22, e: '🏠', title: `Wohnkosten: nur ${p} % deines Nettos`, text: `${eur(miete)} Warmmiete bei ${eur(netto)} Netto – das ist komfortabel. Es bleiben ${eur(netto - miete)} im Monat für alles andere.`, src });
+  }
+  if (brutto && netto && brutto > netto) {
+    const p = Math.round(netto / brutto * 100); add({ id: 'netto_quote', kind: 'info', pri: 20, e: '💶', title: `Von ${eur(brutto)} brutto bleiben ${p} % netto`, text: `Das sind ${eur(netto)} im Monat – etwa ${eur(netto * 12)} im Jahr. Abgaben und Steuern: ${eur(brutto - netto)} pro Monat. Jahresbrutto ca. ${eur(brutto * 12)}.`, src: chipsFor(['brutto', 'netto']) });
+  }
+  /* Netto-Entwicklung über mehrere Abrechnungen */
+  const lohn = S.docs.filter(d => d.kind === 'lohn').map(d => ({ d, n: (d.cand || []).find(c => c.k === 'netto'), t: d.docDate ? parseISO(d.docDate).getTime() : d.created })).filter(x => x.n && typeof x.n.v === 'number').sort((a, b) => b.t - a.t);
+  if (lohn.length >= 2) { const a = lohn[0], b = lohn[1], dlt = a.n.v - b.n.v; if (Math.abs(dlt) / b.n.v >= 0.02) add({ id: 'netto_delta', kind: dlt > 0 ? 'good' : 'warn', pri: 55, e: dlt > 0 ? '📈' : '📉', title: `Dein Netto hat sich ${dlt > 0 ? 'erhöht' : 'verringert'}: ${dlt > 0 ? '+' : '−'}${eur(Math.abs(dlt))}`, text: `Laut deinen Abrechnungen ${b.d.docDate ? 'vom ' + fmtDate(b.d.docDate, true) : ''} → ${a.d.docDate ? fmtDate(a.d.docDate, true) : 'neuester'}: ${eur(b.n.v)} → ${eur(a.n.v)}.${dlt < 0 ? ' Prüfe Steuerklasse, Sonderzahlungen und Abzüge.' : ''}`, src: [{ l: 'Gehaltsabrechnung', doc: a.d.id }, { l: 'Gehaltsabrechnung', doc: b.d.id }] }); }
+  const newest = lohn[0]; if (newest && newest.t && diffDays(today, iso(new Date(newest.t))) > 75) add({ id: 'lohn_alt', kind: 'todo', pri: 30, e: '📄', title: 'Neue Gehaltsabrechnung hochladen', text: `Deine letzte Abrechnung ist vom ${fmtDate(iso(new Date(newest.t)), true)}. Mit einer aktuellen bleiben Brutto, Netto und Steuerklasse auf dem neuesten Stand.`, src: [{ l: 'Gehaltsabrechnung', doc: newest.d.id }], act: { l: 'Hochladen', a: 'cap.pick', ch: 'job' } });
+  /* Steuern */
+  const stk = pget('steuerklasse'), fam = pget('familienstand'), verh = fam === 'Verheiratet' || fam === 'Eingetragene Lebenspartnerschaft';
+  if (stk && verh && stk === '1') add({ id: 'stkl_ehe', kind: 'chance', pri: 75, e: '💍', title: 'Steuerklasse prüfen', text: `Du bist ${fam.toLowerCase()}, aber in Steuerklasse 1. Ehepaare können 3/5 oder 4/4 (mit Faktor) wählen – das verschiebt vor allem, wie viel Netto du monatlich bekommst. Auswirkungen auf Elterngeld oder Arbeitslosengeld vorher prüfen.`, src: chipsFor(['steuerklasse', 'familienstand']) });
+  if (stk && ['3', '5', '6'].includes(stk)) add({ id: 'stkl_pflicht', kind: 'todo', pri: 66, e: '🏛️', title: 'Steuererklärung ist Pflicht', text: `Bei Steuerklasse ${stk} musst du eine Steuererklärung abgeben (Pflichtveranlagung). Frist für ${nowYear() - 1}: 31.07.${nowYear()} (mit Steuerberater später).`, src: chipsFor(['steuerklasse']) });
+  if (hasJob) {
+    const { Y, last } = steuerYearInfo(), started = phas('eintritt') ? parseISO(pget('eintritt')).getFullYear() : null;
+    if (!started || started <= Y) add({ id: 'steuer_rueck', kind: 'chance', pri: diffDays(last, today) < 90 ? 80 : 62, e: '💸', title: `Steuererklärung ${Y}: Frist endet am 31.12.${nowYear()}`, text: `Freiwillig kannst du bis zu 4 Jahre rückwirkend abgeben – für ${Y} läuft die Frist am ${fmtDate(last, true)} ab. Wer Werbungskosten über der Pauschale (${eur(RULES.wkPausch)}), Pendelkosten, Homeoffice oder Spenden hatte, bekommt oft Geld zurück.`, src: chipsFor(['arbeitgeber', 'eintritt']), act: { l: 'Datenpaket Steuererklärung', pkg: 'steuer' } });
+    add({ id: 'wk', kind: 'chance', pri: 34, e: '🧾', title: 'Werbungskosten ausschöpfen', text: `Ab ${eur(RULES.wkPausch)} im Jahr lohnt sich der Einzelnachweis. Homeoffice: ${eur(RULES.hoDay)} pro Tag bis ${eur(RULES.hoMax)}. Pendeln: ${String(RULES.pendler).replace('.', ',')} € je Entfernungskilometer (2026, ab dem 1. km). Dazu Arbeitsmittel, Fortbildung, Gewerkschaft.`, src: chipsFor(['arbeitgeber', 'beruf']) });
+    if (phas('bescheid_jahr') && nowYear() - parseInt(pget('bescheid_jahr'), 10) >= 2) { const J = parseInt(pget('bescheid_jahr'), 10); add({ id: 'bescheid_alt', kind: 'todo', pri: 46, e: '🏛️', title: `Letzter Steuerbescheid: ${J}`, text: `Seitdem sind ${nowYear() - J - 1} Veranlagungsjahre vergangen. Hast du für ${J + 1}${nowYear() - J > 2 ? ' bis ' + (nowYear() - 1) : ''} abgegeben? Bei Pflicht droht sonst ein Verspätungszuschlag.`, src: chipsFor(['bescheid_jahr']) }); }
+  }
+  for (const d of S.docs.filter(x => x.kind === 'steuer' && x.docDate)) {
+    const bek = addDays(d.docDate, 3), end = addMonths(bek, 1), left = diffDays(end, today);
+    if (left >= 0 && left <= 35) add({ id: 'einspruch_' + d.id, kind: 'warn', pri: 95, e: '⏳', title: `Einspruchsfrist läuft bis ${fmtDate(end, true)}`, text: `Dein Steuerbescheid vom ${fmtDate(d.docDate, true)} gilt nach 3 Tagen als bekanntgegeben; danach hast du einen Monat für den Einspruch (noch ${left} ${left === 1 ? 'Tag' : 'Tage'}). Prüfe, ob alle Angaben stimmen.`, src: [{ l: 'Steuerbescheid', doc: d.id }] });
+  }
+  /* Familie */
+  if (phas('kinder')) {
+    const n = String(pget('kinder')).split('\n').filter(x => x.trim()).length || 1;
+    add({ id: 'kinder', kind: 'chance', pri: 56, e: '👨‍👩‍👧', title: `Kindergeld: ${eur(RULES.kindergeld * n)} im Monat`, text: `${eur(RULES.kindergeld)} je Kind (2026) – bei ${plural(n, 'Kind', 'Kindern')} sind das ${eur(RULES.kindergeld * n * 12)} im Jahr. Das Finanzamt prüft in der Steuererklärung automatisch, ob der Kinderfreibetrag günstiger ist. Antrag bei der Familienkasse nicht vergessen.`, src: chipsFor(['kinder', 'familienstand']) });
+  }
+  /* Versicherungen */
+  if (phas('krankenkasse') && !/privat|pkv|debeka|dkv|hallesche|signal iduna|axa|allianz priv/i.test(pget('krankenkasse'))) {
+    add({ id: 'kasse', kind: 'chance', pri: 40, e: '🩺', title: `Krankenkasse vergleichen: ${pget('krankenkasse')}`, text: `Der Zusatzbeitrag unterscheidet sich je Kasse (Ø ${String(RULES.zusatz).replace('.', ',')} % in 2026) und wird je zur Hälfte vom Arbeitgeber getragen. Erhöht deine Kasse den Beitrag, hast du ein Sonderkündigungsrecht.`, src: chipsFor(['krankenkasse', 'brutto']) });
+    if (brutto && brutto * 12 > RULES.jaeg) add({ id: 'jaeg', kind: 'info', pri: 32, e: '🏥', title: 'Über der Versicherungspflichtgrenze', text: `Dein Jahresbrutto (ca. ${eur(brutto * 12)}) liegt über der Versicherungspflichtgrenze 2026 (${eur(RULES.jaeg)}). Ein Wechsel in die private Krankenversicherung wäre möglich – eine weitreichende Entscheidung, die du unabhängig beraten lassen solltest.`, src: chipsFor(['brutto', 'krankenkasse']) });
+  }
+  if (phas('krankenkasse') && !phas('haftpflicht')) add({ id: 'haftpflicht', kind: 'todo', pri: 52, e: '🛡️', title: 'Privathaftpflicht fehlt', text: 'Sie gehört zu den wichtigsten Versicherungen: Sie schützt vor hohen Schadenersatzforderungen, wenn du aus Versehen etwas beschädigst. Trag deine Police ein oder lade den Versicherungsschein hoch.', src: chipsFor(['krankenkasse']), act: { l: 'Police hochladen', a: 'cap.pick', ch: 'versicherung' } });
+  if (phas('svnr')) add({ id: 'rente', kind: 'info', pri: 25, e: '👴', title: 'Rente im Blick behalten', text: 'Mit deiner Sozialversicherungsnummer kannst du bei der Deutschen Rentenversicherung dein Konto klären lassen. Die digitale Rentenübersicht zeigt gesetzliche, betriebliche und private Ansprüche an einem Ort.', src: chipsFor(['svnr']) });
+  if (phas('iban') && phas('bank')) add({ id: 'sparer', kind: 'chance', pri: 28, e: '🏦', title: 'Sparerpauschbetrag nutzen', text: `${eur(RULES.spb)} Kapitalerträge pro Jahr sind steuerfrei (${eur(RULES.spb * 2)} bei Ehepaaren). Prüfe, ob dein Freistellungsauftrag bei ${pget('bank')} zu deinen Zinsen und Dividenden passt.`, src: chipsFor(['iban', 'bank']) });
+  /* Arbeit */
+  if (phas('eintritt') && phas('arbeitgeber')) { const yrs = Math.floor(diffDays(today, pget('eintritt')) / 365.25); if (yrs >= 2) add({ id: 'zugehoerigkeit', kind: 'chance', pri: 22, e: '💼', title: `Seit ${yrs} Jahren bei ${pget('arbeitgeber')}`, text: 'Gute Gelegenheit für ein Gehaltsgespräch: Vergleiche dein Gehalt mit dem Markt für deine Position und sammle Argumente (Verantwortung, Ergebnisse, Weiterbildung).', src: chipsFor(['eintritt', 'arbeitgeber', 'beruf']) }); }
+  /* Abweichungen zwischen Dokumenten */
+  for (const c of profileConflicts().slice(0, 3)) add({ id: 'konf_' + c.k + '_' + c.doc.id, kind: 'warn', pri: 68, e: '🔀', title: `${PF[c.k].l} weicht ab`, text: `In deinem Profil steht „${pFmt(c.k, c.cur, true)}“${c.curDoc ? ' (' + (DOC_KINDS[c.curDoc.kind] || DOC_KINDS.sonst).name + ')' : ''}, in „${c.doc.name}“ steht „${pFmt(c.k, c.other, true)}“.${['strasse', 'plz', 'ort'].includes(c.k) ? ' Ist deine Anschrift auf dem Ausweis noch aktuell? Nach einem Umzug beim Bürgeramt ändern lassen.' : ''}`, src: [{ l: c.doc.name, doc: c.doc.id }].concat(chipsFor([c.k])), act: { l: 'Dokument prüfen', a: 'doc.open', id: c.doc.id } });
+  /* Geburtstag */
+  if (phas('geburtsdatum')) { const nb = nextBirthday(pget('geburtsdatum')); if (nb <= 14) add({ id: 'geb', kind: 'info', pri: 15, e: '🎂', title: nb === 0 ? 'Heute ist dein Geburtstag!' : `Geburtstag in ${plural(nb, 'Tag', 'Tagen')}`, text: `Du wirst ${ageOf(pget('geburtsdatum')) + (nb === 0 ? 0 : 1)}.`, src: chipsFor(['geburtsdatum']) }); }
+  /* Datenpakete */
+  const o = overall(); if (o.pct >= 0.25) add({ id: 'pakete', kind: 'chance', pri: 30, e: '⚡', title: 'Formulare in Sekunden ausfüllen', text: 'Mietbewerbung, Bankkonto, Steuererklärung, neuer Job – Kairos stellt deine Daten dafür fertig zusammen. Fehlendes siehst du sofort.', src: [], act: { l: 'Datenpakete öffnen', go: 'einblicke#pakete' } });
+  const dis = S.ui.dis || {};
+  return L.filter(x => !dis[x.id]).sort((a, b) => b.pri - a.pri);
+}
+const urgentCount = () => { try { return buildInsights().filter(x => (x.kind === 'warn' || x.kind === 'todo') && x.pri >= 60).length; } catch (e) { return 0; } };
+const topInsights = n => buildInsights().filter(x => x.kind !== 'good').slice(0, n);
+
+/* ---------- Fristen ---------- */
+function buildDeadlines() {
+  const today = todayISO(), L = [], add = o => { if (o.date && diffDays(o.date, today) >= -30) L.push(o); };
+  for (const [k, n, e] of [['ausweis_bis', 'Personalausweis läuft ab', '🪪'], ['fs_bis', 'Führerschein läuft ab', '🚗']]) if (phas(k)) add({ id: k, date: pget(k), title: n, sub: 'Rechtzeitig verlängern', e, kind: 'frist', alarm: 60 });
+  for (const d of S.docs) {
+    const nm = d.name;
+    if (d.cancelBy) add({ id: 'cb_' + d.id, date: d.cancelBy, title: `Kündigen bis: ${nm}`, sub: d.sender || '', e: '✂️', kind: 'kuendigung', doc: d.id, alarm: 14 });
+    if (d.expires && d.kind !== 'ident') add({ id: 'ex_' + d.id, date: d.expires, title: `Läuft ab: ${nm}`, sub: d.sender || '', e: '⏳', kind: 'frist', doc: d.id, alarm: 30 });
+    (d.fristen || []).forEach((f, i) => { const dt = f.date || f.d; if (dt) add({ id: `fr_${d.id}_${i}`, date: dt, title: f.label || f.t || `Frist: ${nm}`, sub: nm, e: '📌', kind: 'frist', doc: d.id, alarm: 7 }); });
+    if (d.kind === 'steuer' && d.docDate) { const end = addMonths(addDays(d.docDate, 3), 1); add({ id: 'ein_' + d.id, date: end, title: 'Einspruchsfrist Steuerbescheid', sub: nm, e: '⏳', kind: 'frist', doc: d.id, alarm: 7 }); }
+  }
+  if (phas('arbeitgeber') || phas('netto')) {
+    const { Y, last } = steuerYearInfo(), st = phas('eintritt') ? parseISO(pget('eintritt')).getFullYear() : null;
+    if (!st || st <= Y) add({ id: 'st_rueck', date: last, title: `Steuererklärung ${Y} (letzte Chance)`, sub: 'Freiwillige Abgabe, 4 Jahre rückwirkend', e: '💸', kind: 'steuer', alarm: 60 });
+    const pf = `${nowYear() + 1}-07-31`; if (diffDays(pf, today) <= 200) add({ id: 'st_pflicht', date: pf, title: `Steuererklärung ${nowYear()} abgeben`, sub: 'Abgabefrist ohne Steuerberater', e: '🏛️', kind: 'steuer', alarm: 30 });
+  }
+  return L.sort((a, b) => a.date < b.date ? -1 : 1);
+}
+const icsEsc = s => String(s || '').replace(/\\/g, '\\\\').replace(/;/g, '\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+const icsFold = l => { const out = []; while (l.length > 74) { out.push(l.slice(0, 74)); l = ' ' + l.slice(74); } out.push(l); return out.join('\r\n'); };
+function makeICS(items) {
+  const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, ''), L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Kairos//Fristen//DE', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH'];
+  for (const it of items) {
+    const d = it.date.replace(/-/g, ''), e = addDays(it.date, 1).replace(/-/g, '');
+    L.push('BEGIN:VEVENT', `UID:${it.id}-${d}@kairos.app`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${d}`, `DTEND;VALUE=DATE:${e}`, `SUMMARY:${icsEsc(it.title)}`, `DESCRIPTION:${icsEsc(it.sub)}`, 'BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsEsc(it.title)}`, `TRIGGER:-P${it.alarm || 7}D`, 'END:VALARM', 'END:VEVENT');
+  }
+  L.push('END:VCALENDAR'); return L.map(icsFold).join('\r\n') + '\r\n';
+}
+ACT['ics.all'] = () => { const items = buildDeadlines().filter(d => diffDays(d.date, todayISO()) >= 0); if (!items.length) return toast('Keine anstehenden Fristen'); download(new Blob([makeICS(items)], { type: 'text/calendar' }), 'kairos-fristen.ics'); toast('Kalenderdatei gespeichert – öffne sie, um die Fristen einzutragen.', 'good'); };
+ACT['ics.one'] = el => { const it = buildDeadlines().find(d => d.id === el.dataset.id); if (it) download(new Blob([makeICS([it])], { type: 'text/calendar' }), 'kairos-frist.ics'); };
+
+/* ---------- Datenpakete ---------- */
+const PACKAGES = [
+  { id: 'miete', e: '🏠', t: 'Mietbewerbung', s: 'Selbstauskunft für Vermieter', keys: ['vorname', 'nachname', 'geburtsdatum', 'geburtsort', 'staat', 'familienstand', 'kinder', 'strasse', 'plz', 'ort', 'arbeitgeber', 'beruf', 'eintritt', 'netto'], docs: [['lohn', 'Letzte 3 Gehaltsabrechnungen'], ['ident', 'Ausweiskopie']] },
+  { id: 'bank', e: '🏦', t: 'Konto eröffnen', s: 'Daten für Kontoeröffnung & Legitimation', keys: ['vorname', 'nachname', 'geburtsdatum', 'geburtsort', 'staat', 'strasse', 'plz', 'ort', 'ausweis_art', 'ausweisnr', 'ausweis_bis', 'steuerid', 'arbeitgeber', 'netto', 'familienstand'], docs: [['ident', 'Ausweis (Vorder- & Rückseite)']] },
+  { id: 'steuer', e: '🏛️', t: 'Steuererklärung', s: 'Stammdaten für ELSTER', keys: ['vorname', 'nachname', 'geburtsdatum', 'steuerid', 'steuernr', 'finanzamt', 'strasse', 'plz', 'ort', 'familienstand', 'kinder', 'iban', 'kontoinhaber', 'arbeitgeber', 'brutto', 'steuerklasse', 'krankenkasse'], docs: [['lohn', 'Lohnsteuerbescheinigung / Abrechnung'], ['steuer', 'Letzter Steuerbescheid']] },
+  { id: 'job', e: '💼', t: 'Neuer Job', s: 'Personalfragebogen für die HR', keys: ['vorname', 'nachname', 'geburtsname', 'geburtsdatum', 'geburtsort', 'staat', 'strasse', 'plz', 'ort', 'iban', 'steuerid', 'svnr', 'steuerklasse', 'krankenkasse', 'familienstand', 'kinder'], docs: [['ident', 'Ausweiskopie'], ['kk', 'Mitgliedsbescheinigung Krankenkasse']] },
+  { id: 'kfz', e: '🚗', t: 'Auto anmelden', s: 'Zulassungsstelle & SEPA-Mandat', keys: ['vorname', 'nachname', 'geburtsdatum', 'strasse', 'plz', 'ort', 'ausweisnr', 'fuehrerschein', 'iban', 'kontoinhaber'], docs: [['fahrzeug', 'Fahrzeugschein / Brief'], ['versicherung', 'eVB-Nummer (Versicherung)']] },
+  { id: 'vers', e: '🛡️', t: 'Versicherung abschließen', s: 'Antragsdaten für Angebote', keys: ['vorname', 'nachname', 'geburtsdatum', 'familienstand', 'kinder', 'strasse', 'plz', 'ort', 'beruf', 'iban', 'krankenkasse'], docs: [] }
+];
+const pkgLine = k => `${PF[k].l}: ${pFmt(k, pget(k))}`;
+function pkgSheet(id) {
+  const P = PACKAGES.find(x => x.id === id); if (!P) return;
+  const have = P.keys.filter(phas), miss = P.keys.filter(k => !phas(k));
+  openSheet(`<div class="chh"><span class="chh-e">${P.e}</span><div><small>Datenpaket</small><h2>${esc(P.t)}</h2></div></div><p class="lead-p">${esc(P.s)} – ${have.length} von ${P.keys.length} Angaben vorhanden.</p>
+    <div class="bar" style="margin-bottom:12px"><i style="width:${Math.round(have.length / P.keys.length * 100)}%"></i></div>
+    <div class="pk">${P.keys.map(k => phas(k) ? `<div class="pk-r"><span>${esc(PF[k].l)}</span><b class="${PF[k].sens ? 'mono' : ''}">${esc(pFmt(k, pget(k)))}</b><button class="iconbtn" data-act="pf.copy" data-k="${k}" aria-label="Kopieren">${icon('copy')}</button></div>` : `<button class="pk-r miss" data-act="pf.edit" data-k="${k}"><span>${esc(PF[k].l)}</span><b>${icon('plus')}ergänzen</b></button>`).join('')}</div>
+    ${P.docs.length ? `<div class="group-h"><span>Dazu brauchst du meist</span></div>${P.docs.map(([kind, l]) => { const d = S.docs.find(x => x.kind === kind && x.status === 'ok'); return `<div class="ckl ${d ? 'ok' : ''}">${icon(d ? 'check' : 'file')}<span>${esc(l)}${d ? ' – in deiner Akte' : ' – noch nicht hochgeladen'}</span>${d ? `<button class="btn sm" data-act="doc.open" data-id="${d.id}">Ansehen</button>` : ''}</div>`; }).join('')}` : ''}
+    <div class="acts"><button class="btn" data-sh="x">Schließen</button><span class="sp"></span><button class="btn" data-sh="txt">${icon('download')}Als Text</button><button class="btn primary" data-sh="copy">${icon('copy')}Alles kopieren</button></div>`,
+  { wide: true, onMount: sh => sh.addEventListener('click', async e => {
+    const b = e.target.closest('[data-sh]'); if (!b) return; const text = `${P.t}\n\n` + have.map(pkgLine).join('\n');
+    if (b.dataset.sh === 'x') closeSheet();
+    if (b.dataset.sh === 'copy') { try { await navigator.clipboard.writeText(text); toast('Datenpaket kopiert', 'good'); buzz(10); } catch (er) { toast('Kopieren nicht möglich', 'bad'); } }
+    if (b.dataset.sh === 'txt') download(new Blob([text], { type: 'text/plain' }), `kairos-${P.id}.txt`);
+  }) });
+}
+ACT['pkg.open'] = el => pkgSheet(el.dataset.id);
+
+/* ---------- Ansicht ---------- */
+let insFilter = 'alle';
+function insightCard(x, i, compact) {
+  const [lab, col] = KIND_ST[x.kind] || KIND_ST.info;
+  const chips = (x.src || []).map(s => s.doc ? `<button class="srcc" data-act="doc.open" data-id="${s.doc}">${icon('file')}${esc(s.l)}</button>` : s.k ? `<button class="srcc" data-act="pf.edit" data-k="${s.k}">${icon('edit')}${esc(s.l)}</button>` : '').join('');
+  const act = x.act ? (x.act.pkg ? `<button class="btn sm" data-act="pkg.open" data-id="${x.act.pkg}">${esc(x.act.l)}</button>` : x.act.go ? `<button class="btn sm" data-act="ins.goto" data-to="${x.act.go}">${esc(x.act.l)}</button>` : x.act.ask ? `<button class="btn sm" data-act="k.ask" data-q="${esc(x.act.ask)}">${esc(x.act.l)}</button>` : `<button class="btn sm" data-act="${x.act.a}" ${x.act.ch ? `data-ch="${x.act.ch}"` : ''} ${x.act.id ? `data-id="${x.act.id}"` : ''}>${esc(x.act.l)}</button>`) : '';
+  return `<article class="ins ${x.kind}" style="--c:${col};--i:${i}"><div class="ins-e">${x.e}</div><div class="ins-b"><div class="ins-h"><span class="ins-k">${lab}</span>${compact ? '' : `<button class="iconbtn ins-x" data-act="ins.dismiss" data-id="${x.id}" aria-label="Ausblenden">${icon('x')}</button>`}</div><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p>
+    ${!compact && (chips || act) ? `<div class="ins-f">${chips ? `<div class="ins-src"><small>Verknüpft aus</small>${chips}</div>` : ''}${act}</div>` : ''}</div></article>`;
+}
+ACT['ins.goto'] = el => { const [r, sec] = el.dataset.to.split('#'); if (route !== r) go(r); if (sec) setTimeout(() => { const e = $('#' + sec); e && e.scrollIntoView({ behavior: 'smooth' }); }, 140); };
+ACT['ins.dismiss'] = el => { const id = el.dataset.id; S.ui.dis = S.ui.dis || {}; S.ui.dis[id] = 1; save(); rerender(); renderNav(); toast('Ausgeblendet', '', { label: 'Rückgängig', fn: () => { delete S.ui.dis[id]; save(); rerender(); renderNav(); } }); };
+ACT['ins.filter'] = el => { insFilter = el.dataset.f; rerender(); };
+ACT['ins.reset'] = () => { S.ui.dis = {}; save(); rerender(); renderNav(); };
+const dlLabel = d => { const n = diffDays(d, todayISO()); return n < 0 ? `${-n} ${-n === 1 ? 'Tag' : 'Tage'} überfällig` : n === 0 ? 'Heute' : n === 1 ? 'Morgen' : n < 60 ? `in ${n} Tagen` : n < 700 ? `in ${Math.round(n / 30.4)} Monaten` : `in ${(n / 365).toFixed(1).replace('.', ',')} Jahren`; };
+VIEWS.einblicke = {
+  render() {
+    const all = buildInsights(), F = insFilter, list = all.filter(x => F === 'alle' || (F === 'chance' && x.kind === 'chance') || (F === 'todo' && (x.kind === 'todo' || x.kind === 'warn')) || (F === 'info' && (x.kind === 'info' || x.kind === 'good')));
+    const nC = all.filter(x => x.kind === 'chance').length, nT = all.filter(x => x.kind === 'todo' || x.kind === 'warn').length, dls = buildDeadlines(), up = dls.filter(d => diffDays(d.date, todayISO()) >= 0);
+    const nd = Object.keys(S.ui.dis || {}).length, empty = !Object.keys(S.prof).length && !S.docs.length;
+    return `<div class="page einb"><header class="ph"><div class="t"><div class="eyebrow">Aus deinen Dokumenten verknüpft</div><h1>Einblicke</h1><p>Chancen, To-dos und Fristen – abgeleitet aus dem, was Kairos über dich weiß.</p></div></header>
+    ${empty ? `<div class="card glass"><div class="empty"><div class="em">💡</div><b>Noch nichts zu verknüpfen</b><p>Lade deinen Ausweis und eine Gehaltsabrechnung hoch – Kairos verbindet die Dokumente und zeigt dir Vorteile, Fristen und Chancen.</p><button class="btn primary" data-act="cap.pick" data-ch="ausweis">${icon('upload')}Dokument hochladen</button></div></div>` : `
+    <div class="kpis"><div class="kpi2"><b class="num" data-count="${nC}">${nC}</b><span>Chancen</span></div><div class="kpi2"><b class="num" data-count="${nT}">${nT}</b><span>Zu erledigen</span></div><div class="kpi2"><b class="num" data-count="${up.length}">${up.length}</b><span>Fristen</span></div><div class="kpi2"><b class="num" data-count="${S.docs.filter(d => d.status === 'ok').length}">${S.docs.filter(d => d.status === 'ok').length}</b><span>verknüpfte Dokumente</span></div></div>
+    <div class="seg fseg">${[['alle', 'Alle'], ['chance', 'Chancen'], ['todo', 'Zu erledigen'], ['info', 'Hinweise']].map(([k, l]) => `<button class="${F === k ? 'on' : ''}" data-act="ins.filter" data-f="${k}">${l}</button>`).join('')}</div>
+    <div class="ins-list">${list.length ? list.map((x, i) => insightCard(x, i)).join('') : `<div class="card glass"><div class="empty"><div class="em">🎯</div><b>Hier ist gerade nichts</b><p>Je mehr Dokumente du hinzufügst, desto mehr Zusammenhänge erkennt Kairos.</p></div></div>`}</div>
+    ${nd ? `<button class="linkbtn" data-act="ins.reset">${nd} ausgeblendete Einblicke wieder anzeigen</button>` : ''}`}
+    <section class="sec" id="fristen"><div class="sec-h"><h2>${icon('calendar')} Fristen</h2>${up.length ? `<button class="btn sm" data-act="ics.all">${icon('calendar')}In Kalender</button>` : ''}</div>
+      ${dls.length ? `<div class="card glass tl">${dls.map(d => { const n = diffDays(d.date, todayISO()), cls = n < 0 ? 'late' : n <= 30 ? 'soon' : ''; return `<div class="tl-i ${cls}"><div class="tl-d"><b>${parseISO(d.date).getDate()}</b><small>${MON_S[parseISO(d.date).getMonth()]} ${String(parseISO(d.date).getFullYear()).slice(2)}</small></div><div class="tl-m"><b>${d.e} ${esc(d.title)}</b><small>${esc(d.sub || '')}${d.sub ? ' · ' : ''}${dlLabel(d.date)}</small></div>${d.doc ? `<button class="iconbtn" data-act="doc.open" data-id="${d.doc}" aria-label="Dokument">${icon('file')}</button>` : ''}<button class="iconbtn" data-act="ics.one" data-id="${d.id}" aria-label="In Kalender">${icon('calendar')}</button></div>`; }).join('')}</div>` : `<div class="card glass"><p class="muted" style="padding:6px 2px">Noch keine Fristen. Sobald Gültigkeiten oder Kündigungsfristen in deinen Dokumenten stehen, erscheinen sie hier.</p></div>`}</section>
+    <section class="sec" id="pakete"><div class="sec-h"><h2>${icon('box')} Datenpakete</h2></div><p class="muted sec-p">Deine Daten, fertig für das nächste Formular – mit einem Tipp kopiert.</p>
+      <div class="pkgs">${PACKAGES.map((P, i) => { const h = P.keys.filter(phas).length; return `<button class="pkg" style="--i:${i}" data-act="pkg.open" data-id="${P.id}"><span class="pkg-e">${P.e}</span><b>${esc(P.t)}</b><small>${esc(P.s)}</small><span class="bar thin"><i style="width:${Math.round(h / P.keys.length * 100)}%"></i></span><em>${h} von ${P.keys.length}</em></button>`; }).join('')}</div></section>
+    <p class="disc">Richtwerte und Hinweise (Stand ${RULES.year}) – keine Steuer-, Rechts- oder Anlageberatung. Prüfe wichtige Entscheidungen mit Finanzamt, Steuerberatung oder Fachleuten.</p></div>`;
+  },
+  mount(root) { if (location.hash.endsWith('#pakete')) { const e = $('#pakete', root); e && e.scrollIntoView(); } $$('[data-count]', root).forEach(el => countUp(el, +el.dataset.count, c => String(c))); }
+};
+
+/* =====================================================================
+   KAIROS · Fotos & Profilbild
+   ===================================================================== */
+const PHOTO_TAGS = ['Porträt', 'Passbild', 'Familie', 'Sonstiges'];
+const phCtx = { avatar: false };
+const dtabSeg = () => `<div class="seg dseg" role="tablist"><button class="${S.ui.dtab !== 'fotos' ? 'on' : ''}" data-act="dtab" data-t="dok" role="tab">${icon('file')}Dokumente</button><button class="${S.ui.dtab === 'fotos' ? 'on' : ''}" data-act="dtab" data-t="fotos" role="tab">${icon('image')}Fotos${S.photos.length ? ` <span class="cnt-s">${S.photos.length}</span>` : ''}</button></div>`;
+ACT['dtab'] = el => { S.ui.dtab = el.dataset.t === 'fotos' ? 'fotos' : 'dok'; save(); rerender(); };
+
+/** Bild verkleinern (max. 2048 px) und Vorschau erzeugen */
+async function shrinkImage(file, max = 2048) {
+  const bm = await bitmapOf(file), w0 = bm.width || bm.naturalWidth, h0 = bm.height || bm.naturalHeight, k = Math.min(1, max / Math.max(w0, h0));
+  const c = mkCanvas(w0 * k, h0 * k), x = ctxOf(c); x.imageSmoothingQuality = 'high'; x.drawImage(bm, 0, 0, c.width, c.height);
+  const blob = await new Promise(r => c.toBlob(r, 'image/jpeg', 0.9)); if (!blob) throw new Error('Bild konnte nicht verarbeitet werden');
+  const t = 420 / Math.max(c.width, c.height), tc = mkCanvas(c.width * t, c.height * t), tx = ctxOf(tc); tx.imageSmoothingQuality = 'high'; tx.drawImage(c, 0, 0, tc.width, tc.height);
+  return { blob, w: c.width, h: c.height, thumb: tc.toDataURL('image/jpeg', 0.78) };
+}
+async function photosAdd(files, opts = {}) {
+  const imgs = files.filter(f => /^image\//.test(f.type) || /\.(jpe?g|png|webp|heic|heif|gif|bmp)$/i.test(f.name || ''));
+  if (!imgs.length) return toast('Bitte wähle ein Foto aus.', 'bad');
+  const added = [];
+  for (const f of imgs) {
+    try {
+      const r = await shrinkImage(f), id = uid(), name = (f.name || 'Foto').replace(/\.[a-z0-9]+$/i, '');
+      await putFile(id, new File([r.blob], name + '.jpg', { type: 'image/jpeg' }));
+      const rec = { id, name, created: Date.now(), w: r.w, h: r.h, thumb: r.thumb, size: r.blob.size, tag: opts.avatar ? 'Porträt' : 'Sonstiges', fileName: name + '.jpg', fileType: 'image/jpeg' };
+      S.photos.unshift(rec); added.push(rec);
+    } catch (e) { console.warn(e); toast(`„${f.name || 'Foto'}“ konnte nicht gelesen werden.`, 'bad'); }
+  }
+  if (!added.length) return; save(); renderNav(); buzz(12);
+  if (opts.avatar) { avatarCrop(added[0].id); return; }
+  if (route === 'dokumente') rerender();
+  toast(added.length === 1 ? 'Foto gespeichert' : `${added.length} Fotos gespeichert`, 'good', S.profile.avatar ? null : { label: 'Als Profilbild', fn: () => avatarCrop(added[0].id) });
+}
+ACT['ph.pick'] = () => { phCtx.avatar = false; const i = $('#phIn'); i.value = ''; i.click(); };
+ACT['ph.cam'] = () => { phCtx.avatar = false; const i = $('#phCam'); i.value = ''; i.click(); };
+document.addEventListener('change', e => { if ((e.target.id === 'phIn' || e.target.id === 'phCam') && e.target.files.length) { const a = phCtx.avatar; phCtx.avatar = false; photosAdd([...e.target.files], { avatar: a }); } });
+
+/* ---------- Galerie ---------- */
+function photosPage() {
+  const ps = S.photos;
+  return `<div class="page"><header class="ph"><div class="t"><div class="eyebrow">Deine Bilder</div><h1>Dokumente</h1><p>${ps.length ? `${plural(ps.length, 'Foto', 'Fotos')} – verschlüsselt auf diesem Gerät, wenn die App-Sperre an ist.` : 'Fotos von dir – für dein Profilbild und deine digitale Kopie.'}</p></div>
+    <div class="act"><button class="btn cam-only" data-act="ph.cam">${icon('camera')}Selfie</button><button class="btn primary" data-act="ph.pick">${icon('plus')}Foto hinzufügen</button></div></header>${dtabSeg()}
+    ${ps.length ? `<div class="pgrid"><button class="ptile padd" data-act="ph.pick" aria-label="Foto hinzufügen">${icon('plus')}<span>Hinzufügen</span></button>${ps.map((p, i) => `<button class="ptile" style="--i:${Math.min(i, 14)}" data-act="ph.open" data-id="${p.id}" aria-label="${esc(p.name)}"><img alt="" loading="lazy" src="${p.thumb}">${S.profile.avatarId === p.id ? `<span class="pbadge">${icon('user')}Profil</span>` : ''}</button>`).join('')}</div>`
+      : `<div class="card glass"><div class="dropz"><div class="em">🤳</div><b>Dein erstes Foto</b><p>Lade ein Porträt hoch – es erscheint als Profilbild in deiner digitalen Kopie. Weitere Fotos bleiben sicher in deiner Galerie.</p><div class="nxt-acts" style="justify-content:center"><button class="btn primary lg" data-act="ph.pick">${icon('image')}Foto wählen</button><button class="btn lg cam-only" data-act="ph.cam">${icon('camera')}Selfie aufnehmen</button></div></div></div>`}</div>`;
+}
+ACT['ph.open'] = el => {
+  const p = S.photos.find(x => x.id === el.dataset.id); if (!p) return;
+  const isAv = S.profile.avatarId === p.id;
+  openSheet(`<div class="pv"><div class="pv-img" id="pvImg"><img alt="" src="${p.thumb}" class="pv-t"></div>
+    <div class="pv-m"><b>${esc(p.name)}</b><small>${fmtDate(iso(new Date(p.created)), true)} · ${p.w}×${p.h} · ${fmtBytes(p.size || 0)}</small></div>
+    <div class="chips pv-tags">${PHOTO_TAGS.map(t => `<button class="chip ${p.tag === t ? 'on' : ''}" data-tag="${t}">${t}</button>`).join('')}</div>
+    <div class="acts"><button class="btn danger ghost" data-sh="del">${icon('trash')}</button><span class="sp"></span><button class="btn" data-sh="dl">${icon('download')}Sichern</button><button class="btn primary" data-sh="av">${icon('user')}${isAv ? 'Ausschnitt ändern' : 'Als Profilbild'}</button></div></div>`,
+  { wide: true, onMount: sh => {
+    getFileBlob(p.id).then(b => { if (!b) return; const u = URL.createObjectURL(b), im = new Image(); im.onload = () => { const box = $('#pvImg', sh); if (box) { box.innerHTML = ''; box.appendChild(im); } }; im.src = u; });
+    sh.addEventListener('click', async e => {
+      const t = e.target.closest('[data-tag]'); if (t) { p.tag = t.dataset.tag; save(); $$('.pv-tags .chip', sh).forEach(c => c.classList.toggle('on', c === t)); return; }
+      const b = e.target.closest('[data-sh]'); if (!b) return; const a = b.dataset.sh;
+      if (a === 'av') { closeSheet(); avatarCrop(p.id); }
+      if (a === 'dl') { const bl = await getFileBlob(p.id); bl ? download(bl, p.fileName || 'foto.jpg') : toast('Datei nicht gefunden', 'bad'); }
+      if (a === 'del') { if (await confirmSheet('Foto löschen?', isAv ? 'Es wird auch als Profilbild entfernt.' : 'Das Foto wird von diesem Gerät entfernt.', 'Löschen')) { if (isAv) { S.profile.avatar = null; S.profile.avatarId = null; } removeWithUndo(S.photos, p.id, 'Foto', () => { renderNav(); rerender(); }); } }
+    });
+  } });
+};
+
+/* ---------- Profilbild ---------- */
+ACT['avatar.menu'] = () => {
+  const has = !!S.profile.avatar;
+  openSheet(`<h2>Profilbild</h2><p class="lead-p">Dein Gesicht für die digitale Kopie – es bleibt auf diesem Gerät.</p>
+    <div class="avm"><button class="avm-b cam-only" data-m="cam"><span>${icon('camera')}</span><b>Selfie aufnehmen</b></button><button class="avm-b" data-m="up"><span>${icon('upload')}</span><b>Foto hochladen</b></button>${S.photos.length ? `<button class="avm-b" data-m="lib"><span>${icon('image')}</span><b>Aus meinen Fotos</b></button>` : ''}${has ? `<button class="avm-b" data-m="rm"><span>${icon('trash')}</span><b>Entfernen</b></button>` : ''}</div>`,
+  { onMount: sh => sh.addEventListener('click', e => {
+    const b = e.target.closest('[data-m]'); if (!b) return; const m = b.dataset.m;
+    if (m === 'cam') { closeSheet(); phCtx.avatar = true; const i = $('#phCam'); i.value = ''; i.click(); }
+    if (m === 'up') { closeSheet(); phCtx.avatar = true; const i = $('#phIn'); i.value = ''; i.click(); }
+    if (m === 'lib') avatarPickLib();
+    if (m === 'rm') { S.profile.avatar = null; S.profile.avatarId = null; save(); closeSheet(); renderNav(); rerender(); toast('Profilbild entfernt'); }
+  }) });
+};
+function avatarPickLib() {
+  openSheet(`<h2>Aus meinen Fotos</h2><div class="pgrid pick">${S.photos.map(p => `<button class="ptile" data-id="${p.id}"><img alt="" src="${p.thumb}"></button>`).join('')}</div><div class="acts"><button class="btn" data-sh="x">Zurück</button></div>`,
+    { wide: true, onMount: sh => sh.addEventListener('click', e => { const t = e.target.closest('.ptile'); if (t) { closeSheet(); avatarCrop(t.dataset.id); } else if (e.target.closest('[data-sh]')) ACT['avatar.menu'](); }) });
+}
+async function avatarCrop(id) {
+  const p = S.photos.find(x => x.id === id), blob = p && await getFileBlob(id); if (!blob) return toast('Foto nicht gefunden', 'bad');
+  const bm = await bitmapOf(blob), W = bm.width || bm.naturalWidth, H = bm.height || bm.naturalHeight, V = 300;
+  const st = { z: 1, x: 0, y: 0 }, base = Math.max(V / W, V / H);
+  openSheet(`<h2>Ausschnitt wählen</h2><p class="lead-p">Ziehen zum Verschieben, mit zwei Fingern oder dem Regler zoomen.</p>
+    <div class="crop"><canvas id="cropC" width="${V}" height="${V}" aria-label="Bildausschnitt"></canvas><div class="crop-m" aria-hidden="true"></div></div>
+    <input type="range" class="rng" id="cropZ" min="1" max="4" step="0.01" value="1" aria-label="Zoom">
+    <div class="acts"><button class="btn" data-sh="x">Abbrechen</button><button class="btn primary" data-sh="ok">Übernehmen</button></div>`,
+  { onMount: sh => {
+    const cv = $('#cropC', sh), cx = cv.getContext('2d');
+    const clampPos = () => { const s = base * st.z, mx = Math.max(0, (W * s - V) / 2), my = Math.max(0, (H * s - V) / 2); st.x = clamp(st.x, -mx, mx); st.y = clamp(st.y, -my, my); };
+    const draw = () => { clampPos(); const s = base * st.z; cx.clearRect(0, 0, V, V); cx.drawImage(bm, V / 2 - W * s / 2 + st.x, V / 2 - H * s / 2 + st.y, W * s, H * s); };
+    draw();
+    const ptrs = new Map(); let d0 = 0, z0 = 1;
+    cv.addEventListener('pointerdown', e => { cv.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]); if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; d0 = Math.hypot(a[0] - b[0], a[1] - b[1]); z0 = st.z; } });
+    cv.addEventListener('pointermove', e => {
+      if (!ptrs.has(e.pointerId)) return; const prev = ptrs.get(e.pointerId), k = V / cv.getBoundingClientRect().width;
+      if (ptrs.size === 1) { st.x += (e.clientX - prev[0]) * k; st.y += (e.clientY - prev[1]) * k; }
+      ptrs.set(e.pointerId, [e.clientX, e.clientY]);
+      if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; st.z = clamp(z0 * Math.hypot(a[0] - b[0], a[1] - b[1]) / (d0 || 1), 1, 4); $('#cropZ', sh).value = st.z; }
+      draw();
+    });
+    const up = e => ptrs.delete(e.pointerId); cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
+    cv.addEventListener('wheel', e => { e.preventDefault(); st.z = clamp(st.z - e.deltaY * 0.0015, 1, 4); $('#cropZ', sh).value = st.z; draw(); }, { passive: false });
+    $('#cropZ', sh).addEventListener('input', e => { st.z = +e.target.value; draw(); });
+    sh.addEventListener('click', e => {
+      const b = e.target.closest('[data-sh]'); if (!b) return;
+      if (b.dataset.sh === 'x') { closeSheet(); return; }
+      const out = mkCanvas(320, 320), ox = ctxOf(out); ox.imageSmoothingQuality = 'high'; ox.drawImage(cv, 0, 0, 320, 320);
+      S.profile.avatar = out.toDataURL('image/jpeg', 0.86); S.profile.avatarId = id; save(); closeSheet(); renderNav(); rerender(); buzz(14); toast('Profilbild gesetzt', 'good');
+    });
+  } });
+}
+
+/* =====================================================================
+   KAIROS · Einstellungen, Backup, Sperre
    ===================================================================== */
 async function putBytes(id, buf, type, name) {
   if (cryptoKey) { const e = await encBytes(buf); await filePutRaw(id, { enc: 1, iv: e.iv, ct: e.ct, type, name }); }
@@ -3026,7 +3589,7 @@ async function putBytes(id, buf, type, name) {
 }
 async function exportBackup() {
   await saveNow(); const files = [];
-  for (const d of S.docs) if (d.fileName) { try { const blob = await getFileBlob(d.id); if (blob) files.push({ id: d.id, name: d.fileName, type: d.fileType, b64: b64(await blob.arrayBuffer()) }); } catch (e) { /* Datei überspringen */ } }
+  for (const d of S.docs.concat(S.photos || [])) if (d.fileName || d.thumb) { try { const blob = await getFileBlob(d.id); if (blob) files.push({ id: d.id, name: d.fileName || d.name, type: d.fileType || blob.type, b64: b64(await blob.arrayBuffer()) }); } catch (e) { /* Datei überspringen */ } }
   download(new Blob([JSON.stringify({ app: 'kairos', v: 3, exported: new Date().toISOString(), state: S, files })], { type: 'application/json' }), `kairos-backup-${todayISO()}.json`);
   lsSet('kairos-lastbackup', todayISO()); toast(`Backup gespeichert${files.length ? ` (inkl. ${plural(files.length, 'Datei', 'Dateien')})` : ''}`, 'good'); if (route === 'einstellungen') rerender();
 }
@@ -3114,7 +3677,6 @@ async function settingsHTML() {
       ${row('Speicher', usage ? 'Belegt in diesem Browser: ' + usage : '', '')}
       <p class="muted" style="font-size:13px">Löschst du die Website-Daten deines Browsers, sind die Inhalte weg – deshalb regelmäßig ein Backup machen. Die Backup-Datei enthält deine Daten unverschlüsselt.</p></div></section>
     <section class="card glass s6"><h3>${icon('sparkle')} Kairos</h3><div class="stack" style="gap:14px">
-      ${S.demo ? row('Beispieldaten', 'Du erkundest gerade Demo-Inhalte', `<button class="btn sm" data-act="set.demo.off">Entfernen</button>`) : row('Beispieldaten laden', 'zum Ausprobieren – ersetzt deine Daten', `<button class="btn sm" data-act="set.demo.on">Laden</button>`)}
       ${row('Einführung', 'Willkommensbildschirm ansehen', `<button class="btn sm" data-act="set.intro">Ansehen</button>`)}
       <p class="muted" style="font-size:13px"><b style="color:var(--text)">Tipp:</b> Auf dem iPhone über Teilen → „Zum Home-Bildschirm“ installieren – dann läuft Kairos wie eine App, auch offline.</p></div></section>
     <section class="card glass s6"><h3 class="neg">${icon('alert')} Gefahrenzone</h3><div class="stack" style="gap:14px">${row('Alles löschen', 'Entfernt sämtliche Daten dieses Geräts', `<button class="btn sm danger" data-act="set.wipe">Löschen</button>`)}</div></section>
@@ -3146,28 +3708,8 @@ ACT['set.ocr'] = async el => {
   const lines = []; const ok = await ocrSelfTest((m, good) => { lines.push(`<div class="${good ? 'pos' : 'neg'}">${good ? '✓' : '✕'} ${esc(m)}</div>`); box.innerHTML = lines.join(''); });
   el.disabled = false; box.innerHTML = lines.join('') + (ok ? '' : '<div class="faint" style="margin-top:6px">Tipp: Beim ersten Start braucht die Texterkennung einmal Internet. Danach funktioniert sie offline.</div>');
 };
-ACT['set.demo.on'] = async () => { if (!await confirmSheet('Beispieldaten laden?', 'Alle aktuellen Daten werden durch Beispieldaten einer fiktiven Person ersetzt. Erstelle vorher ein Backup, wenn du sie behalten willst.', 'Laden', false)) return; await loadDemo(); toast('Beispieldaten geladen', 'good'); go('reise'); };
-ACT['set.demo.off'] = async () => { if (!await confirmSheet('Beispieldaten entfernen?', 'Alle Inhalte werden gelöscht – du startest leer.', 'Entfernen')) return; await resetData(); toast('Leer gestartet', 'good'); go('reise'); };
 ACT['set.intro'] = () => showOnboarding(true);
 ACT['set.wipe'] = async () => { if (await confirmSheet('Wirklich alles löschen?', 'Alle Daten, Dokumente und Einstellungen dieses Geräts werden unwiderruflich gelöscht. Erstelle vorher ein Backup, wenn du sie noch brauchst.', 'Alles löschen')) wipeAll(); };
-async function resetData() { const name = S.profile.name; for (const k of await fileKeys()) await fileDel(k); S = defaultState(); S.profile.name = name; S.ui.onboarded = true; dirty = true; await saveNow(); renderNav(); }
-
-/* ---------- Beispieldaten (fiktive Person) ---------- */
-async function loadDemo() {
-  const name = S.profile.name; for (const k of await fileKeys()) await fileDel(k);
-  S = defaultState(); S.profile.name = name; S.ui.onboarded = true; S.demo = true;
-  const t = Date.now(), d1 = uid(), d2 = uid(), d3 = uid();
-  const P = (k, v, src = 'manuell', ok = false) => { S.prof[k] = { v, src, conf: 1, ok, at: t, docT: t }; };
-  const ID = 'doc:' + d1, LO = 'doc:' + d2, ME = 'doc:' + d3;
-  [['vorname', 'Alex'], ['nachname', 'Beispiel'], ['geburtsdatum', '1992-04-17'], ['geburtsort', 'Dortmund'], ['staat', 'DEUTSCH'], ['geschlecht', 'divers'], ['ausweis_art', 'Personalausweis'], ['ausweisnr', 'T22000129'], ['ausweis_bis', iso(new Date(new Date().getFullYear() + 5, 4, 12))]].forEach(([k, v]) => P(k, v, ID, k === 'ausweisnr' || k === 'ausweis_bis'));
-  [['strasse', 'Musterstraße 12'], ['plz', '44135'], ['ort', 'Dortmund'], ['seit', '2021-03-01']].forEach(([k, v]) => P(k, v, ME));
-  P('wohnart', 'Miete');
-  [['arbeitgeber', 'Beispiel Logistik GmbH'], ['beruf', 'Teamleiter Disposition'], ['eintritt', '2019-08-01'], ['brutto', 456000], ['netto', 298500], ['steuerklasse', '1'], ['svnr', '12 170492 B 123'], ['iban', 'DE89 3704 0044 0532 0130 00'], ['bank', 'Commerzbank'], ['krankenkasse', 'Techniker Krankenkasse']].forEach(([k, v]) => P(k, v, LO, k === 'iban'));
-  const mk = (id, kind, name, sender, date, summary, ks) => ({ id, name, kind, cat: DOC_KINDS[kind].cat, sender, docDate: date, fields: [], fristen: [], summary, text: '', ocr: 'ocr', conf: 92, status: 'ok', created: t, fileName: name + '.pdf', fileType: 'application/pdf', size: 184000, hash: id, thumb: null, applied: ks, cand: [], checks: [] });
-  S.docs = [mk(d3, 'meldung', 'Meldebescheinigung', 'Stadt Dortmund', iso(new Date(t - 40 * 864e5)), 'Anschrift Musterstraße 12, 44135 Dortmund', ['strasse', 'plz', 'ort', 'seit']), mk(d2, 'lohn', 'Gehaltsabrechnung', 'Beispiel Logistik GmbH', iso(new Date(t - 12 * 864e5)), 'Brutto 4.560,00 €, Netto 2.985,00 €', ['arbeitgeber', 'brutto', 'netto', 'steuerklasse', 'svnr', 'iban']), mk(d1, 'ident', 'Personalausweis', 'Bundesrepublik Deutschland', null, 'Ausweisdaten mit geprüfter MRZ', ['vorname', 'nachname', 'geburtsdatum', 'ausweisnr', 'ausweis_bis'])];
-  S.docs.forEach(d => d.text = `${d.name} · ${d.sender}\n${d.summary}\n(Beispieldokument)`);
-  S.journey.celebrated.ausweis = 1; dirty = true; await saveNow(); renderNav();
-}
 
 /* =====================================================================
    KAIROS · Start: Splash, Onboarding, Boot
@@ -3178,14 +3720,12 @@ function showOnboarding(replay) {
     el.innerHTML = `<div class="onb"><div class="onb-card glass"><div class="logo-lg anim">${logoSvg('onb')}</div><h1>Deine digitale <span class="gradtxt">Kopie</span></h1><p class="onb-sub">Kairos baut aus deinen Dokumenten Schritt für Schritt ein vollständiges Abbild von dir – dein Ausweis, dein Job, deine Bank, deine Versicherungen. Alles an einem Ort, jederzeit abrufbar.</p>
       <div class="onb-feats"><div><span>🪪</span><b>1 · Ausweis</b><small>Foto vom Perso – Name, Geburtsdatum, Anschrift füllen sich von selbst.</small></div><div><span>💶</span><b>2 · Dokumente</b><small>Lohnabrechnung, Brief, Karte – Kairos liest und ordnet alles zu.</small></div><div><span>✅</span><b>3 · Vollständig</b><small>Bis deine Identität digital komplett ist – und du sie einfach abfragen kannst.</small></div></div>
       ${replay ? '<div class="onb-acts"><button class="btn primary lg" id="onbClose">Schließen</button></div>' : `<form id="onbForm"><div class="field"><label for="onbName">Wie soll ich dich nennen?</label><input class="inp" id="onbName" placeholder="Dein Vorname" value="${esc(S.profile.name || '')}" autocomplete="given-name"></div>
-      <div class="onb-acts"><button class="btn primary lg" type="submit" data-m="blank">Reise starten</button><button class="btn ghost" type="submit" data-m="demo">Erst mit Beispieldaten ansehen</button></div></form>`}
+      <div class="onb-acts"><button class="btn primary lg" type="submit">Reise starten</button></div></form>`}
       <small class="faint onb-priv">${icon('lock')} Alles bleibt auf diesem Gerät. Keine Cloud, kein Konto, keine API.</small></div></div>`;
-    let mode = 'blank';
     if (replay) { $('#onbClose').onclick = () => { el.hidden = true; el.innerHTML = ''; res(); }; return; }
-    $$('#onbForm button', el).forEach(b => b.addEventListener('click', () => mode = b.dataset.m));
     $('#onbForm').addEventListener('submit', async e => {
       e.preventDefault(); S.profile.name = $('#onbName').value.trim().slice(0, 30); S.ui.onboarded = true;
-      if (mode === 'demo') await loadDemo(); else { dirty = true; await saveNow(); }
+      dirty = true; await saveNow();
       el.hidden = true; el.innerHTML = ''; res();
     });
     setTimeout(() => { const i = $('#onbName'); i && i.focus(); }, 400);
@@ -3198,6 +3738,7 @@ function afterUnlock() {
   const r = (location.hash.replace('#/', '') || 'reise'); route = VIEWS[r] ? r : 'reise';
   if (S.ui.llm) llmEnable().then(() => { if (route === 'einstellungen') rerender(); });
   renderView(false); updateLockBtn(); armIdle();
+  if (S.ui.notice) { const n = S.ui.notice; delete S.ui.notice; save(); setTimeout(() => toast(n), 900); }
   document.title = route === 'reise' ? 'Kairos' : AREAS[route].name + ' · Kairos';
 }
 
@@ -3217,7 +3758,7 @@ async function boot() {
   if (memOnly) toast('Dein Browser blockiert den lokalen Speicher – Daten gehen beim Schließen verloren. Bitte Backup erstellen.', 'bad');
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => { /* optional */ });
   window.addEventListener('keydown', e => { if (e.key === '/' && !/input|textarea|select/i.test(e.target.tagName) && !$('#sheetWrap').classList.contains('open')) { e.preventDefault(); ACT['cmd.open'](); } });
-  window.__K = { get S() { return S; }, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, loadDemo, extractDocument, readDocument, capStart, capReview, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender };
+  window.__K = { get S() { return S; }, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, makeICS, topInsights, urgentCount, profileConflicts };
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<pre style="position:fixed;inset:20px;z-index:999;background:#300;color:#fff;padding:20px;overflow:auto">Kairos konnte nicht starten:\n${esc(e && e.stack || e)}</pre>`); });
 
