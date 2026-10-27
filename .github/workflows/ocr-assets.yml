@@ -1,0 +1,40 @@
+name: OCR-Dateien ins Repo laden (einmalig)
+
+# Startet man unter "Actions" → "OCR-Dateien ins Repo laden" → "Run workflow".
+# Lädt Tesseract, die deutschen Sprachdaten und pdf.js in den Ordner ocr/ und committet sie.
+# Danach liest Kairos Texte komplett aus deinem eigenen Repo – schneller, offline-fähig, ohne CDN.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dateien herunterladen
+        run: |
+          set -e
+          mkdir -p tmp ocr/core ocr/lang ocr/pdf
+          cd tmp
+          npm pack tesseract.js@5.1.1 tesseract.js-core@5.1.1 @tesseract.js-data/deu@1.0.0 pdfjs-dist@4.10.38
+          for f in *.tgz; do d="${f%.tgz}"; mkdir "$d"; tar xzf "$f" -C "$d"; done
+          cd ..
+          cp tmp/tesseract.js-5.1.1/package/dist/tesseract.min.js ocr/
+          cp tmp/tesseract.js-5.1.1/package/dist/worker.min.js ocr/
+          cp tmp/tesseract.js-core-5.1.1/package/tesseract-core*.js ocr/core/
+          cp tmp/tesseract.js-core-5.1.1/package/tesseract-core*.wasm ocr/core/ 2>/dev/null || true
+          cp tmp/tesseract.js-data-deu-1.0.0/package/4.0.0_best_int/deu.traineddata.gz ocr/lang/
+          cp tmp/pdfjs-dist-4.10.38/package/build/pdf.min.mjs ocr/pdf/
+          cp tmp/pdfjs-dist-4.10.38/package/build/pdf.worker.min.mjs ocr/pdf/
+          rm -rf tmp
+          ls -la ocr ocr/core ocr/lang ocr/pdf
+      - name: Committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ocr
+          git diff --cached --quiet || git commit -m "OCR-Dateien lokal bereitgestellt"
+          git push
