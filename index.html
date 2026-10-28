@@ -7,6 +7,7 @@
 <title>Kairos – deine digitale Kopie</title>
 <meta name="description" content="Kairos baut aus deinen Dokumenten Schritt für Schritt deine digitale Identität auf. Texterkennung und KI laufen lokal, alle Daten bleiben auf deinem Gerät.">
 <meta name="theme-color" content="#070a1c">
+<meta name="kairos-build" content="903f202ec8">
 <meta name="color-scheme" content="dark light">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -474,7 +475,7 @@ body.dropping .main::after{content:"Datei hier ablegen";position:fixed;inset:12p
   .sb-grid{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:900px){
-  .kbar{bottom:calc(88px + env(safe-area-inset-bottom))}
+  .kbar{bottom:calc(88px + var(--sab))}
   .kpage{min-height:calc(100dvh - 20px)}
   .cfs{grid-template-columns:1fr}
   .nxt{flex-direction:column;padding:20px;gap:12px}
@@ -1016,7 +1017,7 @@ button.lf-main:hover{background:var(--field)}button.lf-main:active{transform:sca
 .pn-l{font-size:13px;font-weight:650;color:var(--text2);max-width:120px;text-align:center;line-height:1.2}.pn.now .pn-l,.pn.done .pn-l{color:var(--text)}
 .pn-pop{width:calc(100% - 8px);margin:8px 4px 6px;padding:14px 16px;border-radius:20px;background:var(--glass3);box-shadow:inset 0 0 0 1px var(--hair2),0 14px 30px -16px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:3px;animation:rise .3s var(--ease) both;position:relative}
 .pn-pop[hidden]{display:none}.pn-pop b{font-size:16px}.pn-pop small{font-size:12.5px;color:var(--text3);font-weight:650}.pn-pop p{font-size:13.5px;color:var(--text2);line-height:1.45;margin:4px 0 8px}.pn-pop .btn{align-self:flex-start}
-.way-jump{position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 104px);float:right;margin:-44px 4px 0 0;z-index:5;display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 16px;border-radius:22px;font-weight:750;font-size:14px;color:#fff;background:var(--grad);box-shadow:0 10px 24px -8px rgba(80,110,255,.7)}.way-jump[hidden]{display:none}.way-jump svg{width:18px;height:18px}
+.way-jump{position:sticky;bottom:calc(var(--sab) + 104px);float:right;margin:-44px 4px 0 0;z-index:5;display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 16px;border-radius:22px;font-weight:750;font-size:14px;color:#fff;background:var(--grad);box-shadow:0 10px 24px -8px rgba(80,110,255,.7)}.way-jump[hidden]{display:none}.way-jump svg{width:18px;height:18px}
 @media (prefers-reduced-motion:reduce){.pn.now .pn-b,.pn-tip{animation:none}}
 
 /* ---------- Lebensweg ---------- */
@@ -1050,6 +1051,123 @@ button.lf-main:hover{background:var(--field)}button.lf-main:active{transform:sca
 .lcc{flex:none;width:148px;scroll-snap-align:start;text-align:left;padding:14px;border-radius:22px;background:var(--glass);box-shadow:inset 0 0 0 1px var(--hair);display:flex;flex-direction:column;gap:4px;transition:transform .25s var(--spring)}.lcc:active{transform:scale(.96)}
 .lcc span{font-size:28px}.lcc b{font-size:14.5px;line-height:1.25}.lcc small{font-size:12px;color:var(--text2);line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
+/* =====================================================================
+   KAIROS · Gesten, Hover, Fokus, Zoom, Pull-to-Refresh, Parallax
+   ===================================================================== */
+:root{--sheet-solid:rgb(24,31,66);--tray-ok:#22b573;--tray-warn:#e08a1e;--tray-bad:#e5484d;--tray-def:#5b6cff}
+:root[data-theme="light"]{--sheet-solid:#fff}
+
+/* ---- Zeilen mit Gesten ---- */
+[data-row]{touch-action:pan-y;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.swing{overflow:hidden}
+.swing>:not(.sw-tray){transform:translateX(var(--sx,0px));will-change:transform}
+.swing:not(.sw-drag)>:not(.sw-tray){transition:transform .28s var(--ease)}
+.sw-tray{position:absolute;top:0;bottom:0;display:flex;overflow:hidden;z-index:0;width:0}
+.swing:not(.sw-drag) .sw-tray{transition:width .28s var(--ease)}
+.sw-tray.l{left:0}.sw-tray.r{right:0;justify-content:flex-end}
+.sw-btn{flex:0 0 78px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff;background:var(--tray-def);font-weight:700;cursor:pointer;-webkit-user-select:none;user-select:none}
+.sw-btn svg{width:21px;height:21px}.sw-btn em{font-style:normal;font-size:11.5px;letter-spacing:.01em;white-space:nowrap}
+.sw-btn.good{background:var(--tray-ok)}.sw-btn.warn{background:var(--tray-warn)}.sw-btn.danger{background:var(--tray-bad)}
+.sw-tray.armed .sw-btn{flex:1 0 78px;filter:brightness(1.12)}
+.lifted{transform:scale(1.025);background:var(--glass3)!important;box-shadow:0 14px 34px -10px rgba(0,0,0,.55);z-index:6;transition:transform .2s var(--spring),box-shadow .2s}
+.dragging{opacity:.28}
+
+/* ---- Kontextmenü ---- */
+.ctxb{position:fixed;inset:0;z-index:300;background:rgba(2,4,14,0);transition:background .2s}.ctxb.on{background:rgba(2,4,14,.4)}
+.ctxm{position:fixed;z-index:301;min-width:214px;max-width:270px;padding:6px;border-radius:20px;background:var(--sheet-solid);border:1px solid var(--line);box-shadow:0 24px 60px -12px rgba(0,0,0,.6);transform:scale(.88);transform-origin:top left;opacity:0;transition:transform .22s var(--spring),opacity .16s}
+.ctxm.on{transform:none;opacity:1}
+.ctx-t{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--faint,var(--muted));padding:8px 10px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ctx-i{display:flex;align-items:center;gap:11px;width:100%;padding:12px 10px;border-radius:13px;font:inherit;font-size:15.5px;font-weight:600;color:var(--text);text-align:left}
+.ctx-i svg{width:19px;height:19px;flex:none;opacity:.85}.ctx-i.danger{color:var(--neg)}
+.ctx-i:active{background:var(--field-f)}
+
+/* ---- Ziehen & Ablegen ---- */
+.dnd-ghost{position:fixed;z-index:400;margin:0;border-radius:16px;background:var(--sheet-solid);box-shadow:0 20px 44px -8px rgba(0,0,0,.6);pointer-events:none;opacity:.97;display:block}
+.dnd-ghost>*{width:100%}
+.dnd-ghost.back{transition:transform .25s var(--ease),opacity .25s}.dnd-ghost.sink{transition:transform .2s,opacity .2s;opacity:0;transform:scale(.55)!important}
+.dnd-tray{position:fixed;z-index:399;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top,0px) + 6px) 12px 12px;background:linear-gradient(180deg,rgba(6,9,25,.97),rgba(6,9,25,.86));transform:translateY(-110%);transition:transform .3s var(--ease)}
+:root[data-theme="light"] .dnd-tray{background:linear-gradient(180deg,rgba(233,238,251,.98),rgba(233,238,251,.88))}
+.dnd-tray.on{transform:none}.dnd-tray small{display:block;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;opacity:.65;margin:0 2px 7px}
+.dnd-row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.dnd-row::-webkit-scrollbar{display:none}
+.dnd-c{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:80px;padding:10px 8px;border-radius:16px;border:1.5px dashed var(--line);font-size:11.5px;font-weight:650;transition:transform .15s var(--spring),background .15s}
+.dnd-c span{font-size:22px}.dnd-c.hot{background:var(--accent);color:#fff;border:1.5px solid var(--accent);transform:scale(1.08)}
+.filedrop{position:fixed;inset:0;z-index:500;display:grid;place-items:center;background:rgba(6,9,25,.7);opacity:0;transition:opacity .2s;pointer-events:none}.filedrop.on{opacity:1}
+.filedrop>div{text-align:center;padding:36px 30px;border-radius:28px;border:2px dashed var(--accent);background:rgba(20,26,58,.9);max-width:340px}
+.filedrop span{font-size:46px;display:block;margin-bottom:8px}.filedrop b{display:block;font-size:19px;margin-bottom:6px}.filedrop small{opacity:.7;font-size:13.5px;line-height:1.45}
+
+/* ---- Endlos-Liste ---- */
+.seg.full{display:flex;width:100%}.seg.full button{flex:1}
+.lcar{scroll-padding:0 16px}
+.inf{display:flex;justify-content:center;padding:16px;min-height:44px}
+
+/* ---- Pull-to-Refresh ---- */
+.ptr{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 6px);z-index:60;width:44px;height:44px;margin-left:-22px;border-radius:50%;display:grid;place-items:center;background:var(--sheet-solid);border:1px solid var(--line);box-shadow:0 8px 24px -6px rgba(0,0,0,.5);opacity:0;transform:translateY(-70px) scale(.7);pointer-events:none}
+.ptr svg{width:22px;height:22px;color:var(--accent);transition:transform .15s}
+.ptr.go svg{transform:rotate(180deg)}.ptr.spin svg{animation:ptrspin .8s linear infinite}@keyframes ptrspin{to{transform:rotate(360deg)}}
+.ptr.snap{transition:transform .3s var(--ease),opacity .25s}
+#main.ptr-pull>#view{will-change:transform}
+
+/* ---- Parallax ---- */
+@media (prefers-reduced-motion:no-preference){
+  .aurora i{will-change:transform}
+  .aurora i:nth-child(1){transform:translate3d(0,calc(var(--sy,0)*-.06px),0)}
+  .aurora i:nth-child(2){transform:translate3d(0,calc(var(--sy,0)*-.12px),0)}
+  .aurora i:nth-child(3){transform:translate3d(0,calc(var(--sy,0)*-.2px),0)}
+  .px-hero{transform:translate3d(0,calc(var(--sy,0)*.28px),0) scale(calc(1 - var(--sy,0)*.00025));opacity:calc(1 - var(--sy,0)*.0022);will-change:transform,opacity}
+  .px-soft{transform:translate3d(0,calc(var(--sy,0)*.12px),0);will-change:transform}
+}
+
+/* ---- Zoom-Betrachter (Pinch, Doppeltipp, Ziehen) ---- */
+.zv{position:fixed;inset:0;z-index:450;background:rgba(2,4,14,.94);opacity:0;transition:opacity .22s;touch-action:none;overflow:hidden;-webkit-user-select:none;user-select:none}
+.zv.on{opacity:1}
+.zv-stage{position:absolute;inset:0;display:grid;place-items:center}
+.zv-img{max-width:100%;max-height:100%;will-change:transform;transform-origin:0 0;-webkit-user-drag:none;user-drag:none;pointer-events:none;border-radius:6px}
+.zv-bar{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 10px) 14px 10px;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent);z-index:2}
+.zv-bar b{flex:1;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.zv-bar button{height:40px;min-width:40px;padding:0 12px;border-radius:20px;background:rgba(255,255,255,.16);color:#fff;font:inherit;font-weight:700;font-size:14px;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.zv-hint{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);text-align:center;color:rgba(255,255,255,.6);font-size:12.5px;pointer-events:none;transition:opacity .4s}
+.zv.moved .zv-hint{opacity:0}
+.dd-prev img,.dth img.zoomable,[data-zoom]{cursor:zoom-in}
+.dd-prev img{touch-action:manipulation}
+
+/* ---- Hover (nur echte Maus) ---- */
+@media (hover:hover) and (pointer:fine){
+  .card.glass,.kpi2,.sat-in,.lcc,.more-i,.avm-b,.way-node,.notice,.fin-ch{transition:transform .22s var(--ease),box-shadow .22s,border-color .22s,background .2s}
+  .card.glass:hover{transform:translateY(-2px);box-shadow:0 16px 40px -18px rgba(0,0,0,.55);border-color:var(--line)}
+  .lcc:hover,.more-i:hover,.avm-b:hover{transform:translateY(-3px);box-shadow:0 14px 30px -14px rgba(0,0,0,.6);background:var(--field-f)}
+  .li:hover,.vt:hover,.lf:hover,.lt:hover{background:var(--field)}
+  .li,.vt,.lf{cursor:pointer}
+  .btn:hover{transform:translateY(-1px)}.btn:active{transform:scale(.96)}
+  .dk:hover{background:var(--field);transform:translateY(-2px)}.dk{transition:transform .2s var(--spring),background .2s}
+  .chip:hover,.fin-ch:hover{background:var(--field-f);transform:translateY(-1px)}
+  .lr-d:hover{transform:scale(1.18)}.lr-d{transition:transform .2s var(--spring)}
+  .way-n:hover,.way-node:hover{transform:scale(1.06)}
+  .dsat:hover{z-index:5}
+  [data-row]:hover .sw-hint{opacity:1}
+  .sw-hint{position:absolute;right:8px;top:50%;transform:translateY(-50%);opacity:0;transition:opacity .2s;font-size:12px;color:var(--muted);pointer-events:none}
+  .ctx-i:hover{background:var(--field-f)}
+  .dnd-c:hover{background:var(--field)}
+  .iconbtn:hover{transform:scale(1.08)}
+}
+/* Druck-Gefühl auf dem Handy */
+@media (hover:none){
+  .btn:active,.dk:active,.lcc:active,.more-i:active,.chip:active,.fin-ch:active{transform:scale(.95);transition:transform .08s}
+  .li:active,.vt:active,.lf-main:active{background:var(--field)}
+}
+
+/* ---- Fokus (Tastatur & Zugänglichkeit) ---- */
+:focus{outline:none}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:10px;box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 22%,transparent)}
+.btn:focus-visible,.chip:focus-visible,.dk:focus-visible{border-radius:999px}
+.dk:focus-visible{border-radius:22px;outline-offset:-3px}
+.card:focus-within{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.field:focus-within>label{color:var(--accent)}
+.inp:focus-visible,.sel:focus-visible,.txt:focus-visible{outline:none}
+[role="button"][tabindex]:focus-visible,[data-row]:focus-visible{outline-offset:-2px;border-radius:14px}
+.sheet:focus{outline:none}
+.skip-main{position:fixed;left:12px;top:-60px;z-index:999;padding:10px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;transition:top .2s}.skip-main:focus{top:calc(env(safe-area-inset-top,0px) + 8px)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.swing>:not(.sw-tray),.ctxm,.dnd-tray{transition-duration:.01s!important}}
+
 /* ===== Dock (nur mobil) ===== */
 .dock{display:none}
 @media (max-width:900px){
@@ -1058,12 +1176,12 @@ button.lf-main:hover{background:var(--field)}button.lf-main:active{transform:sca
   .app{grid-template-columns:minmax(0,1fr);padding:0;gap:0;height:100dvh}
   .side{display:none}
   .main{border-radius:0;padding-top:env(safe-area-inset-top)}
-  .page{padding:14px 16px calc(112px + env(safe-area-inset-bottom))}
+  .page{padding:14px 16px calc(112px + var(--sab))}
   .ph{margin:2px 0 18px}
   .ph .act{width:100%}.ph .act .btn{flex:1 1 auto;justify-content:center}
   .grid{gap:12px}.s6{grid-column:span 12}
   .card{padding:16px;border-radius:24px}
-  .dock{display:flex;position:fixed;z-index:40;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));height:68px;padding:6px;border-radius:28px;align-items:center;justify-content:space-around}
+  .dock{display:flex;position:fixed;z-index:40;left:12px;right:12px;bottom:calc(10px + var(--sab));height:68px;padding:6px;border-radius:28px;align-items:center;justify-content:space-around}
   .dock[hidden]{display:none}
   .dk{--c:var(--accent);flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:100%;border-radius:22px;font-size:10.5px;font-weight:650;color:var(--text3);transition:.25s var(--ease)}
   .dk svg{font-size:23px}
@@ -1073,9 +1191,9 @@ button.lf-main:hover{background:var(--field)}button.lf-main:active{transform:sca
   .dk.dko span{display:block;width:62px;height:62px;filter:drop-shadow(0 10px 20px rgba(79,134,255,.6));transition:transform .3s var(--spring)}
   .dk.dko span svg{width:100%;height:100%;display:block}
   .dk.dko:active span{transform:scale(.9)}
-  #toasts{bottom:calc(96px + env(safe-area-inset-bottom))}
+  #toasts{bottom:calc(96px + var(--sab))}
   .overlay{padding:0;align-items:flex-end}
-  .sheet{width:100%!important;max-height:92dvh;border-radius:28px 28px 0 0;padding:22px 18px calc(24px + env(safe-area-inset-bottom));animation:sheetUp .45s var(--ease) both}
+  .sheet{width:100%!important;max-height:92dvh;border-radius:28px 28px 0 0;padding:22px 18px calc(24px + var(--sab));animation:sheetUp .45s var(--ease) both}
   @keyframes sheetUp{from{transform:translateY(100%)}}
   .sheet .fields{grid-template-columns:1fr}
   .cmd{margin-top:0;align-self:flex-end;width:100%;border-radius:28px 28px 0 0;animation:sheetUp .45s var(--ease) both}
@@ -1107,11 +1225,20 @@ html{background:var(--bg);height:100%;overscroll-behavior:none}
 :root[data-theme="dark"]{background-image:linear-gradient(180deg,#0a0f2c 0%,#070a1c 100%)}
 body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden}
 .app{position:fixed;inset:0;height:auto;width:100%;grid-template-rows:minmax(0,1fr)}
-/* Home-Bildschirm-App mit zu kurzem Viewport: Hülle fest auf Bildschirmhöhe; der transform macht body zum Bezugspunkt
-   für alle fixed-Elemente (Dock, Sheets, Toasts), sonst bleiben sie am zu kurzen Rand hängen */
-:root.fullh body{bottom:auto;height:var(--apph);transform:translateZ(0)}
-:root.fullh .app{bottom:auto;height:var(--apph)}
+/* iOS 26 (WebKit-Bug 301108): installierte Web-App bekommt einen um die Statusleiste zu kurzen Viewport, solange die Seite
+   nicht mindestens bildschirmhoch ist. Mit dieser Mindesthöhe liefert iOS den vollen Viewport; ist er voll, ergibt die Regel 100 %. */
+:root{--sab:env(safe-area-inset-bottom)}
+@media (display-mode:standalone){html{min-height:min(100lvh,calc(100% + env(safe-area-inset-top)))}}
+html.sa{min-height:min(100lvh,calc(100% + env(safe-area-inset-top)))}
+html.sa.kick{min-height:calc(100% + 2px)}
+/* Reststreifen (falls iOS den Viewport trotzdem kürzt): nichts darf abgeschnitten werden, Home-Indikator-Abstand entfällt */
+html.short{--sab:0px}
 .main,.sheet,.cmd-body,#nav{-webkit-overflow-scrolling:touch}
+/* Nichts darf seitlich verschiebbar sein: Seite, Hauptfläche und Sheets nur senkrecht wischen; eigene Karussells scrollen selbst */
+html,body{overflow-x:hidden;max-width:100%}
+.main,.sheet,.cmd-body,.overlay{overflow-x:hidden;overscroll-behavior-x:none;touch-action:pan-y}
+.sheet *{max-width:100%}.sheet .inp,.sheet .sel,.sheet .txt{min-width:0;max-width:100%;box-sizing:border-box}
+.lcar,.lr-sc,.way-scroll,[data-hscroll]{touch-action:pan-x pan-y}
 .sheet,.cmd-body{overscroll-behavior:contain}
 
 /* Aurora ohne filter:blur – weiche Farbkugeln per Verlauf */
@@ -1144,7 +1271,7 @@ body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden}
   /* Overlay folgt dem sichtbaren Bereich (Tastatur!) */
   .overlay{top:var(--vvt,0px);bottom:auto;height:var(--vvh,100%);background:rgba(2,4,14,.58)}
   :root[data-theme="light"] .overlay{background:rgba(30,40,90,.32)}
-  .sheet{max-height:calc(var(--vvh,100dvh) - env(safe-area-inset-top,0px) - 12px);padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+  .sheet{max-height:calc(var(--vvh,100dvh) - env(safe-area-inset-top,0px) - 12px);padding-bottom:calc(20px + var(--sab))}
   .cmd-body{max-height:calc(var(--vvh,100dvh) - 150px)}
   body.kb .dock{transform:translateY(160%);opacity:0;pointer-events:none}
   body.kb #toasts{bottom:calc(var(--kb,0px) + 16px)}
@@ -1154,7 +1281,7 @@ body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden}
   /* Eingaben mindestens 16px, sonst zoomt iOS beim Fokus */
   .inp,.sel,.txt,input,select,textarea{font-size:16px}
   /* Sticky Aktionsleiste im Sheet */
-  .sheet .acts{position:sticky;bottom:calc(-20px - env(safe-area-inset-bottom));margin:18px -18px calc(-20px - env(safe-area-inset-bottom));padding:12px 18px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(180deg,transparent 0,rgb(20,26,58) 14px);z-index:2}
+  .sheet .acts{position:sticky;bottom:calc(-20px - var(--sab));margin:18px -18px calc(-20px - var(--sab));padding:12px 18px calc(14px + var(--sab));background:linear-gradient(180deg,transparent 0,rgb(20,26,58) 14px);z-index:2}
   :root[data-theme="light"] .sheet .acts{background:linear-gradient(180deg,transparent 0,rgb(250,251,255) 14px)}
   .sheet .acts .dl{display:none}
   .sheet .acts .btn.danger{padding:0 14px}
@@ -1337,7 +1464,7 @@ const download = (blob, name) => { const a = document.createElement('a'); a.href
    KAIROS · Konstanten, Standard-Daten, Speicher (IndexedDB) & Verschlüsselung
    ===================================================================== */
 const AREAS = {
-  reise:     { name: 'Reise',      ic: 'route',  c: 'var(--accent)' },
+  reise:     { name: 'Leben',       ic: 'route',  c: 'var(--accent)' },
   steckbrief:{ name: 'Steckbrief', ic: 'id',     c: 'var(--c-fin)' },
   vertraege: { name: 'Verträge',   ic: 'receipt',c: 'var(--c-life)' },
   beruf:     { name: 'Beruf',      ic: 'briefcase', c: 'var(--c-biz)' },
@@ -1511,7 +1638,7 @@ function toast(msg, kind, action) {
   t.className = 'toast';
   t.innerHTML = `<span>${kind === 'bad' ? '⚠️ ' : kind === 'good' ? '✓ ' : ''}${esc(msg)}</span>${action ? `<button>${esc(action.label)}</button>` : ''}`;
   if (action) t.querySelector('button').onclick = () => { try { action.fn(); } finally { rm(); } };
-  w.appendChild(t);
+  w.appendChild(t); snd(kind === 'bad' ? 'error' : /gelöscht|entfernt/i.test(msg) ? 'delete' : kind === 'good' ? 'good' : 'tap');
   const rm = () => { t.classList.add('out'); setTimeout(() => t.remove(), 300); };
   setTimeout(rm, action ? 6500 : 3200);
   while (w.children.length > 3) w.firstChild.remove();
@@ -1519,13 +1646,14 @@ function toast(msg, kind, action) {
 
 /* ---------- Sheet ---------- */
 let sheetResolve = null;
-const buzz = (ms = 8) => { try { navigator.vibrate && navigator.vibrate(ms); } catch (e) { /* ignorieren */ } };
+const buzz = (ms = 8) => hap(ms >= 25 ? 2 : 1, ms);
 function openSheet(html, { wide = false, onMount } = {}) {
   const wrap = $('#sheetWrap'), old = $('#sheet');
   const sh = old.cloneNode(false);              // frischer Knoten: alte Listener fallen weg
   sh.removeAttribute('style'); sh.className = 'sheet glass' + (wide ? ' wide' : '');
   old.replaceWith(sh);
   sh.innerHTML = '<div class="grab" aria-hidden="true"></div>' + html;
+  if (!wrap.classList.contains('open')) snd('open');
   wrap.classList.add('open'); wrap.setAttribute('aria-hidden', 'false');
   sh.scrollTop = 0;
   /* Mobil: nach unten wischen schließt das Sheet */
@@ -1542,7 +1670,7 @@ function openSheet(html, { wide = false, onMount } = {}) {
   return sh;
 }
 function closeSheet() {
-  const wrap = $('#sheetWrap');
+  const wrap = $('#sheetWrap'); if (wrap.classList.contains('open')) snd('close');
   wrap.classList.remove('open'); wrap.setAttribute('aria-hidden', 'true');
   if (sheetResolve) { const r = sheetResolve; sheetResolve = null; r(null); }
 }
@@ -1651,7 +1779,7 @@ function renderNav() {
   const item = r => { const a = AREAS[r], n = bc[r]; return `<button class="nv ${route === r ? 'on' : ''}${typeof treeGate === 'function' && treeGate(r) ? ' lkd' : ''}" style="--c:${a.c}" data-go="${r}" ${route === r ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt alert">${n}</span>` : ''}</button>`; };
   $('#nav').innerHTML = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
   const dk = (r, lab) => `<button class="dk ${route === r ? 'on' : ''}" style="--c:${AREAS[r].c}" data-go="${r}" aria-label="${lab}"><span class="dki">${icon(AREAS[r].ic)}</span><span class="dkl">${lab}</span>${bc[r] ? '<i class="dot"></i>' : ''}</button>`;
-  $('#dock').innerHTML = dk('reise', 'Reise') + dk('steckbrief', 'Steckbrief') +
+  $('#dock').innerHTML = dk('reise', 'Leben') + dk('steckbrief', 'Steckbrief') +
     `<button class="dk dko ${route === 'kairos' ? 'on' : ''}" data-go="kairos" aria-label="Kairos fragen"><span>${logoSvg('dock')}</span></button>` + dk('einblicke', 'Einblicke') +
     `<button class="dk ${MORE_ROUTES.includes(route) ? 'on' : ''}" style="--c:var(--text2)" data-act="more.open" aria-label="Mehr"><span class="dki">${icon('grid')}</span><span class="dkl">Mehr</span>${bc.dokumente ? '<i class="dot"></i>' : ''}</button>`;
   if (S.int && S.int.badge && typeof applyBadge === 'function') applyBadge(bc.einblicke);
@@ -1702,9 +1830,12 @@ function setTheme(t) {
 }
 matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => { if (lsGet('kairos-theme') === 'auto') setTheme('auto'); });
 
-/* iOS: sichtbarer Bereich als CSS-Variablen (Tastatur, Adressleiste) – und Heilung des bekannten Fehlers in installierten
-   Web-Apps: Nach dem ersten Öffnen der Tastatur bleibt der Viewport um ~60 px zu klein (schwarzer Balken unten,
-   Dock und Sheets zu hoch). WebKit misst erst neu, wenn ein vollhohes Element kurz aus- und eingeblendet wird. */
+/* iOS: sichtbarer Bereich als CSS-Variablen (Tastatur) und zwei bekannte WebKit-Fehler in installierten Web-Apps:
+   1) iOS 26 (WebKit-Bug 301108): Der Viewport ist um die Statusleiste (62 pt) zu kurz, solange die Seite nicht mindestens
+      bildschirmhoch ist – fixierte Elemente werden unterhalb dieser Kante nicht gezeichnet (schwarzer Balken, abgeschnittenes Dock).
+      Gegenmittel: html bekommt eine Mindesthöhe (CSS, Klasse html.sa) – dann liefert iOS den vollen Viewport.
+   2) Nach dem ersten Öffnen der Tastatur bleibt der Viewport zu klein. WebKit misst erst neu, wenn ein vollhohes Element
+      kurz aus- und eingeblendet wird (viewHeal). */
 const standaloneApp = () => navigator.standalone === true || (window.matchMedia && matchMedia('(display-mode: standalone)').matches);
 function viewDiag() {
   const vv = window.visualViewport, probe = document.createElement('div'); probe.style.cssText = 'position:fixed;left:0;top:0;width:0;height:0;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);visibility:hidden'; document.body.appendChild(probe);
@@ -1712,34 +1843,38 @@ function viewDiag() {
   const port = innerHeight >= innerWidth, scr = port ? Math.max(screen.width, screen.height) : Math.min(screen.width, screen.height);
   return { inner: Math.round(innerHeight), vv: vv ? Math.round(vv.height) : null, screen: scr, safeTop: top, safeBottom: bot, standalone: standaloneApp(), gap: Math.max(0, scr - Math.round(innerHeight)) };
 }
+if (standaloneApp()) document.documentElement.classList.add('sa');
+/* Verbleibende Lücke (nur Standalone, Hochformat, iPhone): 20–110 pt */
+function shortGap() {
+  if (!standaloneApp()) return 0;
+  const sw = Math.min(screen.width, screen.height), sh = Math.max(screen.width, screen.height);
+  if (sw > 500 || innerHeight < innerWidth) return 0;
+  const gap = sh - Math.round(innerHeight); return (gap > 20 && gap <= 110) ? gap : 0;
+}
 let viewPeak = innerHeight, viewTries = 0;
 function viewHeal(force) {
   const a = document.activeElement, typing = !!a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) && !/checkbox|radio|file|button/.test(a.type || '');
-  if (typing && !force) return false; if (!standaloneApp() && !force) return false; if (fullHeight() && !force) return false;
+  if (typing && !force) return false; if (!standaloneApp() && !force) return false;
   const d = viewDiag(); viewPeak = Math.max(viewPeak, d.inner);
   const shrunk = viewPeak - d.inner > 8 || d.gap > 24; if (!shrunk && !force) { viewTries = 0; return false; }
-  if (viewTries >= 3 && !force) return false; viewTries++;
-  const app = $('#app'), main = $('#main'), st = main ? main.scrollTop : 0;
-  if (app) { app.style.display = 'none'; void app.offsetHeight; app.style.display = ''; } if (main) main.scrollTop = st;
-  window.scrollTo(0, 0); setTimeout(() => { viewPeak = Math.max(viewPeak, innerHeight); applyView(); }, 60); return true;
+  if (viewTries >= 4 && !force) return false; viewTries++;
+  const root = document.documentElement, app = $('#app'), main = $('#main'), st = main ? main.scrollTop : 0;
+  /* Stufe 1: Mindesthöhe kurz erhöhen und wieder zurück (zwingt WebKit zur Neuvermessung), Stufe 2: Hülle aus- und einblenden */
+  root.classList.add('kick'); void root.offsetHeight;
+  if (viewTries > 1 && app) { app.style.display = 'none'; void app.offsetHeight; app.style.display = ''; } if (main) main.scrollTop = st;
+  window.scrollTo(0, 0); setTimeout(() => { root.classList.remove('kick'); viewPeak = Math.max(viewPeak, innerHeight); applyView(); }, 80); return true;
 }
-/* iPhone-App vom Home-Bildschirm: WebKit meldet den sichtbaren Bereich teils ~62 pt zu kurz (schwarzer Balken unten).
-   Dann bekommt die Hülle die volle Bildschirmhöhe fest vorgegeben. Der Wert hängt nur an screen.height, nicht an innerHeight –
-   so kann er beim Hin- und Herspringen von innerHeight nicht flackern. */
-function fullHeight() {
-  if (navigator.standalone !== true) return 0;
-  const sw = Math.min(screen.width, screen.height), sh = Math.max(screen.width, screen.height);
-  if (sw > 500 || innerHeight < innerWidth) return 0;
-  const gap = sh - Math.round(innerHeight); return (gap >= -2 && gap <= 110) ? sh : 0;
-}
+let viewBase = 0, kbGuessUntil = 0;
+const isTyping = () => { const a = document.activeElement; return !!a && /^(INPUT|TEXTAREA)$/.test(a.tagName) && !/checkbox|radio|file|button|range/.test(a.type || ''); };
+/* Sichtbarer Bereich: iOS kann bei geöffneter Tastatur (a) die Fensterhöhe verkleinern oder (b) das Fenster nach oben verschieben
+   (offsetTop) oder beides. Overlay und Sheets folgen deshalb immer dem sichtbaren Bereich (offsetTop + height) – egal, welcher Fall. */
 function applyView() {
-  const vv = window.visualViewport, R = document.documentElement.style, h = vv ? vv.height : innerHeight, off = vv ? vv.offsetTop : 0;
-  const fh = fullHeight(), root = document.documentElement;
-  if (fh) { if (R.getPropertyValue('--apph') !== fh + 'px') R.setProperty('--apph', fh + 'px'); if (!root.classList.contains('fullh')) root.classList.add('fullh'); }
-  else if (root.classList.contains('fullh')) root.classList.remove('fullh');
-  const full = fh || Math.round(innerHeight);
-  const kb = Math.max(0, Math.round(innerHeight - h - off)), open = kb > 120;
-  R.setProperty('--vvh', open ? Math.round(h) + 'px' : full + 'px'); R.setProperty('--vvt', open ? Math.round(off) + 'px' : '0px'); R.setProperty('--kb', kb + 'px');
+  const vv = window.visualViewport, R = document.documentElement.style, root = document.documentElement, typing = isTyping();
+  const h = Math.round(vv ? vv.height : innerHeight), off = Math.round(vv ? vv.offsetTop : 0);
+  if (!typing) { viewBase = Math.max(Math.round(innerHeight), h + off); const gap = shortGap(); root.classList.toggle('short', !!gap); R.setProperty('--vgap', gap + 'px'); }
+  const base = Math.max(viewBase, Math.round(innerHeight), h + off), lost = Math.max(0, base - h), open = lost > 120 && (typing || off > 0 || lost > 200);
+  const guess = !open && typing && Date.now() < kbGuessUntil;
+  R.setProperty('--vvh', (guess ? Math.max(280, Math.round(innerHeight - 330)) : open || off > 0 ? h : Math.round(innerHeight)) + 'px'); R.setProperty('--vvt', (open || off > 0 ? off : 0) + 'px'); R.setProperty('--kb', lost + 'px');
   document.body.classList.toggle('kb', open);
 }
 (function () {
@@ -1748,17 +1883,16 @@ function applyView() {
   if (vv) { vv.addEventListener('resize', () => { applyView(); later(320); }); vv.addEventListener('scroll', applyView); }
   addEventListener('resize', () => later(320)); addEventListener('pageshow', () => later(120));
   document.addEventListener('visibilitychange', () => { if (!document.hidden) later(150); });
-  addEventListener('orientationchange', () => { viewPeak = 0; viewTries = 0; setTimeout(() => { viewPeak = innerHeight; applyView(); }, 300); });
-  document.addEventListener('focusin', e => { if (e.target.matches('input,textarea,select') && e.target.closest('.sheet,.cmd')) setTimeout(() => { try { e.target.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (er) { /* ignorieren */ } }, 320); });
+  addEventListener('orientationchange', () => { viewPeak = 0; viewTries = 0; setTimeout(() => { viewPeak = innerHeight; viewBase = 0; applyView(); }, 300); });
   document.addEventListener('focusout', () => { setTimeout(() => { const a = document.activeElement; if (!a || !/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) { window.scrollTo(0, 0); applyView(); } }, 120); later(420); setTimeout(() => viewHeal(), 1100); });
-  applyView(); setTimeout(() => viewHeal(), 900);
+  document.addEventListener('focusin', e => { if (!e.target.matches || !e.target.matches('input,textarea') || !e.target.closest('.sheet,.cmd')) return; kbGuessUntil = Date.now() + 900; applyView(); [60, 220, 450, 800].forEach(ms => setTimeout(() => { applyView(); const el = document.activeElement; if (el && el.closest && el.closest('.sheet,.cmd')) { try { el.scrollIntoView({ block: 'center', behavior: 'auto' }); } catch (er) { /* ignorieren */ } } }, ms)); });
+  applyView(); setTimeout(() => { applyView(); viewHeal(); }, 700); setTimeout(applyView, 2000);
 })();
 ACT['view.heal'] = () => { const ok = viewHeal(true); const d = viewDiag(); toast(ok ? `Anzeige neu berechnet (${d.inner} von ${d.screen} px)` : 'Nichts zu tun', ok ? 'good' : ''); rerender(); };
 
 /* App-Gefühl: kein Pinch-Zoom, kein Doppeltipp-Zoom, kein Kontextmenü auf Bedienelementen */
 ['gesturestart', 'gesturechange', 'gestureend'].forEach(ev => document.addEventListener(ev, e => e.preventDefault()));
 document.addEventListener('touchmove', e => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
-let lastTap = 0; document.addEventListener('touchend', e => { const t = Date.now(); if (t - lastTap < 320 && !e.target.closest('input,textarea,select')) e.preventDefault(); lastTap = t; }, { passive: false });
 
 /* Zusätzliche Icons (24er Raster, Linienstil) */
 Object.assign(IC, {
@@ -1786,6 +1920,119 @@ Object.assign(IC, {
   zoomin: 'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14ZM20 20l-4-4M11 8v6M8 11h6',
   lockkey: 'M6 11h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1ZM8 11V8a4 4 0 0 1 8 0v3M12 15v2'
 });
+
+/* =====================================================================
+   KAIROS · Klänge & Haptik
+   Alle Töne werden live synthetisiert (WebAudio) – keine Dateien, kein Netz, läuft offline.
+   Leise, kurz, in einer Dur-Pentatonik, damit nichts nervt. In den Einstellungen: Aus / Leise / Normal.
+   ===================================================================== */
+const SND = { ctx: null, chain: null, last: {}, noise: null };
+const sndMode = () => (typeof S === 'object' && S && S.ui && S.ui.snd) || 'normal';
+const sndLevel = () => { const m = sndMode(); return m === 'aus' ? 0 : m === 'leise' ? 0.4 : 1; };
+/* iOS: die Stumm-Schaltung blendet Web-Audio normalerweise aus. 'playback' lässt UI-Töne trotzdem hören (abschaltbar). */
+function sndSession() { try { if (navigator.audioSession) navigator.audioSession.type = (S.ui && S.ui.sndSilent === false) ? 'ambient' : 'playback'; } catch (e) { /* ignorieren */ } }
+
+function sndBuild(c, dest) {
+  const master = c.createGain(), comp = c.createDynamicsCompressor(), send = c.createGain(), dl = c.createDelay(0.5), fb = c.createGain(), lp = c.createBiquadFilter();
+  master.gain.value = 2.6; comp.threshold.value = -14; comp.ratio.value = 4; comp.attack.value = 0.004; comp.release.value = 0.2;
+  dl.delayTime.value = 0.16; fb.gain.value = 0.32; lp.type = 'lowpass'; lp.frequency.value = 3200; send.gain.value = 0.35;
+  master.connect(comp); comp.connect(dest || c.destination);
+  send.connect(dl); dl.connect(lp); lp.connect(fb); fb.connect(dl); lp.connect(comp);
+  return { master, send, dest: comp };
+}
+function sndCtx() {
+  if (!SND.ctx) {
+    const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return null;
+    try { SND.ctx = new AC({ latencyHint: 'interactive' }); SND.chain = sndBuild(SND.ctx); } catch (e) { return null; }
+  }
+  if (SND.ctx.state !== 'running') { try { SND.ctx.resume(); } catch (e) { /* ignorieren */ } }
+  return SND.ctx;
+}
+/* Erste echte Berührung schaltet den Ton frei (iOS verlangt eine Geste) */
+function sndUnlock() {
+  const c = sndCtx(); if (!c) return; sndSession();
+  try { const b = c.createBuffer(1, 1, 22050), s = c.createBufferSource(); s.buffer = b; s.connect(c.destination); s.start(0); } catch (e) { /* ignorieren */ }
+}
+['touchend', 'click', 'keydown', 'pointerup'].forEach(ev => addEventListener(ev, sndUnlock, { capture: true, passive: true }));
+document.addEventListener('visibilitychange', () => { if (!document.hidden && SND.ctx && SND.ctx.state !== 'running') { try { SND.ctx.resume(); } catch (e) { /* ignorieren */ } } });
+
+/* ---- Bausteine ---- */
+function sndTone(c, ch, f, t, d, o = {}) {
+  const osc = c.createOscillator(), g = c.createGain(), a = o.a || 0.006, v = o.v == null ? 0.2 : o.v;
+  osc.type = o.type || 'sine'; osc.frequency.setValueAtTime(f, t); if (o.to) osc.frequency.exponentialRampToValueAtTime(o.to, t + d);
+  g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(v, t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + a + d);
+  osc.connect(g); g.connect(ch.master); if (o.fx) { const s = c.createGain(); s.gain.value = o.fx; g.connect(s); s.connect(ch.send); }
+  osc.start(t); osc.stop(t + a + d + 0.05);
+}
+function sndNoise(c, ch, t, d, o = {}) {
+  if (!SND.noise || SND.noise.ctx !== c) { const n = c.sampleRate * 0.6, b = c.createBuffer(1, n, c.sampleRate), x = b.getChannelData(0); for (let i = 0; i < n; i++) x[i] = Math.random() * 2 - 1; SND.noise = { ctx: c, buf: b }; }
+  const src = c.createBufferSource(), f = c.createBiquadFilter(), g = c.createGain(), v = o.v == null ? 0.1 : o.v;
+  src.buffer = SND.noise.buf; f.type = o.type || 'bandpass'; f.Q.value = o.q || 1.2; f.frequency.setValueAtTime(o.f0 || 800, t); if (o.f1) f.frequency.exponentialRampToValueAtTime(o.f1, t + d);
+  g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(v, t + (o.a || 0.01)); g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+  src.connect(f); f.connect(g); g.connect(ch.master); src.start(t, Math.random() * 0.3); src.stop(t + d + 0.05);
+}
+/* Töne der Dur-Pentatonik (C): C5 D5 E5 G5 A5 C6 D6 E6 G6 */
+const N = { C4: 261.63, G4: 392, C5: 523.25, D5: 587.33, E5: 659.25, G5: 783.99, A5: 880, C6: 1046.5, D6: 1174.7, E6: 1318.5, G6: 1568 };
+
+const SOUNDS = {
+  tap: (c, ch, t) => { sndTone(c, ch, 1500, t, 0.03, { v: 0.09, type: 'triangle' }); },
+  nav: (c, ch, t) => { sndTone(c, ch, 700, t, 0.07, { v: 0.14, to: 560 }); sndTone(c, ch, 1400, t, 0.04, { v: 0.05 }); },
+  open: (c, ch, t) => { sndNoise(c, ch, t, 0.16, { f0: 500, f1: 1800, v: 0.1 }); sndTone(c, ch, 440, t, 0.14, { v: 0.1, to: 620 }); },
+  close: (c, ch, t) => { sndNoise(c, ch, t, 0.14, { f0: 1600, f1: 450, v: 0.08 }); sndTone(c, ch, 600, t, 0.12, { v: 0.08, to: 420 }); },
+  good: (c, ch, t) => { sndTone(c, ch, N.E5, t, 0.11, { v: 0.15, fx: 0.4 }); sndTone(c, ch, N.A5, t + 0.085, 0.16, { v: 0.15, fx: 0.5 }); },
+  done: (c, ch, t) => { sndTone(c, ch, N.C6, t, 0.14, { v: 0.16, fx: 0.5, type: 'triangle' }); sndTone(c, ch, N.E6, t + 0.07, 0.2, { v: 0.12, fx: 0.6 }); },
+  undone: (c, ch, t) => { sndTone(c, ch, N.A5, t, 0.08, { v: 0.1, to: 640 }); },
+  up: (c, ch, t) => { [N.C5, N.E5, N.G5, N.C6].forEach((f, i) => { sndTone(c, ch, f, t + i * 0.075, 0.22, { v: 0.14, fx: 0.55, type: 'triangle' }); sndTone(c, ch, f * 2, t + i * 0.075, 0.12, { v: 0.04 }); }); },
+  cheer: (c, ch, t) => { [N.C5, N.E5, N.G5, N.C6, N.E6, N.G6].forEach((f, i) => { sndTone(c, ch, f, t + i * 0.085, 0.5, { v: 0.13, fx: 0.7, type: 'triangle' }); }); [N.C5, N.G5, N.E6].forEach(f => sndTone(c, ch, f, t + 0.6, 0.9, { v: 0.09, fx: 0.8 })); sndNoise(c, ch, t + 0.6, 0.5, { f0: 3000, f1: 8000, v: 0.03, type: 'highpass' }); },
+  error: (c, ch, t) => { sndTone(c, ch, 230, t, 0.1, { v: 0.16, type: 'triangle', to: 190 }); sndTone(c, ch, 200, t + 0.12, 0.14, { v: 0.16, type: 'triangle', to: 160 }); },
+  warn: (c, ch, t) => { sndTone(c, ch, 520, t, 0.09, { v: 0.12, type: 'triangle' }); sndTone(c, ch, 390, t + 0.1, 0.14, { v: 0.12, type: 'triangle' }); },
+  delete: (c, ch, t) => { sndTone(c, ch, 520, t, 0.16, { v: 0.14, to: 190 }); sndNoise(c, ch, t, 0.12, { f0: 2400, f1: 500, v: 0.05 }); },
+  swipe: (c, ch, t) => { sndNoise(c, ch, t, 0.14, { f0: 700, f1: 2200, v: 0.16, q: 0.8 }); },
+  reveal: (c, ch, t) => { sndTone(c, ch, 880, t, 0.05, { v: 0.1, to: 1100 }); },
+  pop: (c, ch, t) => { sndTone(c, ch, 320, t, 0.09, { v: 0.2, to: 760 }); sndTone(c, ch, 1520, t + 0.03, 0.05, { v: 0.05 }); },
+  lift: (c, ch, t) => { sndTone(c, ch, 420, t, 0.07, { v: 0.14, to: 640 }); },
+  drop: (c, ch, t) => { sndTone(c, ch, 190, t, 0.12, { v: 0.22, to: 90 }); sndTone(c, ch, 1100, t, 0.03, { v: 0.06 }); },
+  tick: (c, ch, t) => { sndTone(c, ch, 1900, t, 0.018, { v: 0.07, type: 'triangle' }); },
+  refresh: (c, ch, t) => { sndTone(c, ch, N.G5, t, 0.1, { v: 0.14, fx: 0.4 }); sndTone(c, ch, N.C6, t + 0.08, 0.16, { v: 0.14, fx: 0.5 }); },
+  copy: (c, ch, t) => { sndTone(c, ch, 1500, t, 0.03, { v: 0.1, type: 'triangle' }); sndTone(c, ch, 2000, t + 0.045, 0.04, { v: 0.1, type: 'triangle' }); },
+  shutter: (c, ch, t) => { sndNoise(c, ch, t, 0.03, { f0: 4200, v: 0.16, type: 'highpass', a: 0.002 }); sndNoise(c, ch, t + 0.055, 0.045, { f0: 2600, v: 0.12, type: 'highpass', a: 0.002 }); },
+  zoom: (c, ch, t) => { sndTone(c, ch, 520, t, 0.06, { v: 0.1, to: 700 }); },
+  focus: (c, ch, t) => { sndTone(c, ch, 1200, t, 0.025, { v: 0.05, type: 'triangle' }); }
+};
+const SND_GAP = { tap: 45, tick: 25, nav: 70, swipe: 120, reveal: 90, focus: 150, zoom: 90 };
+function sndPlay(name, c, ch, t) { const fn = SOUNDS[name]; if (fn) fn(c, ch, t); }
+function snd(name) {
+  try {
+    const lv = sndLevel(); if (!lv || !SOUNDS[name]) return;
+    const now = performance.now(), gap = SND_GAP[name] || 60; if (SND.last[name] && now - SND.last[name] < gap) return; SND.last[name] = now;
+    const c = sndCtx(); if (!c) return; SND.chain.master.gain.value = 2.6 * lv;
+    sndPlay(name, c, SND.chain, c.currentTime + 0.005);
+  } catch (e) { /* Ton ist nie kritisch */ }
+}
+
+/* ---- Haptik: Android per Vibration, iPhone (iOS 17.4+) über den versteckten „Schalter“-Trick ---- */
+let hapEl = null;
+function hapInit() {
+  if (hapEl || !document.body) return; const w = document.createElement('div'); w.setAttribute('aria-hidden', 'true'); w.style.cssText = 'position:fixed;left:-99px;top:-99px;width:1px;height:1px;opacity:0;pointer-events:none';
+  w.innerHTML = '<input type="checkbox" id="hapSw" switch tabindex="-1"><label for="hapSw" id="hapLb"></label>'; document.body.appendChild(w); hapEl = w.querySelector('#hapLb');
+}
+let hapLast = 0;
+function hap(n = 1, ms) {
+  try {
+    if (S.ui && S.ui.hap === false) return; const now = performance.now(); if (now - hapLast < 45) return; hapLast = now;
+    if (navigator.vibrate) { navigator.vibrate(n > 1 ? [12, 40, 12] : (ms || 10)); return; }
+    hapInit(); if (!hapEl) return; hapEl.click(); if (n > 1) setTimeout(() => hapEl.click(), 90); if (n > 2) setTimeout(() => hapEl.click(), 190);
+  } catch (e) { /* ignorieren */ }
+}
+
+/* ---- Automatische Töne für Standard-Bedienung ---- */
+document.addEventListener('click', e => {
+  const t = e.target.closest && e.target.closest('button,[data-act],[data-go],.btn,a,label.tg,[role="button"]'); if (!t || t.disabled || t.closest('[data-nosnd]')) return;
+  if (t.dataset && t.dataset.go) snd('nav'); else snd('tap');
+}, true);
+
+ACT['snd.mode'] = el => { S.ui.snd = el.dataset.m; save(); if (el.dataset.m !== 'aus') { sndUnlock(); setTimeout(() => snd('good'), 30); } rerender(); };
+ACT['snd.test'] = () => { sndUnlock(); ['tap', 'nav', 'good', 'done', 'up', 'error', 'swipe', 'pop', 'drop', 'refresh'].forEach((n, i) => setTimeout(() => { SND.last[n] = 0; snd(n); }, i * 420)); hap(2); };
 
 /* =====================================================================
    KAIROS · Schnellbefehle (⌘K): Navigation, Upload, Felder nachschlagen, Kairos fragen
@@ -3294,6 +3541,7 @@ function capSetStage(stage) { $$('#capStages .stg').forEach(e => { const idx = S
 function capItemUI(i, text, frac) { const el = $('#capi' + i); if (!el) return; if (text != null) $('.cs', el).textContent = text; if (frac != null) $('.bar i', el).style.width = Math.round(clamp(frac, 0, 1) * 100) + '%'; el.classList.toggle('active', frac != null && frac < 1); }
 
 async function capStart(files, ctx = {}) {
+  snd('shutter');
   if (cap.busy) return toast('Kairos liest gerade noch – einen Moment.');
   files = files.filter(f => f.size <= 30 * 1048576 || (toast(`${f.name} ist größer als 30 MB.`, 'bad'), false));
   if (!files.length) return;
@@ -3405,7 +3653,7 @@ function capApply() {
 function capDone(before, n, keys) {
   const after = overall(), chIds = [...new Set(keys.map(k => PF[k].ch))];
   const completed = chIds.filter(id => !before.chapters.find(c => c.id === id).coreDone && after.chapters.find(c => c.id === id).coreDone && !S.journey.celebrated[id]);
-  completed.forEach(id => S.journey.celebrated[id] = 1); save();
+  completed.forEach(id => S.journey.celebrated[id] = 1); save(); snd(completed.length ? 'cheer' : 'up'); hap(completed.length ? 3 : 2);
   const nx = nextStep(), p0 = Math.round(before.pct * 100), p1 = Math.round(after.pct * 100);
   const lockNudge = !S.ui.lockNudged && (keys.includes('ausweisnr') || keys.includes('svnr') || keys.includes('steuerid') || keys.includes('iban'));
   openSheet(`<div class="cele">${completed.length ? '<div class="confetti" aria-hidden="true">' + Array.from({ length: 36 }, (_, i) => `<i style="--x:${(i * 29) % 100}%;--d:${(i % 9) * 0.09}s;--c:${['#5e8fff', '#2fe6c6', '#ffb544', '#ff72ac', '#a98cff'][i % 5]}"></i>`).join('') + '</div>' : ''}
@@ -3653,7 +3901,7 @@ let docFilter = 'alle', docQuery = '';
 const docStatus = d => d.status === 'neu' ? ['info', 'Zu prüfen'] : d.status === 'fehler' ? ['warn', 'Nicht lesbar'] : ['pos', 'Übernommen'];
 function docRow(d) {
   const ki = kindInfo(d), [bc, bt] = docStatus(d), sub = [d.sender, d.docDate ? fmtDate(d.docDate, true) : fmtDate(iso(new Date(d.created)), true)].filter(Boolean).join(' · ');
-  return `<button class="li doc" data-act="doc.open" data-id="${d.id}"><span class="lead dth">${d.thumb ? `<img alt="" src="${d.thumb}">` : ki.e}</span><span class="mid"><span class="tt">${esc(d.name)}</span><span class="ss">${esc(sub || ki.name)}</span></span><span class="end"><span class="badge ${bc}">${bt}</span></span></button>`;
+  return `<button class="li doc" data-act="doc.open" data-id="${d.id}" data-row="doc"><span class="lead dth">${d.thumb ? `<img alt="" src="${d.thumb}">` : ki.e}</span><span class="mid"><span class="tt">${esc(d.name)}</span><span class="ss">${esc(sub || ki.name)}</span></span><span class="end"><span class="badge ${bc}">${bt}</span></span></button>`;
 }
 VIEWS.dokumente = {
   render() {
@@ -3666,10 +3914,15 @@ VIEWS.dokumente = {
       ${pend ? `<button class="notice" data-act="rev.pending">${icon('scan')}<span><b>${plural(pend, 'Dokument wartet', 'Dokumente warten')} auf dich</b><small>Gelesene Daten prüfen und ins Profil übernehmen.</small></span>${icon('chevR')}</button>` : ''}
       ${S.docs.length ? `<div class="toolbar"><div class="searchbox">${icon('search')}<input class="inp" id="docQ" placeholder="In allen Dokumenten suchen …" value="${esc(docQuery)}" autocomplete="off"></div></div>
       <div class="chips fchips"><button class="chip ${docFilter === 'alle' ? 'on' : ''}" data-act="doc.filter" data-f="alle">Alle ${S.docs.length}</button>${Object.keys(cats).map(c => `<button class="chip ${docFilter === c ? 'on' : ''}" data-act="doc.filter" data-f="${c}">${(DOC_CATS[c] || DOC_CATS.sonst)[1]} ${(DOC_CATS[c] || DOC_CATS.sonst)[0]} ${cats[c]}</button>`).join('')}</div>
-      <div class="card glass" id="docList"><div class="list">${list.length ? list.map(docRow).join('') : '<div class="empty"><div class="em">🔍</div><b>Nichts gefunden</b></div>'}</div></div>`
+      <div class="card glass" id="docList"><div class="list">${list.length ? '' : '<div class="empty"><div class="em">🔍</div><b>Nichts gefunden</b></div>'}</div></div>`
       : `<div class="card glass"><div class="dropz"><div class="em">📥</div><b>Dokument hinzufügen</b><p>Tippe oben auf „Hochladen“ oder „Foto“ – oder zieh eine Datei hierher. PDF, Foto oder Scan: Kairos liest den Text direkt auf deinem Gerät.</p><button class="btn" data-act="cap.text">${icon('scan')}Text scannen (iPhone)</button></div></div></div>`}</div>`;
   },
-  mount(root) { const q = $('#docQ', root); if (q) q.addEventListener('input', debounce(() => { docQuery = q.value; const l = $('#docList .list'); const qq = norm(docQuery).trim(); const list = S.docs.filter(d => (docFilter === 'alle' || d.cat === docFilter) && (!qq || norm([d.name, d.sender, d.summary, d.text, d.fileName].join(' ')).includes(qq))); l.innerHTML = list.length ? list.map(docRow).join('') : '<div class="empty"><div class="em">🔍</div><b>Nichts gefunden</b></div>'; }, 120)); }
+  mount(root) {
+    const q = $('#docQ', root), cur = () => { const qq = norm(docQuery).trim(); return S.docs.filter(d => (docFilter === 'alle' || d.cat === docFilter) && (!qq || norm([d.name, d.sender, d.summary, d.text, d.fileName].join(' ')).includes(qq))); };
+    let ch = null; const fill = list => { const l = $('#docList .list'); if (!l) return; ch && ch.destroy(); ch = null; if (!list.length) { l.innerHTML = '<div class="empty"><div class="em">🔍</div><b>Nichts gefunden</b></div>'; return; } ch = chunkList(l, list, docRow, { first: 14, step: 14 }); };
+    if (S.ui.dtab !== 'fotos') fill(cur());
+    if (q) q.addEventListener('input', debounce(() => { docQuery = q.value; fill(cur()); }, 120));
+  }
 };
 ACT['doc.filter'] = el => { docFilter = el.dataset.f; rerender(); };
 
@@ -4743,7 +4996,7 @@ function lifeRow(it, i) {
   const when = und ? (it.st === 'plan' ? 'geplant · Datum offen' : 'Datum offen') : fmtDate(it.date, true);
   const main = `<${it.id ? 'button data-act="ev.open" data-id="' + it.id + '"' : 'div'} class="lf-main"><span class="lf-d"><i>${it.e}</i></span><span class="lf-m"><b>${esc(it.t)}</b><small>${esc(when)}${it.s ? ' · ' + esc(it.s) : ''}</small>${it.prog ? `<span class="bar thin"><i style="width:${Math.round(it.prog.done / it.prog.total * 100)}%"></i></span>` : ''}</span>${it.st === 'plan' ? '<span class="badge info">geplant</span>' : it.prog ? `<span class="badge ${it.prog.done === it.prog.total ? 'pos' : ''}">${it.prog.done}/${it.prog.total}</span>` : ''}</${it.id ? 'button' : 'div'}>`;
   const nx = it.next ? `<div class="lf-nx"><div><small>Als Nächstes</small><b>${esc(it.next.t.t)}</b></div><button class="lt-c" data-act="ev.done" data-ev="${it.evId}" data-task="${it.next.t.id}" aria-label="Erledigt"></button></div>` : '';
-  return `<div class="lf ${fut || it.st === 'plan' ? 'fut' : ''} ${it.auto ? 'auto' : ''} ${it.soft ? 'soft' : ''}" style="--i:${i}">${main}${nx}</div>`;
+  return `<div class="lf ${fut || it.st === 'plan' ? 'fut' : ''} ${it.auto ? 'auto' : ''} ${it.soft ? 'soft' : ''}" style="--i:${i}" ${it.id ? `data-row="ev" data-id="${it.id}"` : ''}>${main}${nx}</div>`;
 }
 /** Aufgaben der aktiven Ereignisse, nach Fälligkeit */
 function lifeTasks() {
@@ -4800,20 +5053,21 @@ VIEWS.leben = {
       ${lifeRibbon(items)}
       <div class="card glass"><div class="card-h">${icon('users')} Menschen<span class="sp"></span><button class="link" data-act="fam.add">Hinzufügen</button></div>${peopleBlock(true)}</div>
       ${fut.length ? `<section class="sec"><div class="sec-h"><h2>${icon('target')} Was kommt</h2></div><div class="lfl">${fut.map(lifeRow).join('')}</div></section>` : ''}
-      <section class="sec"><div class="sec-h"><h2>${icon('flag')} Bisher</h2></div>${past.length ? `<div class="lfl">${past.map(lifeRow).join('')}</div>` : `<div class="card glass"><div class="empty"><div class="em">🧭</div><b>Noch keine Meilensteine</b><p>Füge ein Ereignis hinzu – Heirat, Kind, Umzug, neuer Job. Kairos erstellt dir die passende Checkliste mit Fristen.</p><button class="btn primary" data-act="ev.new">${icon('plus')}Ereignis hinzufügen</button></div></div>`}</div></section>
+      <section class="sec"><div class="sec-h"><h2>${icon('flag')} Bisher</h2></div>${past.length ? `<div class="lfl" id="lfPast"></div>` : `<div class="card glass"><div class="empty"><div class="em">🧭</div><b>Noch keine Meilensteine</b><p>Füge ein Ereignis hinzu – Heirat, Kind, Umzug, neuer Job. Kairos erstellt dir die passende Checkliste mit Fristen.</p><button class="btn primary" data-act="ev.new">${icon('plus')}Ereignis hinzufügen</button></div></div>`}</section>
       <section class="sec"><div class="sec-h"><h2>${icon('plus')} Was kommt als Nächstes?</h2></div><div class="lcar">${LE.map(x => `<button class="lcc" data-act="ev.add" data-t="${x.id}"><span>${x.e}</span><b>${esc(x.n)}</b><small>${esc(x.d)}</small></button>`).join('')}</div></section>
       <p class="disc">Checklisten sind Orientierung nach üblichen Behörden- und Verbraucherangaben – keine Rechtsberatung. Frist- und Antragsdetails bestätigen dir Standesamt, Familienkasse oder Beratungsstellen.</p></div>`;
   },
   mount(root) {
+    const pl = $('#lfPast', root); if (pl) { const it = lifeline(), past = it.filter(x => !x.undated && x.date <= todayISO()).sort((a, b) => a.date < b.date ? 1 : -1); chunkList(pl, past, lifeRow, { first: 8, step: 8 }); }
     const sc = $('#lrSc', root); if (!sc) return; const i = LB.sel, d = $$('.lr-d', root)[i];
     if (d) { d.classList.add('on'); sc.scrollLeft = d.offsetLeft - sc.clientWidth / 2; } else { const t = $('#lrToday', root); t && (sc.scrollLeft = t.offsetLeft - sc.clientWidth / 2); }
   }
 };
 function ltaskRow(r) {
   const n = r.due ? diffDays(r.due, todayISO()) : null, cls = n == null ? '' : n < 0 ? 'late' : n <= 14 ? 'soon' : '';
-  return `<div class="lt ${cls}"><button class="lt-c" data-act="ev.done" data-ev="${r.ev.id}" data-task="${r.t.id}" aria-label="Erledigt"></button><div class="lt-m"><b>${esc(r.t.t)}</b><small>${r.x.e} ${esc(r.x.n)}${r.due ? ' · ' + (n < 0 ? 'seit ' + (-n) + ' Tagen fällig' : n === 0 ? 'heute fällig' : 'bis ' + fmtDate(r.due, true)) : ''}</small></div><button class="iconbtn" data-act="ev.open" data-id="${r.ev.id}" aria-label="Öffnen">${icon('chevR')}</button></div>`;
+  return `<div class="lt ${cls}" data-row="lt" data-ev="${r.ev.id}" data-task="${r.t.id}"><button class="lt-c" data-act="ev.done" data-ev="${r.ev.id}" data-task="${r.t.id}" aria-label="Erledigt"></button><div class="lt-m"><b>${esc(r.t.t)}</b><small>${r.x.e} ${esc(r.x.n)}${r.due ? ' · ' + (n < 0 ? 'seit ' + (-n) + ' Tagen fällig' : n === 0 ? 'heute fällig' : 'bis ' + fmtDate(r.due, true)) : ''}</small></div><button class="iconbtn" data-act="ev.open" data-id="${r.ev.id}" aria-label="Öffnen">${icon('chevR')}</button></div>`;
 }
-ACT['ev.done'] = el => { const ev = evOf(el.dataset.ev); if (!ev) return; ev.done = ev.done || {}; ev.done[el.dataset.task] = !ev.done[el.dataset.task]; save(); buzz(10); renderNav(); const sh = $('#sheet'); if ($('#sheetWrap').classList.contains('open') && sh && sh.querySelector('.evt')) evSheet(ev.id); else rerender(); };
+ACT['ev.done'] = el => { const ev = evOf(el.dataset.ev); if (!ev) return; ev.done = ev.done || {}; ev.done[el.dataset.task] = !ev.done[el.dataset.task]; save(); buzz(10); snd(ev.done[el.dataset.task] ? 'done' : 'undone'); renderNav(); const sh = $('#sheet'); if ($('#sheetWrap').classList.contains('open') && sh && sh.querySelector('.evt')) evSheet(ev.id); else rerender(); };
 
 /* ---------- Ereignis anlegen / ansehen ---------- */
 ACT['ev.new'] = () => openSheet(`<h2>Was ist passiert – oder kommt?</h2><div class="evgrid">${LE.map(x => `<button class="avm-b" data-t="${x.id}"><span>${x.e}</span><b>${esc(x.n)}</b></button>`).join('')}</div>`, { onMount: sh => sh.addEventListener('click', e => { const b = e.target.closest('[data-t]'); if (b) evForm(null, b.dataset.t); }) });
@@ -5229,7 +5483,7 @@ function vSub(e) {
 function vRow(e) {
   const st = vst(e.id), c = catOf(e.c), miss = st === 'ja' && !vprov(e.id) && !vMonthly(e.id) && !e.of;
   const right = st === 'ja' ? `<span class="badge pos">${icon('check')}Habe ich</span>` : st === 'nein' ? '<span class="badge">Nein</span>' : `<span class="vt-q"><button class="btn sm" data-act="vt.set" data-id="${e.id}" data-v="ja">Ja</button><button class="btn sm ghost" data-act="vt.set" data-id="${e.id}" data-v="nein">Nein</button></span>`;
-  return `<div class="vt ${st || 'open'}" ${st ? `data-act="vt.open" data-id="${e.id}"` : ''}><span class="vt-e">${e.e}</span><div class="vt-m"><b>${esc(e.n)}${e.of ? ' <i class="rec">weiterer</i>' : ''}${e.core && !st ? ' <i class="rec">wichtig</i>' : ''}</b><small class="${miss ? 'warnt' : ''}">${esc(vSub(e))}</small></div>${right}</div>`;
+  return `<div class="vt ${st || 'open'}" ${st ? `data-act="vt.open" data-id="${e.id}"` : ''} ${st === 'ja' ? `data-row="vt"${' data-id="' + e.id + '"'}` : ''}><span class="vt-e">${e.e}</span><div class="vt-m"><b>${esc(e.n)}${e.of ? ' <i class="rec">weiterer</i>' : ''}${e.core && !st ? ' <i class="rec">wichtig</i>' : ''}</b><small class="${miss ? 'warnt' : ''}">${esc(vSub(e))}</small></div>${right}</div>`;
 }
 function vVirtRow(r) { return `<button class="vt ja virt" data-go="${r.go}"><span class="vt-e">${r.e}</span><div class="vt-m"><b>${esc(r.n)}</b><small>${esc(r.sub)}${r.m ? ' · ' + money(r.m) + ' / Monat' : ''}</small></div><span class="badge info">Steckbrief</span></button>`; }
 function costBar(fc) {
@@ -6147,8 +6401,14 @@ async function settingsHTML() {
     <section class="card glass s6"><h3>${icon('sparkle')} Fähigkeitenbaum &amp; Start</h3><div class="stack" style="gap:14px">
       ${row('Alle Bereiche freischalten', 'Hebt alle Sperren im Fähigkeitenbaum auf – du kannst überall sofort loslegen.', `<input type="checkbox" class="tg" data-act="tree.open" aria-label="Alle Bereiche freischalten" ${S.ui.treeOpen ? 'checked' : ''}>`)}
       ${row('Start-Assistent', 'Basisdaten, Lebenssituation und ersten Upload noch einmal durchgehen.', `<button class="btn sm" data-act="wiz.open">Öffnen</button>`)}</div></section>
+    <section class="card glass s6"><h3>${icon('sparkle')} Töne &amp; Haptik</h3><div class="stack" style="gap:14px">
+      ${row('Töne', 'Kleine Klänge bei Tippen, Erledigt, Wischen und Erfolg', '')}
+      <div class="seg full" style="margin-top:-6px">${[['aus', 'Aus'], ['leise', 'Leise'], ['normal', 'Normal']].map(([k, l]) => `<button class="${(S.ui.snd || 'normal') === k ? 'on' : ''}" data-act="snd.mode" data-m="${k}">${l}</button>`).join('')}</div>
+      ${row('Auch im Stumm-Modus', 'Töne laufen auch, wenn der Klingelschalter des iPhones auf Stumm steht', `<input type="checkbox" class="tg" id="sSilent" ${S.ui.sndSilent === false ? '' : 'checked'}>`)}
+      ${row('Haptik', 'Leichtes Antippen-Gefühl bei Gesten und Erfolgen', `<input type="checkbox" class="tg" id="sHap" ${S.ui.hap === false ? '' : 'checked'}>`)}
+      ${row('Ausprobieren', 'Spielt alle Klänge kurz nacheinander', `<button class="btn sm" data-act="snd.test">Testen</button>`)}</div></section>
     <section class="card glass s6"><h3>${icon('scan')} Anzeige</h3><div class="stack" style="gap:14px">
-      ${(d => row('Bildschirm', `${d.standalone ? 'Als App installiert' : 'Im Browser'} · sichtbar ${d.inner} von ${d.screen} px${document.documentElement.classList.contains('fullh') ? ' (volle Höhe aktiv)' : ''} · Sicherheitsrand oben ${d.safeTop}, unten ${d.safeBottom} px`, `<button class="btn sm" data-act="view.heal">Neu berechnen</button>`))(viewDiag())}
+      ${(d => row('Bildschirm', `${d.standalone ? 'Als App installiert' : 'Im Browser'} · sichtbar ${d.inner} von ${d.screen} px${document.documentElement.classList.contains('short') ? ' (Lücke unten ' + d.gap + ' px)' : ''} · Sicherheitsrand oben ${d.safeTop}, unten ${d.safeBottom} px`, `<button class="btn sm" data-act="view.heal">Neu berechnen</button>`))(viewDiag())}
       <p class="muted" style="font-size:13px">Falls unten ein dunkler Balken steht oder Fenster zu hoch sitzen: „Neu berechnen“ tippen. Hilft das nicht, schließe die App einmal vollständig (nach oben wischen) und öffne sie neu.</p></div></section>
     <section class="card glass s6"><h3 class="neg">${icon('alert')} Gefahrenzone</h3><div class="stack" style="gap:14px">${row('Alles löschen', 'Entfernt sämtliche Daten dieses Geräts', `<button class="btn sm danger" data-act="set.wipe">Löschen</button>`)}</div></section>
   </div></div>`;
@@ -6163,6 +6423,8 @@ renderView = function (keep) {
 };
 function bindSettings(root) {
   const nm = $('#sName', root); nm.addEventListener('change', () => { S.profile.name = nm.value.trim().slice(0, 30); save(); toast('Gespeichert', 'good'); });
+  const sl = $('#sSilent', root); if (sl) sl.addEventListener('change', () => { S.ui.sndSilent = sl.checked; save(); sndSession(); });
+  const hp = $('#sHap', root); if (hp) hp.addEventListener('change', () => { S.ui.hap = hp.checked; save(); if (hp.checked) hap(2); });
   const mk = $('#sMask', root); mk.addEventListener('change', () => { S.ui.mask = mk.checked; save(); });
   const au = $('#sAuto', root); if (au) au.addEventListener('change', () => { lsSet('kairos-autolock', au.value); armIdle(); toast('Gespeichert', 'good'); });
   const ll = $('#sLlm', root); ll.addEventListener('change', async () => {
@@ -6196,7 +6458,7 @@ const urlWA = (text, num) => `https://wa.me/${num || ''}?text=${encodeURICompone
 const urlTG = text => `https://t.me/share/url?url=%20&text=${encodeURIComponent(text)}`;
 const urlMail = (subj, text) => `mailto:?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(text)}`;
 const urlSMS = text => `sms:?&body=${encodeURIComponent(text)}`;
-async function copyText(t) { try { await navigator.clipboard.writeText(t); toast('Kopiert', 'good'); } catch (e) { toast('Kopieren nicht möglich', 'bad'); } }
+async function copyText(t) { try { await navigator.clipboard.writeText(t); snd('copy'); toast('Kopiert', 'good'); } catch (e) { toast('Kopieren nicht möglich', 'bad'); } }
 
 /** Teilen-Blatt: Text in WhatsApp, Telegram, Signal & Co. (über das System), Mail, SMS oder Zwischenablage */
 function shareSheet(o) {
@@ -6691,7 +6953,7 @@ ACT['fin.open'] = () => {
   { wide: true, onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); else if (e.target.closest('[data-act]') && !e.target.closest('[data-act^="fin."]')) closeSheet(); }) });
 };
 function finDone() {
-  treeFx(); buzz(30);
+  treeFx(); buzz(30); snd('cheer'); hap(3);
   openSheet(`<div class="empty" style="padding:12px 0 4px"><div class="em">👑</div><b>Deine digitale Kopie ist komplett</b><p>Alles ist erfasst oder als „trifft nicht zu“ markiert. Halte sie aktuell – Kairos erinnert dich an Fristen und zeigt, was sich aus deinen Daten ergibt.</p></div><div class="acts"><span class="sp"></span><button class="btn" data-go="einblicke" data-sh="x">${icon('bulb')}Einblicke</button><button class="btn primary" data-sh="x">Super</button></div>`, { onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); }) });
 }
 
@@ -7268,6 +7530,365 @@ ACT['vt.kuend'] = el => {
 };
 
 /* =====================================================================
+   KAIROS · Gesten
+   Wischen auf Zeilen (Swipe-Aktionen), langes Drücken (Kontextmenü), Ziehen & Ablegen (Dokument → Kategorie,
+   Dateien → Import), Doppeltippen (nach oben / zu „Heute“ / zum aktuellen Schritt), Endlos-Listen und
+   Tastatur-/Fokus-Bedienung. Eine gemeinsame Engine für Finger (touch) und Maus.
+   Zeilen melden sich mit data-row="art" data-id="…" an – Aktionen stehen in ROWS.
+   ===================================================================== */
+const GS = { st: null, open: null, noClickUntil: 0, menu: null, lastTap: { t: 0, x: 0, y: 0 }, lastTouch: 0, drag: null };
+const gsA = (l, ic, fn, cls = '') => ({ l, ic, fn, cls });
+const gsNow = () => performance.now();
+
+/* ---------- Aktionen je Zeilenart ---------- */
+function vtRemove(id) {
+  const e = VCX(id); if (!e) return; const old = (S.vertr[id] || {}).st || 'ja';
+  setVst(id, 'nein'); renderNav(); rerender();
+  toast(`„${e.n}“ entfernt`, '', { label: 'Rückgängig', fn: () => { setVst(id, old); renderNav(); rerender(); } });
+}
+function evRemove(id) {
+  const i = S.events.findIndex(q => q.id === id); if (i < 0) return; const old = S.events[i];
+  S.events.splice(i, 1); save(); renderNav(); rerender();
+  toast('Ereignis gelöscht', '', { label: 'Rückgängig', fn: () => { S.events.splice(Math.min(i, S.events.length), 0, old); save(); renderNav(); rerender(); } });
+}
+function docSetCat(id, cat) {
+  const d = S.docs.find(x => x.id === id); if (!d || !DOC_CATS[cat]) return; const old = d.cat; if (old === cat) return;
+  d.cat = cat; save(); renderNav(); rerender(); snd('drop'); hap(1);
+  toast(`In „${DOC_CATS[cat][0]}“ abgelegt`, 'good', { label: 'Rückgängig', fn: () => { d.cat = old; save(); rerender(); } });
+}
+function docCatSheet(id) {
+  const d = S.docs.find(x => x.id === id); if (!d) return;
+  openSheet(`<h2>Kategorie wählen</h2><p class="lead-p">${esc(d.name)}</p><div class="evgrid">${Object.keys(DOC_CATS).map(k => `<button class="avm-b ${d.cat === k ? 'on' : ''}" data-cat="${k}"><span>${DOC_CATS[k][1]}</span><b>${esc(DOC_CATS[k][0])}</b></button>`).join('')}</div>`,
+    { onMount: sh => sh.addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (!b) return; closeSheet(); setTimeout(() => docSetCat(id, b.dataset.cat), 220); }) });
+}
+const ROWS = {
+  vt: {
+    ok: (d, id) => !!VCX(id) && vst(id) === 'ja',
+    menu: (d, id) => { const e = VCX(id), ed = edOf(e) || {}; return [gsA('Ansehen', 'eye', () => ACT['vt.open']({ dataset: { id } })), gsA('Bearbeiten', 'edit', () => ACT['vt.edit']({ dataset: { id } })), ed.cancel ? gsA('Kündigen', 'mail', () => ACT['vt.kuend']({ dataset: { id } })) : null, gsA('Habe ich nicht', 'x', () => vtRemove(id), 'danger')].filter(Boolean); },
+    swr: (d, id) => [gsA('Bearbeiten', 'edit', () => ACT['vt.edit']({ dataset: { id } }), 'good')],
+    swl: (d, id) => { const ed = edOf(VCX(id)) || {}; return [ed.cancel ? gsA('Kündigen', 'mail', () => ACT['vt.kuend']({ dataset: { id } }), 'warn') : null, gsA('Entfernen', 'trash', () => vtRemove(id), 'danger')].filter(Boolean); }
+  },
+  doc: {
+    drag: true, ok: (d, id) => S.docs.some(x => x.id === id),
+    menu: (d, id) => { const x = S.docs.find(q => q.id === id); return [gsA('Öffnen', 'file', () => ACT['doc.open']({ dataset: { id } })), x.text ? gsA('Funde & Text', 'target', () => fundOpen(x, 'funde')) : null, gsA('Kategorie ändern', 'list', () => docCatSheet(id)), gsA('Löschen', 'trash', () => removeWithUndo(S.docs, id, 'Dokument', () => { renderNav(); rerender(); }), 'danger')].filter(Boolean); },
+    swr: (d, id) => { const x = S.docs.find(q => q.id === id); return [x && x.text ? gsA('Funde', 'target', () => fundOpen(x, 'funde'), 'good') : gsA('Öffnen', 'file', () => ACT['doc.open']({ dataset: { id } }), 'good')]; },
+    swl: (d, id) => [gsA('Kategorie', 'list', () => docCatSheet(id), 'warn'), gsA('Löschen', 'trash', () => removeWithUndo(S.docs, id, 'Dokument', () => { renderNav(); rerender(); }), 'danger')]
+  },
+  ev: {
+    ok: (d, id) => !!evOf(id),
+    menu: (d, id) => [gsA('Öffnen', 'eye', () => ACT['ev.open']({ dataset: { id } })), gsA('Löschen', 'trash', () => evRemove(id), 'danger')],
+    swr: (d, id) => [gsA('Öffnen', 'eye', () => ACT['ev.open']({ dataset: { id } }), 'good')],
+    swl: (d, id) => [gsA('Löschen', 'trash', () => evRemove(id), 'danger')]
+  },
+  lt: {
+    ok: (d) => !!evOf(d.ev),
+    menu: (d) => [gsA('Erledigt', 'check', () => ACT['ev.done']({ dataset: { ev: d.ev, task: d.task } })), gsA('Ereignis öffnen', 'eye', () => ACT['ev.open']({ dataset: { id: d.ev } }))],
+    swr: (d) => [gsA('Erledigt', 'check', () => ACT['ev.done']({ dataset: { ev: d.ev, task: d.task } }), 'good')],
+    swl: (d) => [gsA('Ereignis', 'eye', () => ACT['ev.open']({ dataset: { id: d.ev } }), 'warn')]
+  }
+};
+
+/* ---------- Eingabe-Engine (Finger + Maus) ---------- */
+const gsRow = t => t && t.closest ? t.closest('[data-row]') : null;
+function gsStart(x, y, target, kind) {
+  if (GS.open && !(target.closest && GS.open.row.contains(target))) swClose();
+  if (target.closest && target.closest('input,textarea,select,.sheet,.cmd,.ctxm,.zv,.sw-tray')) { GS.st = null; return; }
+  let row = gsRow(target); if (row && !row.closest('#main')) row = null;
+  const type = row && row.dataset.row, R = type && ROWS[type];
+  if (R && R.ok && !R.ok(row.dataset, row.dataset.id)) row = null;
+  const s = GS.st = { row, type, id: row && row.dataset.id, x0: x, y0: y, x, y, t0: gsNow(), mode: null, kind, target, vx: 0, px: x, pt: gsNow(), lifted: false };
+  if (row) s.lp = setTimeout(gsLong, 430);
+}
+function gsLong() {
+  const s = GS.st; if (!s || s.mode || !s.row) return;
+  s.lifted = true; s.row.classList.add('lifted'); snd('pop'); hap(1); menuShow(s);
+}
+function gsMove(x, y, ev) {
+  const s = GS.st; if (!s) return; const dx = x - s.x0, dy = y - s.y0, dist = Math.hypot(dx, dy), n = gsNow();
+  if (n - s.pt > 16) { s.vx = (x - s.px) / (n - s.pt); s.px = x; s.pt = n; } s.x = x; s.y = y;
+  const R = s.type && ROWS[s.type];
+  if (!s.mode) {
+    if (s.lifted) { if (dist > 12 && R && R.drag) { menuHide(true); dragBegin(s); } else if (ev && ev.cancelable) ev.preventDefault(); }
+    else if (R && R.drag && s.kind === 'mouse' && dist > 6) dragBegin(s);
+    else if (Math.abs(dy) > 9 && Math.abs(dy) >= Math.abs(dx)) { s.mode = 'scroll'; clearTimeout(s.lp); }
+    else if (R && Math.abs(dx) > 9 && Math.abs(dx) > Math.abs(dy) * 1.3 && (R.swl || R.swr)) { s.mode = 'swipe'; clearTimeout(s.lp); swBegin(s); }
+    else if (dist > 10) clearTimeout(s.lp);
+  }
+  if (s.mode === 'swipe') { if (ev && ev.cancelable) ev.preventDefault(); swMove(s, dx); }
+  else if (s.mode === 'drag') { if (ev && ev.cancelable) ev.preventDefault(); dragMove(s, x, y); }
+}
+function gsEnd(ev) {
+  const s = GS.st; if (!s) return; GS.st = null; clearTimeout(s.lp);
+  if (s.mode === 'swipe') { GS.noClickUntil = gsNow() + 450; swEnd(s); return; }
+  if (s.mode === 'drag') { GS.noClickUntil = gsNow() + 450; dragEnd(s); return; }
+  if (s.lifted) { GS.noClickUntil = gsNow() + 450; if (!GS.menu) s.row.classList.remove('lifted'); return; }
+  const dist = Math.hypot(s.x - s.x0, s.y - s.y0), dt = gsNow() - s.t0;
+  if (!s.mode && dist < 10 && dt < 320) {
+    const L = GS.lastTap, t = gsNow();
+    if (t - L.t < 340 && Math.hypot(s.x - L.x, s.y - L.y) < 34) { L.t = 0; gsDouble(s); } else { L.t = t; L.x = s.x; L.y = s.y; }
+  }
+}
+function gsCancel() { const s = GS.st; if (!s) return; clearTimeout(s.lp); if (s.mode === 'swipe') swEnd(s, true); else if (s.mode === 'drag') dragEnd(s, true); GS.st = null; if (s.row) s.row.classList.remove('lifted'); }
+document.addEventListener('touchstart', e => { GS.lastTouch = gsNow(); if (e.touches.length !== 1) { gsCancel(); return; } const t = e.touches[0]; gsStart(t.clientX, t.clientY, e.target, 'touch'); }, { passive: true });
+document.addEventListener('touchmove', e => { if (e.touches.length !== 1) { gsCancel(); return; } const t = e.touches[0]; gsMove(t.clientX, t.clientY, e); }, { passive: false });
+document.addEventListener('touchend', e => { GS.lastTouch = gsNow(); gsEnd(e); }, { passive: true });
+document.addEventListener('touchcancel', () => gsCancel(), { passive: true });
+document.addEventListener('mousedown', e => { if (e.button !== 0 || gsNow() - GS.lastTouch < 700) return; gsStart(e.clientX, e.clientY, e.target, 'mouse'); });
+document.addEventListener('mousemove', e => { if (GS.st && GS.st.kind === 'mouse') gsMove(e.clientX, e.clientY, e); });
+document.addEventListener('mouseup', e => { if (GS.st && GS.st.kind === 'mouse') gsEnd(e); });
+document.addEventListener('contextmenu', e => { const row = gsRow(e.target); if (!row || !row.closest('#main')) return; const R = ROWS[row.dataset.row]; if (!R || (R.ok && !R.ok(row.dataset, row.dataset.id))) return; e.preventDefault(); snd('pop'); menuShow({ row, type: row.dataset.row, id: row.dataset.id, x: e.clientX, y: e.clientY }); });
+/* Klick nach Wischen/Ziehen/Langdruck unterdrücken; offene Zeile erst schließen */
+document.addEventListener('click', e => {
+  const b = e.target.closest && e.target.closest('.sw-btn');
+  if (b) { e.stopPropagation(); e.preventDefault(); swRun(b); return; }
+  if (gsNow() < GS.noClickUntil) { e.stopPropagation(); e.preventDefault(); return; }
+  if (GS.open && e.target.closest && GS.open.row.contains(e.target)) { e.stopPropagation(); e.preventDefault(); swClose(); }
+}, true);
+
+/* ---------- Swipe-Aktionen ---------- */
+const SW_W = 78;
+function swTrays(row, s) {
+  const mk = (side, acts) => { let t = row.querySelector(`.sw-tray.${side}`); if (!t) { t = document.createElement('div'); t.className = 'sw-tray ' + side; t.setAttribute('aria-hidden', 'true'); row.appendChild(t); } t.innerHTML = acts.map((a, i) => `<span role="button" class="sw-btn ${a.cls}" data-i="${i}">${icon(a.ic)}<em>${esc(a.l)}</em></span>`).join(''); return t; };
+  s.trL = s.swr.length ? mk('l', s.swr) : null; s.trR = s.swl.length ? mk('r', s.swl) : null;
+}
+function swBegin(s) {
+  const R = ROWS[s.type], d = s.row.dataset; s.swr = (R.swr ? R.swr(d, s.id) : []).filter(Boolean); s.swl = (R.swl ? R.swl(d, s.id) : []).filter(Boolean);
+  s.Wl = s.swr.length * SW_W; s.Wr = s.swl.length * SW_W; s.base = GS.open && GS.open.row === s.row ? GS.open.x : 0; s.armed = false;
+  s.row.classList.add('swing', 'sw-drag'); swTrays(s.row, s);
+}
+function swX(s, raw) {
+  let x = raw;
+  if (x > 0) { const W = s.Wl; x = W ? (x <= W ? x : W + (x - W) * 0.75) : Math.min(x * 0.25, 18); }
+  else if (x < 0) { const W = s.Wr; x = W ? (-x <= W ? x : -(W + (-x - W) * 0.3)) : -Math.min(-x * 0.25, 18); }
+  return x;
+}
+function swApply(s, x) {
+  s.row.style.setProperty('--sx', x + 'px'); if (s.trL) s.trL.style.width = Math.max(0, x) + 'px'; if (s.trR) s.trR.style.width = Math.max(0, -x) + 'px';
+}
+function swMove(s, dx) {
+  const x = swX(s, s.base + dx); s.cur = x; swApply(s, x);
+  const full = s.swr[0] && s.swr[0].cls === 'good' && x > s.Wl + 70, past = Math.abs(x) > (x > 0 ? s.Wl : s.Wr) * 0.5 && (x > 0 ? s.Wl : s.Wr) > 0;
+  if (past !== s.past) { s.past = past; if (past) { snd('tick'); hap(1); } }
+  if (full !== s.armed) { s.armed = full; s.trL && s.trL.classList.toggle('armed', full); if (full) { snd('reveal'); hap(1); } }
+}
+function swEnd(s, cancel) {
+  const x = s.cur || 0, v = s.vx; let target = 0, side = null;
+  if (!cancel) {
+    if (x > 0 && s.Wl && (x > s.Wl * 0.45 || v > 0.5)) { target = s.Wl; side = 'l'; }
+    else if (x < 0 && s.Wr && (-x > s.Wr * 0.45 || v < -0.5)) { target = -s.Wr; side = 'r'; }
+    if (s.armed) { s.row.classList.remove('sw-drag'); swApply(s, 0); const a = s.swr[0]; setTimeout(() => swReset(s.row), 260); snd('swipe'); hap(2); setTimeout(() => a.fn(), 120); GS.open = null; return; }
+  }
+  s.row.classList.remove('sw-drag'); swApply(s, target);
+  if (side) { GS.open = { row: s.row, x: target, side }; snd('swipe'); } else { if (GS.open && GS.open.row === s.row) GS.open = null; setTimeout(() => swReset(s.row), 280); }
+}
+function swReset(row) { if (GS.open && GS.open.row === row) return; row.classList.remove('swing', 'sw-drag'); row.style.removeProperty('--sx'); row.querySelectorAll('.sw-tray').forEach(t => t.remove()); }
+function swClose() {
+  const o = GS.open; if (!o) return; GS.open = null; const row = o.row; if (!document.contains(row)) return;
+  row.classList.remove('sw-drag'); row.style.setProperty('--sx', '0px'); row.querySelectorAll('.sw-tray').forEach(t => { t.style.width = '0px'; }); setTimeout(() => swReset(row), 280);
+}
+function swRun(b) {
+  const row = b.closest('[data-row]'), R = row && ROWS[row.dataset.row]; if (!R) return; const side = b.closest('.sw-tray').classList.contains('l') ? 'swr' : 'swl';
+  const acts = (R[side] ? R[side](row.dataset, row.dataset.id) : []).filter(Boolean), a = acts[+b.dataset.i]; swClose(); if (a) { hap(1); setTimeout(() => a.fn(), 120); }
+}
+document.addEventListener('scroll', () => { if (GS.open) swClose(); }, { capture: true, passive: true });
+
+/* ---------- Kontextmenü (langes Drücken / Rechtsklick) ---------- */
+function menuShow(s) {
+  menuHide(true); const R = ROWS[s.type]; if (!R || !R.menu) return; const items = R.menu(s.row.dataset, s.id).filter(Boolean); if (!items.length) return;
+  const back = document.createElement('div'); back.className = 'ctxb'; const m = document.createElement('div'); m.className = 'ctxm'; m.setAttribute('role', 'menu');
+  const title = (s.row.querySelector('b,.tt') || {}).textContent || '';
+  m.innerHTML = (title ? `<div class="ctx-t">${esc(title.trim().slice(0, 40))}</div>` : '') + items.map((a, i) => `<button type="button" role="menuitem" class="ctx-i ${a.cls}" data-i="${i}">${icon(a.ic)}<span>${esc(a.l)}</span></button>`).join('');
+  document.body.append(back, m);
+  const r = s.row.getBoundingClientRect(), mh = m.offsetHeight, mw = m.offsetWidth; let top = r.bottom + 8; if (top + mh > innerHeight - 90) top = Math.max(70, r.top - mh - 8);
+  m.style.top = Math.round(top) + 'px'; m.style.left = Math.round(Math.min(Math.max(12, (s.x || r.left + 40) - 40), innerWidth - mw - 12)) + 'px';
+  requestAnimationFrame(() => { back.classList.add('on'); m.classList.add('on'); });
+  GS.menu = { m, back, row: s.row, items };
+  const pick = e => { const b = e.target.closest('.ctx-i'); if (!b) return; e.stopPropagation(); e.preventDefault(); const a = items[+b.dataset.i]; menuHide(); hap(1); if (a) setTimeout(() => a.fn(), 140); };
+  m.addEventListener('click', pick);
+  const away = e => { e.preventDefault(); e.stopPropagation(); menuHide(); };
+  back.addEventListener('touchstart', away, { passive: false }); back.addEventListener('mousedown', away);
+}
+function menuHide(now) {
+  const g = GS.menu; if (!g) return; GS.menu = null; g.row.classList.remove('lifted'); g.m.classList.remove('on'); g.back.classList.remove('on');
+  if (now) { g.m.remove(); g.back.remove(); } else { snd('close'); setTimeout(() => { g.m.remove(); g.back.remove(); }, 180); }
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && GS.menu) { menuHide(); e.stopPropagation(); } }, true);
+
+/* ---------- Ziehen & Ablegen: Dokument → Kategorie ---------- */
+function dragBegin(s) {
+  s.mode = 'drag'; clearTimeout(s.lp); const r = s.row.getBoundingClientRect();
+  const g = document.createElement('div'); g.className = 'dnd-ghost'; g.style.cssText = `left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px`; g.innerHTML = s.row.outerHTML; document.body.appendChild(g);
+  const tray = document.createElement('div'); tray.className = 'dnd-tray'; tray.innerHTML = `<small>Ablegen in …</small><div class="dnd-row">${Object.keys(DOC_CATS).map(k => `<div class="dnd-c" data-cat="${k}"><span>${DOC_CATS[k][1]}</span><b>${esc(DOC_CATS[k][0])}</b></div>`).join('')}</div>`; document.body.appendChild(tray);
+  requestAnimationFrame(() => tray.classList.add('on')); s.row.classList.add('dragging'); s.row.classList.remove('lifted');
+  GS.drag = { g, tray, ox: s.x0 - r.left, oy: s.y0 - r.top, cat: null, raf: 0, r }; snd('lift'); hap(1); dragMove(s, s.x, s.y);
+}
+function dragMove(s, x, y) {
+  const D = GS.drag; if (!D) return; D.g.style.transform = `translate(${x - D.ox - D.r.left}px,${y - D.oy - D.r.top}px) scale(1.03)`;
+  D.g.style.pointerEvents = 'none'; const el = document.elementFromPoint(x, y), c = el && el.closest ? el.closest('.dnd-c') : null, cat = c ? c.dataset.cat : null;
+  if (cat !== D.cat) { D.tray.querySelectorAll('.dnd-c.hot').forEach(n => n.classList.remove('hot')); if (c) { c.classList.add('hot'); snd('tick'); hap(1); } D.cat = cat; }
+  D.x = x; D.y = y; if (!D.raf) D.raf = requestAnimationFrame(function step() { D.raf = 0; if (GS.drag !== D) return; const m = $('#main'), tr = D.tray.getBoundingClientRect(), row = $('.dnd-row', D.tray); let v = 0, h = 0; if (D.y <= tr.bottom + 4) { if (D.x < 56) h = -9; else if (D.x > innerWidth - 56) h = 9; } else if (D.y < tr.bottom + 60) v = -8; else if (D.y > innerHeight - 120) v = 8; if (h) row.scrollLeft += h; if (v) m.scrollTop += v; if (v || h) D.raf = requestAnimationFrame(step); });
+}
+function dragEnd(s, cancel) {
+  const D = GS.drag; GS.drag = null; if (!D) return; cancelAnimationFrame(D.raf); s.row.classList.remove('dragging'); D.tray.classList.remove('on');
+  const done = () => { D.g.remove(); D.tray.remove(); };
+  if (!cancel && D.cat) { D.g.classList.add('sink'); setTimeout(done, 200); docSetCat(s.id, D.cat); }
+  else { D.g.classList.add('back'); D.g.style.transform = ''; setTimeout(done, 260); snd('close'); }
+}
+
+/* ---------- Dateien auf die App ziehen (Desktop / iPad) ---------- */
+(function () {
+  let depth = 0, ov = null; const has = e => e.dataTransfer && Array.from(e.dataTransfer.types || []).includes('Files');
+  const show = on => { if (on && !ov) { ov = document.createElement('div'); ov.className = 'filedrop'; ov.innerHTML = '<div><span>📥</span><b>Zum Hinzufügen loslassen</b><small>PDF, Foto oder Scan – Kairos liest den Text direkt auf diesem Gerät.</small></div>'; document.body.appendChild(ov); requestAnimationFrame(() => ov && ov.classList.add('on')); } else if (!on && ov) { const o = ov; ov = null; o.classList.remove('on'); setTimeout(() => o.remove(), 200); } };
+  addEventListener('dragenter', e => { if (!has(e)) return; e.preventDefault(); depth++; show(true); });
+  addEventListener('dragover', e => { if (!has(e)) return; e.preventDefault(); e.dataTransfer.dropEffect = 'copy'; });
+  addEventListener('dragleave', e => { if (!has(e)) return; depth = Math.max(0, depth - 1); if (!depth) show(false); });
+  addEventListener('drop', e => { if (!has(e)) return; e.preventDefault(); depth = 0; show(false); const files = Array.from(e.dataTransfer.files || []); if (!files.length) return; snd('drop'); if (cap && cap.busy) return toast('Kairos liest noch – gleich nochmal versuchen.', 'bad'); cap.ctx = {}; capStart(files, {}); });
+})();
+
+/* ---------- Doppeltippen ---------- */
+function gsDouble(s) {
+  const t = s.target, m = $('#main'); if (!t || !t.closest) return;
+  if (t.closest('.sheet,.cmd,.ctxm')) return;
+  if (s.y0 < 56 || t.closest('#main .ph .t, #main .ph h1')) { if (m.scrollTop > 4) { m.scrollTo({ top: 0, behavior: 'smooth' }); snd('tick'); hap(1); } return; }
+  const sc = t.closest('.lr-sc'); if (sc && !t.closest('.lr-d')) { const td = $('#lrToday'); if (td) { sc.scrollTo({ left: td.offsetLeft - sc.clientWidth / 2, behavior: 'smooth' }); snd('tick'); hap(1); } return; }
+  if (t.closest('.way') && !t.closest('button,[data-act]')) { if (ACT['way.jump']) { ACT['way.jump'](t); snd('tick'); hap(1); } }
+}
+
+/* ---------- Endlos-Listen: weitere Zeilen nachladen, sobald das Ende in Sicht kommt ---------- */
+function chunkList(host, items, rowFn, o = {}) {
+  if (!host) return null; const first = o.first || 14, step = o.step || 14; let n = 0, io = null, dead = false;
+  host.innerHTML = ''; const sent = document.createElement('div'); sent.className = 'inf'; sent.setAttribute('aria-hidden', 'true'); sent.innerHTML = '<span class="spin"></span>';
+  const more = () => { if (dead) return; const part = items.slice(n, n + (n ? step : first)); n += part.length; sent.insertAdjacentHTML('beforebegin', part.map((it, i) => rowFn(it, n - part.length + i)).join('')); if (n >= items.length) stop(); };
+  const stop = () => { dead = true; io && io.disconnect(); sent.remove(); };
+  host.appendChild(sent); more();
+  if (!dead) { if ('IntersectionObserver' in window) { io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) more(); }, { root: $('#main'), rootMargin: '0px 0px 500px 0px' }); io.observe(sent); } else { items.slice(n).forEach((it, i) => sent.insertAdjacentHTML('beforebegin', rowFn(it, n + i))); stop(); } }
+  return { destroy: stop, get shown() { return n; } };
+}
+
+/* ---------- Fokus & Tastatur ---------- */
+(function () {
+  let t = 0;
+  const mark = () => { t = 0; document.querySelectorAll('#view [data-act],#view [data-go],#dock [data-go],#sheetWrap [data-act],#sheetWrap [data-go],[data-row]').forEach(el => { if (el.matches('button,a,input,select,textarea,summary,label')) return; if (!el.hasAttribute('tabindex')) { el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button'); } }); };
+  const later = () => { if (!t) t = setTimeout(mark, 120); };
+  const root = document.getElementById('app'); if (root) new MutationObserver(later).observe(root, { childList: true, subtree: true });
+  new MutationObserver(later).observe(document.getElementById('sheetWrap'), { childList: true, subtree: true });
+  setTimeout(mark, 400);
+  document.addEventListener('keydown', e => {
+    const el = e.target;
+    if ((e.key === 'Enter' || e.key === ' ') && el.matches && el.matches('[role="button"][tabindex]') && !el.matches('button,a,input,textarea,select')) { e.preventDefault(); el.click(); return; }
+    if (e.key === 'Tab') { const w = document.getElementById('sheetWrap'); if (w && w.classList.contains('open')) { const f = Array.from(w.querySelectorAll('button,a[href],input,select,textarea,[tabindex="0"]')).filter(x => !x.disabled && x.offsetParent !== null && x.tabIndex >= 0); if (f.length) { const i = f.indexOf(document.activeElement), nx = e.shiftKey ? (i <= 0 ? f.length - 1 : i - 1) : (i === f.length - 1 ? 0 : i + 1); if (i === -1 || (e.shiftKey && i === 0) || (!e.shiftKey && i === f.length - 1)) { e.preventDefault(); f[nx].focus(); } } } }
+    if ((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && el.closest && el.closest('#dock')) { const b = Array.from(document.querySelectorAll('#dock button')), i = b.indexOf(el); if (i >= 0) { e.preventDefault(); b[(i + (e.key === 'ArrowRight' ? 1 : -1) + b.length) % b.length].focus(); } }
+  });
+  /* Fokus zurück an die Stelle, die ein Sheet geöffnet hat */
+  let opener = null; const w = document.getElementById('sheetWrap');
+  new MutationObserver(() => { const on = w.classList.contains('open'); if (on && !w._on) { opener = document.activeElement && !w.contains(document.activeElement) ? document.activeElement : opener; const sh = document.getElementById('sheet'); if (sh) { sh.setAttribute('tabindex', '-1'); } } if (!on && w._on && opener && document.contains(opener) && opener.focus) { try { opener.focus({ preventScroll: true }); } catch (er) { /* ignorieren */ } } w._on = on; }).observe(w, { attributes: true, attributeFilter: ['class'] });
+})();
+
+/* =====================================================================
+   KAIROS · Zoom-Betrachter (Pinch, Doppeltippen, Ziehen), Pull-to-Refresh, Parallax
+   ===================================================================== */
+
+/* ---------- Betrachter: Bilder mit zwei Fingern zoomen ---------- */
+const ZV = { el: null };
+function openZoom(src, title) {
+  if (ZV.el) return; const el = document.createElement('div'); el.className = 'zv'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', 'Bildansicht');
+  el.innerHTML = `<div class="zv-bar"><b>${esc(title || 'Vorschau')}</b><button type="button" data-z="out" aria-label="Verkleinern">−</button><button type="button" data-z="in" aria-label="Vergrößern">+</button><button type="button" data-z="x">Fertig</button></div><div class="zv-stage"><img class="zv-img" alt="" draggable="false" src="${esc(src)}"></div><div class="zv-hint">Mit zwei Fingern zoomen · doppelt tippen · nach unten ziehen zum Schließen</div>`;
+  document.body.appendChild(el); ZV.el = el; requestAnimationFrame(() => el.classList.add('on')); snd('open');
+  const img = $('.zv-img', el), P = new Map(); let s = 1, tx = 0, ty = 0, bx = 0, by = 0, bw = 0, bh = 0, vw = 0, vh = 0, g = null, lastTap = { t: 0, x: 0, y: 0 }, dismissY = 0, moved = false;
+  const apply = (anim) => { img.style.transition = anim ? 'transform .26s var(--ease)' : 'none'; img.style.transform = `translate(${tx}px,${ty + dismissY}px) scale(${s})`; };
+  const measure = () => { vw = el.clientWidth; vh = el.clientHeight; const sv = img.style.transform; img.style.transform = 'none'; const r = img.getBoundingClientRect(); bx = r.left; by = r.top; bw = r.width; bh = r.height; img.style.transform = sv; };
+  const clampT = () => {
+    const w = bw * s, h = bh * s;
+    tx = w <= vw ? (vw - w) / 2 - bx : Math.min(-bx, Math.max(vw - w - bx, tx));
+    ty = h <= vh ? (vh - h) / 2 - by : Math.min(-by, Math.max(vh - h - by, ty));
+  };
+  const zoomAt = (px, py, ns, anim) => { ns = Math.min(6, Math.max(1, ns)); const lx = (px - bx - tx) / s, ly = (py - by - ty) / s; s = ns; tx = px - bx - lx * s; ty = py - by - ly * s; if (s <= 1.001) { s = 1; tx = 0; ty = 0; } else clampT(); apply(anim); };
+  const close = () => { if (!ZV.el) return; const z = ZV.el; ZV.el = null; z.classList.remove('on'); snd('close'); setTimeout(() => z.remove(), 230); document.removeEventListener('keydown', key, true); };
+  const key = e => { if (e.key === 'Escape') { e.stopPropagation(); close(); } else if (e.key === '+' || e.key === '=') zoomAt(vw / 2, vh / 2, s * 1.4, true); else if (e.key === '-') zoomAt(vw / 2, vh / 2, s / 1.4, true); else if (e.key === '0') zoomAt(vw / 2, vh / 2, 1, true); };
+  document.addEventListener('keydown', key, true);
+  img.addEventListener('load', () => { measure(); apply(false); });
+  if (img.complete) setTimeout(() => { measure(); apply(false); }, 30);
+  const mid = () => { const a = [...P.values()]; return a.length === 2 ? { x: (a[0].x + a[1].x) / 2, y: (a[0].y + a[1].y) / 2, d: Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y) } : null; };
+  el.addEventListener('pointerdown', e => {
+    if (e.target.closest('.zv-bar')) return; el.setPointerCapture && el.setPointerCapture(e.pointerId); P.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (P.size === 2) { const m = mid(); g = { kind: 'pinch', d0: m.d, s0: s, lx: (m.x - bx - tx) / s, ly: (m.y - by - ty) / s }; dismissY = 0; }
+    else if (P.size === 1) g = { kind: 'pan', x0: e.clientX, y0: e.clientY, tx0: tx, ty0: ty, t0: performance.now() };
+  });
+  el.addEventListener('pointermove', e => {
+    if (!P.has(e.pointerId)) return; P.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (!g) return;
+    if (g.kind === 'pinch' && P.size === 2) { const m = mid(); s = Math.min(6, Math.max(0.8, g.s0 * m.d / g.d0)); tx = m.x - bx - g.lx * s; ty = m.y - by - g.ly * s; moved = true; el.classList.add('moved'); apply(false); }
+    else if (g.kind === 'pan' && P.size === 1) {
+      const dx = e.clientX - g.x0, dy = e.clientY - g.y0; if (Math.hypot(dx, dy) > 4) { moved = true; el.classList.add('moved'); }
+      if (s > 1.02) { tx = g.tx0 + dx; ty = g.ty0 + dy; apply(false); } else { dismissY = Math.max(0, dy); el.style.background = `rgba(2,4,14,${0.94 * (1 - Math.min(1, dismissY / 380))})`; apply(false); }
+    }
+  });
+  const up = e => {
+    if (!P.has(e.pointerId)) return; const was = P.size; P.delete(e.pointerId);
+    if (g && g.kind === 'pinch') { if (s < 1) s = 1; if (s <= 1.001) { s = 1; tx = 0; ty = 0; } else clampT(); apply(true); g = P.size === 1 ? (() => { const p = [...P.values()][0]; return { kind: 'pan', x0: p.x, y0: p.y, tx0: tx, ty0: ty, t0: performance.now() }; })() : null; return; }
+    if (g && g.kind === 'pan' && was === 1) {
+      const dx = e.clientX - g.x0, dy = e.clientY - g.y0, dt = performance.now() - g.t0;
+      if (s <= 1.02 && dismissY > 120) { close(); return; }
+      if (s <= 1.02) { dismissY = 0; el.style.background = ''; apply(true); }
+      else { clampT(); apply(true); }
+      if (Math.hypot(dx, dy) < 8 && dt < 300 && !e.target.closest('.zv-bar')) {
+        const n = performance.now();
+        if (n - lastTap.t < 320 && Math.hypot(e.clientX - lastTap.x, e.clientY - lastTap.y) < 36) { lastTap.t = 0; if (s > 1.05) zoomAt(e.clientX, e.clientY, 1, true); else { zoomAt(e.clientX, e.clientY, 2.6, true); snd('zoom'); hap(1); } }
+        else { lastTap = { t: n, x: e.clientX, y: e.clientY }; }
+      }
+      g = null;
+    }
+  };
+  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+  el.addEventListener('wheel', e => { e.preventDefault(); zoomAt(e.clientX, e.clientY, s * (e.deltaY < 0 ? 1.18 : 1 / 1.18), false); moved = true; el.classList.add('moved'); }, { passive: false });
+  el.addEventListener('click', e => { const b = e.target.closest('[data-z]'); if (!b) return; const z = b.dataset.z; if (z === 'x') close(); else zoomAt(vw / 2, vh / 2, z === 'in' ? s * 1.5 : s / 1.5, true); });
+  addEventListener('resize', () => { if (ZV.el) { measure(); clampT(); apply(false); } });
+  ZV.close = close; ZV.state = () => ({ s, tx, ty });
+}
+document.addEventListener('click', e => { const im = e.target.closest && e.target.closest('.dd-prev img, img[data-zoom]'); if (im && im.src) { e.stopPropagation(); e.preventDefault(); openZoom(im.src, im.getAttribute('alt') || im.dataset.title || 'Vorschau'); } }, true);
+ACT['zoom.open'] = el => { const src = el.dataset.src || (el.querySelector && (el.querySelector('img') || {}).src); if (src) openZoom(src, el.dataset.title); };
+
+/* ---------- Pull-to-Refresh: ganz oben nach unten ziehen ---------- */
+async function refreshApp() {
+  let msg = 'Alles aktuell', act = null;
+  try {
+    const r = await fetch(location.pathname + (location.search || ''), { cache: 'no-store' }); const t = await r.text(), m = /name="kairos-build" content="([a-z0-9]+)"/.exec(t), mine = (document.querySelector('meta[name="kairos-build"]') || {}).content;
+    if (m && mine && m[1] !== mine) { msg = 'Neue Version verfügbar'; act = { label: 'Jetzt laden', fn: () => location.reload() }; }
+    try { const reg = navigator.serviceWorker && await navigator.serviceWorker.getRegistration(); reg && reg.update && reg.update(); } catch (e) { /* ignorieren */ }
+  } catch (e) { msg = 'Offline – lokale Daten aktualisiert'; }
+  renderNav(); rerender(); toast(msg, act ? '' : 'good', act || undefined);
+}
+(function () {
+  const main = document.getElementById('main'); if (!main) return;
+  const ind = document.createElement('div'); ind.className = 'ptr'; ind.innerHTML = icon('arrowDown'); ind.setAttribute('aria-hidden', 'true'); document.body.appendChild(ind);
+  let y0 = 0, x0 = 0, pull = 0, active = false, busy = false, armed = false; const TH = 66;
+  const place = (p, snap) => { ind.classList.toggle('snap', !!snap); ind.style.opacity = Math.min(1, p / 40); ind.style.transform = `translateY(${p - 70 + 14}px) scale(${0.7 + Math.min(0.3, p / 200)}) rotate(${Math.min(1, p / TH) * 180}deg)`; };
+  main.addEventListener('touchstart', e => { if (busy || e.touches.length !== 1 || main.scrollTop > 0 || e.target.closest('input,textarea,select,.zv,.sw-tray')) { active = false; return; } active = true; armed = false; y0 = e.touches[0].clientY; x0 = e.touches[0].clientX; pull = 0; }, { passive: true });
+  main.addEventListener('touchmove', e => {
+    if (!active || busy) return; const dy = e.touches[0].clientY - y0, dx = e.touches[0].clientX - x0;
+    if (main.scrollTop > 0 || dy < 0 || (Math.abs(dx) > Math.abs(dy) && dy < 14)) { if (pull) { pull = 0; place(0, true); } if (dy < 0) active = false; return; }
+    if (dy < 8) return; pull = Math.min(110, (dy - 8) * 0.55); if (e.cancelable) e.preventDefault(); place(pull);
+    const ok = pull >= TH; if (ok !== armed) { armed = ok; ind.classList.toggle('go', ok); if (ok) { snd('tick'); hap(1); } }
+  }, { passive: false });
+  const end = async () => {
+    if (!active) return; active = false; if (pull >= TH && !busy) { busy = true; ind.classList.add('spin', 'snap'); ind.style.transform = 'translateY(24px) scale(1)'; ind.style.opacity = 1; snd('refresh'); hap(2); const t0 = Date.now(); await refreshApp(); setTimeout(() => { ind.classList.remove('spin', 'go'); place(0, true); busy = false; }, Math.max(0, 650 - (Date.now() - t0))); }
+    else if (pull) { place(0, true); ind.classList.remove('go'); } pull = 0;
+  };
+  main.addEventListener('touchend', end, { passive: true }); main.addEventListener('touchcancel', end, { passive: true });
+  window.__ptr = { refreshApp };
+})();
+
+/* ---------- Parallax: Hintergrund und Kopfbereich bewegen sich unterschiedlich schnell ---------- */
+(function () {
+  const main = document.getElementById('main'), aur = document.querySelector('.aurora'); if (!main || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let raf = 0, targets = [];
+  const tag = () => { targets = [aur].filter(Boolean); const v = document.getElementById('view'); if (!v) return; const h = v.querySelector('.hero2-l'); if (h) { h.classList.add('px-hero'); targets.push(h); } const t = v.querySelector('.ph .t'); if (t) { t.classList.add('px-soft'); targets.push(t); } paint(); };
+  const paint = () => { raf = 0; const y = Math.min(900, Math.round(main.scrollTop)); targets.forEach(t => t.style.setProperty('--sy', y)); };
+  main.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(paint); }, { passive: true });
+  new MutationObserver(() => { clearTimeout(tag.t); tag.t = setTimeout(tag, 60); }).observe(document.getElementById('view'), { childList: true });
+  tag();
+})();
+
+/* =====================================================================
    KAIROS · Start: Splash, Onboarding, Boot
    ===================================================================== */
 function showOnboarding(replay) {
@@ -7317,7 +7938,7 @@ async function boot() {
   if (memOnly) toast('Dein Browser blockiert den lokalen Speicher – Daten gehen beim Schließen verloren. Bitte Backup erstellen.', 'bad');
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => { /* optional */ });
   window.addEventListener('keydown', e => { if (e.key === '/' && !/input|textarea|select/i.test(e.target.tagName) && !$('#sheetWrap').classList.contains('open')) { e.preventDefault(); ACT['cmd.open'](); } });
-  window.__K = { ocrSelfTest, get S() { return S; }, get route() { return route; }, tnState, tnLocked, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, KPdf, buildPackagePdf, PACKAGES, pdfWidth, fundOpen, scanFunde, docToVertrag, fdSetProfile, fdSetVertrag, docVertragDraft, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, provList, PROV, xSpecs, katalogInsights, parseStatement, stAnalyze, stApply, stMatch, stRun, stNum, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
+  window.__K = { openZoom, ZV, refreshApp, chunkList, GS, ROWS, snd, hap, sndBuild, sndPlay, SOUNDS, SND, ocrSelfTest, get S() { return S; }, get route() { return route; }, tnState, tnLocked, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, KPdf, buildPackagePdf, PACKAGES, pdfWidth, fundOpen, scanFunde, docToVertrag, fdSetProfile, fdSetVertrag, docVertragDraft, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, provList, PROV, xSpecs, katalogInsights, parseStatement, stAnalyze, stApply, stMatch, stRun, stNum, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<pre style="position:fixed;inset:20px;z-index:999;background:#300;color:#fff;padding:20px;overflow:auto">Kairos konnte nicht starten:\n${esc(e && e.stack || e)}</pre>`); });
 
