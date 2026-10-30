@@ -7,7 +7,7 @@
 <title>Kairos – deine digitale Kopie</title>
 <meta name="description" content="Kairos baut aus deinen Dokumenten Schritt für Schritt deine digitale Identität auf. Texterkennung und KI laufen lokal, alle Daten bleiben auf deinem Gerät.">
 <meta name="theme-color" content="#070a1c">
-<meta name="kairos-build" content="903f202ec8">
+<meta name="kairos-build" content="e39e81b212">
 <meta name="color-scheme" content="dark light">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -1168,6 +1168,70 @@ button.lf-main:hover{background:var(--field)}button.lf-main:active{transform:sca
 .skip-main{position:fixed;left:12px;top:-60px;z-index:999;padding:10px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;transition:top .2s}.skip-main:focus{top:calc(env(safe-area-inset-top,0px) + 8px)}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.swing>:not(.sw-tray),.ctxm,.dnd-tray{transition-duration:.01s!important}}
 
+/* v13: gemeinsame Verträge */
+.rec.mit{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.vt-split{display:flex;flex-direction:column;gap:2px}
+.vt-split .vmit{align-self:flex-start;margin:-2px 0 6px 52px;height:30px;font-size:12.5px}
+
+/* =====================================================================
+   KAIROS · v13: Heute-Karte, Spar-Radar, Vermietung, Steuermappe, Notfall, Backup
+   ===================================================================== */
+.yrseg{margin:0 0 14px}
+.page .card+.card,.page .kpis+.card,.page .yrseg+.kpis{margin-top:14px}
+.page .vlist{display:flex;flex-direction:column}
+.gbrp .kpi2 b,.stmp .kpi2 b{font-size:26px}
+.gbrp .kpi2 span,.stmp .kpi2 span{font-size:12px}
+
+/* Heute */
+.hr{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:9px 6px;border-radius:14px;position:relative;transition:background .15s}
+.hr+.hr::before{content:"";position:absolute;left:52px;right:6px;top:0;height:1px;background:var(--hair);opacity:.7}
+.hr:hover{background:var(--field)}
+.hr-e{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:17px;flex:none;background:var(--field-f)}
+.hr-m{flex:1;min-width:0}.hr-m b{display:block;font-size:14px;font-weight:620;letter-spacing:-.005em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hr-m small{display:block;font-size:12.5px;color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hr-d{flex:none;font-size:12px;font-weight:650;padding:4px 9px;border-radius:999px;background:var(--field);color:var(--text2);box-shadow:inset 0 0 0 1px var(--hair)}
+.hr.soon .hr-d{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn);box-shadow:none}
+.hr.late .hr-d{background:color-mix(in srgb,var(--neg) 18%,transparent);color:var(--neg);box-shadow:none}
+.hr.late .hr-e{background:color-mix(in srgb,var(--neg) 14%,var(--field-f))}
+.hr.tip .hr-e{background:color-mix(in srgb,var(--accent) 14%,var(--field-f))}
+.hr.tip>svg,.hr>svg{flex:none;width:18px;height:18px;color:var(--text3,var(--text2))}
+.hr-more{display:block;margin:4px 0 2px 6px;font-size:13px}
+.heute-l{display:flex;flex-direction:column}
+
+/* Spar-Radar */
+.spar-k{display:flex;gap:14px;margin:0 0 6px}.spar-k b{display:block;font-size:26px;font-weight:790;letter-spacing:-.04em;line-height:1.1}.spar-k span{font-size:12.5px;color:var(--text2)}
+.spar-i{padding:12px 14px;border-radius:18px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair);margin:8px 0}
+.spar-h{display:flex;align-items:center;gap:10px}.spar-h b{font-size:14.5px;font-weight:650;line-height:1.3}
+.spar-i p{margin:8px 0 10px;font-size:13.5px;line-height:1.5;color:var(--text2)}
+.spar-a{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* Notfall */
+.nf-calls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:6px}
+.nf-call{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:18px;background:color-mix(in srgb,var(--neg) 10%,var(--field));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--neg) 24%,transparent);color:var(--text);text-decoration:none}
+.nf-call:active{transform:scale(.98)}
+.nf-e{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:19px;background:var(--field-f);flex:none}
+.nf-m{flex:1;min-width:0}.nf-m b{display:block;font-size:14.5px;font-weight:650}.nf-m small{display:block;font-size:12px;color:var(--text2);line-height:1.35}
+.nf-n{font-size:18px;font-weight:790;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.nf-ed{text-align:left;background:none;border:0;color:inherit;padding:0;font:inherit;cursor:pointer}
+.nf-txt{padding:10px 2px}.nf-txt small{display:block;font-size:12px;color:var(--text2);margin-bottom:2px}.nf-txt p{margin:0;font-size:14px;line-height:1.5;white-space:pre-wrap}.nf-txt.big p{font-size:17px;line-height:1.5}
+.nf-h{display:flex;align-items:center;gap:14px;margin-bottom:10px}.nf-h h2{margin:0}.nf-h small{display:block;color:var(--text2)}.nf-h .nf-e{width:52px;height:52px;font-size:26px;border-radius:16px;background:color-mix(in srgb,var(--neg) 16%,var(--field-f))}
+
+/* Backup */
+.mv-steps{list-style:none;counter-reset:mv;margin:6px 0 14px;padding:0;display:flex;flex-direction:column;gap:10px}
+.mv-steps li{counter-increment:mv;position:relative;padding:12px 14px 12px 52px;border-radius:16px;background:var(--field);box-shadow:inset 0 0 0 1px var(--hair)}
+.mv-steps li::before{content:counter(mv);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:750;font-size:13px;background:var(--accent);color:#fff}
+.mv-steps b{display:block;font-size:14.5px;margin-bottom:2px}.mv-steps span{font-size:13px;line-height:1.45;color:var(--text2)}
+
+/* Vermietung / Steuer: Listen */
+.stmp .card-h b,.gbrp .card-h b{font-variant-numeric:tabular-nums}
+.stmp .card-h>span:first-child{font-size:18px}
+@media (max-width:900px){
+  .nf-calls{grid-template-columns:1fr}
+  .vt-split .vmit{margin-left:48px}
+}
+.card-h .ch-t{flex:1 1 0;min-width:0;line-height:1.25}
+#view>.page{width:100%;box-sizing:border-box}
+.spar-h b{flex:1}.spar-x{flex:none;min-width:36px;padding:0 8px}
+
 /* ===== Dock (nur mobil) ===== */
 .dock{display:none}
 @media (max-width:900px){
@@ -1473,12 +1537,15 @@ const AREAS = {
   dokumente: { name: 'Dokumente',  ic: 'file',   c: 'var(--c-life)' },
   kairos:    { name: 'Kairos',     ic: 'sparkle',c: 'var(--c-shop)' },
   verbinden: { name: 'Verbinden',  ic: 'link',   c: 'var(--c-fin)' },
+  gbr:       { name: 'Vermietung', ic: 'home',   c: '#35c58f' },
+  steuer:    { name: 'Steuermappe', ic: 'receipt', c: '#8a6cff' },
+  notfall:   { name: 'Notfall',    ic: 'heart',  c: '#ff6b81' },
   einstellungen: { name: 'Einstellungen', ic: 'sliders', c: 'var(--text2)' }
 };
 const DOC_CATS = { gehalt: ['Gehalt & Lohn', '💶'], rechnung: ['Rechnungen', '🧾'], vertrag: ['Verträge', '📝'], versicherung: ['Versicherung', '🛡️'], steuer: ['Steuer', '🏛️'], post: ['Post & Behörden', '✉️'], bank: ['Bank', '🏦'], ident: ['Identität', '🪪'], gesundheit: ['Gesundheit', '🩺'], job: ['Job & Zeugnisse', '💼'], garantie: ['Belege & Garantie', '📦'], wohnen: ['Wohnen', '🏠'], familie: ['Familie', '👨‍👩‍👧'], mobil: ['Mobilität', '🚗'], sonst: ['Sonstiges', '📄'] };
 
 const defaultState = () => ({
-  v: 7,
+  v: 8,
   profile: { name: '', avatar: null, created: Date.now() },
   photos: [],                     // Fotos: { id, name, created, w, h, thumb, size, tag }
   prof: {},                       // Profilfelder: key → { v, src, conf, ok, at }
@@ -1492,6 +1559,11 @@ const defaultState = () => ({
   int: {},                        // Verbindungen (Telegram …)
   brain: null,                    // freie Notizen
   journey: { na: {}, celebrated: {} },
+  gbr: { set: false, name: '', gs: [], objekte: [], buch: [], year: 0 },   // Vermietung (GbR): Stammdaten, Gesellschafter, Wohnungen, Buchungen
+  steuer: { belege: [], year: 0, skip: {} },                                // Steuermappe: gesammelte Belege
+  notfall: { kontakte: [], orte: [], nr: [], med: '', hinweis: '' },       // Notfall & Vorsorge
+  backup: { every: 30, last: '', enc: false },                             // Backup-Erinnerung
+  heute: { seen: {}, notify: false, ics: '' },                             // Heute-Karte & Erinnerungen
   ui: { tab: 'reise', onboarded: false, mask: true }
 });
 
@@ -1558,7 +1630,10 @@ async function saveNow() {
 function migrate(st) {
   const d = defaultState(); st = st || {};
   const out = Object.assign(d, { profile: Object.assign(d.profile, st.profile || {}), prof: st.prof || {}, docs: st.docs || [], photos: st.photos || [], vertr: st.vertr || {}, people: st.people || [], events: st.events || [], int: st.int || {}, brain: st.brain || null, journey: Object.assign(d.journey, st.journey || {}), ui: Object.assign(d.ui, st.ui || {}) });
-  out.cv = Object.assign(defaultState().cv, st.cv || {}); out.v = 7; out.stmt = st.stmt || null; out.tree = Object.assign({ seen: {} }, st.tree || {});
+  out.cv = Object.assign(defaultState().cv, st.cv || {}); out.v = 8;
+  out.gbr = Object.assign(defaultState().gbr, st.gbr || {}); out.steuer = Object.assign(defaultState().steuer, st.steuer || {}); out.notfall = Object.assign(defaultState().notfall, st.notfall || {}); out.backup = Object.assign(defaultState().backup, st.backup || {}); out.heute = Object.assign(defaultState().heute, st.heute || {});
+  for (const k of ['gs', 'objekte', 'buch']) if (!Array.isArray(out.gbr[k])) out.gbr[k] = [];
+  if (!Array.isArray(out.steuer.belege)) out.steuer.belege = []; for (const k of ['kontakte', 'orte', 'nr']) if (!Array.isArray(out.notfall[k])) out.notfall[k] = []; out.stmt = st.stmt || null; out.tree = Object.assign({ seen: {} }, st.tree || {});
   if (st.demo) { out.prof = {}; out.docs = []; out.photos = []; out.journey = defaultState().journey; out.ui.notice = 'Die Beispieldaten wurden entfernt.'; }   // frühere Demo-Daten sind nicht mehr Teil der App
   return out;
 }
@@ -1766,8 +1841,8 @@ function countUp(el, to, fmt = c => money(c)) {
 }
 
 /* ---------- Router & Navigation ---------- */
-const ROUTES = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden', 'einstellungen'];
-const MORE_ROUTES = ['dokumente', 'beruf', 'vertraege', 'leben', 'verbinden', 'einstellungen'];
+const ROUTES = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'gbr', 'steuer', 'notfall', 'einblicke', 'dokumente', 'kairos', 'verbinden', 'einstellungen'];
+const MORE_ROUTES = ['dokumente', 'beruf', 'vertraege', 'gbr', 'steuer', 'notfall', 'leben', 'verbinden', 'einstellungen'];
 let route = 'reise';
 function badgeCounts() { return { dokumente: S.docs.filter(d => d.status === 'neu').length, einblicke: typeof urgentCount === 'function' ? urgentCount() : 0 }; }
 function avatarHTML(cls = '') {
@@ -1777,7 +1852,7 @@ function avatarHTML(cls = '') {
 function renderNav() {
   const bc = badgeCounts();
   const item = r => { const a = AREAS[r], n = bc[r]; return `<button class="nv ${route === r ? 'on' : ''}${typeof treeGate === 'function' && treeGate(r) ? ' lkd' : ''}" style="--c:${a.c}" data-go="${r}" ${route === r ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt alert">${n}</span>` : ''}</button>`; };
-  $('#nav').innerHTML = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
+  $('#nav').innerHTML = ['reise', 'steckbrief', 'beruf', 'vertraege', 'gbr', 'steuer', 'notfall', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
   const dk = (r, lab) => `<button class="dk ${route === r ? 'on' : ''}" style="--c:${AREAS[r].c}" data-go="${r}" aria-label="${lab}"><span class="dki">${icon(AREAS[r].ic)}</span><span class="dkl">${lab}</span>${bc[r] ? '<i class="dot"></i>' : ''}</button>`;
   $('#dock').innerHTML = dk('reise', 'Leben') + dk('steckbrief', 'Steckbrief') +
     `<button class="dk dko ${route === 'kairos' ? 'on' : ''}" data-go="kairos" aria-label="Kairos fragen"><span>${logoSvg('dock')}</span></button>` + dk('einblicke', 'Einblicke') +
@@ -3732,7 +3807,7 @@ VIEWS.reise = {
     const o = overall(), nx = nextStep(), pend = S.docs.filter(d => d.status === 'neu' || d.status === 'fehler'), start = !o.fields && !S.docs.length;
     const ins = start ? [] : topInsights(3);
     return `<div class="page reise stag">${reiseHero(o, nx, start)}
-      <div class="rz2"><div class="rz2-l">${pend.length ? `<button class="notice" data-act="rev.pending">${icon('scan')}<span><b>${plural(pend.length, 'Dokument wartet', 'Dokumente warten')} auf dich</b><small>Prüfe, was Kairos gelesen hat, und übernimm es.</small></span>${icon('chevR')}</button>` : ''}${expiryHints()}
+      <div class="rz2"><div class="rz2-l">${start ? '' : heuteCard()}${pend.length ? `<button class="notice" data-act="rev.pending">${icon('scan')}<span><b>${plural(pend.length, 'Dokument wartet', 'Dokumente warten')} auf dich</b><small>Prüfe, was Kairos gelesen hat, und übernimm es.</small></span>${icon('chevR')}</button>` : ''}${expiryHints()}
         ${ins.length ? `<div class="card glass"><div class="card-h">${icon('bulb')} Das hat Kairos verknüpft<span class="sp"></span><button class="link" data-go="einblicke">Alle</button></div><div class="ins-list compact">${ins.map((x, i) => insightCard(x, i, true)).join('')}</div></div>` : ''}
         ${!S.ui.wizardDone && !start ? `<button class="notice" data-act="wiz.open">${icon('sparkle')}<span><b>Start-Assistent</b><small>Zwei Minuten für einen guten Start: Basisdaten, Lebenssituation, erster Upload.</small></span>${icon('chevR')}</button>` : ''}${!S.profile.avatar && !start ? `<button class="notice soft" data-act="avatar.menu">${icon('camera')}<span><b>Füge ein Profilfoto hinzu</b><small>Dein Gesicht macht die digitale Kopie komplett.</small></span>${icon('chevR')}</button>` : ''}</div>
       <div class="rz2-r">${treeHTML()}</div></div></div>`;
@@ -4316,6 +4391,7 @@ function buildDeadlines() {
   { const ud = fsUmtausch(); if (ud) add({ id: 'fs_umtausch', date: ud.date, title: 'Führerschein-Umtausch', sub: ud.sub, e: '🚗', kind: 'frist', alarm: 90 }); }
   for (const r of lifeTasks()) if (r.due) add({ id: `lt_${r.ev.id}_${r.t.id}`, date: r.due, title: `${r.x.n}: ${r.t.t}`, sub: r.x.n, e: r.x.e, kind: 'frist', alarm: r.t.imp ? 14 : 7, ev: r.ev.id });
   for (const p of S.people) if (p.geb) { const nb = nextBirthday(p.geb); if (nb <= 30) add({ id: 'bd_' + p.id, date: addDays(todayISO(), nb), title: `Geburtstag: ${p.name}`, sub: `wird ${ageOf(p.geb) + (nb === 0 ? 0 : 1)}`, e: '🎂', kind: 'frist', alarm: 3, fam: 1 }); }
+  if (typeof extraDeadlines === 'function') extraDeadlines(add);
   return L.sort((a, b) => a.date < b.date ? -1 : 1);
 }
 const icsEsc = s => String(s || '').replace(/\\/g, '\\\\').replace(/;/g, '\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
@@ -5309,6 +5385,16 @@ const vOf = id => S.vertr[id] || {};
 function vst(id) { const e = VCX(id); if (!e) return null; if (e.pf) { if (phas(e.pf)) return 'ja'; if (pst(e.pf) === 'none') return 'nein'; } return vOf(id).st || null; }
 const vprov = id => { const e = VCX(id), o = vOf(id); return o.anbieter || (e && e.pf && pget(e.pf)) || (id === 'kfz' && '') || ''; };
 const vMonthly = id => { const o = vOf(id); if (!o.kosten) return 0; const z = ZAHL.find(x => x[0] === (o.zahl || 'm')) || ZAHL[0]; return Math.round(o.kosten * z[2]); };
+/* ---------- Gemeinsam mit Partner/in ---------- */
+const MIT = [['ich', 'Nur ich'], ['gemeinsam', 'Gemeinsam'], ['partner', 'Läuft auf Partner/in']];
+const partnerName = () => { const p = peopleOf('partner').find(x => x.name); return p ? p.name.split(' ')[0] : 'Partner/in'; };
+const mitOf = o => (o && (o.mit === 'gemeinsam' || o.mit === 'partner')) ? o.mit : 'ich';
+const anteilOf = o => { const a = o && o.anteil; return typeof a === 'number' && a >= 0 && a <= 100 ? a : 50; };
+const vMit = id => mitOf(vOf(id)), vAnteil = id => anteilOf(vOf(id));
+/** Mein Anteil am Monatsbetrag */
+const vMine = id => { const o = vOf(id), m = vMonthly(id), k = mitOf(o); return k === 'partner' ? 0 : k === 'gemeinsam' ? Math.round(m * anteilOf(o) / 100) : m; };
+const mitLabel = o => { const k = mitOf(o); return k === 'gemeinsam' ? `gemeinsam mit ${partnerName()} (mein Anteil ${anteilOf(o)} %)` : k === 'partner' ? `läuft auf ${partnerName()}` : ''; };
+const vmitOf = id => (S.ui.vmit && S.ui.vmit[id]) || {};
 function vclean(id) { const o = S.vertr[id]; if (o && !o.st && !o.custom && !o.of && !Object.keys(o).some(k => k !== 'st' && o[k] != null && o[k] !== '')) delete S.vertr[id]; }
 function setVst(id, st) {
   const e = VCX(id); if (!e) return; const o = S.vertr[id] || (S.vertr[id] = {});
@@ -5329,14 +5415,15 @@ function vVirtual() {
 }
 function fixCosts() {
   const rows = [];
-  for (const e of vAll()) if (vst(e.id) === 'ja' && !isInc(e)) { const m = vMonthly(e.id); if (m) rows.push({ id: e.id, n: e.n, e: e.e, c: e.c, m }); }
-  for (const r of vVirtual()) if (r.m && r.c !== 'einnahmen') rows.push({ id: r.id, n: r.n, e: r.e, c: r.c, m: r.m, virt: 1 });
-  const total = sum(rows, r => r.m), byCat = {}; rows.forEach(r => byCat[r.c] = (byCat[r.c] || 0) + r.m);
-  return { rows: rows.sort((a, b) => b.m - a.m), total, byCat };
+  for (const e of vAll()) if (vst(e.id) === 'ja' && !isInc(e)) { const full = vMonthly(e.id), m = vMine(e.id); if (full) rows.push({ id: e.id, n: e.n, e: e.e, c: e.c, m, full, mit: vMit(e.id) }); }
+  for (const r of vVirtual()) if (r.m && r.c !== 'einnahmen') { const vm = vmitOf(r.id), k = vm.mit === 'gemeinsam' || vm.mit === 'partner' ? vm.mit : 'ich', a = typeof vm.anteil === 'number' ? vm.anteil : 50; rows.push({ id: r.id, n: r.n, e: r.e, c: r.c, m: k === 'partner' ? 0 : k === 'gemeinsam' ? Math.round(r.m * a / 100) : r.m, full: r.m, mit: k, virt: 1 }); }
+  const mine = rows.filter(r => r.m > 0), total = sum(mine, r => r.m), gesamt = sum(rows, r => r.full), byCat = {}; mine.forEach(r => byCat[r.c] = (byCat[r.c] || 0) + r.m);
+  const shared = rows.filter(r => r.mit !== 'ich');
+  return { rows: mine.sort((a, b) => b.m - a.m), total, gesamt, byCat, shared, sharedN: shared.length };
 }
 /** Haushaltsrechnung: Einnahmen (Netto + weitere) gegen feste Kosten */
 function haushalt() {
-  const netto = num('netto') || 0, extra = sum(vAll().filter(e => isInc(e) && vst(e.id) === 'ja'), e => vMonthly(e.id)), fc = fixCosts(), inn = netto + extra;
+  const netto = num('netto') || 0, extra = sum(vAll().filter(e => isInc(e) && vst(e.id) === 'ja'), e => vMine(e.id)), fc = fixCosts(), inn = netto + extra;
   return { netto, extra, inn, out: fc.total, rest: inn - fc.total, quote: inn ? (inn - fc.total) / inn : null };
 }
 /** Alle aktiven Verträge (ja) */
@@ -5442,7 +5529,7 @@ function contractInsights(add, X) {
     if (netto) { const q = fc.total / netto, p = Math.round(q * 100); add({ id: 'fixkosten', kind: q > 0.65 ? 'warn' : 'info', pri: q > 0.65 ? 62 : 32, e: '📊', title: `Feste Kosten: ${eur0(fc.total)} im Monat (${p} % vom Netto)`, text: `Am meisten kosten ${joinNice(top)}. ${q > 0.65 ? 'Das lässt wenig Spielraum – prüfe zuerst Verträge mit kurzer Kündigungsfrist.' : 'Bleibt genug Spielraum? Die größten Hebel sind meist Miete, Strom, Internet/Mobilfunk und Versicherungen.'}`, src: chipsFor(['netto']).concat(fc.rows.slice(0, 2).filter(r => !r.virt).map(r => ({ l: r.n, vt: r.id }))) }); }
     else add({ id: 'fixkosten', kind: 'info', pri: 26, e: '📊', title: `Feste Kosten: ${eur0(fc.total)} im Monat`, text: `Das sind ${eur0(fc.total * 12)} im Jahr. Am meisten: ${joinNice(top)}. Mit deinem Netto aus einer Gehaltsabrechnung rechnet Kairos dir die Quote aus.`, src: fc.rows.slice(0, 2).filter(r => !r.virt).map(r => ({ l: r.n, vt: r.id })) });
   }
-  const abos = sum(vAll().filter(e => e.c === 'abo' && vst(e.id) === 'ja'), e => vMonthly(e.id));
+  const abos = sum(vAll().filter(e => e.c === 'abo' && vst(e.id) === 'ja'), e => vMine(e.id));
   if (abos >= 3000) add({ id: 'abos', kind: 'chance', pri: 38, e: '🎬', title: `Abos & Mitgliedschaften: ${eur0(abos * 12)} im Jahr`, text: `${eur0(abos)} pro Monat. Welche davon nutzt du wirklich? Diese Verträge sind meist monatlich kündbar – ein kurzer Check spart sofort Geld.`, src: vAll().filter(e => e.c === 'abo' && vst(e.id) === 'ja').slice(0, 3).map(e => ({ l: e.n, vt: e.id })) });
   /* Offene Fragen */
   const open = vAll().filter(e => e.core && !vst(e.id)).length;
@@ -5476,16 +5563,16 @@ ACT['vt.exp'] = el => { const c = el.dataset.cat; vtExp.has(c) ? vtExp.delete(c)
 const catOf = id => VCATS.find(c => c[0] === id) || VCATS[0];
 function vSub(e) {
   const o = vOf(e.id), st = vst(e.id), p = vprov(e.id), m = vMonthly(e.id), kd = kuendDate(e.id);
-  if (st === 'ja') { const bits = [o.gek ? 'gekündigt' : '', p, m ? money(m) + (isInc(e) ? ' / Monat Eingang' : ' / Monat') : '', kd ? 'kündbar bis ' + fmtDate(kd, true) : o.ende && !o.unbef ? 'bis ' + fmtDate(o.ende, true) : ''].filter(Boolean); return bits.length ? bits.join(' · ') : 'Details ergänzen'; }
+  if (st === 'ja') { const bits = [o.gek ? 'gekündigt' : '', mitOf(o) !== 'ich' ? (mitOf(o) === 'gemeinsam' ? '👫 gemeinsam' : '👫 auf ' + partnerName()) : '', p, m ? money(m) + (isInc(e) ? ' / Monat Eingang' : ' / Monat') : '', kd ? 'kündbar bis ' + fmtDate(kd, true) : o.ende && !o.unbef ? 'bis ' + fmtDate(o.ende, true) : ''].filter(Boolean); return bits.length ? bits.join(' · ') : 'Details ergänzen'; }
   if (st === 'nein') return 'Habe ich nicht';
   return e.d;
 }
 function vRow(e) {
   const st = vst(e.id), c = catOf(e.c), miss = st === 'ja' && !vprov(e.id) && !vMonthly(e.id) && !e.of;
   const right = st === 'ja' ? `<span class="badge pos">${icon('check')}Habe ich</span>` : st === 'nein' ? '<span class="badge">Nein</span>' : `<span class="vt-q"><button class="btn sm" data-act="vt.set" data-id="${e.id}" data-v="ja">Ja</button><button class="btn sm ghost" data-act="vt.set" data-id="${e.id}" data-v="nein">Nein</button></span>`;
-  return `<div class="vt ${st || 'open'}" ${st ? `data-act="vt.open" data-id="${e.id}"` : ''} ${st === 'ja' ? `data-row="vt"${' data-id="' + e.id + '"'}` : ''}><span class="vt-e">${e.e}</span><div class="vt-m"><b>${esc(e.n)}${e.of ? ' <i class="rec">weiterer</i>' : ''}${e.core && !st ? ' <i class="rec">wichtig</i>' : ''}</b><small class="${miss ? 'warnt' : ''}">${esc(vSub(e))}</small></div>${right}</div>`;
+  return `<div class="vt ${st || 'open'}" ${st ? `data-act="vt.open" data-id="${e.id}"` : ''} ${st === 'ja' ? `data-row="vt"${' data-id="' + e.id + '"'}` : ''}><span class="vt-e">${e.e}</span><div class="vt-m"><b>${esc(e.n)}${e.of ? ' <i class="rec">weiterer</i>' : ''}${e.core && !st ? ' <i class="rec">wichtig</i>' : ''}${st === 'ja' && mitOf(vOf(e.id)) === 'gemeinsam' ? ' <i class="rec mit">👫 gemeinsam</i>' : st === 'ja' && mitOf(vOf(e.id)) === 'partner' ? ' <i class="rec mit">👫 ' + esc(partnerName()) + '</i>' : ''}</b><small class="${miss ? 'warnt' : ''}">${esc(vSub(e))}</small></div>${right}</div>`;
 }
-function vVirtRow(r) { return `<button class="vt ja virt" data-go="${r.go}"><span class="vt-e">${r.e}</span><div class="vt-m"><b>${esc(r.n)}</b><small>${esc(r.sub)}${r.m ? ' · ' + money(r.m) + ' / Monat' : ''}</small></div><span class="badge info">Steckbrief</span></button>`; }
+function vVirtRow(r) { const vm = vmitOf(r.id), k = vm.mit === 'gemeinsam' || vm.mit === 'partner' ? vm.mit : 'ich'; return (r.id === 'miete' ? `<div class="vt-split">` : '') + `<button class="vt ja virt" data-go="${r.go}"><span class="vt-e">${r.e}</span><div class="vt-m"><b>${esc(r.n)}</b><small>${esc(r.sub)}${r.m ? ' · ' + money(r.m) + ' / Monat' : ''}</small></div><span class="badge info">Steckbrief</span></button>` + (r.id === 'miete' ? `<button class="btn sm ghost vmit" data-act="vt.vmit" data-id="miete">👫 ${k === 'gemeinsam' ? 'Gemeinsam mit ' + esc(partnerName()) + ' (' + (typeof vm.anteil === 'number' ? vm.anteil : 50) + ' %)' : k === 'partner' ? 'Läuft auf ' + esc(partnerName()) : 'Mit ' + esc(partnerName()) + ' teilen?'}</button></div>` : ''); }
 function costBar(fc) {
   if (!fc.total) return '';
   const cols = { vers: 'var(--c-life)', wohnen: 'var(--accent)', komm: 'var(--c-fin)', mobil: 'var(--c-biz)', geld: 'var(--pos)', abo: 'var(--c-shop)', beruf: '#ffb544', fam: '#ff9a6b', einnahmen: '#35d399' };
@@ -5504,16 +5591,24 @@ VIEWS.vertraege = {
     return `<div class="page vtp"><header class="ph"><div class="t"><div class="eyebrow">Alles, was läuft</div><h1>Verträge</h1><p>Versicherungen, Energie, Handy, Abos – mit Kosten und Fristen. Was du nicht hast, markierst du einfach mit „Nein“.</p></div>
       <div class="act"><button class="btn" data-act="vt.new">${icon('plus')}Eigener Vertrag</button>${unanswered ? `<button class="btn primary" data-act="vt.quick">${icon('sparkle')}Schnell-Check</button>` : ''}</div></header>
       ${stCard()}
+      ${sparCard()}
       <div class="kpis"><div class="kpi2"><b class="num" data-count="${act.length}">${act.length}</b><span>Aktive Verträge</span></div><div class="kpi2"><b class="num" data-money="${fc.total}">${eur0(fc.total)}</b><span>Feste Kosten / Monat</span></div><div class="kpi2"><b>${netto && fc.total ? Math.round(fc.total / netto * 100) + ' %' : '–'}</b><span>vom Netto</span></div><div class="kpi2"><b>${nx ? dlLabel(nx.date).replace('in ', '') : '–'}</b><span>${nx ? esc(nx.vt && VCX(nx.vt) ? VCX(nx.vt).n : nx.title.replace(/^Kündigen bis: /, '')) : 'Nächste Frist'}</span></div></div>
       ${hh.inn && fc.total ? `<div class="card glass hhc"><div class="card-h">${icon('coins')} Haushaltsrechnung<span class="sp"></span><b class="${hh.rest < 0 ? 'neg' : 'pos'}">${hh.rest < 0 ? '−' : '+'}${eur0(Math.abs(hh.rest))}</b></div>
         <div class="hh-rows"><div><span>Einnahmen</span><b>${eur0(hh.inn)}</b></div>${hh.extra ? `<div class="sub"><span>davon weitere Einnahmen</span><b>${eur0(hh.extra)}</b></div>` : ''}<div><span>Feste Kosten</span><b>− ${eur0(hh.out)}</b></div><div class="tot"><span>Bleibt im Monat</span><b>${eur0(hh.rest)}</b></div></div>
         <div class="bar thin hh-bar"><i style="width:${Math.min(100, Math.max(0, hh.out / hh.inn * 100))}%"></i></div><p class="muted fine">Ohne variable Ausgaben wie Essen, Freizeit oder Kleidung.${hh.netto ? '' : ' Trage dein Netto im Steckbrief ein, dann stimmt die Rechnung.'}</p></div>` : ''}
-      ${fc.total ? `<div class="card glass costc"><div class="card-h">${icon('coins')} Wohin dein Geld jeden Monat fließt<span class="sp"></span><b class="costt">${eur0(fc.total)}</b></div>${costBar(fc)}<div class="ctop">${fc.rows.slice(0, 5).map(r => `<div><span>${r.e} ${esc(r.n)}</span><b>${eur0(r.m)}</b></div>`).join('')}</div></div>` : ''}
+      ${fc.total ? `<div class="card glass costc"><div class="card-h">${icon('coins')} Wohin dein Geld jeden Monat fließt<span class="sp"></span><b class="costt">${eur0(fc.total)}</b></div>${costBar(fc)}<div class="ctop">${fc.rows.slice(0, 5).map(r => `<div><span>${r.e} ${esc(r.n)}${r.mit === 'gemeinsam' ? ' 👫' : ''}</span><b>${eur0(r.m)}</b></div>`).join('')}</div>${fc.sharedN ? `<p class="muted fine">👫 ${plural(fc.sharedN, 'Vertrag läuft', 'Verträge laufen')} mit ${esc(partnerName())}. Gezählt wird nur dein Anteil – alle zusammen kosten ${eur0(fc.gesamt)} im Monat.</p>` : ''}</div>` : ''}
       ${ds.length ? `<div class="card glass"><div class="card-h">${icon('link')} Aus deinen Dokumenten</div>${ds.map(x => `<div class="vt open"><span class="vt-e">${x.e.e}</span><div class="vt-m"><b>${esc(x.d.name)}</b><small>Sieht nach „${esc(x.e.n)}“ aus</small></div><button class="btn sm primary" data-act="vt.fromdoc" data-doc="${x.d.id}" data-id="${x.e.id}">Anlegen</button></div>`).join('')}</div>` : ''}
       <div class="vgrid">${secs}</div>
       <p class="disc">Hinweise sind Orientierung (Stand ${RULES.year}), keine Rechts- oder Anlageberatung. Prüfe Fristen immer in deinen Vertragsunterlagen.</p></div>`;
   },
   mount(root) { $$('[data-count]', root).forEach(el => countUp(el, +el.dataset.count, c => String(c))); $$('[data-money]', root).forEach(el => countUp(el, +el.dataset.money, c => eur0(c))); }
+};
+ACT['vt.vmit'] = el => {
+  const id = el.dataset.id, cur = vmitOf(id), pn = partnerName();
+  formSheet({ title: 'Wohnkosten teilen', sub: 'Die Miete (warm) stammt aus deinem Steckbrief. Wenn ihr gemeinsam zahlt, zählt Kairos nur deinen Anteil zu deinen festen Kosten.', fields: [
+    { k: 'mit', label: 'Die Miete läuft', type: 'pick', opts: [['ich', 'Nur über mich'], ['gemeinsam', 'Gemeinsam mit ' + pn], ['partner', 'Nur auf ' + pn]], val: cur.mit || 'ich', full: true },
+    { k: 'anteil', label: 'Mein Anteil in %', type: 'number', val: typeof cur.anteil === 'number' ? cur.anteil : 50, min: 0, max: 100, step: 1, im: 'numeric' }], submit: 'Speichern',
+    onSubmit: v => { S.ui.vmit = S.ui.vmit || {}; if (v.mit === 'ich') delete S.ui.vmit[id]; else S.ui.vmit[id] = { mit: v.mit, anteil: v.mit === 'gemeinsam' && typeof v.anteil === 'number' ? Math.max(0, Math.min(100, Math.round(v.anteil))) : undefined }; save(); renderNav(); rerender(); toast('Gespeichert', 'good'); } });
 };
 ACT['vt.set'] = el => { setVst(el.dataset.id, el.dataset.v === 'ja' ? 'ja' : 'nein'); buzz(8); renderNav(); rerender(); if (el.dataset.v === 'ja') ACT['vt.edit'](el); };
 
@@ -5521,7 +5616,7 @@ ACT['vt.set'] = el => { setVst(el.dataset.id, el.dataset.v === 'ja' ? 'ja' : 'ne
 function vDetailRows(e) {
   const o = vOf(e.id), r = [];
   const add = (l, v) => { if (v != null && v !== '' && v !== false) r.push([l, v]); };
-  const ed = edOf(e); add('Bezeichnung', o.label); add(ed.who, vprov(e.id)); if (ed.tarif) add(ed.tarif, o.tarif); if (ed.nr) add(ed.nr, o.nr); if (o.gek) add('Status', 'Gekündigt – läuft aus');
+  const ed = edOf(e); add('Bezeichnung', o.label); add(ed.who, vprov(e.id)); add('Läuft über', mitLabel(o) || null); if (ed.tarif) add(ed.tarif, o.tarif); if (ed.nr) add(ed.nr, o.nr); if (o.gek) add('Status', 'Gekündigt – läuft aus');
   const m = vMonthly(e.id); if (o.kosten) add(ed.amt, `${money(o.kosten)} ${(ZAHL.find(z => z[0] === (o.zahl || 'm')) || ZAHL[0])[1]}${(o.zahl || 'm') !== 'm' ? ' (' + money(m) + ' / Monat)' : ''}`);
   add(ed.from, o.beginn && fmtDate(o.beginn, true)); add(ed.to, o.unbef ? ed.open : o.ende && fmtDate(o.ende, true));
   if (ed.cancel) add('Kündigung', (KUEND.find(k => k[0] === (o.kuend || e.kuend || '')) || [])[1] && (o.kuend || e.kuend) ? (KUEND.find(k => k[0] === (o.kuend || e.kuend))[1]) : '');
@@ -5535,6 +5630,7 @@ ACT['vt.open'] = el => {
   openSheet(`<div class="chh" style="--c:var(--c-life)"><span class="chh-e">${e.e}</span><div><small>${esc(c[1])}</small><h2>${esc(e.n)}</h2></div></div>
     <div class="vstat">${stat.map(s => `<div><b>${esc(s[0])}</b><span>${esc(s[1])}</span></div>`).join('')}</div>
     <div class="pk">${vDetailRows(e).map(r => `<div class="pk-r"><span>${esc(r[0])}</span><b>${esc(r[1])}</b></div>`).join('') || '<p class="muted">Noch keine Details – tippe auf „Bearbeiten“.</p>'}</div>
+    ${mitOf(o) !== 'ich' ? `<div class="docs-hint">👫 ${esc(mitLabel(o)[0].toUpperCase() + mitLabel(o).slice(1))}.${edOf(e).cancel ? ' Bei einer Kündigung müssen in der Regel beide Vertragspartner unterschreiben.' : ''}</div>` : ''}
     ${doc ? `<button class="ckl ok" data-act="doc.open" data-id="${doc.id}">${icon('file')}<span>Dokument: ${esc(doc.name)}</span>${icon('chevR')}</button>` : `<button class="ckl" data-act="vt.linkdoc" data-id="${e.id}">${icon('link')}<span>Dokument verknüpfen</span>${icon('chevR')}</button>`}
     ${rel.length ? `<div class="group-h"><span>Das hängt damit zusammen</span></div><div class="ins-list compact">${rel.map((x, i) => insightCard(x, i, true)).join('')}</div>` : ''}
     ${o.st === 'ja' && !isInc(e) || isInc(e) ? `<button class="ckl" data-act="vt.dup" data-id="${e.of || e.id}">${icon('plus')}<span>Noch einen weiteren Eintrag: ${esc((VC.find(x => x.id === (e.of || e.id)) || e).n)}</span>${icon('chevR')}</button>` : ''}
@@ -5828,6 +5924,7 @@ ACT['vt.edit'] = el => {
   F.push({ k: 'kosten', label: ed.amt, type: 'money', val: o.kosten });
   if (ed.fill) F.push({ type: 'html', k: 'fillamt', html: `<div class="pvchips sugr">${ed.fill().map(([l, c]) => `<button type="button" class="pv sm" data-amt="${c}">${esc(l)}</button>`).join('')}</div>` });
   F.push({ k: 'zahl', label: ed.inc ? 'Wie oft kommt es?' : 'Zahlweise', type: 'pick', opts: ZAHL.filter(z => ed.inc || z[0] !== 'u').map(z => [z[0], z[1]]), val: o.zahl || ed.zahl || 'm', full: true });
+  { const pn = partnerName(); F.push({ type: 'head', label: 'Wer ist beteiligt?', e: '👫', sub: ed.inc ? '' : 'Bei gemeinsamen Verträgen rechnet Kairos in deinen Kosten nur deinen Anteil.' }, { k: 'mit', label: ed.inc ? 'Läuft bei' : 'Vertrag läuft', type: 'pick', opts: [['ich', 'Nur ich'], ['gemeinsam', 'Gemeinsam mit ' + pn], ['partner', 'Nur auf ' + pn]], val: mitOf(o), full: true }, { k: 'anteil', label: 'Mein Anteil in % (nur bei „Gemeinsam“)', type: 'number', val: o.anteil != null ? o.anteil : 50, min: 0, max: 100, step: 1, im: 'numeric' }); }
   if (specs.length) F.push({ type: 'head', label: ed.inc || e.c === 'beruf' ? 'Mehr Angaben' : `Details zu ${bc.n}`, e: bc.e });
   for (const [k, l, ty, op, nm] of specs) {
     const val = o[k];
@@ -5842,6 +5939,7 @@ ACT['vt.edit'] = el => {
   if (ed.tax) F.push({ type: 'html', k: 'taxh', html: `<div class="docs-hint">${icon('info')} ${esc(ed.tax)}</div>` });
   F.push({ type: 'head', label: ed.secTime, e: '📅' });
   F.push({ k: 'beginn', label: ed.from, type: 'date', val: o.beginn }, { k: 'ende', label: ed.to, type: 'date', val: o.ende });
+  if (!ed.inc && !ed.simple) F.push({ k: 'perh', label: 'Preiserhöhung gilt ab', type: 'date', val: o.perh, hint: 'Wenn der Anbieter einen höheren Preis angekündigt hat.' }, { k: 'pneu', label: 'Neuer Betrag (gleiche Zahlweise)', type: 'money', val: o.pneu });
   if (!ed.simple) {
     F.push({ type: 'html', k: 'lz', html: `<div class="pvchips sugr"><button type="button" class="pv sm" data-ende="12">12 Monate ab Beginn</button><button type="button" class="pv sm" data-ende="24">24 Monate ab Beginn</button><button type="button" class="pv sm" data-ende="monat">Monatlich kündbar</button></div>` });
     F.push({ k: 'unbef', type: 'toggle', label: ed.open, val: !!o.unbef, full: true }, { k: 'gek', type: 'toggle', label: 'Bereits gekündigt (läuft aus)', val: !!o.gek, full: true });
@@ -5854,8 +5952,11 @@ ACT['vt.edit'] = el => {
     onSubmit: v => {
       const t = S.vertr[e.id] || (S.vertr[e.id] = {});
       t.st = 'ja'; if ('gek' in v) { if (v.gek) t.gek = 1; else delete t.gek; }
-      for (const k of ['anbieter', 'tarif', 'nr', 'beginn', 'ende', 'zahl', 'kuend', 'notiz', 'doc', 'label']) { if (!(k in v)) continue; if (v[k] === '' || v[k] == null) delete t[k]; else t[k] = v[k]; }
+      for (const k of ['anbieter', 'tarif', 'nr', 'beginn', 'ende', 'zahl', 'kuend', 'notiz', 'doc', 'label', 'perh']) { if (!(k in v)) continue; if (v[k] === '' || v[k] == null) delete t[k]; else t[k] = v[k]; }
       if (v.kosten == null) delete t.kosten; else t.kosten = v.kosten; if (v.unbef) t.unbef = 1; else delete t.unbef;
+      if ('pneu' in v) { if (v.pneu == null) delete t.pneu; else t.pneu = v.pneu; }
+      if (v.mit === 'gemeinsam' || v.mit === 'partner') t.mit = v.mit; else delete t.mit;
+      if (t.mit === 'gemeinsam' && typeof v.anteil === 'number' && isFinite(v.anteil)) t.anteil = Math.max(0, Math.min(100, Math.round(v.anteil))); else delete t.anteil;
       for (const [k, , ty, , nm] of specs) {
         let x = v[k];
         if (ty === 'toggle') { if (x) t[k] = 1; else delete t[k]; continue; }
@@ -6323,7 +6424,7 @@ async function importBackup(file) {
     await saveNow(); toast('Backup eingespielt', 'good'); go('reise'); renderNav();
   } catch (e) { console.error(e); toast('Import fehlgeschlagen.', 'bad'); }
 }
-ACT['app.export'] = () => exportBackup();
+ACT['app.export'] = () => ACT['backup.open']();
 ACT['app.theme'] = () => { const cur = document.documentElement.getAttribute('data-theme'); setTheme(cur === 'dark' ? 'light' : 'dark'); if (route === 'einstellungen') rerender(); };
 
 /* ---------- Sperre ---------- */
@@ -6391,10 +6492,13 @@ async function settingsHTML() {
       ${row('Lokales Sprachmodell <span class="badge warn">experimentell</span>', 'Optional für freie Fragen. Läuft im Browser (WebGPU), lädt einmalig ca. 1 GB. Nur auf starken Geräten.', `<input type="checkbox" class="tg" id="sLlm" ${S.ui.llm ? 'checked' : ''}>`)}
       <div class="faint" style="font-size:12px" id="llmState">Status: ${esc(S.ui.llm ? llm : 'Aus')}</div></div></section>
     <section class="card glass s6"><h3>${icon('download')} Daten &amp; Backup</h3><div class="stack" style="gap:14px">
-      ${row('Backup erstellen', last ? 'Zuletzt: ' + relDate(last) : 'Noch nie gesichert', `<button class="btn sm primary" data-act="app.export">${icon('download')}Exportieren</button>`)}
+      ${row('Backup erstellen', (last || S.backup.last) ? 'Zuletzt: ' + relDate(S.backup.last || last) + (S.backup.enc ? ' · verschlüsselt' : '') : 'Noch nie gesichert', `<button class="btn sm primary" data-act="backup.open">${icon('download')}Sichern</button>`)}
+      ${row('Backup-Erinnerung', 'Kairos erinnert dich auf der Startseite', '')}
+      <div class="seg full" style="margin-top:-6px">${BK_EVERY.map(([n, l]) => `<button class="${(S.backup.every || 0) === n ? 'on' : ''}" data-act="backup.every" data-n="${n}">${l}</button>`).join('')}</div>
+      ${row('Gerätewechsel', 'Daten auf ein neues iPhone oder iPad mitnehmen', `<button class="btn sm" data-act="backup.move">Anleitung</button>`)}
       ${row('Backup einspielen', 'ersetzt alle aktuellen Daten', `<button class="btn sm" data-act="set.import">${icon('upload')}Importieren</button>`)}
       ${row('Speicher', usage ? 'Belegt in diesem Browser: ' + usage : '', '')}
-      <p class="muted" style="font-size:13px">Löschst du die Website-Daten deines Browsers, sind die Inhalte weg – deshalb regelmäßig ein Backup machen. Die Backup-Datei enthält deine Daten unverschlüsselt.</p></div></section>
+      <p class="muted" style="font-size:13px">Löschst du die Website-Daten deines Browsers, sind die Inhalte weg – deshalb regelmäßig ein Backup machen. Sichere am besten verschlüsselt und lege die Datei in iCloud Drive ab – sonst ist sie für jeden lesbar, der sie findet.</p></div></section>
     <section class="card glass s6"><h3>${icon('sparkle')} Kairos</h3><div class="stack" style="gap:14px">
       ${row('Einführung', 'Willkommensbildschirm ansehen', `<button class="btn sm" data-act="set.intro">Ansehen</button>`)}
       <p class="muted" style="font-size:13px"><b style="color:var(--text)">Tipp:</b> Auf dem iPhone über Teilen → „Zum Home-Bildschirm“ installieren – dann läuft Kairos wie eine App, auch offline.</p></div></section>
@@ -7889,6 +7993,919 @@ async function refreshApp() {
 })();
 
 /* =====================================================================
+   KAIROS · v13 Werkzeuge: Datei teilen, CSV, PDF-Tabellen, Jahres-Auswahl
+   Gemeinsam genutzt von Vermietung, Steuermappe, Notfall-Mappe und Backup.
+   ===================================================================== */
+const nowY = () => new Date().getFullYear();
+const inYear = (d, y) => !!d && String(d).slice(0, 4) === String(y);
+const yearList = (cur, extra = []) => { const y = nowY(), s = new Set([y, y - 1, y - 2, cur, ...extra].filter(Boolean)); return [...s].sort((a, b) => b - a).slice(0, 5); };
+const yearSeg = (cur, act, extra) => `<div class="seg full yrseg">${yearList(cur, extra).map(y => `<button class="${y === cur ? 'on' : ''}" data-act="${act}" data-y="${y}">${y}</button>`).join('')}</div>`;
+const pdfEur = c => money(c).replace(/[  ]/g, ' ');
+const safeName = s => String(s || '').replace(/[^A-Za-z0-9ÄÖÜäöüß]+/g, '-').replace(/^-+|-+$/g, '') || 'Kairos';
+
+/** Datei über das Teilen-Menü des Systems senden (z. B. „In Dateien sichern“), sonst herunterladen */
+async function fileDeliver(blob, name, title, text) {
+  const file = new File([blob], name, { type: blob.type || 'application/octet-stream' });
+  try { if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title, text: text || '' }); return 'shared'; } } catch (e) { if (e && e.name === 'AbortError') return 'abort'; }
+  download(blob, name); return 'download';
+}
+/** CSV im Excel-Format (Semikolon, UTF-8 mit BOM) */
+function csvBlob(rows) {
+  const q = v => { const s = v == null ? '' : String(v); return /[;"\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  return new Blob(['﻿' + rows.map(r => r.map(q).join(';')).join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
+}
+const csvNum = c => c == null ? '' : (c / 100).toFixed(2).replace('.', ',');
+
+/** Neues PDF mit Kopf. Gibt { d, y } zurück */
+function pdfNew(title, sub, accent, badge, author) {
+  const d = new KPdf({ title: title + (author ? ' – ' + author : ''), author: author || '', subject: sub || '' });
+  const y = pdfHeader(d, { title, sub: sub || '', accent, badge: badge || fmtDate(todayISO(), true) });
+  return { d, y };
+}
+/** Kennzahlen-Kacheln in einer Reihe */
+function pdfTiles(d, y, tiles, color) {
+  const X = 40, W = d.W - 80, gap = 10, n = tiles.length, w = (W - gap * (n - 1)) / n, h = 54;
+  if (y + h > PDF_BOTTOM) { d.addPage(); y = 44; }
+  tiles.forEach((t, i) => { const x = X + i * (w + gap);
+    d.rect(x, y, w, h, { r: 12, fill: '#ffffff', stroke: PDF_LINE, lw: .8, shadow: true, shadowColor: '#2a3a8a' });
+    d.rect(x, y + 12, 3, h - 24, { r: 1.5, fill: t[2] || color });
+    d.text(d.fit(t[0], w - 24, 8, false), x + 14, y + 11, { size: 8, color: PDF_MUTE });
+    d.text(d.fit(String(t[1]), w - 24, 15, true), x + 14, y + 27, { size: 15, bold: true, color: PDF_INK }); });
+  return y + h + 16;
+}
+/** Tabelle: cols [{h, w, a:'r'}], rows: Array von Zellen oder { c: Zellen, tot: 1 } */
+function pdfTable(d, y, title, cols, rows, o = {}) {
+  const X = 40, W = d.W - 80, tw = cols.reduce((a, c) => a + c.w, 0), ws = cols.map(c => c.w / tw * W), RH = o.rh || 19, col = o.color || '#5e8fff';
+  const head = () => {
+    d.rect(X, y, W, 20, { r: 6, fill: pdfDark(col, .15) }); let x = X;
+    cols.forEach((c, i) => { const r = c.a === 'r'; d.text(d.fit(c.h, ws[i] - 12, 8.4, true), r ? x + ws[i] - 7 : x + 7, y + 6, { size: 8.4, bold: true, color: '#ffffff', align: r ? 'r' : 'l' }); x += ws[i]; });
+    y += 22;
+  };
+  if (title) { if (y + 70 > PDF_BOTTOM) { d.addPage(); y = 44; } d.circle(X + 4, y + 5, 3.4, { fill: col }); d.text(String(title).toUpperCase(), X + 14, y, { size: 8.4, bold: true, color: pdfDark(col, .4), sp: 1.1 }); y += 19; }
+  else if (y + 60 > PDF_BOTTOM) { d.addPage(); y = 44; }
+  head();
+  rows.forEach((row, ri) => {
+    if (y + RH > PDF_BOTTOM) { d.addPage(); y = 44; head(); }
+    const cells = Array.isArray(row) ? row : row.c, tot = !Array.isArray(row) && row.tot;
+    if (tot) d.rect(X, y, W, RH, { r: 5, fill: PDF_BG }); else if (ri % 2) d.rect(X, y, W, RH, { fill: '#f8f9ff' });
+    let x = X;
+    cols.forEach((c, i) => { const r = c.a === 'r', s = d.fit(String(cells[i] == null ? '' : cells[i]), ws[i] - 12, 9, !!tot); d.text(s, r ? x + ws[i] - 7 : x + 7, y + 5.5, { size: 9, bold: !!tot, color: tot ? PDF_INK : '#2b3157', align: r ? 'r' : 'l' }); x += ws[i]; });
+    y += RH;
+  });
+  d.line(X, y, X + W, y, { color: PDF_LINE, lw: .6 });
+  return y + 16;
+}
+/** Absatz mit Seitenumbruch-Schutz */
+function pdfNote(d, y, text, o = {}) {
+  const size = o.size || 8.4, lh = size * 1.45, W = d.W - 80, lines = d.wrap(text, W, size, !!o.bold);
+  if (y + lines.length * lh > PDF_BOTTOM) { d.addPage(); y = 44; }
+  for (const ln of lines) { if (ln) d.text(ln, 40, y, { size, color: o.color || PDF_MUTE, bold: !!o.bold }); y += lh; }
+  return y + 8;
+}
+/** PDF teilen / öffnen – gemeinsame Auslieferung */
+async function pdfOut(d, name, title, mode) {
+  try {
+    const blob = d.blob(); buzz(10);
+    if (mode === 'open') { pdfOpen(blob); return; }
+    const r = await pdfDeliver(blob, name, title, title + ' – Kairos');
+    if (r === 'download') toast('PDF gespeichert', 'good');
+  } catch (e) { console.warn(e); toast('PDF konnte nicht erstellt werden', 'bad'); }
+}
+/** Dokument-Auswahl für Formulare */
+const docOpts = () => [['', '– keines –']].concat(S.docs.filter(d => d.status === 'ok').map(d => [d.id, d.name]));
+const docName = id => { const d = id && S.docs.find(x => x.id === id); return d ? d.name : ''; };
+/** Kleine Zeile im Stil der Vertragsliste */
+const rowH = (e, t, s, r, attrs = '') => `<div class="vt ja" ${attrs}><span class="vt-e">${e}</span><div class="vt-m"><b>${esc(t)}</b><small>${esc(s || '')}</small></div>${r || ''}</div>`;
+const hintP = t => `<div class="docs-hint">${icon('info')} ${t}</div>`;
+
+/* =====================================================================
+   KAIROS · Vermietung (GbR): Stammdaten, Gesellschafter, Wohnungen, Buchungen,
+   Jahresübersicht, Betriebskostenabrechnung, Mieterhöhungs-Check, Fristen.
+   Alle Angaben trägst du selbst ein – es sind keine Daten vorbelegt.
+   Hinweise sind Orientierung, keine Steuer- oder Rechtsberatung.
+   ===================================================================== */
+const GBR_EIN = [['kalt', 'Kaltmiete'], ['nkv', 'Nebenkosten-Vorauszahlung'], ['nknach', 'Nebenkosten-Nachzahlung'], ['sonst_e', 'Sonstige Einnahmen']];
+/* [id, Name, umlagefähig, ohne Steuerwirkung] */
+const GBR_AUS = [['grundsteuer', 'Grundsteuer', 1], ['wasser', 'Wasser & Abwasser', 1], ['muell', 'Müllabfuhr', 1], ['heizung', 'Heizung & Warmwasser', 1], ['strom', 'Allgemeinstrom & Beleuchtung', 1], ['hausmeister', 'Hausmeister, Reinigung & Garten', 1], ['gebvers', 'Gebäude- & Haftpflichtversicherung', 1], ['sonst_nk', 'Sonstige Betriebskosten', 1],
+  ['instand', 'Instandhaltung & Reparaturen', 0], ['zinsen', 'Darlehenszinsen', 0], ['verwaltung', 'Verwaltung & Steuerberatung', 0], ['afa', 'Abschreibung (AfA)', 0], ['geb', 'Kontoführung & Gebühren', 0], ['ruecklage', 'Rücklage (kein Aufwand)', 0, 1], ['sonst', 'Sonstiges', 0]];
+const gKat = (typ, id) => (typ === 'ein' ? GBR_EIN : GBR_AUS).find(k => k[0] === id) || [id, id, 0];
+const gCombo = () => GBR_EIN.map(k => ['e:' + k[0], 'Einnahme · ' + k[1]]).concat(GBR_AUS.map(k => ['a:' + k[0], 'Ausgabe · ' + k[1]]));
+const gYear = () => S.gbr.year || nowY();
+const gObj = id => S.gbr.objekte.find(o => o.id === id);
+const gRented = o => !o.leer && !!o.mieter && (!o.ende || o.ende >= todayISO());
+const gSetN = (t, k, v) => { if (v == null || v === '' || (typeof v === 'number' && !isFinite(v))) delete t[k]; else t[k] = v; };
+const fmtM2 = n => n == null ? '' : String(n).replace('.', ',') + ' m²';
+
+function gbrSum(y) {
+  const g = S.gbr, b = g.buch.filter(x => inYear(x.date, y)), byEin = {}, byAus = {}; let ein = 0, aus = 0, rueck = 0;
+  for (const x of b) {
+    const v = x.betrag || 0;
+    if (x.typ === 'ein') { ein += v; byEin[x.kat] = (byEin[x.kat] || 0) + v; }
+    else { if (gKat('aus', x.kat)[3]) { rueck += v; continue; } aus += v; byAus[x.kat] = (byAus[x.kat] || 0) + v; }
+  }
+  const me = g.gs.find(s => s.me), tot = sum(g.gs, s => s.anteil), erg = ein - aus;
+  return { b, ein, aus, erg, byEin, byAus, rueck, me, tot, mein: me ? Math.round(erg * (me.anteil || 0) / 100) : null };
+}
+function gbrObjSum(o, y) {
+  const b = S.gbr.buch.filter(x => x.obj === o.id && inYear(x.date, y) && !(x.typ === 'aus' && gKat('aus', x.kat)[3]));
+  const ein = sum(b.filter(x => x.typ === 'ein'), x => x.betrag), aus = sum(b.filter(x => x.typ === 'aus'), x => x.betrag);
+  return { ein, aus, erg: ein - aus };
+}
+/** Betriebskosten-Anteil einer Wohnung für ein Jahr */
+function nkCalc(o, y) {
+  const g = S.gbr, ys = `${y}-01-01`, ye = `${y}-12-31`, daysY = diffDays(ye, ys) + 1;
+  const from = o.beginn && o.beginn > ys ? o.beginn : ys, to = o.ende && o.ende < ye ? o.ende : ye;
+  const days = Math.max(0, diffDays(to, from) + 1), f = days / daysY;
+  const all = g.objekte, hausF = sum(all, x => x.flaeche), hausP = sum(all, x => x.pers), n = all.length || 1;
+  const costs = g.buch.filter(b => b.typ === 'aus' && b.nk && inYear(b.date, y));
+  const byKat = {};
+  for (const b of costs) {
+    if (b.obj && b.obj !== o.id) continue;
+    const r = byKat[b.kat] || (byKat[b.kat] = { kat: b.kat, haus: 0, share: 0, key: new Set() });
+    let key = b.obj ? 'direkt' : (b.umlage || 'flaeche'), ratio = 1;
+    if (!b.obj) {
+      if (key === 'person' && hausP && o.pers) ratio = o.pers / hausP;
+      else if (key === 'einheit') ratio = 1 / n;
+      else { key = 'flaeche'; ratio = hausF && o.flaeche ? o.flaeche / hausF : 1 / n; }
+    }
+    r.haus += b.betrag || 0; r.share += (b.betrag || 0) * ratio * (b.obj ? 1 : f); r.key.add(key);
+  }
+  const rows = Object.values(byKat).map(r => ({ kat: r.kat, haus: r.haus, share: Math.round(r.share), key: [...r.key].map(k => ({ flaeche: 'Wohnfläche', einheit: 'je Wohnung', person: 'Personen', direkt: 'direkt' })[k]).join(', ') }));
+  const kosten = sum(rows, r => r.share);
+  const paid = g.buch.filter(b => b.typ === 'ein' && b.kat === 'nkv' && b.obj === o.id && inYear(b.date, y));
+  const months = days / (daysY / 12), soll = Math.round((o.nk || 0) * months), booked = sum(paid, b => b.betrag), full = paid.length >= Math.floor(months + .01) && paid.length > 0;
+  const vor = full ? booked : soll;
+  return { rows, kosten, vor, saldo: vor - kosten, days, daysY, f, hausF, fromBooked: full, nBooked: paid.length, months: Math.round(months), booked, from, to, due: `${y + 1}-12-31` };
+}
+
+/* ---------- Seite ---------- */
+VIEWS.gbr = {
+  render() {
+    const g = S.gbr;
+    if (!g.set) return `<div class="page"><header class="ph"><div class="t"><div class="eyebrow">Wohnungen vermieten</div><h1>Vermietung</h1><p>Für deine GbR: Wohnungen, Mieteingänge, Kosten und das Jahresergebnis mit deinem Anteil.</p></div></header>
+      <div class="card glass"><div class="empty"><div class="em">🏘️</div><b>Noch keine GbR eingerichtet</b><p>Lege Name und Gesellschafter an, dann trägst du Wohnungen, Mieter und Buchungen ein. Alles bleibt auf diesem Gerät.</p><button class="btn primary lg" data-act="gbr.setup">${icon('plus')}GbR einrichten</button></div></div>
+      <p class="disc">Hinweise in diesem Bereich sind Orientierung, keine Steuer- oder Rechtsberatung.</p></div>`;
+    const y = gYear(), s = gbrSum(y), objs = g.objekte, rented = objs.filter(gRented), soll = sum(rented, o => o.kalt), sollNk = sum(rented, o => o.nk);
+    const fr = gbrDeadlinesList().slice(0, 3), last = s.b.slice().sort((a, b) => a.date < b.date ? 1 : -1).slice(0, 6);
+    const mon = todayISO().slice(0, 7);
+    const objRow = o => {
+      const sub = [o.mieter, o.flaeche ? fmtM2(o.flaeche) : '', o.kalt ? money(o.kalt) + ' kalt' : ''].filter(Boolean).join(' · ') || 'Details ergänzen';
+      const paid = g.buch.some(b => b.obj === o.id && b.typ === 'ein' && b.kat === 'kalt' && (b.date || '').slice(0, 7) === mon);
+      const right = gRented(o) ? `<span class="badge ${paid ? 'pos' : 'warn'}">${paid ? icon('check') + 'Miete da' : 'Miete offen'}</span>` : `<span class="badge">${o.leer || !o.mieter ? 'Leer' : 'Beendet'}</span>`;
+      return rowH('🏠', o.name || 'Wohnung', sub, right, `data-act="gbr.obj.open" data-id="${o.id}"`);
+    };
+    const bRow = b => { const k = gKat(b.typ, b.kat), ob = b.obj && gObj(b.obj); return rowH(b.typ === 'ein' ? '📥' : '📤', k[1], [fmtDate(b.date, true), ob && ob.name, b.text].filter(Boolean).join(' · '), `<b class="${b.typ === 'ein' ? 'pos' : 'neg'}">${b.typ === 'ein' ? '+' : '−'}${money(b.betrag)}</b>`, `data-act="gbr.buch.edit" data-id="${b.id}"`); };
+    return `<div class="page gbrp"><header class="ph"><div class="t"><div class="eyebrow">Vermietung</div><h1>${esc(g.name || 'GbR')}</h1><p>Wohnungen, Mieteingänge, Kosten und dein Anteil am Ergebnis.</p></div>
+      <div class="act"><button class="btn" data-act="gbr.obj.edit">${icon('plus')}Wohnung</button><button class="btn primary" data-act="gbr.buch.edit">${icon('plus')}Buchung</button></div></header>
+      ${yearSeg(y, 'gbr.year')}
+      <div class="kpis"><div class="kpi2"><b>${objs.length}</b><span>${objs.length ? plural(rented.length, 'Wohnung', 'Wohnungen') + ' vermietet' : 'Wohnungen'}</span></div><div class="kpi2"><b>${eur0(soll)}</b><span>Kaltmiete Soll / Monat${sollNk ? ' · NK ' + eur0(sollNk) : ''}</span></div><div class="kpi2"><b>${eur0(s.ein)}</b><span>Einnahmen ${y}</span></div><div class="kpi2"><b class="${s.erg < 0 ? 'neg' : ''}">${s.erg < 0 ? '−' : ''}${eur0(Math.abs(s.erg))}</b><span>Ergebnis ${y}${s.me ? ' · mein Anteil ' + (s.mein < 0 ? '−' : '') + eur0(Math.abs(s.mein)) : ''}</span></div></div>
+      ${!g.gs.length ? `<button class="notice" data-act="gbr.gs.edit">${icon('users')}<span><b>Gesellschafter anlegen</b><small>Mit den Anteilen berechnet Kairos dein Ergebnis und die Aufteilung.</small></span>${icon('chevR')}</button>` : s.tot !== 100 ? `<button class="notice soft" data-act="gbr.stamm">${icon('alert')}<span><b>Die Anteile ergeben ${String(s.tot).replace('.', ',')} %</b><small>Prüfe die Gesellschafter – zusammen sollten es 100 % sein.</small></span>${icon('chevR')}</button>` : ''}
+      ${fr.length ? `<div class="card glass"><div class="card-h">${icon('calendar')} Fristen</div>${fr.map(d => rowH(d.e, d.title, d.sub, `<span class="badge ${diffDays(d.date, todayISO()) < 30 ? 'warn' : ''}">${dlLabel(d.date)}</span>`)).join('')}</div>` : ''}
+      <div class="card glass"><div class="card-h">${icon('home')} Wohnungen<span class="sp"></span><button class="btn sm ghost" data-act="gbr.obj.edit" aria-label="Wohnung hinzufügen">${icon('plus')}</button></div>
+        ${objs.length ? `<div class="vlist">${objs.map(objRow).join('')}</div>` : `<p class="muted">Noch keine Wohnung. Lege Fläche, Miete, Mieter und Mietvertrag an.</p>`}</div>
+      <div class="card glass"><div class="card-h">${icon('coins')} Buchungen ${y}<span class="sp"></span><button class="link" data-act="gbr.buch.all">Alle (${s.b.length})</button></div>
+        ${last.length ? `<div class="vlist">${last.map(bRow).join('')}</div>` : `<p class="muted">Noch keine Buchung in ${y}. Miete, Kosten und Zinsen trägst du hier ein – oder bei der Wohnung mit einem Tipp als „Mieteingang“.</p>`}</div>
+      <div class="card glass"><div class="card-h">${icon('sparkle')} Auswertung & Werkzeuge</div>
+        <button class="ckl" data-act="gbr.jahr">${icon('coins')}<span>Jahresübersicht ${y} (Hilfe für die Feststellungserklärung)</span>${icon('chevR')}</button>
+        <button class="ckl" data-act="gbr.nk">${icon('receipt')}<span>Nebenkostenabrechnung erstellen</span>${icon('chevR')}</button>
+        <button class="ckl" data-act="gbr.erh">${icon('trend')}<span>Mieterhöhungs-Check</span>${icon('chevR')}</button>
+        <button class="ckl" data-act="gbr.stamm">${icon('users')}<span>Stammdaten & Gesellschafter</span>${icon('chevR')}</button></div>
+      <p class="disc">Hinweise sind Orientierung (Stand ${RULES.year}), keine Steuer- oder Rechtsberatung. Für Feststellungserklärung, Betriebskostenabrechnung und Mieterhöhung gelten Formvorschriften – lass Unsicheres von Steuerberater oder Verein prüfen.</p></div>`;
+  },
+  mount(root) { $$('.kpi2 b', root).forEach(el => { if (el.textContent.trim() && /^\d+$/.test(el.textContent.trim())) countUp(el, +el.textContent, c => String(c)); }); }
+};
+ACT['gbr.year'] = el => { S.gbr.year = +el.dataset.y; save(); rerender(); };
+
+/* ---------- Stammdaten ---------- */
+ACT['gbr.setup'] = () => {
+  const g = S.gbr, first = !g.set;
+  formSheet({ title: first ? 'GbR einrichten' : 'GbR-Stammdaten', sub: 'Diese Angaben erscheinen auf Auswertungen und Abrechnungen. Alles ist freiwillig außer dem Namen.', wide: true, submit: 'Speichern', fields: [
+    { k: 'name', label: 'Name der GbR', type: 'text', val: g.name, req: 1, full: true, ph: 'z. B. Muster & Partner GbR' },
+    { k: 'adr', label: 'Anschrift der GbR (für Abrechnungen)', type: 'textarea', val: g.adr, rows: 2, full: true },
+    { k: 'steuernr', label: 'Steuernummer der GbR', type: 'text', val: g.steuernr }, { k: 'fa', label: 'Finanzamt', type: 'text', val: g.fa },
+    { k: 'iban', label: 'IBAN des GbR-Kontos', type: 'text', val: g.iban, full: true },
+    { k: 'verwalter', label: 'Hausverwaltung / Ansprechpartner', type: 'text', val: g.verwalter, full: true },
+    { type: 'head', label: 'Finanzierung', e: '🏦' },
+    { k: 'darlehen', label: 'Darlehen (Bank, Bezeichnung)', type: 'text', val: g.darlehen, full: true },
+    { k: 'zinsende', label: 'Zinsbindung endet am', type: 'date', val: g.zinsende }, { k: 'rest', label: 'Restschuld (optional)', type: 'money', val: g.rest },
+    { type: 'head', label: 'Unterlagen', e: '📎' },
+    { k: 'doc', label: 'Gesellschaftsvertrag', type: 'select', opts: docOpts(), val: g.doc || '', full: true },
+    { k: 'notiz', label: 'Notiz', type: 'textarea', val: g.notiz, rows: 2, full: true }],
+  onSubmit: v => {
+    if (!String(v.name || '').trim()) { toast('Bitte einen Namen eintragen.', 'bad'); return false; }
+    g.name = v.name.trim(); g.set = true;
+    for (const k of ['adr', 'steuernr', 'fa', 'iban', 'verwalter', 'darlehen', 'zinsende', 'doc', 'notiz']) gSetN(g, k, typeof v[k] === 'string' ? v[k].trim() : v[k]);
+    gSetN(g, 'rest', v.rest); save(); renderNav(); rerender(); toast('Gespeichert', 'good');
+    if (first && !g.gs.length) setTimeout(() => ACT['gbr.gs.edit']({ dataset: {} }), 320);
+  } });
+};
+ACT['gbr.stamm'] = () => {
+  const g = S.gbr; if (!g.set) return ACT['gbr.setup']();
+  const rows = [['Name', g.name], ['Anschrift', g.adr], ['Steuernummer', g.steuernr], ['Finanzamt', g.fa], ['IBAN', g.iban], ['Verwaltung', g.verwalter], ['Darlehen', g.darlehen], ['Zinsbindung bis', g.zinsende && fmtDate(g.zinsende, true)], ['Restschuld', g.rest != null && money(g.rest)], ['Gesellschaftsvertrag', docName(g.doc)], ['Notiz', g.notiz]].filter(r => r[1]);
+  const tot = sum(g.gs, s => s.anteil);
+  openSheet(`<div class="chh" style="--c:#35c58f"><span class="chh-e">🏘️</span><div><small>Vermietung</small><h2>${esc(g.name)}</h2></div></div>
+    <div class="pk">${rows.map(r => `<div class="pk-r"><span>${esc(r[0])}</span><b>${esc(r[1])}</b></div>`).join('')}</div>
+    <div class="group-h"><span>Gesellschafter</span></div>
+    ${g.gs.length ? `<div class="vlist">${g.gs.map(s => rowH(s.me ? '🙋' : '👤', s.name || 'Gesellschafter', s.me ? 'Das bin ich' : '', `<span class="badge info">${String(s.anteil == null ? '–' : s.anteil).replace('.', ',')} %</span>`, `data-act="gbr.gs.edit" data-id="${s.id}"`)).join('')}</div>` : '<p class="muted">Noch niemand angelegt.</p>'}
+    ${g.gs.length && tot !== 100 ? hintP(`Die Anteile ergeben ${String(tot).replace('.', ',')} %. Zusammen sollten es 100 % sein.`) : ''}
+    <div class="acts"><button class="btn" data-act="gbr.gs.edit">${icon('plus')}Gesellschafter</button><span class="sp"></span><button class="btn primary" data-act="gbr.setup">${icon('edit')}Bearbeiten</button></div>`, { wide: true });
+};
+ACT['gbr.gs.edit'] = el => {
+  const g = S.gbr, id = el.dataset && el.dataset.id, s0 = id && g.gs.find(x => x.id === id), s = s0 || {};
+  const none = !g.gs.some(x => x.me), rest = Math.max(0, 100 - sum(g.gs.filter(x => x.id !== id), x => x.anteil));
+  formSheet({ title: s0 ? 'Gesellschafter bearbeiten' : 'Gesellschafter hinzufügen', sub: 'Der Anteil bestimmt, wie das Ergebnis der GbR auf die Gesellschafter verteilt wird (laut Gesellschaftsvertrag).', submit: 'Speichern', fields: [
+    { k: 'name', label: 'Name', type: 'text', val: s.name != null ? s.name : (none && !g.gs.length ? profName() : ''), req: 1, full: true },
+    { k: 'anteil', label: 'Anteil in %', type: 'number', val: s.anteil != null ? s.anteil : (g.gs.length ? rest : 50), min: 0, max: 100, step: '0.01', im: 'decimal' },
+    { k: 'me', label: 'Das bin ich', type: 'toggle', val: s0 ? !!s.me : none, full: true }],
+  onDelete: s0 ? () => { removeWithUndo(g.gs, id, 'Gesellschafter', () => { renderNav(); rerender(); }); } : null,
+  onSubmit: v => {
+    if (!String(v.name || '').trim()) { toast('Bitte einen Namen eintragen.', 'bad'); return false; }
+    if (v.anteil == null || v.anteil < 0 || v.anteil > 100) { toast('Der Anteil muss zwischen 0 und 100 % liegen.', 'bad'); return false; }
+    const o = s0 || { id: 'gs_' + uid() }; o.name = v.name.trim(); o.anteil = v.anteil; o.me = !!v.me;
+    if (o.me) g.gs.forEach(x => { if (x !== o) x.me = false; });
+    if (!s0) g.gs.push(o); save(); rerender(); toast('Gespeichert', 'good');
+  } });
+};
+
+/* ---------- Wohnungen ---------- */
+const gObjDetail = o => {
+  const pm2 = o.kalt && o.flaeche ? Math.round(o.kalt / o.flaeche) : null, y = gYear(), os = gbrObjSum(o, y);
+  return [['Adresse', o.adr], ['Wohnfläche', o.flaeche && fmtM2(o.flaeche)], ['Zimmer', o.zimmer], ['Personen', o.pers], ['Mieter', o.mieter], ['Kontakt', o.kontakt], ['Mietbeginn', o.beginn && fmtDate(o.beginn, true)], ['Mietende', o.ende && fmtDate(o.ende, true)],
+    ['Kaltmiete', o.kalt && money(o.kalt)], ['Nebenkosten-Vorauszahlung', o.nk && money(o.nk)], ['Warmmiete', (o.kalt || o.nk) && money((o.kalt || 0) + (o.nk || 0))], ['Kaltmiete je m²', pm2 && money(pm2)], ['Kaution', o.kaution && money(o.kaution)],
+    ['Mietart', { index: 'Indexmiete', staffel: 'Staffelmiete' }[o.mtyp]], ['Letzte Mieterhöhung', o.lastErh && fmtDate(o.lastErh, true)], ['Mietvertrag', docName(o.doc)], [`Einnahmen ${y}`, os.ein && money(os.ein)], [`Direkte Kosten ${y}`, os.aus && money(os.aus)], ['Notiz', o.notiz]].filter(r => r[1] != null && r[1] !== '' && r[1] !== false);
+};
+ACT['gbr.obj.open'] = el => {
+  const o = gObj(el.dataset.id); if (!o) return;
+  openSheet(`<div class="chh" style="--c:#35c58f"><span class="chh-e">🏠</span><div><small>${esc(S.gbr.name || 'Vermietung')}</small><h2>${esc(o.name || 'Wohnung')}</h2></div></div>
+    <div class="pk">${gObjDetail(o).map(r => `<div class="pk-r"><span>${esc(r[0])}</span><b>${esc(r[1])}</b></div>`).join('') || '<p class="muted">Noch keine Details – tippe auf „Bearbeiten“.</p>'}</div>
+    ${o.doc && docName(o.doc) ? `<button class="ckl ok" data-act="doc.open" data-id="${o.doc}">${icon('file')}<span>Mietvertrag: ${esc(docName(o.doc))}</span>${icon('chevR')}</button>` : ''}
+    ${gRented(o) ? `<button class="ckl" data-act="gbr.rent" data-id="${o.id}">${icon('check')}<span>Mieteingang für diesen Monat buchen</span>${icon('chevR')}</button>` : ''}
+    <button class="ckl" data-act="gbr.erh" data-id="${o.id}">${icon('trend')}<span>Mieterhöhung prüfen</span>${icon('chevR')}</button>
+    <button class="ckl" data-act="gbr.nk" data-id="${o.id}">${icon('receipt')}<span>Nebenkostenabrechnung</span>${icon('chevR')}</button>
+    <div class="acts"><span class="sp"></span><button class="btn primary" data-act="gbr.obj.edit" data-id="${o.id}">${icon('edit')}Bearbeiten</button></div>`, { wide: true });
+};
+ACT['gbr.obj.edit'] = el => {
+  const g = S.gbr; if (!g.set) return ACT['gbr.setup']();
+  const id = el && el.dataset && el.dataset.id, o0 = id && gObj(id), o = o0 || {};
+  formSheet({ title: o0 ? 'Wohnung bearbeiten' : 'Wohnung hinzufügen', wide: true, submit: 'Speichern', fields: [
+    { k: 'name', label: 'Bezeichnung', type: 'text', val: o.name, req: 1, full: true, ph: 'z. B. Wohnung 1. OG links' },
+    { k: 'adr', label: 'Adresse', type: 'text', val: o.adr, full: true },
+    { k: 'flaeche', label: 'Wohnfläche (m²)', type: 'number', val: o.flaeche, step: '0.01', im: 'decimal' }, { k: 'zimmer', label: 'Zimmer', type: 'number', val: o.zimmer, step: '0.5', im: 'decimal' },
+    { k: 'pers', label: 'Personen im Haushalt', type: 'number', val: o.pers, step: '1', im: 'numeric', hint: 'Nur nötig, wenn Kosten nach Personen verteilt werden.' },
+    { type: 'head', label: 'Miete', e: '💶' },
+    { k: 'kalt', label: 'Kaltmiete / Monat', type: 'money', val: o.kalt }, { k: 'nk', label: 'Nebenkosten-Vorauszahlung / Monat', type: 'money', val: o.nk },
+    { k: 'kaution', label: 'Kaution', type: 'money', val: o.kaution },
+    { k: 'mtyp', label: 'Mietart', type: 'select', opts: [['', 'Normale Miete'], ['index', 'Indexmiete'], ['staffel', 'Staffelmiete']], val: o.mtyp || '' },
+    { k: 'lastErh', label: 'Letzte Mieterhöhung (oder Mietbeginn)', type: 'date', val: o.lastErh, full: true },
+    { type: 'head', label: 'Mieter', e: '🧑' },
+    { k: 'mieter', label: 'Name des Mieters', type: 'text', val: o.mieter, full: true }, { k: 'kontakt', label: 'Telefon / E-Mail', type: 'text', val: o.kontakt, full: true },
+    { k: 'beginn', label: 'Mietbeginn', type: 'date', val: o.beginn }, { k: 'ende', label: 'Mietende (falls befristet/gekündigt)', type: 'date', val: o.ende },
+    { k: 'leer', label: 'Steht gerade leer', type: 'toggle', val: !!o.leer, full: true },
+    { type: 'head', label: 'Unterlagen', e: '📎' },
+    { k: 'doc', label: 'Mietvertrag', type: 'select', opts: docOpts(), val: o.doc || '', full: true },
+    { k: 'notiz', label: 'Notiz', type: 'textarea', val: o.notiz, rows: 2, full: true }],
+  onDelete: o0 ? () => { removeWithUndo(g.objekte, id, 'Wohnung', () => { renderNav(); rerender(); }); } : null,
+  onSubmit: v => {
+    if (!String(v.name || '').trim()) { toast('Bitte eine Bezeichnung eintragen.', 'bad'); return false; }
+    const t = o0 || { id: 'ob_' + uid() }; t.name = v.name.trim();
+    for (const k of ['adr', 'mieter', 'kontakt', 'beginn', 'ende', 'doc', 'notiz', 'mtyp', 'lastErh']) gSetN(t, k, typeof v[k] === 'string' ? v[k].trim() : v[k]);
+    for (const k of ['flaeche', 'zimmer', 'pers', 'kalt', 'nk', 'kaution']) gSetN(t, k, v[k]);
+    if (v.leer) t.leer = 1; else delete t.leer;
+    if (!o0) g.objekte.push(t); save(); renderNav(); rerender(); toast('Gespeichert', 'good');
+  } });
+};
+ACT['gbr.rent'] = async el => {
+  const o = gObj(el.dataset.id); if (!o) return; const mon = todayISO().slice(0, 7), g = S.gbr;
+  if (g.buch.some(b => b.obj === o.id && b.typ === 'ein' && b.kat === 'kalt' && (b.date || '').slice(0, 7) === mon) && !await confirmSheet('Miete schon gebucht', 'Für diesen Monat gibt es bereits eine Kaltmiete. Trotzdem noch einmal buchen?', 'Trotzdem buchen', false)) return;
+  if (!o.kalt && !o.nk) { toast('Trage zuerst Kaltmiete oder Nebenkosten bei der Wohnung ein.', 'bad'); return; }
+  const txt = `Miete ${mon.slice(5)}/${mon.slice(0, 4)}${o.mieter ? ' · ' + o.mieter : ''}`, made = [];
+  if (o.kalt) made.push({ id: 'bu_' + uid(), date: todayISO(), typ: 'ein', kat: 'kalt', betrag: o.kalt, obj: o.id, text: txt });
+  if (o.nk) made.push({ id: 'bu_' + uid(), date: todayISO(), typ: 'ein', kat: 'nkv', betrag: o.nk, obj: o.id, text: txt });
+  g.buch.push(...made); save(); closeSheet(); rerender(); snd('done'); hap(2);
+  toast('Mieteingang gebucht', 'good', { label: 'Rückgängig', fn: () => { g.buch = g.buch.filter(b => !made.some(m => m.id === b.id)); save(); rerender(); } });
+};
+
+/* ---------- Buchungen ---------- */
+ACT['gbr.buch.edit'] = el => {
+  const g = S.gbr; if (!g.set) return ACT['gbr.setup']();
+  const id = el && el.dataset && el.dataset.id, b0 = id && g.buch.find(x => x.id === id), b = b0 || {};
+  const k0 = b0 ? (b.typ === 'ein' ? 'e:' : 'a:') + b.kat : ((el && el.dataset && el.dataset.kat) || 'e:kalt');
+  formSheet({ title: b0 ? 'Buchung bearbeiten' : 'Neue Buchung', sub: 'Einnahmen und Ausgaben der GbR. Betriebskosten, die du auf Mieter umlegst, fließen in die Nebenkostenabrechnung.', wide: true, submit: 'Speichern', fields: [
+    { k: 'kat', label: 'Art', type: 'select', opts: gCombo(), val: k0, full: true },
+    { k: 'betrag', label: 'Betrag', type: 'money', val: b.betrag }, { k: 'date', label: 'Datum', type: 'date', val: b.date || todayISO() },
+    { k: 'obj', label: 'Wohnung', type: 'select', opts: [['', '– ganzes Haus / alle Wohnungen –']].concat(g.objekte.map(o => [o.id, o.name || 'Wohnung'])), val: b.obj || '', full: true },
+    { k: 'text', label: 'Beschreibung', type: 'text', val: b.text, full: true },
+    { k: 'umlage', label: 'Verteilung der Betriebskosten (bei „ganzes Haus“)', type: 'select', opts: [['flaeche', 'Nach Wohnfläche'], ['einheit', 'Je Wohnung gleich'], ['person', 'Nach Personenzahl']], val: b.umlage || 'flaeche', full: true },
+    { k: 'keinnk', label: 'Nicht auf Mieter umlegen', type: 'toggle', val: b0 ? !b.nk && b.typ === 'aus' && !!gKat('aus', b.kat)[2] : false, full: true, hint: 'Nur relevant bei Betriebskosten (z. B. Leerstand oder laut Mietvertrag nicht umlagefähig).' },
+    { k: 'doc', label: 'Beleg / Dokument', type: 'select', opts: docOpts(), val: b.doc || '', full: true }],
+  onDelete: b0 ? () => { removeWithUndo(g.buch, id, 'Buchung', () => rerender()); } : null,
+  onSubmit: v => {
+    if (v.betrag == null || v.betrag <= 0) { toast('Bitte einen Betrag über 0 eintragen.', 'bad'); return false; }
+    if (!v.date) { toast('Bitte ein Datum wählen.', 'bad'); return false; }
+    const typ = String(v.kat).startsWith('e:') ? 'ein' : 'aus', kat = String(v.kat).slice(2), t = b0 || { id: 'bu_' + uid() };
+    t.typ = typ; t.kat = kat; t.betrag = Math.abs(v.betrag); t.date = v.date;
+    gSetN(t, 'obj', v.obj); gSetN(t, 'text', (v.text || '').trim()); gSetN(t, 'doc', v.doc);
+    if (typ === 'aus' && gKat('aus', kat)[2] && !v.keinnk) { t.nk = 1; t.umlage = v.umlage || 'flaeche'; } else { delete t.nk; delete t.umlage; }
+    if (!b0) g.buch.push(t); save(); rerender(); toast('Gespeichert', 'good');
+  } });
+};
+ACT['gbr.buch.all'] = () => {
+  const y = gYear(), list = S.gbr.buch.filter(b => inYear(b.date, y)).sort((a, b) => a.date < b.date ? 1 : -1);
+  const row = b => { const k = gKat(b.typ, b.kat), ob = b.obj && gObj(b.obj); return rowH(b.typ === 'ein' ? '📥' : '📤', k[1], [fmtDate(b.date, true), ob && ob.name, b.text].filter(Boolean).join(' · '), `<b class="${b.typ === 'ein' ? 'pos' : 'neg'}">${b.typ === 'ein' ? '+' : '−'}${money(b.betrag)}</b>`, `data-act="gbr.buch.edit" data-id="${b.id}"`); };
+  openSheet(`<h2>Buchungen</h2>${yearSeg(y, 'gbr.buch.y')}${list.length ? `<div class="vlist">${list.map(row).join('')}</div>` : `<p class="muted">Keine Buchungen in ${y}.</p>`}
+    <div class="acts"><button class="btn" data-act="gbr.csv">${icon('download')}CSV</button><span class="sp"></span><button class="btn primary" data-act="gbr.buch.edit">${icon('plus')}Buchung</button></div>`, { wide: true });
+};
+ACT['gbr.buch.y'] = el => { S.gbr.year = +el.dataset.y; save(); ACT['gbr.buch.all'](); };
+ACT['gbr.csv'] = async () => {
+  const y = gYear(), rows = [['Datum', 'Art', 'Kategorie', 'Wohnung', 'Beschreibung', 'Betrag (EUR)', 'Umlagefähig']];
+  S.gbr.buch.filter(b => inYear(b.date, y)).sort((a, b) => a.date < b.date ? -1 : 1).forEach(b => { const o = b.obj && gObj(b.obj); rows.push([b.date, b.typ === 'ein' ? 'Einnahme' : 'Ausgabe', gKat(b.typ, b.kat)[1], o ? o.name : '', b.text || '', csvNum(b.typ === 'ein' ? b.betrag : -b.betrag), b.nk ? 'ja' : '']); });
+  if (rows.length < 2) return toast('Keine Buchungen in ' + y);
+  const r = await fileDeliver(csvBlob(rows), `Kairos-Vermietung-${y}-Buchungen.csv`, 'Buchungen ' + y, ''); if (r === 'download') toast('CSV gespeichert', 'good');
+};
+
+/* ---------- Jahresübersicht ---------- */
+ACT['gbr.jahr.y'] = el => { S.gbr.year = +el.dataset.y; save(); ACT['gbr.jahr'](); };
+ACT['gbr.jahr'] = () => {
+  const g = S.gbr; if (!g.set) return ACT['gbr.setup'](); const y = gYear(), s = gbrSum(y);
+  const kRow = (k, v, typ) => `<div class="pk-r"><span>${esc(gKat(typ, k)[1])}</span><b>${money(v)}</b></div>`;
+  openSheet(`<div class="chh" style="--c:#35c58f"><span class="chh-e">📊</span><div><small>${esc(g.name)}</small><h2>Jahresübersicht ${y}</h2></div></div>${yearSeg(y, 'gbr.jahr.y')}
+    <div class="vstat"><div><b>${eur0(s.ein)}</b><span>Einnahmen</span></div><div><b>${eur0(s.aus)}</b><span>Ausgaben</span></div><div><b class="${s.erg < 0 ? 'neg' : 'pos'}">${s.erg < 0 ? '−' : ''}${eur0(Math.abs(s.erg))}</b><span>Ergebnis</span></div></div>
+    ${Object.keys(s.byEin).length ? `<div class="group-h"><span>Einnahmen</span></div><div class="pk">${GBR_EIN.filter(k => s.byEin[k[0]]).map(k => kRow(k[0], s.byEin[k[0]], 'ein')).join('')}</div>` : ''}
+    ${Object.keys(s.byAus).length ? `<div class="group-h"><span>Ausgaben</span></div><div class="pk">${GBR_AUS.filter(k => s.byAus[k[0]]).map(k => kRow(k[0], s.byAus[k[0]], 'aus')).join('')}</div>` : ''}
+    ${s.rueck ? `<p class="muted fine">Rücklagen von ${money(s.rueck)} sind nicht im Ergebnis enthalten – sie sind kein Aufwand.</p>` : ''}
+    ${g.gs.length ? `<div class="group-h"><span>Aufteilung auf Gesellschafter</span></div><div class="pk">${g.gs.map(x => `<div class="pk-r"><span>${esc(x.name || 'Gesellschafter')}${x.me ? ' (ich)' : ''} · ${String(x.anteil).replace('.', ',')} %</span><b>${money(Math.round(s.erg * (x.anteil || 0) / 100))}</b></div>`).join('')}</div>` : hintP('Lege Gesellschafter mit Anteilen an, dann zeigt Kairos hier dein Ergebnis.')}
+    ${hintP('Eine vermietende GbR gibt in der Regel eine Erklärung zur gesonderten und einheitlichen Feststellung ab (mit Anlage V). Das Finanzamt verteilt das Ergebnis auf die Gesellschafter; deinen Anteil trägst du dann in deine eigene Steuererklärung ein. Diese Übersicht ist eine Vorbereitung, keine Steuerberatung.')}
+    <div class="acts"><button class="btn" data-act="gbr.csv">${icon('download')}CSV</button><span class="sp"></span><button class="btn" data-act="gbr.jahr.pdf" data-mode="open">${icon('eye')}Ansehen</button><button class="btn primary" data-act="gbr.jahr.pdf">${icon('share')}PDF teilen</button></div>`, { wide: true });
+};
+function gbrYearPdf(y) {
+  const g = S.gbr, s = gbrSum(y), { d, y: y0 } = pdfNew(`Jahresübersicht ${y}`, `${g.name}${g.steuernr ? ' · Steuernr. ' + g.steuernr : ''}`, '#35c58f', 'Vermietung', ''); let yy = y0;
+  yy = pdfTiles(d, yy, [['Einnahmen', pdfEur(s.ein)], ['Ausgaben', pdfEur(s.aus)], ['Ergebnis', pdfEur(s.erg)], ...(s.me ? [['Mein Anteil (' + String(s.me.anteil).replace('.', ',') + ' %)', pdfEur(s.mein)]] : [])], '#35c58f');
+  const cols = [{ h: 'Kategorie', w: 3 }, { h: 'Betrag', w: 1.2, a: 'r' }];
+  const ein = GBR_EIN.filter(k => s.byEin[k[0]]).map(k => [k[1], pdfEur(s.byEin[k[0]])]); if (ein.length) { ein.push({ c: ['Summe Einnahmen', pdfEur(s.ein)], tot: 1 }); yy = pdfTable(d, yy, 'Einnahmen', cols, ein, { color: '#35c58f' }); }
+  const aus = GBR_AUS.filter(k => s.byAus[k[0]]).map(k => [k[1], pdfEur(s.byAus[k[0]])]); if (aus.length) { aus.push({ c: ['Summe Ausgaben', pdfEur(s.aus)], tot: 1 }); yy = pdfTable(d, yy, 'Ausgaben (Werbungskosten)', cols, aus, { color: '#e0577f' }); }
+  if (g.objekte.length) {
+    const rows = g.objekte.map(o => { const os = gbrObjSum(o, y); return [o.name || 'Wohnung', o.mieter || '–', pdfEur(os.ein), pdfEur(os.aus), pdfEur(os.erg)]; });
+    yy = pdfTable(d, yy, 'Je Wohnung (nur direkt zugeordnete Buchungen)', [{ h: 'Wohnung', w: 2.2 }, { h: 'Mieter', w: 2 }, { h: 'Einnahmen', w: 1.4, a: 'r' }, { h: 'Kosten', w: 1.4, a: 'r' }, { h: 'Ergebnis', w: 1.4, a: 'r' }], rows, { color: '#5e8fff' });
+  }
+  if (g.gs.length) yy = pdfTable(d, yy, 'Aufteilung auf Gesellschafter', [{ h: 'Gesellschafter', w: 3 }, { h: 'Anteil', w: 1, a: 'r' }, { h: 'Ergebnis', w: 1.4, a: 'r' }], g.gs.map(x => [x.name || 'Gesellschafter', String(x.anteil).replace('.', ',') + ' %', pdfEur(Math.round(s.erg * (x.anteil || 0) / 100))]), { color: '#8a6cff' });
+  if (s.rueck) yy = pdfNote(d, yy, `Hinweis: Rücklagen von ${pdfEur(s.rueck)} sind im Ergebnis nicht enthalten.`);
+  pdfNote(d, yy, 'Diese Übersicht wurde aus deinen eigenen Buchungen in Kairos erstellt. Sie ist eine Vorbereitung für die Erklärung zur gesonderten und einheitlichen Feststellung und ersetzt keine Steuerberatung. Bitte Beträge und Zuordnung (z. B. Abschreibung, Zinsen, Erhaltungsaufwand) vor der Abgabe prüfen.');
+  pdfFooters(d, 'Erstellt mit Kairos · ' + (g.name || 'Vermietung')); return d;
+}
+ACT['gbr.jahr.pdf'] = el => { const y = gYear(); if (!S.gbr.buch.some(b => inYear(b.date, y))) return toast('Noch keine Buchungen in ' + y, 'bad'); pdfOut(gbrYearPdf(y), `Kairos-Vermietung-${y}.pdf`, `Jahresübersicht ${y} ${S.gbr.name}`, el.dataset.mode); };
+
+/* ---------- Nebenkostenabrechnung ---------- */
+let nkSel = { id: '' };
+ACT['gbr.nk'] = el => {
+  const g = S.gbr; if (!g.set) return ACT['gbr.setup'](); if (!g.objekte.length) return toast('Lege zuerst eine Wohnung an.');
+  if (el && el.dataset && el.dataset.id) nkSel.id = el.dataset.id;
+  if (!gObj(nkSel.id)) nkSel.id = (g.objekte.find(gRented) || g.objekte[0]).id;
+  const o = gObj(nkSel.id), y = S.gbr.nkYear || nowY() - 1, c = nkCalc(o, y);
+  openSheet(`<div class="chh" style="--c:#35c58f"><span class="chh-e">🧾</span><div><small>Betriebskosten ${y}</small><h2>${esc(o.name || 'Wohnung')}</h2></div></div>
+    ${g.objekte.length > 1 ? `<div class="pvchips sugr">${g.objekte.map(x => `<button type="button" class="pv sm ${x.id === o.id ? 'on' : ''}" data-act="gbr.nk.pick" data-id="${x.id}">${esc(x.name || 'Wohnung')}</button>`).join('')}</div>` : ''}
+    ${yearSeg(y, 'gbr.nk.y', [nowY() - 1])}
+    ${c.rows.length ? `<div class="pk">${c.rows.map(r => `<div class="pk-r"><span>${esc(gKat('aus', r.kat)[1])}<br><small class="muted">Haus ${money(r.haus)} · ${esc(r.key)}</small></span><b>${money(r.share)}</b></div>`).join('')}
+      <div class="pk-r"><span><b>Ihre Betriebskosten</b></span><b>${money(c.kosten)}</b></div>
+      <div class="pk-r"><span>Vorauszahlungen${c.fromBooked ? '' : ' (laut Soll gerechnet' + (c.nBooked ? ', gebucht sind erst ' + c.nBooked + ' von ' + c.months + ' Monaten' : '') + ')'}</span><b>${money(c.vor)}</b></div>
+      <div class="pk-r"><span><b>${c.saldo < 0 ? 'Nachzahlung' : 'Guthaben'}</b></span><b class="${c.saldo < 0 ? 'neg' : 'pos'}">${money(Math.abs(c.saldo))}</b></div></div>
+      <p class="muted fine">Mietzeit im Abrechnungsjahr: ${c.days} von ${c.daysY} Tagen${o.flaeche ? ' · Wohnfläche ' + fmtM2(o.flaeche) + ' von ' + fmtM2(Math.round(c.hausF * 100) / 100) : ''}.</p>` : `<p class="muted">Für ${y} sind noch keine umlagefähigen Kosten gebucht. Trage Grundsteuer, Wasser, Müll, Versicherung usw. als Buchung ein – sie werden hier verteilt.</p>`}
+    ${hintP(`Die Abrechnung muss dem Mieter spätestens 12 Monate nach Ende des Abrechnungszeitraums vorliegen (hier bis ${fmtDate(c.due, true)}), sonst können Nachforderungen entfallen. Heizkosten müssen nach der Heizkostenverordnung überwiegend nach Verbrauch abgerechnet werden – prüfe das mit der Abrechnung deines Versorgers.`)}
+    <div class="acts"><button class="btn ghost" data-sh="x">Schließen</button><span class="sp"></span><button class="btn" data-act="gbr.nk.pdf" data-mode="open">${icon('eye')}Ansehen</button><button class="btn primary" data-act="gbr.nk.pdf">${icon('share')}PDF teilen</button></div>`,
+  { wide: true, onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); }) });
+};
+ACT['gbr.nk.pick'] = el => { nkSel.id = el.dataset.id; ACT['gbr.nk']({}); };
+ACT['gbr.nk.y'] = el => { S.gbr.nkYear = +el.dataset.y; save(); ACT['gbr.nk']({}); };
+ACT['gbr.nk.pdf'] = el => {
+  const g = S.gbr, o = gObj(nkSel.id); if (!o) return; const y = g.nkYear || nowY() - 1, c = nkCalc(o, y);
+  if (!c.rows.length) return toast('Noch keine umlagefähigen Kosten gebucht', 'bad');
+  const { d, y: y0 } = pdfNew(`Betriebskosten ${y}`, `${o.name || 'Wohnung'}${o.adr ? ' · ' + o.adr : ''}`, '#35c58f', `Abrechnung ${y}`, ''); let yy = y0;
+  yy = pdfSection(d, yy, 'Abrechnung', [['Vermieter', [g.name, g.adr].filter(Boolean).join(', ')], ['Mieter', o.mieter || ''], ['Mietobjekt', [o.name, o.adr].filter(Boolean).join(', ')], ['Abrechnungszeitraum', `${fmtDate(c.from, true)} – ${fmtDate(c.to, true)} (${c.days} Tage)`], ['Wohnfläche', o.flaeche ? `${fmtM2(o.flaeche)} von insgesamt ${fmtM2(Math.round(c.hausF * 100) / 100)}` : '']].filter(r => r[1]), '#35c58f', { lw: 130 });
+  yy = pdfTable(d, yy, 'Betriebskosten', [{ h: 'Kostenart', w: 3 }, { h: 'Gesamtkosten', w: 1.4, a: 'r' }, { h: 'Verteilung', w: 1.6 }, { h: 'Ihr Anteil', w: 1.4, a: 'r' }], c.rows.map(r => [gKat('aus', r.kat)[1], pdfEur(r.haus), r.key, pdfEur(r.share)]).concat([{ c: ['Summe Ihrer Betriebskosten', '', '', pdfEur(c.kosten)], tot: 1 }]), { color: '#35c58f' });
+  yy = pdfTable(d, yy, 'Ergebnis', [{ h: 'Position', w: 3.4 }, { h: 'Betrag', w: 1.4, a: 'r' }], [['Betriebskosten gesamt', pdfEur(c.kosten)], ['abzüglich geleisteter Vorauszahlungen', pdfEur(c.vor)], { c: [c.saldo < 0 ? 'Nachzahlung zu Ihren Lasten' : 'Guthaben zu Ihren Gunsten', pdfEur(Math.abs(c.saldo))], tot: 1 }], { color: c.saldo < 0 ? '#e0577f' : '#2fbf8a' });
+  if (c.saldo < 0 && g.iban) yy = pdfNote(d, yy, `Bitte überweisen Sie die Nachzahlung auf das Konto ${g.iban}${g.name ? ' (' + g.name + ')' : ''}.`, { color: PDF_INK, size: 9.4 });
+  pdfNote(d, yy, 'Die Verteilung erfolgt nach den oben genannten Schlüsseln. Belege können nach Absprache eingesehen werden. Einwendungen gegen die Abrechnung sind dem Vermieter in der Regel spätestens 12 Monate nach Zugang mitzuteilen.');
+  pdfFooters(d, 'Erstellt mit Kairos · ' + (g.name || 'Vermietung'));
+  pdfOut(d, `Betriebskosten-${y}-${safeName(o.name)}.pdf`, `Betriebskosten ${y} ${o.name || ''}`, el.dataset.mode);
+};
+
+/* ---------- Mieterhöhungs-Check (§ 558 BGB, nur Orientierung) ---------- */
+ACT['gbr.erh'] = el => {
+  const g = S.gbr; if (!g.set) return ACT['gbr.setup'](); if (!g.objekte.length) return toast('Lege zuerst eine Wohnung an.');
+  const o0 = (el && el.dataset && gObj(el.dataset.id)) || g.objekte.find(gRented) || g.objekte[0];
+  const sh = formSheet({ title: 'Mieterhöhungs-Check', sub: 'Prüft grob, wie viel und ab wann eine Erhöhung bis zur ortsüblichen Vergleichsmiete möglich ist (§ 558 BGB). Nur Orientierung.', wide: true, submit: 'Prüfen', fields: [
+    { k: 'obj', label: 'Wohnung', type: 'select', opts: g.objekte.map(o => [o.id, o.name || 'Wohnung']), val: o0.id, full: true },
+    { k: 'ref', label: 'Ortsübliche Vergleichsmiete (€ pro m², kalt)', type: 'money', val: null, full: true, hint: 'Aus dem Mietspiegel deiner Stadt, einem Gutachten oder drei Vergleichswohnungen.' },
+    { k: 'miete3', label: 'Kaltmiete vor 3 Jahren (leer = wie heute)', type: 'money', val: null },
+    { k: 'last', label: 'Letzte Mieterhöhung / Mietbeginn', type: 'date', val: o0.lastErh || o0.beginn },
+    { k: 'kap', label: 'Kappungsgrenze', type: 'select', opts: [['20', '20 % in 3 Jahren (üblich)'], ['15', '15 % (angespannter Wohnungsmarkt)']], val: '20', full: true }],
+  extra: '<div id="erhRes"></div>',
+  onSubmit: v => {
+    const o = gObj(v.obj) || o0, area = o.flaeche, cur = o.kalt, out = $('#erhRes', sh);
+    if (!area || !cur) { out.innerHTML = hintP('Trage bei der Wohnung Wohnfläche und Kaltmiete ein, dann kann Kairos rechnen.'); return false; }
+    if (!v.ref) { out.innerHTML = hintP('Gib die ortsübliche Vergleichsmiete pro m² ein.'); return false; }
+    const kap = +v.kap / 100, base = v.miete3 || cur, capMax = Math.round(base * (1 + kap)), refMax = Math.round(v.ref * area), maxNew = Math.min(capMax, refMax), room = maxNew - cur;
+    const today = todayISO(), last = v.last || o.lastErh || o.beginn || '', ask = last ? addMonths(last, 12) : today, zug = ask > today ? ask : today, zm = parseISO(zug), ab0 = new Date(zm.getFullYear(), zm.getMonth() + 3, 1), ab = iso(ab0), wirk = last && addMonths(last, 15) > ab ? addMonths(last, 15) : ab;
+    const lim = refMax < capMax ? 'Vergleichsmiete' : 'Kappungsgrenze';
+    out.innerHTML = `<div class="group-h"><span>Ergebnis</span></div><div class="pk">
+      <div class="pk-r"><span>Aktuell je m²</span><b>${money(Math.round(cur / area))}</b></div>
+      <div class="pk-r"><span>Vergleichsmiete gesamt</span><b>${money(refMax)}</b></div>
+      <div class="pk-r"><span>Grenze durch Kappung</span><b>${money(capMax)}</b></div>
+      <div class="pk-r"><span><b>Mögliche neue Kaltmiete</b></span><b class="${room > 0 ? 'pos' : ''}">${room > 0 ? money(maxNew) : 'kein Spielraum'}</b></div>
+      ${room > 0 ? `<div class="pk-r"><span>Erhöhung pro Monat</span><b>+${money(room)}</b></div><div class="pk-r"><span>Begrenzt durch</span><b>${lim}</b></div>` : ''}
+      ${room > 0 ? `<div class="pk-r"><span>Erhöhungsverlangen frühestens</span><b>${fmtDate(ask > today ? ask : today, true)}</b></div><div class="pk-r"><span>Neue Miete gilt dann ab etwa</span><b>${fmtDate(wirk, true)}</b></div>` : ''}</div>
+    ${hintP(room > 0 ? 'Das Verlangen braucht Textform und eine Begründung (Mietspiegel, Gutachten oder drei Vergleichswohnungen). Der Mieter hat bis zum Ende des übernächsten Monats Zeit zuzustimmen. Die Miete muss zuvor mindestens 15 Monate unverändert sein; Modernisierungsumlagen werden getrennt betrachtet.' : 'Die Miete liegt bereits an der Grenze. Bei Indexmiete oder Staffelmiete gelten eigene Regeln (§§ 557a, 557b BGB) – prüfe den Mietvertrag.')}
+    ${o.mtyp ? hintP('Diese Wohnung hat laut deinen Angaben eine ' + (o.mtyp === 'index' ? 'Indexmiete' : 'Staffelmiete') + ' – die Vergleichsmiete gilt dort nicht wie oben berechnet.') : ''}`;
+    out.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); return false;
+  } });
+  const f = $('#f_obj', sh); if (f) f.addEventListener('change', () => { const o = gObj(f.value); if (o && $('#f_last', sh)) $('#f_last', sh).value = o.lastErh || o.beginn || ''; });
+};
+
+/* ---------- Fristen ---------- */
+function gbrDeadlinesList() {
+  const g = S.gbr, L = []; if (!g.set) return L; const today = todayISO(), ny = nowY(), add = o => { if (o.date && diffDays(o.date, today) >= -30) L.push(o); };
+  if (g.objekte.some(o => o.mieter)) add({ id: 'gbr_nk', date: `${ny}-12-31`, title: `Nebenkostenabrechnung ${ny - 1} an die Mieter`, sub: 'Muss spätestens 12 Monate nach Ende des Abrechnungsjahres beim Mieter sein', e: '🧾', kind: 'frist', alarm: 60 });
+  { const qs = ['02-15', '05-15', '08-15', '11-15'].map(q => `${ny}-${q}`).concat([`${ny + 1}-02-15`]), nx = qs.find(d => d >= today); if (nx) add({ id: 'gbr_gst', date: nx, title: 'Grundsteuer-Rate fällig', sub: `${g.name} · Quartalsrate, bei Lastschrift nur prüfen`, e: '🏛️', kind: 'frist', alarm: 7 }); }
+  { const d = `${ny}-07-31`, due = d >= today ? d : `${ny + 1}-07-31`, vz = +due.slice(0, 4) - 1; add({ id: 'gbr_fe', date: due, title: `Feststellungserklärung ${vz} der GbR`, sub: 'Abgabefrist ohne Steuerberater – mit Berater später', e: '📮', kind: 'steuer', alarm: 30 }); }
+  if (g.zinsende) add({ id: 'gbr_zins', date: g.zinsende, title: `Zinsbindung endet${g.darlehen ? ': ' + g.darlehen : ''}`, sub: 'Anschlussfinanzierung rechtzeitig vergleichen', e: '🏗️', kind: 'frist', alarm: 180 });
+  for (const o of g.objekte) {
+    if (o.ende) add({ id: 'gbr_end_' + o.id, date: o.ende, title: `Mietverhältnis endet: ${o.name || 'Wohnung'}`, sub: o.mieter || '', e: '🔑', kind: 'frist', alarm: 60 });
+    const from = o.lastErh || o.beginn; if (from && gRented(o) && o.kalt && !o.mtyp) { const ek = addMonths(from, 12); if (diffDays(ek, today) >= 0 && diffDays(ek, today) <= 400) add({ id: 'gbr_erh_' + o.id, date: ek, title: `Mieterhöhung möglich: ${o.name || 'Wohnung'}`, sub: 'Frühester Zeitpunkt für ein Erhöhungsverlangen', e: '📈', kind: 'frist', alarm: 30 }); }
+  }
+  return L.sort((a, b) => a.date < b.date ? -1 : 1);
+}
+
+/* =====================================================================
+   KAIROS · Steuermappe: Belege über das Jahr sammeln, ordnen, als PDF/CSV weitergeben.
+   Hinweise sind Orientierung (Regelstand RULES.year), keine Steuerberatung.
+   ===================================================================== */
+const STK = [
+  ['werbung', 'Werbungskosten (Beruf)', '💼', 'Arbeitsmittel, Fortbildung, Fahrten, Fachliteratur, Kontoführung'],
+  ['handwerker', 'Handwerkerleistungen', '🔧', 'Nur der Arbeitskostenanteil, per Überweisung bezahlt: 20 % davon, höchstens 1.200 € Steuerermäßigung im Jahr'],
+  ['haushalt', 'Haushaltsnahe Dienstleistungen', '🧹', 'Reinigung, Gartenpflege, Winterdienst: 20 % der Kosten, höchstens 4.000 € Steuerermäßigung im Jahr'],
+  ['spenden', 'Spenden & Beiträge', '🎗️', 'Spendenquittung oder Kontoauszug als Nachweis aufbewahren'],
+  ['vers', 'Versicherungen & Vorsorge', '🛡️', 'Kranken-, Pflege-, Haftpflicht-, Unfall-, Berufsunfähigkeits- und Altersvorsorgebeiträge'],
+  ['krank', 'Krankheitskosten', '🩺', 'Außergewöhnliche Belastungen – wirken erst oberhalb der zumutbaren Eigenbelastung'],
+  ['kinder', 'Kinderbetreuung', '🧸', 'Zwei Drittel der Kosten, höchstens 4.000 € je Kind, nur per Überweisung'],
+  ['sonst', 'Sonstiges', '📎', '']];
+const stK = id => STK.find(k => k[0] === id) || STK[STK.length - 1];
+const sYear = () => S.steuer.year || nowY();
+const sWer = w => w === 'gemeinsam' ? 'gemeinsam' : w === 'partner' ? partnerName() : 'ich';
+const sOf = y => S.steuer.belege.filter(b => inYear(b.date, y));
+function steuerGuess(d) {
+  const t = norm([d.name, d.sender, d.summary].filter(Boolean).join(' ')), has = (...w) => w.some(x => t.includes(x));
+  if (has('spende', 'zuwendung')) return 'spenden';
+  if (has('maler', 'sanit', 'elektro', 'dachdeck', 'schreiner', 'tischler', 'installat', 'handwerk', 'heizungsbau', 'gartenbau', 'renovier', 'reparatur', 'montage')) return 'handwerker';
+  if (has('reinig', 'haushaltshilfe', 'gartenpfl', 'winterdienst', 'pflegedienst')) return 'haushalt';
+  if (has('arzt', 'zahnarzt', 'apotheke', 'klinik', 'krankenhaus', 'physio', 'optiker', 'brille')) return 'krank';
+  if (has('kita', 'kindergarten', 'tagesmutter', 'betreuung')) return 'kinder';
+  if (has('versicherung')) return 'vers';
+  if (has('fortbild', 'seminar', 'fachliteratur', 'laptop', 'computer', 'bildschirm', 'arbeitsmittel', 'berufskleidung', 'gewerkschaft')) return 'werbung';
+  return 'sonst';
+}
+function steuerSuggestions(y) {
+  const used = new Set(S.steuer.belege.map(b => b.doc).filter(Boolean));
+  return S.docs.filter(d => d.status === 'ok' && ['rechnung', 'versicherung'].includes(d.kind) && d.amount > 0 && inYear(d.docDate, y) && !used.has(d.id) && !(S.steuer.skip || {})[d.id]).slice(0, 6).map(d => ({ d, kat: steuerGuess(d) }));
+}
+/** Grobe Schätzung der Steuerermäßigung nach § 35a (nur Orientierung) */
+function steuer35a(list) {
+  const h = sum(list.filter(b => b.kat === 'handwerker'), b => b.betrag), w = sum(list.filter(b => b.kat === 'haushalt'), b => b.betrag);
+  return { hw: Math.min(Math.round(h * .2), 120000), hh: Math.min(Math.round(w * .2), 400000) };
+}
+/** Versicherungsbeiträge aus den Verträgen (hochgerechnet, mein Anteil) */
+function steuerVersAusVertraegen() {
+  return vActive().filter(e => e.c === 'vers' && !isInc(e)).map(e => ({ n: e.n, v: vMine(e.id) * 12 })).filter(r => r.v > 0).sort((a, b) => b.v - a.v);
+}
+
+VIEWS.steuer = {
+  render() {
+    const y = sYear(), list = sOf(y), tot = sum(list, b => b.betrag), e35 = steuer35a(list), sug = steuerSuggestions(y), mitDoc = list.filter(b => b.doc && docName(b.doc)).length;
+    const vers = steuerVersAusVertraegen(), versSum = sum(vers, r => r.v), gb = S.gbr.set ? gbrSum(y) : null;
+    const secs = STK.map(k => { const l = list.filter(b => b.kat === k[0]).sort((a, b) => a.date < b.date ? 1 : -1); if (!l.length) return ''; const t = sum(l, b => b.betrag);
+      return `<section class="card glass"><div class="card-h"><span>${k[2]}</span><span class="ch-t">${esc(k[1])}</span><b>${money(t)}</b><button class="btn sm ghost" data-act="st.edit" data-kat="${k[0]}" aria-label="Beleg zu ${esc(k[1])} hinzufügen">${icon('plus')}</button></div>
+        ${k[3] ? `<p class="muted fine">${esc(k[3])}</p>` : ''}${k[0] === 'werbung' && t < RULES.wkPausch ? `<p class="muted fine">Noch unter dem Arbeitnehmer-Pauschbetrag von ${eur0(RULES.wkPausch)} – das Finanzamt rechnet dann automatisch mit dem Pauschbetrag.</p>` : ''}
+        <div class="vlist">${l.map(b => rowH(k[2], b.name || k[1], [fmtDate(b.date, true), sWer(b.wer) !== 'ich' ? '👫 ' + sWer(b.wer) : '', docName(b.doc) ? '📎 ' + docName(b.doc) : ''].filter(Boolean).join(' · '), `<b>${money(b.betrag)}</b>`, `data-act="st.edit" data-id="${b.id}"`)).join('')}</div></section>`; }).join('');
+    return `<div class="page stmp"><header class="ph"><div class="t"><div class="eyebrow">Steuern</div><h1>Steuermappe</h1><p>Belege das ganze Jahr sammeln – am Ende als Mappe für ELSTER oder deinen Steuerberater.</p></div>
+      <div class="act"><button class="btn primary" data-act="st.edit">${icon('plus')}Beleg</button></div></header>
+      ${yearSeg(y, 'st.year')}
+      <div class="kpis"><div class="kpi2"><b>${list.length}</b><span>Belege ${y}</span></div><div class="kpi2"><b>${eur0(tot)}</b><span>Summe der Belege</span></div><div class="kpi2"><b>${eur0(e35.hw + e35.hh)}</b><span>Steuerermäßigung § 35a (grob)</span></div><div class="kpi2"><b>${list.length ? Math.round(mitDoc / list.length * 100) + ' %' : '–'}</b><span>mit Beleg verknüpft</span></div></div>
+      ${sug.length ? `<div class="card glass"><div class="card-h">${icon('link')} Aus deinen Dokumenten</div>${sug.map(x => rowH(stK(x.kat)[2], x.d.name, `${stK(x.kat)[1]} · ${fmtDate(x.d.docDate, true)}`, `<span class="vt-q"><button class="btn sm primary" data-act="st.sug" data-id="${x.d.id}" data-kat="${x.kat}">Übernehmen</button><button class="btn sm ghost" data-act="st.sug.skip" data-id="${x.d.id}" aria-label="Ausblenden">${icon('x')}</button></span>`)).join('')}<p class="muted fine">Kairos hat Rechnungen mit Datum in ${y} gefunden. Prüfe Kategorie und Betrag nach dem Übernehmen.</p></div>` : ''}
+      <div class="card glass"><div class="card-h">${icon('sparkle')} Pauschalen berechnen</div>
+        <button class="ckl" data-act="st.ho">${icon('home')}<span>Homeoffice-Pauschale (${money(RULES.hoDay)} pro Tag, max. ${eur0(RULES.hoMax)})</span>${icon('chevR')}</button>
+        <button class="ckl" data-act="st.km">${icon('car')}<span>Entfernungspauschale zur Arbeit</span>${icon('chevR')}</button></div>
+      ${secs || `<div class="card glass"><div class="empty"><div class="em">🗂️</div><b>Noch keine Belege in ${y}</b><p>Fotografiere Rechnungen in den Dokumenten, übernimm sie hier oder lege Belege von Hand an. Kairos ordnet sie nach Werbungskosten, Handwerkern, Spenden und mehr.</p></div></div>`}
+      ${vers.length || gb ? `<div class="card glass"><div class="card-h">${icon('info')} Kommt noch dazu – aus anderen Bereichen</div>
+        ${vers.length ? rowH('🛡️', 'Versicherungsbeiträge aus deinen Verträgen', `${plural(vers.length, 'Vertrag', 'Verträge')}, auf 12 Monate hochgerechnet, dein Anteil`, `<b>${eur0(versSum)}</b>`) : ''}
+        ${gb ? rowH('🏘️', `Vermietung ${esc(S.gbr.name || 'GbR')}`, gb.me ? `Ergebnis ${y}, dein Anteil ${String(gb.me.anteil).replace('.', ',')} %` : `Ergebnis ${y} – Anteil nicht hinterlegt`, `<b class="${(gb.mein != null ? gb.mein : gb.erg) < 0 ? 'neg' : ''}">${money(gb.mein != null ? gb.mein : gb.erg)}</b>`, 'data-go="gbr"') : ''}
+        <p class="muted fine">Diese Werte stammen aus Verträgen und Vermietung und werden nicht doppelt als Beleg gezählt. Sie sind im Export als Hinweis enthalten.</p></div>` : ''}
+      ${list.length ? `<div class="card glass"><div class="card-h">${icon('share')} Mappe weitergeben</div><p class="muted fine">Die Mappe fasst alle Belege ${y} nach Kategorie zusammen. Die verknüpften Belegdateien findest du unter Dokumente.</p>
+        <div class="acts" style="position:static;margin:8px 0 0;padding:0;background:none"><button class="btn" data-act="st.csv">${icon('download')}CSV</button><span class="sp"></span><button class="btn" data-act="st.pdf" data-mode="open">${icon('eye')}Ansehen</button><button class="btn primary" data-act="st.pdf">${icon('share')}PDF teilen</button></div></div>` : ''}
+      <p class="disc">Hinweise sind Orientierung (Stand ${RULES.year}), keine Steuerberatung. Welche Kosten sich tatsächlich auswirken, entscheidet das Finanzamt anhand deiner Gesamtsituation.</p></div>`;
+  },
+  mount(root) { $$('.kpi2 b', root).forEach(el => { const t = el.textContent.trim(); if (/^\d+$/.test(t)) countUp(el, +t, c => String(c)); }); }
+};
+ACT['st.year'] = el => { S.steuer.year = +el.dataset.y; save(); rerender(); };
+ACT['st.edit'] = el => {
+  const id = el && el.dataset && el.dataset.id, b0 = id && S.steuer.belege.find(x => x.id === id), b = b0 || {}, pn = partnerName();
+  formSheet({ title: b0 ? 'Beleg bearbeiten' : 'Neuer Beleg', sub: 'Betrag und Datum laut Rechnung. Für Handwerker und haushaltsnahe Leistungen zählt nur der Arbeitskostenanteil – trag ihn hier als Betrag ein.', wide: true, submit: 'Speichern', fields: [
+    { k: 'name', label: 'Bezeichnung', type: 'text', val: b.name, req: 1, full: true, ph: 'z. B. Malerarbeiten, Spende, Laptop' },
+    { k: 'kat', label: 'Kategorie', type: 'select', opts: STK.map(k => [k[0], k[2] + ' ' + k[1]]), val: b.kat || (el && el.dataset && el.dataset.kat) || 'werbung', full: true },
+    { k: 'betrag', label: 'Betrag', type: 'money', val: b.betrag }, { k: 'date', label: 'Datum', type: 'date', val: b.date || todayISO() },
+    { k: 'wer', label: 'Gehört zu', type: 'pick', opts: [['ich', 'Mir'], ['gemeinsam', 'Uns beiden'], ['partner', pn]], val: b.wer || 'ich', full: true },
+    { k: 'doc', label: 'Beleg / Dokument', type: 'select', opts: docOpts(), val: b.doc || '', full: true },
+    { k: 'notiz', label: 'Notiz', type: 'textarea', val: b.notiz, rows: 2, full: true }],
+  onDelete: b0 ? () => removeWithUndo(S.steuer.belege, id, 'Beleg', () => rerender()) : null,
+  onSubmit: v => {
+    if (!String(v.name || '').trim()) { toast('Bitte eine Bezeichnung eintragen.', 'bad'); return false; }
+    if (v.betrag == null || v.betrag <= 0) { toast('Bitte einen Betrag über 0 eintragen.', 'bad'); return false; }
+    if (!v.date) { toast('Bitte ein Datum wählen.', 'bad'); return false; }
+    const t = b0 || { id: 'sb_' + uid() }; t.name = v.name.trim(); t.kat = v.kat; t.betrag = Math.abs(v.betrag); t.date = v.date; t.wer = v.wer || 'ich'; gSetN(t, 'doc', v.doc); gSetN(t, 'notiz', (v.notiz || '').trim());
+    if (!b0) S.steuer.belege.push(t); S.steuer.year = +v.date.slice(0, 4) || S.steuer.year; save(); rerender(); toast('Gespeichert', 'good');
+  } });
+};
+ACT['st.sug'] = el => {
+  const d = S.docs.find(x => x.id === el.dataset.id); if (!d) return;
+  S.steuer.belege.push({ id: 'sb_' + uid(), name: d.name, kat: el.dataset.kat || 'sonst', betrag: d.amount, date: d.docDate || todayISO(), wer: 'ich', doc: d.id });
+  save(); rerender(); snd('done'); hap(2); toast('Übernommen – prüfe Kategorie und Betrag', 'good');
+};
+ACT['st.sug.skip'] = el => { S.steuer.skip = S.steuer.skip || {}; S.steuer.skip[el.dataset.id] = 1; save(); rerender(); };
+ACT['st.ho'] = () => {
+  formSheet({ title: 'Homeoffice-Pauschale', sub: `Für jeden Tag, an dem du überwiegend zu Hause arbeitest und keinen anderen Arbeitsplatz nutzt: ${money(RULES.hoDay)} pro Tag, höchstens ${money(RULES.hoMax)} im Jahr.`, submit: 'Als Beleg anlegen', fields: [
+    { k: 'tage', label: 'Homeoffice-Tage im Jahr', type: 'number', val: null, min: 1, max: 366, step: '1', im: 'numeric', full: true, req: 1 }, { k: 'jahr', label: 'Steuerjahr', type: 'number', val: sYear(), min: 2000, max: 2100, step: '1', im: 'numeric', full: true }],
+  onSubmit: v => {
+    if (!v.tage || v.tage < 1) { toast('Bitte die Anzahl der Tage eintragen.', 'bad'); return false; }
+    const bet = Math.min(Math.round(v.tage) * RULES.hoDay, RULES.hoMax), y = v.jahr || sYear();
+    S.steuer.belege.push({ id: 'sb_' + uid(), name: `Homeoffice-Pauschale (${Math.round(v.tage)} Tage)`, kat: 'werbung', betrag: bet, date: `${y}-12-31`, wer: 'ich' }); S.steuer.year = y; save(); rerender(); toast(`${money(bet)} angelegt`, 'good');
+  } });
+};
+ACT['st.km'] = () => {
+  formSheet({ title: 'Entfernungspauschale', sub: `Einfache Strecke zur ersten Tätigkeitsstätte mal Arbeitstage mal ${String(RULES.pendler).replace('.', ',')} € pro Kilometer (Regelstand ${RULES.year}). Bei Zweifeln prüft das Finanzamt oder dein Steuerberater.`, submit: 'Als Beleg anlegen', fields: [
+    { k: 'km', label: 'Entfernung einfach (km)', type: 'number', val: null, min: 1, max: 500, step: '1', im: 'numeric', req: 1 }, { k: 'tage', label: 'Arbeitstage im Büro', type: 'number', val: null, min: 1, max: 366, step: '1', im: 'numeric', req: 1 },
+    { k: 'jahr', label: 'Steuerjahr', type: 'number', val: sYear(), min: 2000, max: 2100, step: '1', im: 'numeric', full: true }],
+  onSubmit: v => {
+    if (!v.km || !v.tage || v.km < 1 || v.tage < 1) { toast('Bitte Entfernung und Arbeitstage eintragen.', 'bad'); return false; }
+    const bet = Math.round(v.km * v.tage * RULES.pendler * 100), y = v.jahr || sYear();
+    S.steuer.belege.push({ id: 'sb_' + uid(), name: `Entfernungspauschale (${Math.round(v.km)} km, ${Math.round(v.tage)} Tage)`, kat: 'werbung', betrag: bet, date: `${y}-12-31`, wer: 'ich' }); S.steuer.year = y; save(); rerender(); toast(`${money(bet)} angelegt`, 'good');
+  } });
+};
+ACT['st.csv'] = async () => {
+  const y = sYear(), l = sOf(y).sort((a, b) => a.date < b.date ? -1 : 1); if (!l.length) return toast('Keine Belege in ' + y);
+  const rows = [['Datum', 'Kategorie', 'Bezeichnung', 'Gehört zu', 'Betrag (EUR)', 'Beleg']].concat(l.map(b => [b.date, stK(b.kat)[1], b.name, sWer(b.wer), csvNum(b.betrag), docName(b.doc)]));
+  const r = await fileDeliver(csvBlob(rows), `Kairos-Steuermappe-${y}.csv`, 'Steuermappe ' + y, ''); if (r === 'download') toast('CSV gespeichert', 'good');
+};
+function steuerPdf(y) {
+  const list = sOf(y), nm = profName(), tot = sum(list, b => b.betrag), e35 = steuer35a(list), { d, y: y0 } = pdfNew(`Steuermappe ${y}`, `Belege und Nachweise${nm ? ' · ' + nm : ''}`, '#8a6cff', 'Steuern', nm); let yy = y0;
+  yy = pdfTiles(d, yy, [['Belege', String(list.length)], ['Summe', pdfEur(tot)], ['Ermäßigung § 35a (grob)', pdfEur(e35.hw + e35.hh)]], '#8a6cff');
+  for (const k of STK) {
+    const l = list.filter(b => b.kat === k[0]).sort((a, b) => a.date < b.date ? -1 : 1); if (!l.length) continue;
+    yy = pdfTable(d, yy, k[1], [{ h: 'Datum', w: 1.2 }, { h: 'Bezeichnung', w: 3.4 }, { h: 'Zu', w: 1 }, { h: 'Beleg', w: 2 }, { h: 'Betrag', w: 1.3, a: 'r' }],
+      l.map(b => [fmtDate(b.date, true), b.name, sWer(b.wer), docName(b.doc) || '–', pdfEur(b.betrag)]).concat([{ c: ['', 'Summe', '', '', pdfEur(sum(l, b => b.betrag))], tot: 1 }]), { color: pdfDark('#8a6cff', .1) });
+    if (k[3]) yy = pdfNote(d, yy - 6, k[3]);
+  }
+  const vers = steuerVersAusVertraegen();
+  if (vers.length) yy = pdfTable(d, yy, 'Versicherungsbeiträge aus Verträgen (hochgerechnet, mein Anteil)', [{ h: 'Vertrag', w: 4 }, { h: 'Pro Jahr', w: 1.4, a: 'r' }], vers.map(r => [r.n, pdfEur(r.v)]).concat([{ c: ['Summe', pdfEur(sum(vers, r => r.v))], tot: 1 }]), { color: '#4aa3ff' });
+  if (S.gbr.set) { const gb = gbrSum(y); yy = pdfTable(d, yy, 'Vermietung (GbR)', [{ h: 'Position', w: 4 }, { h: 'Betrag', w: 1.4, a: 'r' }], [['Einnahmen', pdfEur(gb.ein)], ['Ausgaben', pdfEur(gb.aus)], ['Ergebnis der GbR', pdfEur(gb.erg)]].concat(gb.me ? [{ c: [`Mein Anteil (${String(gb.me.anteil).replace('.', ',')} %)`, pdfEur(gb.mein)], tot: 1 }] : []), { color: '#35c58f' }); }
+  pdfNote(d, yy, 'Zusammenstellung aus deinen eigenen Angaben in Kairos. Sie ersetzt keine Steuerberatung. Prüfe Beträge und Zuordnung vor der Abgabe und hebe die Originalbelege auf. Die Steuerermäßigung nach § 35a ist eine grobe Schätzung (20 % der Arbeitskosten, Höchstbeträge beachten).');
+  pdfFooters(d, 'Erstellt mit Kairos · vertraulich'); return d;
+}
+ACT['st.pdf'] = el => { const y = sYear(); if (!sOf(y).length) return toast('Keine Belege in ' + y, 'bad'); pdfOut(steuerPdf(y), `Kairos-Steuermappe-${y}.pdf`, `Steuermappe ${y}`, el.dataset.mode); };
+
+/* =====================================================================
+   KAIROS · Notfall- und Vorsorge-Mappe
+   Funktioniert offline auf diesem Gerät. Alles trägst du selbst ein – es sind keine Daten vorbelegt.
+   Bitte keine PINs und Passwörter eintragen: nur Hinweise, wo etwas liegt.
+   ===================================================================== */
+const NOTRUFE = [['112', 'Notruf', 'Feuerwehr & Rettungsdienst', '🚑'], ['110', 'Polizei', 'Notruf Polizei', '🚓'], ['116117', 'Ärztlicher Bereitschaftsdienst', 'Außerhalb der Praxiszeiten', '🩺'], ['116116', 'Sperr-Notruf', 'Karten, Konten, Handy, Online-Zugänge sperren', '🔒']];
+const ORT_IDEEN = [['Vorsorgevollmacht', '📜'], ['Patientenverfügung', '🏥'], ['Testament', '✍️'], ['Ersatzschlüssel', '🔑'], ['Zugang zum Passwort-Manager', '🔐'], ['Ordner mit wichtigen Unterlagen', '🗂️']];
+const nfTel = t => String(t || '').replace(/[^\d+]/g, '');
+function nfAuto() {
+  const rows = [];
+  vActive().filter(e => !isInc(e) && (e.c === 'vers' || e.id === 'kredit' || e.id === 'bauspar')).forEach(e => { const o = vOf(e.id); rows.push({ t: e.n, v: [vprov(e.id), o.nr ? 'Nr. ' + o.nr : ''].filter(Boolean).join(' · ') }); });
+  if (pst('kv_art') || phas('krankenkasse')) rows.unshift({ t: 'Krankenversicherung', v: [pget('kv_art'), pget('krankenkasse'), phas('versnr') ? 'Nr. ' + pget('versnr') : ''].filter(Boolean).join(' · ') });
+  if (phas('bank') || phas('iban')) rows.push({ t: 'Girokonto', v: [pget('bank'), phas('iban') ? 'IBAN …' + String(pget('iban')).replace(/\s/g, '').slice(-4) : ''].filter(Boolean).join(' · ') });
+  if (S.gbr.set) rows.push({ t: 'Vermietung (GbR)', v: [S.gbr.name, S.gbr.verwalter && 'Verwaltung: ' + S.gbr.verwalter, S.gbr.fa && 'Finanzamt: ' + S.gbr.fa].filter(Boolean).join(' · ') });
+  return rows.filter(r => r.v);
+}
+function nfScore() {
+  const n = S.notfall, auto = nfAuto(), steps = [
+    ['kontakte', 'Notfallkontakte', n.kontakte.length > 0, 'nf.kontakt'], ['orte', 'Wo Vollmacht & Verfügung liegen', n.orte.length > 0, 'nf.ort'],
+    ['nr', 'Wichtige Nummern', n.nr.length > 0 || auto.length > 0, 'nf.nr'], ['med', 'Medizinische Hinweise', !!(n.med && n.med.trim()) || !!(n.hinweis && n.hinweis.trim()), 'nf.med']];
+  return { steps, done: steps.filter(s => s[2]).length, pct: Math.round(steps.filter(s => s[2]).length / steps.length * 100) };
+}
+const nfCall = (num, lab, sub, e) => `<a class="nf-call" href="tel:${num}"><span class="nf-e">${e}</span><span class="nf-m"><b>${esc(lab)}</b><small>${esc(sub)}</small></span><span class="nf-n">${num === '116116' ? '116 116' : num === '116117' ? '116 117' : num}</span></a>`;
+
+VIEWS.notfall = {
+  render() {
+    const n = S.notfall, sc = nfScore(), auto = nfAuto();
+    return `<div class="page nfp"><header class="ph"><div class="t"><div class="eyebrow">Vorsorge</div><h1>Notfall-Mappe</h1><p>Alles Wichtige für den Ernstfall – offline auf diesem Gerät und als PDF für deine Vertrauensperson.</p></div>
+      <div class="act"><button class="btn" data-act="nf.card">${icon('alert')}Notfallkarte</button><button class="btn primary" data-act="nf.pdf">${icon('share')}„Wenn mir etwas passiert“</button></div></header>
+      <div class="card glass"><div class="card-h">${icon('alert')} Im Notfall anrufen</div><div class="nf-calls">${NOTRUFE.map(r => nfCall(r[0], r[1], r[2], r[3])).join('')}</div><p class="muted fine">Den Sperr-Notruf erreichst du aus dem Ausland unter +49 116 116.</p></div>
+      <div class="card glass"><div class="card-h">${icon('shieldcheck')} Vollständigkeit<span class="sp"></span><b>${sc.pct} %</b></div><div class="bar" style="margin:4px 0 10px"><i style="width:${sc.pct}%"></i></div>
+        ${sc.steps.map(s => `<button class="ckl ${s[2] ? 'ok' : ''}" data-act="${s[3]}">${icon(s[2] ? 'check' : 'plus')}<span>${esc(s[1])}</span>${icon('chevR')}</button>`).join('')}</div>
+      <div class="card glass"><div class="card-h">${icon('users')} Notfallkontakte<span class="sp"></span><button class="btn sm ghost" data-act="nf.kontakt" aria-label="Kontakt hinzufügen">${icon('plus')}</button></div>
+        ${n.kontakte.length ? `<div class="vlist">${n.kontakte.map(k => `<div class="vt ja"><span class="vt-e">📞</span><button class="vt-m nf-ed" data-act="nf.kontakt" data-id="${k.id}"><b>${esc(k.name)}</b><small>${esc([k.bezug, k.tel].filter(Boolean).join(' · '))}</small></button>${k.tel ? `<a class="btn sm" href="tel:${nfTel(k.tel)}" aria-label="${esc(k.name)} anrufen">Anrufen</a>` : ''}</div>`).join('')}</div>` : '<p class="muted">Wer soll im Ernstfall zuerst informiert werden? Partner/in, Familie, Hausarzt …</p>'}</div>
+      <div class="card glass"><div class="card-h">${icon('file')} Wo liegt was?<span class="sp"></span><button class="btn sm ghost" data-act="nf.ort" aria-label="Eintrag hinzufügen">${icon('plus')}</button></div>
+        ${n.orte.length ? `<div class="vlist">${n.orte.map(o => rowH('📍', o.t, o.wo + (docName(o.doc) ? ' · 📎 ' + docName(o.doc) : ''), '', `data-act="nf.ort" data-id="${o.id}"`)).join('')}</div>` : ''}
+        <div class="pvchips sugr">${ORT_IDEEN.filter(i => !n.orte.some(o => norm(o.t) === norm(i[0]))).map(i => `<button type="button" class="pv sm" data-act="nf.ort" data-t="${esc(i[0])}">${i[1]} ${esc(i[0])}</button>`).join('')}</div></div>
+      <div class="card glass"><div class="card-h">${icon('lockkey')} Wichtige Nummern & Ansprechpartner<span class="sp"></span><button class="btn sm ghost" data-act="nf.nr" aria-label="Eintrag hinzufügen">${icon('plus')}</button></div>
+        ${n.nr.length ? `<div class="vlist">${n.nr.map(r => rowH('🔖', r.t, r.v, '', `data-act="nf.nr" data-id="${r.id}"`)).join('')}</div>` : '<p class="muted">Hausarzt, Steuerberater, Policen-Nummern … Bitte keine PINs oder Passwörter eintragen.</p>'}
+        ${auto.length ? `<div class="group-h"><span>Automatisch aus Kairos</span></div><div class="vlist">${auto.map(r => rowH('🛡️', r.t, r.v, '')).join('')}</div>` : ''}</div>
+      <div class="card glass"><div class="card-h">${icon('heart')} Medizinisches & Wünsche<span class="sp"></span><button class="btn sm ghost" data-act="nf.med" aria-label="Bearbeiten">${icon('edit')}</button></div>
+        ${n.med || n.hinweis ? `${n.med ? `<div class="nf-txt"><small>Medizinische Hinweise</small><p>${esc(n.med)}</p></div>` : ''}${n.hinweis ? `<div class="nf-txt"><small>Hinweise für Angehörige</small><p>${esc(n.hinweis)}</p></div>` : ''}` : '<p class="muted">Blutgruppe, Allergien, Medikamente, Vorerkrankungen – und was deinen Angehörigen im Ernstfall helfen würde. Alles freiwillig.</p>'}</div>
+      <p class="disc">Die Mappe liegt nur auf diesem Gerät (und in deinen Backups). Wenn du das PDF teilst, gibst du diese Daten weiter – teile es nur mit Menschen, denen du vertraust. Eine Vorsorgevollmacht oder Patientenverfügung ersetzt dieses Dokument nicht.</p></div>`;
+  }
+};
+const nfFind = (arr, el) => el && el.dataset && el.dataset.id ? arr.find(x => x.id === el.dataset.id) : null;
+ACT['nf.kontakt'] = el => {
+  const a = S.notfall.kontakte, k0 = nfFind(a, el), k = k0 || {};
+  formSheet({ title: k0 ? 'Kontakt bearbeiten' : 'Notfallkontakt', submit: 'Speichern', fields: [
+    { k: 'name', label: 'Name', type: 'text', val: k.name, req: 1, full: true }, { k: 'tel', label: 'Telefon', type: 'tel', im: 'tel', val: k.tel, full: true },
+    { k: 'bezug', label: 'Beziehung / Rolle', type: 'text', val: k.bezug, full: true, ph: 'z. B. Partner/in, Hausarzt, Nachbar' }],
+  onDelete: k0 ? () => removeWithUndo(a, k0.id, 'Kontakt', () => rerender()) : null,
+  onSubmit: v => { if (!String(v.name || '').trim()) { toast('Bitte einen Namen eintragen.', 'bad'); return false; } const t = k0 || { id: 'nk_' + uid() }; t.name = v.name.trim(); gSetN(t, 'tel', (v.tel || '').trim()); gSetN(t, 'bezug', (v.bezug || '').trim()); if (!k0) a.push(t); save(); rerender(); toast('Gespeichert', 'good'); } });
+};
+ACT['nf.ort'] = el => {
+  const a = S.notfall.orte, o0 = nfFind(a, el), o = o0 || {};
+  formSheet({ title: o0 ? 'Eintrag bearbeiten' : 'Wo liegt was?', sub: 'Nur der Ort – keine Zugangsdaten.', submit: 'Speichern', fields: [
+    { k: 't', label: 'Was', type: 'text', val: o.t || (el && el.dataset && el.dataset.t) || '', req: 1, full: true, ph: 'z. B. Vorsorgevollmacht' },
+    { k: 'wo', label: 'Wo liegt es / wer hat es', type: 'textarea', val: o.wo, rows: 2, full: true, ph: 'z. B. Ordner „Wichtig“ im Wohnzimmerschrank, Kopie beim Notar' },
+    { k: 'doc', label: 'Digitale Kopie', type: 'select', opts: docOpts(), val: o.doc || '', full: true }],
+  onDelete: o0 ? () => removeWithUndo(a, o0.id, 'Eintrag', () => rerender()) : null,
+  onSubmit: v => { if (!String(v.t || '').trim() || !String(v.wo || '').trim()) { toast('Bitte „Was“ und „Wo“ ausfüllen.', 'bad'); return false; } const t = o0 || { id: 'no_' + uid() }; t.t = v.t.trim(); t.wo = v.wo.trim(); gSetN(t, 'doc', v.doc); if (!o0) a.push(t); save(); rerender(); toast('Gespeichert', 'good'); } });
+};
+ACT['nf.nr'] = el => {
+  const a = S.notfall.nr, r0 = nfFind(a, el), r = r0 || {};
+  formSheet({ title: r0 ? 'Eintrag bearbeiten' : 'Wichtige Nummer', sub: 'z. B. Policennummer, Hausarzt, Steuerberater. Keine PINs oder Passwörter.', submit: 'Speichern', fields: [
+    { k: 't', label: 'Bezeichnung', type: 'text', val: r.t, req: 1, full: true }, { k: 'v', label: 'Nummer / Angabe', type: 'text', val: r.v, req: 1, full: true }],
+  onDelete: r0 ? () => removeWithUndo(a, r0.id, 'Eintrag', () => rerender()) : null,
+  onSubmit: v => { if (!String(v.t || '').trim() || !String(v.v || '').trim()) { toast('Bitte beide Felder ausfüllen.', 'bad'); return false; } const t = r0 || { id: 'nn_' + uid() }; t.t = v.t.trim(); t.v = v.v.trim(); if (!r0) a.push(t); save(); rerender(); toast('Gespeichert', 'good'); } });
+};
+ACT['nf.med'] = () => {
+  const n = S.notfall;
+  formSheet({ title: 'Medizinisches & Wünsche', sub: 'Freiwillig. Das erscheint auf der Notfallkarte und im PDF.', submit: 'Speichern', fields: [
+    { k: 'med', label: 'Medizinische Hinweise', type: 'textarea', val: n.med, rows: 4, full: true, ph: 'Blutgruppe, Allergien, Medikamente, Vorerkrankungen, Implantate …' },
+    { k: 'hinweis', label: 'Hinweise für Angehörige', type: 'textarea', val: n.hinweis, rows: 4, full: true, ph: 'Wen informieren, was ist offen, Haustiere, laufende Termine …' }],
+  onSubmit: v => { n.med = (v.med || '').trim(); n.hinweis = (v.hinweis || '').trim(); save(); rerender(); toast('Gespeichert', 'good'); } });
+};
+/* Notfallkarte: groß, offline, zum Vorzeigen */
+ACT['nf.card'] = () => {
+  const n = S.notfall, nm = profName(), geb = phas('geburtsdatum') ? fmtDate(pget('geburtsdatum'), true) : '';
+  openSheet(`<div class="nf-card"><div class="nf-h"><span class="nf-e">🚑</span><div><small>Notfallkarte</small><h2>${esc(nm || 'Notfallinformationen')}</h2>${geb ? `<small>geboren am ${esc(geb)}</small>` : ''}</div></div>
+    ${n.med ? `<div class="nf-txt big"><small>Medizinisch</small><p>${esc(n.med)}</p></div>` : '<p class="muted">Medizinische Hinweise kannst du in der Notfall-Mappe ergänzen.</p>'}
+    ${n.kontakte.length ? `<div class="group-h"><span>Kontakte</span></div><div class="nf-calls">${n.kontakte.map(k => k.tel ? nfCall(nfTel(k.tel), k.name, k.bezug || 'Notfallkontakt', '📞') : rowH('📞', k.name, k.bezug || '', '')).join('')}</div>` : ''}
+    <div class="group-h"><span>Notruf</span></div><div class="nf-calls">${NOTRUFE.slice(0, 2).map(r => nfCall(r[0], r[1], r[2], r[3])).join('')}</div>
+    <div class="acts"><span class="sp"></span><button class="btn primary" data-sh="x">Schließen</button></div></div>`, { wide: true, onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); }) });
+};
+function nfPdf() {
+  const n = S.notfall, nm = profName(), { d, y: y0 } = pdfNew('Wenn mir etwas passiert', `Wichtige Informationen für meine Angehörigen${nm ? ' · ' + nm : ''}`, '#ff6b81', fmtDate(todayISO(), true), nm); let yy = y0;
+  yy = pdfNote(d, yy - 6, 'Stand dieser Zusammenstellung: ' + fmtDate(todayISO(), true) + '. Sie enthält persönliche Daten und gehört nur in vertrauenswürdige Hände.', { size: 9, color: PDF_INK });
+  if (n.kontakte.length) yy = pdfTable(d, yy, 'Wen informieren', [{ h: 'Name', w: 2.4 }, { h: 'Beziehung', w: 2 }, { h: 'Telefon', w: 2 }], n.kontakte.map(k => [k.name, k.bezug || '', k.tel || '']), { color: '#ff6b81' });
+  if (n.orte.length) yy = pdfTable(d, yy, 'Wo liegt was', [{ h: 'Was', w: 2.2 }, { h: 'Wo', w: 4.2 }], n.orte.map(o => [o.t, o.wo.replace(/\s+/g, ' ')]), { color: '#8a6cff' });
+  const nums = n.nr.map(r => [r.t, r.v]).concat(nfAuto().map(r => [r.t, r.v]));
+  if (nums.length) yy = pdfTable(d, yy, 'Versicherungen, Konten & Ansprechpartner', [{ h: 'Bezeichnung', w: 2.4 }, { h: 'Angaben', w: 4 }], nums, { color: '#4aa3ff' });
+  if (n.med) { if (yy + 70 > PDF_BOTTOM) { d.addPage(); yy = 44; } d.text('MEDIZINISCHE HINWEISE', 40, yy, { size: 8.4, bold: true, color: pdfDark('#ff6b81', .4), sp: 1.1 }); yy = d.para(n.med, 40, yy + 16, d.W - 80, { size: 10, color: PDF_INK, lh: 14 }) + 10; }
+  if (n.hinweis) { if (yy + 70 > PDF_BOTTOM) { d.addPage(); yy = 44; } d.text('HINWEISE FÜR ANGEHÖRIGE', 40, yy, { size: 8.4, bold: true, color: pdfDark('#ff6b81', .4), sp: 1.1 }); yy = d.para(n.hinweis, 40, yy + 16, d.W - 80, { size: 10, color: PDF_INK, lh: 14 }) + 10; }
+  yy = pdfTable(d, yy, 'Wichtige Rufnummern', [{ h: 'Dienst', w: 3.4 }, { h: 'Nummer', w: 1.6, a: 'r' }], NOTRUFE.map(r => [r[1] + ' (' + r[2] + ')', r[0] === '116116' ? '116 116' : r[0] === '116117' ? '116 117' : r[0]]), { color: '#e8a23a' });
+  pdfNote(d, yy, 'Diese Mappe ersetzt keine Vorsorgevollmacht, Patientenverfügung oder Verfügung von Todes wegen. Sie hilft Angehörigen, schnell zu wissen, wen sie anrufen müssen und wo die Unterlagen liegen.');
+  pdfFooters(d, 'Erstellt mit Kairos · vertraulich'); return d;
+}
+ACT['nf.pdf'] = el => {
+  const n = S.notfall; if (!n.kontakte.length && !n.orte.length && !n.nr.length && !nfAuto().length && !n.med) return toast('Trage zuerst Kontakte oder Orte ein.', 'bad');
+  pdfOut(nfPdf(), 'Kairos-Wenn-mir-etwas-passiert.pdf', 'Wenn mir etwas passiert', el && el.dataset && el.dataset.mode);
+};
+
+/* =====================================================================
+   KAIROS · Sichere Backups: Erinnerung, Verschlüsselung (AES-256-GCM), Teilen in Dateien/iCloud Drive,
+   Gerätewechsel. Die Datei liegt nur dort, wohin du sie speicherst – Kairos hat keinen Server.
+   ===================================================================== */
+const BK_EVERY = [[0, 'Aus'], [7, '7 Tage'], [14, '14 Tage'], [30, '30 Tage']];
+const bkLast = () => (S.backup && S.backup.last) || lsGet('kairos-lastbackup') || '';
+/** Fällig? → { never, days, date, sub } oder null */
+function backupDue() {
+  const every = S.backup ? S.backup.every : 30; if (!every) return null;
+  const has = S.docs.length || Object.keys(S.prof).length > 3 || Object.keys(S.vertr).length || S.gbr.set || S.steuer.belege.length; if (!has) return null;
+  const last = bkLast(), today = todayISO();
+  if (!last) { const age = S.profile.created ? Math.floor((Date.now() - S.profile.created) / 864e5) : 99; return age >= 3 ? { never: true, days: null, date: today, sub: 'Noch nie gesichert' } : null; }
+  const n = diffDays(today, last); return n >= every ? { never: false, days: n, date: addDays(last, every), sub: n === 0 ? 'Heute' : `Zuletzt vor ${plural(n, 'Tag', 'Tagen')}` } : null;
+}
+/** Alle Daten + Dateien als JSON-Text */
+async function makeBackupJSON() {
+  await saveNow(); const files = [];
+  for (const d of S.docs.concat(S.photos || [])) if (d.fileName || d.thumb) { try { const blob = await getFileBlob(d.id); if (blob) files.push({ id: d.id, name: d.fileName || d.name, type: d.fileType || blob.type, b64: b64(await blob.arrayBuffer()) }); } catch (e) { /* Datei überspringen */ } }
+  const st = Object.assign({}, S, { int: Object.assign({}, S.int, { tg: S.int.tg ? Object.assign({}, S.int.tg, { token: undefined, chat: undefined, offset: undefined }) : undefined }) });
+  return { text: JSON.stringify({ app: 'kairos', v: 3, exported: new Date().toISOString(), state: st, files }), n: files.length };
+}
+async function encryptBackupText(text, pw) {
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iter = 250000, key = await deriveKey(pw, salt, iter), iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, enc.encode(text));
+  return JSON.stringify({ app: 'kairos', enc: 1, v: 3, exported: new Date().toISOString(), salt: b64(salt), iter, iv: b64(iv), ct: b64(ct) });
+}
+async function decryptBackupData(data, pw) {
+  const key = await deriveKey(pw, unb64(data.salt), data.iter || 250000), buf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(data.iv) }, key, unb64(data.ct));
+  return JSON.parse(dec.decode(buf));
+}
+/** Passwort abfragen (Promise: Text oder null) */
+function askPassword(title, sub, again) {
+  return new Promise(res => {
+    let done = false; const fin = v => { if (!done) { done = true; res(v); } };
+    sheetResolve = () => fin(null);
+    openSheet(`<form id="pwF"><h2>${esc(title)}</h2><p class="lead-p">${esc(sub)}</p><div class="fields"><div class="field full"><label for="bkPw">Passwort</label><input class="inp" id="bkPw" type="password" autocomplete="off"></div>${again ? '<div class="field full"><label for="bkPw2">Wiederholen</label><input class="inp" id="bkPw2" type="password" autocomplete="off"></div>' : ''}</div>
+      <div class="acts"><button type="button" class="btn" data-sh="no">Abbrechen</button><span class="sp"></span><button class="btn primary" type="submit">Weiter</button></div></form>`, { onMount: sh => {
+      $('#pwF', sh).addEventListener('submit', e => { e.preventDefault(); const p = $('#bkPw', sh).value; if (!p) return toast('Bitte ein Passwort eintragen.', 'bad'); if (again) { if (p.length < 6) return toast('Mindestens 6 Zeichen.', 'bad'); if (p !== $('#bkPw2', sh).value) return toast('Die Passwörter stimmen nicht überein.', 'bad'); } sheetResolve = null; fin(p); closeSheet(); });
+      $('[data-sh=no]', sh).addEventListener('click', () => { sheetResolve = null; fin(null); closeSheet(); });
+      setTimeout(() => { const f = $('#bkPw', sh); f && f.focus(); }, 180);
+    } });
+  });
+}
+function markBackup(encrypted) {
+  S.backup.last = todayISO(); S.backup.enc = !!encrypted; lsSet('kairos-lastbackup', S.backup.last); save();
+  if (route === 'einstellungen' || route === 'reise') rerender();
+}
+ACT['backup.run'] = async el => {
+  const encOn = el.dataset.enc === '1'; let pw = null;
+  if (encOn) { pw = await askPassword('Backup verschlüsseln', 'Mit diesem Passwort wird die Datei verschlüsselt (AES-256). Es wird nirgends gespeichert – ohne das Passwort lässt sich das Backup nicht mehr öffnen. Es ist unabhängig von deiner App-Sperre.', true); if (!pw) return; await sleep(320); }
+  else if (!await confirmSheet('Unverschlüsselt sichern?', 'Die Datei enthält alle deine Daten im Klartext. Jeder, der sie findet, kann sie lesen. Verschlüsselt ist sicherer.', 'Trotzdem sichern', false)) return;
+  toast('Backup wird erstellt …');
+  try {
+    const { text, n } = await makeBackupJSON(), out = pw ? await encryptBackupText(text, pw) : text;
+    const name = `kairos-backup-${todayISO()}${pw ? '-verschluesselt' : ''}.json`, r = await fileDeliver(new Blob([out], { type: 'application/json' }), name, 'Kairos-Backup', 'Sicherung meiner Kairos-Daten');
+    if (r === 'abort') return toast('Abgebrochen');
+    markBackup(!!pw); snd('cheer'); hap(3);
+    toast(r === 'shared' ? `Backup bereit${n ? ` (inkl. ${plural(n, 'Datei', 'Dateien')})` : ''} – speichere es in „Dateien“ / iCloud Drive` : `Backup gespeichert${n ? ` (inkl. ${plural(n, 'Datei', 'Dateien')})` : ''}`, 'good');
+  } catch (e) { console.error(e); toast('Backup fehlgeschlagen', 'bad'); }
+};
+ACT['backup.every'] = el => { S.backup.every = +el.dataset.n; save(); ACT['backup.open'](); if (route === 'einstellungen') rerender(); };
+ACT['backup.open'] = () => {
+  const last = bkLast(), due = backupDue();
+  openSheet(`<div class="chh" style="--c:#4aa3ff"><span class="chh-e">💾</span><div><small>Daten & Sicherheit</small><h2>Backup</h2></div></div>
+    <p class="lead-p">${last ? `Zuletzt gesichert: ${esc(relDate(last))}${S.backup.enc ? ' · verschlüsselt' : ' · unverschlüsselt'}.` : 'Du hast noch kein Backup gemacht.'} Alles liegt nur auf diesem Gerät – ein Backup schützt dich vor Verlust, Gerätewechsel und gelöschten Website-Daten.</p>
+    ${due ? `<div class="docs-hint" style="margin:0 0 10px">${icon('alert')} Dein Backup ist fällig.</div>` : ''}
+    <button class="ckl ok" data-act="backup.run" data-enc="1">${icon('lockkey')}<span><b>Verschlüsselt sichern</b> (empfohlen) – mit eigenem Passwort</span>${icon('chevR')}</button>
+    <button class="ckl" data-act="backup.run" data-enc="0">${icon('download')}<span>Unverschlüsselt sichern</span>${icon('chevR')}</button>
+    ${hintP('Im Teilen-Menü wählst du „In Dateien sichern“ und dann <b>iCloud Drive</b> – oder du schickst die Datei per AirDrop an dein anderes Gerät.')}
+    <div class="group-h"><span>Erinnerung</span></div><div class="seg full">${BK_EVERY.map(([n, l]) => `<button class="${(S.backup.every || 0) === n ? 'on' : ''}" data-act="backup.every" data-n="${n}">${l}</button>`).join('')}</div>
+    <p class="muted fine">Kairos erinnert dich auf der Startseite. Eine automatische Sicherung im Hintergrund ist im Browser nicht möglich.</p>
+    <button class="ckl" data-act="backup.move">${icon('share')}<span>Auf neues Gerät umziehen</span>${icon('chevR')}</button>
+    <button class="ckl" data-act="set.import">${icon('upload')}<span>Backup einspielen</span>${icon('chevR')}</button>
+    <div class="acts"><span class="sp"></span><button class="btn" data-sh="x">Schließen</button></div>`, { wide: true, onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); }) });
+};
+ACT['backup.move'] = () => {
+  const steps = [['Verschlüsseltes Backup erstellen', 'Auf diesem Gerät: Backup → „Verschlüsselt sichern“. Merke dir das Passwort gut.'], ['Datei zum neuen Gerät bringen', 'Im Teilen-Menü „In Dateien sichern“ → iCloud Drive wählen, oder per AirDrop senden.'], ['Kairos auf dem neuen Gerät öffnen', 'Gleiche Adresse im Browser öffnen und über Teilen → „Zum Home-Bildschirm“ installieren.'], ['Backup einspielen', 'Einstellungen → Daten & Backup → „Importieren“ → Datei auswählen → Passwort eingeben.'], ['Altes Gerät aufräumen', 'Wenn alles da ist: Auf dem alten Gerät in den Einstellungen „Alles löschen“.']];
+  openSheet(`<div class="chh" style="--c:#4aa3ff"><span class="chh-e">📲</span><div><small>Gerätewechsel</small><h2>Umziehen in 5 Schritten</h2></div></div>
+    <ol class="mv-steps">${steps.map(s => `<li><b>${esc(s[0])}</b><span>${esc(s[1])}</span></li>`).join('')}</ol>
+    <div class="acts"><button class="btn" data-act="set.import">${icon('upload')}Einspielen</button><span class="sp"></span><button class="btn primary" data-act="backup.run" data-enc="1">${icon('lockkey')}Jetzt sichern</button></div>`, { wide: true });
+};
+/* Import: verschlüsselte Backups erkennen */
+const _importBackupPlain = importBackup;
+importBackup = async function (file) {
+  let data; try { data = JSON.parse(await file.text()); } catch (e) { return toast('Das ist keine gültige Backup-Datei.', 'bad'); }
+  if (data && data.app === 'kairos' && data.enc && data.ct) {
+    const pw = await askPassword('Backup entschlüsseln', 'Gib das Passwort ein, mit dem dieses Backup verschlüsselt wurde.', false); if (!pw) return;
+    try { data = await decryptBackupData(data, pw); } catch (e) { return toast('Falsches Passwort oder beschädigte Datei.', 'bad'); }
+    await sleep(320);
+    return _importBackupPlain(new File([JSON.stringify(data)], 'backup.json', { type: 'application/json' }));
+  }
+  return _importBackupPlain(file);
+};
+
+/* =====================================================================
+   KAIROS · Heute-Karte & Erinnerungen, Kalender-Datei (.ics), Spar-Radar für Verträge
+   Hinweis: Ein automatisch aktualisiertes Kalender-Abo bräuchte einen Server – den gibt es bei Kairos
+   bewusst nicht. Die .ics-Datei ist eine Momentaufnahme mit Erinnerungen und wird bei Bedarf neu exportiert.
+   ===================================================================== */
+function extraDeadlines(add) { gbrDeadlinesList().forEach(add); }
+
+/* ---------- Heute ---------- */
+function heuteItems() {
+  const today = todayISO(), out = [];
+  for (const d of buildDeadlines()) { const n = diffDays(d.date, today); if (n >= -14 && n <= 90) out.push(Object.assign({}, d, { n })); }
+  out.sort((a, b) => a.n - b.n);
+  return out;
+}
+function heuteTips() {
+  const tips = [], b = backupDue();
+  if (b) tips.push({ id: 'tip_backup', e: '💾', t: b.never ? 'Mach dein erstes Backup' : 'Backup ist fällig', s: b.sub + ' · verschlüsselt in iCloud Drive sichern', act: 'backup.open' });
+  if (!S.notfall.kontakte.length && !(S.heute.seen || {}).tip_notfall && (S.docs.length || Object.keys(S.prof).length > 5)) tips.push({ id: 'tip_notfall', e: '🚑', t: 'Notfall-Mappe anlegen', s: 'Kontakte, Vollmachten und Unterlagen für den Ernstfall', go: 'notfall' });
+  const ics = S.heute.ics; if (ics && diffDays(todayISO(), ics) >= 45) tips.push({ id: 'tip_ics', e: '📅', t: 'Kalender-Datei erneuern', s: `Zuletzt exportiert vor ${plural(diffDays(todayISO(), ics), 'Tag', 'Tagen')}`, act: 'ics.all' });
+  return tips;
+}
+function heuteCard() {
+  const items = heuteItems(), soon = items.filter(i => i.n <= 14), tips = heuteTips();
+  if (!items.length && !tips.length) return '';
+  const show = soon.slice(0, 4), more = soon.length - show.length;
+  const row = i => `<button class="hr ${i.n < 0 ? 'late' : i.n <= 3 ? 'soon' : ''}" data-act="heute.item" data-id="${esc(i.id)}"><span class="hr-e">${i.e || '📌'}</span><span class="hr-m"><b>${esc(i.title)}</b>${i.sub ? `<small>${esc(i.sub)}</small>` : ''}</span><span class="hr-d">${i.n === 0 ? 'Heute' : dlLabel(i.date).replace(/^in /, '')}</span></button>`;
+  const tip = t => `<button class="hr tip" ${t.act ? `data-act="${t.act}"` : `data-go="${t.go}"`} ${t.id === 'tip_notfall' ? 'data-tip="1"' : ''}><span class="hr-e">${t.e}</span><span class="hr-m"><b>${esc(t.t)}</b><small>${esc(t.s)}</small></span>${icon('chevR')}</button>`;
+  return `<div class="card glass heute"><div class="card-h">${icon('bell')} ${soon.some(i => i.n <= 0) ? 'Heute & bald' : 'Diese Woche & bald'}<span class="sp"></span><button class="link" data-act="heute.open">${items.length > show.length ? `Alle (${items.length})` : 'Öffnen'}</button></div>
+    ${show.length ? show.map(row).join('') : '<p class="muted" style="margin:2px 0 6px">Nichts Dringendes in den nächsten 14 Tagen.</p>'}${more > 0 ? `<button class="link hr-more" data-act="heute.open">+ ${more} weitere in den nächsten 14 Tagen</button>` : ''}${tips.map(tip).join('')}</div>`;
+}
+function heuteGo(it) {
+  if (!it) return;
+  closeSheet();
+  setTimeout(() => {
+    if (it.vt && VCX(it.vt)) return ACT['vt.open']({ dataset: { id: it.vt } });
+    if (it.doc && S.docs.find(d => d.id === it.doc)) return ACT['doc.open']({ dataset: { id: it.doc } });
+    if (/^gbr_/.test(it.id)) return go('gbr');
+    if (/^st_/.test(it.id)) return go('steuer');
+    if (it.ev) return go('leben');
+    ACT['heute.one']({ dataset: { id: it.id } });
+  }, 260);
+}
+ACT['heute.item'] = el => heuteGo(heuteItems().find(i => i.id === el.dataset.id));
+ACT['heute.one'] = el => {
+  const it = heuteItems().find(i => i.id === el.dataset.id); if (!it) return;
+  openSheet(`<div class="chh" style="--c:var(--accent)"><span class="chh-e">${it.e || '📌'}</span><div><small>${esc(dlLabel(it.date))} · ${esc(fmtDate(it.date, true))}</small><h2>${esc(it.title)}</h2></div></div>
+    ${it.sub ? `<p class="lead-p">${esc(it.sub)}</p>` : ''}<div class="acts"><button class="btn" data-sh="x">Schließen</button><span class="sp"></span><button class="btn primary" data-act="ics.one" data-id="${esc(it.id)}">${icon('calendar')}In Kalender</button></div>`, { onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); }) });
+};
+ACT['heute.open'] = () => {
+  const items = heuteItems(), groups = [['Überfällig', i => i.n < 0], ['Heute & diese Woche', i => i.n >= 0 && i.n <= 7], ['Die nächsten 30 Tage', i => i.n > 7 && i.n <= 30], ['Danach (bis 90 Tage)', i => i.n > 30]];
+  const row = i => `<button class="hr ${i.n < 0 ? 'late' : i.n <= 3 ? 'soon' : ''}" data-act="heute.item" data-id="${esc(i.id)}"><span class="hr-e">${i.e || '📌'}</span><span class="hr-m"><b>${esc(i.title)}</b><small>${esc([fmtDate(i.date, true), i.sub].filter(Boolean).join(' · '))}</small></span><span class="hr-d">${i.n === 0 ? 'Heute' : dlLabel(i.date).replace(/^in /, '')}</span></button>`;
+  const notifOk = typeof Notification !== 'undefined';
+  openSheet(`<div class="chh" style="--c:var(--accent)"><span class="chh-e">🔔</span><div><small>Erinnerungen</small><h2>Was ansteht</h2></div></div>
+    ${groups.map(([t, f]) => { const l = items.filter(f); return l.length ? `<div class="group-h"><span>${t}</span></div><div class="heute-l">${l.map(row).join('')}</div>` : ''; }).join('') || '<p class="muted">Aktuell stehen keine Fristen an.</p>'}
+    <div class="group-h"><span>Erinnern lassen</span></div>
+    <button class="ckl" data-act="ics.all">${icon('calendar')}<span>Alle Fristen als Kalender-Datei (.ics) – mit Erinnerungen</span>${icon('chevR')}</button>
+    <p class="muted fine">Die Datei trägst du einmal in Kalender oder Outlook ein; die Erinnerungen löst dann dein Kalender aus. Sie ist eine Momentaufnahme – ändern sich Fristen, exportiere sie erneut. Ein automatisch mitwachsendes Kalender-Abo ginge nur mit einem Server, den Kairos bewusst nicht hat.</p>
+    ${notifOk ? `<label class="srow" style="padding:6px 2px"><div><b>Beim Öffnen erinnern</b><small>Zeigt eine Mitteilung, wenn du Kairos öffnest und etwas heute oder morgen fällig ist. Funktioniert nur bei geöffneter App – nicht im Hintergrund.</small></div><input type="checkbox" class="tg" data-act="heute.notify" ${S.heute.notify ? 'checked' : ''} aria-label="Beim Öffnen erinnern"></label>` : ''}
+    <div class="acts"><span class="sp"></span><button class="btn" data-sh="x">Schließen</button></div>`, { wide: true, onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); }) });
+};
+ACT['ics.all'] = async () => {
+  const items = buildDeadlines().filter(d => diffDays(d.date, todayISO()) >= 0); if (!items.length) return toast('Keine anstehenden Fristen');
+  const r = await fileDeliver(new Blob([makeICS(items)], { type: 'text/calendar' }), 'kairos-fristen.ics', 'Kairos-Fristen', 'Fristen aus Kairos – in den Kalender übernehmen');
+  if (r === 'abort') return; S.heute.ics = todayISO(); save(); toast(r === 'shared' ? 'Wähle „Kalender“, um die Fristen einzutragen.' : 'Kalenderdatei gespeichert – öffne sie, um die Fristen einzutragen.', 'good');
+};
+document.addEventListener('click', e => { const t = e.target.closest('[data-tip]'); if (t) { S.heute.seen = S.heute.seen || {}; S.heute.seen.tip_notfall = todayISO(); save(); } }, true);
+
+/* Mitteilungen – nur, solange die App geöffnet ist */
+ACT['heute.notify'] = async el => {
+  const want = el.checked, sync = () => setTimeout(() => { el.checked = !!S.heute.notify; }, 0);
+  if (!want) { S.heute.notify = false; save(); sync(); return toast('Mitteilungen aus'); }
+  try {
+    const p = Notification.permission === 'granted' ? 'granted' : await Notification.requestPermission();
+    if (p !== 'granted') { S.heute.notify = false; save(); sync(); return toast('Mitteilungen sind in den Systemeinstellungen nicht erlaubt.', 'bad'); }
+    S.heute.notify = true; save(); sync(); toast('Aktiv – Kairos erinnert dich beim Öffnen.', 'good'); heuteNotify();
+  } catch (e) { S.heute.notify = false; sync(); toast('Mitteilungen werden hier nicht unterstützt.', 'bad'); }
+};
+async function heuteNotify() {
+  try {
+    if (!S.heute || !S.heute.notify || typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
+    const due = heuteItems().filter(i => i.n >= -1 && i.n <= 1 && !(S.heute.seen || {})['n_' + i.id + i.date]).slice(0, 3); if (!due.length) return;
+    S.heute.seen = S.heute.seen || {}; due.forEach(i => { S.heute.seen['n_' + i.id + i.date] = 1; });
+    const keys = Object.keys(S.heute.seen).filter(k => k.startsWith('n_')); if (keys.length > 200) keys.slice(0, 100).forEach(k => delete S.heute.seen[k]);
+    save(); const reg = navigator.serviceWorker && await navigator.serviceWorker.getRegistration();
+    for (const i of due) { const o = { body: (i.n === 0 ? 'Heute' : i.n < 0 ? 'Überfällig' : 'Morgen') + (i.sub ? ' · ' + i.sub : ''), tag: 'kairos-' + i.id, icon: 'icon-192.png' }; if (reg && reg.showNotification) reg.showNotification(i.title, o); else new Notification(i.title, o); }
+  } catch (e) { /* ignorieren */ }
+}
+setTimeout(heuteNotify, 4500);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) setTimeout(heuteNotify, 1200); });
+
+/* ---------- Spar-Radar ---------- */
+const SPAR_VGL = new Set(['strom', 'gas', 'internet', 'mobilfunk', 'kfz', 'haftpflicht', 'hausrat', 'rechtsschutz', 'kvzusatz', 'unfall', 'wohngebaeude']);
+function sparRadar() {
+  const today = todayISO(), act = vActive().filter(e => !isInc(e)), items = [];
+  let jahr = 0, gesamt = 0;
+  for (const e of act) {
+    const o = vOf(e.id), m = vMonthly(e.id), mine = vMine(e.id), base = e.of || e.id; jahr += mine * 12; gesamt += m * 12;
+    const kd = kuendDate(e.id), nm = e.n + (vprov(e.id) ? ' (' + vprov(e.id) + ')' : '');
+    if (kd && !o.gek) { const n = diffDays(kd, today); if (n >= 0 && n <= 90) items.push({ id: 'k_' + e.id, pri: n <= 14 ? 95 : n <= 45 ? 80 : 62, e: '✂️', t: `Kündigungsfrist läuft ${dlLabel(kd)} ab`, s: `${nm}${m ? ' · ' + eur0(m * 12) + ' pro Jahr' : ''}. Jetzt entscheiden: behalten, wechseln oder kündigen.`, vt: e.id, acts: [['Ansehen', 'vt.open'], ['Alternativen', 'vt.search'], ['Kündigen', 'vt.kuend']] }); }
+    if (o.perh && o.pneu != null && o.kosten != null && diffDays(o.perh, today) >= -30) {
+      const f = (ZAHL.find(z => z[0] === (o.zahl || 'm')) || ZAHL[0])[2], dm = Math.round((o.pneu - o.kosten) * f);
+      if (dm > 0) items.push({ id: 'p_' + e.id, pri: 92, e: '📈', t: `Preiserhöhung ab ${fmtDate(o.perh, true)}: +${money(dm)} pro Monat`, s: `${nm} wird ${eur0(dm * 12)} pro Jahr teurer. Bei Preiserhöhungen gibt es oft ein Sonderkündigungsrecht – die Frist steht im Schreiben des Anbieters.`, vt: e.id, acts: [['Kündigen', 'vt.kuend'], ['Alternativen', 'vt.search'], ['Ansehen', 'vt.open']] });
+    }
+    if (o.x_pg) { const n = diffDays(o.x_pg, today); if (n >= -60 && n <= 90) items.push({ id: 'g_' + e.id, pri: n < 0 ? 78 : 66, e: '💡', t: n < 0 ? 'Preisgarantie ist abgelaufen' : `Preisgarantie endet ${dlLabel(o.x_pg)}`, s: `${nm} – danach steigt der Preis oft. Tarife vergleichen lohnt sich.`, vt: e.id, acts: [['Alternativen', 'vt.search'], ['Ansehen', 'vt.open']] }); }
+    if (SPAR_VGL.has(base) && o.beginn && diffDays(today, o.beginn) >= 730 && !o.perh) items.push({ id: 't_' + e.id, pri: 48, e: '🔁', t: `${e.n}: läuft seit ${Math.floor(diffDays(today, o.beginn) / 365)} Jahren`, s: `${nm}${m ? ' · ' + eur0(m * 12) + ' pro Jahr' : ''}. Bestandskunden zahlen häufig mehr als Neukunden – ein Tarifvergleich lohnt.`, vt: e.id, acts: [['Alternativen', 'vt.search'], ['Ansehen', 'vt.open']] });
+  }
+  /* Abos */
+  const abos = act.filter(e => e.c === 'abo').map(e => ({ e, v: vMine(e.id) * 12 })).filter(x => x.v > 0).sort((a, b) => b.v - a.v), aboSum = sum(abos, x => x.v);
+  if (abos.length >= 2 && aboSum >= 36000) items.push({ id: 'abos', pri: 58, e: '🎬', t: `Abos & Mitgliedschaften: ${eur0(aboSum)} im Jahr`, s: `Am meisten: ${joinNice(abos.slice(0, 3).map(x => x.e.n + ' (' + eur0(x.v) + ')'))}. Welche nutzt du wirklich? Viele sind monatlich kündbar.`, vt: abos[0].e.id, acts: [['Ansehen', 'vt.open']] });
+  /* Doppelt versichert? */
+  for (const b of ['haftpflicht', 'hausrat', 'rechtsschutz']) {
+    const l = act.filter(e => (e.of || e.id) === b && vMit(e.id) === 'ich'); if (l.length >= 2) items.push({ id: 'd_' + b, pri: 60, e: '👫', t: `${(VC.find(x => x.id === b) || {}).n || b}: zwei Verträge?`, s: `Du hast ${l.length} Einträge. Diese Versicherung deckt oft den ganzen Haushalt ab – prüfe, ob beide nötig sind${peopleOf('partner').length ? ' oder ob du einen gemeinsam mit ' + partnerName() + ' führen kannst' : ''}.`, vt: l[0].id, acts: [['Ansehen', 'vt.open']] });
+  }
+  /* Teuerste Verträge */
+  const top = act.map(e => ({ e, v: vMine(e.id) * 12 })).filter(x => x.v > 0).sort((a, b) => b.v - a.v).slice(0, 3);
+  if (top.length >= 2) items.push({ id: 'top', pri: 30, e: '📊', t: 'Die größten Hebel', s: `${joinNice(top.map(x => x.e.n + ' (' + eur0(x.v) + ' im Jahr)'))}. Hier bringt ein Wechsel oder eine Verhandlung am meisten.`, vt: top[0].e.id, acts: [['Ansehen', 'vt.open']] });
+  const seen = (S.ui.sparOff || {}); const list = items.filter(i => !seen[i.id]).sort((a, b) => b.pri - a.pri);
+  return { items: list, jahr, gesamt, hidden: items.length - list.length };
+}
+function sparCard() {
+  const r = sparRadar(); if (!r.jahr) return '';
+  const top = r.items.slice(0, 2);
+  return `<div class="card glass sparc"><div class="card-h">${icon('trend')} Spar-Radar<span class="sp"></span><button class="link" data-act="spar.open">${r.items.length ? `Alle (${r.items.length})` : 'Öffnen'}</button></div>
+    <div class="spar-k"><div><b>${eur0(r.jahr)}</b><span>deine Verträge im Jahr${r.gesamt !== r.jahr ? ' · Haushalt ' + eur0(r.gesamt) : ''}</span></div></div>
+    ${top.length ? top.map(i => `<button class="hr ${i.pri >= 90 ? 'late' : i.pri >= 75 ? 'soon' : ''}" data-act="spar.open"><span class="hr-e">${i.e}</span><span class="hr-m"><b>${esc(i.t)}</b><small>${esc(i.s.length > 96 ? i.s.slice(0, 94) + '…' : i.s)}</small></span>${icon('chevR')}</button>`).join('') : '<p class="muted fine" style="margin:6px 0 0">Aktuell keine Hinweise – Kairos meldet sich, wenn Fristen nahen oder Preise steigen.</p>'}</div>`;
+}
+ACT['spar.open'] = () => {
+  const r = sparRadar();
+  openSheet(`<div class="chh" style="--c:var(--c-biz)"><span class="chh-e">📡</span><div><small>Verträge</small><h2>Spar-Radar</h2></div></div>
+    <div class="vstat"><div><b>${eur0(r.jahr)}</b><span>deine Kosten pro Jahr</span></div><div><b>${eur0(r.gesamt)}</b><span>Haushalt gesamt</span></div><div><b>${r.items.length}</b><span>Hinweise</span></div></div>
+    ${r.items.length ? r.items.map(i => `<div class="spar-i"><div class="spar-h"><span class="hr-e">${i.e}</span><b>${esc(i.t)}</b><button class="btn sm ghost spar-x" data-act="spar.hide" data-id="${esc(i.id)}" aria-label="Hinweis ausblenden">${icon('x')}</button></div><p>${esc(i.s)}</p><div class="spar-a">${i.acts.map(([l, a]) => `<button class="btn sm ${a === 'vt.kuend' ? '' : 'ghost'}" data-act="${a}" data-id="${esc(i.vt)}">${esc(l)}</button>`).join('')}</div></div>`).join('') : `<p class="muted">Gerade nichts Auffälliges. Trag bei deinen Verträgen Kosten, Laufzeit und Kündigungsfrist ein, dann findet das Radar mehr.</p>`}
+    ${hintP('Das Radar zeigt Hinweise aus deinen eigenen Angaben – keine Angebote und keine Berechnung echter Tarife. Ob ein Wechsel lohnt, zeigt erst ein Tarifvergleich. Sonderkündigungsrechte hängen vom Vertrag ab; die Frist steht im Schreiben des Anbieters.')}
+    ${r.hidden ? `<button class="link" data-act="spar.reset">${r.hidden} ausgeblendete Hinweise wieder zeigen</button>` : ''}
+    <div class="acts"><span class="sp"></span><button class="btn" data-sh="x">Schließen</button></div>`, { wide: true, onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); else { const a = e.target.closest('[data-act]'); if (a && /^vt\./.test(a.dataset.act)) closeSheet(); } }) });
+};
+ACT['spar.hide'] = el => { S.ui.sparOff = S.ui.sparOff || {}; S.ui.sparOff[el.dataset.id] = todayISO(); save(); ACT['spar.open'](); rerender(); };
+ACT['spar.reset'] = () => { S.ui.sparOff = {}; save(); ACT['spar.open'](); rerender(); };
+
+/* =====================================================================
    KAIROS · Start: Splash, Onboarding, Boot
    ===================================================================== */
 function showOnboarding(replay) {
@@ -7938,7 +8955,7 @@ async function boot() {
   if (memOnly) toast('Dein Browser blockiert den lokalen Speicher – Daten gehen beim Schließen verloren. Bitte Backup erstellen.', 'bad');
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => { /* optional */ });
   window.addEventListener('keydown', e => { if (e.key === '/' && !/input|textarea|select/i.test(e.target.tagName) && !$('#sheetWrap').classList.contains('open')) { e.preventDefault(); ACT['cmd.open'](); } });
-  window.__K = { openZoom, ZV, refreshApp, chunkList, GS, ROWS, snd, hap, sndBuild, sndPlay, SOUNDS, SND, ocrSelfTest, get S() { return S; }, get route() { return route; }, tnState, tnLocked, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, KPdf, buildPackagePdf, PACKAGES, pdfWidth, fundOpen, scanFunde, docToVertrag, fdSetProfile, fdSetVertrag, docVertragDraft, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, provList, PROV, xSpecs, katalogInsights, parseStatement, stAnalyze, stApply, stMatch, stRun, stNum, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
+  window.__K = { importBackup, askPassword, gbrSum, nkCalc, sparRadar, heuteItems, backupDue, makeBackupJSON, encryptBackupText, decryptBackupData, fixCosts, vMine, steuerSuggestions, nfScore, steuerPdf, gbrYearPdf, nfPdf, openZoom, ZV, refreshApp, chunkList, GS, ROWS, snd, hap, sndBuild, sndPlay, SOUNDS, SND, ocrSelfTest, get S() { return S; }, get route() { return route; }, tnState, tnLocked, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, KPdf, buildPackagePdf, PACKAGES, pdfWidth, fundOpen, scanFunde, docToVertrag, fdSetProfile, fdSetVertrag, docVertragDraft, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, provList, PROV, xSpecs, katalogInsights, parseStatement, stAnalyze, stApply, stMatch, stRun, stNum, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<pre style="position:fixed;inset:20px;z-index:999;background:#300;color:#fff;padding:20px;overflow:auto">Kairos konnte nicht starten:\n${esc(e && e.stack || e)}</pre>`); });
 
