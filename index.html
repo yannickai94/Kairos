@@ -7,7 +7,7 @@
 <title>Kairos – deine digitale Kopie</title>
 <meta name="description" content="Kairos baut aus deinen Dokumenten Schritt für Schritt deine digitale Identität auf. Texterkennung und KI laufen lokal, alle Daten bleiben auf deinem Gerät.">
 <meta name="theme-color" content="#070a1c">
-<meta name="kairos-build" content="ade79f0ea8">
+<meta name="kairos-build" content="8115409686">
 <meta name="color-scheme" content="dark light">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -1290,6 +1290,44 @@ input[type=checkbox].tg:checked::after{transform:translateX(20px)}
 @media (max-width:900px){.ph-sr{display:grid}}
 @media (min-width:901px){.ph-sr:not(.on){display:none}.ey-row .ph-sr{display:none}}
 
+/* v15: Konten & Einnahmen */
+.acc-hi{display:inline-flex;align-items:center;gap:4px;min-height:44px;margin:-10px 0;padding:0;border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer}
+.acc-hi svg{width:14px;height:14px;opacity:.7}
+.acc-l{display:flex;flex-direction:column;gap:8px;margin:6px 0 4px}
+.acc-r{display:flex;align-items:center;gap:12px;width:100%;min-height:64px;padding:10px 14px;border-radius:18px;border:0;background:var(--field);color:inherit;font:inherit;text-align:left;cursor:pointer}
+.acc-r.on{box-shadow:inset 0 0 0 2px var(--accent);cursor:default}
+.acc-r .av-i{width:44px;height:44px;flex:none}
+.acc-r>svg{width:20px;height:20px;color:var(--text2);flex:none}.acc-r.on>svg{color:var(--accent)}
+.acc-r.add>svg:first-child{width:44px;height:44px;padding:11px;border-radius:50%;background:var(--hair2,rgba(255,255,255,.08));color:var(--accent)}
+.acc-m{flex:1;min-width:0;display:flex;flex-direction:column}.acc-m b{font-size:16px}.acc-m small{color:var(--text2);font-size:13px}
+.av-i.lg{width:64px;height:64px}.av-i.lg b{font-size:22px}
+.accbar{display:flex;align-items:center;gap:10px;margin:0 0 12px;padding:8px 8px 8px 10px;border-radius:18px;background:linear-gradient(90deg,color-mix(in srgb,#ff9a6b 26%,transparent),color-mix(in srgb,#ff9a6b 8%,transparent));box-shadow:inset 0 0 0 1px color-mix(in srgb,#ff9a6b 45%,transparent);font-size:14px}
+.accbar .av-i{width:32px;height:32px;flex:none}.accbar>span{flex:1;min-width:0}.accbar .btn{flex:none}
+.hh-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.hh-p{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:16px 12px}
+.hh-p.on{box-shadow:var(--shadow),inset 0 0 0 2px var(--accent)}
+.hh-p>b{font-size:17px;margin-top:6px}.hh-p>small{color:var(--text2);font-size:12px;margin-bottom:6px}
+.hh-pv{display:flex;justify-content:space-between;width:100%;font-size:13px;padding:5px 0;border-top:1px solid var(--hair)}.hh-pv span{color:var(--text2)}
+.hh-p .btn{margin-top:8px;width:100%}
+.pk-r.tot{font-weight:750;border-top:1px solid var(--hair2);padding-top:8px;margin-top:4px}.pk-r.sub span{padding-left:12px;color:var(--text2)}
+.ein-who{margin:4px 0 12px}
+.ein-chart{display:block;width:100%;height:170px;margin:6px 0 4px;overflow:visible}
+.ein-chart text{font-size:10px;fill:var(--text2);font-weight:650}
+.ein-chart .ec-b{cursor:pointer}.ein-chart .ec-b.cur rect:not([fill=transparent]){opacity:.65}
+.ein-chart .ec-b:hover rect:not([fill=transparent]){filter:brightness(1.15)}
+.ec-avg{stroke:var(--text);stroke-width:1.2;stroke-dasharray:4 4;opacity:.7}.ec-safe{stroke:#35d399;stroke-width:1.4;stroke-dasharray:2 4}
+.ein-leg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--text2)}
+.ein-leg span{display:inline-flex;align-items:center;gap:6px}.ein-leg i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.ein-leg i.dash{width:16px;height:0;border-top:2px dashed var(--text);border-radius:0;opacity:.7}.ein-leg i.dash.safe{border-top-color:#35d399;opacity:1}
+.ein-ins{margin:10px 0 0}
+.ein-miss .vt{gap:8px}.ein-miss .vt .btn{flex:none}
+.ein-pb{margin:12px 0 8px}.ein-pb-h{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}.ein-pb-h span{color:var(--text2)}
+.docs-hint.warn{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--warn) 55%,transparent)}
+.kpi2 span em{font-style:normal;font-weight:700}
+@media (max-width:420px){.hh-g{gap:8px}.hh-p{padding:14px 8px}}
+.hhp .pk-r{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.hhp .pk-r b{white-space:nowrap;flex:none}
+.hh-g{align-items:stretch}.hh-p{animation:none}
+
 /* ===== Dock (nur mobil) ===== */
 .dock{display:none}
 @media (max-width:900px){
@@ -1597,6 +1635,8 @@ const AREAS = {
   kairos:    { name: 'Kairos',     ic: 'sparkle',c: 'var(--c-shop)' },
   verbinden: { name: 'Verbinden',  ic: 'link',   c: 'var(--c-fin)' },
   mappen:    { name: 'Finanzen & Vorsorge', ic: 'folder', c: '#35c58f' },
+  einnahmen: { name: 'Einnahmen', ic: 'trend', c: '#35d399' },
+  haushalt:  { name: 'Haushalt', ic: 'users', c: '#ff9a6b' },
   gbr:       { name: 'Vermietung', ic: 'home',   c: '#35c58f' },
   steuer:    { name: 'Steuermappe', ic: 'coins', c: '#8a6cff' },
   notfall:   { name: 'Notfall',    ic: 'heart',  c: '#ff6b81' },
@@ -1623,7 +1663,9 @@ const defaultState = () => ({
   steuer: { belege: [], year: 0, skip: {} },                                // Steuermappe: gesammelte Belege
   notfall: { kontakte: [], orte: [], nr: [], med: '', hinweis: '' },       // Notfall & Vorsorge
   backup: { every: 30, last: '', enc: false },                             // Backup-Erinnerung
-  heute: { seen: {}, notify: false, ics: '' },                             // Heute-Karte & Erinnerungen
+  heute: { seen: {}, notify: false, ics: '' },
+  acc: { cur: 'a', a: null, b: null },                                     // Zwei Konten: aktive Person liegt direkt in S, die andere hier
+  ein: { q: [], e: [], fsa: [], zus: true, kist: 0, who: 'haus', year: 0 },   // Einnahmen: Quellen, Eingänge, Freistellungsaufträge                             // Heute-Karte & Erinnerungen
   ui: { tab: 'reise', onboarded: false, mask: true }
 });
 
@@ -1691,7 +1733,7 @@ function migrate(st) {
   const d = defaultState(); st = st || {};
   const out = Object.assign(d, { profile: Object.assign(d.profile, st.profile || {}), prof: st.prof || {}, docs: st.docs || [], photos: st.photos || [], vertr: st.vertr || {}, people: st.people || [], events: st.events || [], int: st.int || {}, brain: st.brain || null, journey: Object.assign(d.journey, st.journey || {}), ui: Object.assign(d.ui, st.ui || {}) });
   out.cv = Object.assign(defaultState().cv, st.cv || {}); out.v = 8;
-  out.gbr = Object.assign(defaultState().gbr, st.gbr || {}); out.steuer = Object.assign(defaultState().steuer, st.steuer || {}); out.notfall = Object.assign(defaultState().notfall, st.notfall || {}); out.backup = Object.assign(defaultState().backup, st.backup || {}); out.heute = Object.assign(defaultState().heute, st.heute || {});
+  out.gbr = Object.assign(defaultState().gbr, st.gbr || {}); out.steuer = Object.assign(defaultState().steuer, st.steuer || {}); out.notfall = Object.assign(defaultState().notfall, st.notfall || {}); out.acc = Object.assign(defaultState().acc, st.acc || {}); if (out.acc.cur !== 'b') out.acc.cur = 'a'; out.ein = Object.assign(defaultState().ein, st.ein || {}); for (const k of ['q', 'e', 'fsa']) if (!Array.isArray(out.ein[k])) out.ein[k] = []; out.backup = Object.assign(defaultState().backup, st.backup || {}); out.heute = Object.assign(defaultState().heute, st.heute || {});
   for (const k of ['gs', 'objekte', 'buch']) if (!Array.isArray(out.gbr[k])) out.gbr[k] = [];
   if (!Array.isArray(out.steuer.belege)) out.steuer.belege = []; for (const k of ['kontakte', 'orte', 'nr']) if (!Array.isArray(out.notfall[k])) out.notfall[k] = []; out.stmt = st.stmt || null; out.tree = Object.assign({ seen: {} }, st.tree || {});
   if (st.demo) { out.prof = {}; out.docs = []; out.photos = []; out.journey = defaultState().journey; out.ui.notice = 'Die Beispieldaten wurden entfernt.'; }   // frühere Demo-Daten sind nicht mehr Teil der App
@@ -1901,8 +1943,8 @@ function countUp(el, to, fmt = c => money(c)) {
 }
 
 /* ---------- Router & Navigation ---------- */
-const ROUTES = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'mappen', 'gbr', 'steuer', 'notfall', 'einblicke', 'dokumente', 'kairos', 'verbinden', 'einstellungen'];
-const MORE_ROUTES = ['dokumente', 'beruf', 'vertraege', 'mappen', 'leben', 'verbinden', 'einstellungen'];
+const ROUTES = ['reise', 'steckbrief', 'beruf', 'vertraege', 'einnahmen', 'haushalt', 'leben', 'mappen', 'gbr', 'steuer', 'notfall', 'einblicke', 'dokumente', 'kairos', 'verbinden', 'einstellungen'];
+const MORE_ROUTES = ['dokumente', 'beruf', 'vertraege', 'einnahmen', 'mappen', 'leben', 'verbinden', 'einstellungen'];
 let route = 'reise';
 function badgeCounts() { return { dokumente: S.docs.filter(d => d.status === 'neu').length, einblicke: typeof urgentCount === 'function' ? urgentCount() : 0 }; }
 function avatarHTML(cls = '') {
@@ -1912,7 +1954,7 @@ function avatarHTML(cls = '') {
 function renderNav() {
   const bc = badgeCounts();
   const item = r => { const a = AREAS[r], n = bc[r]; return `<button class="nv ${hubOn(r) ? 'on' : ''}${typeof treeGate === 'function' && treeGate(r) ? ' lkd' : ''}" style="--c:${a.c}" data-go="${r}" ${hubOn(r) ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt alert">${n}</span>` : ''}</button>`; };
-  $('#nav').innerHTML = ['reise', 'steckbrief', 'beruf', 'vertraege', 'mappen', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
+  $('#nav').innerHTML = ['reise', 'steckbrief', 'beruf', 'vertraege', 'einnahmen', 'mappen', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
   const dk = (r, lab) => `<button class="dk ${route === r ? 'on' : ''}" style="--c:${AREAS[r].c}" data-go="${r}" aria-label="${lab}"><span class="dki">${icon(AREAS[r].ic)}</span><span class="dkl">${lab}</span>${bc[r] ? '<i class="dot"></i>' : ''}</button>`;
   $('#dock').innerHTML = dk('reise', 'Leben') + dk('steckbrief', 'Steckbrief') +
     `<button class="dk dko ${route === 'kairos' ? 'on' : ''}" data-go="kairos" aria-label="Kairos fragen"><span>${logoSvg('dock')}</span></button>` + dk('einblicke', 'Einblicke') +
@@ -1926,6 +1968,7 @@ function renderView(keepScroll) {
   $('#view').innerHTML = v.render();
   const ph = $('#view .ph'); if (ph && route !== 'einstellungen') { const b = document.createElement('button'); b.className = 'ph-av'; b.dataset.go = 'einstellungen'; b.setAttribute('aria-label', 'Einstellungen'); b.innerHTML = avatarHTML(); const act = $('.act', ph); act ? ph.insertBefore(b, act) : ph.appendChild(b); const sr = document.createElement('button'); sr.className = 'ph-sr'; sr.dataset.act = 'cmd.open'; sr.setAttribute('aria-label', 'Suchen'); sr.innerHTML = icon('search'); ph.insertBefore(sr, b); }
   if (typeof hubCrumb === 'function') hubCrumb();
+  if (typeof accBar === 'function') accBar();
   if (v.mount) v.mount($('#view'));
   main.scrollTop = keepScroll ? st : 0;
   renderNav();
@@ -3860,7 +3903,7 @@ function reiseHero(o, nx, start, split) {
     : `<div class="hero-next" style="--c:${nx.ch.c}"><span class="hn-e">${nx.ch.e}</span><div><small>${start ? 'Dein erster Schritt' : nx.optional ? 'Zum Abrunden' : 'Nächster Schritt'}</small><b>${nx.ch.id === 'ausweis' && start ? 'Starte mit deinem Ausweis' : esc(nx.ch.n) + ': ' + esc(nx.ch.title)}</b><span>${esc(nx.ch.ask)}</span></div></div>
       <div class="chips nxt-reads"><span class="chip">${icon('scan')}Kairos liest:</span>${nx.ch.reads.split(', ').map(r => `<span class="chip">${esc(r)}</span>`).join('')}</div>
       <div class="nxt-acts">${nx.ch.view ? `<button class="btn primary lg" data-act="${nx.ch.quick || (nx.ch.id === 'vertraege' ? 'vt.quick' : 'ev.quick')}">${icon(nx.ch.id === 'beruf' ? 'briefcase' : 'sparkle')}${nx.ch.id === 'beruf' ? 'Arbeitsplatz eintragen' : 'Schnell-Check starten'}</button><button class="btn lg" data-go="${nx.ch.view}">Bereich öffnen</button>` : nx.ch.manual ? `<button class="btn primary lg" data-act="ich.start">${icon('edit')}Fragen beantworten</button>` : `<button class="btn primary lg" data-act="cap.pick" data-ch="${nx.ch.id}">${icon('upload')}Dokument wählen</button><button class="btn lg cam-only" data-act="cap.cam" data-ch="${nx.ch.id}">${icon('camera')}Foto aufnehmen</button><button class="btn ghost" data-act="fill.ch" data-ch="${nx.ch.id}">Selbst eintragen</button><button class="btn ghost" data-act="cap.text" data-ch="${nx.ch.id}">${icon('scan')}Text scannen</button>${nx.ch.id === 'bank' ? `<button class="btn ghost full" data-act="st.import">${icon('receipt')}Kontoauszug einlesen</button>` : ''}`}</div>`;
-  const rt = `<div class="hero2-r"><div class="eyebrow ey-row"><span>${esc(greetingWord())}${fn ? ', ' + esc(fn) : ''}</span><button class="ph-sr on" data-act="cmd.open" aria-label="Suchen">${icon('search')}</button></div><h1 class="h-title">${start ? 'Baue deine digitale <span class="gradtxt">Kopie</span>' : `Stufe <span class="gradtxt">${esc(o.level)}</span>`}</h1>
+  const rt = `<div class="hero2-r"><div class="eyebrow ey-row"><button class="acc-hi" data-act="acc.sheet" aria-label="Konto wechseln">${esc(greetingWord())}${fn ? ', ' + esc(fn) : ''}${icon('chevD')}</button><button class="ph-sr on" data-act="cmd.open" aria-label="Suchen">${icon('search')}</button></div><h1 class="h-title">${start ? 'Baue deine digitale <span class="gradtxt">Kopie</span>' : `Stufe <span class="gradtxt">${esc(o.level)}</span>`}</h1>
       <p class="h-sub">${start ? 'Dokument für Dokument – Kairos liest, verknüpft und zeigt dir, was daraus entsteht.' : `${o.fields} Angaben aus ${plural(ok, 'Dokument', 'Dokumenten')} sind verknüpft. ${nx ? 'Weiter geht es hier:' : ''}`}</p>
       ${cta}${start ? `<p class="nxt-priv">${icon('lock')}Alles bleibt auf diesem Gerät. Keine Cloud, kein Konto, keine API.</p>` : ''}</div>`;
   /* Schmal (Handy): erst Text und Aufgaben, dann der Orbit – so liegt „Heute“ nicht unter einem Bildschirm voller Grafik */
@@ -4938,7 +4981,7 @@ function careerDeadlines(add) {
    ===================================================================== */
 const REL = [['partner', 'Partner/in', '💑'], ['kind', 'Kind', '🧒'], ['eltern', 'Elternteil', '👵'], ['geschwister', 'Geschwister', '🧑‍🤝‍🧑'], ['sonst', 'Weitere Person', '🙂']];
 const relInfo = id => REL.find(r => r[0] === id) || REL[4];
-const peopleOf = rel => S.people.filter(p => p.rel === rel);
+const peopleOf = rel => { if (rel === 'partner' && typeof accPartnerPeople === 'function') { const v = accPartnerPeople(); if (v) return v; } return S.people.filter(p => p.rel === rel); };
 const peopleOwns = k => (k === 'partner' && peopleOf('partner').length > 0) || (k === 'kinder' && peopleOf('kind').length > 0);
 const pAge = p => p.geb ? ageOf(p.geb) : null;
 function syncPeople() {
@@ -5453,14 +5496,18 @@ const vprov = id => { const e = VCX(id), o = vOf(id); return o.anbieter || (e &&
 const vMonthly = id => { const o = vOf(id); if (!o.kosten) return 0; const z = ZAHL.find(x => x[0] === (o.zahl || 'm')) || ZAHL[0]; return Math.round(o.kosten * z[2]); };
 /* ---------- Gemeinsam mit Partner/in ---------- */
 const MIT = [['ich', 'Nur ich'], ['gemeinsam', 'Gemeinsam'], ['partner', 'Läuft auf Partner/in']];
-const partnerName = () => { const p = peopleOf('partner').find(x => x.name); return p ? p.name.split(' ')[0] : 'Partner/in'; };
-const mitOf = o => (o && (o.mit === 'gemeinsam' || o.mit === 'partner')) ? o.mit : 'ich';
-const anteilOf = o => { const a = o && o.anteil; return typeof a === 'number' && a >= 0 && a <= 100 ? a : 50; };
+const partnerName = () => { if (typeof accOtherName === 'function') { const n = accOtherName(); if (n) return n; } const p = peopleOf('partner').find(x => x.name); return p ? p.name.split(' ')[0] : 'Partner/in'; };
+/* Gespeichert wird immer aus Sicht des Hauptkontos; im Konto der Partnerin wird die Sicht gespiegelt */
+const mitOf = o => { const k = (o && (o.mit === 'gemeinsam' || o.mit === 'partner')) ? o.mit : 'ich'; return typeof accFlip === 'function' && accFlip() && k !== 'gemeinsam' ? (k === 'ich' ? 'partner' : 'ich') : k; };
+const mitStore = k => typeof accFlip === 'function' && accFlip() && k !== 'gemeinsam' ? (k === 'ich' ? 'partner' : k === 'partner' ? 'ich' : k) : k;
+const anteilStore = a => typeof accFlip === 'function' && accFlip() ? 100 - a : a;
+const anteilOf = o => { const a = o && o.anteil, v = typeof a === 'number' && a >= 0 && a <= 100 ? a : 50; return typeof accFlip === 'function' && accFlip() ? 100 - v : v; };
 const vMit = id => mitOf(vOf(id)), vAnteil = id => anteilOf(vOf(id));
 /** Mein Anteil am Monatsbetrag */
 const vMine = id => { const o = vOf(id), m = vMonthly(id), k = mitOf(o); return k === 'partner' ? 0 : k === 'gemeinsam' ? Math.round(m * anteilOf(o) / 100) : m; };
 const mitLabel = o => { const k = mitOf(o); return k === 'gemeinsam' ? `gemeinsam mit ${partnerName()} (mein Anteil ${anteilOf(o)} %)` : k === 'partner' ? `läuft auf ${partnerName()}` : ''; };
-const vmitOf = id => (S.ui.vmit && S.ui.vmit[id]) || {};
+const vmitKey = () => typeof accCur === 'function' && accCur() === 'b' ? 'vmit_b' : 'vmit';
+const vmitOf = id => (S.ui[vmitKey()] && S.ui[vmitKey()][id]) || {};
 function vclean(id) { const o = S.vertr[id]; if (o && !o.st && !o.custom && !o.of && !Object.keys(o).some(k => k !== 'st' && o[k] != null && o[k] !== '')) delete S.vertr[id]; }
 function setVst(id, st) {
   const e = VCX(id); if (!e) return; const o = S.vertr[id] || (S.vertr[id] = {});
@@ -5489,8 +5536,9 @@ function fixCosts() {
 }
 /** Haushaltsrechnung: Einnahmen (Netto + weitere) gegen feste Kosten */
 function haushalt() {
-  const netto = num('netto') || 0, extra = sum(vAll().filter(e => isInc(e) && vst(e.id) === 'ja'), e => vMine(e.id)), fc = fixCosts(), inn = netto + extra;
-  return { netto, extra, inn, out: fc.total, rest: inn - fc.total, quote: inn ? (inn - fc.total) / inn : null };
+  const avg = typeof einAvg === 'function' ? einAvg(typeof accCur === 'function' ? accCur() : 'a') : null;
+  const netto = avg != null ? avg : (num('netto') || 0), extra = avg != null ? 0 : sum(vAll().filter(e => isInc(e) && vst(e.id) === 'ja'), e => vMine(e.id)), fc = fixCosts(), inn = netto + extra;
+  return { fromEin: avg != null, netto, extra, inn, out: fc.total, rest: inn - fc.total, quote: inn ? (inn - fc.total) / inn : null };
 }
 /** Alle aktiven Verträge (ja) */
 const vActive = () => vAll().filter(e => vst(e.id) === 'ja');
@@ -5652,6 +5700,7 @@ VIEWS.vertraege = {
     const secs = VCATS.map(c => { const list = vAll().filter(e => e.c === c[0]), virt = vVirtual().filter(r => r.c === c[0]); if (!list.length && !virt.length) return '';
       const have = list.filter(e => vst(e.id) === 'ja').length, open = list.filter(e => !vst(e.id)).length, exp = vtExp.has(c[0]), shown = exp ? list : list.filter(e => vst(e.id) === 'ja'), hidden = list.length - shown.length;
       return `<section class="card glass vsec"><div class="vsec-h"><span class="vsec-e">${c[2]}</span><div><b>${esc(c[1])}</b><small>${have ? plural(have, 'Vertrag', 'Verträge') + ' aktiv' : c[3]}${open ? ' · ' + open + ' offen' : ''}</small></div>${open ? `<button class="btn sm" data-act="vt.quick" data-cat="${c[0]}">${icon('sparkle')}Check</button>` : ''}<button class="btn sm ghost" data-act="vt.add" data-cat="${c[0]}" aria-label="Zu ${esc(c[1])} hinzufügen">${icon('plus')}</button></div>
+        ${c[0] === 'einnahmen' ? `<button class="notice soft" data-go="einnahmen">${icon('coins')}<span><b>Schwankende Einnahmen im eigenen Bereich</b><small>Gehalt, Bonus, Dividenden und Zinsen erfasst du Monat für Monat unter „Einnahmen“ – mit Durchschnitt und Freistellungsaufträgen.</small></span>${icon('chevR')}</button>` : ''}
         <div class="vlist">${virt.map(vVirtRow).join('')}${shown.sort((a, b) => ({ ja: 0, null: 1, nein: 2 }[vst(a.id) || 'null'] - { ja: 0, null: 1, nein: 2 }[vst(b.id) || 'null'])).map(vRow).join('')}</div>
         ${hidden || exp ? `<button class="vexp" data-act="vt.exp" data-cat="${c[0]}">${exp ? 'Weniger anzeigen' : `${hidden} weitere ansehen${open ? ' · ' + open + ' offen' : ''}`}${icon(exp ? 'chevU' : 'chevD')}</button>` : ''}</section>`; }).join('');
     return `<div class="page vtp"><header class="ph"><div class="t"><div class="eyebrow">Alles, was läuft</div><h1>Verträge</h1><p>Versicherungen, Energie, Handy, Abos – mit Kosten und Fristen. Was du nicht hast, markierst du einfach mit „Nein“.</p></div>
@@ -5660,7 +5709,7 @@ VIEWS.vertraege = {
       ${sparCard()}
       <div class="kpis"><div class="kpi2"><b class="num" data-count="${act.length}">${act.length}</b><span>Aktive Verträge</span></div><div class="kpi2"><b class="num" data-money="${fc.total}">${eur0(fc.total)}</b><span>Feste Kosten / Monat</span></div><div class="kpi2"><b>${netto && fc.total ? Math.round(fc.total / netto * 100) + ' %' : '–'}</b><span>vom Netto</span></div><div class="kpi2"><b>${nx ? dlLabel(nx.date).replace('in ', '') : '–'}</b><span>${nx ? esc(nx.vt && VCX(nx.vt) ? VCX(nx.vt).n : nx.title.replace(/^Kündigen bis: /, '')) : 'Nächste Frist'}</span></div></div>
       ${hh.inn && fc.total ? `<div class="card glass hhc"><div class="card-h">${icon('coins')} Haushaltsrechnung<span class="sp"></span><b class="${hh.rest < 0 ? 'neg' : 'pos'}">${hh.rest < 0 ? '−' : '+'}${eur0(Math.abs(hh.rest))}</b></div>
-        <div class="hh-rows"><div><span>Einnahmen</span><b>${eur0(hh.inn)}</b></div>${hh.extra ? `<div class="sub"><span>davon weitere Einnahmen</span><b>${eur0(hh.extra)}</b></div>` : ''}<div><span>Feste Kosten</span><b>− ${eur0(hh.out)}</b></div><div class="tot"><span>Bleibt im Monat</span><b>${eur0(hh.rest)}</b></div></div>
+        <div class="hh-rows"><div><span>Einnahmen${hh.fromEin ? ' (Ø 12 Monate)' : ''}</span><b>${eur0(hh.inn)}</b></div>${hh.extra ? `<div class="sub"><span>davon weitere Einnahmen</span><b>${eur0(hh.extra)}</b></div>` : ''}<div><span>Feste Kosten</span><b>− ${eur0(hh.out)}</b></div><div class="tot"><span>Bleibt im Monat</span><b>${eur0(hh.rest)}</b></div></div>
         <div class="bar thin hh-bar"><i style="width:${Math.min(100, Math.max(0, hh.out / hh.inn * 100))}%"></i></div><p class="muted fine">Ohne variable Ausgaben wie Essen, Freizeit oder Kleidung.${hh.netto ? '' : ' Trage dein Netto im Steckbrief ein, dann stimmt die Rechnung.'}</p></div>` : ''}
       ${fc.total ? `<div class="card glass costc"><div class="card-h">${icon('coins')} Wohin dein Geld jeden Monat fließt<span class="sp"></span><b class="costt">${eur0(fc.total)}</b></div>${costBar(fc)}<div class="ctop">${fc.rows.slice(0, 5).map(r => `<div><span>${r.e} ${esc(r.n)}${r.mit === 'gemeinsam' ? ' 👫' : ''}</span><b>${eur0(r.m)}</b></div>`).join('')}</div>${fc.sharedN ? `<p class="muted fine">👫 ${plural(fc.sharedN, 'Vertrag läuft', 'Verträge laufen')} mit ${esc(partnerName())}. Gezählt wird nur dein Anteil – alle zusammen kosten ${eur0(fc.gesamt)} im Monat.</p>` : ''}</div>` : ''}
       ${ds.length ? `<div class="card glass"><div class="card-h">${icon('link')} Aus deinen Dokumenten</div>${ds.map(x => `<div class="vt open"><span class="vt-e">${x.e.e}</span><div class="vt-m"><b>${esc(x.d.name)}</b><small>Sieht nach „${esc(x.e.n)}“ aus</small></div><button class="btn sm primary" data-act="vt.fromdoc" data-doc="${x.d.id}" data-id="${x.e.id}">Anlegen</button></div>`).join('')}</div>` : ''}
@@ -5674,7 +5723,7 @@ ACT['vt.vmit'] = el => {
   formSheet({ title: 'Wohnkosten teilen', sub: 'Die Miete (warm) stammt aus deinem Steckbrief. Wenn ihr gemeinsam zahlt, zählt Kairos nur deinen Anteil zu deinen festen Kosten.', fields: [
     { k: 'mit', label: 'Die Miete läuft', type: 'pick', opts: [['ich', 'Nur über mich'], ['gemeinsam', 'Gemeinsam mit ' + pn], ['partner', 'Nur auf ' + pn]], val: cur.mit || 'ich', full: true },
     { k: 'anteil', label: 'Mein Anteil in %', type: 'number', val: typeof cur.anteil === 'number' ? cur.anteil : 50, min: 0, max: 100, step: 1, im: 'numeric' }], submit: 'Speichern',
-    onSubmit: v => { S.ui.vmit = S.ui.vmit || {}; if (v.mit === 'ich') delete S.ui.vmit[id]; else S.ui.vmit[id] = { mit: v.mit, anteil: v.mit === 'gemeinsam' && typeof v.anteil === 'number' ? Math.max(0, Math.min(100, Math.round(v.anteil))) : undefined }; save(); renderNav(); rerender(); toast('Gespeichert', 'good'); } });
+    onSubmit: v => { const vk = vmitKey(); S.ui[vk] = S.ui[vk] || {}; if (v.mit === 'ich') delete S.ui[vk][id]; else S.ui[vk][id] = { mit: v.mit, anteil: v.mit === 'gemeinsam' && typeof v.anteil === 'number' ? Math.max(0, Math.min(100, Math.round(v.anteil))) : undefined }; save(); renderNav(); rerender(); toast('Gespeichert', 'good'); } });
 };
 ACT['vt.set'] = el => { setVst(el.dataset.id, el.dataset.v === 'ja' ? 'ja' : 'nein'); buzz(8); renderNav(); rerender(); if (el.dataset.v === 'ja') ACT['vt.edit'](el); };
 
@@ -5990,7 +6039,7 @@ ACT['vt.edit'] = el => {
   F.push({ k: 'kosten', label: ed.amt, type: 'money', val: o.kosten });
   if (ed.fill) F.push({ type: 'html', k: 'fillamt', html: `<div class="pvchips sugr">${ed.fill().map(([l, c]) => `<button type="button" class="pv sm" data-amt="${c}">${esc(l)}</button>`).join('')}</div>` });
   F.push({ k: 'zahl', label: ed.inc ? 'Wie oft kommt es?' : 'Zahlweise', type: 'pick', opts: ZAHL.filter(z => ed.inc || z[0] !== 'u').map(z => [z[0], z[1]]), val: o.zahl || ed.zahl || 'm', full: true });
-  { const pn = partnerName(); F.push({ type: 'head', label: 'Wer ist beteiligt?', e: '👫', sub: ed.inc ? '' : 'Bei gemeinsamen Verträgen rechnet Kairos in deinen Kosten nur deinen Anteil.' }, { k: 'mit', label: ed.inc ? 'Läuft bei' : 'Vertrag läuft', type: 'pick', opts: [['ich', 'Nur ich'], ['gemeinsam', 'Gemeinsam mit ' + pn], ['partner', 'Nur auf ' + pn]], val: mitOf(o), full: true }, { k: 'anteil', label: 'Mein Anteil in % (nur bei „Gemeinsam“)', type: 'number', val: o.anteil != null ? o.anteil : 50, min: 0, max: 100, step: 1, im: 'numeric' }); }
+  { const pn = partnerName(); F.push({ type: 'head', label: 'Wer ist beteiligt?', e: '👫', sub: ed.inc ? '' : 'Bei gemeinsamen Verträgen rechnet Kairos in deinen Kosten nur deinen Anteil.' }, { k: 'mit', label: ed.inc ? 'Läuft bei' : 'Vertrag läuft', type: 'pick', opts: [['ich', 'Nur ich'], ['gemeinsam', 'Gemeinsam mit ' + pn], ['partner', 'Nur auf ' + pn]], val: mitOf(o), full: true }, { k: 'anteil', label: 'Mein Anteil in % (nur bei „Gemeinsam“)', type: 'number', val: anteilOf(o), min: 0, max: 100, step: 1, im: 'numeric' }); }
   if (specs.length) F.push({ type: 'head', label: ed.inc || e.c === 'beruf' ? 'Mehr Angaben' : `Details zu ${bc.n}`, e: bc.e });
   for (const [k, l, ty, op, nm] of specs) {
     const val = o[k];
@@ -6021,8 +6070,8 @@ ACT['vt.edit'] = el => {
       for (const k of ['anbieter', 'tarif', 'nr', 'beginn', 'ende', 'zahl', 'kuend', 'notiz', 'doc', 'label', 'perh']) { if (!(k in v)) continue; if (v[k] === '' || v[k] == null) delete t[k]; else t[k] = v[k]; }
       if (v.kosten == null) delete t.kosten; else t.kosten = v.kosten; if (v.unbef) t.unbef = 1; else delete t.unbef;
       if ('pneu' in v) { if (v.pneu == null) delete t.pneu; else t.pneu = v.pneu; }
-      if (v.mit === 'gemeinsam' || v.mit === 'partner') t.mit = v.mit; else delete t.mit;
-      if (t.mit === 'gemeinsam' && typeof v.anteil === 'number' && isFinite(v.anteil)) t.anteil = Math.max(0, Math.min(100, Math.round(v.anteil))); else delete t.anteil;
+      { const mk = mitStore(v.mit); if (mk === 'gemeinsam' || mk === 'partner') t.mit = mk; else delete t.mit; }
+      if (t.mit === 'gemeinsam' && typeof v.anteil === 'number' && isFinite(v.anteil)) t.anteil = anteilStore(Math.max(0, Math.min(100, Math.round(v.anteil)))); else delete t.anteil;
       for (const [k, , ty, , nm] of specs) {
         let x = v[k];
         if (ty === 'toggle') { if (x) t[k] = 1; else delete t[k]; continue; }
@@ -6563,6 +6612,7 @@ async function settingsHTML() {
       <div class="seg full" style="margin-top:-6px">${BK_EVERY.map(([n, l]) => `<button class="${(S.backup.every || 0) === n ? 'on' : ''}" data-act="backup.every" data-n="${n}">${l}</button>`).join('')}</div>
       ${row('Gerätewechsel', 'Daten auf ein neues iPhone oder iPad mitnehmen', `<button class="btn sm" data-act="backup.move">Anleitung</button>`)}
       ${row('Backup einspielen', 'ersetzt alle aktuellen Daten', `<button class="btn sm" data-act="set.import">${icon('upload')}Importieren</button>`)}
+      ${row('Konten', accHasB() ? esc(accName('a') + ' & ' + accName('b')) + ' – wechseln oder bearbeiten' : 'Partner/in als zweites, verknüpftes Konto anlegen', `<button class="btn sm" data-act="acc.sheet">${icon('users')}Verwalten</button>`)}
       ${safeRows(row)}
       ${row('Speicher', usage ? 'Belegt in diesem Browser: ' + usage : '', '')}
       <p class="muted" style="font-size:13px">Löschst du die Website-Daten deines Browsers, sind die Inhalte weg – deshalb regelmäßig ein Backup machen. Sichere am besten verschlüsselt und lege die Datei in iCloud Drive ab – sonst ist sie für jeden lesbar, der sie findet.</p></div></section>
@@ -8148,8 +8198,8 @@ async function pdfOut(d, name, title, mode) {
   } catch (e) { console.warn(e); toast('PDF konnte nicht erstellt werden', 'bad'); }
 }
 /** Dokument-Auswahl für Formulare */
-const docOpts = () => [['', '– keines –']].concat(S.docs.filter(d => d.status === 'ok').map(d => [d.id, d.name]));
-const docName = id => { const d = id && S.docs.find(x => x.id === id); return d ? d.name : ''; };
+const docOpts = () => [['', '– keines –']].concat((typeof accAllDocs === 'function' ? accAllDocs() : S.docs).filter(d => d.status === 'ok').map(d => [d.id, d.name]));
+const docName = id => { const d = id && (typeof accAllDocs === 'function' ? accAllDocs() : S.docs).find(x => x.id === id); return d ? d.name : ''; };
 /** Kleine Zeile im Stil der Vertragsliste */
 const rowH = (e, t, s, r, attrs = '') => `<div class="vt ja" ${attrs}><span class="vt-e">${e}</span><div class="vt-m"><b>${esc(t)}</b><small>${esc(s || '')}</small></div>${r || ''}</div>`;
 const hintP = t => `<div class="docs-hint">${icon('info')} ${t}</div>`;
@@ -8772,7 +8822,7 @@ function backupDue() {
 /** Alle Daten + Dateien als JSON-Text */
 async function makeBackupJSON() {
   await saveNow(); const files = [];
-  for (const d of S.docs.concat(S.photos || [])) if (d.fileName || d.thumb) { try { const blob = await getFileBlob(d.id); if (blob) files.push({ id: d.id, name: d.fileName || d.name, type: d.fileType || blob.type, b64: b64(await blob.arrayBuffer()) }); } catch (e) { /* Datei überspringen */ } }
+  for (const d of (typeof accAllFiles === 'function' ? accAllFiles() : S.docs.concat(S.photos || []))) if (d.fileName || d.thumb) { try { const blob = await getFileBlob(d.id); if (blob) files.push({ id: d.id, name: d.fileName || d.name, type: d.fileType || blob.type, b64: b64(await blob.arrayBuffer()) }); } catch (e) { /* Datei überspringen */ } }
   const st = Object.assign({}, S, { int: Object.assign({}, S.int, { tg: S.int.tg ? Object.assign({}, S.int.tg, { token: undefined, chat: undefined, offset: undefined }) : undefined }) });
   return { text: JSON.stringify({ app: 'kairos', v: 3, exported: new Date().toISOString(), state: st, files }), n: files.length };
 }
@@ -8854,7 +8904,7 @@ importBackup = async function (file) {
    Hinweis: Ein automatisch aktualisiertes Kalender-Abo bräuchte einen Server – den gibt es bei Kairos
    bewusst nicht. Die .ics-Datei ist eine Momentaufnahme mit Erinnerungen und wird bei Bedarf neu exportiert.
    ===================================================================== */
-function extraDeadlines(add) { gbrDeadlinesList().forEach(add); }
+function extraDeadlines(add) { gbrDeadlinesList().forEach(add); if (typeof accDeadlines === 'function') accDeadlines(add); if (typeof einDeadlines === 'function') einDeadlines(add); }
 
 /* ---------- Heute ---------- */
 function heuteItems() {
@@ -8867,6 +8917,7 @@ function heuteTips() {
   const tips = [], b = backupDue();
   if (b) tips.push({ id: 'tip_backup', e: '💾', t: b.never ? 'Mach dein erstes Backup' : 'Backup ist fällig', s: b.sub + ' · verschlüsselt in iCloud Drive sichern', act: 'backup.open' });
   if (!S.notfall.kontakte.length && !(S.heute.seen || {}).tip_notfall && (S.docs.length || Object.keys(S.prof).length > 5)) tips.push({ id: 'tip_notfall', e: '🚑', t: 'Notfall-Mappe anlegen', s: 'Kontakte, Vollmachten und Unterlagen für den Ernstfall', go: 'notfall' });
+  if (typeof einTips === 'function') einTips().forEach(t => tips.push(t));
   const ics = S.heute.ics; if (ics && diffDays(todayISO(), ics) >= 45) tips.push({ id: 'tip_ics', e: '📅', t: 'Kalender-Datei erneuern', s: `Zuletzt exportiert vor ${plural(diffDays(todayISO(), ics), 'Tag', 'Tagen')}`, act: 'ics.all' });
   return tips;
 }
@@ -9067,15 +9118,17 @@ function safeRows(row) {
    Fasst Vermietung (GbR), Steuermappe, Notfall-Mappe und Backup unter einem Eintrag zusammen,
    damit die Navigation übersichtlich bleibt. Die einzelnen Seiten bleiben unverändert erreichbar.
    ===================================================================== */
-const HUB_KIDS = ['gbr', 'steuer', 'notfall'];
+const HUB_KIDS = ['gbr', 'steuer', 'notfall', 'haushalt'];
 const hubOn = r => route === r || (r === 'mappen' && HUB_KIDS.includes(route));
 function hubSummary(k) {
   if (k === 'gbr') { const g = S.gbr; if (!g.set) return 'Noch nicht eingerichtet'; const y = gYear(), s = gbrSum(y); return [g.name || 'GbR', plural(g.objekte.length, 'Wohnung', 'Wohnungen'), s.b.length ? `${y}: ${money(s.erg)} Ergebnis` : ''].filter(Boolean).join(' · '); }
   if (k === 'steuer') { const y = S.steuer.year || nowY(), l = sOf(y); return l.length ? `${plural(l.length, 'Beleg', 'Belege')} für ${y} · ${money(sum(l, b => b.betrag))}` : 'Belege und Pauschalen sammeln'; }
   if (k === 'notfall') { const n = nfScore(); return n.pct + ' % vollständig' + (S.notfall.kontakte.length ? ' · ' + plural(S.notfall.kontakte.length, 'Kontakt', 'Kontakte') : ''); }
+  if (k === 'haushalt') return typeof accHasB === 'function' && accHasB() ? `${accName('a')} & ${accName('b')}` : 'Partner/in noch nicht angelegt';
   const st = dataStatus(); return st.last ? 'Zuletzt gesichert: ' + relDate(st.last) + (S.backup.enc ? ' · verschlüsselt' : '') : 'Noch nicht gesichert';
 }
 const HUB_CARDS = [
+  ['haushalt', '👫', 'Haushalt', 'Beide Konten, gemeinsame Kosten und Einnahmen', 'data-go="haushalt"'],
   ['gbr', '🏘️', 'Vermietung (GbR)', 'Wohnungen, Miete, Nebenkosten, Steuerberater-Paket', 'data-go="gbr"'],
   ['steuer', '🧾', 'Steuermappe', 'Belege, Pauschalen und Jahresübersicht', 'data-go="steuer"'],
   ['notfall', '🚑', 'Notfall-Mappe', 'Kontakte, Vollmachten und „Wenn mir etwas passiert“', 'data-go="notfall"'],
@@ -9212,8 +9265,516 @@ function globalHits(q, add) {
   /* Menschen & Lebensereignisse */
   take(S.people || [], p => { if (!sMatch(sHay(p), toks)) return false; add('Menschen', '👤', p.name || 'Person', [p.rel, p.geb && fmtDate(p.geb, true)].filter(Boolean).join(' · '), () => ACT['fam.edit']({ dataset: { id: p.id } })); return true; });
   take(S.events || [], ev => { const lx = LEX(ev.t); if (!sMatch(sHay(ev, [lx && lx.n]), toks)) return false; add('Lebensereignisse', lx ? lx.e : '🧭', lx ? lx.n : 'Ereignis', ev.date ? fmtDate(ev.date, true) : '', () => { go('leben'); setTimeout(() => ACT['ev.open']({ dataset: { id: ev.id } }), 120); }); return true; });
+  if (typeof einHits === 'function') einHits(toks, add, lim);
   /* Beruf / Lebenslauf */
   take((S.cv && S.cv.st) || [], st => { if (!sMatch(sHay(st), toks)) return false; add('Beruf', '💼', st.t || st.title || st.name || st.firma || 'Station', [st.firma, st.von && fmtDate(st.von, true)].filter(Boolean).join(' · '), () => go('beruf')); return true; });
+}
+
+/* =====================================================================
+   KAIROS · v15 Zwei verknüpfte Konten (du + Partner/in)
+   Jede Person hat ihren eigenen Steckbrief, eigene Dokumente, Fotos, Beruf und Fortschritt.
+   Gemeinsam bleiben: Verträge (mit Anteilen), Einnahmen, Vermietung, Steuer, Notfall, Familie.
+   Umsetzung: Die Daten der gerade aktiven Person liegen wie bisher direkt in S; die andere Person
+   ruht in S.acc. Beim Wechsel werden die Personen-Felder getauscht – alle Bereiche funktionieren so
+   unverändert für beide Konten. Alles bleibt auf diesem Gerät.
+   ===================================================================== */
+const PKEYS = ['prof', 'profile', 'journey', 'cv', 'tree', 'docs', 'photos', 'stmt'];
+const accCur = () => (S.acc && S.acc.cur) || 'a';
+const accOther = () => accCur() === 'a' ? 'b' : 'a';
+const accFlip = () => accCur() === 'b';
+const accHasB = () => !!(S.acc && (S.acc.b || accCur() === 'b'));
+function accNorm(p) {
+  const d = defaultState(), o = Object.assign({}, p || {});
+  o.prof = o.prof && typeof o.prof === 'object' ? o.prof : {};
+  o.profile = Object.assign({ name: '', avatar: null, created: Date.now() }, o.profile || {});
+  o.journey = Object.assign({}, d.journey, o.journey || {});
+  o.cv = Object.assign({}, d.cv, o.cv || {});
+  o.tree = o.tree || { seen: {} };
+  o.docs = Array.isArray(o.docs) ? o.docs : []; o.photos = Array.isArray(o.photos) ? o.photos : []; o.stmt = o.stmt || null;
+  return o;
+}
+/** Vorname eines Kontos – auch wenn es gerade nicht aktiv ist */
+function accName(k) {
+  if (k === accCur()) return firstName() || (k === 'a' ? 'Ich' : 'Partner/in');
+  const p = S.acc && S.acc[k]; if (!p) return k === 'a' ? 'Ich' : '';
+  const v = (p.profile && p.profile.name) || (p.prof && p.prof.vorname && p.prof.vorname.v) || '';
+  return String(v).split(/\s+/)[0] || (k === 'a' ? 'Ich' : 'Partner/in');
+}
+const accOtherName = () => accHasB() ? accName(accOther()) : '';
+function accAvatar(k, cls = '') {
+  const p = k === accCur() ? { profile: S.profile } : (S.acc && S.acc[k]) || {}, a = p.profile && p.profile.avatar, nm = accName(k);
+  return `<span class="av-i ${cls}">${a ? `<img alt="" src="${a}">` : `<b>${esc(initials(nm))}</b>`}</span>`;
+}
+/** Tauscht die Personen-Felder (nur im Speicher, ohne Sichern) */
+function accSwapRaw(target) {
+  const cur = accCur(); if (target === cur) return;
+  const out = {}; PKEYS.forEach(k => { out[k] = S[k]; });
+  const inn = accNorm(S.acc[target]);
+  S.acc[cur] = out; PKEYS.forEach(k => { S[k] = inn[k]; }); S.acc[target] = null; S.acc.cur = target;
+}
+/** Führt fn mit den Daten eines anderen Kontos aus und tauscht danach zurück */
+function withAcc(k, fn) {
+  const cur = accCur(); if (k === cur) return fn();
+  if (!S.acc || !S.acc[k]) return null;
+  accSwapRaw(k); try { return fn(); } finally { accSwapRaw(cur); }
+}
+/** Familie aus Sicht des aktiven Kontos: im Konto der Partnerin ist „Partner“ das Hauptkonto */
+function accPartnerPeople() {
+  if (accCur() !== 'b') return null;
+  const geb = (S.acc.a && S.acc.a.prof && S.acc.a.prof.geburtsdatum && S.acc.a.prof.geburtsdatum.v) || '';
+  const full = S.acc.a ? [S.acc.a.prof.vorname && S.acc.a.prof.vorname.v, S.acc.a.prof.nachname && S.acc.a.prof.nachname.v].filter(Boolean).join(' ') || accName('a') : accName('a');
+  return [{ id: 'acc_a', rel: 'partner', name: full, geb, virt: 1 }];
+}
+/** Alle Dokumente beider Konten (für Verknüpfungen in Steuer, Vermietung, Backup) */
+function accAllDocs() { const o = S.acc && S.acc[accOther()]; return S.docs.concat(o && Array.isArray(o.docs) ? o.docs : []); }
+function accAllFiles() { const o = S.acc && S.acc[accOther()]; return S.docs.concat(S.photos || [], o ? (o.docs || []).concat(o.photos || []) : []); }
+
+/* ---------- Wechseln ---------- */
+ACT['acc.switch'] = el => {
+  const k = el.dataset.k; if (!k || k === accCur() || !(S.acc && S.acc[k])) return;
+  closeSheet(); accSwapRaw(k); save(); route = VIEWS[route] ? route : 'reise'; renderView(false); snd && snd('tap'); hap && hap(1);
+  toast(`Du bist jetzt im Konto von ${accName(k)}`, 'good');
+};
+ACT['acc.sheet'] = () => {
+  const row = k => `<button class="acc-r ${k === accCur() ? 'on' : ''}" ${k === accCur() ? 'disabled' : `data-act="acc.switch" data-k="${k}"`}>${accAvatar(k)}<span class="acc-m"><b>${esc(accName(k))}</b><small>${k === 'a' ? 'Hauptkonto' : 'Partner/in'}${k === accCur() ? ' · gerade aktiv' : ' · tippen zum Wechseln'}</small></span>${k === accCur() ? icon('check') : icon('chevR')}</button>`;
+  openSheet(`<div class="chh" style="--c:var(--accent)"><span class="chh-e">👫</span><div><small>Konten auf diesem Gerät</small><h2>Wer ist gerade dran?</h2></div></div>
+    <p class="lead-p">Jede Person hat eigenen Steckbrief, Dokumente und Beruf. Verträge, Einnahmen, Vermietung, Steuer und Notfall-Mappe teilt ihr euch – mit Anteilen, wo es nötig ist.</p>
+    <div class="acc-l">${row('a')}${accHasB() ? row('b') : `<button class="acc-r add" data-act="acc.setup">${icon('plus')}<span class="acc-m"><b>Partner/in anlegen</b><small>Zweites Konto, verknüpft mit deinem</small></span>${icon('chevR')}</button>`}</div>
+    <div class="acts">${accHasB() ? `<button class="btn ghost" data-act="acc.edit">${icon('edit')}Konto ${esc(accName('b'))}</button>` : ''}<span class="sp"></span><button class="btn primary" data-go="haushalt">${icon('home')}Haushalt</button></div>`, { wide: true });
+};
+/** Partner/in anlegen: übernimmt, was in „Familie“ schon steht */
+ACT['acc.setup'] = () => {
+  if (accHasB()) return ACT['acc.edit']();
+  const pp = S.people.find(p => p.rel === 'partner'), nm = pp && pp.name ? pp.name.trim().split(/\s+/) : [];
+  formSheet({ title: 'Partner/in anlegen', sub: 'Ein zweites Konto mit eigenem Steckbrief und eigenen Dokumenten. Gemeinsame Verträge, Einnahmen und die Vermietung seht ihr beide.', submit: 'Konto anlegen', fields: [
+    { k: 'vorname', label: 'Vorname', val: nm[0] || '', req: 1 }, { k: 'nachname', label: 'Nachname', val: nm.slice(1).join(' ') || pget('nachname') || '' },
+    { k: 'geb', label: 'Geburtsdatum', type: 'date', val: (pp && pp.geb) || '' },
+    { k: 'rel', label: 'Ihr seid', type: 'pick', opts: [['Verheiratet', 'Verheiratet'], ['Eingetragene Lebenspartnerschaft', 'Eingetragene Partnerschaft'], ['', 'Unverheiratet']], val: pget('familienstand') === 'Verheiratet' || !pget('familienstand') ? 'Verheiratet' : pget('familienstand'), full: true },
+    { k: 'zus', label: 'Steuerlich zusammen veranlagt', type: 'toggle', val: true, full: true, hint: 'Wichtig für Sparer-Pauschbetrag (2.000 € statt 1.000 €) und die Steuermappe.' }],
+  onSubmit: v => {
+    const vn = (v.vorname || '').trim(); if (!vn) { toast('Bitte einen Vornamen eintragen.', 'bad'); return false; }
+    const nn = (v.nachname || '').trim(), full = [vn, nn].filter(Boolean).join(' '), now = Date.now(), P = (x, src) => ({ v: x, src: src || 'manuell', conf: 1, ok: true, at: now });
+    const prof = { vorname: P(vn) }; if (nn) prof.nachname = P(nn); if (v.geb) prof.geburtsdatum = P(v.geb);
+    if (v.rel) prof.familienstand = P(v.rel); const me = profName() || firstName(); if (me && PF.partner) prof.partner = P(me);
+    S.acc = S.acc || { cur: 'a' }; S.acc.b = accNorm({ prof, profile: { name: vn, avatar: null, created: now } });
+    if (v.rel && PF.familienstand) pset('familienstand', v.rel);
+    if (PF.partner && !phas('partner')) pset('partner', full);
+    if (pp) { pp.name = full; if (v.geb) pp.geb = v.geb; } else S.people.push({ id: 'p_' + uid(), rel: 'partner', name: full, geb: v.geb || '' });
+    S.ein = S.ein || defaultState().ein; S.ein.zus = !!v.zus;
+    save(); closeSheet(); rerender(); snd && snd('cheer');
+    toast(`Konto für ${vn} angelegt`, 'good', { label: 'Wechseln', fn: () => ACT['acc.switch']({ dataset: { k: 'b' } }) });
+  } });
+};
+ACT['acc.edit'] = () => {
+  if (!accHasB()) return ACT['acc.setup']();
+  const nm = accName('b');
+  openSheet(`<div class="chh" style="--c:var(--accent)"><span class="chh-e">👤</span><div><small>Zweites Konto</small><h2>${esc(nm)}</h2></div></div>
+    <p class="lead-p">Name, Geburtsdatum und alles Weitere pflegst du im Steckbrief – wechsle dazu in das Konto von ${esc(nm)}.</p>
+    ${accCur() !== 'b' ? `<button class="ckl" data-act="acc.switch" data-k="b">${icon('user')}<span>In das Konto von ${esc(nm)} wechseln</span>${icon('chevR')}</button>` : ''}
+    <button class="ckl" data-act="acc.del">${icon('trash')}<span>Konto ${esc(nm)} entfernen</span>${icon('chevR')}</button>
+    <p class="muted fine">Gemeinsame Verträge, Einnahmen und die Vermietung bleiben erhalten. Entfernt werden Steckbrief, Dokumente und Fotos von ${esc(nm)}.</p>
+    <div class="acts"><span class="sp"></span><button class="btn" data-sh="x">Schließen</button></div>`, { onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); }) });
+};
+ACT['acc.del'] = async () => {
+  const nm = accName('b');
+  if (!(await confirmSheet(`Konto ${nm} entfernen?`, 'Steckbrief, Dokumente und Fotos dieses Kontos werden gelöscht. Mach vorher ein Backup, wenn du unsicher bist.', 'Entfernen'))) return;
+  if (accCur() === 'b') accSwapRaw('a');
+  const b = S.acc.b; S.acc.b = null;
+  for (const d of ((b && b.docs) || []).concat((b && b.photos) || [])) { try { await fileDel(d.id); } catch (e) { /* ignorieren */ } }
+  save(); closeSheet(); renderView(false); toast(`Konto ${nm} entfernt`);
+};
+
+/* ---------- Hinweisleiste im Konto der Partnerin ---------- */
+function accBar() {
+  if (accCur() !== 'b') return;
+  const v = $('#view'); if (!v || $('.accbar', v)) return;
+  const b = document.createElement('div'); b.className = 'accbar';
+  b.innerHTML = `${accAvatar('b')}<span>Konto von <b>${esc(accName('b'))}</b></span><button class="btn sm" data-act="acc.switch" data-k="a">Zu ${esc(accName('a'))}</button>`;
+  v.insertBefore(b, v.firstChild);
+}
+
+/* ---------- Fristen des anderen Kontos (verknüpft) ---------- */
+function accDeadlines(add) {
+  if (!accHasB()) return;
+  const o = accOther(), nm = accName(o);
+  const rows = withAcc(o, () => {
+    const r = [];
+    for (const [k, n, e] of [['ausweis_bis', 'Personalausweis läuft ab', '🪪'], ['pass_bis', 'Reisepass läuft ab', '🛂'], ['fs_bis', 'Führerschein läuft ab', '🚗'], ['probezeit_bis', 'Probezeit endet', '💼'], ['befristet_bis', 'Arbeitsvertrag endet', '💼']]) if (phas(k)) r.push({ id: 'acc_' + k, date: pget(k), title: `${nm}: ${n}`, sub: 'Aus dem Konto von ' + nm, e, kind: 'frist', alarm: k === 'probezeit_bis' ? 30 : 90 });
+    for (const d of S.docs) {
+      if (d.cancelBy) r.push({ id: 'acc_cb_' + d.id, date: d.cancelBy, title: `${nm}: Kündigen bis – ${d.name}`, sub: d.sender || '', e: '✂️', kind: 'kuendigung', alarm: 14 });
+      if (d.expires && d.kind !== 'ident') r.push({ id: 'acc_ex_' + d.id, date: d.expires, title: `${nm}: Läuft ab – ${d.name}`, sub: d.sender || '', e: '⏳', kind: 'frist', alarm: 30 });
+    }
+    return r;
+  });
+  (rows || []).forEach(add);
+}
+
+/* ---------- Haushalt: beide Konten auf einen Blick ---------- */
+const mitRaw = o => (o && (o.mit === 'gemeinsam' || o.mit === 'partner')) ? o.mit : 'ich';
+const antRaw = o => { const a = o && o.anteil; return typeof a === 'number' && a >= 0 && a <= 100 ? a : 50; };
+/** Feste Kosten aufgeteilt nach Person (a = Hauptkonto, b = Partner/in) */
+function hhSplit() {
+  const r = { a: 0, b: 0, g: 0, gA: 0, gB: 0, rows: [] };
+  for (const e of vAll()) {
+    if (vst(e.id) !== 'ja' || isInc(e)) continue; const m = vMonthly(e.id); if (!m) continue; const o = vOf(e.id), k = mitRaw(o);
+    if (k === 'partner') r.b += m; else if (k === 'gemeinsam') { const a = Math.round(m * antRaw(o) / 100); r.g += m; r.gA += a; r.gB += m - a; r.rows.push({ n: e.n, e: e.e, m, a: antRaw(o) }); } else r.a += m;
+  }
+  /* Miete & Co. aus den Steckbriefen beider Konten */
+  for (const k of ['a', 'b']) {
+    const rows = withAcc(k, () => vVirtual().filter(x => x.m && x.c !== 'einnahmen').map(x => ({ x, vm: vmitOf(x.id) })));
+    for (const { x, vm } of rows || []) {
+      const mk = vm.mit === 'gemeinsam' || vm.mit === 'partner' ? vm.mit : 'ich', a = typeof vm.anteil === 'number' ? vm.anteil : 50, oth = k === 'a' ? 'b' : 'a';
+      if (mk === 'ich') r[k] += x.m; else if (mk === 'partner') r[oth] += x.m; else { const mine = Math.round(x.m * a / 100); r.g += x.m; if (k === 'a') { r.gA += mine; r.gB += x.m - mine; } else { r.gB += mine; r.gA += x.m - mine; } r.rows.push({ n: x.n, e: x.e, m: x.m, a: k === 'a' ? a : 100 - a }); }
+    }
+  }
+  r.total = r.a + r.b + r.g; r.A = r.a + r.gA; r.B = r.b + r.gB; return r;
+}
+function accPct(k) { const v = withAcc(k, () => { try { return Math.round(overall().pct * 100); } catch (e) { return 0; } }); return v == null ? 0 : v; }
+VIEWS.haushalt = {
+  render() {
+    const head = `<header class="ph"><div class="t"><div class="eyebrow">Gemeinsam</div><h1>Haushalt</h1><p>Beide Konten, gemeinsame Kosten und Einnahmen auf einen Blick.</p></div></header>`;
+    if (!accHasB()) return `<div class="page hhp">${head}<div class="card glass"><div class="empty"><div class="em">👫</div><b>Lege das Konto deiner Partnerin oder deines Partners an</b><p>Dann hat jede Person ihren eigenen Steckbrief und ihre Dokumente – Verträge, Einnahmen, Vermietung und Steuer verwaltet ihr gemeinsam.</p><button class="btn primary lg" data-act="acc.setup">${icon('plus')}Partner/in anlegen</button></div></div></div>`;
+    const sp = hhSplit(), ea = typeof einAvg === 'function' ? einAvg('a') : null, eb = typeof einAvg === 'function' ? einAvg('b') : null, eg = typeof einAvg === 'function' ? einAvgOnly('g') : null;
+    const inn = (ea || 0) + (eb || 0), rest = inn ? inn - sp.total : null;
+    const pc = k => `<div class="card glass hh-p ${k === accCur() ? 'on' : ''}">${accAvatar(k, 'lg')}<b>${esc(accName(k))}</b><small>${k === accCur() ? 'Gerade aktiv' : 'Tippen zum Wechseln'}</small>
+      <div class="hh-pv"><span>Steckbrief</span><b>${accPct(k)} %</b></div><div class="hh-pv"><span>Ø Einnahmen</span><b>${(k === 'a' ? ea : eb) != null ? eur0(k === 'a' ? ea : eb) : '–'}</b></div><div class="hh-pv"><span>Feste Kosten</span><b>${eur0(k === 'a' ? sp.A : sp.B)}</b></div>
+      ${k === accCur() ? '' : `<button class="btn sm full" data-act="acc.switch" data-k="${k}">Konto öffnen</button>`}</div>`;
+    const dl = (typeof heuteItems === 'function' ? heuteItems() : []).filter(i => i.n >= 0).slice(0, 5);
+    return `<div class="page hhp">${head}
+      <div class="hh-g">${pc('a')}${pc('b')}</div>
+      <div class="card glass"><div class="card-h">${icon('coins')} Haushalt pro Monat (Ø)${rest != null ? `<span class="sp"></span><b class="${rest < 0 ? 'neg' : 'pos'}">${rest < 0 ? '−' : '+'}${eur0(Math.abs(rest))}</b>` : ''}</div>
+        <div class="pk"><div class="pk-r"><span>Einnahmen ${esc(accName('a'))}</span><b>${ea != null ? eur0(ea) : '–'}</b></div><div class="pk-r"><span>Einnahmen ${esc(accName('b'))}</span><b>${eb != null ? eur0(eb) : '–'}</b></div>${eg ? `<div class="pk-r sub"><span>davon gemeinsam (je ½)</span><b>${eur0(eg)}</b></div>` : ''}
+        <div class="pk-r"><span>Kosten ${esc(accName('a'))}</span><b>− ${eur0(sp.a)}</b></div><div class="pk-r"><span>Kosten ${esc(accName('b'))}</span><b>− ${eur0(sp.b)}</b></div><div class="pk-r"><span>Kosten gemeinsam</span><b>− ${eur0(sp.g)}</b></div>
+        <div class="pk-r tot"><span>Bleibt im Monat</span><b>${rest != null ? (rest < 0 ? '−' : '') + eur0(Math.abs(rest)) : '–'}</b></div></div>
+        ${inn ? '' : `<p class="muted fine">Erfasse eure Eingänge unter <button class="link" data-go="einnahmen">Einnahmen</button>, dann rechnet Kairos mit echten Durchschnittswerten.</p>`}
+        <p class="muted fine">Ohne variable Ausgaben wie Essen, Freizeit oder Kleidung. Steht die Miete in beiden Steckbriefen, markiere sie einmal als „gemeinsam“ und im anderen Steckbrief als „läuft auf Partner/in“.</p></div>
+      ${sp.rows.length ? `<div class="card glass"><div class="card-h">${icon('users')} Gemeinsame Verträge<span class="sp"></span><b>${eur0(sp.g)}</b></div><div class="vlist">${sp.rows.sort((x, y) => y.m - x.m).map(r => rowH(r.e, r.n, `${accName('a')} ${r.a} % · ${accName('b')} ${100 - r.a} %`, `<b>${money(r.m)}</b>`)).join('')}</div><p class="muted fine">Den Anteil stellst du im jeweiligen Vertrag unter „Wer ist beteiligt?“ ein.</p></div>` : ''}
+      ${dl.length ? `<div class="card glass"><div class="card-h">${icon('calendar')} Fristen von euch beiden</div>${dl.map(i => rowH(i.e || '📌', i.title, i.sub || '', `<span class="badge ${i.n <= 14 ? 'warn' : ''}">${dlLabel(i.date)}</span>`)).join('')}</div>` : ''}
+      <div class="hub-g"><button class="card glass hubc" data-go="einnahmen"><span class="hubc-e">💶</span><span class="hubc-m"><b>Einnahmen</b><small>Gehalt, Bonus, Dividenden, Zinsen – je Person oder gemeinsam</small></span>${icon('chevR')}</button>
+      <button class="card glass hubc" data-go="vertraege"><span class="hubc-e">📄</span><span class="hubc-m"><b>Verträge</b><small>Anteile festlegen: nur ich, gemeinsam oder läuft auf Partner/in</small></span>${icon('chevR')}</button></div></div>`;
+  }
+};
+
+/* =====================================================================
+   KAIROS · v15 Einnahmen – für Einkünfte, die schwanken
+   Statt eines festen Monatsbetrags (wie bei Ausgaben) erfasst du Quellen und echte Zahlungseingänge:
+   Gehalt (regulär + Bonus/Sonderzahlungen), Dividenden & Zinsen (mit Steuern und Freistellungsaufträgen),
+   Rente, Kindergeld, Nebenjob, Erstattungen. Kairos rechnet daraus Durchschnitt, sicher planbaren Teil,
+   Jahresvergleich und erinnert an fehlende Gehaltseingänge. Je Person oder gemeinsam.
+   Steuerwerte sind Schätzungen zur Orientierung (Stand 2026: Sparer-Pauschbetrag 1.000 € je Person,
+   2.000 € bei Zusammenveranlagung; Abgeltungsteuer 25 % + 5,5 % Soli, ggf. Kirchensteuer 8/9 %).
+   ===================================================================== */
+const EQT = {
+  gehalt: ['Gehalt / Lohn', '💼', 'm'], kapital: ['Zinsen & Dividenden', '📈', 'u'], rente: ['Rente / Pension', '👵', 'm'], staat: ['Kindergeld & Leistungen', '👶', 'm'],
+  miete: ['Mieteinnahmen (privat)', '🏠', 'm'], neben: ['Nebenjob / Selbstständig', '🧰', 'u'], erstatt: ['Erstattungen (z. B. Steuer)', '💶', 'u'], sonst: ['Sonstiges', '✨', 'u']
+};
+const GEH_ART = [['regulaer', 'Reguläres Gehalt'], ['variabel', 'Bonus / variable Vergütung'], ['weihnacht', 'Weihnachtsgeld'], ['urlaub', 'Urlaubsgeld'], ['provision', 'Provision / Prämie'], ['nachzahl', 'Nachzahlung / Sonstiges']];
+const KAP_ART = [['dividende', 'Dividende / Ausschüttung'], ['zins', 'Zinsen'], ['verkauf', 'Veräußerungsgewinn'], ['sonst', 'Sonstiger Kapitalertrag']];
+const EIN_COL = { base: 'var(--accent)', var: '#ffb544', kap: '#35d399' };
+const EIN_CLS = { base: 'Regelmäßig', var: 'Bonus & Sonderzahlungen', kap: 'Zinsen & Dividenden' };
+const eQ = id => S.ein.q.find(q => q.id === id);
+const eTyp = e => { const q = eQ(e.q); return q ? q.typ : 'sonst'; };
+const eWer = e => { const q = eQ(e.q); return (q && q.wer) || 'a'; };
+const eShare = (e, who) => who === 'haus' ? 1 : eWer(e) === who ? 1 : eWer(e) === 'g' ? .5 : 0;
+const eCls = e => { const t = eTyp(e); if (t === 'kapital') return 'kap'; if (t === 'gehalt') return !e.art || e.art === 'regulaer' ? 'base' : 'var'; return ['rente', 'staat', 'miete'].includes(t) ? 'base' : 'var'; };
+const ymOf = d => String(d || '').slice(0, 7);
+const ymAdd = (y, n) => { const [a, b] = y.split('-').map(Number), t = a * 12 + (b - 1) + n; return `${Math.floor(t / 12)}-${pad(t % 12 + 1)}`; };
+const ymName = (y, short) => { const n = MONTHS[+y.slice(5) - 1] || ''; return short ? n.slice(0, 3) : n + ' ' + y.slice(0, 4); };
+const werName = w => w === 'g' ? 'Gemeinsam' : accName(w);
+const einWho = () => accHasB() ? (['haus', 'a', 'b'].includes(S.ein.who) ? S.ein.who : 'haus') : 'haus';
+const eList = who => S.ein.e.filter(e => eQ(e.q) && eShare(e, who) > 0);
+const eVal = (e, who) => Math.round((e.netto || 0) * eShare(e, who));
+
+/** Letzte n Monate (inkl. laufendem) mit Summen je Art */
+function eMonths(who, n = 12) {
+  const cur = ymOf(todayISO()), out = [];
+  for (let i = n - 1; i >= 0; i--) out.push({ ym: ymAdd(cur, -i), base: 0, var: 0, kap: 0, tot: 0, n: 0 });
+  const idx = {}; out.forEach((m, i) => { idx[m.ym] = i; });
+  for (const e of eList(who)) { const i = idx[ymOf(e.date)]; if (i == null) continue; const v = eVal(e, who); out[i][eCls(e)] += v; out[i].tot += v; out[i].n++; }
+  return out;
+}
+/** Ø netto pro Monat über abgeschlossene Monate (max. 12) seit dem ersten Eingang – null, wenn noch zu wenig da ist */
+function einAvgOf(who, filt) {
+  const list = eList(who).filter(filt || (() => true)); if (!list.length) return null;
+  const cur = ymOf(todayISO()), first = ymOf(list.reduce((m, e) => e.date < m ? e.date : m, '9999-99')), start = first > ymAdd(cur, -12) ? first : ymAdd(cur, -12), end = ymAdd(cur, -1);
+  if (start > end) return null;
+  let months = 0; for (let y = start; y <= end; y = ymAdd(y, 1)) months++;
+  const tot = sum(list.filter(e => ymOf(e.date) >= start && ymOf(e.date) <= end), e => eVal(e, who));
+  return months ? Math.round(tot / months) : null;
+}
+const einAvg = who => (S.ein && S.ein.e.length) ? einAvgOf(who) : null;
+const einAvgOnly = w => einAvgOf('haus', e => eWer(e) === w);
+/** Sicher planbar: niedrigster Monat mit regelmäßigem Einkommen (abgeschlossene Monate) */
+function einSafe(who) { const ms = eMonths(who, 13).slice(0, 12).filter(m => m.base > 0); return ms.length ? Math.min(...ms.map(m => m.base)) : null; }
+function einYear(who, y, upto) {
+  const r = { tot: 0, base: 0, var: 0, kap: 0, byQ: {}, n: 0 };
+  for (const e of eList(who)) { if (!inYear(e.date, y) || (upto && e.date.slice(5) > upto)) continue; const v = eVal(e, who); r.tot += v; r[eCls(e)] += v; r.byQ[e.q] = (r.byQ[e.q] || 0) + v; r.n++; }
+  return r;
+}
+/** Regelmäßige Eingänge, die noch fehlen (z. B. Gehalt dieses Monats) */
+function einMissing(who) {
+  const t = todayISO(), cur = ymOf(t), day = +t.slice(8), out = [];
+  for (const q of S.ein.q) {
+    if (q.aus || EQT[q.typ] && EQT[q.typ][2] !== 'm') continue; if (who !== 'haus' && q.wer !== who && q.wer !== 'g') continue;
+    const es = S.ein.e.filter(e => e.q === q.id && (!e.art || e.art === 'regulaer')).sort((a, b) => a.date < b.date ? 1 : -1), last = es[0];
+    if (!last && !q.soll) continue;
+    const tag = Math.min(q.tag || 28, 28), lastM = day >= tag + 2 ? cur : ymAdd(cur, -1);
+    let m = last ? ymAdd(ymOf(last.date), 1) : lastM; if (m < ymAdd(lastM, -2)) m = ymAdd(lastM, -2);
+    for (; m <= lastM; m = ymAdd(m, 1)) if (!es.some(e => ymOf(e.date) === m)) out.push({ q, ym: m, last });
+  }
+  return out;
+}
+/* ---------- Kapitalerträge & Freistellungsaufträge ---------- */
+const PAUSCH = () => accHasB() && S.ein.zus ? 200000 : 100000;
+function kapEst(brutto, frei, kist) { const tb = Math.max(0, (brutto || 0) - Math.max(0, frei || 0)), k = (kist || 0) / 100, kap = Math.round(tb / (4 + k)), soli = Math.round(kap * .055), ki = Math.round(kap * k); return { kap, soli, ki, sum: kap + soli + ki }; }
+const bankOf = q => String((q && (q.bank || q.name)) || 'Ohne Bank').trim();
+function kapYear(y) {
+  const rows = S.ein.e.filter(e => inYear(e.date, y) && eQ(e.q) && eTyp(e) === 'kapital'), banks = {}; let br = 0, st = 0, qs = 0, net = 0;
+  const B = b => banks[norm(b)] || (banks[norm(b)] = { bank: b, br: 0, st: 0, fsa: 0 });
+  for (const e of rows) { const r = B(bankOf(eQ(e.q))), bb = e.brutto != null ? e.brutto : (e.netto || 0); r.br += bb; r.st += e.steuer || 0; br += bb; st += e.steuer || 0; qs += e.qst || 0; net += e.netto || 0; }
+  for (const f of S.ein.fsa) B(String(f.bank || 'Ohne Bank').trim()).fsa += f.betrag || 0;
+  const fsaSum = sum(S.ein.fsa, f => f.betrag || 0), p = PAUSCH(), hints = [];
+  if (fsaSum > p) hints.push(['warn', `Deine Freistellungsaufträge (${money(fsaSum)}) liegen über dem Sparer-Pauschbetrag von ${money(p)}. Das ist nicht zulässig – reduziere sie bei einer Bank.`]);
+  Object.values(banks).forEach(r => { if (r.fsa && r.br > r.fsa && fsaSum < p) hints.push(['tip', `Bei ${r.bank} ist der Freistellungsauftrag ausgeschöpft (${money(r.br)} Erträge, ${money(r.fsa)} freigestellt). ${money(p - fsaSum)} sind noch nicht verteilt – erhöhe den Auftrag dort.`]); });
+  if (st > 0 && br <= p) hints.push(['tip', `Es wurden ${money(st)} Steuern einbehalten, obwohl deine Erträge (${money(br)}) unter dem Pauschbetrag liegen. Mit der Anlage KAP holst du sie über die Steuererklärung zurück.`]);
+  if (!S.ein.fsa.length && br > 0) hints.push(['tip', 'Noch kein Freistellungsauftrag erfasst. Trage ein, bei welcher Bank wie viel freigestellt ist – dann prüft Kairos die Verteilung.']);
+  if (qs > 0) hints.push(['info', `Ausländische Quellensteuer ${money(qs)}: Anrechenbar ist meist bis zu 15 %; darüber hinaus nur per Erstattungsantrag im Ausland.`]);
+  return { rows, banks: Object.values(banks).sort((a, b) => b.br - a.br), br, st, qs, net, fsaSum, p, hints };
+}
+
+/* ---------- Seite ---------- */
+function einChart(ms, avg, safe) {
+  const W = 340, H = 150, L = 4, top = 10, bot = 20, max = Math.max(1, ...ms.map(m => m.tot), avg || 0), bw = (W - L) / ms.length, y = v => H - bot - v / max * (H - bot - top);
+  const bars = ms.map((m, i) => {
+    const x = L + i * bw + 3, w = Math.max(4, bw - 6); let acc = 0;
+    const seg = ['base', 'var', 'kap'].map(k => { if (!m[k]) return ''; const y1 = y(acc + m[k]), h = y(acc) - y1; acc += m[k]; return `<rect x="${x.toFixed(1)}" y="${y1.toFixed(1)}" width="${w.toFixed(1)}" height="${Math.max(1, h).toFixed(1)}" rx="3" fill="${EIN_COL[k]}"/>`; }).join('');
+    const cur = i === ms.length - 1;
+    return `<g class="ec-b${cur ? ' cur' : ''}" data-act="ein.month" data-ym="${m.ym}" role="button" aria-label="${esc(ymName(m.ym))}: ${esc(money(m.tot))}"><rect x="${(L + i * bw).toFixed(1)}" y="0" width="${bw.toFixed(1)}" height="${H}" fill="transparent"/>${seg}<text x="${(x + w / 2).toFixed(1)}" y="${H - 5}" text-anchor="middle">${ymName(m.ym, true).slice(0, 1)}</text></g>`;
+  }).join('');
+  const line = (v, cls) => v ? `<line class="${cls}" x1="${L}" x2="${W}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/>` : '';
+  return `<svg class="ein-chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-label="Einnahmen der letzten 12 Monate">${bars}${line(avg, 'ec-avg')}${line(safe, 'ec-safe')}</svg>
+    <div class="ein-leg">${['base', 'var', 'kap'].map(k => `<span><i style="background:${EIN_COL[k]}"></i>${EIN_CLS[k]}</span>`).join('')}${avg ? '<span><i class="dash"></i>Ø</span>' : ''}${safe ? '<span><i class="dash safe"></i>Sicher planbar</span>' : ''}</div>`;
+}
+function eRow(e, who) {
+  const q = eQ(e.q), t = EQT[q.typ] || EQT.sonst, art = q.typ === 'gehalt' ? (GEH_ART.find(a => a[0] === (e.art || 'regulaer')) || [])[1] : q.typ === 'kapital' ? (KAP_ART.find(a => a[0] === e.art) || [])[1] : '';
+  return rowH(t[1], q.name || t[0], [fmtDate(e.date, true), art && art !== 'Reguläres Gehalt' ? art : '', e.wp, accHasB() && who === 'haus' ? werName(q.wer) : ''].filter(Boolean).join(' · '), `<b class="pos">+${money(e.netto || 0)}</b>`, `data-act="ein.add" data-id="${e.id}"`);
+}
+VIEWS.einnahmen = {
+  render() {
+    const who = einWho(), y = nowY(), cur = ymOf(todayISO()), hasB = accHasB();
+    const head = `<header class="ph"><div class="t"><div class="eyebrow">Geld, das reinkommt</div><h1>Einnahmen</h1><p>Gehalt, Bonus, Dividenden, Zinsen – Monat für Monat erfasst, weil sie schwanken.</p></div>
+      <div class="act"><button class="btn" data-act="ein.q.edit">${icon('plus')}Quelle</button><button class="btn primary" data-act="ein.add">${icon('plus')}Eingang</button></div></header>`;
+    const seg = hasB ? `<div class="seg full ein-who">${[['haus', 'Haushalt'], ['a', accName('a')], ['b', accName('b')]].map(([k, l]) => `<button class="${who === k ? 'on' : ''}" data-act="ein.who" data-w="${k}">${esc(l)}</button>`).join('')}</div>` : '';
+    const lohn = einLohnDocs(), imp = einImportable();
+    if (!S.ein.q.length) return `<div class="page einp">${head}<div class="card glass"><div class="empty"><div class="em">💶</div><b>Noch keine Einnahmen-Quelle</b><p>Lege an, woher Geld kommt: dein Gehalt, Bonus, Depot und Tagesgeld, Kindergeld … Danach erfasst du die echten Eingänge – Kairos zeigt dir Durchschnitt, Schwankung und was sicher planbar ist.</p>
+      <div class="nxt-acts"><button class="btn primary lg" data-act="ein.q.edit" data-typ="gehalt">${icon('briefcase')}Gehalt anlegen</button><button class="btn lg" data-act="ein.q.edit" data-typ="kapital">${icon('trend')}Depot / Zinsen</button>${imp.length ? `<button class="btn lg" data-act="ein.import">${icon('download')}${plural(imp.length, 'Quelle', 'Quellen')} übernehmen</button>` : ''}</div></div></div>
+      <p class="disc">Steuerangaben sind Schätzungen zur Orientierung, keine Steuerberatung.</p></div>`;
+    const ms = eMonths(who), avg = einAvgOf(who), safe = einSafe(who), yr = einYear(who, y), mmdd = todayISO().slice(5), prev = einYear(who, y - 1, mmdd);
+    const delta = prev.tot ? Math.round((yr.tot - prev.tot) / prev.tot * 100) : null, miss = einMissing(who), mx = ms.slice(0, 11).filter(m => m.tot), hi = mx.length ? mx.reduce((a, b) => b.tot > a.tot ? b : a) : null, lo = mx.length ? mx.reduce((a, b) => b.tot < a.tot ? b : a) : null;
+    const fc = typeof fixCosts === 'function' ? (who === 'haus' && hasB ? hhSplit().total : fixCosts().total) : 0;
+    const qRows = S.ein.q.filter(q => who === 'haus' || q.wer === who || q.wer === 'g').map(q => {
+      const es = S.ein.e.filter(e => e.q === q.id).sort((a, b) => a.date < b.date ? 1 : -1), last = es[0], t = EQT[q.typ] || EQT.sonst, ys = sum(es.filter(e => inYear(e.date, y)), e => eVal(e, who));
+      return rowH(t[1], q.name || t[0], [hasB ? werName(q.wer) : '', t[0], last ? `zuletzt ${money(last.netto || 0)} · ${fmtDate(last.date, true)}` : 'noch kein Eingang', q.aus ? 'beendet' : ''].filter(Boolean).join(' · '), `<b>${eur0(ys)}</b>`, `data-act="ein.q.open" data-id="${q.id}"`);
+    }).join('');
+    const last = eList(who).sort((a, b) => a.date < b.date ? 1 : -1).slice(0, 6);
+    const kap = kapYear(y), hasKap = S.ein.q.some(q => q.typ === 'kapital') || S.ein.fsa.length;
+    return `<div class="page einp">${head}${seg}
+      ${miss.length ? `<div class="card glass ein-miss"><div class="card-h">${icon('bell')} Noch nicht erfasst</div>${miss.slice(0, 4).map(m => `<div class="vt ja"><span class="vt-e">${(EQT[m.q.typ] || EQT.sonst)[1]}</span><div class="vt-m"><b>${esc(m.q.name)} · ${esc(ymName(m.ym))}</b><small>${m.last ? 'Zuletzt ' + money(m.last.netto || 0) : 'Erwartet ' + money(m.q.soll || 0)}</small></div><button class="btn sm primary" data-act="ein.rep" data-q="${m.q.id}" data-ym="${m.ym}">+ ${eur0(m.last ? m.last.netto : m.q.soll)}</button><button class="btn sm ghost" data-act="ein.add" data-q="${m.q.id}" data-ym="${m.ym}" aria-label="Betrag anpassen">${icon('edit')}</button></div>`).join('')}<p class="muted fine">Ein Tipp übernimmt den letzten Betrag – mit dem Stift trägst du abweichende Beträge ein.</p></div>` : ''}
+      ${lohn.length ? `<button class="notice" data-act="ein.lohn">${icon('scan')}<span><b>${plural(lohn.length, 'Lohnabrechnung', 'Lohnabrechnungen')} übernehmen</b><small>Netto und Brutto aus deinen Dokumenten als Gehaltseingang buchen.</small></span>${icon('chevR')}</button>` : ''}
+      <div class="kpis"><div class="kpi2"><b>${avg != null ? eur0(avg) : '–'}</b><span>Ø netto / Monat${avg != null ? '' : ' (ab 1 vollem Monat)'}</span></div><div class="kpi2"><b>${safe != null ? eur0(safe) : '–'}</b><span>Sicher planbar / Monat</span></div>
+        <div class="kpi2"><b>${eur0(yr.tot)}</b><span>${y} bisher${delta != null ? ` · <em class="${delta < 0 ? 'neg' : 'pos'}">${delta > 0 ? '+' : ''}${delta} %</em> ggü. Vorjahr` : ''}</span></div><div class="kpi2"><b>${eur0(yr.var)}</b><span>Bonus & Sonderzahlungen ${y}</span></div></div>
+      <div class="card glass"><div class="card-h">${icon('trend')} Letzte 12 Monate<span class="sp"></span><button class="link" data-act="ein.jahr">Jahr ${y}</button></div>${einChart(ms, avg, safe)}
+        ${hi && lo && hi !== lo ? `<p class="muted fine ein-ins">Spanne: ${eur0(lo.tot)} (${ymName(lo.ym, true)}) bis ${eur0(hi.tot)} (${ymName(hi.ym, true)}). ${safe && fc ? (safe >= fc ? `Deine festen Kosten (${eur0(fc)}) deckt schon der sicher planbare Teil – Bonus und Sonderzahlungen kannst du sparen oder für Größeres einplanen.` : `Achtung: Der sicher planbare Teil (${eur0(safe)}) deckt deine festen Kosten (${eur0(fc)}) nicht ganz – in schwachen Monaten brauchst du Puffer.`) : 'Plane feste Kosten mit dem sicheren Teil, Sonderzahlungen als Puffer oder zum Sparen.'}</p>` : `<p class="muted fine ein-ins">Je mehr Monate du erfasst, desto genauer werden Durchschnitt und sicherer Teil.</p>`}</div>
+      <div class="card glass"><div class="card-h">${icon('coins')} Quellen<span class="sp"></span><button class="btn sm ghost" data-act="ein.q.edit" aria-label="Quelle hinzufügen">${icon('plus')}</button></div><div class="vlist">${qRows || '<p class="muted">Keine Quelle für diese Person.</p>'}</div>${imp.length ? `<button class="link" data-act="ein.import">${icon('download')} ${plural(imp.length, 'weitere Quelle', 'weitere Quellen')} aus Steckbrief/Verträgen übernehmen</button>` : ''}</div>
+      ${hasKap ? `<div class="card glass"><div class="card-h">${icon('trend')} Zinsen & Dividenden ${y}<span class="sp"></span><button class="link" data-act="ein.fsa">Freistellungsaufträge</button></div>
+        <div class="vstat"><div><b>${eur0(kap.br)}</b><span>Erträge brutto</span></div><div><b>${eur0(kap.st)}</b><span>Steuern einbehalten</span></div><div><b class="pos">${eur0(kap.net)}</b><span>Netto</span></div></div>
+        <div class="ein-pb"><div class="ein-pb-h"><span>Sparer-Pauschbetrag ${accHasB() && S.ein.zus ? '(zusammen veranlagt)' : ''}</span><b>${eur0(Math.min(kap.br, kap.p))} von ${eur0(kap.p)}</b></div><div class="bar"><i style="width:${Math.min(100, kap.br / kap.p * 100)}%"></i></div></div>
+        ${kap.banks.length ? `<div class="pk">${kap.banks.map(b => `<div class="pk-r"><span>${esc(b.bank)}${b.fsa ? ` · FSA ${eur0(b.fsa)}` : ' · kein FSA'}</span><b>${eur0(b.br)}${b.st ? ` <small class="neg">−${eur0(b.st)}</small>` : ''}</b></div>`).join('')}</div>` : ''}
+        ${kap.hints.map(h => `<div class="docs-hint ${h[0]}">${icon(h[0] === 'warn' ? 'alert' : 'info')} ${esc(h[1])}</div>`).join('')}</div>` : ''}
+      <div class="card glass"><div class="card-h">${icon('receipt')} Letzte Eingänge<span class="sp"></span><button class="link" data-act="ein.all">Alle</button></div>${last.length ? `<div class="vlist">${last.map(e => eRow(e, who)).join('')}</div>` : '<p class="muted">Noch kein Eingang erfasst.</p>'}</div>
+      <p class="disc">Durchschnitt über abgeschlossene Monate (max. 12) seit dem ersten Eingang. Gemeinsame Erträge zählen in der Einzelansicht zur Hälfte. Steuerwerte sind Schätzungen, keine Steuerberatung.</p></div>`;
+  }
+};
+ACT['ein.who'] = el => { S.ein.who = el.dataset.w; save(); rerender(); };
+
+/* ---------- Quellen ---------- */
+ACT['ein.q.edit'] = el => {
+  const id = el && el.dataset && el.dataset.id, q0 = id && eQ(id), q = q0 || {}, typ0 = q.typ || (el && el.dataset && el.dataset.typ) || 'gehalt', hasB = accHasB();
+  const ph = { gehalt: pget('arbeitgeber') || 'z. B. Arbeitgeber', kapital: 'z. B. Depot comdirect, Tagesgeld', rente: 'z. B. Deutsche Rentenversicherung', staat: 'z. B. Kindergeld', miete: 'z. B. Wohnung Musterstraße', neben: 'z. B. Beratung, Verkauf', erstatt: 'z. B. Finanzamt', sonst: 'Bezeichnung' };
+  formSheet({ title: q0 ? 'Quelle bearbeiten' : 'Neue Einnahmen-Quelle', sub: 'Woher kommt das Geld? Die einzelnen Eingänge erfasst du danach – so sieht Kairos, wie stark sie schwanken.', wide: true, submit: 'Speichern', fields: [
+    { k: 'typ', label: 'Art', type: 'select', opts: Object.entries(EQT).map(([k, v]) => [k, v[1] + ' ' + v[0]]), val: typ0, full: true },
+    { k: 'name', label: 'Bezeichnung', val: q.name || (typ0 === 'gehalt' && !q0 ? pget('arbeitgeber') || '' : ''), ph: ph[typ0] || '', full: true },
+    ...(hasB ? [{ k: 'wer', label: 'Wer bekommt es?', type: 'pick', opts: [['a', accName('a')], ['b', accName('b')], ['g', 'Gemeinsam']], val: q.wer || accCur(), full: true }] : []),
+    { k: 'soll', label: 'Erwartet netto pro Monat (optional)', type: 'money', val: q.soll, hint: 'Für Erinnerungen, wenn ein regelmäßiger Eingang fehlt.' },
+    { k: 'tag', label: 'Üblicher Zahltag (1–31)', type: 'number', val: q.tag || '', min: 1, max: 31, im: 'numeric' },
+    { k: 'bank', label: 'Bank / Depot (für Freistellungsauftrag)', val: q.bank || '', ph: 'Nur bei Zinsen & Dividenden', full: true },
+    ...(q0 ? [{ k: 'aus', label: 'Quelle ist beendet (z. B. Jobwechsel)', type: 'toggle', val: !!q.aus, full: true }] : [])],
+  onDelete: q0 ? () => { const n = S.ein.e.filter(e => e.q === id).length; removeWithUndo(S.ein.q, id, 'Quelle' + (n ? ` (${plural(n, 'Eingang bleibt', 'Eingänge bleiben')} ohne Quelle)` : ''), () => rerender()); } : null,
+  onSubmit: v => {
+    const t = q0 || { id: 'eq_' + uid(), created: Date.now() }; t.typ = v.typ || 'sonst'; t.name = (v.name || '').trim() || EQT[t.typ][0];
+    t.wer = hasB ? (v.wer || accCur()) : (t.wer || 'a'); gSetN(t, 'soll', v.soll && v.soll > 0 ? v.soll : null); gSetN(t, 'tag', v.tag ? Math.max(1, Math.min(31, Math.round(v.tag))) : null); gSetN(t, 'bank', (v.bank || '').trim());
+    if (q0) { if (v.aus) t.aus = 1; else delete t.aus; } else S.ein.q.push(t);
+    save(); if (route !== 'einnahmen') go('einnahmen'); else rerender(); toast('Gespeichert', 'good', q0 ? null : { label: '+ Eingang', fn: () => ACT['ein.add']({ dataset: { q: t.id } }) });
+  } });
+};
+ACT['ein.q.open'] = el => {
+  const q = eQ(el.dataset.id); if (!q) return; const t = EQT[q.typ] || EQT.sonst, es = S.ein.e.filter(e => e.q === q.id).sort((a, b) => a.date < b.date ? 1 : -1), y = nowY();
+  const vals = es.slice(0, 12).map(e => e.netto || 0), mn = vals.length ? Math.min(...vals) : 0, mx = vals.length ? Math.max(...vals) : 0, ys = sum(es.filter(e => inYear(e.date, y)), e => e.netto || 0), ps = sum(es.filter(e => inYear(e.date, y - 1)), e => e.netto || 0);
+  openSheet(`<div class="chh" style="--c:#35d399"><span class="chh-e">${t[1]}</span><div><small>${esc(t[0])}${accHasB() ? ' · ' + esc(werName(q.wer)) : ''}</small><h2>${esc(q.name)}</h2></div></div>
+    <div class="vstat"><div><b>${eur0(ys)}</b><span>${y} bisher</span></div><div><b>${eur0(ps)}</b><span>${y - 1} gesamt</span></div><div><b>${vals.length > 1 ? eur0(mn) + '–' + eur0(mx) : vals.length ? eur0(mx) : '–'}</b><span>Spanne (letzte 12)</span></div></div>
+    ${q.typ === 'gehalt' ? (() => { const sd = es.filter(e => inYear(e.date, y) && e.art && e.art !== 'regulaer'); return sd.length ? `<div class="docs-hint">${icon('sparkle')} Sonderzahlungen ${y}: ${sd.map(e => esc((GEH_ART.find(a => a[0] === e.art) || [])[1] || '') + ' ' + money(e.netto || 0)).join(' · ')}</div>` : ''; })() : ''}
+    <div class="group-h"><span>Eingänge</span></div>${es.length ? `<div class="vlist">${es.slice(0, 24).map(e => eRow(e, 'haus')).join('')}</div>` : '<p class="muted">Noch kein Eingang.</p>'}
+    <div class="acts"><button class="btn" data-act="ein.q.edit" data-id="${q.id}">${icon('edit')}Bearbeiten</button><span class="sp"></span><button class="btn primary" data-act="ein.add" data-q="${q.id}">${icon('plus')}Eingang</button></div>`, { wide: true });
+};
+
+/* ---------- Eingänge ---------- */
+function einPick() {
+  const who = einWho(), qs = S.ein.q.filter(q => !q.aus && (who === 'haus' || q.wer === who || q.wer === 'g'));
+  openSheet(`<h2>Wofür ist der Eingang?</h2><div class="vlist">${qs.map(q => { const t = EQT[q.typ] || EQT.sonst; return `<button class="vt ja" data-act="ein.add" data-q="${q.id}"><span class="vt-e">${t[1]}</span><div class="vt-m"><b>${esc(q.name)}</b><small>${esc(t[0])}${accHasB() ? ' · ' + esc(werName(q.wer)) : ''}</small></div>${icon('chevR')}</button>`; }).join('')}</div>
+    <div class="acts"><span class="sp"></span><button class="btn" data-act="ein.q.edit">${icon('plus')}Neue Quelle</button></div>`);
+}
+ACT['ein.add'] = el => {
+  const d = (el && el.dataset) || {}, e0 = d.id && S.ein.e.find(x => x.id === d.id), qid = e0 ? e0.q : d.q;
+  if (!qid) { if (!S.ein.q.length) return ACT['ein.q.edit']({ dataset: { typ: 'gehalt' } }); return einPick(); }
+  const q = eQ(qid); if (!q) return; const e = e0 || {}, t = EQT[q.typ] || EQT.sonst, kap = q.typ === 'kapital', geh = q.typ === 'gehalt';
+  const prevE = S.ein.e.filter(x => x.q === q.id && (!geh || !x.art || x.art === 'regulaer')).sort((a, b) => a.date < b.date ? 1 : -1)[0];
+  const dDate = e.date || (d.ym ? (d.ym === ymOf(todayISO()) ? todayISO() : `${d.ym}-${pad(Math.min(q.tag || 28, 28))}`) : todayISO());
+  const F = [{ k: 'date', label: 'Datum des Eingangs', type: 'date', val: dDate }];
+  if (geh) F.push({ k: 'art', label: 'Art', type: 'select', opts: GEH_ART, val: e.art || 'regulaer', full: true }, { k: 'netto', label: 'Netto (Auszahlung)', type: 'money', val: e0 ? e.netto : prevE && prevE.netto }, { k: 'brutto', label: 'Brutto (optional)', type: 'money', val: e0 ? e.brutto : prevE && prevE.brutto });
+  else if (kap) F.push({ k: 'art', label: 'Art', type: 'select', opts: KAP_ART, val: e.art || 'dividende', full: true }, { k: 'wp', label: 'Wertpapier / Konto', val: e.wp || '', ph: 'z. B. Allianz SE, MSCI World ETF, Tagesgeld', full: true },
+    { k: 'brutto', label: 'Ertrag brutto', type: 'money', val: e.brutto }, { k: 'steuer', label: 'Einbehaltene Steuern', type: 'money', val: e.steuer, hint: 'KapESt + Soli + ggf. KiSt laut Abrechnung' },
+    { k: 'qst', label: 'Ausländische Quellensteuer', type: 'money', val: e.qst }, { k: 'netto', label: 'Netto-Gutschrift', type: 'money', val: e.netto, hint: 'Leer lassen: wird aus Brutto − Steuern berechnet' },
+    { type: 'html', k: 'kest', html: `<button type="button" class="btn sm" data-est="1">${icon('sparkle')}Steuer schätzen</button> <span class="muted fine" id="estInfo"></span>` });
+  else F.push({ k: 'netto', label: 'Betrag (netto)', type: 'money', val: e0 ? e.netto : prevE && prevE.netto });
+  F.push({ k: 'text', label: 'Notiz', val: e.text || '', full: true });
+  if (geh || kap) F.push({ k: 'doc', label: 'Beleg / Abrechnung', type: 'select', opts: docOpts(), val: e.doc || '', full: true });
+  const sh = formSheet({ title: (e0 ? 'Eingang bearbeiten · ' : 'Eingang · ') + q.name, sub: t[1] + ' ' + t[0] + (accHasB() ? ' · ' + werName(q.wer) : ''), wide: kap, submit: 'Speichern', fields: F,
+    onDelete: e0 ? () => removeWithUndo(S.ein.e, e0.id, 'Eingang', () => rerender()) : null,
+    onSubmit: v => {
+      if (!v.date) { toast('Bitte ein Datum wählen.', 'bad'); return false; }
+      let net = v.netto; if (kap && (net == null || net === '') && v.brutto) net = Math.max(0, (v.brutto || 0) - (v.steuer || 0) - (v.qst || 0));
+      if (!(net > 0)) { toast(kap ? 'Bitte Brutto oder Netto eintragen.' : 'Bitte einen Betrag über 0 eintragen.', 'bad'); return false; }
+      const x = e0 || { id: 'ee_' + uid(), q: q.id }; x.date = v.date; x.netto = Math.round(net);
+      ['brutto', 'steuer', 'qst'].forEach(k => gSetN(x, k, v[k] != null && v[k] !== '' && v[k] > 0 ? v[k] : null));
+      gSetN(x, 'art', v.art && v.art !== 'regulaer' ? v.art : (kap ? v.art : null)); gSetN(x, 'wp', (v.wp || '').trim()); gSetN(x, 'text', (v.text || '').trim()); gSetN(x, 'doc', v.doc);
+      if (!e0) S.ein.e.push(x); save(); if (route !== 'einnahmen') go('einnahmen'); else rerender(); snd && snd('done'); toast('Eingang gespeichert', 'good');
+    } });
+  if (kap && sh) sh.addEventListener('click', ev => {
+    if (!ev.target.closest('[data-est]')) return; const bi = $('#f_brutto', sh), br = parseMoney(bi && bi.value); if (!(br > 0)) return toast('Erst den Bruttoertrag eintragen', 'bad');
+    const kp = kapYear(+(($('#f_date', sh) || {}).value || todayISO()).slice(0, 4)), bk = kp.banks.find(b => norm(b.bank) === norm(bankOf(q))), used = (bk ? bk.br : 0) - (e0 ? (e0.brutto || e0.netto || 0) : 0), frei = Math.max(0, (bk ? bk.fsa : 0) - used);
+    const r = kapEst(br, frei, S.ein.kist); $('#f_steuer', sh).value = moneyInput(r.sum); const ni = $('#f_netto', sh); if (ni) ni.value = moneyInput(br - r.sum - (parseMoney(($('#f_qst', sh) || {}).value) || 0));
+    $('#estInfo', sh).textContent = `Schätzung: ${money(Math.min(br, frei))} freigestellt, KapESt ${money(r.kap)}, Soli ${money(r.soli)}${r.ki ? ', KiSt ' + money(r.ki) : ''}.`;
+  });
+};
+/** Ein Tipp: letzten Betrag für einen fehlenden Monat übernehmen */
+ACT['ein.rep'] = el => {
+  const q = eQ(el.dataset.q); if (!q) return; const ym = el.dataset.ym || ymOf(todayISO());
+  const last = S.ein.e.filter(x => x.q === q.id && (!x.art || x.art === 'regulaer')).sort((a, b) => a.date < b.date ? 1 : -1)[0], net = last ? last.netto : q.soll; if (!net) return ACT['ein.add']({ dataset: { q: q.id, ym } });
+  const date = ym === ymOf(todayISO()) ? todayISO() : `${ym}-${pad(Math.min(q.tag || 28, 28))}`, x = { id: 'ee_' + uid(), q: q.id, date, netto: net }; if (last && last.brutto) x.brutto = last.brutto;
+  S.ein.e.push(x); save(); rerender(); snd && snd('done'); hap && hap(1);
+  toast(`${q.name} ${ymName(ym)}: ${money(net)} erfasst`, 'good', { label: 'Rückgängig', fn: () => { S.ein.e = S.ein.e.filter(e => e.id !== x.id); save(); rerender(); } });
+};
+ACT['ein.month'] = el => {
+  const ym = el.dataset.ym, who = einWho(), es = eList(who).filter(e => ymOf(e.date) === ym).sort((a, b) => a.date < b.date ? -1 : 1), m = eMonths(who, 13).find(x => x.ym === ym);
+  openSheet(`<h2>${esc(ymName(ym))}</h2>${m ? `<div class="vstat"><div><b>${eur0(m.base)}</b><span>Regelmäßig</span></div><div><b>${eur0(m.var)}</b><span>Bonus & Sonder</span></div><div><b>${eur0(m.kap)}</b><span>Zinsen & Div.</span></div></div>` : ''}
+    ${es.length ? `<div class="vlist">${es.map(e => eRow(e, who)).join('')}</div>` : '<p class="muted">Keine Eingänge in diesem Monat.</p>'}<div class="acts"><span class="sp"></span><button class="btn primary" data-act="ein.add">${icon('plus')}Eingang</button></div>`);
+};
+ACT['ein.all'] = () => {
+  const who = einWho(), es = eList(who).sort((a, b) => a.date < b.date ? 1 : -1);
+  openSheet(`<h2>Alle Eingänge</h2>${es.length ? `<div class="vlist">${es.slice(0, 200).map(e => eRow(e, who)).join('')}</div>` : '<p class="muted">Noch nichts erfasst.</p>'}
+    <div class="acts"><button class="btn" data-act="ein.csv">${icon('download')}CSV</button><span class="sp"></span><button class="btn primary" data-act="ein.add">${icon('plus')}Eingang</button></div>`, { wide: true });
+};
+ACT['ein.jahr'] = el => {
+  const y = el && el.dataset && el.dataset.y ? +el.dataset.y : (S.ein.year || nowY()); S.ein.year = y; const who = einWho(), r = einYear(who, y), kp = kapYear(y);
+  const byT = {}; for (const [qid, v] of Object.entries(r.byQ)) { const q = eQ(qid); if (q) byT[q.typ] = (byT[q.typ] || 0) + v; }
+  const g = S.gbr && S.gbr.set && (who === 'haus' || who === 'a') ? gbrSum(y) : null;
+  openSheet(`<div class="chh" style="--c:#35d399"><span class="chh-e">📊</span><div><small>${accHasB() ? esc(who === 'haus' ? 'Haushalt' : werName(who)) : 'Einnahmen'}</small><h2>Jahr ${y}</h2></div></div>${yearSeg(y, 'ein.jahr')}
+    <div class="vstat"><div><b>${eur0(r.tot)}</b><span>Netto gesamt</span></div><div><b>${eur0(r.var)}</b><span>Bonus & Sonder</span></div><div><b>${eur0(r.kap)}</b><span>Zinsen & Div.</span></div></div>
+    <div class="pk">${Object.entries(byT).sort((a, b) => b[1] - a[1]).map(([k, v]) => `<div class="pk-r"><span>${EQT[k][1]} ${esc(EQT[k][0])}</span><b>${money(v)}</b></div>`).join('') || '<p class="muted">Keine Eingänge.</p>'}</div>
+    ${kp.br ? `<div class="group-h"><span>Für die Anlage KAP</span></div><div class="pk"><div class="pk-r"><span>Kapitalerträge brutto</span><b>${money(kp.br)}</b></div><div class="pk-r"><span>Einbehaltene Steuern</span><b>${money(kp.st)}</b></div>${kp.qs ? `<div class="pk-r"><span>Ausländische Quellensteuer</span><b>${money(kp.qs)}</b></div>` : ''}</div>` : ''}
+    ${g && g.me ? `<div class="group-h"><span>Zusätzlich (kein Zahlungseingang)</span></div><div class="pk"><div class="pk-r"><span>Vermietung (GbR) – Anteil ${esc(accName('a'))} am Ergebnis</span><b>${money(g.mein)}</b></div></div>` : ''}
+    <div class="acts"><button class="btn" data-act="ein.csv">${icon('download')}CSV ${y}</button><span class="sp"></span><button class="btn" data-sh="x">Schließen</button></div>`, { wide: true, onMount: sh => sh.addEventListener('click', e => { if (e.target.closest('[data-sh]')) closeSheet(); }) });
+};
+ACT['ein.csv'] = async () => {
+  const y = S.ein.year || nowY(), rows = [['Datum', 'Quelle', 'Art', 'Person', 'Netto (EUR)', 'Brutto (EUR)', 'Steuern (EUR)', 'Quellensteuer (EUR)', 'Wertpapier / Konto', 'Notiz']];
+  S.ein.e.filter(e => inYear(e.date, y) && eQ(e.q)).sort((a, b) => a.date < b.date ? -1 : 1).forEach(e => { const q = eQ(e.q), art = q.typ === 'gehalt' ? (GEH_ART.find(a => a[0] === (e.art || 'regulaer')) || [])[1] : q.typ === 'kapital' ? (KAP_ART.find(a => a[0] === e.art) || [])[1] : EQT[q.typ][0]; rows.push([e.date, q.name, art || '', werName(q.wer), csvNum(e.netto), csvNum(e.brutto), csvNum(e.steuer), csvNum(e.qst), e.wp || '', e.text || '']); });
+  if (rows.length < 2) return toast('Keine Eingänge in ' + y);
+  const r = await fileDeliver(csvBlob(rows), `Kairos-Einnahmen-${y}.csv`, 'Einnahmen ' + y, ''); if (r === 'download') toast('CSV gespeichert', 'good');
+};
+
+/* ---------- Freistellungsaufträge ---------- */
+ACT['ein.fsa'] = () => {
+  const y = nowY(), k = kapYear(y), hasB = accHasB();
+  openSheet(`<div class="chh" style="--c:#35d399"><span class="chh-e">🏦</span><div><small>Sparer-Pauschbetrag ${money(k.p)}</small><h2>Freistellungsaufträge</h2></div></div>
+    <p class="lead-p">Bis zum Sparer-Pauschbetrag bleiben Zinsen und Dividenden steuerfrei – die Bank zieht aber nur nichts ab, wenn dort ein Freistellungsauftrag liegt. Ehepaare mit Zusammenveranlagung können einen gemeinsamen Auftrag erteilen.</p>
+    ${S.ein.fsa.length ? `<div class="vlist">${S.ein.fsa.map(f => { const b = k.banks.find(x => norm(x.bank) === norm(f.bank || '')); return rowH('🏦', f.bank || 'Bank', [hasB ? werName(f.wer || 'a') : '', b ? `Erträge ${y}: ${money(b.br)}` : 'noch keine Erträge erfasst'].filter(Boolean).join(' · '), `<b>${money(f.betrag || 0)}</b>`, `data-act="ein.fsa.edit" data-id="${f.id}"`); }).join('')}</div>` : '<p class="muted">Noch kein Freistellungsauftrag erfasst.</p>'}
+    <div class="ein-pb"><div class="ein-pb-h"><span>Verteilt</span><b>${money(k.fsaSum)} von ${money(k.p)}</b></div><div class="bar"><i style="width:${Math.min(100, k.fsaSum / k.p * 100)}%"></i></div></div>
+    ${hasB ? `<label class="srow" style="margin-top:10px"><div><b>Zusammen veranlagt</b><small>2.000 € gemeinsamer Pauschbetrag statt 1.000 € je Person</small></div><input type="checkbox" class="tg" data-act="ein.zus" ${S.ein.zus ? 'checked' : ''}></label>` : ''}
+    <div class="group-h"><span>Kirchensteuer (für die Schätzung)</span></div><div class="seg full">${[[0, 'Keine'], [8, '8 % (BY, BW)'], [9, '9 %']].map(([v, l]) => `<button class="${(S.ein.kist || 0) === v ? 'on' : ''}" data-act="ein.kist" data-v="${v}">${l}</button>`).join('')}</div>
+    <div class="acts"><span class="sp"></span><button class="btn primary" data-act="ein.fsa.edit">${icon('plus')}Auftrag hinzufügen</button></div>`, { wide: true });
+};
+ACT['ein.zus'] = el => { S.ein.zus = !!el.checked; save(); ACT['ein.fsa'](); if (route === 'einnahmen') rerender(); };
+ACT['ein.kist'] = el => { S.ein.kist = +el.dataset.v || 0; save(); ACT['ein.fsa'](); };
+ACT['ein.fsa.edit'] = el => {
+  const id = el && el.dataset && el.dataset.id, f0 = id && S.ein.fsa.find(x => x.id === id), f = f0 || {}, banks = [...new Set(S.ein.q.filter(q => q.typ === 'kapital').map(bankOf))];
+  formSheet({ title: f0 ? 'Freistellungsauftrag bearbeiten' : 'Freistellungsauftrag', sub: 'Bei welcher Bank ist wie viel freigestellt?', submit: 'Speichern', fields: [
+    { k: 'bank', label: 'Bank / Depot', val: f.bank || banks[0] || '', ph: 'z. B. TARGOBANK, comdirect', full: true },
+    ...(banks.length ? [{ type: 'html', k: 'bk', html: `<div class="pvchips sugr">${banks.map(b => `<button type="button" class="pv sm" onclick="this.closest('form').querySelector('#f_bank').value=this.textContent">${esc(b)}</button>`).join('')}</div>` }] : []),
+    { k: 'betrag', label: 'Freigestellter Betrag', type: 'money', val: f.betrag },
+    ...(accHasB() ? [{ k: 'wer', label: 'Auftrag von', type: 'pick', opts: [['a', accName('a')], ['b', accName('b')], ['g', 'Gemeinsam (Ehegatten)']], val: f.wer || (S.ein.zus ? 'g' : accCur()), full: true }] : [])],
+  onDelete: f0 ? () => removeWithUndo(S.ein.fsa, id, 'Freistellungsauftrag', () => { if (route === 'einnahmen') rerender(); }) : null,
+  onSubmit: v => {
+    if (!(v.betrag > 0) || !(v.bank || '').trim()) { toast('Bitte Bank und Betrag eintragen.', 'bad'); return false; }
+    const t = f0 || { id: 'fs_' + uid() }; t.bank = v.bank.trim(); t.betrag = v.betrag; t.wer = v.wer || t.wer || accCur(); if (!f0) S.ein.fsa.push(t); save();
+    setTimeout(() => ACT['ein.fsa'](), 260); if (route === 'einnahmen') rerender();
+  } });
+};
+
+/* ---------- Übernehmen: Lohnabrechnungen, Steckbrief, Verträge ---------- */
+const lohnField = (d, k) => { const f = (d.fields || []).find(x => x.k === k); return f && typeof f.v === 'number' ? f.v : null; };
+function einLohnDocs() { const used = new Set(S.ein.e.map(e => e.doc).filter(Boolean)); return S.docs.filter(d => d.kind === 'lohn' && d.status !== 'fehler' && !used.has(d.id) && lohnField(d, 'netto') > 0); }
+function einGehaltQ(name) {
+  let q = S.ein.q.find(x => x.typ === 'gehalt' && !x.aus && (x.wer === accCur() || !accHasB()));
+  if (!q) { q = { id: 'eq_' + uid(), typ: 'gehalt', name: name || pget('arbeitgeber') || 'Gehalt', wer: accCur(), created: Date.now() }; if (num('netto')) q.soll = num('netto'); S.ein.q.push(q); }
+  return q;
+}
+function einLohnTake(d) { const q = einGehaltQ(d.sender), x = { id: 'ee_' + uid(), q: q.id, date: d.docDate || todayISO(), netto: lohnField(d, 'auszahlung') || lohnField(d, 'netto'), doc: d.id }; const b = lohnField(d, 'brutto'); if (b) x.brutto = b; S.ein.e.push(x); return x; }
+ACT['ein.lohn'] = () => {
+  const L = einLohnDocs().sort((a, b) => (a.docDate || '') < (b.docDate || '') ? -1 : 1); if (!L.length) return toast('Keine neuen Lohnabrechnungen gefunden');
+  openSheet(`<h2>Lohnabrechnungen übernehmen</h2><p class="lead-p">Kairos bucht die Auszahlung als Gehaltseingang${accHasB() ? ' von ' + esc(accName(accCur())) : ''}. Prüfe die Beträge kurz – Sonderzahlungen kannst du danach als „Bonus“ markieren.</p>
+    <div class="vlist">${L.map(d => rowH('🧾', d.name, [d.docDate ? fmtDate(d.docDate, true) : '', d.sender || ''].filter(Boolean).join(' · '), `<b>${money(lohnField(d, 'auszahlung') || lohnField(d, 'netto'))}</b>`)).join('')}</div>
+    <div class="acts"><button class="btn" data-sh="x">Abbrechen</button><span class="sp"></span><button class="btn primary" data-sh="all">${plural(L.length, 'Abrechnung', 'Alle ' + L.length + ' Abrechnungen')} übernehmen</button></div>`, { wide: true,
+    onMount: sh => sh.addEventListener('click', e => { const b = e.target.closest('[data-sh]'); if (!b) return; if (b.dataset.sh === 'all') { L.forEach(einLohnTake); save(); toast(plural(L.length, 'Gehaltseingang', 'Gehaltseingänge') + ' gebucht', 'good'); } closeSheet(); if (route === 'einnahmen') rerender(); else go('einnahmen'); }) });
+};
+const EIN_MAP = { kindergeld: 'staat', elterngeld: 'staat', rente_ein: 'rente', kapital: 'kapital', mieteinnahmen: 'miete', selbststaendig: 'neben', nebenjob: 'neben', minijob: 'neben' };
+function einImportable() {
+  const have = new Set(S.ein.q.map(q => q.src).filter(Boolean)), out = [];
+  if ((phas('netto') || phas('arbeitgeber')) && !have.has('gehalt_' + accCur()) && !S.ein.q.some(q => q.typ === 'gehalt' && q.wer === accCur())) out.push({ src: 'gehalt_' + accCur(), typ: 'gehalt', name: pget('arbeitgeber') || 'Gehalt', soll: num('netto') || null, wer: accCur() });
+  try { for (const e of vAll()) { if (!isInc(e) || vst(e.id) !== 'ja' || have.has(e.id)) continue; const base = e.of || e.id, mk = mitOf(vOf(e.id)), wer = mk === 'gemeinsam' ? 'g' : mk === 'partner' ? accOther() : accCur(); out.push({ src: e.id, typ: EIN_MAP[base] || 'sonst', name: [e.n, vprov(e.id)].filter(Boolean).join(' · '), soll: vMonthly(e.id) || null, wer: accHasB() ? wer : 'a' }); } } catch (err) { /* Verträge optional */ }
+  return out;
+}
+ACT['ein.import'] = () => {
+  const L = einImportable(); if (!L.length) return toast('Nichts Neues zum Übernehmen');
+  L.forEach(x => { const q = { id: 'eq_' + uid(), typ: x.typ, name: x.name, wer: x.wer, src: x.src, created: Date.now() }; if (x.soll) q.soll = x.soll; S.ein.q.push(q); });
+  save(); if (route !== 'einnahmen') go('einnahmen'); else rerender(); toast(plural(L.length, 'Quelle', 'Quellen') + ' übernommen – jetzt die Eingänge erfassen', 'good');
+};
+
+/* ---------- Verknüpfungen: Heute, Fristen, Suche ---------- */
+function einTips() {
+  if (!S.ein || !S.ein.q.length) return [];
+  const m = einMissing(accCur())[0]; if (!m) return [];
+  return [{ id: 'tip_ein', e: (EQT[m.q.typ] || EQT.sonst)[1], t: `${m.q.name}: ${ymName(m.ym)} erfassen`, s: m.last ? `Zuletzt ${money(m.last.netto || 0)} – ein Tipp genügt` : 'Regelmäßiger Eingang fehlt', go: 'einnahmen' }];
+}
+function einDeadlines(add) {
+  if (!S.ein || !(S.ein.fsa.length || S.ein.q.some(q => q.typ === 'kapital'))) return;
+  const t = todayISO(), y = +t.slice(0, 4), d = `${y}-12-01` >= t ? `${y}-12-01` : `${y + 1}-12-01`;
+  add({ id: 'ein_fsa', date: d, title: 'Freistellungsaufträge fürs neue Jahr prüfen', sub: 'Verteilung auf die Banken an die erwarteten Erträge anpassen', e: '🏦', kind: 'frist', alarm: 14 });
+}
+function einHits(toks, add, lim = 4) {
+  if (!S.ein) return; let n = 0;
+  for (const q of S.ein.q) { if (n >= lim) break; if (sMatch(sHay(q, [EQT[q.typ] && EQT[q.typ][0], werName(q.wer)]), toks)) { add('Einnahmen', (EQT[q.typ] || EQT.sonst)[1], q.name, (EQT[q.typ] || EQT.sonst)[0], () => { go('einnahmen'); setTimeout(() => ACT['ein.q.open']({ dataset: { id: q.id } }), 120); }); n++; } }
+  n = 0;
+  for (const e of S.ein.e.slice().sort((a, b) => a.date < b.date ? 1 : -1)) { if (n >= lim) break; const q = eQ(e.q); if (!q) continue; if (sMatch(sHay(e, [q.name, money(e.netto || 0)]), toks, e.netto)) { add('Eingänge', (EQT[q.typ] || EQT.sonst)[1], `${q.name} · +${money(e.netto || 0)}`, fmtDate(e.date, true), () => { go('einnahmen'); setTimeout(() => ACT['ein.add']({ dataset: { id: e.id } }), 120); }); n++; } }
 }
 
 /* =====================================================================
@@ -9266,7 +9827,7 @@ async function boot() {
   if (memOnly) toast('Dein Browser blockiert den lokalen Speicher – Daten gehen beim Schließen verloren. Bitte Backup erstellen.', 'bad');
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => { /* optional */ });
   window.addEventListener('keydown', e => { if (e.key === '/' && !/input|textarea|select/i.test(e.target.tagName) && !$('#sheetWrap').classList.contains('open')) { e.preventDefault(); ACT['cmd.open'](); } });
-  window.__K = { cmdItems, zipStore, gbrPaketRows, safeCard, dataStatus, bkChanges, bkCount, hubSummary, isNarrow, importBackup, askPassword, gbrSum, nkCalc, sparRadar, heuteItems, backupDue, makeBackupJSON, encryptBackupText, decryptBackupData, fixCosts, vMine, steuerSuggestions, nfScore, steuerPdf, gbrYearPdf, nfPdf, openZoom, ZV, refreshApp, chunkList, GS, ROWS, snd, hap, sndBuild, sndPlay, SOUNDS, SND, ocrSelfTest, get S() { return S; }, get route() { return route; }, tnState, tnLocked, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, KPdf, buildPackagePdf, PACKAGES, pdfWidth, fundOpen, scanFunde, docToVertrag, fdSetProfile, fdSetVertrag, docVertragDraft, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, provList, PROV, xSpecs, katalogInsights, parseStatement, stAnalyze, stApply, stMatch, stRun, stNum, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
+  window.__K = { accName, accCur, withAcc, hhSplit, einAvg, einAvgOf, einSafe, einMissing, kapYear, kapEst, eMonths, einYear, mitOf, anteilOf, partnerName, buildDeadlines, cmdItems, zipStore, gbrPaketRows, safeCard, dataStatus, bkChanges, bkCount, hubSummary, isNarrow, importBackup, askPassword, gbrSum, nkCalc, sparRadar, heuteItems, backupDue, makeBackupJSON, encryptBackupText, decryptBackupData, fixCosts, vMine, steuerSuggestions, nfScore, steuerPdf, gbrYearPdf, nfPdf, openZoom, ZV, refreshApp, chunkList, GS, ROWS, snd, hap, sndBuild, sndPlay, SOUNDS, SND, ocrSelfTest, get S() { return S; }, get route() { return route; }, tnState, tnLocked, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, KPdf, buildPackagePdf, PACKAGES, pdfWidth, fundOpen, scanFunde, docToVertrag, fdSetProfile, fdSetVertrag, docVertragDraft, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, provList, PROV, xSpecs, katalogInsights, parseStatement, stAnalyze, stApply, stMatch, stRun, stNum, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<pre style="position:fixed;inset:20px;z-index:999;background:#300;color:#fff;padding:20px;overflow:auto">Kairos konnte nicht starten:\n${esc(e && e.stack || e)}</pre>`); });
 
