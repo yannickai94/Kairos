@@ -7,7 +7,7 @@
 <title>Kairos – deine digitale Kopie</title>
 <meta name="description" content="Kairos baut aus deinen Dokumenten Schritt für Schritt deine digitale Identität auf. Texterkennung und KI laufen lokal, alle Daten bleiben auf deinem Gerät.">
 <meta name="theme-color" content="#070a1c">
-<meta name="kairos-build" content="e39e81b212">
+<meta name="kairos-build" content="ade79f0ea8">
 <meta name="color-scheme" content="dark light">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -1232,6 +1232,64 @@ button.lf-main:hover{background:var(--field)}button.lf-main:active{transform:sca
 #view>.page{width:100%;box-sizing:border-box}
 .spar-h b{flex:1}.spar-x{flex:none;min-width:36px;padding:0 8px}
 
+/* v14: Datensicherheit, Sammel-Bereich, Navigation */
+.safe{display:flex;flex-direction:column;gap:12px;border:1px solid color-mix(in srgb,var(--warn,#ffb544) 45%,transparent)}
+.safe.bad{border-color:color-mix(in srgb,var(--bad,#ff6b81) 60%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--bad,#ff6b81) 12%,transparent),transparent)}
+.safe-h{display:flex;gap:12px;align-items:flex-start}
+.safe-e{font-size:24px;line-height:1;flex:none;margin-top:2px}
+.safe-h b{display:block;font-size:15px;font-weight:720;letter-spacing:-.01em}
+.safe-h small{display:block;margin-top:3px;font-size:13px;line-height:1.4;color:var(--text2)}
+.safe-a{display:flex;gap:8px;flex-wrap:wrap}.safe-a .btn{flex:1 1 auto;justify-content:center}
+.hub-g{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.hubc{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px;min-height:76px;color:inherit;cursor:pointer}
+.hubc-e{font-size:28px;flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--hair2,rgba(255,255,255,.08))}
+.hubc-m{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.hubc-m b{font-size:16px;font-weight:720}.hubc-m small{font-size:13px;color:var(--text2);line-height:1.35}
+.hubc-m em{font-style:normal;font-size:13px;font-weight:650;color:var(--accent);margin-top:2px}
+.hubc>svg{width:20px;height:20px;flex:none;color:var(--text2)}
+.crumb{display:inline-flex;align-items:center;gap:4px;min-height:44px;margin:0 0 -6px -6px;padding:0 10px 0 4px;border:0;background:none;color:var(--accent);font:inherit;font-size:14px;font-weight:650;cursor:pointer;border-radius:12px}
+.crumb svg{width:18px;height:18px}
+@media(hover:hover){.hubc:hover{transform:translateY(-1px);border-color:var(--accent)}}
+
+/* ---- v14: Startseite auf dem Handy ---- */
+.orbcard{padding:14px 10px 10px;overflow:hidden}
+.hero-m{margin-bottom:0}
+.way-tg{display:flex;align-items:center;gap:10px;width:100%;min-height:48px;padding:0;border:0;background:none;color:inherit;font:inherit;font-weight:700;font-size:15px;text-align:left;cursor:pointer}
+.way-tg>svg{width:20px;height:20px;color:var(--text2);flex:none}
+.way-tg.sm{width:44px;min-height:44px;justify-content:center;margin:-8px -8px -8px 0;border-radius:12px;flex:none}
+.way-now{margin:0}.way-now b{color:var(--text)}
+/* Beschriftungen am Orbit nur für den aktuellen Schritt – sonst überlappen sie sich und werden winzig */
+.sat-in em{font-size:11px}
+.sat:not(.cur) .sat-in em{opacity:0;transition:opacity .2s}
+.sat:hover .sat-in em,.sat:focus-visible .sat-in em,.sat:active .sat-in em{opacity:1}
+.sat{min-width:44px}
+input[type=checkbox].tg{width:51px;height:31px}
+input[type=checkbox].tg::after{width:27px;height:27px}
+input[type=checkbox].tg:checked::after{transform:translateX(20px)}
+
+/* ---- v14: Tippflächen mindestens 44 px (Apple-Empfehlung) ---- */
+@media (pointer:coarse),(max-width:760px){
+  .btn,.btn.sm{min-height:44px}
+  .btn.sm{height:auto;padding-top:0;padding-bottom:0}
+  .iconbtn,.ins-h .iconbtn{width:44px;height:44px}
+  .link,.card-h .link,.wz-top .link{display:inline-flex;align-items:center;min-height:44px;padding:0 6px}
+  button.chip{height:auto;min-height:44px}
+  .pv.sm,.pp.add,.ckl,.seg button,.sf.miss,.sf-main,.sf{min-height:44px}
+  .seg button{padding-top:0;padding-bottom:0}
+  .ph-av{width:44px;height:44px}
+  .lr-d{width:44px;height:44px}
+}
+
+/* ---- v14: Suche-Knopf (Handy) ---- */
+.ph-sr{display:none;flex:none;order:2;margin-left:auto;align-self:flex-start;width:44px;height:44px;border-radius:50%;place-items:center;border:0;background:var(--field);color:var(--text2);cursor:pointer}
+.ph-sr svg{width:20px;height:20px}
+.ph-sr+.ph-av{margin-left:6px}
+.ph-sr.on{display:grid}
+.ey-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ey-row .ph-sr{margin:-10px -6px -10px 0}
+@media (max-width:900px){.ph-sr{display:grid}}
+@media (min-width:901px){.ph-sr:not(.on){display:none}.ey-row .ph-sr{display:none}}
+
 /* ===== Dock (nur mobil) ===== */
 .dock{display:none}
 @media (max-width:900px){
@@ -1437,6 +1495,7 @@ const IC = {
   timer: 'M12 7v5l3 2M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16ZM9 2h6',
   note: 'M5 4h14v16H5zM8.5 9h7M8.5 13h7M8.5 17h4',
   users: 'M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM2.5 20a6.5 6.5 0 0 1 13 0M16 4.3a3.5 3.5 0 0 1 0 6.4M18 14a6.5 6.5 0 0 1 3.5 6',
+  folder: 'M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z',
   receipt: 'M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6',
   link: 'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1',
   lock: 'M6 11h12v9H6zM8.5 11V8a3.5 3.5 0 0 1 7 0v3',
@@ -1537,8 +1596,9 @@ const AREAS = {
   dokumente: { name: 'Dokumente',  ic: 'file',   c: 'var(--c-life)' },
   kairos:    { name: 'Kairos',     ic: 'sparkle',c: 'var(--c-shop)' },
   verbinden: { name: 'Verbinden',  ic: 'link',   c: 'var(--c-fin)' },
+  mappen:    { name: 'Finanzen & Vorsorge', ic: 'folder', c: '#35c58f' },
   gbr:       { name: 'Vermietung', ic: 'home',   c: '#35c58f' },
-  steuer:    { name: 'Steuermappe', ic: 'receipt', c: '#8a6cff' },
+  steuer:    { name: 'Steuermappe', ic: 'coins', c: '#8a6cff' },
   notfall:   { name: 'Notfall',    ic: 'heart',  c: '#ff6b81' },
   einstellungen: { name: 'Einstellungen', ic: 'sliders', c: 'var(--text2)' }
 };
@@ -1639,7 +1699,7 @@ function migrate(st) {
 }
 async function dbInit() {
   try { db = await dbOpen(); } catch (e) { console.warn('IndexedDB nicht nutzbar, verwende Arbeitsspeicher', e); memOnly = true; }
-  try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) { /* ignorieren */ }
+  try { if (typeof persistCheck === 'function') persistCheck(); else if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) { /* ignorieren */ }
 }
 /** Gibt 'locked' | 'ready' | 'empty' zurück */
 async function loadState() {
@@ -1841,8 +1901,8 @@ function countUp(el, to, fmt = c => money(c)) {
 }
 
 /* ---------- Router & Navigation ---------- */
-const ROUTES = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'gbr', 'steuer', 'notfall', 'einblicke', 'dokumente', 'kairos', 'verbinden', 'einstellungen'];
-const MORE_ROUTES = ['dokumente', 'beruf', 'vertraege', 'gbr', 'steuer', 'notfall', 'leben', 'verbinden', 'einstellungen'];
+const ROUTES = ['reise', 'steckbrief', 'beruf', 'vertraege', 'leben', 'mappen', 'gbr', 'steuer', 'notfall', 'einblicke', 'dokumente', 'kairos', 'verbinden', 'einstellungen'];
+const MORE_ROUTES = ['dokumente', 'beruf', 'vertraege', 'mappen', 'leben', 'verbinden', 'einstellungen'];
 let route = 'reise';
 function badgeCounts() { return { dokumente: S.docs.filter(d => d.status === 'neu').length, einblicke: typeof urgentCount === 'function' ? urgentCount() : 0 }; }
 function avatarHTML(cls = '') {
@@ -1851,12 +1911,12 @@ function avatarHTML(cls = '') {
 }
 function renderNav() {
   const bc = badgeCounts();
-  const item = r => { const a = AREAS[r], n = bc[r]; return `<button class="nv ${route === r ? 'on' : ''}${typeof treeGate === 'function' && treeGate(r) ? ' lkd' : ''}" style="--c:${a.c}" data-go="${r}" ${route === r ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt alert">${n}</span>` : ''}</button>`; };
-  $('#nav').innerHTML = ['reise', 'steckbrief', 'beruf', 'vertraege', 'gbr', 'steuer', 'notfall', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
+  const item = r => { const a = AREAS[r], n = bc[r]; return `<button class="nv ${hubOn(r) ? 'on' : ''}${typeof treeGate === 'function' && treeGate(r) ? ' lkd' : ''}" style="--c:${a.c}" data-go="${r}" ${hubOn(r) ? 'aria-current="page"' : ''}><span class="ic">${icon(a.ic)}</span>${a.name}${n ? `<span class="cnt alert">${n}</span>` : ''}</button>`; };
+  $('#nav').innerHTML = ['reise', 'steckbrief', 'beruf', 'vertraege', 'mappen', 'leben', 'einblicke', 'dokumente', 'kairos', 'verbinden'].map(item).join('') + '<div class="nv-sep"></div>' + item('einstellungen');
   const dk = (r, lab) => `<button class="dk ${route === r ? 'on' : ''}" style="--c:${AREAS[r].c}" data-go="${r}" aria-label="${lab}"><span class="dki">${icon(AREAS[r].ic)}</span><span class="dkl">${lab}</span>${bc[r] ? '<i class="dot"></i>' : ''}</button>`;
   $('#dock').innerHTML = dk('reise', 'Leben') + dk('steckbrief', 'Steckbrief') +
     `<button class="dk dko ${route === 'kairos' ? 'on' : ''}" data-go="kairos" aria-label="Kairos fragen"><span>${logoSvg('dock')}</span></button>` + dk('einblicke', 'Einblicke') +
-    `<button class="dk ${MORE_ROUTES.includes(route) ? 'on' : ''}" style="--c:var(--text2)" data-act="more.open" aria-label="Mehr"><span class="dki">${icon('grid')}</span><span class="dkl">Mehr</span>${bc.dokumente ? '<i class="dot"></i>' : ''}</button>`;
+    `<button class="dk ${MORE_ROUTES.includes(route) || HUB_KIDS.includes(route) ? 'on' : ''}" style="--c:var(--text2)" data-act="more.open" aria-label="Mehr"><span class="dki">${icon('grid')}</span><span class="dkl">Mehr</span>${bc.dokumente ? '<i class="dot"></i>' : ''}</button>`;
   if (S.int && S.int.badge && typeof applyBadge === 'function') applyBadge(bc.einblicke);
   const me = $('#sideMe'); if (me) me.innerHTML = `${avatarHTML()}<span class="me-t"><b>${esc(S.profile.name || (typeof profName === 'function' && profName()) || 'Du')}</b><small>Einstellungen</small></span>`;
 }
@@ -1864,7 +1924,8 @@ function renderView(keepScroll) {
   const v = VIEWS[route] || VIEWS.reise;
   const main = $('#main'), st = main.scrollTop;
   $('#view').innerHTML = v.render();
-  const ph = $('#view .ph'); if (ph && route !== 'einstellungen') { const b = document.createElement('button'); b.className = 'ph-av'; b.dataset.go = 'einstellungen'; b.setAttribute('aria-label', 'Einstellungen'); b.innerHTML = avatarHTML(); const act = $('.act', ph); act ? ph.insertBefore(b, act) : ph.appendChild(b); }
+  const ph = $('#view .ph'); if (ph && route !== 'einstellungen') { const b = document.createElement('button'); b.className = 'ph-av'; b.dataset.go = 'einstellungen'; b.setAttribute('aria-label', 'Einstellungen'); b.innerHTML = avatarHTML(); const act = $('.act', ph); act ? ph.insertBefore(b, act) : ph.appendChild(b); const sr = document.createElement('button'); sr.className = 'ph-sr'; sr.dataset.act = 'cmd.open'; sr.setAttribute('aria-label', 'Suchen'); sr.innerHTML = icon('search'); ph.insertBefore(sr, b); }
+  if (typeof hubCrumb === 'function') hubCrumb();
   if (v.mount) v.mount($('#view'));
   main.scrollTop = keepScroll ? st : 0;
   renderNav();
@@ -1881,7 +1942,7 @@ window.addEventListener('popstate', () => { const r = (location.hash.replace('#/
 
 ACT['more.open'] = () => {
   const bc = badgeCounts();
-  openSheet(`<h2>Mehr</h2><div class="more-g">${MORE_ROUTES.map(r => { const a = AREAS[r]; return `<button class="more-i ${route === r ? 'on' : ''}${typeof treeGate === 'function' && treeGate(r) ? ' lkd' : ''}" data-go="${r}"><span class="ic">${icon(a.ic)}</span><b>${a.name}</b>${bc[r] ? `<span class="cnt alert">${bc[r]}</span>` : ''}</button>`; }).join('')}</div>`);
+  openSheet(`<h2>Mehr</h2><div class="more-g">${MORE_ROUTES.map(r => { const a = AREAS[r]; return `<button class="more-i ${hubOn(r) ? 'on' : ''}${typeof treeGate === 'function' && treeGate(r) ? ' lkd' : ''}" data-go="${r}"><span class="ic">${icon(a.ic)}</span><b>${a.name}</b>${bc[r] ? `<span class="cnt alert">${bc[r]}</span>` : ''}</button>`; }).join('')}</div>`);
 };
 
 /* ---------- Globale Aktionen ---------- */
@@ -2133,9 +2194,10 @@ function cmdItems(q) {
     CHAPTERS.filter(c => norm(c.n + ' ' + c.reads).includes(n)).forEach(c => add('Kapitel', c.e, c.n, c.title, () => { go('reise'); setTimeout(() => ACT['ch.open']({ dataset: { ch: c.id } }), 80); }));
     fieldScores(q).slice(0, 4).filter(f => phas(f.k)).forEach(f => add('Aus deinem Steckbrief', CH[PF[f.k].ch].e, PF[f.k].l, pFmt(f.k, pget(f.k), true), () => ACT['pf.copy']({ dataset: { k: f.k } })));
     S.docs.filter(d => norm([d.name, d.sender, d.text].join(' ')).includes(n)).slice(0, 4).forEach(d => add('Dokumente', kindInfo(d).e, d.name, d.sender || '', () => { go('dokumente'); setTimeout(() => ACT['doc.open']({ dataset: { id: d.id } }), 80); }));
+    if (typeof globalHits === 'function') { try { globalHits(q, add); } catch (e) { console.warn(e); } }
     add('Kairos fragen', '✨', q.trim(), 'Antwort aus deinen Daten', () => { go('kairos'); setTimeout(() => askKairos(q), 80); });
   }
-  return out.slice(0, 12);
+  return n ? out.slice(0, 30) : out.slice(0, 12);
 }
 function renderCmd() {
   cmdState.items = cmdItems(cmdState.q); cmdState.sel = Math.min(cmdState.sel, Math.max(0, cmdState.items.length - 1));
@@ -3788,7 +3850,8 @@ function orbitHTML(o, nx) {
     <button class="orb-av" data-act="avatar.menu" aria-label="Profilbild ändern">${S.profile.avatar ? `<img alt="" src="${S.profile.avatar}">` : `<span class="orb-logo">${logoSvg('orb')}</span>`}<span class="orb-cam">${icon('camera')}</span></button>
     <div class="orb-pct"><b class="num" data-count="${Math.round(pc * 100)}">${Math.round(pc * 100)}</b><small>%</small></div></div>`;
 }
-function reiseHero(o, nx, start) {
+const isNarrow = () => { try { return matchMedia('(max-width:760px)').matches; } catch (e) { return false; } };
+function reiseHero(o, nx, start, split) {
   const fn = firstName(), pend = S.docs.filter(d => d.status === 'neu' || d.status === 'fehler').length, ok = S.docs.filter(d => d.status === 'ok').length;
   const cta = !nx ? `<div class="hero-next done"><span class="hn-e">🎉</span><div><small>Geschafft</small><b>Deine digitale Kopie ist vollständig</b><span>Halte sie aktuell – oder frag Kairos, was sich daraus ergibt.</span></div></div><div class="nxt-acts"><button class="btn primary lg" data-go="einblicke">${icon('bulb')}Einblicke ansehen</button><button class="btn lg" data-go="kairos">${icon('sparkle')}Kairos fragen</button></div>`
     : (start && !S.ui.wizardDone) ? `<div class="hero-next" style="--c:var(--accent)"><span class="hn-e">✨</span><div><small>Dein erster Schritt</small><b>Start-Assistent</b><span>Zwei Minuten: Name, Lebenssituation und Basisdaten – danach liest Kairos deinen Ausweis.</span></div></div>
@@ -3797,20 +3860,23 @@ function reiseHero(o, nx, start) {
     : `<div class="hero-next" style="--c:${nx.ch.c}"><span class="hn-e">${nx.ch.e}</span><div><small>${start ? 'Dein erster Schritt' : nx.optional ? 'Zum Abrunden' : 'Nächster Schritt'}</small><b>${nx.ch.id === 'ausweis' && start ? 'Starte mit deinem Ausweis' : esc(nx.ch.n) + ': ' + esc(nx.ch.title)}</b><span>${esc(nx.ch.ask)}</span></div></div>
       <div class="chips nxt-reads"><span class="chip">${icon('scan')}Kairos liest:</span>${nx.ch.reads.split(', ').map(r => `<span class="chip">${esc(r)}</span>`).join('')}</div>
       <div class="nxt-acts">${nx.ch.view ? `<button class="btn primary lg" data-act="${nx.ch.quick || (nx.ch.id === 'vertraege' ? 'vt.quick' : 'ev.quick')}">${icon(nx.ch.id === 'beruf' ? 'briefcase' : 'sparkle')}${nx.ch.id === 'beruf' ? 'Arbeitsplatz eintragen' : 'Schnell-Check starten'}</button><button class="btn lg" data-go="${nx.ch.view}">Bereich öffnen</button>` : nx.ch.manual ? `<button class="btn primary lg" data-act="ich.start">${icon('edit')}Fragen beantworten</button>` : `<button class="btn primary lg" data-act="cap.pick" data-ch="${nx.ch.id}">${icon('upload')}Dokument wählen</button><button class="btn lg cam-only" data-act="cap.cam" data-ch="${nx.ch.id}">${icon('camera')}Foto aufnehmen</button><button class="btn ghost" data-act="fill.ch" data-ch="${nx.ch.id}">Selbst eintragen</button><button class="btn ghost" data-act="cap.text" data-ch="${nx.ch.id}">${icon('scan')}Text scannen</button>${nx.ch.id === 'bank' ? `<button class="btn ghost full" data-act="st.import">${icon('receipt')}Kontoauszug einlesen</button>` : ''}`}</div>`;
-  return `<section class="hero2 card glass"><div class="hero2-l">${orbitHTML(o, nx)}</div>
-    <div class="hero2-r"><div class="eyebrow">${esc(greetingWord())}${fn ? ', ' + esc(fn) : ''}</div><h1 class="h-title">${start ? 'Baue deine digitale <span class="gradtxt">Kopie</span>' : `Stufe <span class="gradtxt">${esc(o.level)}</span>`}</h1>
+  const rt = `<div class="hero2-r"><div class="eyebrow ey-row"><span>${esc(greetingWord())}${fn ? ', ' + esc(fn) : ''}</span><button class="ph-sr on" data-act="cmd.open" aria-label="Suchen">${icon('search')}</button></div><h1 class="h-title">${start ? 'Baue deine digitale <span class="gradtxt">Kopie</span>' : `Stufe <span class="gradtxt">${esc(o.level)}</span>`}</h1>
       <p class="h-sub">${start ? 'Dokument für Dokument – Kairos liest, verknüpft und zeigt dir, was daraus entsteht.' : `${o.fields} Angaben aus ${plural(ok, 'Dokument', 'Dokumenten')} sind verknüpft. ${nx ? 'Weiter geht es hier:' : ''}`}</p>
-      ${cta}${start ? `<p class="nxt-priv">${icon('lock')}Alles bleibt auf diesem Gerät. Keine Cloud, kein Konto, keine API.</p>` : ''}</div></section>`;
+      ${cta}${start ? `<p class="nxt-priv">${icon('lock')}Alles bleibt auf diesem Gerät. Keine Cloud, kein Konto, keine API.</p>` : ''}</div>`;
+  /* Schmal (Handy): erst Text und Aufgaben, dann der Orbit – so liegt „Heute“ nicht unter einem Bildschirm voller Grafik */
+  if (split) return { text: `<section class="hero2 card glass hero-m">${rt}</section>`, orbit: `<section class="card glass orbcard">${orbitHTML(o, nx)}</section>` };
+  return `<section class="hero2 card glass"><div class="hero2-l">${orbitHTML(o, nx)}</div>${rt}</section>`;
 }
 VIEWS.reise = {
   render() {
     const o = overall(), nx = nextStep(), pend = S.docs.filter(d => d.status === 'neu' || d.status === 'fehler'), start = !o.fields && !S.docs.length;
     const ins = start ? [] : topInsights(3);
-    return `<div class="page reise stag">${reiseHero(o, nx, start)}
-      <div class="rz2"><div class="rz2-l">${start ? '' : heuteCard()}${pend.length ? `<button class="notice" data-act="rev.pending">${icon('scan')}<span><b>${plural(pend.length, 'Dokument wartet', 'Dokumente warten')} auf dich</b><small>Prüfe, was Kairos gelesen hat, und übernimm es.</small></span>${icon('chevR')}</button>` : ''}${expiryHints()}
+    const nar = isNarrow() && !start, hero = reiseHero(o, nx, start, nar);
+    return `<div class="page reise stag">${nar ? hero.text : hero}
+      <div class="rz2"><div class="rz2-l">${start ? '' : safeCard() + heuteCard()}${pend.length ? `<button class="notice" data-act="rev.pending">${icon('scan')}<span><b>${plural(pend.length, 'Dokument wartet', 'Dokumente warten')} auf dich</b><small>Prüfe, was Kairos gelesen hat, und übernimm es.</small></span>${icon('chevR')}</button>` : ''}${expiryHints()}
         ${ins.length ? `<div class="card glass"><div class="card-h">${icon('bulb')} Das hat Kairos verknüpft<span class="sp"></span><button class="link" data-go="einblicke">Alle</button></div><div class="ins-list compact">${ins.map((x, i) => insightCard(x, i, true)).join('')}</div></div>` : ''}
         ${!S.ui.wizardDone && !start ? `<button class="notice" data-act="wiz.open">${icon('sparkle')}<span><b>Start-Assistent</b><small>Zwei Minuten für einen guten Start: Basisdaten, Lebenssituation, erster Upload.</small></span>${icon('chevR')}</button>` : ''}${!S.profile.avatar && !start ? `<button class="notice soft" data-act="avatar.menu">${icon('camera')}<span><b>Füge ein Profilfoto hinzu</b><small>Dein Gesicht macht die digitale Kopie komplett.</small></span>${icon('chevR')}</button>` : ''}</div>
-      <div class="rz2-r">${treeHTML()}</div></div></div>`;
+      ${nar ? hero.orbit : ''}<div class="rz2-r">${treeHTML()}</div></div></div>`;
   },
   mount(root) {
     wayMount(root); $$('[data-count]', root).forEach(el => countUp(el, +el.dataset.count, c => String(c)));
@@ -6497,6 +6563,7 @@ async function settingsHTML() {
       <div class="seg full" style="margin-top:-6px">${BK_EVERY.map(([n, l]) => `<button class="${(S.backup.every || 0) === n ? 'on' : ''}" data-act="backup.every" data-n="${n}">${l}</button>`).join('')}</div>
       ${row('Gerätewechsel', 'Daten auf ein neues iPhone oder iPad mitnehmen', `<button class="btn sm" data-act="backup.move">Anleitung</button>`)}
       ${row('Backup einspielen', 'ersetzt alle aktuellen Daten', `<button class="btn sm" data-act="set.import">${icon('upload')}Importieren</button>`)}
+      ${safeRows(row)}
       ${row('Speicher', usage ? 'Belegt in diesem Browser: ' + usage : '', '')}
       <p class="muted" style="font-size:13px">Löschst du die Website-Daten deines Browsers, sind die Inhalte weg – deshalb regelmäßig ein Backup machen. Sichere am besten verschlüsselt und lege die Datei in iCloud Drive ab – sonst ist sie für jeden lesbar, der sie findet.</p></div></section>
     <section class="card glass s6"><h3>${icon('sparkle')} Kairos</h3><div class="stack" style="gap:14px">
@@ -6843,6 +6910,9 @@ function wayNode(s, k, isNow) {
       <span class="pn-l">${esc(nodeName(id))}</span></div>
     <div class="pn-pop" hidden><b>${nodeEmoji(id)} ${esc(nodeName(id))}</b><small>${esc(waySub(s))}${!s.locked && !n.feat && s.state !== 'done' && s.state !== 'na' && pc ? ` · ${pc} %` : ''}</small><p>${lead}</p><button class="btn primary sm" data-act="tn.open" data-id="${id}">${btn}</button></div></div>`;
 }
+/** Auf dem Handy ist der Weg standardmäßig eingeklappt (sobald schon Daten da sind) */
+const wayShut = () => S.ui.wayOpen === undefined ? (isNarrow() && (S.docs.length > 0 || Object.keys(S.prof).length > 0)) : !S.ui.wayOpen;
+ACT['way.toggle'] = () => { S.ui.wayOpen = wayShut(); save(); rerender(); };
 function treeHTML() {
   const score = treeScore(), total = TREE.length, cur = wayCur(), nx = treeNext(), nowId = nx ? nx.ch.id : null;
   const units = TIERS.map((t, i) => {
@@ -6850,7 +6920,10 @@ function treeHTML() {
     return `<section class="wu ${state}" style="--uc:${TIER_COL[i % TIER_COL.length]}"><header class="wu-h"><div><small>Einheit ${i + 1}</small><b>${esc(t[0])}</b><span>${esc(sub)}</span></div><span class="wu-c">${state === 'done' ? icon('check') : `${ti.done}/${ti.total}`}</span></header>
       <div class="wu-p">${ti.sts.map((s, k) => wayNode(s, k, s.id === nowId)).join('')}</div></section>`;
   }).join('');
-  return `<div class="card glass tree way" id="skillTree"><div class="card-h">🗺️ Dein Weg<span class="sp"></span><span class="badge info">${score} von ${total}</span></div>
+  if (wayShut()) return `<div class="card glass tree way shut" id="skillTree"><button class="way-tg" data-act="way.toggle" aria-expanded="false"><span class="way-tg-t">🗺️ Dein Weg</span><span class="badge info">${score} von ${total}</span><span class="sp"></span>${icon('chevD')}</button>
+    <div class="bar thin" style="margin:6px 0 8px"><i style="width:${Math.round(score / total * 100)}%"></i></div>
+    ${nx ? `<p class="muted fine way-now">Als Nächstes: <b>${esc(nx.ch.n)}</b> – ${esc(nx.ch.title)}</p>` : ''}</div>`;
+  return `<div class="card glass tree way" id="skillTree"><div class="card-h">🗺️ Dein Weg<span class="sp"></span><span class="badge info">${score} von ${total}</span>${isNarrow() ? `<button class="way-tg sm" data-act="way.toggle" aria-expanded="true" aria-label="Weg einklappen">${icon('chevU')}</button>` : ''}</div>
     <div class="bar thin" style="margin:2px 0 6px"><i style="width:${Math.round(score / total * 100)}%"></i></div>
     <p class="muted fine way-hint">Tippe einen Punkt an. Ab ${Math.round(TREE_TH * 100)} % schaltest du die nächste Einheit frei – was nicht zu dir passt, markierst du als „trifft nicht zu“.</p>
     <div class="way-t">${units}</div>
@@ -6891,13 +6964,16 @@ function treeLockSheet(id) {
     <p class="lead-p">${n.feat ? esc(n.d) : esc(CH[id].title + ' – ' + CH[id].ask)}</p>
     <div class="group-h"><span>So schaltest du es frei</span></div><div class="lk-list">${miss.map(chip).join('')}</div>
     <p class="muted fine" style="margin:10px 0 0">Passt ein Kapitel nicht zu dir (z. B. kein Job), markiere es als „trifft nicht zu“ – dann zählt es als erledigt.</p>
-    <div class="acts"><button class="btn ghost" data-sh="force">Trotzdem freischalten</button><span class="sp"></span><button class="btn primary" data-sh="first">${esc(nodeName(miss[0] || id))} öffnen</button></div>`,
+    <button class="ckl" data-sh="all">${icon('unlock')}<span><b>Alle Bereiche dauerhaft freischalten</b> – ohne Sperren arbeiten</span>${icon('chevR')}</button>
+    <div class="acts"><button class="btn ghost" data-sh="force">Trotzdem öffnen</button><span class="sp"></span><button class="btn primary" data-sh="first">${esc(nodeName(miss[0] || id))} öffnen</button></div>`,
   { onMount: sh => sh.addEventListener('click', e => {
     const r = e.target.closest('[data-r]'), b = e.target.closest('[data-sh]');
     if (r) { closeSheet(); setTimeout(() => ACT['tn.open']({ dataset: { id: r.dataset.r } }), 260); return; }
     if (!b) return;
     if (b.dataset.sh === 'first') { closeSheet(); setTimeout(() => ACT['tn.open']({ dataset: { id: miss[0] } }), 260); }
-    if (b.dataset.sh === 'force') { S.tree = S.tree || { seen: {} }; S.tree.force = S.tree.force || {}; S.tree.force[id] = 1; save(); closeSheet(); rerender(); setTimeout(() => ACT['tn.open']({ dataset: { id } }), 260); }
+    const openIt = () => { const r = Object.keys(GATE).find(k => GATE[k] === id); if (r) go(r); else ACT['tn.open']({ dataset: { id } }); };
+    if (b.dataset.sh === 'force') { S.tree = S.tree || { seen: {} }; S.tree.force = S.tree.force || {}; S.tree.force[id] = 1; save(); closeSheet(); setTimeout(openIt, 260); }
+    if (b.dataset.sh === 'all') { S.ui.treeOpen = true; save(); closeSheet(); toast('Alle Bereiche sind frei – in den Einstellungen wieder änderbar'); setTimeout(openIt, 260); }
   }) });
 }
 
@@ -8166,6 +8242,7 @@ VIEWS.gbr = {
       <div class="card glass"><div class="card-h">${icon('coins')} Buchungen ${y}<span class="sp"></span><button class="link" data-act="gbr.buch.all">Alle (${s.b.length})</button></div>
         ${last.length ? `<div class="vlist">${last.map(bRow).join('')}</div>` : `<p class="muted">Noch keine Buchung in ${y}. Miete, Kosten und Zinsen trägst du hier ein – oder bei der Wohnung mit einem Tipp als „Mieteingang“.</p>`}</div>
       <div class="card glass"><div class="card-h">${icon('sparkle')} Auswertung & Werkzeuge</div>
+        <button class="ckl ok" data-act="gbr.paket">${icon('share')}<span><b>Steuerberater-Paket ${y}</b> – PDF, Zahlen (CSV), Belege als ZIP</span>${icon('chevR')}</button>
         <button class="ckl" data-act="gbr.jahr">${icon('coins')}<span>Jahresübersicht ${y} (Hilfe für die Feststellungserklärung)</span>${icon('chevR')}</button>
         <button class="ckl" data-act="gbr.nk">${icon('receipt')}<span>Nebenkostenabrechnung erstellen</span>${icon('chevR')}</button>
         <button class="ckl" data-act="gbr.erh">${icon('trend')}<span>Mieterhöhungs-Check</span>${icon('chevR')}</button>
@@ -8375,9 +8452,8 @@ ACT['gbr.nk'] = el => {
 };
 ACT['gbr.nk.pick'] = el => { nkSel.id = el.dataset.id; ACT['gbr.nk']({}); };
 ACT['gbr.nk.y'] = el => { S.gbr.nkYear = +el.dataset.y; save(); ACT['gbr.nk']({}); };
-ACT['gbr.nk.pdf'] = el => {
-  const g = S.gbr, o = gObj(nkSel.id); if (!o) return; const y = g.nkYear || nowY() - 1, c = nkCalc(o, y);
-  if (!c.rows.length) return toast('Noch keine umlagefähigen Kosten gebucht', 'bad');
+function nkPdf(o, y) {
+  const g = S.gbr, c = nkCalc(o, y); if (!c.rows.length) return null;
   const { d, y: y0 } = pdfNew(`Betriebskosten ${y}`, `${o.name || 'Wohnung'}${o.adr ? ' · ' + o.adr : ''}`, '#35c58f', `Abrechnung ${y}`, ''); let yy = y0;
   yy = pdfSection(d, yy, 'Abrechnung', [['Vermieter', [g.name, g.adr].filter(Boolean).join(', ')], ['Mieter', o.mieter || ''], ['Mietobjekt', [o.name, o.adr].filter(Boolean).join(', ')], ['Abrechnungszeitraum', `${fmtDate(c.from, true)} – ${fmtDate(c.to, true)} (${c.days} Tage)`], ['Wohnfläche', o.flaeche ? `${fmtM2(o.flaeche)} von insgesamt ${fmtM2(Math.round(c.hausF * 100) / 100)}` : '']].filter(r => r[1]), '#35c58f', { lw: 130 });
   yy = pdfTable(d, yy, 'Betriebskosten', [{ h: 'Kostenart', w: 3 }, { h: 'Gesamtkosten', w: 1.4, a: 'r' }, { h: 'Verteilung', w: 1.6 }, { h: 'Ihr Anteil', w: 1.4, a: 'r' }], c.rows.map(r => [gKat('aus', r.kat)[1], pdfEur(r.haus), r.key, pdfEur(r.share)]).concat([{ c: ['Summe Ihrer Betriebskosten', '', '', pdfEur(c.kosten)], tot: 1 }]), { color: '#35c58f' });
@@ -8385,6 +8461,11 @@ ACT['gbr.nk.pdf'] = el => {
   if (c.saldo < 0 && g.iban) yy = pdfNote(d, yy, `Bitte überweisen Sie die Nachzahlung auf das Konto ${g.iban}${g.name ? ' (' + g.name + ')' : ''}.`, { color: PDF_INK, size: 9.4 });
   pdfNote(d, yy, 'Die Verteilung erfolgt nach den oben genannten Schlüsseln. Belege können nach Absprache eingesehen werden. Einwendungen gegen die Abrechnung sind dem Vermieter in der Regel spätestens 12 Monate nach Zugang mitzuteilen.');
   pdfFooters(d, 'Erstellt mit Kairos · ' + (g.name || 'Vermietung'));
+  return d;
+}
+ACT['gbr.nk.pdf'] = el => {
+  const g = S.gbr, o = gObj(nkSel.id); if (!o) return; const y = g.nkYear || nowY() - 1, d = nkPdf(o, y);
+  if (!d) return toast('Noch keine umlagefähigen Kosten gebucht', 'bad');
   pdfOut(d, `Betriebskosten-${y}-${safeName(o.name)}.pdf`, `Betriebskosten ${y} ${o.name || ''}`, el.dataset.mode);
 };
 
@@ -8682,10 +8763,11 @@ const bkLast = () => (S.backup && S.backup.last) || lsGet('kairos-lastbackup') |
 /** Fällig? → { never, days, date, sub } oder null */
 function backupDue() {
   const every = S.backup ? S.backup.every : 30; if (!every) return null;
-  const has = S.docs.length || Object.keys(S.prof).length > 3 || Object.keys(S.vertr).length || S.gbr.set || S.steuer.belege.length; if (!has) return null;
+  if (!hasUserData()) return null;
   const last = bkLast(), today = todayISO();
   if (!last) { const age = S.profile.created ? Math.floor((Date.now() - S.profile.created) / 864e5) : 99; return age >= 3 ? { never: true, days: null, date: today, sub: 'Noch nie gesichert' } : null; }
-  const n = diffDays(today, last); return n >= every ? { never: false, days: n, date: addDays(last, every), sub: n === 0 ? 'Heute' : `Zuletzt vor ${plural(n, 'Tag', 'Tagen')}` } : null;
+  const n = diffDays(today, last), ch = bkChanges(), many = ch != null && ch >= 15 && n >= 7;
+  return (n >= every || many) ? { never: false, days: n, date: addDays(last, every), sub: n === 0 ? 'Heute' : `Zuletzt vor ${plural(n, 'Tag', 'Tagen')}` } : null;
 }
 /** Alle Daten + Dateien als JSON-Text */
 async function makeBackupJSON() {
@@ -8717,7 +8799,7 @@ function askPassword(title, sub, again) {
   });
 }
 function markBackup(encrypted) {
-  S.backup.last = todayISO(); S.backup.enc = !!encrypted; lsSet('kairos-lastbackup', S.backup.last); save();
+  S.backup.last = todayISO(); S.backup.enc = !!encrypted; S.backup.fp = bkCount(); S.backup.snooze = ''; lsSet('kairos-lastbackup', S.backup.last); save();
   if (route === 'einstellungen' || route === 'reise') rerender();
 }
 ACT['backup.run'] = async el => {
@@ -8906,6 +8988,235 @@ ACT['spar.hide'] = el => { S.ui.sparOff = S.ui.sparOff || {}; S.ui.sparOff[el.da
 ACT['spar.reset'] = () => { S.ui.sparOff = {}; save(); ACT['spar.open'](); rerender(); };
 
 /* =====================================================================
+   KAIROS · v14 Datensicherheit: Home-Bildschirm-Check, dauerhafter Speicher,
+   Änderungen seit dem letzten Backup, Datenstatus-Karte (Startseite + Einstellungen).
+   Alle Daten liegen nur auf diesem Gerät – deshalb gehört die Absicherung nach vorn.
+   ===================================================================== */
+const isStandalone = () => { try { return navigator.standalone === true || matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: fullscreen)').matches; } catch (e) { return false; } };
+const isIOSDev = () => { try { return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); } catch (e) { return false; } };
+const isMobileDev = () => { try { return isIOSDev() || /Android|Mobile/i.test(navigator.userAgent) || (matchMedia('(pointer:coarse)').matches && innerWidth < 900); } catch (e) { return false; } };
+let storagePersisted = null;
+/** Fragt beim Browser dauerhaften Speicher an (iOS gewährt das meist nur installierten Web-Apps) */
+async function persistCheck() {
+  try {
+    if (navigator.storage && navigator.storage.persisted) {
+      storagePersisted = await navigator.storage.persisted();
+      if (!storagePersisted && navigator.storage.persist) storagePersisted = await navigator.storage.persist();
+    }
+  } catch (e) { /* ignorieren */ }
+  return storagePersisted;
+}
+/** Hat die Person überhaupt Daten, die sich zu sichern lohnen? */
+const hasUserData = () => !!(S.docs.length || Object.keys(S.prof).length > 3 || Object.keys(S.vertr).length || S.gbr.set || S.steuer.belege.length || S.notfall.kontakte.length);
+/** Grobe Zählung der Einträge – Grundlage für „neue Einträge seit dem Backup“ */
+function bkCount() {
+  const g = S.gbr || {}, n = S.notfall || {};
+  return S.docs.length + (S.photos || []).length + Object.keys(S.prof).length + Object.keys(S.vertr).length + (g.objekte || []).length + (g.buch || []).length + (S.steuer.belege || []).length + (n.kontakte || []).length + (n.orte || []).length + (n.nr || []).length + (S.people || []).length + (S.events || []).length;
+}
+/** Wie viele Einträge sind seit dem letzten Backup dazugekommen oder weggefallen? */
+function bkChanges() {
+  const fp = S.backup && S.backup.fp; if (fp == null) return null;
+  return Math.abs(bkCount() - fp);
+}
+function dataStatus() {
+  const inst = isStandalone(), mob = isMobileDev(), has = hasUserData(), due = backupDue(), ch = bkChanges();
+  const last = (typeof bkLast === 'function' && bkLast()) || '', days = last ? diffDays(todayISO(), last) : null;
+  const snooze = S.backup && S.backup.snooze || '';
+  const needInstall = mob && !inst && has && !(snooze && snooze >= todayISO());
+  let level = 'ok';
+  if (memOnly) level = 'bad';
+  else if (due && (due.never || (due.days || 0) >= 2 * (S.backup.every || 30))) level = 'bad';
+  else if (needInstall || due || (ch != null && ch >= 10 && days != null && days >= 3)) level = 'warn';
+  return { inst, mob, has, due, ch, last, days, needInstall, level, persisted: storagePersisted, ios: isIOSDev() };
+}
+/** Karte auf der Startseite – nur sichtbar, wenn etwas zu tun ist */
+function safeCard() {
+  const s = dataStatus(); if (s.level === 'ok' || !s.has && !memOnly) return '';
+  let e = '🛡️', t = '', sub = '', act = '', lab = '', act2 = '', lab2 = '';
+  if (memOnly) { e = '⚠️'; t = 'Dein Browser blockiert den Speicher'; sub = 'Daten gehen beim Schließen verloren. Sichere jetzt ein Backup.'; act = 'backup.open'; lab = 'Sichern'; }
+  else if (s.due && s.level === 'bad') { e = '🚨'; t = s.due.never ? 'Noch kein Backup' : 'Backup seit ' + plural(s.due.days, 'Tag', 'Tagen') + ' überfällig'; sub = 'Alles liegt nur auf diesem Gerät. Ein Backup schützt vor Verlust.'; act = 'backup.run'; lab = 'Verschlüsselt sichern'; }
+  else if (s.needInstall) { e = '📲'; t = 'Zum Home-Bildschirm hinzufügen'; sub = 'Im Browser kann iOS Website-Daten nach einigen Tagen ohne Nutzung löschen. Als App auf dem Home-Bildschirm ist das deutlich sicherer.'; act = 'safe.install'; lab = 'So geht’s'; act2 = 'safe.snooze'; lab2 = 'Später'; }
+  else if (s.due) { e = '💾'; t = 'Backup ist fällig'; sub = s.due.sub + (s.ch ? ' · ' + plural(s.ch, 'Änderung', 'Änderungen') + ' seit dem letzten Backup' : ''); act = 'backup.run'; lab = 'Verschlüsselt sichern'; }
+  else { e = '💾'; t = plural(s.ch, 'Änderung', 'Änderungen') + ' seit dem letzten Backup'; sub = 'Zuletzt gesichert: ' + relDate(s.last) + '. Sichere die neuen Einträge.'; act = 'backup.run'; lab = 'Sichern'; }
+  const enc = act === 'backup.run' ? ' data-enc="1"' : '';
+  return `<div class="card glass safe ${s.level}" role="region" aria-label="Datensicherheit"><div class="safe-h"><span class="safe-e" aria-hidden="true">${e}</span><div><b>${esc(t)}</b><small>${esc(sub)}</small></div></div>
+    <div class="safe-a"><button class="btn primary" data-act="${act}"${enc}>${esc(lab)}</button>${act2 ? `<button class="btn ghost" data-act="${act2}">${esc(lab2)}</button>` : s.due ? '<button class="btn ghost" data-act="backup.open">Mehr</button>' : ''}</div></div>`;
+}
+ACT['safe.snooze'] = () => { S.backup.snooze = addDays(todayISO(), 14); save(); rerender(); toast('Ich erinnere dich in 14 Tagen wieder'); };
+ACT['safe.install'] = () => {
+  const ios = isIOSDev(), steps = ios
+    ? [['Öffne Kairos in Safari', 'Die Seite muss in Safari geöffnet sein, nicht in einer anderen App.'], ['Tippe auf Teilen', 'Das Quadrat mit dem Pfeil nach oben in der Leiste unten.'], ['„Zum Home-Bildschirm“', 'Scrolle in der Liste etwas nach unten und tippe auf „Zum Home-Bildschirm“, dann „Hinzufügen“.'], ['Von dort aus öffnen', 'Starte Kairos ab jetzt über das neue Symbol. Deine bisherigen Daten bleiben nur im Browser – lege vorher ein Backup an und spiele es in der App ein.']]
+    : [['Browser-Menü öffnen', 'Die drei Punkte oben rechts.'], ['„App installieren“ oder „Zum Startbildschirm“', 'Je nach Browser heißt der Eintrag etwas anders.'], ['Von dort aus öffnen', 'Starte Kairos über das neue Symbol. Vorher ein Backup anlegen und in der App einspielen.']];
+  openSheet(`<div class="chh" style="--c:#4aa3ff"><span class="chh-e">📲</span><div><small>Datensicherheit</small><h2>Als App installieren</h2></div></div>
+    <p class="lead-p">Alles in Kairos liegt nur auf diesem Gerät. Im normalen Browser darf das System diese Daten löschen, wenn du die Seite länger nicht öffnest. Eine installierte Web-App wird dabei deutlich besser behandelt – ersetzt aber kein Backup.</p>
+    <ol class="mv-steps">${steps.map(s => `<li><b>${esc(s[0])}</b><span>${esc(s[1])}</span></li>`).join('')}</ol>
+    <div class="acts"><button class="btn" data-act="safe.snooze">Später erinnern</button><span class="sp"></span><button class="btn primary" data-act="backup.run" data-enc="1">${icon('lockkey')}Erst Backup erstellen</button></div>`, { wide: true });
+};
+/** Zeilen für Einstellungen */
+function safeRows(row) {
+  const s = dataStatus();
+  const inst = s.inst ? '<span class="badge pos">Ja</span>' : s.mob ? '<button class="btn sm primary" data-act="safe.install">Anleitung</button>' : '<span class="badge">Browser</span>';
+  const per = s.persisted === true ? '<span class="badge pos">Dauerhaft</span>' : s.persisted === false ? '<span class="badge warn">Nicht garantiert</span>' : '<span class="badge">Unbekannt</span>';
+  return row('Als App installiert', s.inst ? 'Kairos läuft vom Home-Bildschirm' : 'Im Browser kann iOS ungenutzte Website-Daten löschen', inst)
+    + row('Dauerhafter Speicher', 'Vom Browser zugesagt, Daten nicht automatisch zu löschen', per)
+    + row('Seit dem Backup geändert', s.ch == null ? 'Noch kein Vergleich vorhanden – wird beim nächsten Backup gesetzt' : plural(s.ch, 'Eintrag', 'Einträge') + ' neu oder entfernt', '');
+}
+
+/* =====================================================================
+   KAIROS · v14 Sammel-Bereich „Finanzen & Vorsorge“
+   Fasst Vermietung (GbR), Steuermappe, Notfall-Mappe und Backup unter einem Eintrag zusammen,
+   damit die Navigation übersichtlich bleibt. Die einzelnen Seiten bleiben unverändert erreichbar.
+   ===================================================================== */
+const HUB_KIDS = ['gbr', 'steuer', 'notfall'];
+const hubOn = r => route === r || (r === 'mappen' && HUB_KIDS.includes(route));
+function hubSummary(k) {
+  if (k === 'gbr') { const g = S.gbr; if (!g.set) return 'Noch nicht eingerichtet'; const y = gYear(), s = gbrSum(y); return [g.name || 'GbR', plural(g.objekte.length, 'Wohnung', 'Wohnungen'), s.b.length ? `${y}: ${money(s.erg)} Ergebnis` : ''].filter(Boolean).join(' · '); }
+  if (k === 'steuer') { const y = S.steuer.year || nowY(), l = sOf(y); return l.length ? `${plural(l.length, 'Beleg', 'Belege')} für ${y} · ${money(sum(l, b => b.betrag))}` : 'Belege und Pauschalen sammeln'; }
+  if (k === 'notfall') { const n = nfScore(); return n.pct + ' % vollständig' + (S.notfall.kontakte.length ? ' · ' + plural(S.notfall.kontakte.length, 'Kontakt', 'Kontakte') : ''); }
+  const st = dataStatus(); return st.last ? 'Zuletzt gesichert: ' + relDate(st.last) + (S.backup.enc ? ' · verschlüsselt' : '') : 'Noch nicht gesichert';
+}
+const HUB_CARDS = [
+  ['gbr', '🏘️', 'Vermietung (GbR)', 'Wohnungen, Miete, Nebenkosten, Steuerberater-Paket', 'data-go="gbr"'],
+  ['steuer', '🧾', 'Steuermappe', 'Belege, Pauschalen und Jahresübersicht', 'data-go="steuer"'],
+  ['notfall', '🚑', 'Notfall-Mappe', 'Kontakte, Vollmachten und „Wenn mir etwas passiert“', 'data-go="notfall"'],
+  ['backup', '💾', 'Backup & Daten', 'Verschlüsselt sichern, Gerätewechsel, Datenstatus', 'data-act="backup.open"']];
+VIEWS.mappen = {
+  render() {
+    return `<div class="page hubp"><header class="ph"><div class="t"><div class="eyebrow">Alles an einem Ort</div><h1>Finanzen &amp; Vorsorge</h1><p>Vermietung, Steuer, Notfall und Backup – wichtig, aber nicht jeden Tag.</p></div></header>
+      <div class="hub-g">${HUB_CARDS.map(c => `<button class="card glass hubc" ${c[4]}><span class="hubc-e" aria-hidden="true">${c[1]}</span><span class="hubc-m"><b>${esc(c[2])}</b><small>${esc(c[3])}</small><em>${esc(hubSummary(c[0]))}</em></span>${icon('chevR')}</button>`).join('')}</div></div>`;
+  }
+};
+/** Zurück-Link oben auf den Unterseiten */
+function hubCrumb() {
+  const ph = $('#view .ph'); if (!ph || !HUB_KIDS.includes(route)) return;
+  const b = document.createElement('button'); b.className = 'crumb'; b.dataset.go = 'mappen'; b.innerHTML = icon('chevL') + 'Finanzen &amp; Vorsorge';
+  ph.parentNode.insertBefore(b, ph);
+}
+/* Beim Wechsel zwischen Handy- und Breitbild die Startseite neu aufbauen */
+try { const mq = matchMedia('(max-width:760px)'), f = () => { if (typeof route !== 'undefined' && route === 'reise' && S) rerender(); }; mq.addEventListener ? mq.addEventListener('change', f) : mq.addListener(f); } catch (e) { /* ignorieren */ }
+
+/* =====================================================================
+   KAIROS · v14 Steuerberater-Paket für die Vermietung (GbR)
+   Ein ZIP mit: Jahresübersicht (PDF), Buchungen (CSV), Zahlen je Wohnung im Stil der Anlage V (CSV),
+   Aufteilung auf Gesellschafter (CSV), Mieterliste (CSV), Betriebskosten-Abrechnungen (PDF), Belege.
+   Alles entsteht lokal auf dem Gerät. Die Zahlen sind eine Vorbereitung, keine Steuererklärung.
+   ===================================================================== */
+const CRC_T = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+function crc32(u8) { let c = 0xFFFFFFFF; for (let i = 0; i < u8.length; i++) c = CRC_T[(c ^ u8[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; }
+/** ZIP ohne Kompression („stored“) – reicht für PDF/CSV und braucht keine Bibliothek */
+function zipStore(files) {
+  const enc = new TextEncoder(), parts = [], cen = []; let off = 0;
+  const dt = new Date(), dosT = (dt.getHours() << 11) | (dt.getMinutes() << 5) | (dt.getSeconds() >> 1), dosD = ((dt.getFullYear() - 1980) << 9) | ((dt.getMonth() + 1) << 5) | dt.getDate();
+  for (const f of files) {
+    const nm = enc.encode(f.name), data = f.data, crc = crc32(data), sz = data.length;
+    const lh = new DataView(new ArrayBuffer(30)); lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(6, 0x0800, true); lh.setUint16(8, 0, true); lh.setUint16(10, dosT, true); lh.setUint16(12, dosD, true); lh.setUint32(14, crc, true); lh.setUint32(18, sz, true); lh.setUint32(22, sz, true); lh.setUint16(26, nm.length, true); lh.setUint16(28, 0, true);
+    parts.push(new Uint8Array(lh.buffer), nm, data);
+    const ch = new DataView(new ArrayBuffer(46)); ch.setUint32(0, 0x02014b50, true); ch.setUint16(4, 20, true); ch.setUint16(6, 20, true); ch.setUint16(8, 0x0800, true); ch.setUint16(10, 0, true); ch.setUint16(12, dosT, true); ch.setUint16(14, dosD, true); ch.setUint32(16, crc, true); ch.setUint32(20, sz, true); ch.setUint32(24, sz, true); ch.setUint16(28, nm.length, true); ch.setUint32(42, off, true);
+    cen.push(new Uint8Array(ch.buffer), nm); off += 30 + nm.length + sz;
+  }
+  const cs = cen.reduce((a, x) => a + x.length, 0), end = new DataView(new ArrayBuffer(22)); end.setUint32(0, 0x06054b50, true); end.setUint16(8, files.length, true); end.setUint16(10, files.length, true); end.setUint32(12, cs, true); end.setUint32(16, off, true);
+  return new Blob([...parts, ...cen, new Uint8Array(end.buffer)], { type: 'application/zip' });
+}
+const u8txt = t => new TextEncoder().encode(t);
+async function blobU8(b) { return new Uint8Array(await b.arrayBuffer()); }
+async function csvU8(rows) { return blobU8(csvBlob(rows)); }
+
+/** Zahlen je Wohnung: Einnahmen, Werbungskosten nach Art, Überschuss (Rücklagen zählen nicht) */
+function gbrPaketRows(y) {
+  const g = S.gbr, ein = GBR_EIN, aus = GBR_AUS.filter(k => !k[3]);
+  const groups = g.objekte.map(o => [o.id, o.name || 'Wohnung']).concat([['', 'Ganzes Haus / nicht zugeordnet']]);
+  const head = ['Wohnung', ...ein.map(k => k[1] + ' (EUR)'), 'Summe Einnahmen (EUR)', ...aus.map(k => k[1] + ' (EUR)'), 'Summe Ausgaben (EUR)', 'Überschuss (EUR)'];
+  const tot = new Array(head.length - 1).fill(0), rows = [];
+  for (const [gid, name] of groups) {
+    const b = g.buch.filter(x => inYear(x.date, y) && (x.obj || '') === gid), cell = (typ, kat) => sum(b.filter(x => x.typ === typ && x.kat === kat), x => x.betrag);
+    const e = ein.map(k => cell('ein', k[0])), a = aus.map(k => cell('aus', k[0])), se = sum(e, v => v), sa = sum(a, v => v);
+    if (!b.length && gid === '') continue;
+    const vals = [...e, se, ...a, sa, se - sa]; vals.forEach((v, i) => tot[i] += v);
+    rows.push([name, ...vals.map(csvNum)]);
+  }
+  rows.push(['Gesamt GbR', ...tot.map(csvNum)]);
+  return { head, rows, erg: tot[tot.length - 1] };
+}
+function gbrPaketGs(y, erg) {
+  const g = S.gbr, rows = [['Gesellschafter', 'Anteil (%)', 'Ergebnisanteil (EUR)']];
+  g.gs.forEach(x => rows.push([(x.name || 'Gesellschafter') + (x.me ? ' (ich)' : ''), String(x.anteil || 0).replace('.', ','), csvNum(Math.round(erg * (x.anteil || 0) / 100))]));
+  return rows;
+}
+function gbrPaketMieter() {
+  const rows = [['Wohnung', 'Adresse', 'Mieter', 'Mietbeginn', 'Mietende', 'Fläche (m²)', 'Kaltmiete (EUR/Monat)', 'Nebenkosten-Vorauszahlung (EUR/Monat)', 'Kaution (EUR)']];
+  S.gbr.objekte.forEach(o => rows.push([o.name || '', o.adr || '', o.mieter || '', o.beginn || '', o.ende || '', o.flaeche != null ? String(o.flaeche).replace('.', ',') : '', csvNum(o.kalt), csvNum(o.nk), csvNum(o.kaution)]));
+  return rows;
+}
+ACT['gbr.paket'] = async () => {
+  const g = S.gbr; if (!g.set) return ACT['gbr.setup'](); const y = gYear();
+  if (!g.buch.some(b => inYear(b.date, y))) return toast('Noch keine Buchungen in ' + y, 'bad');
+  toast('Paket wird erstellt …');
+  try {
+    const files = [], P = gbrPaketRows(y), pre = `Kairos-${safeName(g.name)}-${y}/`;
+    files.push({ name: pre + `00-Jahresuebersicht-${y}.pdf`, data: await blobU8(gbrYearPdf(y).blob()) });
+    const bu = [['Datum', 'Art', 'Kategorie', 'Wohnung', 'Beschreibung', 'Betrag (EUR)', 'Umlagefähig', 'Beleg']];
+    g.buch.filter(b => inYear(b.date, y)).sort((a, b) => a.date < b.date ? -1 : 1).forEach(b => { const o = b.obj && gObj(b.obj), dc = b.doc && S.docs.find(d => d.id === b.doc); bu.push([b.date, b.typ === 'ein' ? 'Einnahme' : 'Ausgabe', gKat(b.typ, b.kat)[1], o ? o.name : '', b.text || '', csvNum(b.typ === 'ein' ? b.betrag : -b.betrag), b.nk ? 'ja' : '', dc ? dc.name : '']); });
+    files.push({ name: pre + `01-Buchungen-${y}.csv`, data: await csvU8(bu) });
+    files.push({ name: pre + `02-Zahlen-je-Wohnung-${y}.csv`, data: await csvU8([P.head, ...P.rows]) });
+    if (g.gs.length) files.push({ name: pre + `03-Gesellschafter-${y}.csv`, data: await csvU8(gbrPaketGs(y, P.erg)) });
+    if (g.objekte.length) files.push({ name: pre + '04-Mieterliste.csv', data: await csvU8(gbrPaketMieter()) });
+    let nk = 0; for (const o of g.objekte) { if (!gRented(o) && !o.mieter) continue; const d = nkPdf(o, y); if (d) { files.push({ name: pre + `05-Betriebskosten-${y}-${safeName(o.name)}.pdf`, data: await blobU8(d.blob()) }); nk++; } }
+    let bel = 0, big = 0; const seen = new Set();
+    for (const b of g.buch.filter(x => inYear(x.date, y) && x.doc)) {
+      if (seen.has(b.doc)) continue; seen.add(b.doc); const dc = S.docs.find(d => d.id === b.doc); if (!dc || !dc.fileName) continue;
+      try { const bl = await getFileBlob(dc.id); if (!bl) continue; if (bl.size > 12e6) { big++; continue; } const ext = (dc.fileName.match(/\.[A-Za-z0-9]{2,5}$/) || [''])[0]; files.push({ name: pre + `Belege/${b.date}-${safeName(gKat(b.typ, b.kat)[1])}-${safeName(dc.name).slice(0, 40)}${ext}`, data: await blobU8(bl) }); bel++; } catch (e) { /* Beleg überspringen */ }
+    }
+    files.push({ name: pre + 'LIES-MICH.txt', data: u8txt(`Steuerberater-Paket ${y} · ${g.name || 'GbR'}\r\nErstellt am ${fmtDate(todayISO(), true)} mit Kairos.\r\n\r\n00 Jahresübersicht (PDF): Einnahmen, Ausgaben, Ergebnis, Aufteilung.\r\n01 Buchungen (CSV): alle Einzelbuchungen des Jahres.\r\n02 Zahlen je Wohnung (CSV): Einnahmen und Ausgaben nach Art, Überschuss – als Vorbereitung für die Anlage V.\r\n03 Gesellschafter (CSV): Anteile und Ergebnisanteile.\r\n04 Mieterliste (CSV): Mieter, Zeiträume, Mieten.\r\n05 Betriebskostenabrechnungen (PDF), soweit umlagefähige Kosten gebucht sind.\r\nBelege/: Dokumente, die du einer Buchung zugeordnet hast.\r\n\r\nHinweis: Rücklagen sind kein Aufwand und stehen nicht im Ergebnis. Alle Angaben stammen aus deinen eigenen Eingaben und sind Orientierung – keine Steuer- oder Rechtsberatung. Die Erklärung zur gesonderten und einheitlichen Feststellung prüft dein Steuerberater.\r\n`) });
+    const zip = zipStore(files), name = `Kairos-Steuerberater-Paket-${y}.zip`;
+    const r = await fileDeliver(zip, name, `Steuerberater-Paket ${y}`, `${g.name || 'GbR'} – Unterlagen ${y}`);
+    if (r === 'abort') return toast('Abgebrochen');
+    if (r === 'download') toast('Paket gespeichert', 'good'); else toast('Paket bereit – speichere es in „Dateien“ oder sende es per Mail', 'good');
+    if (big) toast(`${plural(big, 'großer Beleg', 'große Belege')} (über 12 MB) nicht enthalten`);
+    snd('done'); hap(2);
+    return { n: files.length, nk, bel };
+  } catch (e) { console.error(e); toast('Paket konnte nicht erstellt werden', 'bad'); }
+};
+
+/* =====================================================================
+   KAIROS · v14 Globale Suche: Verträge, Vermietung, Steuer, Notfall, Menschen, Ereignisse, Beruf
+   Hängt sich in die Schnellsuche (⌘K bzw. „/“) ein. Mehrere Wörter müssen alle vorkommen.
+   ===================================================================== */
+const digitsOf = s => String(s || '').replace(/\D/g, '');
+function sTokens(q) { return norm(q).split(/[\s,;]+/).filter(Boolean); }
+/** Alle Textwerte eines Objekts (flach) zu einem Suchtext */
+function sHay(o, extra) {
+  const out = []; (function walk(v, d) { if (v == null || d > 2) return; if (typeof v === 'string') out.push(v); else if (typeof v === 'number') out.push(String(v)); else if (Array.isArray(v)) v.slice(0, 20).forEach(x => walk(x, d + 1)); else if (typeof v === 'object') Object.keys(v).slice(0, 40).forEach(k => walk(v[k], d + 1)); })(o, 0);
+  return norm(out.concat(extra || []).join(' '));
+}
+function sMatch(hay, toks, cents) {
+  return toks.every(t => hay.includes(t) || (cents != null && /^\d{3,}$/.test(digitsOf(t)) && String(cents).replace(/\D/g, '').includes(digitsOf(t))));
+}
+function globalHits(q, add) {
+  const toks = sTokens(q); if (!toks.length) return;
+  const lim = 4, take = (list, fn) => { let n = 0; for (const x of list) { if (n >= lim) break; if (fn(x)) n++; } };
+  /* Verträge & Versicherungen */
+  try { take(vActive(), e => { const o = vOf(e.id) || {}; if (!sMatch(sHay(o, [e.n, vprov(e.id)]), toks)) return false; add('Verträge', e.e || '📄', e.n, [vprov(e.id), vMonthly && money(vMonthly(e.id)) + '/Monat'].filter(Boolean).join(' · '), () => { go('vertraege'); setTimeout(() => ACT['vt.open']({ dataset: { id: e.id } }), 120); }); return true; }); } catch (e) { /* Suche bleibt robust */ }
+  /* Vermietung */
+  const g = S.gbr;
+  if (g && g.set) {
+    take(g.objekte, o => { if (!sMatch(sHay(o), toks)) return false; add('Vermietung', '🏠', o.name || 'Wohnung', [o.mieter, o.adr].filter(Boolean).join(' · '), () => { go('gbr'); setTimeout(() => ACT['gbr.obj.open']({ dataset: { id: o.id } }), 120); }); return true; });
+    take(g.buch.slice().sort((a, b) => a.date < b.date ? 1 : -1), b => { const ob = b.obj && gObj(b.obj), k = gKat(b.typ, b.kat); if (!sMatch(sHay(b, [k[1], ob && ob.name, money(b.betrag)]), toks, b.betrag)) return false; add('Buchungen (GbR)', b.typ === 'ein' ? '📥' : '📤', `${k[1]} · ${b.typ === 'ein' ? '+' : '−'}${money(b.betrag)}`, [fmtDate(b.date, true), ob && ob.name, b.text].filter(Boolean).join(' · '), () => { go('gbr'); setTimeout(() => ACT['gbr.buch.edit']({ dataset: { id: b.id } }), 120); }); return true; });
+  }
+  /* Steuermappe */
+  take((S.steuer.belege || []).slice().sort((a, b) => a.date < b.date ? 1 : -1), b => { if (!sMatch(sHay(b, [money(b.betrag)]), toks, b.betrag)) return false; add('Steuermappe', '🧾', b.name || 'Beleg', [fmtDate(b.date, true), money(b.betrag)].join(' · '), () => { go('steuer'); setTimeout(() => ACT['st.edit']({ dataset: { id: b.id } }), 120); }); return true; });
+  /* Notfall-Mappe */
+  const nf = S.notfall;
+  take(nf.kontakte, k => { if (!sMatch(sHay(k), toks)) return false; add('Notfall-Mappe', '📞', k.name, [k.bezug, k.tel].filter(Boolean).join(' · '), () => { go('notfall'); setTimeout(() => ACT['nf.kontakt']({ dataset: { id: k.id } }), 120); }); return true; });
+  take(nf.orte, o => { if (!sMatch(sHay(o), toks)) return false; add('Notfall-Mappe', '📍', o.t, o.wo || '', () => { go('notfall'); setTimeout(() => ACT['nf.ort']({ dataset: { id: o.id } }), 120); }); return true; });
+  take(nf.nr, r => { if (!sMatch(sHay(r), toks)) return false; add('Notfall-Mappe', '🔖', r.t, r.v || '', () => { go('notfall'); setTimeout(() => ACT['nf.nr']({ dataset: { id: r.id } }), 120); }); return true; });
+  /* Menschen & Lebensereignisse */
+  take(S.people || [], p => { if (!sMatch(sHay(p), toks)) return false; add('Menschen', '👤', p.name || 'Person', [p.rel, p.geb && fmtDate(p.geb, true)].filter(Boolean).join(' · '), () => ACT['fam.edit']({ dataset: { id: p.id } })); return true; });
+  take(S.events || [], ev => { const lx = LEX(ev.t); if (!sMatch(sHay(ev, [lx && lx.n]), toks)) return false; add('Lebensereignisse', lx ? lx.e : '🧭', lx ? lx.n : 'Ereignis', ev.date ? fmtDate(ev.date, true) : '', () => { go('leben'); setTimeout(() => ACT['ev.open']({ dataset: { id: ev.id } }), 120); }); return true; });
+  /* Beruf / Lebenslauf */
+  take((S.cv && S.cv.st) || [], st => { if (!sMatch(sHay(st), toks)) return false; add('Beruf', '💼', st.t || st.title || st.name || st.firma || 'Station', [st.firma, st.von && fmtDate(st.von, true)].filter(Boolean).join(' · '), () => go('beruf')); return true; });
+}
+
+/* =====================================================================
    KAIROS · Start: Splash, Onboarding, Boot
    ===================================================================== */
 function showOnboarding(replay) {
@@ -8955,7 +9266,7 @@ async function boot() {
   if (memOnly) toast('Dein Browser blockiert den lokalen Speicher – Daten gehen beim Schließen verloren. Bitte Backup erstellen.', 'bad');
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => { /* optional */ });
   window.addEventListener('keydown', e => { if (e.key === '/' && !/input|textarea|select/i.test(e.target.tagName) && !$('#sheetWrap').classList.contains('open')) { e.preventDefault(); ACT['cmd.open'](); } });
-  window.__K = { importBackup, askPassword, gbrSum, nkCalc, sparRadar, heuteItems, backupDue, makeBackupJSON, encryptBackupText, decryptBackupData, fixCosts, vMine, steuerSuggestions, nfScore, steuerPdf, gbrYearPdf, nfPdf, openZoom, ZV, refreshApp, chunkList, GS, ROWS, snd, hap, sndBuild, sndPlay, SOUNDS, SND, ocrSelfTest, get S() { return S; }, get route() { return route; }, tnState, tnLocked, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, KPdf, buildPackagePdf, PACKAGES, pdfWidth, fundOpen, scanFunde, docToVertrag, fdSetProfile, fdSetVertrag, docVertragDraft, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, provList, PROV, xSpecs, katalogInsights, parseStatement, stAnalyze, stApply, stMatch, stRun, stNum, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
+  window.__K = { cmdItems, zipStore, gbrPaketRows, safeCard, dataStatus, bkChanges, bkCount, hubSummary, isNarrow, importBackup, askPassword, gbrSum, nkCalc, sparRadar, heuteItems, backupDue, makeBackupJSON, encryptBackupText, decryptBackupData, fixCosts, vMine, steuerSuggestions, nfScore, steuerPdf, gbrYearPdf, nfPdf, openZoom, ZV, refreshApp, chunkList, GS, ROWS, snd, hap, sndBuild, sndPlay, SOUNDS, SND, ocrSelfTest, get S() { return S; }, get route() { return route; }, tnState, tnLocked, go, ACT, VIEWS, overall, nextStep, pset, pget, answerRules, askKairos, extractDocument, readDocument, capStart, capReview, KPdf, buildPackagePdf, PACKAGES, pdfWidth, fundOpen, scanFunde, docToVertrag, fdSetProfile, fdSetVertrag, docVertragDraft, buildReview, applyReview, mergeCands, QA, get REV() { return REV; }, rerender, photosAdd: typeof photosAdd === 'function' ? photosAdd : null, buildInsights, buildDeadlines, consumeShare, shareSheet, digestText, tgPull, tgApi, textImportSheet, importText, kvKind, fsUmtausch, lifeline, vAll, vst, setVst, fixCosts, haushalt, newInst, CV, instIds, parseCvText, cvText, cvStats, berufStats, vMonthly, kuendDate, vDeadlines, provList, PROV, xSpecs, katalogInsights, parseStatement, stAnalyze, stApply, stMatch, stRun, stNum, waNum, urlWA, urlTG, makeICS, topInsights, urgentCount, profileConflicts };
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<pre style="position:fixed;inset:20px;z-index:999;background:#300;color:#fff;padding:20px;overflow:auto">Kairos konnte nicht starten:\n${esc(e && e.stack || e)}</pre>`); });
 
